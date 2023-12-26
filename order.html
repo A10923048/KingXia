@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 光瑞給的<meta name="_csrf" th:content="${_csrf.token}">
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"> -->
+
+    <title>金廈海運-首頁</title>
+    <link rel="icon shortcut" href="./img/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- TODO: 客製化Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+    <!-- 使用font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+    <!-- 使用style.css -->
+    <link rel="stylesheet" href="./css/new.css">
+    <!-- 使用日期輪用 -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <!-- 使用Boostrap Navbar -->
+    <!-- TODO: 設定Navbar緊貼畫面上緣 -->
+    <!-- TODO: 點擊滾動目標 -->
+    <!-- b4-navbar-default -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
+        <a class="navbar-brand" href="./index.html">首頁</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#introSection">訂票</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#featuresSection">行程介紹</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- navbar end -->
+
+
+    <!-- header -->
+    <header id="header">
+        <div class="row justify-content-center  mb-1 "
+            style="margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+
+            <div>
+                <h1 class="loader ">
+                    <img src="./img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
+                    <span class="m">訂</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">票</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">頁</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">面</span>
+                    <span class="m"></span>
+                </h1>
+
+            </div>
+        </div>
+        <div class="container">
+            <img id="ship-bottle" class="rounded-circle mt  my-element" src="img/瓶中船.png" alt="user photo"
+                style="width: 50%; margin-bottom: 20%;">
+            <!-- <a class="btn btn-outline-primary" href="">Link</a> -->
+        </div>
+
+
+
+        <header id="header" class="jumbotron text-center bg-dark">
+            <div class="container">
+
+                <section id="featuresSection" class="py-5 bg-secondary" style="border-radius: 15px;">
+                    <div class="container">
+
+                        <!-- <h1 class=" mb-5 text-center text-white">訂票資訊</h1> -->
+                        <!-- 設定row內的區塊置中對齊 -->
+                        <div class="row justify-content-center">
+                 
+                            <nav class="nav nav-pills flex-row justify-content-center" id="myNav">
+                                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">訂票資訊</button>
+                                
+                            </nav>
+
+                            <div class="col-12">
+
+                                <section id="introSection" class="py-5">
+                                    <!-- <div class="container  mb-5" style="background-color: rgba(213, 194, 155, 0.663); padding-top: 5%; padding-bottom: 5%;padding-left: 5%;padding-right: 5%;">
+                            -->
+                                    <div class="container  mb-5">
+
+                                       
+                                        <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
+
+                                            <article id="articleA" class="my-3 tab-pane">
+
+                                              <main>
+                                                <div class="py-5 text-center text-primary">
+                                                  <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                                                  <h2>訂票資訊</h2>
+                                                </div>
+                                            
+                                                <div class="row g-5 text-primary">
+                                                  <div class="col-md-5 col-lg-4 order-md-last">
+                                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                                      <span class="text-primary">訂單內容</span>
+                                                      
+                                                      <span class="badge bg-primary rounded-pill"id="showtickets">(票數顯示)</span>
+                                                      <!-- <span class="badge bg-primary rounded-pill">訂票數:3</span> -->
+
+                                                    </h4>
+                                                    <ul class="list-group mb-3">
+                                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                                          <h6 class="my-0">時間:</h6>
+                                                          <span class="my-0"id="time-show">(時間顯示)</span>
+                                                      </li>
+                                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                                          <h6 class="my-0">票數:</h6>
+                                                          <span class="my-0"id="tickets-show">(票數顯示)</span>
+                                                      </li>
+                                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                                          <h6 class="my-0">船班:</h6>
+                                                          <span class="my-0"id="shipID-show">(船班顯示)</span>
+                                                      </li>
+                                                      <li class="list-group-item justify-content-start lh-sm">
+                                                        <h5 class="mb-3">主要購票人是否為一同搭乘的乘客?</h5>
+                                            
+                                                        <div class="my-3">
+                                                          <div class="form-check">
+                                                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                                                            <label class="form-check-label" for="credit">主要購票人會一同搭乘航班，<br><span>主要購票人=乘客</span></label>
+                                                          </div>
+                                                          <div class="form-check">
+                                                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                                                            <label class="form-check-label" for="debit">主要購票人只負責訂票，<br><span>主要購票人=/=乘客</span></label>
+                                                          </div>
+                                                        </div>
+
+                                                      </li>
+                                                      <li class="list-group-item ">
+                                                        <h4 class="mb-3">訂單開立方式</h4>
+                                                        <div class="my-3">
+                                                          <div class="form-check">
+                                                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                                                            <label class="form-check-label" for="credit">主要購票人與其他乘客，<br><span>共同開立一張購票證名</span></label>
+                                                          </div>
+                                                          <div class="form-check">
+                                                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                                                            <label class="form-check-label" for="debit">主要購票人與其他乘客，<br><span>分別開立多張購票證名</span></label>
+                                                          </div>
+                                                        </div>
+                                                      </li>
+                                                    </ul>
+                                            
+                                                  </div>
+                                                  <div class="col-md-7 col-lg-8">
+                                                    <h4 class="mb-3">購票人資料</h4>
+                                                    <form class="needs-validation" novalidate>
+                                                      <div class="row g-3">
+                                                        <div class="col-sm-3">
+                                                          <label for="firstName" class="form-label">姓名</label>
+                                                          <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                                          <div class="invalid-feedback">
+                                                            Valid first name is required.
+                                                          </div>
+                                                        </div>
+
+                                                        <div class="col-sm-3">
+                                                          <label for="zip" class="form-label">電話</label>
+                                                          <input type="text" class="form-control" id="zip" placeholder="" required>
+                                                          <div class="invalid-feedback">
+                                                            Zip code required.
+                                                          </div>
+                                                        </div>
+                                            
+                                                        <div class="col-sm-6">
+                                                          <div class="col">
+                                                         
+                                                                <hr>
+                                                            <label for="country" class="form-label">
+                                                              <i class="fa-solid fa-calendar-days fa-2x"></i>性別</label>
+                                                          <select class="form-select" id="country" required>
+                                                            <option value="">女</option>
+                                                            <option>男</option>
+                                                          </select>
+                                                          <div class="invalid-feedback">
+                                                            Please select a valid country.
+                                                          </div>
+                                                          </div>
+                                                        </div>
+                                            
+                                                        <div class="col-12 mt-2">
+                                                          <label for="email" class="form-label">Email</label>
+                                                          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                                          <div class="invalid-feedback">
+                                                            Please enter a valid email address for shipping updates.
+                                                          </div>
+                                                        </div>
+                                            
+                                                        <div class="col-12 row justify-content-between pt-3">
+                                                          
+                                                          <div class="col">
+                                                            <div class="datepicker">
+                                                              <label for="datetime">
+                                                                  <i class="fa-solid fa-calendar-days fa-6x"></i>
+                                                                  <h6>出生日期</h6>
+                                                              </label>
+                                                              <div>
+                                                                  <input type="date" id="datePicker" placeholder="選擇日期範圍" value="">
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          
+
+                                                          <div class="col-sm-6">
+                                                            <div class="col">
+                                                           
+                                                                  <hr>
+                                                              <label for="country" class="form-label">
+                                                                <i class="fa-solid fa-calendar-days fa-2x"></i>國籍</label>
+                                                            <select class="form-select" id="country" required>
+                                                              <option value="">台灣</option>
+                                                              <option>香港</option>
+                                                              <option>大陸</option>
+                                                              <option>其他</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                              Please select a valid country.
+                                                            </div>
+                                                            </div>
+  
+                                                            
+                                                            <label for="lastName" class="form-label">身分證/護照號碼</label>
+                                                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                                            <div class="invalid-feedback">
+                                                              Valid last name is required.
+                                                            </div>
+                                                          </div>
+
+
+                                                        </div>
+
+
+                                          
+                                                      </div>
+                                            
+                                                      <!-- <hr class="my-4 bg-primary">
+                                            
+                                                      <h4 class="mb-3">主要購票人是否為一同搭乘的乘客?</h4>
+                                            
+                                                      <div class="my-3">
+                                                        <div class="form-check">
+                                                          <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                                                          <label class="form-check-label" for="credit">主要購票人會一同搭乘航班，主要購票人=乘客</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                          <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                                                          <label class="form-check-label" for="debit">主要購票人只負責訂票，主要購票人=/=乘客</label>
+                                                        </div>
+                                                      </div>
+
+                                            
+                                                      <hr class="my-4 bg-primary">
+                                            
+                                                      <h4 class="mb-3">訂單開立方式</h4>
+                                                      <div class="my-3">
+                                                        <div class="form-check">
+                                                          <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                                                          <label class="form-check-label" for="credit">主要購票人與其他乘客共同開立一張</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                          <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                                                          <label class="form-check-label" for="debit">主要購票人與其他乘客分別開立多張</label>
+                                                        </div>
+                                                      </div>
+                                                      <hr class="my-4"> -->
+                                            
+                                                      <button class="w-100 btn btn-primary btn-lg" type="submit">(請點選)來填寫其他乘客資料</button>
+                                                    </form>
+                                                  </div>
+                                                </div>
+                                              </main>
+
+
+
+
+                                              <div class="container text-white"> 
+                                                
+                                                <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
+                                                  <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">購票人資料填寫(請下拉選單)</h2>
+                                                  <nav class="small" id="toc">
+                                                    <ul class="list-unstyled" id="buyers_list">
+
+                                                      <!-- <li class="my-2">
+                                                        <button class="btn d-inline-flex align-items-center collapsed border-0"
+                                                          data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                                                          aria-controls="contents-collapse">其他旅客資料(1)</button>
+                                                        <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                                          <div class="table-responsive">
+                                                            <table>
+                                                              <div id="planpickered" class="pt-5 pb-1" style="background: rgb(102, 235, 226)">
+                                                                <label for="plan">
+                                                                  <h2 class="section-title mb-3 text-center text-white">其他旅客資料</h2>
+                                                              </div>
+                                                            </table>
+                                                            <main>
+                                                              <div class="table-responsive pt-4" style=" background-color: rgb(245, 240, 220);">
+                                                                <table class="table text-center">
+                                                                  <thead>
+                                                                    <tr>
+                                                                      <th style="width: 30%;">
+                                                                        <i class="fa-solid fa-earth-americas fa-4x"></i>
+                                                                        <h6>國籍</h6>
+                                                                        <select class="form-select" id="country" required>
+                                                                          <option value="">台灣</option>
+                                                                          <option>香港</option>
+                                                                          <option>大陸</option>
+                                                                          <option>其他</option>
+                                                                        </select>
+                                                                      </th>
+                                                                      <th style="width: 20%;" id="gender">
+                                                                        <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                                                        <h6>性別</h6>
+                                                                        <select class="form-select" id="gender" required>
+                                                                          <option value="">女</option>
+                                                                          <option>男</option>
+                                                                        </select>
+                                                                      </th>
+                                                                      <th style="width: 40%;" id="country">
+                                                                        <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                                                        <h6>出生日期</h6>
+                                                                        <div>
+                                                                            <input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">
+                                                                        </div>
+                                                                      </th>
+                                                                    </tr>
+                                                                  </thead>
+                                                                  <thead id="tickets-result2">
+                                                                    <tr>
+                                                                      <th style="width: 40%;">
+                                                                        <svg class="bi" width="24" height="24">
+                                                                          <use xlink:href="#check" />
+                                                                        </svg>
+                                                                        <h6>身分證/護照號碼</h6>
+                                                                        <input type="text" class="form-control" id="orderName" placeholder="" value=""
+                                                                          required>
+                                                                      </th>
+                                                                      <th scope="row" class="text-start" >
+                                                                        <h6>姓名</h6>
+                                                                        <input type="text" class="form-control" id="orderName" placeholder="" value=""
+                                                                          required>
+                                                                      </th>
+                                                                      <th style="width: 50%;">
+                                                                        <svg class="bi" width="24" height="24">
+                                                                          <use xlink:href="#check" />
+                                                                        </svg>
+                                                                        <h6>email</h6>
+                                                                        <input type="text" class="form-control" id="orderName" placeholder="" value=""
+                                                                          required>
+                                                                      </th>
+                                                                    </tr>
+                                                                  </thead>
+                                                                </table>
+                                                              </div>
+                                                            </main>
+                                                          </div>
+                                                        </ul>
+                                                      </li> -->
+
+                                                    </ul>
+                                                  </nav>
+                                                </aside>
+
+
+                                            </article>
+
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- featuresSection end -->
+                        </article>
+                    </div>
+            </div> <!-- containter END-->
+
+
+
+            </div>
+            </div>
+            <!-- md-6 END-->
+
+
+
+
+
+
+        </header>
+    </header>
+    <!-- footer -->
+    <footer id="footer" class="pt-5 bg-secondary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5>團體票聯絡資訊</h5>
+                    <a href="mailto:service@brand.com">service@brand.com</a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5 class="text-uppercase">公司聯絡資訊</h5>
+
+                    <ul>
+                        <li>
+                            <a href="#">電話</a>
+                        </li>
+                        <li>
+                            <a href="#">傳真</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5 class="text-uppercase">其他資訊</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Help Center</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-end bg-dark mt-5 py-2 justify-content-center">
+            <p class="text-center">&copy; Copy right 2020</p>
+        </div>
+
+    </footer>
+    <!-- footer end -->
+
+
+
+    <!-- 引用 https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js-->
+    <script> src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"</script>
+    <!-- <script> src = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"</script> -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- jquery.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    
+    <!-- popper.min.js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@5.3.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script> -->
+    <!-- bootstrap.min.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- 連結網頁主程式 -->
+    <script src="./js/order.js"></script>
+
+   
+    
+</body>
+
+
+</html>

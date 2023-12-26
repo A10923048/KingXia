@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金廈海運-首頁</title>
+    <link rel="icon shortcut" href="./img/favicon.ico">
+    <!-- 引用https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Bootstrap官方網站 https://getbootstrap.com/ -->
+    <!-- 連結Bootstrap.min.css -->
+
+    <!-- TODO: 客製化Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <!-- 使用font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+    <!-- 使用style.css -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 引入 flatpickr 的 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <!-- 使用Boostrap Navbar -->
+    <!-- TODO: 設定Navbar緊貼畫面上緣 -->
+    <!-- TODO: 點擊滾動目標 -->
+    <!-- b4-navbar-default -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
+        <a class="navbar-brand" href="./index.html">首頁</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#introSection">訂票</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#featuresSection">行程介紹</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- navbar end -->
+
+
+    <!-- header -->
+    <header id="header">
+        <div class="row justify-content-center  mb-1 "
+            style="margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+
+            <div>
+                <h1 class="loader ">
+                    <img src="./img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
+                    <span class="m">金</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">廈</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">海</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">運</span>
+                    <span class="m"></span>
+                </h1>
+                <!-- <h1 class=" loader text-orange">
+                    <span class="m">Booking</span>
+                    <span class="m">&nbsp &nbsp</span>
+                    <span class="m">Page</span>
+                </h1> -->
+            </div>
+        </div>
+        <div class="container">
+            <img id="ship-bottle" class="rounded-circle mt  my-element" src="img/瓶中船.png" alt="user photo"
+                style="width: 50%; margin-bottom: 20%;">
+            <!-- <a class="btn btn-outline-primary" href="">Link</a> -->
+        </div>
+
+        <div class="container col-md-10  mt-5 bg-secondary"
+            style="border-radius: 15px; padding-top: 5%; padding-bottom: 2%;">
+
+            <ul class="nav nav-pills flex-row justify-content-center" id="myTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" id="tab1" data-bs-toggle="tab" href="#content1">目錄</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab2" data-bs-toggle="tab" href="#content2">公司介紹</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab3" data-bs-toggle="tab" href="#content3">郵輪介紹</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab4" data-bs-toggle="tab" href="#content4">行程介紹</a>
+                </li>
+                </li>
+            </ul>
+
+            <div class="tab-content mt-2 py-5 bg-secondary justify-content-center text-center"
+                style="border-radius: 15px; padding-left: 1%; padding-right: 1%">
+                <div class="tab-pane fade show active" id="content1">
+                    <div class="my-3 text-white" style="background: rgb(102, 235, 226)">
+
+                        <section id="introSection" class="py-5">
+                            <div class="container bg-white mb-5">
+                                <h1 class="zoomOut section-title text-center text-secondary mt-5 mb-5 pt-5">
+                                    目錄</h1>
+                                <!-- 修正排版為三項排一排 -->
+                                <div class="row ">
+                                    <div class="col-4">
+                                        <div class="intro-box">
+                                            <a href="./ticket page.html">
+                                                <div class="icon text-primary py-3">
+                                                    <i class="fa-solid fa-ticket fa-6x" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                                <h3 class="text-secondary">線上訂票</h3>
+                                                <div class="intro-line bg-primary"></div>
+
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <div class="intro-box">
+                                            <a href="./ticket-price.html">
+                                                <div class="icon text-primary py-3">
+                                                    <i class="fa-solid fa-hand-holding-dollar fa-6x"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                                <h3 class="text-secondary">票價表</h3>
+                                                <div class="intro-line bg-primary"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <div class="intro-box">
+                                            <a href="./booking.html">
+                                                <div class="icon text-primary py-3">
+                                                    <i class="fa-solid fa-cart-flatbed-suitcase fa-6x"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                                <h3 class="text-secondary">行李規範</h3>
+                                                <div class="intro-line bg-primary"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <div class="intro-box">
+                                            <a href="./booking.html">
+                                                <div class="icon text-primary py-3">
+                                                    <i class="fa-solid fa-handshake-angle fa-6x" aria-hidden="true"></i>
+                                                </div>
+
+                                                <h3 class="text-secondary">旅客服務</h3>
+                                                <div class="intro-line bg-primary"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <div class="intro-box">
+                                            <a href="./booking.html">
+                                                <div class="icon text-primary py-3">
+                                                    <i class="fa-solid fa-bullhorn fa-6x" aria-hidden="true"></i>
+                                                </div>
+                                                <h3 class="text-secondary">公司動態</h3>
+                                                <div class="intro-line bg-primary"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </section>
+                    </div>
+
+                </div>
+
+
+                <div class="tab-pane  fade show " id="content2">
+                    <div id="header" class="container pt-5 pb-5 py-5">
+                        <!-- 設定row內的區塊置中對齊 -->
+                        <div class="row justify-content-center  "
+                            style="background-color: #f5fbfcdd; padding-top: 5%; padding-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                            <div class="col-sm-10">
+
+                                <div class="bd-example-snippet bd-code-snippet">
+                                    <div class="bd-example m-0 border-0">
+                                    <nav>
+                                      <div class="nav nav-tabs mb-3" id="nav-tab3" role="tablist">
+                                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+                                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+                                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                      </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                      <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                                      </div>
+                                      <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                                      </div>
+                                      <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                        <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                                      </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <h1 class=" mb-5 text-center">公司介紹</h1>
+                                <p>金門-廈門兩島隔海相望，自古唇齒相依，猶如昆仲；公司名稱「金廈」，取用「金門與廈門」兩島命名，配合政府「開放金、馬、澎離島試辦兩岸小三通」政策，公司名稱相得益彰，極具意義與價值。<strong>
+                                </p>
+                                <p>民國90年為兩岸小三通「創辦元年」，次年公司成立，初創購置「金龍輪」投入金-廈航線營運，復於民國93年自澳洲購入客容量較大之「新金龍輪」替航，「金龍輪」轉賣馬祖長億公司經營兩馬小三通。
+                                </p>
+                                <p>因應小三通年年創新高客群，及石井、五通碼頭新增通航點，公司續於95、96年擴充船舶，先後添購日製「金祥龍及泉金」兩輪。</p>
+                                <p>為響應交通部航港局船舶汰舊換新政策，於106年8月起陸續新造「金瑞龍」、「新金祥龍」輪，汰換舊船投入金廈小三通航線，繼續服務兩岸往來旅客，參與締造「兩岸通航」歷史。
+                                </p>
+                                <p>公司位於金門金城鎮市區，成立10餘年來歷經3次董事會改組，經營團隊始終本著「以客為尊、真誠服務」的專業態度，樹立「航行安全、維保安全、旅客安全」之經營三安目標，秉持以「用心、誠心、信心」，金廈海運公司載運旅客，請「放心、安心、開心」之使命，全面創造全方位營運竸爭力，永續為兩岸小三通提供「安全、便捷」的服務。
+                                </p>
+                                <p>公司91年成立，為讓兩岸旅客與國際遊客清楚識別標幟，特以「紅色三角形」為基色背景，三角形內設計1個「K」字，右下劃「3條細白線」，作為公司簡易標幟圖樣。</p>
+                                <p>紅色三角形代表兩岸開啟「小三通」和平曙光，白色「K」代表「金門」，「3條細白線」代表小三通，與K字右下筆劃交叉，形成「X」，代表與「廈門」小三通；「金廈海運公司標幟」的設計，張顯公司緊密結合兩岸小三通之開展，與列記成為兩岸交流的圖像。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show" id="content3"
+                    style="background-color: rgba(249, 250, 251, 0.473);margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+                    <!-- Tab 3 Content -->
+                    <div class="container">
+                        <!-- <section id="reviewsSection"> -->
+                        <!-- TODO: 使用輪播(Carousel)元件放入以下兩頁內容 -->
+                        <!-- 內容輪播 -->
+                        <!-- b4-carousel-default -->
+                        <div id="carouselId" class="carousel slide" data-ride="carousel">
+                            <h1 class="section-title mb-5 text-center">郵輪介紹</h1>
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselId" data-slide-to="1"></li>
+                                <li data-target="#carouselId" data-slide-to="2"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./img/小三通/初日號-卡通圖.png" class="d-block w-100" alt="Slide 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/小三通/初日號-卡通圖2.png" class="d-block w-100" alt="Slide 2">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <h1>Another example headline.</h1>
+                                            <p>Some representative placeholder content for the second slide of the
+                                                carousel.
+                                            </p>
+                                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/小三通/金廈遊輪-初日號.jpg" class="d-block w-100" alt="Slide 3">
+                                    <div class="container">
+                                        <div class="carousel-caption text-end">
+                                            <h1>One more for good measure.</h1>
+                                            <p>Some representative placeholder content for the third slide of this
+                                                carousel.
+                                            </p>
+                                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        <!-- </div> -->
+                        <!-- 內容輪播 end -->
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                var myTabs = new bootstrap.Tab(document.getElementById('tab1'));
+                                myTabs.show(); // 默认显示第一个Tab
+
+                                var tab1 = new bootstrap.Tab(document.getElementById('tab1'));
+                                var tab2 = new bootstrap.Tab(document.getElementById('tab2'));
+                                var tab3 = new bootstrap.Tab(document.getElementById('tab3'));
+
+                                document.getElementById('tab1').addEventListener('click', function () {
+                                    tab1.show();
+                                });
+
+                                document.getElementById('tab2').addEventListener('click', function () {
+                                    tab2.show();
+                                });
+
+                                document.getElementById('tab3').addEventListener('click', function () {
+                                    tab3.show();
+                                });
+                            });
+                        </script>
+                    </div> 
+                </div><!-- Tab 3 Content end -->
+                    <div class="tab-pane fade show" id="content4" style="margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+                        
+                        <!-- <div class="tab-pane fade show" id="content4"
+                        style="background-color: rgba(249, 250, 251, 0.473);margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+                      -->
+                        <div class="container">
+                            <!-- <section id="reviewsSection"> -->
+                            <!-- TODO: 使用輪播(Carousel)元件放入以下兩頁內容 -->
+                            <!-- 內容輪播 -->
+                            <!-- b4-carousel-default -->
+                            <div id="carouselId2" class="carousel slide" data-ride="carousel">
+                                <h1 class="section-title mb-5 text-center">郵輪介紹</h1>
+                                
+                                <div class="carousel-inner">
+
+                                    <div class="carousel-item active">
+                                        <img src="./img/小三通/金門水頭碼頭(發船).jpg" class="d-block w-100" alt="Slide 1">
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <img src="./img/小三通/復興嶼.jpg" class="d-block w-100" alt="Slide 2">
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <img src="./img/小三通/猛虎嶼.jpg" class="d-block w-100" alt="Slide 3">
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <img src="./img/小三通/大膽島.jpg" class="d-block w-100" alt="Slide 4">
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <img src="./img/新增資料夾/賞廈門黃金海岸.jpg" class="d-block w-100" alt="Slide 5">
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <img src="./img/小三通/金門大橋.jpg" class="d-block w-100" alt="Slide 6">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./img/小三通/返回金門水頭碼頭.jpg" class="d-block w-100" alt="Slide 7">
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                                <h1>Another example headline.</h1>
+                                                <p>Some representative placeholder content for the second slide of the
+                                                    carousel.
+                                                </p>
+                                                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./img/小三通/金廈遊輪-初日號.jpg" class="d-block w-100" alt="Slide 3">
+                                        <div class="container">
+                                            <div class="carousel-caption text-end">
+                                                <h1>One more for good measure.</h1>
+                                                <p>Some representative placeholder content for the third slide of this
+                                                    carousel.
+                                                </p>
+                                                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="indicators-container">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselId2" data-slide-to="0" class="active">
+                                            <img src="./img/小三通/金門水頭碼頭(發船).jpg" class="d-block w-100" alt="Slide 1">
+                                        </li>
+                                        <li data-target="#carouselId2" data-slide-to="1">
+                                            <img src="./img/小三通/復興嶼.jpg" class="d-block w-100" alt="Slide 2">
+                                        </li>
+                                        <li data-target="#carouselId2" data-slide-to="2">
+                                            <img src="../img/小三通/猛虎嶼.jpg" class="d-block w-100" alt="Slide 3">
+                                        </li>
+                                        <li data-target="#carouselId2" data-slide-to="3">
+                                            <img src="./img/小三通/大膽島.jpg" class="d-block w-100" alt="Slide 4">
+                                        </li>
+                                        <li data-target="#carouselId2" data-slide-to="4">
+                                            <img src="./img/新增資料夾/賞廈門黃金海岸.jpg" class="d-block w-100" alt="Slide 5">
+                                        </li>
+                                        <li data-target="#carouselId2" data-slide-to="5">
+                                            <img src="./img/小三通/金門大橋.jpg" class="d-block w-100" alt="Slide 6">
+                                        </li>
+                                        <li data-target="#carouselId2" data-slide-to="6">
+                                            <img src="./img/小三通/返回金門水頭碼頭.jpg" class="d-block w-100" alt="Slide 7">
+                                        </li>
+                                    </ol>   
+                                </div>
+
+    
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselId2" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselId2" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!-- </div> -->
+                            <!-- 內容輪播 end -->
+    
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var myTabs = new bootstrap.Tab(document.getElementById('tab1'));
+                                    myTabs.show(); // 默认显示第一个Tab
+    
+                                    var tab1 = new bootstrap.Tab(document.getElementById('tab1'));
+                                    var tab2 = new bootstrap.Tab(document.getElementById('tab2'));
+                                    var tab3 = new bootstrap.Tab(document.getElementById('tab3'));
+                                    var tab4 = new bootstrap.Tab(document.getElementById('tab4'));
+    
+                                    document.getElementById('tab1').addEventListener('click', function () {
+                                        tab1.show();
+                                    });
+    
+                                    document.getElementById('tab2').addEventListener('click', function () {
+                                        tab2.show();
+                                    });
+    
+                                    document.getElementById('tab3').addEventListener('click', function () {
+                                        tab3.show();
+                                    });
+                                    document.getElementById('tab4').addEventListener('click', function () {
+                                        tab4.show();
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                    </div><!-- Tab 4 Content end -->
+                   
+
+            </div><!-- tab-content END-->
+    </header>
+    </header>
+    <!-- footer -->
+    <footer id="footer" class="pt-5 bg-secondary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5>團體票聯絡資訊</h5>
+                    <a href="mailto:service@brand.com">service@brand.com</a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5 class="text-uppercase">公司聯絡資訊</h5>
+
+                    <ul>
+                        <li>
+                            <a href="#">電話</a>
+                        </li>
+                        <li>
+                            <a href="#">傳真</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5 class="text-uppercase">其他資訊</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Help Center</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-end bg-dark mt-5 py-2 justify-content-center">
+            <p class="text-center">&copy; Copy right 2020</p>
+        </div>
+
+    </footer>
+    <!-- footer end -->
+
+
+
+    <!-- 引用 https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js-->
+    <script> src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"</script>
+    <!-- <script> src = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"</script> -->
+
+
+
+    <!-- jquery.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- popper.min.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@5.3.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap.min.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- 連結網頁主程式 -->
+    <script src="./js/main.js"></script>
+
+    <!-- 引入 flatpickr 的 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- 引入 flatpickr 相關的語言檔案（中文）-->
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/zh.js"></script>
+</body>
+
+
+</html>

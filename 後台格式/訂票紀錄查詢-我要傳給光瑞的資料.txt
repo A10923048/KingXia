@@ -1,0 +1,84 @@
+訂票紀錄查詢-我要傳給光瑞的資料
+{
+    買票人資料
+    "orderName": "周小寶",
+    "orderPhone": "0912345678",(頁面輸入)
+    "orderUid": "F197728291",(頁面輸入)
+   
+    
+    "orms": [
+        {   其他搭船人資料
+            "pno":54035,//航班代碼
+            "tdate": "2023-11-22"
+            "btime": "1030",
+            "etime": "1200",
+            "stime": "1000",//(訂票最後時間)
+            "port0": "水頭",
+            "port1": "水頭",
+            "sp": true,
+        },
+        {
+            "name": "王二狗",
+            "uid": "F128140889",
+            "phone": "0996325874",
+            "gender": "女",
+            "birthday": "1989-01-01",
+            "email":"456@456",
+            "country":"TWN", 
+            "ticketcode" : "01"
+        },
+        {
+            "name": "李鐵柱",
+            "uid": "F295777092",
+            "phone": "0996325874",
+            "gender": "女",
+            "birthday": "1989-01-01",
+            "email":"456@456",
+            "country":"TWN", 
+            "ticketcode" : "01"
+        },
+        {
+            "name": "林美花",
+            "uid": "F294900444",
+            "phone": "0996325874",
+            "gender": "女",
+            "birthday": "1989-01-01",
+            "email":"456@456",
+            "country":"TWN", 
+            "ticketcode" : "01"
+        },
+        {
+            "name": "奧特曼",
+            "uid": "F201814935",
+            "phone": "0996325874",
+            "gender": "女",
+            "birthday": "1989-01-01",
+            "email":"456@456",
+            "country":"TWN", 
+            "ticketcode" : "01"
+        },
+        {
+            "name": "王大強",
+            "uid": "F263823216",
+            "phone": "0996325874",
+            "gender": "女",
+            "birthday": "1989-01-01",
+            "email":"456@456",
+            "country":"TWN", 
+            "ticketcode" : "01"
+        },
+        {
+            "name": "陳美麗",
+            "uid": "F291528502",
+            "phone": "0996325874",
+            "gender": "女",
+            "birthday": "1989-01-01",
+            "email":"456@456",
+            "country":"TWN", 
+            "ticketcode" : "01"
+        }
+    ]
+}
+
+
+光瑞回傳結帳資料給我

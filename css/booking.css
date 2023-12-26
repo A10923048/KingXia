@@ -1,0 +1,847 @@
+/*=============================================
+=                  General                    =
+=============================================*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+
+
+/*=============================================
+=                  Navbar                     =
+=============================================*/
+
+.navbar {
+    box-shadow: 0 3px 18px rgba(0, 0, 0, .11);
+}
+
+/* 添加顶部空间 */
+.navbar+#header {
+    margin-top: 0px;
+    /* 在NAVBAR上方创建额外的顶部空间 */
+}
+
+
+.nav-pills .nav-link {
+    font-size: 16px;
+    /* 設定文字大小為16像素，您可以根據需要進行調整 */
+}
+
+/* #header1:hover:after {
+    opacity: .6;
+} */
+
+
+
+
+
+
+
+
+/*=============================================
+=                 FORM                =
+=============================================*/
+
+form {
+    border-radius: 0px;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    /* background-image: url('../img/wood-591631_1280.jpg'); */
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(0.5); */
+    position: relative;
+}
+
+form>.container {
+    position: relative;
+    z-index: 2;
+    margin-top: 40%px;
+    margin-bottom: 20%px;
+    padding: 100; */
+}
+
+form>.container>.button{
+    margin-top: 40%px;
+    margin-bottom: 20%px;
+}
+
+/* 表格對齊方式 */
+
+/* 
+#planpicker, #datetimepicker  {
+    display: flex;
+    justify-content: space-between;
+} */
+
+.form-container {
+    display: block;
+    justify-content: space-between;
+}
+
+
+/* 如果你想进一步定制内部子元素的样式，可以添加以下规则 */
+.form-container>div,p {
+    /* 子元素的样式 */
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.articleAA {
+    display: grid;
+    grid-template-columns: 1fr; /* 一个等分的列 */
+    align-items: center; /* 垂直居中，可根据需要调整 */
+    /* background-color: rgb(253, 253, 255); */
+    border: 3px solid rgb(255, 225, 104);
+    border-collapse: collapse;
+    width: 100%; /* 表格宽度设置为100%以适应容器 */
+ 
+}
+
+.article-button{
+    background-color: #20bb94;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+  
+
+
+
+
+
+
+
+/* 表單內容物格式 */
+/* 設定 */
+
+
+
+/*=============================================
+=                  introSection                  =
+=============================================*/
+#introSection {
+    border-radius: 0px;
+    /* margin-left:50px ; */
+    /* margin-right:50px ; */
+    /* margin-bottom: 0; */
+    /* padding-left: 50px; */
+    /* padding-right:50px; */
+    width: 100%;
+    height: 100%;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    background-image: url('../img/wood-591631_1280.jpg');
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(0.5); */
+    position: relative;
+}
+
+
+
+
+/*=============================================
+=                  Header                     =
+=============================================*/
+
+
+/* 加入背景圖片 */
+
+
+#header {
+    border-radius: 0px;
+    background-color:#EA9871;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding: 100px;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    background-image: url('../img/sea.jpg');
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center;
+    /* filter: brightness(0.5); */
+    position: relative;
+    /* opacity: 0.8; */
+}
+
+#header>.container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* 裁切邊角設定 */
+/* #header::before,
+#header::after {
+    content: "";
+    position:absolute;
+    transform: rotate(-45deg);
+    width: 200px;
+    height: 70px;
+    background: rgba(242, 241, 245, 0.708);
+    /* opacity: .4; */
+    /* display: block; 
+}   */
+
+/* #header::before {
+
+    top: -20px;
+    
+    left: -100px;
+    
+    border-bottom: 1px solid #aaa; 
+    
+    } */
+    
+
+/* #header::after {
+    
+    bottom: -20px;
+    
+    right: -110px;
+    
+    border-top: 1px solid #aaa;
+
+    
+    }  */
+
+/* 裁切邊角設定 */
+
+
+/* #header:hover:after {
+    opacity: .6;
+} */ 
+
+
+
+
+/* #header:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    opacity: .4;
+    display: block;
+    /* 定位到上層元素#header的左上角 */
+/* position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all .5s ease;
+} */
+
+/* #header:hover:after {
+    opacity: .6;
+} */
+
+/*=============================================
+=                  Header1                     =
+=============================================*/
+
+/* 加入背景圖片 */
+#header1 {
+    border-radius: 0px;
+    margin-bottom: 0;
+    padding: 100px 0;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    background-image: url('../img/wood-591631_1280.jpg');
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(0.5); */
+    position: relative;
+    /* opacity: 1; */
+}
+
+#header1>.container {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+/*=============================================
+=                  Header2                    =
+=============================================*/
+/* 加入背景圖片 */
+#header2 {
+    border-radius: 0px;
+    margin-bottom: 0px;
+    padding: 100px 0;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    background-image: url('../img/wood-591631_1280.jpg');
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(0.5); */
+    position: relative;
+    /* opacity: 1; */
+}
+
+#header2>.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 裁切邊角設定 */
+#header2::before,
+#header2::after {
+    content: "";
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 200px;
+    height: 70px;
+    background: rgba(242, 241, 245, 0.708);
+    /* opacity: .4; */
+    /* display: block; */
+}
+
+#header2::before {
+
+    top: -20px;
+
+    left: -100px;
+
+    border-bottom: 1px solid #aaa;
+    /**/
+
+}
+
+
+#header2::after {
+
+    bottom: -20px;
+
+    right: -110px;
+
+    border-top: 1px solid #aaa;
+
+
+}
+
+/* 裁切邊角設定 */
+
+
+/* #header:hover:after {
+    opacity: .6;
+} */
+
+
+
+
+
+/*=============================================
+=                  Intro                      =
+=============================================*/
+.intro-box {
+    background-color:#e6cb7a;
+    border-color: #000;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: all .5s ease-out;
+    padding: 15px 15px;
+    text-align: center;
+}
+
+
+
+.intro-box:hover {
+    background: white;
+    box-shadow: 0px 22px 22px rgba(0, 0, 0, .25);
+}
+
+.intro-line {
+    width: 20px;
+    height: 6px;
+    border-radius: 3px;
+    margin: 10px auto;
+    transition: all .5s ease;
+}
+
+.intro-box:hover .intro-line {
+    width: 40px;
+}
+
+.intro-box .icon {
+    opacity: .7;
+    position: relative;
+    top: 10px;
+    transition: all .3s ease;
+}
+
+.intro-box:hover .icon {
+    opacity: 1;
+    top: 0px;
+}
+
+.intro-line {
+    background: #20bb94;
+}
+
+.intro-div{
+    background: #20bb94;
+}
+
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+
+/*=============================================
+=                  Features                   =
+=============================================*/
+
+/*=============================================
+=                  Reviews                    =
+=============================================*/
+/* 加入背景圖片 */
+#reviewsSection {
+    border-radius: 0px;
+    margin-bottom: 0px;
+    padding: 300px 0;
+    background-image: url("../img/wood-591631_1280.jpg");
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(1);  */
+    position: relative;
+}
+
+/*=============================================
+=                  Reviews 2                   =
+=============================================*/
+/* 加入背景圖片 */
+#reviewsSection2 {
+    border-radius: 0px;
+    margin-bottom: 0px;
+    padding: 300px 0;
+    background-image: url("../img/wood-591631_1280.jpg");
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(1);  */
+    position: relative;
+}
+
+.container1 {
+    width: 100%;
+    /* 設定圖片寬度為100% */
+    height: auto;
+    /* 讓高度自動調整，以保持圖片比例 */
+}
+
+.carousel-inner .carousel-item img {
+    width: 200px;
+    /* 設定圖片寬度為100% */
+    height: auto;
+    /* 讓高度自動調整，以保持圖片比例 */
+}
+
+/* 調整圖片輪播的最大寬度，以防止溢出 */
+#imageCarouselA,
+#imageCarouselB {
+    max-width: 50%;
+    /* 使圖片輪播寬度不超過其容器 */
+}
+
+/* 調整輪播內部圖片的大小 */
+#imageCarouselA .carousel-inner img,
+#imageCarouselB .carousel-inner img {
+    max-width: 80%;
+    /* 使圖片寬度不超過其容器 */
+    height: auto;
+    /* 讓高度自動調整，以保持圖片比例 */
+}
+
+.imageCarouselA {
+    background-size: cover;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    filter: grayscale(100%);
+    transition: all .5s ease;
+}
+
+
+/*=============================================
+=                  Intro                      =
+=============================================*/
+.intro-box {
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: all .5s ease-out;
+    padding: 15px 15px;
+    text-align: center;
+}
+
+
+
+.intro-box:hover {
+    background: #ffe186;
+    box-shadow: 0px 22px 22px rgba(0, 0, 0, .25);
+}
+
+/*=============================================
+=                  Gallery                    =
+=============================================*/
+/* 在螢幕寬度小於500px時的樣式 */
+@media (max-width: 500px) {
+    #galleryImageCarousel {
+        display: block;  /* 顯示為區塊元素，即呈現為一個方框 */
+        margin: 0 auto;  /* 水平置中 */
+        max-width: 80%;  /* 控制最大寬度，根據需要調整 */
+    }
+
+    #galleryImageCarousel .carousel-inner {
+        border: 1px solid #ddd;  /* 添加邊框 */
+        border-radius: 10px;  /* 圓角邊框，根據需要調整 */
+        overflow: hidden;  /* 隱藏超出邊框的部分 */
+    }
+
+    #galleryImageCarousel .carousel-item {
+        text-align: center;  /* 文字水平置中 */
+    }
+}
+
+/* 在螢幕寬度大於500px時的樣式 */
+@media (min-width: 501px) {
+    #galleryImageCarousel {
+        display: none;  /* 隱藏輪播器 */
+    }
+}
+
+
+
+
+/* TODO: 設定Hover特效 */
+
+[id^='galleryImage'] {
+    background-size: cover;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    filter: grayscale(100%);
+    transition: all .5s ease;
+}
+
+[id^='galleryImage']>.gallery-text {
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 8px 10px rgba(0, 0, 0, .5);
+    text-align: center;
+    transition: all .5s ease;
+}
+
+[id^='galleryImage']:hover {
+    filter: grayscale(0%);
+}
+
+[id^='galleryImage']:hover>.gallery-text {}
+
+/* 放入背景圖片 */
+
+#galleryImage1 {
+    background-image: url('../img/小三通/金門水頭碼頭\(發船\).jpg');
+}
+
+#galleryImage2 {
+    background-image: url('../img/小三通/復興嶼.jpg');
+}
+
+#galleryImage3 {
+    background-image: url('../img/小三通/猛虎嶼.jpg');
+}
+
+#galleryImage4 {
+    background-image: url('../img/小三通/大膽島.jpg');
+}
+
+#galleryImage5 {
+    background-image: url('../img/小三通/大膽島.jpg');
+}
+
+#galleryImage6 {
+    background-image: url('../img/新增資料夾/賞廈門黃金海岸.jpg');
+}
+
+#galleryImage7 {
+    background-image: url('../img/小三通/金門大橋.jpg');
+}
+
+#galleryImage8 {
+    background-image: url('../img/小三通/返回金門水頭碼頭.jpg');
+}
+
+/* 放入背景圖片 */
+
+#galleryImage9 {
+    background-image: url('../img/小三通/金門水頭碼頭\(發船\).jpg');
+}
+
+#galleryImage10 {
+    background-image: url('../img/小三通/復興嶼.jpg');
+}
+
+#galleryImage11 {
+    background-image: url('../img/小三通/猛虎嶼.jpg');
+}
+
+#galleryImage12 {
+    background-image: url('../img/小三通/大膽島.jpg');
+}
+
+#galleryImage13 {
+    background-image: url('../img/小三通/大膽島.jpg');
+}
+
+#galleryImage14 {
+    background-image: url('../img/新增資料夾/賞廈門黃金海岸.jpg');
+}
+
+#galleryImage15 {
+    background-image: url('../img/小三通/金門大橋.jpg');
+}
+
+#galleryImage16 {
+    background-image: url('../img/小三通/返回金門水頭碼頭.jpg');
+}
+
+
+.custom-prev {
+    position: absolute;
+    top: 50%;
+    /* 以父元素上边缘为基准垂直居中 */
+    left: 10px;
+    /* 距离左侧 10px */
+    transform: translateY(-50%);
+    /* 使元素垂直居中 */
+}
+
+
+
+/*=============================================
+=                  Start Now                  =
+=============================================*/
+
+/*=============================================
+=                   Footer                    =
+=============================================*/
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-end p {
+    font-size: 8px;
+    margin: 0;
+}
+
+#goBackBtn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+/*=============================================
+=                   AD-BOX                    =
+=============================================*/
+
+.ad-box {
+    width: 300px;
+    position: fixed;
+    right: -275px;
+    bottom: 80px;
+    z-index: 100;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    display: flex;
+    box-shadow: 0px 20px 15px rgba(0, 0, 0, 0.2);
+    transition: all .3s ease;
+}
+
+/* 選到同時擁有.ad-box跟.active的元素 */
+.ad-box.active {
+    right: 0px;
+}
+
+.left-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #ddd;
+}
+
+.ad-toggle-btn {
+    width: 25px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+}
+
+.ad-toggle-btn>i {
+    transform: rotateZ(90deg);
+}
+
+.ad-toggle-btn:hover {
+    color: #666;
+}
+
+.right-part {
+    padding: 10px;
+}
+
+.right-part>p {
+    margin-bottom: 0;
+}
+
+/*=============================================
+=                   動畫                   =
+=============================================*/
+/* loader標題 動畫 */
+.loader span {
+    color: #faebd7;
+    text-shadow: 0 0 0 #faebd7;
+    -webkit-animation: loading 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes loading {
+    to {
+      text-shadow: 20px 0 70px #ff0266;
+      color: #ff0266;
+    }
+  }
+  .loader span:nth-child(2) {
+    -webkit-animation-delay: 0.1s;
+  }
+  .loader span:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+  }
+  .loader span:nth-child(4) {
+    -webkit-animation-delay: 0.3s;
+  }
+  .loader span:nth-child(5) {
+    -webkit-animation-delay: 0.4s;
+  }
+  .loader span:nth-child(6) {
+    -webkit-animation-delay: 0.5s;
+  }
+  .loader span:nth-child(7) {
+    -webkit-animation-delay: 0.6s;
+  }
+  .loader span:nth-child(8) {
+    -webkit-animation-delay: 0.7s;
+  }
+  .loader span:nth-child(9) {
+    -webkit-animation-delay: 0.8s;
+  }
+  
+  .loader span:nth-child(10) {
+    -webkit-animation-delay: 0.9s;
+  }
+  .loader span:nth-child(11) {
+    -webkit-animation-delay: 1s;
+  }
+  .loader span:nth-child(12) {
+    -webkit-animation-delay: 1.1s;
+  }
+  .loader span:nth-child(13) {
+    -webkit-animation-delay: 1.2s;
+  }
+  .loader span:nth-child(14) {
+    -webkit-animation-delay: 1.3s;
+  }
+  .loader span:nth-child(15) {
+    -webkit-animation-delay: 1.4s;
+  }
+  .loader span:nth-child(16) {
+    -webkit-animation-delay: 1.5s;
+  }
+  .loader span:nth-child(17) {
+    -webkit-animation-delay: 1.6s;
+  }
+  .loader span:nth-child(18) {
+    -webkit-animation-delay: 1.7s;
+  }
+  .loader span:nth-child(19) {
+    -webkit-animation-delay: 1.8s;
+  }
+  .loader span:nth-child(20) {
+    -webkit-animation-delay: 1.9s;
+  }
+  .loader span:nth-child(21) {
+    -webkit-animation-delay: 2s;
+  }
+  .loader span:nth-child(22) {
+    -webkit-animation-delay: 2.1s;
+  }
+  
+
+/* loader標題 動畫END */
+
+
+/* 動畫 */
+
+@keyframes enter {
+    0%,  {
+      transform: translateX(-200%); /* 从左边进入并停在0位置 */
+    }
+     {
+    50%  transform: translateX(0); /* 暂停，元素停在0位置 */
+    }
+  }
+  
+  @keyframes exit {
+    100% {
+      transform: translateX(+100%); /* 从0位置移出到右边 */
+    }
+  }
+  
+  
+  .my-element {
+    /* display: inline-block; */
+    margin: 0 0.5rem;
+    animation:enter 4s ease-in infinite, swing 6s infinite , exit 4s ease-out infinite; 
+    /* 使用 'enterAndExit' 和 'bounce' 动画效果 */
+  }
+  
+  
+  
+  
+  

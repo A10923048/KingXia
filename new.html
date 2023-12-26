@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- 光瑞給的<meta name="_csrf" th:content="${_csrf.token}">
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"> -->
+
+  <title>金廈海運-首頁</title>
+  <!-- <link rel="icon shortcut" href="./img/favicon.ico"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- TODO: 客製化Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <!-- Bootstrap CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+  <!-- 使用font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+  <!-- 使用style.css -->
+  <link rel="stylesheet" href="./css/new.css">
+  <!-- 使用日期輪用 -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <!-- 使用Boostrap Navbar -->
+  <!-- TODO: 設定Navbar緊貼畫面上緣 -->
+  <!-- TODO: 點擊滾動目標 -->
+  <!-- b4-navbar-default -->
+  <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
+    <a class="navbar-brand" href="./index.html">首頁</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#introSection">訂票</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#featuresSection">行程介紹</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- navbar end -->
+
+
+  <!-- header -->
+  <header id="header">
+    <div class="row justify-content-center  mb-1 "
+      style="margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+
+      <div>
+        <h1 class="loader ">
+          <img src="./img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
+          <span class="m">訂</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">票</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">頁</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">面</span>
+          <span class="m"></span>
+        </h1>
+
+      </div>
+    </div>
+    <div class="container">
+      <img id="ship-bottle" class="rounded-circle mt  my-element" src="img/瓶中船.png" alt="user photo"
+        style="width: 50%; margin-bottom: 20%;">
+      <!-- <a class="btn btn-outline-primary" href="">Link</a> -->
+    </div>
+
+
+
+    <header id="header" class="jumbotron text-center bg-dark">
+      <div class="container">
+
+        <section id="featuresSection" class="py-5 bg-secondary" style="border-radius: 15px;">
+          <div class="container">
+
+            <!-- <h1 class=" mb-5 text-center text-white">訂票資訊</h1> -->
+            <!-- 設定row內的區塊置中對齊 -->
+            <div class="row justify-content-center">
+
+              <nav class="nav nav-pills flex-row justify-content-center" id="myNav">
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">行程介紹</button>
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleB')">線上訂票</button>
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">紀錄查詢</button>
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleCCC')">紀錄查詢-詳細資訊</button>
+              </nav>
+
+              <div class="col-12">
+
+                <section id="introSection" class="py-5">
+                  <!-- <div class="container  mb-5" style="background-color: rgba(213, 194, 155, 0.663); padding-top: 5%; padding-bottom: 5%;padding-left: 5%;padding-right: 5%;">
+                            -->
+                  <div class="container  mb-5">
+
+
+                    <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
+
+                      <article id="articleA" class="my-3  tab-pane show active " style="background: rgb(102, 235, 226)">
+                        <h1 class=" section-title text-center text-white mt-5 mb-3 pt-5">訂票資訊
+                        </h1>
+                        <nav id="articleA-nav" class="navbar navbar-expand-md navbar-light bg-light  mt-5 mb-3 pt-5">
+                          <!-- <a class="navbar-brand" href="./index.html">訂票資訊</a> -->
+                          <button class=" articleA-navbar-toggler navbar-toggler d-lg-none" type="button"
+                            data-toggle="collapse" data-target="#collapsibleNavId2" aria-controls="collapsibleNavId2"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse " id="collapsibleNavId2">
+                            <ul class="navbar-nav mx-auto justify-content-center">
+                              <li class="nav-item ">
+                                <div class="col">
+                                  <div class="card mb-3 rounded-3 shadow-sm border-primary">
+                                    <div class="card-header py-3 text-bg-primary border-primary">
+                                      <h4 class="my-0 fw-normal">日航標準版</h4>
+                                    </div>
+                                    <div class="card-body">
+                                      <h1 class="card-title pricing-card-title">
+                                        $29<small class="text-body-secondary fw-light">/mo</small>
+                                      </h1>
+                                      <ul class="list-unstyled mt-3 mb-4">
+                                        <li>介紹文字</li>
+                                        <li>介紹文字</li>
+                                      </ul>
+                                      <!-- <button type="button"class="nav-link w-100 btn btn-lg btn-primary"href="#articleB"> -->
+                                      <button class="w-100 btn btn-lg btn-outline-primary" onclick="openArticleB()">
+                                        <i class="fa-solid fa-hand-pointer"></i>&nbsp;&nbsp;立即訂票
+                                      </button>
+                                      <!-- </button> -->
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="nav-item">
+                                <div class="col">
+                                  <div class="card mb-3 rounded-3 shadow-sm">
+                                    <div class="card-header py-3">
+                                      <h4 class="my-0 fw-normal">日航豪華版</h4>
+                                    </div>
+                                    <div class="card-body">
+                                      <h1 class="card-title pricing-card-title">
+                                        $0<small class="text-body-secondary fw-light">/mo</small>
+                                      </h1>
+                                      <ul class="list-unstyled mt-3 mb-4">
+                                        <li>介紹文字</li>
+                                        <li>介紹文字</li>
+                                      </ul>
+
+                                      <button type="button" class="w-100 btn btn-lg btn-outline-dark" disabled><i
+                                          class="fa-solid fa-phone-volume">電話訂票</i></button>
+
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </li>
+                              <li class="nav-item">
+                                <div class="col">
+                                  <div class="card mb-3 rounded-3 shadow-sm">
+                                    <div class="card-header py-3">
+                                      <h4 class="my-0 fw-normal">夜航豪華版</h4>
+                                    </div>
+                                    <div class="card-body">
+                                      <h1 class="card-title pricing-card-title">
+                                        $15<small class="text-body-secondary fw-light">/mo</small>
+                                      </h1>
+                                      <ul class="list-unstyled mt-3 mb-4">
+                                        <li>介紹文字</li>
+                                        <li>介紹文字</li>
+                                      </ul>
+                                      <button type="button" class="w-100 btn btn-lg btn-outline-dark" disabled><i
+                                          class="fa-solid fa-phone-volume">電話訂票</i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </nav>
+
+                        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center"
+                          style="padding-left: 2%;padding-right: 2%;"></div>
+                        <h2 class="display-6 text-center mb-4">行成比較表</h2>
+
+                        <div class="table-responsive">
+                          <table class="table text-center">
+                            <thead>
+                              <tr>
+                                <th style="width: 25%;"></th>
+                                <th style="width: 25%;">日航標準版</th>
+                                <th style="width: 25%;">日航豪華版</th>
+                                <th style="width: 25%;">夜航豪華版</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row" class="text-start">狀態</th>
+                                <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                  </svg>開放</td>
+                                <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                  </svg>未開放</td>
+                                <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                  </svg>未開放</td>
+                              </tr>
+                              <tr>
+                                <th scope="row" class="text-start">訂票方式</th>
+                                <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                  </svg>網路訂票</td>
+                                <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                  </svg>電話訂票</td>
+                                <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                  </svg>電話訂票</td>
+                              </tr>
+
+                            </tbody>
+
+                            <tbody>
+                              <tr>
+                                <th scope="row" class="text-start">備註</th>
+                                <td colspan="3"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check" />
+                                  </svg>備註</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        </main>
+
+
+
+                      </article>
+                      <article id="articleB" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
+                        <div id="custom-alert" class="alert alert-danger" role="alert"
+                          style="position: relative;display: none;">
+                          <p id="alert-result"></p>
+                          <i class="fa-solid fa-circle-xmark fa-2x" style="position: absolute; top: 5%; right: 0%;"
+                            onclick="closeAlert()"></i>
+                        </div>
+
+                        <h1 class=" section-title text-center text-white mt-5 mb-5 pt-5">訂票資訊
+                        </h1>
+
+
+                        <!-- 修正排版為三項排一排 -->
+                        <div class="row mt-5 mb-5 text-white">
+                          <div class="col-md-4 pt-5 pb-5">
+                            <!-- <div class="col-md-6 "> -->
+                            <div class="intro-box">
+                              <label for="plan">
+                                <i class="fa-solid fa-list-check fa-6x"></i>
+                                <h6>行&nbsp;&nbsp;&nbsp;程</h6>
+                              </label>
+                              <div id="planpicker" class=" justify-content-start">
+                                <div class="col"><input type="radio" name="trip" value="日航標準版" checked disabled>日航標準版
+                                </div>
+                                <!-- <div class="col"><input type="radio" name="trip" value="日航豪華版" disabled>日航豪華版</div>
+                                                                <div class="col"><input type="radio" name="trip" value="夜航標準版" disabled>夜航標準版</div> -->
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-4 pt-5 pb-5">
+                            <!-- <div class="col-md-6 "> -->
+
+                            <div class="intro-box">
+                              <label for="plan">
+                                <i class="fa-solid fa-ticket fa-6x"></i>
+                                <h6>&nbsp;票數選擇:&nbsp;</h6>
+                              </label>
+                              <div id="Quantity">
+                                <div>
+                                  <label for="ticketS">
+                                    <input type="number" min="1" max="15" id="ticketQuantity" value="1">
+                                    <!-- <select >
+                                                                            <option value="" selected disabled hidden>請選擇數量</option>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="1">7</option>
+                                                                            <option value="2">8</option>
+                                                                            <option value="3">9</option>
+                                                                            <option value="4">10</option>
+                                                                        </select> -->
+
+
+                                    張
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="col-md-4 pt-5 pb-5">
+                            <div class="intro-box">
+                              <div class="datetimepicker">
+                                <label for="datetime">
+                                  <i class="fa-solid fa-calendar-days fa-6x"></i>
+                                  <h6>出發日期</h6>
+                                </label>
+                                <div>
+                                  <!-- <input type="datetime-local" id="searching-date"> -->
+
+                                  <!-- 在 HTML 中創建日期輸入欄 -->
+                                  <input type="date" id="datePicker" placeholder="選擇日期範圍" value="">
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button class="article-button mt-5 mb-5 " type="button" id="search-js">查詢</button>
+
+                      </article>
+
+                      <article id="articleAA" class="my-3 pb-5 tab-pane"
+                        style="display:none ; background-color: rgb(245, 240, 220);">
+
+                        <table>
+                          <div id="planpickered" class="pt-5 pb-5" style="background: rgb(102, 235, 226)">
+
+                            <label for="plan">
+                              <h1 class="section-title mb-5 text-center">餘票顯示</h1>
+                              <p class="article-p" id="planpicker-result">行程：</p>
+
+                              <p class="article-p" id="ticketQuantity-result">票數：</p>
+
+                              <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
+                          </div>
+
+                        </table>
+                        <main>
+
+                          <div class="container">
+                            <div id="introBoxCarousel" class="carousel slide pb-5" data-ride="carousel"
+                              data-interval="false">
+                              <div class="carousel-inner">
+                                <p class="article-p" id="searchingdate-result">出發日期：</p>
+                                <!-- 這裡將動態生成 Carousel 的每一頁 -->
+
+
+                                <!-- 控制按鈕 -->
+                                <a id="carousel-control-prev" href="#introBoxCarousel" role="button" data-slide="prev"
+                                  style="left: 0;">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a id="carousel-control-next" href="#introBoxCarousel" role="button" data-slide="next"
+                                  style="right: 0;">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="table-responsive">
+                            <h2 class="display-6 text-center mb-4">餘票顯示</h2>
+                            <table class="table text-center">
+                              <thead>
+                                <tr>
+                                  <th style="width: 20%;" id="shipID0">航班代碼</th>
+                                  <th style="width: 20%;" id="btime">出發時間</th>
+                                  <th style="width: 20%;" id="etime">結束時間</th>
+                                  <th style="width: 20%;" id="qty">餘票數</th>
+                                  <th style="width: 20%;">訂票</th>
+                                </tr>
+                              </thead>
+                              <tbody id="tickets-result">
+                                <!-- <tr>
+                                                                        <th scope="row" class="text-start">shipID0</th>
+                                                                        <td>
+                                                                            <svg class="bi" width="24" height="24">
+                                                                                <use xlink:href="#check" />
+                                                                            </svg>
+                                                                            btime
+                                                                        </td>
+                                                                        <td>
+                                                                            <svg class="bi" width="24" height="24">
+                                                                                <use xlink:href="#check" />
+                                                                            </svg>
+                                                                            etime
+                                                                        </td>
+                                                                        <td>
+                                                                            <svg class="bi" width="24" height="24">
+                                                                                <use xlink:href="#check" />
+                                                                            </svg>
+                                                                            qty
+                                                                        </td>
+                                                                        <td>
+                                                                            <svg class="bi" width="24" height="24">
+                                                                                <use xlink:href="#check" />
+                                                                            </svg>
+                                                                            <a class="article-button"
+                                                                                href="./Payment Page.html">
+                                                                                <i class="fa-solid fa-ticket fa-3x"
+                                                                                    aria-hidden="true"></i>
+                                                                                <span class="sr-only">訂票</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr> -->
+
+
+                              </tbody>
+
+
+                            </table>
+                          </div>
+                        </main>
+                      </article>
+                      <!-- Button trigger modal -->
+
+
+
+
+                      <article id="articleCCC">
+                        <div class="container text-white my-3 pb-5 tab-pane bg-secondary">
+                          <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
+                            <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">購票人資料填寫(請下拉選單)</h2>
+                            <nav class="small" id="toc">
+                              <ul class="list-unstyled">
+                                <li class="my-2">
+                                  <button class="btn d-inline-flex align-items-center collapsed border-0"
+                                    data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                                    aria-controls="contents-collapse">其他旅客資料(1)</button>
+                                  <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                    <div class="table-responsive">
+                                      <table>
+                                        <div id="planpickered" class="pt-5 pb-1" style="background: rgb(102, 235, 226)">
+                                          <label for="plan">
+                                            <h2 class="section-title mb-5 text-center text-white">其他旅客資料</h2>
+                                        </div>
+                                      </table>
+                                      <main>
+                                        <div class="table-responsive pt-4" style=" background-color: rgb(245, 240, 220);">
+                                          <table class="table text-center">
+                                            <thead>
+                                              <tr>
+                                                <th style="width: 30%;">
+                                                  <i class="fa-solid fa-earth-americas fa-4x"></i>
+                                                  <h6>國籍</h6>
+                                                  <select class="form-select" id="country" required>
+                                                    <option value="">台灣</option>
+                                                    <option>香港</option>
+                                                    <option>大陸</option>
+                                                    <option>其他</option>
+                                                  </select>
+                                                </th>
+                                                <th style="width: 20%;" id="gender">
+                                                  <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                                  <h6>性別</h6>
+                                                  <select class="form-select" id="gender" required>
+                                                    <option value="">女</option>
+                                                    <option>男</option>
+                                                  </select>
+                                                </th>
+                                                <th style="width: 40%;" id="country">
+                                                  <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                                  <h6>出生日期</h6>
+                                                  <div>
+                                                      <input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">
+                                                  </div>
+                                                </th>
+                                              </tr>
+                                            </thead>
+                                            <thead id="tickets-result2">
+                                              <tr>
+                                                <th style="width: 40%;">
+                                                  <svg class="bi" width="24" height="24">
+                                                    <use xlink:href="#check" />
+                                                  </svg>
+                                                  <h6>身分證/護照號碼</h6>
+                                                  <input type="text" class="form-control" id="orderName" placeholder="" value=""
+                                                    required>
+                                                </th>
+                                                <th scope="row" class="text-start" >
+                                                  <h6>姓名</h6>
+                                                  <input type="text" class="form-control" id="orderName" placeholder="" value=""
+                                                    required>
+                                                </th>
+                                                <th style="width: 50%;">
+                                                  <svg class="bi" width="24" height="24">
+                                                    <use xlink:href="#check" />
+                                                  </svg>
+                                                  <h6>email</h6>
+                                                  <input type="text" class="form-control" id="orderName" placeholder="" value=""
+                                                    required>
+                                                </th>
+                                              </tr>
+                                            </thead>
+                                          </table>
+                                        </div>
+                                      </main>
+                                    </div>
+                                  </ul>
+                                </li>
+                                <!-- <li class="my-2">
+                                  <button class="btn d-inline-flex align-items-center collapsed border-0"
+                                    data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                                    aria-controls="contents-collapse">其他旅客資料(1)</button>
+                                  <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                    <div class="table-responsive">
+
+
+                                      <div class="row g-5 text-primary">
+                                        <div class="col-md-5 col-lg-4 order-md-last">
+                                          <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-primary">訂單內容</span>
+                                            <span class="badge bg-primary rounded-pill">3</span>
+                                          </h4>
+                                          <ul class="list-group mb-3">
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">行程:</h6>
+
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(行程顯示)</h6>
+                                              </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">票數:</h6>
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(票數顯示)</h6>
+                                              </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">船班:</h6>
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(船班顯示)</h6>
+                                              </div>
+                                            </li>
+
+                                          </ul>
+
+                                        </div>
+                                        <div class="col-md-5 col-lg-4 order-md-last">
+                                          <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-primary">訂單內容2</span>
+                                            <span class="badge bg-primary rounded-pill">3</span>
+                                          </h4>
+                                          <ul class="list-group mb-3">
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">行程:</h6>
+
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(行程顯示)</h6>
+
+                                              </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">票數:</h6>
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(票數顯示)</h6>
+                                              </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">船班:</h6>
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(船班顯示)</h6>
+                                              </div>
+                                            </li>
+                                          </ul>
+
+                                        </div>
+                                        <div class="col-md-5 col-lg-4 order-md-last">
+                                          <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-primary">訂單內容3</span>
+                                            <span class="badge bg-primary rounded-pill">3</span>
+                                          </h4>
+                                          <ul class="list-group mb-3">
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">行程:</h6>
+
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(行程顯示)</h6>
+
+                                              </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">票數:</h6>
+
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(票數顯示)</h6>
+
+                                              </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">船班:</h6>
+
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(船班顯示)</h6>
+
+                                              </div>
+                                            </li>
+
+                                          </ul>
+
+                                        </div>
+                                        <div class="col-md-5 col-lg-4 order-md-last">
+                                          <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-primary">訂單內容3</span>
+                                            <span class="badge bg-primary rounded-pill">3</span>
+                                          </h4>
+                                          <ul class="list-group mb-3">
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">行程:</h6>
+
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(行程顯示)</h6>
+
+                                              </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">票數:</h6>
+
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(票數顯示)</h6>
+
+                                              </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                              <div>
+                                                <h6 class="my-0">船班:</h6>
+
+                                              </div>
+                                              <div>
+                                                <h6 class="my-0">(船班顯示)</h6>
+
+                                              </div>
+                                            </li>
+
+                                          </ul>
+
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </ul>
+                                </li> -->
+                              </ul>
+                            </nav>
+                          </aside>
+                        </div>
+                      </article>
+
+
+                      <article id="articleC" class="my-3 tab-pane">
+
+                        <div id="custom-alert-c" class="alert alert-danger" role="alert"
+                          style="position: relative;display: none;">
+                          <p id="alert-text-c"></p>
+                          <i class="fa-solid fa-circle-xmark fa-2x" style="position: absolute; top: 5%; right: 0%;"
+                            onclick="closeAlertC()"></i>
+                        </div>
+
+                        <div class="col-md-12 text-white justify-content-center">
+                          <h2 class="section-title mb-5 text-center ">訂票紀錄查詢</h2>
+                          <div class="intro-box">
+                            <i class="fa-solid fa-user-check fa-6x"></i>
+                            <div class="ROW">
+                              <h5 class="text-uppercase">主要訂票人</h5>
+                              <h6 class="text-uppercase">資料</h5>
+                            </div>
+                            <div class="intro-box-box">
+                              <div class="max-width">
+                                <div class="input-container">
+                                  <p>電話:</p>
+                                  <input type="text" id="hx-phone" size="15">
+                                </div>
+                                <!-- 其他表单字段 -->
+
+                                <div class="input-container">
+                                  <p>身分證:</p>
+                                  <input type="text" id="hx-id" size="15">
+                                </div>
+                              </div>
+                            </div>
+                            <button class="article-button mt-5 mb-5 " type="button" id="search-hx-js">查詢</button>
+                          </div>
+                        </div>
+                        <!-- <button class="article-button mt-5 mb-5 " type="button" id="search-hx-js">查詢</button> -->
+                      </article>
+
+                      <article id="articleCC" class="my-3 pb-5 tab-pane"
+                        style="display:none ; background-color: rgb(245, 240, 220);">
+
+                        <table>
+                          <div id="planpickered" class="pt-5 pb-5" style="background: rgb(102, 235, 226)">
+
+                            <label for="plan">
+                              <h1 class="section-title mb-5 text-center">主要訂票人資料顯示</h1>
+
+                              <p class="article-p" id="hx-orderName"></p>
+                              <p class="article-p" id="hx-phone-result"></p>
+                              <p class="article-p" id="hx-id-result"></p>
+
+                              <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
+                          </div>
+
+                        </table>
+                        <main>
+                          <div class="table-responsive">
+                            <h2 class="display-6 text-center mb-4">訂單紀錄顯示</h2>
+                            <table class="table text-center">
+                              <thead>
+                                <tr>
+
+                                  <th style="width: 20%;" id="hx_oreder">訂單編號</th>
+                                  <th style="width: 20%;" id="hx_shipID">航班代碼</th>
+                                  <th style="width: 20%;" id="hx_date">出發日期</th>
+                                  <th style="width: 20%;" id="hx_btime">出發時間</th>
+                                  <th style="width: 20%;" id="hx_detial">詳細資訊</th>
+                                </tr>
+                              </thead>
+                              <tbody id="hx-result">
+                                <!-- <tr>
+                                                                        <td scope="row" class="text-start">shipID0</td>
+                                                                        <td>
+                                                                            <svg class="bi" width="24" height="24">
+                                                                                <use xlink:href="#check" />
+                                                                            </svg>
+                                                                            btime
+                                                                        </td>
+                                                                        <td>
+                                                                            <svg class="bi" width="24" height="24">
+                                                                                <use xlink:href="#check" />
+                                                                            </svg>
+                                                                            etime
+                                                                        </td>
+                                                                        <td>
+                                                                            <svg class="bi" width="24" height="24">
+                                                                                <use xlink:href="#check" />
+                                                                            </svg>
+                                                                            qty
+                                                                        </td>
+                                                                        <td>
+                                                                            <svg class="bi" width="24" height="24">
+                                                                                <use xlink:href="#check" />
+                                                                            </svg>
+                                                                            <a class="article-button"
+                                                                                href="./Payment Page.html">
+                                                                                <i class="fa-solid fa-ticket fa-3x"
+                                                                                    aria-hidden="true"></i>
+                                                                                <span class="sr-only">訂票</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr> -->
+
+
+                              </tbody>
+
+
+                            </table>
+                          </div>
+                        </main>
+                      </article>
+
+
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <!-- featuresSection end -->
+            </article>
+          </div>
+      </div> <!-- containter END-->
+
+
+
+      </div>
+      </div>
+      <!-- md-6 END-->
+
+
+
+
+
+
+    </header>
+  </header>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">主要訂票人資料顯示</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <table class="">
+          <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center"
+            style="background: rgb(102, 235, 226)">
+            <label for="plan">
+              <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
+
+              <p class="article-p" id="Modal-orderNum">訂單編號：</p>
+              <p class="article-p" id="Modal-pno">航班代碼：</p>
+              <p class="article-p" id="Modal-tdate">出發日期：</p>
+              <p class="article-p" id="Modal-btime">出發時間：</p>
+              <p class="article-p" id="Modal-orderName">主要訂票人姓名：</p>
+              <p class="article-p" id="Modal-ticCount">票數：</p>
+
+              <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
+          </div>
+
+        </table>
+        <div class="modal-body row" id="modal-col">
+
+          <!--
+            <div class="col-md-5 col-lg-6 order-md-last">
+              <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-primary">其他買票人資料</span>
+                <span class="badge bg-primary rounded-pill">3</span>
+              </h4>
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">票號:</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0" id="ticnum">(票數顯示)</h6>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">姓名:</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0">id="tname"</h6>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">: 身分證/護照號碼</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0">id</h6>
+                  </div>
+            
+                </li>
+            
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">:email</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0">(email顯示)</h6>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">mobile:</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0">(mobile顯示)</h6>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            -->
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- footer -->
+  <footer id="footer" class="pt-5 bg-secondary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5>團體票聯絡資訊</h5>
+          <a href="mailto:service@brand.com">service@brand.com</a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5 class="text-uppercase">公司聯絡資訊</h5>
+
+          <ul>
+            <li>
+              <a href="#">電話</a>
+            </li>
+            <li>
+              <a href="#">傳真</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5 class="text-uppercase">其他資訊</h5>
+          <ul>
+            <li>
+              <a href="#">Help Center</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-end bg-dark mt-5 py-2 justify-content-center">
+      <p class="text-center">&copy; Copy right 2020</p>
+    </div>
+
+  </footer>
+  <!-- footer end -->
+
+
+
+  <!-- 引用 https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js-->
+  <script> src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"</script>
+  <!-- <script> src = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"</script> -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- jquery.min.js -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+
+  <!-- popper.min.js -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@5.3.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script> -->
+  <!-- bootstrap.min.js -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script> -->
+  <!-- 連結網頁主程式 -->
+  <script src="./js/main.js"></script>
+  <script src="./js/new_articleA.js"></script>
+  <script src="./js/new_articleAA.js"></script>
+  <script src="./js/new_articleB+AA.js"></script>
+  <script src="./js/new_articleB.js"></script>
+  <script src="./js/new_articleC+CC.js"></script>
+  <script src="./js/new_articleC.js"></script>
+  <script src="./js/new_articleCCC.js"></script>
+
+</body>
+
+
+</html>
