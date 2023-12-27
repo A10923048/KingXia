@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大衛咖啡 Dawit's Coffee 訂購頁面</title>
+    <!-- CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    
+    <!-- 一定要引用 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    
+    <link rel="stylesheet" href="/css/leftmenu.css" />
+    <link rel="stylesheet" href="/css/orderbutton.css" />
+    <link rel="stylesheet" href="/css/infoentry.css" />
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <!-- 一定要引用 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Dawit's Coffee</span>
+        </div>
+        <div class="sidebar">
+            <div class="logo">
+                <span class="logo-name">Dawit's Coffee</span>
+            </div>
+        </div>
+    </nav>
+    <section class="overlay"></section>
+
+    <div class="infoform">
+
+        <form class="well form-horizontal" action="/infoset" method="post" id="contact_form">
+            <fieldset>
+
+                <legend>個人資料填寫</legend>
+                <div class="form-group">
+                    <label class="col-sm-4 col-md-4 control-label">* 姓名</label>
+                    <div class="col-sm-4 col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="first_name" placeholder="姓名" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-md-4 control-label">* E-Mail</label>
+                    <div class="col-sm-4 col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="email" placeholder="E-Mail" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-md-4 control-label">* 手機</label>
+                    <div class="col-sm-4 col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="phone" placeholder="0912345678" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-4 col-md-4 control-label">* 地址1</label>
+                    <div class="col-sm-4 col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="address" placeholder="地址" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-md-4 control-label">地址2 </label>
+                    <div class="col-sm-4 col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="address2" placeholder="地址" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-md-4 control-label">地址3 </label>
+                    <div class="col-sm-4 col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="address3" placeholder="地址" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-md-4 control-label">統一編號 </label>
+                    <div class="col-sm-4 col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="taxid" placeholder="統一編號" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-md-4 control-label">公司名稱 </label>
+                    <div class="col-sm-4 col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="cname" placeholder="公司名稱" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4">&nbsp;</div>
+                <center>
+                    <div class="alert alert-success col-sm-4 col-md-4" role="alert" id="success_message">
+                        <i class="glyphicon glyphicon-thumbs-up">恭喜您已經成功填寫資料。<br>開始選購您喜愛的商品吧！</i>
+                    </div>
+                </center>
+                
+                <div class="form-group bt">
+                    <label class="col-sm-4 col-md-4 control-label"></label>
+                    <div class="col-sm-4 col-md-4">
+                        <button type="submit" class="btn btn-warning">
+                            確認並提交
+                            <span class="glyphicon glyphicon-send"></span>
+                        </button>
+                    </div>
+                </div>
+                
+                
+            </fieldset>
+        </form>
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="obutton">
+        <a href="#" class="button" id="sendinfo">
+            <div class="button__line"></div>
+            <div class="button__line"></div>
+            <span class="button__text">儲存設定</span>
+            <div class="button__drow1"></div>
+            <div class="button__drow2"></div>
+        </a>
+    </div>
+    <script src="/js/leftmenu.js"></script>
+    <script src="/js/checkorder.js"></script>
+    <script src="/js/infoentry.js"></script>
+</body>
+
+
+</html>

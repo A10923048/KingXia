@@ -105,7 +105,7 @@
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">行程介紹</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleB')">線上訂票</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">紀錄查詢</button>
-                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleCCC')">紀錄查詢-詳細資訊</button>
+                <!-- <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleCCC')">紀錄查詢-詳細資訊</button> -->
               </nav>
 
               <div class="col-12">
@@ -280,10 +280,13 @@
                                 <h6>行&nbsp;&nbsp;&nbsp;程</h6>
                               </label>
                               <div id="planpicker" class=" justify-content-start">
-                                <div class="col"><input type="radio" name="trip" value="日航標準版" checked disabled>日航標準版
+                                <div class="col">
+                                  <input type="radio" name="trip" value="日航標準版" checked disabled>日航標準版
                                 </div>
-                                <!-- <div class="col"><input type="radio" name="trip" value="日航豪華版" disabled>日航豪華版</div>
-                                                                <div class="col"><input type="radio" name="trip" value="夜航標準版" disabled>夜航標準版</div> -->
+                                <!-- <div class="col">
+                                  <input type="radio" name="trip" value="日航豪華版" disabled>日航豪華版</div>
+                                    <div class="col">
+                                  <input type="radio" name="trip" value="夜航標準版" disabled>夜航標準版</div> -->
                               </div>
                             </div>
                           </div>
@@ -446,8 +449,8 @@
 
 
 
-                      <article id="articleCCC">
-                        <div class="container text-white my-3 pb-5 tab-pane bg-secondary">
+                      <!-- <article id="articleCCC class="tab-pane ">
+                        <div class="container text-white my-3 pb-5  bg-secondary">
                           <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
                             <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">購票人資料填寫(請下拉選單)</h2>
                             <nav class="small" id="toc">
@@ -526,8 +529,10 @@
                                       </main>
                                     </div>
                                   </ul>
-                                </li>
-                                <!-- <li class="my-2">
+                                </li> -->
+                                <!--內部隱藏
+                                  
+                                  <li class="my-2">
                                   <button class="btn d-inline-flex align-items-center collapsed border-0"
                                     data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
                                     aria-controls="contents-collapse">其他旅客資料(1)</button>
@@ -690,12 +695,13 @@
 
                                     </div>
                                   </ul>
-                                </li> -->
-                              </ul>
+                                </li> 
+                                   內部隱藏-->
+                              <!-- </ul>
                             </nav>
                           </aside>
                         </div>
-                      </article>
+                      </article> -->
 
 
                       <article id="articleC" class="my-3 tab-pane">
@@ -764,6 +770,7 @@
                                   <th style="width: 20%;" id="hx_date">出發日期</th>
                                   <th style="width: 20%;" id="hx_btime">出發時間</th>
                                   <th style="width: 20%;" id="hx_detial">詳細資訊</th>
+                                  <th style="width: 20%;" id="hx_detial">退票</th>
                                 </tr>
                               </thead>
                               <tbody id="hx-result">
@@ -771,7 +778,7 @@
                                                                         <td scope="row" class="text-start">shipID0</td>
                                                                         <td>
                                                                             <svg class="bi" width="24" height="24">
-                                                                                <use xlink:href="#check" />
+                                                                                 <use xlink:href="#check" />
                                                                             </svg>
                                                                             btime
                                                                         </td>
@@ -978,8 +985,10 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- moadal會引用到 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
 
 
   <!-- jquery.min.js -->

@@ -19,28 +19,26 @@ Fonts - Google Fonts
 
 //    置於$(document).ready(function () 之外的程式碼               //
 
-//            Article NAVBAR- 轉換按鈕                    //
-let articleBtn = function (tabId) {
-  $("#articleAA").hide();
+  //            Article NAVBAR- 轉換按鈕功能                    //
+        let articleBtn = function (tabId) {
+          $("#articleAA").hide();
 
-  // 檢查是否需要關閉 #articleAA
-  if ($("#articleAA").hasClass("show")) {
-    // 關閉 #articleAA
-    $("#articleAA").removeClass("show active");
-  }
+          // 檢查是否需要關閉 #articleAA
+          if ($("#articleAA").hasClass("show")) {
+            // 關閉 #articleAA
+            $("#articleAA").removeClass("show active");
+          }
 
-  // 關閉當前已打開的頁面
-  $(".tab-pane").removeClass("show active");
+          // 關閉當前已打開的頁面
+          $(".tab-pane").removeClass("show active");
 
-  // 打開新的頁面
-  $(`#${tabId}`).addClass("show active");
+          // 打開新的頁面
+          $(`#${tabId}`).addClass("show active");
 
-  // 如果需要手動跳轉到新的頁面
-  window.location.href = `#${tabId}`;
-}
-//    置於$(document).ready(function () 之外的程式碼 ENd            //
-
-
+          // 如果需要手動跳轉到新的頁面
+          window.location.href = `#${tabId}`;
+        }
+   //    置於$(document).ready(function () 之外的程式碼 ENd            //
 
 
 
@@ -60,170 +58,187 @@ $(document).ready(function () {
 
   // 将参数值插入到相应的元素中
   $("#shipID-show").text(shipid);
-  $("#tickets-show").text(ticket);
   $("#showtickets").text("訂票數:"+ ticket);
   $("#time-show").text(timeid);
 
- 
 
+    //          ArticleB警告框-關閉按鈕               //
 
-//定義copy()方法實作
-  let copy = function () {
-
-
-    for (var i = 0; i < ticket; i++) {
-
-      let htmlString = 
-
-      '<li class="my-2">' +
-      '<button class="btn d-inline-flex align-items-center collapsed border-0"' +
-        ' data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse'+i+'"' +
-        ' aria-controls="contents-collapse">其他旅客資料(1)</button>' +
-      '<ul class="list-unstyled ps-3 collapse" id="contents-collapse'+i+'">' +
-        '<div class="table-responsive">' +
-          '<table>' +
-            '<div id="planpickered" class="pt-5 pb-1" style="background: rgb(102, 235, 226)">' +
-              '<label for="plan">' +
-                '<h2 class="section-title mb-3 text-center text-white">其他旅客資料</h2>' +
-              '</label>' +
-            '</div>' +
-          '</table>' +
-          '<main>' +
-            '<div class="table-responsive pt-4" style="background-color: rgb(245, 240, 220);">' +
-              '<table class="table text-center">' +
-                '<thead>' +
-                  '<tr>' +
-                    '<th style="width: 30%;">' +
-                      '<i class="fa-solid fa-earth-americas fa-4x"></i>' +
-                      '<h6>國籍</h6>' +
-                      '<select class="form-select" id="country" required>' +
-                        '<option value="">台灣</option>' +
-                        '<option>香港</option>' +
-                        '<option>大陸</option>' +
-                        '<option>其他</option>' +
-                      '</select>' +
-                    '</th>' +
-                    '<th style="width: 20%;" id="gender">' +
-                      '<i class="fa-solid fa-venus-mars fa-4x"></i>' +
-                      '<h6>性別</h6>' +
-                      '<select class="form-select" id="gender" required>' +
-                        '<option value="">女</option>' +
-                        '<option>男</option>' +
-                      '</select>' +
-                    '</th>' +
-                    '<th style="width: 40%;" id="country">' +
-                      '<i class="fa-solid fa-cake-candles fa-4x"></i>' +
-                      '<h6>出生日期</h6>' +
-                      '<div>' +
-                        '<input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">' +
-                      '</div>' +
-                    '</th>' +
-                  '</tr>' +
-                '</thead>' +
-                '<thead id="tickets-result2">' +
-                  '<tr>' +
-                    '<th style="width: 40%;">' +
-                      '<svg class="bi" width="24" height="24">' +
-                        '<use xlink:href="#check" />' +
-                      '</svg>' +
-                      '<h6>身分證/護照號碼</h6>' +
-                      '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
-                    '</th>' +
-                    '<th scope="row" class="text-start">' +
-                      '<h6>姓名</h6>' +
-                      '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
-                    '</th>' +
-                    '<th style="width: 50%;">' +
-                      '<svg class="bi" width="24" height="24">' +
-                        '<use xlink:href="#check" />' +
-                      '</svg>' +
-                      '<h6>電子郵件</h6>' +
-                      '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
-                    '</th>' +
-                  '</tr>' +
-                '</thead>' +
-              '</table>' +
-            '</div>' +
-          '</main>' +
-        '</div>' +
-      '</ul>' +
-    '</li>';
-    
+    $("#alert-result_i").click(function (){
+      $("#custom-alert").hide();
+    })
+  
+  
+  
+    //            獲取article A 顯示於 modal             //
+    let listNum = 0;
+    let currentDate = "";
 
 
 
+  $("#articleA_send").click(function () {
 
+      // 獲取"articleA表格內的值
+      let orderName = $("#orderName").val();
+      let orderPhone = $("#orderPhone").val();
+      let orderId = $("#orderId").val();
 
-      '<li class="my-2">' +
-        '<button class="btn d-inline-flex align-items-center collapsed border-0" ' +
-        'data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse'+i+'" aria-controls="contents-collapse">' +
-        '其他旅客資料(1)</button>' +
+      // 獲取form-check 是否購票人為乘客的值
+      var isPassenger = $("input[name='isPassenger']:checked").val();
+      // 獲取form-check 訂單開立方式的值
+      var orderMethod = $("input[name='orderMethods']:checked").val();
+
+      console.log("orderName: " + orderName);
+      console.log("orderPhone: " + orderPhone);
+      console.log("orderId: " + orderId);
+
+      // 檢查是否購票人為乘客
+      if (isPassenger === '是') {
+          console.log("購票人為乘客");
+      }  else if (isPassenger === '否'){
+          console.log("購票人不是乘客");
+      }
+
+      // 檢查訂單開立方式
+      if (orderMethod === '統一開立購票證名') {
+          console.log("統一開立購票證名");
+      } else if(orderMethod === '分別開立購票證名') {
+          console.log("分別開立購票證名");
+      }
+
+      let T=true;
+      let text_show="";
+
+      // 檢查"articleA表格內的值"是否為空
+      if (!orderName ){
+        T=false;
+        text_show=text_show+"姓名:未填寫<br>"
+       //  "姓名:未填寫"=""+"姓名:未填寫"
+      }
+
+      if (!orderPhone ){
+        T=false;
+        text_show=text_show+"電話:未填寫<br>"
+       // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      }
+
+      if (!orderId ){
+        T=false;
+        text_show=text_show+"身分證/護照號碼:未填寫<br>"
+      }
+
+      if (!isPassenger ){
+        T=false;
+        text_show=text_show+"購票人是否為乘客(未選擇)<br>"
+      }
+
+      if (!orderMethod){
+        T=false;
+        text_show=text_show+"訂單開立方式(未選擇)"
+      }
+
+      if (!T){
+        $("#alert-result").html(text_show);
+        $("#custom-alert").show();
+
+      }else {
+        //產生:購票人資料填寫(下拉選單)
+      for (var i = 0; i < ticket; i++) {
+
+        let htmlString = 
+
+        '<li class="my-2">' +
+        '<button class="btn d-inline-flex align-items-center collapsed border-0"' +
+          ' data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse'+i+'"' +
+          ' aria-controls="contents-collapse">其他旅客資料('+(parseInt(i) + parseInt(1))+')</button>' +
         '<ul class="list-unstyled ps-3 collapse" id="contents-collapse'+i+'">' +
-        '<div class="table-responsive">' +
-        '<table class="table text-center text-white">' +
-        '<thead>' +
-        '<tr>' +
-        '<th style="width: 25%;">姓名</th>' +
-        '<td style="width: 75%;">' +
-        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
-        '<div class="invalid-feedback">' +
-        'Valid last name is required.' +
-        '</div>' +
-        '</td>' +
-        '</tr>' +
-        '</thead>' +
-        '<tbody>' +
-        '<tr>' +
-        '<th scope="row" class="text-start">電話</th>' +
-        '<td>' +
-        '<input type="text" class="form-control" id="orderPhone" placeholder="" value="" required>' +
-        '<div class="invalid-feedback">' +
-        'Valid last name is required.' +
-        '</div>' +
-        '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<th scope="row" class="text-start">身分證/護照號碼</th>' +
-        '<td>' +
-        '<input type="text" class="form-control" id="orderUid" placeholder="" value="" required>' +
-        '<div class="invalid-feedback">' +
-        'Valid last name is required.' +
-        '</div>' +
-        '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<th scope="row" class="text-start">電子郵件</th>' +
-        '<td>' +
-        '<input type="text" class="form-control" id="lastName" placeholder="" value="" required>' +
-        '<div class="invalid-feedback">' +
-        'Valid last name is required.' +
-        '</div>' +
-        '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<th scope="row" class="text-start">出生日期</th>' +
-        '<td>' +
-        '<input type="text" class="form-control" id="orderPhone" placeholder="" value="" required>' +
-        '<div class="invalid-feedback">' +
-        'Valid last name is required.' +
-        '</div>' +
-        '</td>' +
-        '</tr>' +
-        '</tbody>' +
-        '</table>' +
-        '</div>' +
+          '<div class="table-responsive">' +
+            '<table>' +
+              '<div id="planpickered" class="pt-5 pb-1" style="background: rgb(102, 235, 226)">' +
+                '<label for="plan">' +
+                  '<h2 class="section-title mb-3 text-center text-white">其他旅客資料</h2>' +
+                '</label>' +
+              '</div>' +
+            '</table>' +
+            '<main>' +
+              '<div class="table-responsive pt-4" style="background-color: rgb(245, 240, 220);">' +
+                '<table class="table text-center">' +
+                  '<thead>' +
+                    '<tr>' +
+                      '<th style="width: 30%;">' +
+                        '<i class="fa-solid fa-earth-americas fa-4x"></i>' +
+                        '<h6>國籍</h6>' +
+                        '<select class="form-select" id="country" required>' +
+                          '<option value="">台灣</option>' +
+                          '<option>香港</option>' +
+                          '<option>大陸</option>' +
+                          '<option>其他</option>' +
+                        '</select>' +
+                      '</th>' +
+                      '<th style="width: 20%;" id="gender">' +
+                        '<i class="fa-solid fa-venus-mars fa-4x"></i>' +
+                        '<h6>性別</h6>' +
+                        '<select class="form-select" id="gender" required>' +
+                          '<option value="">女</option>' +
+                          '<option>男</option>' +
+                        '</select>' +
+                      '</th>' +
+                      '<th style="width: 40%;" id="country">' +
+                        '<i class="fa-solid fa-cake-candles fa-4x"></i>' +
+                        '<h6>出生日期</h6>' +
+                        '<div>' +
+                          '<input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">' +
+                        '</div>' +
+                      '</th>' +
+                    '</tr>' +
+                  '</thead>' +
+                  '<thead id="tickets-result2">' +
+                    '<tr>' +
+                      '<th style="width: 40%;">' +
+                        '<svg class="bi" width="24" height="24">' +
+                          '<use xlink:href="#check" />' +
+                        '</svg>' +
+                        '<h6>身分證/護照號碼</h6>' +
+                        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
+                      '</th>' +
+                      '<th scope="row" class="text-start">' +
+                        '<h6>姓名</h6>' +
+                        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
+                      '</th>' +
+                      '<th style="width: 50%;">' +
+                        '<svg class="bi" width="24" height="24">' +
+                          '<use xlink:href="#check" />' +
+                        '</svg>' +
+                        '<h6>電子郵件</h6>' +
+                        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
+                      '</th>' +
+                    '</tr>' +
+                  '</thead>' +
+                '</table>' +
+              '</div>' +
+            '</main>' +
+          '</div>' +
         '</ul>' +
-        '</li>';
+      '</li>';
+      
 
-      $("#buyers_list").append(htmlString);
+        $("#buyers_list").append(htmlString);
 
-    }
+      }
+      }
 
 
-  }
-  copy();//呼叫copy()方法
 
+
+
+
+    
+    })
+
+    
+  //呼叫名為 articleBtn 的函數，並將字串參數 "articleA" 傳遞給該函數
   articleBtn("articleA");
+
 
   //               NAVBAR +  Article-A NAVBAR 開闔功能                    //
   // 初始設置展開狀態為 false
@@ -263,9 +278,6 @@ $(document).ready(function () {
 
     $(target).toggleClass('show');
   });
-
-
-
 
   //           Article A- 立即訂票轉換頁面按鈕               //
   function openArticleB() {

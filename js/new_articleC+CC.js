@@ -5,14 +5,15 @@ $(document).ready(function () {
     let get_detail =function(detail){
       let travelers = detail.travelers;
 
-
+      $("#modal-col").empty();//不累加清空
 
       $.each(travelers, function (index, value) {
+        
         $("#modal-col").append(
           "<div class='col-md-6 col-lg-6 order-md-last'>" +
           "<h4 class='d-flex justify-content-between align-items-center mb-3'>" +
             "<span class='text-primary'>其他買票人資料</span>" +
-            "<span class='badge bg-primary rounded-pill'>3</span>" +
+            "<span class='badge bg-primary rounded-pill'>"+(parseInt(index) + parseInt(1))+"</span>" +
           "</h4>" +
           "<ul class='list-group mb-3'>" +
             "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
@@ -54,6 +55,14 @@ $(document).ready(function () {
               "<div>" +
                 "<h6 class='my-0' id='tmobile'>"+value.mobile+"</h6>" +
               "</div>" +
+            "</li>" +
+            "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+              "<div>" +
+                "<h6 class='my-0'>退票</h6>" +
+              "</div>" +
+              "<a id='detail-button' class='article-button' href='#' data-toggle='modal' data-target='#exampleModal'>" +
+              " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true' style='color: #2b02f7;'></i>" +
+              " </a>"+
             "</li>" +
           "</ul>" +
         "</div>"
@@ -143,19 +152,17 @@ $(document).ready(function () {
             
             " <td id='value_btime'>" + value.btime + "</td>" +
 
-            " <td >"  +
-      
-    
-          //  "<a class='article-button' href='./order.html?shipid=" + key + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "'>" +
-    
-            
-        "<a id='detail-button' class='article-button' href='#' data-toggle='modal' data-target='#exampleModal'>" +
-
-        " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true'></i>" +
-        " <span class='sr-only'>訂票</span>" +
-        " </a>" +
-
-           
+            " <td >" +
+                //  "<a class='article-button' href='./order.html?shipid=" + key + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "'>" +
+                  "<a id='detail-button' class='article-button' href='#' data-toggle='modal' data-target='#exampleModal'>" +
+                  // <i class="fa-solid fa-circle-info"></i>
+                  " <i class='fa-solid fa-circle-info fa-3x' aria-hidden='true' style='color: #f7cf02;'></i>" +
+                  " </a>" +
+            "</td>" +
+            " <td >" +
+                  "<a id='detail-button' class='article-button' href='#' data-toggle='modal' data-target='#exampleModal'>" +
+                  " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true' style='color: #2b02f7;'></i>" +
+                  " </a>" +
             "</td>" +
             "</tr>"
           )
@@ -169,7 +176,7 @@ $(document).ready(function () {
    // $("#detail-button").click(function (){ 一進入網頁就偵測這個東西再不再然後等待觸發function () 
     $(document).on("click","#detail-button",function () { //因為#detail-button是被典籍後才會出現的東西所以要用這個寫法
       //搜尋整個頁面.on監測#detail-button被click後才執行接下來的function ()
-
+    
       let text_start = $(this).parent().parent().find(".text-start").text();
                        //往上一層td  //再往上一層tr       //取得訂單編號
       let bi1 = $(this).parent().parent().find("#value_pno").text();
@@ -203,7 +210,7 @@ $(document).ready(function () {
     
 
 
-
+ㄋ
   
 
     })
@@ -228,6 +235,8 @@ $(document).ready(function () {
           "email": "123@gmail.com",
           "mobile": "0912345678",
           "ticnum": "123456",
+          "tictype": "全票",
+
         },
         {   //其他搭船人資料
           "id": "222222",
@@ -237,6 +246,7 @@ $(document).ready(function () {
           "email": "123@gmail.com",
           "mobile": "0912-345-678",
           "ticnum": "123456",
+          "tictype": "全票",
         },
         {   //其他搭船人資料
           "id": "333333",
@@ -246,6 +256,7 @@ $(document).ready(function () {
           "email": "123@gmail.com",
           "mobile": "0912-345-678",
           "ticnum": "123456",
+          "tictype": "全票",
         }
         
       ]

@@ -125,184 +125,137 @@
                                                 </div>
                                             
                                                 <div class="row g-5 text-primary">
-                                                  <div class="col-md-5 col-lg-4 order-md-last">
-                                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                                      <span class="text-primary">訂單內容</span>
-                                                      
-                                                      <span class="badge bg-primary rounded-pill"id="showtickets">(票數顯示)</span>
-                                                      <!-- <span class="badge bg-primary rounded-pill">訂票數:3</span> -->
 
+                                                  <div class="col-md-5 col-lg-4 order-md-last">
+                                                    <div class="py-5 text-center text-primary">
+                                                      <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                                                      <h2>訂票資訊</h2>
+                                                    </div>
+                                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                                      
+                                                      <!-- <span class="badge bg-primary rounded-pill">訂票數:3</span> -->
                                                     </h4>
                                                     <ul class="list-group mb-3">
+                                                      
+                                                  
+                                                      </li>
                                                       <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                          <h6 class="my-0">時間:</h6>
+                                                          <h5 class="my-0">時間:</h5>
                                                           <span class="my-0"id="time-show">(時間顯示)</span>
                                                       </li>
                                                       <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                          <h6 class="my-0">票數:</h6>
-                                                          <span class="my-0"id="tickets-show">(票數顯示)</span>
+                                                          <h5 class="my-0">票數:</h5>
+                                                          <h4 class="d-flex justify-content-between align-items-center">
+                                                            <span class="badge bg-primary  text-white"id="showtickets">(票數顯示)</span>
+                                                          </h4>
                                                       </li>
                                                       <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                          <h6 class="my-0">船班:</h6>
+                                                          <h5 class="my-0">船班:</h5>
                                                           <span class="my-0"id="shipID-show">(船班顯示)</span>
                                                       </li>
-                                                      <li class="list-group-item justify-content-start lh-sm">
-                                                        <h5 class="mb-3">主要購票人是否為一同搭乘的乘客?</h5>
-                                            
-                                                        <div class="my-3">
-                                                          <div class="form-check">
-                                                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                                                            <label class="form-check-label" for="credit">主要購票人會一同搭乘航班，<br><span>主要購票人=乘客</span></label>
-                                                          </div>
-                                                          <div class="form-check">
-                                                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                                                            <label class="form-check-label" for="debit">主要購票人只負責訂票，<br><span>主要購票人=/=乘客</span></label>
-                                                          </div>
-                                                        </div>
-
-                                                      </li>
-                                                      <li class="list-group-item ">
-                                                        <h4 class="mb-3">訂單開立方式</h4>
-                                                        <div class="my-3">
-                                                          <div class="form-check">
-                                                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                                                            <label class="form-check-label" for="credit">主要購票人與其他乘客，<br><span>共同開立一張購票證名</span></label>
-                                                          </div>
-                                                          <div class="form-check">
-                                                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                                                            <label class="form-check-label" for="debit">主要購票人與其他乘客，<br><span>分別開立多張購票證名</span></label>
-                                                          </div>
-                                                        </div>
-                                                      </li>
                                                     </ul>
-                                            
                                                   </div>
-                                                  <div class="col-md-7 col-lg-8">
-                                                    <h4 class="mb-3">購票人資料</h4>
-                                                    <form class="needs-validation" novalidate>
-                                                      <div class="row g-3">
-                                                        <div class="col-sm-3">
-                                                          <label for="firstName" class="form-label">姓名</label>
-                                                          <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+
+                                                  
+
+                                                  <div class="col-md-7 col-lg-8 order-md-last">
+                                                    
+                                                  
+                                                    <h4 class="d-flex justify-content-center align-items-center mb-3">
+                                                      <span class="text-primary">購票人資料</span>
+                                                    </h4>
+                                                    <ul class="list-group mb-3">
+                                                      <li id="custom-alert"  class="justify-content-between lh-sm mb-2 mt-2" role="alert"style="position: relative; background-color: rgb(255, 100, 86); display: none;">
+                                                        <!-- <div id="custom-alert" class="alert alert-danger" role="alert"
+                                                        style="position: relative;display: none;"> -->
+                                                        <p id="alert-result" class="text-white"></p>
+                                                        <i id="alert-result_i" class="fa-solid fa-circle-xmark fa-2x text-white" style="position: absolute; top: 5%; right: 0%;"
+                                                          ></i>
+                                                      </li>
+                                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                                          <div class="col-sm-6">
+                                                            <label for="firstName" class="form-label"><span class="my-0">姓名</span></label>
+                                                            <input type="text" class="form-control" id="orderName" placeholder="" value="" required>
+                                                            <div class="invalid-feedback">
+                                                              Valid first name is required.
+                                                            </div>
+                                                          </div>
+                                                          <div class="col-sm-6">
+                                                            <label for="firstName" class="form-label"><span class="my-0"id="time-show">電話</span></label>
+                                                            <input type="text" class="form-control" id="orderPhone" placeholder="" value="" required>
+                                                            <div class="invalid-feedback">
+                                                              Valid first name is required.
+                                                            </div>
+                                                          </div>
+                                                      </li>
+                                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                                        <div class="col-sm-6 mt-3">
+                                                          <span class="my-0"id="time-show">
+                                                            <i class="fa-solid fa-calendar-days fa-2x"></i>國籍</label>
+                                                          </span>
+                                                          <div class="invalid-feedback">
+                                                            Please select a valid country.
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                          <label for="firstName" class="form-label"><span class="my-0"id="time-show">身分證</span></label>
+                                                          <input type="text" class="form-control" id="orderId" placeholder="" value="" required>
                                                           <div class="invalid-feedback">
                                                             Valid first name is required.
                                                           </div>
                                                         </div>
-
-                                                        <div class="col-sm-3">
-                                                          <label for="zip" class="form-label">電話</label>
-                                                          <input type="text" class="form-control" id="zip" placeholder="" required>
+                                                      </li>
+                                                    
+                                                      <li class="list-group-item d-flex  lh-sm">
+                                                        <div class="col-md-6 mt-5">
+                                                          <h5 class="mb-3"><span>購票人是否為乘客?</span></h5>
+                                                          <div class="form-check">
+                                                            <input  name="isPassenger" type="radio" class="form-check-input" value="是" required>
+                                                            <label class="form-check-label" for="credit"><span>是</span></label>
+                                                          </div>
+                                                          <div class="form-check">
+                                                            <input  name="isPassenger" type="radio" class="form-check-input" value="否" required>
+                                                            <label class="form-check-label" for="debit"><span>否</span></label>
+                                                          </div>
                                                           <div class="invalid-feedback">
-                                                            Zip code required.
+                                                            Valid first name is required.
                                                           </div>
                                                         </div>
-                                            
-                                                        <div class="col-sm-6">
-                                                          <div class="col">
-                                                         
-                                                                <hr>
-                                                            <label for="country" class="form-label">
-                                                              <i class="fa-solid fa-calendar-days fa-2x"></i>性別</label>
-                                                          <select class="form-select" id="country" required>
-                                                            <option value="">女</option>
-                                                            <option>男</option>
-                                                          </select>
-                                                          <div class="invalid-feedback">
-                                                            Please select a valid country.
-                                                          </div>
-                                                          </div>
-                                                        </div>
-                                            
-                                                        <div class="col-12 mt-2">
-                                                          <label for="email" class="form-label">Email</label>
-                                                          <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                                                          <div class="invalid-feedback">
-                                                            Please enter a valid email address for shipping updates.
-                                                          </div>
-                                                        </div>
-                                            
-                                                        <div class="col-12 row justify-content-between pt-3">
-                                                          
-                                                          <div class="col">
-                                                            <div class="datepicker">
-                                                              <label for="datetime">
-                                                                  <i class="fa-solid fa-calendar-days fa-6x"></i>
-                                                                  <h6>出生日期</h6>
-                                                              </label>
-                                                              <div>
-                                                                  <input type="date" id="datePicker" placeholder="選擇日期範圍" value="">
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                          
-
-                                                          <div class="col-sm-6">
+                                                        <div class="col-md-6 mt-5">
+                                                          <h4 class="mb-3"><span>訂單開立方式</span></h4>
+                                                          <div class=" justify-content-start">
                                                             <div class="col">
-                                                           
-                                                                  <hr>
-                                                              <label for="country" class="form-label">
-                                                                <i class="fa-solid fa-calendar-days fa-2x"></i>國籍</label>
-                                                            <select class="form-select" id="country" required>
-                                                              <option value="">台灣</option>
-                                                              <option>香港</option>
-                                                              <option>大陸</option>
-                                                              <option>其他</option>
-                                                            </select>
-                                                            <div class="invalid-feedback">
-                                                              Please select a valid country.
+                                                              <input type="radio" name="orderMethods" value="統一開立購票證名" >統一開立購票證名
                                                             </div>
+                                                            <div class="col">
+                                                              <input  type="radio" name="orderMethods" value="分別開立購票證名" >分別開立購票證名
                                                             </div>
-  
-                                                            
-                                                            <label for="lastName" class="form-label">身分證/護照號碼</label>
-                                                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                                                            <div class="invalid-feedback">
-                                                              Valid last name is required.
-                                                            </div>
+                                                            <!-- <div class="col">
+                                                              <input type="radio" name="trip" value="夜航標準版" disabled>夜航標準版
+                                                            </div> -->
                                                           </div>
 
 
-                                                        </div>
 
 
-                                          
-                                                      </div>
-                                            
-                                                      <!-- <hr class="my-4 bg-primary">
-                                            
-                                                      <h4 class="mb-3">主要購票人是否為一同搭乘的乘客?</h4>
-                                            
-                                                      <div class="my-3">
-                                                        <div class="form-check">
-                                                          <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                                                          <label class="form-check-label" for="credit">主要購票人會一同搭乘航班，主要購票人=乘客</label>
+<!-- 
+                                                          <div class="my-3" id="orderMethod">
+                                                            <div class="form-check">
+                                                              <input  name="orderMethod" type="radio" class="form-check-input" required>
+                                                              <label class="form-check-label" for="credit"><span>統一開立購票證名</span></label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                              <input  name="orderMethod" type="radio" class="form-check-input" required>
+                                                              <label class="form-check-label" for="debit"><span>分別開立購票證名</span></label>
+                                                            </div>
+                                                          </div> -->
                                                         </div>
-                                                        <div class="form-check">
-                                                          <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                                                          <label class="form-check-label" for="debit">主要購票人只負責訂票，主要購票人=/=乘客</label>
-                                                        </div>
-                                                      </div>
-
-                                            
-                                                      <hr class="my-4 bg-primary">
-                                            
-                                                      <h4 class="mb-3">訂單開立方式</h4>
-                                                      <div class="my-3">
-                                                        <div class="form-check">
-                                                          <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                                                          <label class="form-check-label" for="credit">主要購票人與其他乘客共同開立一張</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                          <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                                                          <label class="form-check-label" for="debit">主要購票人與其他乘客分別開立多張</label>
-                                                        </div>
-                                                      </div>
-                                                      <hr class="my-4"> -->
-                                            
-                                                      <button class="w-100 btn btn-primary btn-lg" type="submit">(請點選)來填寫其他乘客資料</button>
-                                                    </form>
+                                                      </li>
+                                                    </ul>
+                                                    <button class="w-100 btn btn-primary btn-lg mt-2 mb-5" type="submit" id="articleA_send">(請點選)送出</button>
                                                   </div>
-                                                </div>
+                                                  </div>
+                                                
                                               </main>
 
 
