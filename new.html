@@ -921,84 +921,102 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+          
         </div>
-
+  
+  
+        <div class="modal-body col-md-12 col-lg-12 order-md-last" style="background-color: rgb(102, 235, 226)">
+          
         <table class="">
-          <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center"
-            style="background: rgb(102, 235, 226)">
+          <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center text-white"
+            style="background: rgb(35, 166, 157)">
             <label for="plan">
               <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
-
+  
               <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
               <p class="article-p" id="RefundModal-pno">航班代碼：</p>
               <p class="article-p" id="RefundModal-tdate">出發日期：</p>
               <p class="article-p" id="RefundModal-btime">出發時間：</p>
               <p class="article-p" id="RefundModal-orderName">主要訂票人姓名：</p>
-              <p class="article-p" id="RefundModal-ticCount">票數：</p>
+              <div class="justify-content-between">
+                <p class="article-p" id="RefundModal-ticCount">票數：</p>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="AllRefund_check">
+                  <label class="form-check-label" for="same-address">全部退票(請打勾)</label>
+                </div>
+              </div>
+  
+          </div>
+  
+        </table>
 
-              <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
+          <h3 class="d-flex justify-content-center align-items-center mb-5 mt-5">
+            <span class="text-primary">其他買票人資料</span>
+            <span class="badge bg-primary rounded-pill"></span>
+          </h3>
+  
+          <div class="row" id="RefundModal-col">
+            <!--
+              <div class="col-md-5 col-lg-6 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-primary">其他買票人資料</span>
+                  <span class="badge bg-primary rounded-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">票號:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0" id="ticnum">(票數顯示)</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">姓名:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">id="tname"</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">: 身分證/護照號碼</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">id</h6>
+                    </div>
+              
+                  </li>
+              
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">:email</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">(email顯示)</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">mobile:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">(mobile顯示)</h6>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              -->
+  
           </div>
 
-        </table>
-        <div class="modal-body row" id="RefundModal-col">
-
-          <!--
-            <div class="col-md-5 col-lg-6 order-md-last">
-              <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-primary">其他買票人資料</span>
-                <span class="badge bg-primary rounded-pill">3</span>
-              </h4>
-              <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 class="my-0">票號:</h6>
-                  </div>
-                  <div>
-                    <h6 class="my-0" id="ticnum">(票數顯示)</h6>
-                  </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 class="my-0">姓名:</h6>
-                  </div>
-                  <div>
-                    <h6 class="my-0">id="tname"</h6>
-                  </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 class="my-0">: 身分證/護照號碼</h6>
-                  </div>
-                  <div>
-                    <h6 class="my-0">id</h6>
-                  </div>
-            
-                </li>
-            
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 class="my-0">:email</h6>
-                  </div>
-                  <div>
-                    <h6 class="my-0">(email顯示)</h6>
-                  </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 class="my-0">mobile:</h6>
-                  </div>
-                  <div>
-                    <h6 class="my-0">(mobile顯示)</h6>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            -->
-
-
         </div>
+
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            <i class="fa-solid fa-square-xmark fa-2x">Close</i>
+          </button>
           <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>

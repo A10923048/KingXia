@@ -62,84 +62,119 @@ $(document).ready(function () {
   }
 
 
-    //                獲取 detail_其他買票人資料 顯示於 "退票"modal           //
-    let get_detail_refund = function (detail) {
-      let travelers = detail.travelers;
-  
-      $("#RefundModal-col").empty();//不累加清空
-  
-      $.each(travelers, function (index, value) {
-  
-        $("#RefundModal-col").append(
-          "<div class='col-md-6 col-lg-6 order-md-last'>" +
-          "<h4 class='d-flex justify-content-between align-items-center mb-3'>" +
-          "<span class='text-primary'>其他買票人資料</span>" +
-          "<span class='badge bg-primary rounded-pill'>" + (parseInt(index) + parseInt(1)) + "</span>" +
-          "</h4>" +
+  //                獲取 detail_其他買票人資料 顯示於 "退票"modal           //
+  let get_detail_refund = function (detail) {
+    let travelers = detail.travelers;
 
-          "<ul class='list-group mb-3'>" +
+    $("#RefundModal-col").empty();//不累加清空
 
-          "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
-          "<div>" +
-          "<h6 class='my-0'>票號:</h6>" +
-          "</div>" +
-          "<div>" +
-          "<h6 class='my-0' id='ticnum'>" + value.ticnum + "</h6>" +
-          "</div>" +
-          "</li>" +
+    $.each(travelers, function (index, value) {
 
-          "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
-          "<div>" +
-          "<h6 class='my-0'>姓名:</h6>" +
-          "</div>" +
-          "<div>" +
-          "<h6 class='my-0' id='tname'>" + value.tname + "</h6>" +
-          "</div>" +
-          "</li>" +
+      $("#RefundModal-col").append(
 
-          "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
-          "<div>" +
-          "<h6 class='my-0'>身分證/護照號碼:</h6>" +
-          "</div>" +
-          "<div>" +
-          "<h6 class='my-0' id='tid'>" + value.id + "</h6>" +
-          "</div>" +
-          "</li>" +
 
-          "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
-          "<div>" +
-          "<h6 class='my-0'>Email:</h6>" +
-          "</div>" +
-          "<div>" +
-          "<h6 class='my-0' id='temail'>" + value.email + "</h6>" +
-          "</div>" +
-          "</li>" +
 
-          "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
-          "<div>" +
-          "<h6 class='my-0'>手機號碼:</h6>" +
-          "</div>" +
-          "<div>" +
-          "<h6 class='my-0' id='tmobile'>" + value.mobile + "</h6>" +
-          "</div>" +
-          "</li>" +
+        "<div class='col-md-6 col-lg-6 order-md-last '>" +
+        "<h5 class='d-flex justify-content-between align-items-center mb-3'>買票人" +
 
-          "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
-          "<div class='form-check'>" +
-            "<input type='checkbox' class='form-check-input' id='same-address'>" +
-            "<label class='form-check-label' for='same-address'>退票請打勾</label>" +
-          "</div>"+
-          "<a id='RefundCheck-button' class='article-button' href='#' data-toggle='modal' data-target='#RefundCheckModal'>" +
-          " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true' style='color: #2b02f7;'></i>" +
-          " </a>" +
-          "</li>" +
+        "<span class='badge rounded-pill text-primary' style='color: #f7cf02; '>" + (parseInt(index) + parseInt(1)) + "</span>" +
 
-          "</ul>" +
+        "資料</h5>" +
 
-          "</div>"
-        )
-      })
-    }
+
+
+        "<ul class='list-group mb-3'>" +
+
+        "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+        "<div>" +
+        "<h6 class='my-0'>票號:</h6>" +
+        "</div>" +
+        "<div>" +
+        "<h6 class='my-0' id='ticnum'>" + value.ticnum + "</h6>" +
+        "</div>" +
+        "</li>" +
+
+        "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+        "<div>" +
+        "<h6 class='my-0'>姓名:</h6>" +
+        "</div>" +
+        "<div>" +
+        "<h6 class='my-0' id='tname'>" + value.tname + "</h6>" +
+        "</div>" +
+        "</li>" +
+
+        "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+        "<div>" +
+        "<h6 class='my-0'>身分證/護照號碼:</h6>" +
+        "</div>" +
+        "<div>" +
+        "<h6 class='my-0' id='tid'>" + value.id + "</h6>" +
+        "</div>" +
+        "</li>" +
+
+        "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+        "<div>" +
+        "<h6 class='my-0'>Email:</h6>" +
+        "</div>" +
+        "<div>" +
+        "<h6 class='my-0' id='temail'>" + value.email + "</h6>" +
+        "</div>" +
+        "</li>" +
+
+        "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+        "<div>" +
+        "<h6 class='my-0'>手機號碼:</h6>" +
+        "</div>" +
+        "<div>" +
+        "<h6 class='my-0' id='tmobile'>" + value.mobile + "</h6>" +
+        "</div>" +
+        "</li>" +
+
+        "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+        "<div class='form-check'>" +
+        "<input type='checkbox' class='Refund_checkbox-input'>" +
+        "<label class='form-check-label' for='same-address'>退票請打勾</label>" +
+        "</div>" +
+        "<a id='RefundCheck-button' class='article-button' href='#' data-toggle='modal' data-target='#RefundCheckModal'>" +
+        " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true' style='color: #2b02f7;'></i>" +
+        " </a>" +
+        "</li>" +
+
+        "</ul>" +
+
+        "</div>"
+      )
+    })
+  }
+
+
+
+
+  //          退票modal_功能_全部選取後退票           //
+
+  // 監聽主checkbox，如果有變化觸發功能如下:
+  $("#AllRefund_check").change(function () {
+
+    
+    $(".Refund_checkbox-input").prop("checked", $(this).prop("checked"));
+    //$("#Refund_check").prop : 搜尋 子checkbox 的 屬性(key,value)
+    //屬性就是一組(key,value)，這裡的 key="checked" , value= $(this).prop("checked")
+    //this="#AllRefund_check"
+    //value= 尋找$("#AllRefund_check")屬性 的key 的值
+    // $("#Refund_check")屬性的("值"，要指定為"")
+    //
+
+    
+
+
+  });
+
+
+
+
+
+
+
 
 
   // let listNum =0;
@@ -195,7 +230,7 @@ $(document).ready(function () {
 
 
 
-  //              抓取買票人訂票紀錄>_顯示於Modal            //
+  //              抓取買票人訂票紀錄>顯示於"詳細資訊"Modal            //
   let get_send = function (send) {
     $("#hx-orderName").text("主要訂票人姓名：" + send.orderName);
     let orms = send.orms;
@@ -210,7 +245,7 @@ $(document).ready(function () {
     因為知道key(key是同一個值得情形下，以send.orderName直接取值)
     */
 
-  //             抓取 訂票人 所有訂票紀錄                 //
+    //             抓取 訂票人 所有訂票紀錄                 //
     $.each(orms, function (index, value) {
       // $.each(datas, function (key, value) {
       // orms.each(function(index,value){沒有key時就用index
@@ -246,8 +281,9 @@ $(document).ready(function () {
 
 
 
+
   //             獲取使用者於article CC選擇的訂單資訊  "顯示"於 Modal             // 
-  $(document).on("click", "#detail-button", function () { 
+  $(document).on("click", "#detail-button", function () {
     //  $("#detail-button").click(function (){ 
     //   一進入網頁就偵測這個東西再不再然後等待觸發function () 
     // 因為#detail-button是被典籍後才會出現的東西所以要用這個寫法
@@ -278,7 +314,7 @@ $(document).ready(function () {
 
 
     //呼叫get_detail方法其他買票人資料 顯示於modal//
-    get_detail_show(detail); 
+    get_detail_show(detail);
 
     //  let ticCount = detail.ticCount;
     //  $("#Modal-ticCount").text("票數：" +ticCount );
@@ -290,47 +326,47 @@ $(document).ready(function () {
 
 
 
-    //             獲取使用者於article CC選擇的訂單資訊 顯示於 "退票"Modal             // 
-  $(document).on("click", "#refund-button", function () { 
-      //  $("#detail-button").click(function (){ 
-      //   一進入網頁就偵測這個東西再不再然後等待觸發function () 
-      // 因為#detail-button是被典籍後才會出現的東西所以要用這個寫法
-      // 搜尋整個頁面.on監測#detail-button被click後才執行接下來的function ()
-  
-  
-      //獲取使用者於article CC選擇的訂單資訊   //
-      let text_start = $(this).parent().parent().find(".text-start").text();
-      //往上一層td  //再往上一層tr       //取得訂單編號
-      let bi1 = $(this).parent().parent().find("#value_pno").text();
-      //往上一層td  //再往上一層tr       //取得航班代碼
-      let bi2 = $(this).parent().parent().find("#value_tdate").text();
-      //往上一層td  //再往上一層tr       //取得出發日期
-      let bi3 = $(this).parent().parent().find("#value_btime").text();
-      //往上一層td  //再往上一層tr       //取得出發時間
-  
-      // 顯示於 Modal //
-      $("#RefundModal-orderNum").text("訂單編號：" + text_start);
-      $("#RefundModal-pno").text("航班代碼：" + bi1);
-      $("#RefundModal-tdate").text("出發日期：" + bi2);
-      $("#RefundModal-btime").text("出發時間：" + bi3);
-  
-  
-      // let hx_orderName = $("#hx-orderName").text();
-      // $("#Modal-orderName").text(  hx_orderName  );
-  
-      $("#RefundModal-orderName").text($("#hx-orderName").text());
-  
-  
-      //呼叫get_detail方法其他買票人資料 顯示於modal//
-      get_detail_refund(detail); 
-  
-      //  let ticCount = detail.ticCount;
-      //  $("#Modal-ticCount").text("票數：" +ticCount );
-      // 改成下面的簡易寫法
-  
-      $("#RefundModal-ticCount").text("票數：" + detail.ticCount);
-  
-    })
+  //             獲取使用者於article CC選擇的訂單資訊 顯示於 "退票"Modal             // 
+  $(document).on("click", "#refund-button", function () {
+    //  $("#detail-button").click(function (){ 
+    //   一進入網頁就偵測這個東西再不再然後等待觸發function () 
+    // 因為#detail-button是被典籍後才會出現的東西所以要用這個寫法
+    // 搜尋整個頁面.on監測#detail-button被click後才執行接下來的function ()
+
+
+    //獲取使用者於article CC選擇的訂單資訊   //
+    let text_start = $(this).parent().parent().find(".text-start").text();
+    //往上一層td  //再往上一層tr       //取得訂單編號
+    let bi1 = $(this).parent().parent().find("#value_pno").text();
+    //往上一層td  //再往上一層tr       //取得航班代碼
+    let bi2 = $(this).parent().parent().find("#value_tdate").text();
+    //往上一層td  //再往上一層tr       //取得出發日期
+    let bi3 = $(this).parent().parent().find("#value_btime").text();
+    //往上一層td  //再往上一層tr       //取得出發時間
+
+    // 顯示於 Modal //
+    $("#RefundModal-orderNum").text("訂單編號：" + text_start);
+    $("#RefundModal-pno").text("航班代碼：" + bi1);
+    $("#RefundModal-tdate").text("出發日期：" + bi2);
+    $("#RefundModal-btime").text("出發時間：" + bi3);
+
+
+    // let hx_orderName = $("#hx-orderName").text();
+    // $("#Modal-orderName").text(  hx_orderName  );
+
+    $("#RefundModal-orderName").text($("#hx-orderName").text());
+
+
+    //呼叫get_detail方法其他買票人資料 顯示於modal//
+    get_detail_refund(detail);
+
+    //  let ticCount = detail.ticCount;
+    //  $("#Modal-ticCount").text("票數：" +ticCount );
+    // 改成下面的簡易寫法
+
+    $("#RefundModal-ticCount").text("票數：" + detail.ticCount);
+
+  })
 
 
 
@@ -370,7 +406,7 @@ $(document).ready(function () {
         "tname": "王B明",//航班代碼
         "gender": "1030",
         "sbr": "2020/01/01",//(訂票最後時間)
-        "email": "123@gmail.com",
+        "email": "456@gmail.com",
         "mobile": "0912-345-678",
         "ticnum": "123456",
         "tictype": "全票",
@@ -380,7 +416,7 @@ $(document).ready(function () {
         "tname": "王B明",//航班代碼
         "gender": "1030",
         "sbr": "2020/01/01",//(訂票最後時間)
-        "email": "123@gmail.com",
+        "email": "789@gmail.com",
         "mobile": "0912-345-678",
         "ticnum": "123456",
         "tictype": "全票",
