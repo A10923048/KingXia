@@ -20,7 +20,7 @@ Fonts - Google Fonts
 
 //    置於$(document).ready(function () 之外的程式碼               //
 
-//       轉換Article時    -    關閉預設隱藏的Article                   //
+//       轉換Article時    -    關閉預設hide的Article                   //
 let articleBtn = function (tabId) {
   $("#articleAA").hide();
   $("#articleCC").hide();

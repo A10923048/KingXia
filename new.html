@@ -83,6 +83,7 @@
 
       </div>
     </div>
+
     <div class="container">
       <img id="ship-bottle" class="rounded-circle mt  my-element" src="img/瓶中船.png" alt="user photo"
         style="width: 50%; margin-bottom: 20%;">
@@ -105,7 +106,7 @@
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">行程介紹</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleB')">線上訂票</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">紀錄查詢</button>
-                <!-- <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleCCC')">紀錄查詢-詳細資訊</button> -->
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleD')">test</button>
               </nav>
 
               <div class="col-12">
@@ -239,9 +240,7 @@
                                     <use xlink:href="#check" />
                                   </svg>電話訂票</td>
                               </tr>
-
                             </tbody>
-
                             <tbody>
                               <tr>
                                 <th scope="row" class="text-start">備註</th>
@@ -252,12 +251,10 @@
                             </tbody>
                           </table>
                         </div>
-
                         </main>
-
-
-
                       </article>
+
+
                       <article id="articleB" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <div id="custom-alert" class="alert alert-danger" role="alert"
                           style="position: relative;display: none;">
@@ -348,6 +345,7 @@
                         <button class="article-button mt-5 mb-5 " type="button" id="search-js">查詢</button>
 
                       </article>
+
 
                       <article id="articleAA" class="my-3 pb-5 tab-pane"
                         style="display:none ; background-color: rgb(245, 240, 220);">
@@ -444,12 +442,119 @@
                           </div>
                         </main>
                       </article>
+
                       <!-- Button trigger modal -->
 
 
+                      <article id="articleC" class="my-3 tab-pane">
 
+                        <div id="custom-alert-c" class="alert alert-danger" role="alert"
+                          style="position: relative;display: none;">
+                          <p id="alert-text-c"></p>
+                          <i class="fa-solid fa-circle-xmark fa-2x" style="position: absolute; top: 5%; right: 0%;"
+                            onclick="closeAlertC()"></i>
+                        </div>
 
-                      <!-- <article id="articleCCC class="tab-pane ">
+                        <div class="col-md-12 text-white justify-content-center">
+                          <h2 class="section-title mb-5 text-center ">訂票紀錄查詢</h2>
+                          <div class="intro-box">
+                            <i class="fa-solid fa-user-check fa-6x"></i>
+                            <div class="ROW">
+                              <h5 class="text-uppercase">主要訂票人</h5>
+                              <h6 class="text-uppercase">資料</h5>
+                            </div>
+                            <div class="intro-box-box">
+                              <div class="max-width">
+                                <div class="input-container">
+                                  <p>電話:</p>
+                                  <input type="text" id="hx-phone" size="15">
+                                </div>
+                                <!-- 其他表单字段 -->
+
+                                <div class="input-container">
+                                  <p>身分證:</p>
+                                  <input type="text" id="hx-id" size="15">
+                                </div>
+                              </div>
+                            </div>
+                            <button class="article-button mt-5 mb-5 " type="button" id="search-hx-js">查詢</button>
+                          </div>
+                        </div>
+                        <!-- <button class="article-button mt-5 mb-5 " type="button" id="search-hx-js">查詢</button> -->
+                      </article>
+
+                      <article id="articleCC" class="my-3 pb-5 tab-pane"
+                        style="display:none ; background-color: rgb(245, 240, 220);">
+
+                        <table>
+                          <div id="planpickered" class="pt-5 pb-5" style="background: rgb(102, 235, 226)">
+
+                            <label for="plan">
+                              <h1 class="section-title mb-5 text-center">主要訂票人資料顯示</h1>
+
+                              <p class="article-p" id="hx-orderName"></p>
+                              <p class="article-p" id="hx-phone-result"></p>
+                              <p class="article-p" id="hx-id-result"></p>
+
+                              <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
+                          </div>
+
+                        </table>
+                        <main>
+                          <div class="table-responsive">
+                            <h2 class="display-6 text-center mb-4">訂單紀錄顯示</h2>
+                            <table class="table text-center">
+                              <thead>
+                                <tr>
+
+                                  <th style="width: 20%;" id="hx_oreder">訂單編號</th>
+                                  <th style="width: 20%;" id="hx_shipID">航班代碼</th>
+                                  <th style="width: 20%;" id="hx_date">出發日期</th>
+                                  <th style="width: 20%;" id="hx_btime">出發時間</th>
+                                  <th style="width: 20%;" id="hx_detial">詳細資訊</th>
+                                  <th style="width: 20%;" id="hx_detial">退票</th>
+                                </tr>
+                              </thead>
+                              <tbody id="hx-result">
+                                <!-- <tr>
+                                      <td scope="row" class="text-start">shipID0</td>
+                                      <td>
+                                          <svg class="bi" width="24" height="24">
+                                                <use xlink:href="#check" />
+                                          </svg>
+                                          btime
+                                      </td>
+                                      <td>
+                                          <svg class="bi" width="24" height="24">
+                                              <use xlink:href="#check" />
+                                          </svg>
+                                          etime
+                                      </td>
+                                      <td>
+                                          <svg class="bi" width="24" height="24">
+                                              <use xlink:href="#check" />
+                                          </svg>
+                                          qty
+                                      </td>
+                                      <td>
+                                          <svg class="bi" width="24" height="24">
+                                              <use xlink:href="#check" />
+                                          </svg>
+                                          <a class="article-button"
+                                              href="./Payment Page.html">
+                                              <i class="fa-solid fa-ticket fa-3x"
+                                                  aria-hidden="true"></i>
+                                              <span class="sr-only">訂票</span>
+                                          </a>
+                                      </td>
+                                  </tr> -->
+                              </tbody>
+                            </table>
+                          </div>
+                        </main>
+                      </article>
+
+                      <article id="articleD" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <div class="container text-white my-3 pb-5  bg-secondary">
                           <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
                             <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">購票人資料填寫(請下拉選單)</h2>
@@ -468,7 +573,8 @@
                                         </div>
                                       </table>
                                       <main>
-                                        <div class="table-responsive pt-4" style=" background-color: rgb(245, 240, 220);">
+                                        <div class="table-responsive pt-4"
+                                          style=" background-color: rgb(245, 240, 220);">
                                           <table class="table text-center">
                                             <thead>
                                               <tr>
@@ -494,7 +600,8 @@
                                                   <i class="fa-solid fa-cake-candles fa-4x"></i>
                                                   <h6>出生日期</h6>
                                                   <div>
-                                                      <input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">
+                                                    <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
+                                                      value="">
                                                   </div>
                                                 </th>
                                               </tr>
@@ -506,21 +613,21 @@
                                                     <use xlink:href="#check" />
                                                   </svg>
                                                   <h6>身分證/護照號碼</h6>
-                                                  <input type="text" class="form-control" id="orderName" placeholder="" value=""
-                                                    required>
+                                                  <input type="text" class="form-control" id="orderName" placeholder=""
+                                                    value="" required>
                                                 </th>
-                                                <th scope="row" class="text-start" >
+                                                <th scope="row" class="text-start">
                                                   <h6>姓名</h6>
-                                                  <input type="text" class="form-control" id="orderName" placeholder="" value=""
-                                                    required>
+                                                  <input type="text" class="form-control" id="orderName" placeholder=""
+                                                    value="" required>
                                                 </th>
                                                 <th style="width: 50%;">
                                                   <svg class="bi" width="24" height="24">
                                                     <use xlink:href="#check" />
                                                   </svg>
                                                   <h6>email</h6>
-                                                  <input type="text" class="form-control" id="orderName" placeholder="" value=""
-                                                    required>
+                                                  <input type="text" class="form-control" id="orderName" placeholder=""
+                                                    value="" required>
                                                 </th>
                                               </tr>
                                             </thead>
@@ -529,10 +636,11 @@
                                       </main>
                                     </div>
                                   </ul>
-                                </li> -->
-                                <!--內部隱藏
-                                  
-                                  <li class="my-2">
+                                </li>
+
+                                <!-- 內部隱藏 -->
+
+                                <li class="my-2">
                                   <button class="btn d-inline-flex align-items-center collapsed border-0"
                                     data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
                                     aria-controls="contents-collapse">其他旅客資料(1)</button>
@@ -695,138 +803,32 @@
 
                                     </div>
                                   </ul>
-                                </li> 
-                                   內部隱藏-->
-                              <!-- </ul>
+                                </li>
+                                <!-- 內部隱藏 -->
+                              </ul>
                             </nav>
                           </aside>
                         </div>
-                      </article> -->
-
-
-                      <article id="articleC" class="my-3 tab-pane">
-
-                        <div id="custom-alert-c" class="alert alert-danger" role="alert"
-                          style="position: relative;display: none;">
-                          <p id="alert-text-c"></p>
-                          <i class="fa-solid fa-circle-xmark fa-2x" style="position: absolute; top: 5%; right: 0%;"
-                            onclick="closeAlertC()"></i>
-                        </div>
-
-                        <div class="col-md-12 text-white justify-content-center">
-                          <h2 class="section-title mb-5 text-center ">訂票紀錄查詢</h2>
-                          <div class="intro-box">
-                            <i class="fa-solid fa-user-check fa-6x"></i>
-                            <div class="ROW">
-                              <h5 class="text-uppercase">主要訂票人</h5>
-                              <h6 class="text-uppercase">資料</h5>
-                            </div>
-                            <div class="intro-box-box">
-                              <div class="max-width">
-                                <div class="input-container">
-                                  <p>電話:</p>
-                                  <input type="text" id="hx-phone" size="15">
-                                </div>
-                                <!-- 其他表单字段 -->
-
-                                <div class="input-container">
-                                  <p>身分證:</p>
-                                  <input type="text" id="hx-id" size="15">
-                                </div>
-                              </div>
-                            </div>
-                            <button class="article-button mt-5 mb-5 " type="button" id="search-hx-js">查詢</button>
-                          </div>
-                        </div>
-                        <!-- <button class="article-button mt-5 mb-5 " type="button" id="search-hx-js">查詢</button> -->
                       </article>
 
-                      <article id="articleCC" class="my-3 pb-5 tab-pane"
-                        style="display:none ; background-color: rgb(245, 240, 220);">
 
-                        <table>
-                          <div id="planpickered" class="pt-5 pb-5" style="background: rgb(102, 235, 226)">
-
-                            <label for="plan">
-                              <h1 class="section-title mb-5 text-center">主要訂票人資料顯示</h1>
-
-                              <p class="article-p" id="hx-orderName"></p>
-                              <p class="article-p" id="hx-phone-result"></p>
-                              <p class="article-p" id="hx-id-result"></p>
-
-                              <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
-                          </div>
-
-                        </table>
-                        <main>
-                          <div class="table-responsive">
-                            <h2 class="display-6 text-center mb-4">訂單紀錄顯示</h2>
-                            <table class="table text-center">
-                              <thead>
-                                <tr>
-
-                                  <th style="width: 20%;" id="hx_oreder">訂單編號</th>
-                                  <th style="width: 20%;" id="hx_shipID">航班代碼</th>
-                                  <th style="width: 20%;" id="hx_date">出發日期</th>
-                                  <th style="width: 20%;" id="hx_btime">出發時間</th>
-                                  <th style="width: 20%;" id="hx_detial">詳細資訊</th>
-                                  <th style="width: 20%;" id="hx_detial">退票</th>
-                                </tr>
-                              </thead>
-                              <tbody id="hx-result">
-                                <!-- <tr>
-                                      <td scope="row" class="text-start">shipID0</td>
-                                      <td>
-                                          <svg class="bi" width="24" height="24">
-                                                <use xlink:href="#check" />
-                                          </svg>
-                                          btime
-                                      </td>
-                                      <td>
-                                          <svg class="bi" width="24" height="24">
-                                              <use xlink:href="#check" />
-                                          </svg>
-                                          etime
-                                      </td>
-                                      <td>
-                                          <svg class="bi" width="24" height="24">
-                                              <use xlink:href="#check" />
-                                          </svg>
-                                          qty
-                                      </td>
-                                      <td>
-                                          <svg class="bi" width="24" height="24">
-                                              <use xlink:href="#check" />
-                                          </svg>
-                                          <a class="article-button"
-                                              href="./Payment Page.html">
-                                              <i class="fa-solid fa-ticket fa-3x"
-                                                  aria-hidden="true"></i>
-                                              <span class="sr-only">訂票</span>
-                                          </a>
-                                      </td>
-                                  </tr> -->
-                              </tbody>
-                            </table>
-                          </div>
-                        </main>
-                      </article>
                     </div>
                   </div>
+                </section>
+
               </div>
+
             </div>
-            <!-- featuresSection end -->
-            </article>
+
+
           </div>
-      </div> <!-- containter END-->
-      </div>
-      </div>
-      <!-- md-6 END-->
+        </section>
+
     </header>
   </header>
 
-    <!-- Modal-訂票紀錄查詢>_詳細資訊 -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <!-- Modal-訂票紀錄查詢>_詳細資訊 -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -1014,7 +1016,7 @@
     </div>
   </div>
 
-  
+
 
 
 
@@ -1058,6 +1060,8 @@
   <!-- footer end -->
 
 
+
+  <!--                              引用資料                                -->
 
   <!-- 引用 https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js-->
   <script> src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"</script>

@@ -123,6 +123,8 @@ $(document).ready(function () {
   });
 
 
+
+
   //              抓取買票人資料>_顯示於Modal-退票1            //
   let get_send = function (send) {
     $("#hx-orderName").text("主要訂票人姓名：" + send.orderName);
@@ -138,7 +140,7 @@ $(document).ready(function () {
     因為知道key(key是同一個值得情形下，以send.orderName直接取值)
     */
 
-
+    //             抓取 訂票人 所有訂票紀錄                 //
     $.each(orms, function (index, value) {
       // $.each(datas, function (key, value) {
       // orms.each(function(index,value){沒有key時就用index
@@ -172,11 +174,18 @@ $(document).ready(function () {
 
   }
 
-  //            獲取article CC  顯示於 Modal             //
-  // $("#detail-button").click(function (){ 一進入網頁就偵測這個東西再不再然後等待觸發function () 
-  $(document).on("click", "#detail-button", function () { //因為#detail-button是被典籍後才會出現的東西所以要用這個寫法
-    //搜尋整個頁面.on監測#detail-button被click後才執行接下來的function ()
 
+
+  //             獲取使用者於article CC選擇的訂單資訊  顯示於 Modal             //
+  
+  $(document).on("click", "#detail-button", function () { 
+    //  $("#detail-button").click(function (){ 
+    //   一進入網頁就偵測這個東西再不再然後等待觸發function () 
+    // 因為#detail-button是被典籍後才會出現的東西所以要用這個寫法
+    // 搜尋整個頁面.on監測#detail-button被click後才執行接下來的function ()
+
+
+    //獲取使用者於article CC選擇的訂單資訊   //
     let text_start = $(this).parent().parent().find(".text-start").text();
     //往上一層td  //再往上一層tr       //取得訂單編號
     let bi1 = $(this).parent().parent().find("#value_pno").text();
@@ -186,6 +195,7 @@ $(document).ready(function () {
     let bi3 = $(this).parent().parent().find("#value_btime").text();
     //往上一層td  //再往上一層tr       //取得出發時間
 
+    // 顯示於 Modal //
     $("#Modal-orderNum").text("訂單編號：" + text_start);
     $("#Modal-pno").text("航班代碼：" + bi1);
     $("#Modal-tdate").text("出發日期：" + bi2);
@@ -198,9 +208,8 @@ $(document).ready(function () {
     $("#Modal-orderName").text($("#hx-orderName").text());
 
 
-
-    get_detail(detail); //呼叫方法
-
+    //呼叫get_detail方法其他買票人資料 顯示於modal//
+    get_detail(detail); 
 
     //  let ticCount = detail.ticCount;
     //  $("#Modal-ticCount").text("票數：" +ticCount );
@@ -269,7 +278,7 @@ $(document).ready(function () {
 
 
 
-  //顯示於articleCC_訂票人的訂單紀錄
+  //           抓取 訂票人 所有訂票紀錄  顯示於articleCC         //
   let send = {
 
 
