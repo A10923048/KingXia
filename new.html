@@ -59,7 +59,6 @@
       </ul>
     </div>
   </nav>
-
   <!-- navbar end -->
 
 
@@ -89,8 +88,6 @@
         style="width: 50%; margin-bottom: 20%;">
       <!-- <a class="btn btn-outline-primary" href="">Link</a> -->
     </div>
-
-
 
     <header id="header" class="jumbotron text-center bg-dark">
       <div class="container">
@@ -254,7 +251,6 @@
                         </main>
                       </article>
 
-
                       <article id="articleB" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <div id="custom-alert" class="alert alert-danger" role="alert"
                           style="position: relative;display: none;">
@@ -345,7 +341,6 @@
                         <button class="article-button mt-5 mb-5 " type="button" id="search-js">查詢</button>
 
                       </article>
-
 
                       <article id="articleAA" class="my-3 pb-5 tab-pane"
                         style="display:none ; background-color: rgb(245, 240, 220);">
@@ -442,9 +437,6 @@
                           </div>
                         </main>
                       </article>
-
-                      <!-- Button trigger modal -->
-
 
                       <article id="articleC" class="my-3 tab-pane">
 
@@ -825,10 +817,11 @@
         </section>
 
     </header>
+
   </header>
 
   <!-- Modal-訂票紀錄查詢>_詳細資訊 -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="DetailModal" tabindex="-1" role="dialog" aria-labelledby="DetailModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -851,13 +844,9 @@
               <p class="article-p" id="Modal-btime">出發時間：</p>
               <p class="article-p" id="Modal-orderName">主要訂票人姓名：</p>
               <p class="article-p" id="Modal-ticCount">票數：</p>
-
-              <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
           </div>
-
         </table>
         <div class="modal-body row" id="modal-col">
-
           <!--
             <div class="col-md-5 col-lg-6 order-md-last">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -923,7 +912,7 @@
 
 
   <!-- Modal-退票1 -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="RefundModal" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -940,18 +929,18 @@
             <label for="plan">
               <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
 
-              <p class="article-p" id="Modal-orderNum">訂單編號：</p>
-              <p class="article-p" id="Modal-pno">航班代碼：</p>
-              <p class="article-p" id="Modal-tdate">出發日期：</p>
-              <p class="article-p" id="Modal-btime">出發時間：</p>
-              <p class="article-p" id="Modal-orderName">主要訂票人姓名：</p>
-              <p class="article-p" id="Modal-ticCount">票數：</p>
+              <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
+              <p class="article-p" id="RefundModal-pno">航班代碼：</p>
+              <p class="article-p" id="RefundModal-tdate">出發日期：</p>
+              <p class="article-p" id="RefundModal-btime">出發時間：</p>
+              <p class="article-p" id="RefundModal-orderName">主要訂票人姓名：</p>
+              <p class="article-p" id="RefundModal-ticCount">票數：</p>
 
               <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
           </div>
 
         </table>
-        <div class="modal-body row" id="modal-col">
+        <div class="modal-body row" id="RefundModal-col">
 
           <!--
             <div class="col-md-5 col-lg-6 order-md-last">
@@ -1015,9 +1004,6 @@
       </div>
     </div>
   </div>
-
-
-
 
 
   <!-- footer -->
