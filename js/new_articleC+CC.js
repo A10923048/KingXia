@@ -15,6 +15,7 @@ $(document).ready(function () {
         "<span class='badge bg-primary rounded-pill'>" + (parseInt(index) + parseInt(1)) + "</span>" +
         "</h4>" +
         "<ul class='list-group mb-3'>" +
+
         "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
         "<div>" +
         "<h6 class='my-0'>票號:</h6>" +
@@ -23,6 +24,7 @@ $(document).ready(function () {
         "<h6 class='my-0' id='ticnum'>" + value.ticnum + "</h6>" +
         "</div>" +
         "</li>" +
+
         "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
         "<div>" +
         "<h6 class='my-0'>姓名:</h6>" +
@@ -31,6 +33,7 @@ $(document).ready(function () {
         "<h6 class='my-0' id='tname'>" + value.tname + "</h6>" +
         "</div>" +
         "</li>" +
+
         "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
         "<div>" +
         "<h6 class='my-0'>身分證/護照號碼:</h6>" +
@@ -39,6 +42,7 @@ $(document).ready(function () {
         "<h6 class='my-0' id='tid'>" + value.id + "</h6>" +
         "</div>" +
         "</li>" +
+
         "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
         "<div>" +
         "<h6 class='my-0'>Email:</h6>" +
@@ -47,6 +51,7 @@ $(document).ready(function () {
         "<h6 class='my-0' id='temail'>" + value.email + "</h6>" +
         "</div>" +
         "</li>" +
+
         "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
         "<div>" +
         "<h6 class='my-0'>手機號碼:</h6>" +
@@ -55,6 +60,16 @@ $(document).ready(function () {
         "<h6 class='my-0' id='tmobile'>" + value.mobile + "</h6>" +
         "</div>" +
         "</li>" +
+
+        "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+        "<div>" +
+        "<h6 class='my-0'>票種:</h6>" +
+        "</div>" +
+        "<div>" +
+        "<h6 class='my-0' id='tmobile'>" + value.tictype + "</h6>" +
+        "</div>" +
+        "</li>" +
+
         "</ul>" +
         "</div>"
       )
@@ -127,6 +142,15 @@ $(document).ready(function () {
         "</div>" +
         "<div>" +
         "<h6 class='my-0' id='tmobile'>" + value.mobile + "</h6>" +
+        "</div>" +
+        "</li>" +
+
+        "<li class='list-group-item d-flex justify-content-between lh-sm'>" +
+        "<div>" +
+        "<h6 class='my-0'>票種:</h6>" +
+        "</div>" +
+        "<div>" +
+        "<h6 class='my-0' id='tmobile'>" + value.tictype + "</h6>" +
         "</div>" +
         "</li>" +
 
