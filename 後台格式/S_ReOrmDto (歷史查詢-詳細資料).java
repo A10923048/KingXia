@@ -36,7 +36,7 @@ public class S_ReOrmDto {
         /** 航班 */
         private Integer pno;
         
-        /** 訂購日期 *LocalDateTime格式長成[2011,1,2,4時,16分,6秒]/
+        /** 訂購日期 *LocalDateTime格式長成[2011,1,2,4時,16分,6秒]*/
         private LocalDateTime tDate;
         
         /** 開船時間 */
