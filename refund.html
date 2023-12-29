@@ -100,7 +100,7 @@
             <div class="row justify-content-center">
 
               <nav class="nav nav-pills flex-row justify-content-center" id="myNav">
-                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">退票</button>
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">退票</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleD')">test</button>
               </nav>
 
@@ -112,115 +112,102 @@
                   <div class="container  mb-5">
 
 
-                    <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
+                    <div class="tab-content " style="padding-left: 2%;padding-right: 2%;">
 
-                      <article id="articleC" class="my-3 tab-pane show active">
-
-                        <div id="custom-alert-c" class="alert alert-danger" role="alert"
-                          style="position: relative;display: none;">
-                          <p id="alert-text-c"></p>
-                          <i class="fa-solid fa-circle-xmark fa-2x" style="position: absolute; top: 5%; right: 0%;"
-                            onclick="closeAlertC()"></i>
-                        </div>
-
-                        <div class="col-md-12 text-white justify-content-center">
-                          <h2 class="section-title mb-5 text-center ">訂票紀錄查詢</h2>
-                          <div class="intro-box">
-                            <i class="fa-solid fa-user-check fa-6x"></i>
-                            <div class="ROW">
-                              <h5 class="text-uppercase">主要訂票人</h5>
-                              <h6 class="text-uppercase">資料</h5>
+                      <article id="articleA" class="my-3 pb-5 tab-pane show active"
+                        style=" background-color: rgb(245, 240, 220);">
+                        <div class="modal-body col-md-12 col-lg-12 order-md-last" style="background-color: rgb(102, 235, 226)">
+          
+                          <table class="">
+                            <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center text-white"
+                              style="background: rgb(35, 166, 157)">
+                              <label for="plan">
+                                <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
+                    
+                                <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
+                                <p class="article-p" id="RefundModal-pno">航班代碼：</p>
+                                <p class="article-p" id="RefundModal-tdate">出發日期：</p>
+                                <p class="article-p" id="RefundModal-btime">出發時間：</p>
+                                <p class="article-p" id="RefundModal-orderName">主要訂票人姓名：</p>
+                                <div class="justify-content-between">
+                                  <p class="article-p" id="RefundModal-ticCount">票數：</p>
+                                  <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="AllRefund_check">
+                                    <label class="form-check-label" for="same-address">全部退票(請打勾)</label>
+                                  </div>
+                                </div>
+                    
                             </div>
-                            <div class="intro-box-box">
-                              <div class="max-width">
-                                <div class="input-container">
-                                  <p>電話:</p>
-                                  <input type="text" id="hx-phone" size="15">
-                                </div>
-                                <!-- 其他表单字段 -->
-
-                                <div class="input-container">
-                                  <p>身分證:</p>
-                                  <input type="text" id="hx-id" size="15">
-                                </div>
+                    
+                          </table>
+                
+                          <h3 class="d-flex justify-content-center align-items-center mb-5 mt-5">
+                            <span class="text-primary">其他買票人資料</span>
+                            <span class="badge bg-primary rounded-pill"></span>
+                          </h3>
+                  
+                          <div class="row" id="RefundModal-col">
+                            <!--
+                              <div class="col-md-5 col-lg-6 order-md-last">
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                  <span class="text-primary">其他買票人資料</span>
+                                  <span class="badge bg-primary rounded-pill">3</span>
+                                </h4>
+                                <ul class="list-group mb-3">
+                                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                      <h6 class="my-0">票號:</h6>
+                                    </div>
+                                    <div>
+                                      <h6 class="my-0" id="ticnum">(票數顯示)</h6>
+                                    </div>
+                                  </li>
+                                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                      <h6 class="my-0">姓名:</h6>
+                                    </div>
+                                    <div>
+                                      <h6 class="my-0">id="tname"</h6>
+                                    </div>
+                                  </li>
+                                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                      <h6 class="my-0">: 身分證/護照號碼</h6>
+                                    </div>
+                                    <div>
+                                      <h6 class="my-0">id</h6>
+                                    </div>
+                              
+                                  </li>
+                              
+                                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                      <h6 class="my-0">:email</h6>
+                                    </div>
+                                    <div>
+                                      <h6 class="my-0">(email顯示)</h6>
+                                    </div>
+                                  </li>
+                                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                      <h6 class="my-0">mobile:</h6>
+                                    </div>
+                                    <div>
+                                      <h6 class="my-0">(mobile顯示)</h6>
+                                    </div>
+                                  </li>
+                                </ul>
                               </div>
-                            </div>
-                            <button class="article-button mt-5 mb-5 " type="button" id="search-hx-js">查詢</button>
+                              -->
+                  
                           </div>
+                          <button type="button" id="RefundModal_Send" class="btn btn-primary" data-toggle='modal' data-target='#RefundModal2'>
+                            <i class="fa-solid fa-paper-plane fa-2x">送出</i>
+                          </button>
                         </div>
-                        <!-- <button class="article-button mt-5 mb-5 " type="button" id="search-hx-js">查詢</button> -->
+                              
                       </article>
 
-                      <article id="articleCC" class="my-3 pb-5 tab-pane"
-                        style="display:none ; background-color: rgb(245, 240, 220);">
-
-                        <table>
-                          <div id="planpickered" class="pt-5 pb-5" style="background: rgb(102, 235, 226)">
-
-                            <label for="plan">
-                              <h1 class="section-title mb-5 text-center">主要訂票人資料顯示</h1>
-
-                              <p class="article-p" id="hx-orderName"></p>
-                              <p class="article-p" id="hx-phone-result"></p>
-                              <p class="article-p" id="hx-id-result"></p>
-
-                              <!-- <p class="article-p" id="searchingdate-result">出發日期：</p> -->
-                          </div>
-
-                        </table>
-                        <main>
-                          <div class="table-responsive">
-                            <h2 class="display-6 text-center mb-4">訂單紀錄顯示</h2>
-                            <table class="table text-center">
-                              <thead>
-                                <tr>
-
-                                  <th style="width: 20%;" id="hx_oreder">訂單編號</th>
-                                  <th style="width: 20%;" id="hx_shipID">航班代碼</th>
-                                  <th style="width: 20%;" id="hx_date">出發日期</th>
-                                  <th style="width: 20%;" id="hx_btime">出發時間</th>
-                                  <th style="width: 20%;" id="hx_detial">詳細資訊</th>
-                                  <th style="width: 20%;" id="hx_detial">退票</th>
-                                </tr>
-                              </thead>
-                              <tbody id="hx-result">
-                                <!-- <tr>
-                                      <td scope="row" class="text-start">shipID0</td>
-                                      <td>
-                                          <svg class="bi" width="24" height="24">
-                                                <use xlink:href="#check" />
-                                          </svg>
-                                          btime
-                                      </td>
-                                      <td>
-                                          <svg class="bi" width="24" height="24">
-                                              <use xlink:href="#check" />
-                                          </svg>
-                                          etime
-                                      </td>
-                                      <td>
-                                          <svg class="bi" width="24" height="24">
-                                              <use xlink:href="#check" />
-                                          </svg>
-                                          qty
-                                      </td>
-                                      <td>
-                                          <svg class="bi" width="24" height="24">
-                                              <use xlink:href="#check" />
-                                          </svg>
-                                          <a class="article-button"
-                                              href="./Payment Page.html">
-                                              <i class="fa-solid fa-ticket fa-3x"
-                                                  aria-hidden="true"></i>
-                                              <span class="sr-only">訂票</span>
-                                          </a>
-                                      </td>
-                                  </tr> -->
-                              </tbody>
-                            </table>
-                          </div>
-                        </main>
-                      </article>
 
                       <article id="articleD" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <div class="container text-white my-3 pb-5  bg-secondary">
@@ -881,6 +868,7 @@
     crossorigin="anonymous"></script> -->
   <!-- 連結網頁主程式 -->
   <script src="./js/main.js"></script>
+  <script src="./js/refund.js"></script>
   <script src="./js/new_articleC+CC.js"></script>
   <script src="./js/new_articleC.js"></script>
   <script src="./js/new_articleCCC.js"></script>
