@@ -9,7 +9,7 @@ $(document).ready(function () {
     $.each(travelers, function (index, value) {
 
       $("#modal-col").append(
-        "<div class='col-md-6 col-lg-6 order-md-last'>" +
+        "<div class=' col-md-6 col-lg-6 order-md-last'>" +
         "<h4 class='d-flex justify-content-between align-items-center mb-3'>" +
         "<span class='text-primary'>其他買票人資料</span>" +
         "<span class='badge bg-primary rounded-pill'>" + (parseInt(index) + parseInt(1)) + "</span>" +
@@ -89,7 +89,7 @@ $(document).ready(function () {
 
 
 
-        "<div class='col-md-6 col-lg-6 order-md-last '>" +
+        "<div class='refund_col col-md-6 col-lg-6 order-md-last '>" +
         "<h5 class='d-flex justify-content-between align-items-center mb-3'>買票人" +
 
         "<span class='badge rounded-pill text-primary' style='color: #f7cf02; '>" + (parseInt(index) + parseInt(1)) + "</span>" +
@@ -179,23 +179,21 @@ $(document).ready(function () {
   // 監聽主checkbox，如果有變化觸發功能如下:
   $("#AllRefund_check").change(function () {
 
-    
+
     $(".Refund_checkbox-input").prop("checked", $(this).prop("checked"));
-    //$("#Refund_check").prop : 搜尋 子checkbox 的 屬性(key,value)
+    //如何知道 checkbox 的屬性叫 checked? google:checkbox 的屬性，就會知道即使html沒給它屬性，依舊有它自帶的屬性
+    //this在這裡等於"#AllRefund_check"
+    //$("#AllRefund_check").prop : 搜尋 子checkbox 的 屬性(key,value)
     //屬性就是一組(key,value)，這裡的 key="checked" , value= $(this).prop("checked")
-    //this="#AllRefund_check"
+    //this="#AllRefund_check";this會隨著每次抓取到的東西不同而有所改變
     //value= 尋找$("#AllRefund_check")屬性 的key 的值
-    // $("#Refund_check")屬性的("值"，要指定為"")
+    // $(".Refund_checkbox-input")屬性的("這˙KEY對應的值"，指定為"這個屬性對應的"checked"KEY的值")
     //
 
-    
+
 
 
   });
-
-
-
-
 
 
 
@@ -390,162 +388,205 @@ $(document).ready(function () {
 
     $("#RefundModal-ticCount").text("票數：" + detail.ticCount);
 
+
+    })
+
+
+    //               獲取被勾選的退票資料                //
+
+    $("#RefundModal_Send").click(function () {
+      console.log($(".Refund_checkbox-input"));
+
+      //let get_Refund_checkbox_input = $(".Refund_checkbox-input");
+      //選取 有checkbox 的物件
+
+
+      //get_Refund_checkbox_input.each(function () {
+      //循環 被選取的 checkbox物件
+      //這裡不能用$.each(get_Refund_checkbox_input.each , function (key, value) {}
+
+      //錯誤: console.log(get_Refund_checkbox_input, $(this).prop("checked"));
+      //錯誤原因(1): get_Refund_checkbox_input 獲取的是
+      // $() = [0:$(),
+      //        1:$(),
+      //        2:$()]
+      //但是我並不要顯示所有資料，我只要顯示 這個value $() 的屬性
+      //錯誤原因(2): console.log裡面區隔不能用"，"要用 "+"
+
+      //chat GPT整合成下列:
+      $(".Refund_checkbox-input").each(function () {
+        // 在這裡使用 $(this) 可以正確取得當前的 checkbox 元素
+
+        console.log($(this).prop("checked"));
+
+        //獲取使用者於article CC選擇的訂單資訊   //
+        if ($(this).prop("checked")) {
+          let refundColContent = $(this).closest('.refund_col').html();
+          //console.log(refundColContent);
+        }
+
+        // 顯示於 Modal //
+        $("#RefundModal-col_2").text("refundColContent");
+
+        //})
+        
+
+      })
+    })
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //測試資料如下//
+
+    ////////////////////////////////////////////////////////////////////////////////////
+
+
+    //            獲取 detail_其他買票人資料 顯示於modal           //
+    let detail = {
+
+      //詳細訂票紀錄 
+
+      //買票人資料
+      "orderNum": "123456789",
+      "ticCount": 3,//(底下搭船人數)
+
+
+
+      "travelers": [
+        {   //其他買票人資料資料
+          "id": "111111",
+          "tname": "王A明",//航班代碼
+          "gender": "1030",
+          "sbr": "2020/01/01",//(訂票最後時間)
+          "email": "123@gmail.com",
+          "mobile": "0912345678",
+          "ticnum": "123456",
+          "tictype": "全票",
+
+        },
+        {   //其他搭船人資料
+          "id": "222222",
+          "tname": "王B明",//航班代碼
+          "gender": "1030",
+          "sbr": "2020/01/01",//(訂票最後時間)
+          "email": "456@gmail.com",
+          "mobile": "0912-345-678",
+          "ticnum": "123456",
+          "tictype": "全票",
+        },
+        {   //其他搭船人資料
+          "id": "333333",
+          "tname": "王B明",//航班代碼
+          "gender": "1030",
+          "sbr": "2020/01/01",//(訂票最後時間)
+          "email": "789@gmail.com",
+          "mobile": "0912-345-678",
+          "ticnum": "123456",
+          "tictype": "全票",
+        }
+
+      ]
+    }
+
+
+
+    //           抓取 訂票人 所有訂票紀錄  顯示於articleCC         //
+    let send = {
+
+
+      //買票人資料
+      "orderName": "周小寶",
+      "orderPhone": "0912345678",//(頁面輸入)
+      "orderUid": "F197728291",//(頁面輸入)
+
+
+      "orms": [
+        {   //訂單紀錄1
+          "orderNum": "112233",
+          "pno": 54035,//航班代碼
+          "tdate": "2023-11-22",
+          "btime": "1030",
+          "etime": "1200",
+          "stime": "1000",//(訂票最後時間)
+          "port0": "水頭",
+          "port1": "水頭",
+          "sp": true,
+        },
+        {   //訂單紀錄2
+          "orderNum": "112233",
+          "pno": 54035,//航班代碼
+          "tdate": "2023-11-22",
+          "btime": "1030",
+          "etime": "1200",
+          "stime": "1000",//(訂票最後時間)
+          "port0": "水頭",
+          "port1": "水頭",
+          "sp": true,
+        },
+        {   //訂單紀錄3
+          "orderNum": "112233",
+          "pno": 54035,//航班代碼
+          "tdate": "2023-11-22",
+          "btime": "1030",
+          "etime": "1200",
+          "stime": "1000",//(訂票最後時間)
+          "port0": "水頭",
+          "port1": "水頭",
+          "sp": true,
+        }
+      ]
+    }
+
+
+    let others = {
+      //其他搭船人資料
+      "orderNum": "abc",
+      "ticCount": 3,
+      "travelers": [
+        {
+          "id": 54035, //航班代碼   
+          "tname": "2023-11-22",
+          "gender": "1030",
+          "birthday": [2011, 1, 2, 4, 16, 6],
+          "sbr": "1000", //(訂票最後時間)
+          "email": "456@456",
+          "mobile": "水頭",
+          "ticnum": true,
+        },
+        {
+          "id": 54035, //航班代碼   
+          "tname": "2023-11-22",
+          "gender": "1030",
+          "birthday": [2011, 1, 2, 4, 16, 6],
+          "sbr": "1000", //(訂票最後時間)
+          "email": "456@456",
+          "mobile": "水頭",
+          "ticnum": true,
+        },
+        {
+          "id": 54035, //航班代碼   
+          "tname": "2023-11-22",
+          "gender": "1030",
+          "birthday": [2011, 1, 2, 4, 16, 6],
+          "sbr": "1000", //(訂票最後時間)
+          "email": "456@456",
+          "mobile": "水頭",
+          "ticnum": true,
+        },
+        {
+          "id": 54035, //航班代碼   
+          "tname": "2023-11-22",
+          "gender": "1030",
+          "birthday": [2011, 1, 2, 4, 16, 6],
+          "sbr": "1000", //(訂票最後時間)
+          "email": "456@456",
+          "mobile": "水頭",
+          "ticnum": true,
+        },
+      ]
+    }
+
+
   })
-
-
-
-
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  //測試資料如下//
-
-  ////////////////////////////////////////////////////////////////////////////////////
-
-
-  //            獲取 detail_其他買票人資料 顯示於modal           //
-  let detail = {
-
-    //詳細訂票紀錄 
-
-    //買票人資料
-    "orderNum": "123456789",
-    "ticCount": 3,//(底下搭船人數)
-
-
-
-    "travelers": [
-      {   //其他買票人資料資料
-        "id": "111111",
-        "tname": "王A明",//航班代碼
-        "gender": "1030",
-        "sbr": "2020/01/01",//(訂票最後時間)
-        "email": "123@gmail.com",
-        "mobile": "0912345678",
-        "ticnum": "123456",
-        "tictype": "全票",
-
-      },
-      {   //其他搭船人資料
-        "id": "222222",
-        "tname": "王B明",//航班代碼
-        "gender": "1030",
-        "sbr": "2020/01/01",//(訂票最後時間)
-        "email": "456@gmail.com",
-        "mobile": "0912-345-678",
-        "ticnum": "123456",
-        "tictype": "全票",
-      },
-      {   //其他搭船人資料
-        "id": "333333",
-        "tname": "王B明",//航班代碼
-        "gender": "1030",
-        "sbr": "2020/01/01",//(訂票最後時間)
-        "email": "789@gmail.com",
-        "mobile": "0912-345-678",
-        "ticnum": "123456",
-        "tictype": "全票",
-      }
-
-    ]
-  }
-
-
-
-  //           抓取 訂票人 所有訂票紀錄  顯示於articleCC         //
-  let send = {
-
-
-    //買票人資料
-    "orderName": "周小寶",
-    "orderPhone": "0912345678",//(頁面輸入)
-    "orderUid": "F197728291",//(頁面輸入)
-
-
-    "orms": [
-      {   //訂單紀錄1
-        "orderNum": "112233",
-        "pno": 54035,//航班代碼
-        "tdate": "2023-11-22",
-        "btime": "1030",
-        "etime": "1200",
-        "stime": "1000",//(訂票最後時間)
-        "port0": "水頭",
-        "port1": "水頭",
-        "sp": true,
-      },
-      {   //訂單紀錄2
-        "orderNum": "112233",
-        "pno": 54035,//航班代碼
-        "tdate": "2023-11-22",
-        "btime": "1030",
-        "etime": "1200",
-        "stime": "1000",//(訂票最後時間)
-        "port0": "水頭",
-        "port1": "水頭",
-        "sp": true,
-      },
-      {   //訂單紀錄3
-        "orderNum": "112233",
-        "pno": 54035,//航班代碼
-        "tdate": "2023-11-22",
-        "btime": "1030",
-        "etime": "1200",
-        "stime": "1000",//(訂票最後時間)
-        "port0": "水頭",
-        "port1": "水頭",
-        "sp": true,
-      }
-    ]
-  }
-
-
-  let others = {
-    //其他搭船人資料
-    "orderNum": "abc",
-    "ticCount": 3,
-    "travelers": [
-      {
-        "id": 54035, //航班代碼   
-        "tname": "2023-11-22",
-        "gender": "1030",
-        "birthday": [2011, 1, 2, 4, 16, 6],
-        "sbr": "1000", //(訂票最後時間)
-        "email": "456@456",
-        "mobile": "水頭",
-        "ticnum": true,
-      },
-      {
-        "id": 54035, //航班代碼   
-        "tname": "2023-11-22",
-        "gender": "1030",
-        "birthday": [2011, 1, 2, 4, 16, 6],
-        "sbr": "1000", //(訂票最後時間)
-        "email": "456@456",
-        "mobile": "水頭",
-        "ticnum": true,
-      },
-      {
-        "id": 54035, //航班代碼   
-        "tname": "2023-11-22",
-        "gender": "1030",
-        "birthday": [2011, 1, 2, 4, 16, 6],
-        "sbr": "1000", //(訂票最後時間)
-        "email": "456@456",
-        "mobile": "水頭",
-        "ticnum": true,
-      },
-      {
-        "id": 54035, //航班代碼   
-        "tname": "2023-11-22",
-        "gender": "1030",
-        "birthday": [2011, 1, 2, 4, 16, 6],
-        "sbr": "1000", //(訂票最後時間)
-        "email": "456@456",
-        "mobile": "水頭",
-        "ticnum": true,
-      },
-    ]
-  }
-
-
-})
