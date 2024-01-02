@@ -217,22 +217,22 @@ $(document).ready(function () {
 
   //          退票modal_功能_全部選取後退票           //
 
-  // 監聽主checkbox，如果有變化觸發功能如下:
-  $("#AllRefund_check").change(function () {
+  // // 監聽主checkbox，如果有變化觸發功能如下:
+  // $("#AllRefund_check").change(function () {
 
 
-    $(".Refund_checkbox-input").prop("checked", $(this).prop("checked"));
-    //如何知道 checkbox 的屬性叫 checked? google:checkbox 的屬性，就會知道即使html沒給它屬性，依舊有它自帶的屬性
-    //this在這裡等於"#AllRefund_check"
-    //$("#AllRefund_check").prop : 搜尋 子checkbox 的 屬性(key,value)
-    //屬性就是一組(key,value)，這裡的 key="checked" , value= $(this).prop("checked")
-    //this="#AllRefund_check";this會隨著每次抓取到的東西不同而有所改變
-    //value= 尋找$("#AllRefund_check")屬性 的key 的值
-    // $(".Refund_checkbox-input")屬性的("這˙KEY對應的值"，指定為"這個屬性對應的"checked"KEY的值")
-    //
+  //   $(".Refund_checkbox-input").prop("checked", $(this).prop("checked"));
+  //   //如何知道 checkbox 的屬性叫 checked? google:checkbox 的屬性，就會知道即使html沒給它屬性，依舊有它自帶的屬性
+  //   //this在這裡等於"#AllRefund_check"
+  //   //$("#AllRefund_check").prop : 搜尋 子checkbox 的 屬性(key,value)
+  //   //屬性就是一組(key,value)，這裡的 key="checked" , value= $(this).prop("checked")
+  //   //this="#AllRefund_check";this會隨著每次抓取到的東西不同而有所改變
+  //   //value= 尋找$("#AllRefund_check")屬性 的key 的值
+  //   // $(".Refund_checkbox-input")屬性的("這˙KEY對應的值"，指定為"這個屬性對應的"checked"KEY的值")
+  //   //
 
 
-  });
+  // });
 
 
   // let listNum =0;
@@ -314,7 +314,7 @@ $(document).ready(function () {
     let get_order_Name = $("#hx-orderName").text();
                                       //取得訂票人姓名
     
-    let sed_inform={
+    let send_inform={
       orderPhone:get_order_phone,
       orderUid:get_order_id,
       orderNum:Refund_orderNum,
@@ -539,47 +539,47 @@ $(document).ready(function () {
   })
 
 
-  //               獲取被勾選的退票資料                //
+  // //               獲取被勾選的退票資料)                //
 
-  $("#RefundModal_Send").click(function () {
-    console.log($(".Refund_checkbox-input"));
+  // $("#RefundModal_Send").click(function () {
+  //   console.log($(".Refund_checkbox-input"));
 
-    //let get_Refund_checkbox_input = $(".Refund_checkbox-input");
-    //選取 有checkbox 的物件
-
-
-    //get_Refund_checkbox_input.each(function () {
-    //循環 被選取的 checkbox物件
-    //這裡不能用$.each(get_Refund_checkbox_input.each , function (key, value) {}
-
-    //錯誤: console.log(get_Refund_checkbox_input, $(this).prop("checked"));
-    //錯誤原因(1): get_Refund_checkbox_input 獲取的是
-    // $() = [0:$(),
-    //        1:$(),
-    //        2:$()]
-    //但是我並不要顯示所有資料，我只要顯示 這個value $() 的屬性
-    //錯誤原因(2): console.log裡面區隔不能用"，"要用 "+"
-
-    //chat GPT整合成下列:
-    $(".Refund_checkbox-input").each(function () {
-      // 在這裡使用 $(this) 可以正確取得當前的 checkbox 元素
-
-      console.log($(this).prop("checked"));
-
-      //獲取使用者於article CC選擇的訂單資訊   //
-      if ($(this).prop("checked")) {
-        let refundColContent = $(this).closest('.refund_col').html();
-        //console.log(refundColContent);
-      }
-
-      // 顯示於 Modal //
-      $("#RefundModal-col_2").text("refundColContent");
-
-      //})
+  //   //let get_Refund_checkbox_input = $(".Refund_checkbox-input");
+  //   //選取 有checkbox 的物件
 
 
-    })
-  })
+  //   //get_Refund_checkbox_input.each(function () {
+  //   //循環 被選取的 checkbox物件
+  //   //這裡不能用$.each(get_Refund_checkbox_input.each , function (key, value) {}
+
+  //   //錯誤: console.log(get_Refund_checkbox_input, $(this).prop("checked"));
+  //   //錯誤原因(1): get_Refund_checkbox_input 獲取的是
+  //   // $() = [0:$(),
+  //   //        1:$(),
+  //   //        2:$()]
+  //   //但是我並不要顯示所有資料，我只要顯示 這個value $() 的屬性
+  //   //錯誤原因(2): console.log裡面區隔不能用"，"要用 "+"
+
+  //   //chat GPT整合成下列:
+  //   $(".Refund_checkbox-input").each(function () {
+  //     // 在這裡使用 $(this) 可以正確取得當前的 checkbox 元素
+
+  //     console.log($(this).prop("checked"));
+
+  //     //獲取使用者於article CC選擇的訂單資訊   //
+  //     if ($(this).prop("checked")) {
+  //       let refundColContent = $(this).closest('.refund_col').html();
+  //       //console.log(refundColContent);
+  //     }
+
+  //     // 顯示於 Modal //
+  //     $("#RefundModal-col_2").text("refundColContent");
+
+  //     //})
+
+
+  //   })
+  // })
 
 
 
@@ -591,6 +591,10 @@ $(document).ready(function () {
 
 
   //            獲取 detail_其他買票人資料 顯示於modal           //
+  
+  
+  
+  
   let detail = {
 
     //詳細訂票紀錄 

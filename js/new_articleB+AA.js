@@ -238,12 +238,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
      
 let datas = {
     "54035": {
