@@ -78,76 +78,16 @@ $(document).ready(function () {
 
   $("#articleA_send").click(function () {
 
+      let buyers_list = 0;
+        
       // 獲取"articleA表格內的值
       let orderName = $("#orderName").val();
       let orderPhone = $("#orderPhone").val();
       let orderId = $("#orderId").val();
-
-      // 獲取form-check 是否購票人為乘客的值
-      var isPassenger = $("input[name='isPassenger']:checked").val();
-      // 獲取form-check 訂單開立方式的值
-      var orderMethod = $("input[name='orderMethods']:checked").val();
-
-      console.log("orderName: " + orderName);
-      console.log("orderPhone: " + orderPhone);
-      console.log("orderId: " + orderId);
-
-      // 檢查是否購票人為乘客
-      if (isPassenger === '是') {
-          console.log("購票人為乘客");
-      }  else if (isPassenger === '否'){
-          console.log("購票人不是乘客");
-      }
-
-      // 檢查訂單開立方式
-      if (orderMethod === '統一開立購票證名') {
-          console.log("統一開立購票證名");
-      } else if(orderMethod === '分別開立購票證名') {
-          console.log("分別開立購票證名");
-      }
-
-      let T=true;
-      let text_show="";
-
-      // 檢查"articleA表格內的值"是否為空
-      if (!orderName ){
-        T=false;
-        text_show=text_show+"姓名:未填寫<br>"
-       //  "姓名:未填寫"=""+"姓名:未填寫"
-      }
-
-      if (!orderPhone ){
-        T=false;
-        text_show=text_show+"電話:未填寫<br>"
-       // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
-      }
-
-      if (!orderId ){
-        T=false;
-        text_show=text_show+"身分證/護照號碼:未填寫<br>"
-      }
-
-      if (!isPassenger ){
-        T=false;
-        text_show=text_show+"購票人是否為乘客(未選擇)<br>"
-      }
-
-      if (!orderMethod){
-        T=false;
-        text_show=text_show+"訂單開立方式(未選擇)"
-      }
-
-      if (!T){
-        $("#alert-result").html(text_show);
-        $("#custom-alert").show();
-
-      }else {
-        //產生:購票人資料填寫(下拉選單)
-      for (var i = 0; i < ticket; i++) {
-
-        let htmlString = 
-
-        '<li class="my-2">' +
+      let ticketQuantity =$("#ticketQuantity").val();
+      
+      let A=function(i,name,Uid){
+        let htmlString ='<li class="my-2">' +
         '<button class="btn d-inline-flex align-items-center collapsed border-0"' +
           ' data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse'+i+'"' +
           ' aria-controls="contents-collapse">其他旅客資料('+(parseInt(i) + parseInt(1))+')</button>' +
@@ -199,11 +139,11 @@ $(document).ready(function () {
                           '<use xlink:href="#check" />' +
                         '</svg>' +
                         '<h6>身分證/護照號碼</h6>' +
-                        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
+                        '<input type="text" class="form-control" id="orderName" placeholder="" value="'+Uid+'" required>' +
                       '</th>' +
                       '<th scope="row" class="text-start">' +
                         '<h6>姓名</h6>' +
-                        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
+                        '<input type="text" class="form-control" id="orderName" placeholder="" value="'+name+'" required>' +
                       '</th>' +
                       '<th style="width: 50%;">' +
                         '<svg class="bi" width="24" height="24">' +
@@ -220,11 +160,88 @@ $(document).ready(function () {
           '</div>' +
         '</ul>' +
       '</li>';
+      return htmlString;
+    }
+
+      // 獲取form-check 是否購票人為乘客的值
+      var isPassenger = $("input[name='isPassenger']:checked").val();
+      // 獲取form-check 訂單開立方式的值
+      var orderMethod = $("input[name='orderMethods']:checked").val();
+
+      console.log("orderName: " + orderName);
+      console.log("orderPhone: " + orderPhone);
+      console.log("orderId: " + orderId);
+      console.log("ticketQuantity: " + orderId);
+      
+      // 檢查是否購票人為乘客
       
 
-        $("#buyers_list").append(htmlString);
+      let T=true;
+      let text_show="";
+
+      // 檢查"articleA表格內的值"是否為空
+      if (!orderName ){
+        T=false;
+        text_show=text_show+"姓名:未填寫<br>"
+       //  "姓名:未填寫"=""+"姓名:未填寫"
+      }
+
+      if (!orderPhone ){
+        T=false;
+        text_show=text_show+"電話:未填寫<br>"
+       // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      }
+      if (!ticketQuantity){
+        T=false;
+        text_show=text_show+"票種:未選擇<br>"
+       // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      }
+
+      if (!orderId ){
+        T=false;
+        text_show=text_show+"身分證/護照號碼:未填寫<br>"
+      }
+
+      if (!isPassenger ){
+        //如果 後面這個條件是  false
+        T=false;
+        text_show=text_show+"購票人是否為乘客(未選擇)<br>"
 
       }
+
+      if (!orderMethod){
+        T=false;
+        text_show=text_show+"訂單開立方式(未選擇)"
+      }
+
+      if (!T){
+        $("#alert-result").html(text_show);
+        $("#custom-alert").show();
+
+      }else {
+        let get_A_inedex=0;
+        if (isPassenger === '是') {
+          let get_A =A(get_A_inedex,orderName,orderId);
+          $("#buyers_list").append(get_A);
+          get_A_inedex =1;
+            console.log("購票人為乘客");
+        }  else if (isPassenger === '否'){
+            console.log("購票人不是乘客");
+        }
+  
+        // 檢查訂單開立方式
+        if (orderMethod === '統一開立購票證名') {
+            console.log("統一開立購票證名");
+        } else if(orderMethod === '分別開立購票證名') {
+            console.log("分別開立購票證名");
+        }
+        
+        //產生:購票人資料填寫(下拉選單)
+        for (var i = get_A_inedex; i < ticket; i++) {
+          let no_get =A(i,"","");
+          $("#buyers_list").append(no_get);
+
+        }
       }
 
 

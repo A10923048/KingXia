@@ -198,12 +198,12 @@
                                                                   <div>
                                                                       <label for="ticketS">
                                                                           <select id="ticketQuantity">
+                                                                            <option value="" selected>請選擇票種</option>
                                                                               <option value="全票">全票</option>
                                                                               <option value="敬老">敬老 </option>
                                                                               <option value="兒童">兒童</option>
                                                                               <option value="博愛">博愛</option>
                                                                           </select>
-                                                                          張
                                                                       </label>
                                                                   </div>
                                                               </div>
@@ -282,7 +282,7 @@
                                                   <nav class="small" id="toc">
                                                     <ul class="list-unstyled" id="buyers_list">
 
-                                                      <!-- <li class="my-2">
+                                                       <!-- <li class="my-2">
                                                         <button class="btn d-inline-flex align-items-center collapsed border-0"
                                                           data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
                                                           aria-controls="contents-collapse">其他旅客資料(1)</button>
@@ -299,7 +299,51 @@
                                                                 <table class="table text-center">
                                                                   <thead>
                                                                     <tr>
-                                                                      <th style="width: 30%;">
+                                                                      <th style="width: 30%;" id="gender"class="intro-box">
+                                                                        <span class="my-0"id="time-show">
+                                                                          <i class="fa-solid fa-ticket fa-4x"></i></label>
+                                                                          <h6>票種</h6>
+                                                                          <div id="Quantity">
+                                                                            <div>
+                                                                              <select id="ticketQuantity">
+                                                                                <option value="" selected>請選擇票種</option>
+                                                                                  <option value="全票">全票</option>
+                                                                                  <option value="敬老">敬老 </option>
+                                                                                  <option value="兒童">兒童</option>
+                                                                                  <option value="博愛">博愛</option>
+                                                                              </select>
+                                                                            </div>
+                                                                          </div>
+                                                                        </span>
+                                                                      </th>
+
+                                                                      <th style="width: 30%;" id="gender"class="intro-box">
+                                                                        <span class="my-0"id="time-show">
+                                                                        <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                                                        <h6>性別</h6>
+                                                                        <select class="form-select" id="gender" required>
+                                                                          <option value="">女</option>
+                                                                          <option>男</option>
+                                                                        </select>
+                                                                        </span>
+                                                                      </th>
+
+                                                                      <th style="width: 40%;" id="country" class="intro-box">
+                                                                        <span class="my-0"id="time-show">
+                                                                        <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                                                        <h6>出生日期</h6>
+                                                                        <div>
+                                                                            <input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">
+                                                                        </div>
+                                                                      </span>
+                                                                      </th>
+
+                                                                    </tr>
+                                                                  </thead>
+                                                                  <thead>
+                                                                    <tr>
+                                                                      <th  class="intro-box">
+                                                                        <span class="my-0"id="time-show">
                                                                         <i class="fa-solid fa-earth-americas fa-4x"></i>
                                                                         <h6>國籍</h6>
                                                                         <select class="form-select" id="country" required>
@@ -308,40 +352,27 @@
                                                                           <option>大陸</option>
                                                                           <option>其他</option>
                                                                         </select>
+                                                                        </span>
                                                                       </th>
-                                                                      <th style="width: 20%;" id="gender">
-                                                                        <i class="fa-solid fa-venus-mars fa-4x"></i>
-                                                                        <h6>性別</h6>
-                                                                        <select class="form-select" id="gender" required>
-                                                                          <option value="">女</option>
-                                                                          <option>男</option>
-                                                                        </select>
-                                                                      </th>
-                                                                      <th style="width: 40%;" id="country">
-                                                                        <i class="fa-solid fa-cake-candles fa-4x"></i>
-                                                                        <h6>出生日期</h6>
-                                                                        <div>
-                                                                            <input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">
-                                                                        </div>
-                                                                      </th>
-                                                                    </tr>
-                                                                  </thead>
-                                                                  <thead id="tickets-result2">
-                                                                    <tr>
-                                                                      <th style="width: 40%;">
+                                                                      <th class="intro-box" colspan="2">
                                                                         <svg class="bi" width="24" height="24">
                                                                           <use xlink:href="#check" />
                                                                         </svg>
                                                                         <h6>身分證/護照號碼</h6>
-                                                                        <input type="text" class="form-control" id="orderName" placeholder="" value=""
-                                                                          required>
+                                                                        <input type="text" class="form-control" id="orderName" placeholder="" value="" required>
                                                                       </th>
-                                                                      <th scope="row" class="text-start" >
+                                                                    </tr>
+                                                                    
+                                                                  </thead>
+
+                                                                  <thead id="tickets-result2">
+                                                                    <tr>
+                                                                      <th scope="row" class="text-start"class="intro-box">
                                                                         <h6>姓名</h6>
                                                                         <input type="text" class="form-control" id="orderName" placeholder="" value=""
                                                                           required>
                                                                       </th>
-                                                                      <th style="width: 50%;">
+                                                                      <th class="intro-box" colspan="2">
                                                                         <svg class="bi" width="24" height="24">
                                                                           <use xlink:href="#check" />
                                                                         </svg>
@@ -351,6 +382,7 @@
                                                                       </th>
                                                                     </tr>
                                                                   </thead>
+
                                                                 </table>
                                                               </div>
                                                             </main>
