@@ -138,26 +138,18 @@ $(document).ready(function () {
 
 
     // 格式化 當下時間
-    // let formattedTime = formatDateTime(currentDateTime);
+    //  let formattedTime = formatDateTime(currentDateTime);
 
-    //  console.log("抓取的當前時間：" + formattedTime);
-    // 使用split切割formattedTime
-    //  let [datePart, timePart] = formattedTime.split(', ');
+    //   console.log("抓取的當前時間：" + formattedTime);
+    // // 使用split切割formattedTime
+    //   let [datePart, timePart] = formattedTime.split(', ');
 
-    // 顯示切割後的結果
-    //   console.log("抓取的日期部分：" + datePart);
-    //    console.log("抓取的時間部分：" + timePart);
+    // // 顯示切割後的結果
+    //    console.log("抓取的日期部分：" + datePart);
+    //     console.log("抓取的時間部分：" + timePart);
 
 
-    // 迭代datas物件的每一組資料
-    // Object.entries(datas).forEach(([key, value]) => {
-    //   // 獲取每一組資料的stime和tdate
-    //   let stime = value.stime;
-    //   let tdate = value.tdate;
-
-    //   // 顯示stime和tdate
-    //   console.log(`Key: ${key}, stime: ${stime}, tdate: ${tdate}`);
-    // });
+   
 
 
 
@@ -241,6 +233,31 @@ $(document).ready(function () {
   //        (1)於 datas資料 中找出符合（日期等於 #searchingdate-result 的日期）條件 的子物件
   //        (2)顯示 符合條件的資料 於（"#tickets-result"）中。   
   let searchingdate_next = function (datas) {
+    
+    //判斷當下時間有沒有超過訂金入票的最後時間
+    let currentDateTime = new Date();
+
+    // 格式化 當下時間
+    let formattedTime = formatDateTime(currentDateTime);
+
+    // // 使用split切割formattedTime
+    let [datePart, timePart] = formattedTime.split(', ');
+
+    // 顯示切割後的結果
+    console.log("抓取的日期部分：" + datePart);
+    console.log("抓取的時間部分：" + timePart);
+ // 迭代datas物件的每一組資料
+     Object.entries(datas).forEach(([key, value]) => {
+    //   // 獲取每一組資料的stime和tdate
+       let stime = value.stime;
+      let tdate = value.tdate;
+
+    //    顯示stime和tdate
+       console.log(`Key: ${key}, stime: ${stime}, tdate: ${tdate}`);
+     });
+
+
+
 
     let Z = {};
     //取符合條件的資料
@@ -249,15 +266,31 @@ $(document).ready(function () {
 
     $.each(datas, function (key, value) {
       //因為不知道KEY是甚麼所以 用$.each找KEY
+
       if (value.tdate == $("#searchingdate-result").text().split("：")[1]) {
         //符合條件後要握甚麼
         // Z.push({key:value})
-        Z[key] = value;
+
+        if (datePart == $("#searchingdate-result").text().split("：")[1]) {
+          //  如果選擇日期是今天進入下面的判斷式
+          if (value.stime > timePart) {
+            //進一步判斷 有沒有超過 
+            Z[key] = value;
+          }
+        }else{
+          Z[key] = value;
+        }
       }
+
+
     })
+    
+
+
+
+
+
     $("#tickets-result").empty();//不累加清空
-
-
 
     //將資料顯示於articleAA
     $.each(Z, function (key, value) {
@@ -306,7 +339,7 @@ $(document).ready(function () {
       "btime": "1030",
       "etime": "1200",
       "stime": "1000",
-      "tdate": "2024-01-20"
+      "tdate": "2024-01-03"
     },
     "54034": {
       "port0": "水頭",
@@ -315,8 +348,8 @@ $(document).ready(function () {
       "status": "正常",
       "btime": "1030",
       "etime": "1200",
-      "stime": "1000",
-      "tdate": "2024-01-21"
+      "stime": "1900",
+      "tdate": "2024-01-03"
     },
     "54033": {
       "port0": "水頭",
