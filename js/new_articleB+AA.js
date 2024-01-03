@@ -13,7 +13,7 @@ $(document).ready(function () {
   // 設置日期選擇器的值為今天日期
   //$("#datepicker").datepicker("setDate", new Date());
 
-
+  //格式化訂票日期
   let formatDate = function (date) {
     let year = date.getFullYear();
     let month = String(date.getMonth() + 1).padStart(2, '0');
@@ -21,21 +21,95 @@ $(document).ready(function () {
     return `${year}-${month}-${day}`;
   }
 
+  // 定義格式化獲取的 訂票時間 選項
+  let formatDateTime = function (dateTime) {
+    let year = dateTime.getFullYear();
+    let month = String(dateTime.getMonth() + 1).padStart(2, '0');
+    let day = String(dateTime.getDate()).padStart(2, '0');
+    let hours = String(dateTime.getHours()).padStart(2, '0');
+    let minutes = String(dateTime.getMinutes()).padStart(2, '0');
+
+    return `${year}-${month}-${day}, ${hours}${minutes}`;
+  };
 
 
 
+  $("#datePicker").on("focus", function () {
+    // 在日期輸入框被打開時執行的操作
+    console.log("日期輸入框被打開了！");
+
+    // 當"查詢"按鈕被點擊時，取得當下時間
+    let currentDateTime = new Date();
+
+    // 格式化 當下時間
+    let formattedTime = formatDateTime(currentDateTime);
+
+    // // 使用split切割formattedTime
+    let [datePart, timePart] = formattedTime.split(', ');
+
+    // // 顯示切割後的結果
+    // console.log("抓取的日期部分：" + datePart);
+    // console.log("抓取的時間部分：" + timePart);
+
+
+    //       因為datePart 是一個字串而不是日期物件，因此您無法直接使用setDate方法。
+    //      相反，將其轉換為日期物件，這樣您就可以使用setDate方法了。
+    //      讓當下時間形成一個物件，判斷當下月份+3後 有沒有> 12
+    let currentDate = new Date();
+    if (currentDate.getMonth() + 3 > 12) {
+      currentDate.setMonth((currentDate.getMonth() + 3) % 12)
+      //將+ 3% 12後的餘數設給:currentDate的月份
+      currentDate.setFullYear(currentDate.getFullYear() + 1);
+      //(先取得currentDate.年後再+1)然後丟回給currentDate的年份設定結果
+    } else {
+      currentDate.setMonth(currentDate.getMonth() + 3);
+      //直接+3
+    }
+
+
+    // 設定 min 和 max 屬性
+    let maxDate = currentDate.toISOString().split("T")[0];
+    let minDate = datePart;
+
+    $("#datePicker").attr("max", maxDate);
+    $("#datePicker").attr("min", minDate);
+
+    console.log("maxDate:" + maxDate);
+    console.log("minDate:" + minDate);
+
+
+    // 迭代datas物件的每一組資料
+    // Object.entries(datas).forEach(([key, value]) => {
+    //   // 獲取每一組資料的stime和tdate
+    //   let stime = value.stime;
+    //   let tdate = value.tdate;
+    //   // 顯示stime和tdate
+    //   console.log(`Key: ${key}, stime: ${stime}, tdate: ${tdate}`);
+    // })
+
+
+  });
 
 
 
-  // 對"查詢"按鈕添加事件監聽器
+  //                          對"查詢"按鈕添加事件監聽器                       //
   $("#search-js").click(function () {
-    // 檢查"出發日期"或"票數"是否為空
+
+    //                                  檢查"出發日期"或"票數"是否為空                        //
     let searchingdate = $("#datePicker").val();
     let ticketQuantity = $("#ticketQuantity").val();
-    console.log($("#ticketQuantity").val());
+
+    // 當"查詢"按鈕被點擊時，取得當下時間
+    //  let currentDateTime = new Date();
+
+
+
+
     // 获取当前日期
     currentDate = searchingdate;
-    console.log(searchingdate);
+
+    console.log("用戶選擇的票數:" + ticketQuantity);
+    console.log("用戶選擇的訂票日期:" + searchingdate);
 
     //如果 (日期=ture 以外的結果 以及 票數<1)執行...
     //沒驚嘆號:判斷結果=ture時會觸發
@@ -60,55 +134,63 @@ $(document).ready(function () {
       $("#custom-alert").hide();
     }
 
-    /////     獲取按下按鈕當下的時間並判斷是否超過訂票時間    //////
-    // 當按鈕被點擊時，取得當前時間
-    // var currentTime = new Date();
-    // // 設定當天早上 10 點的時間
-    // var tenAM = new Date();
-    // tenAM.setHours(10, 0, 0, 0);
-
-    // // 檢查當前時間是否超過當天早上 10 點
-    // if (currentTime > tenAM) {
-    //   console.log("無法訂當天日期的票，因為超過早上 10 點。");
-    // } else {
-    //   // 格式化時間，這只是一個範例格式，您可以根據需求進行更改
-    //   var formattedTime = currentTime.toLocaleString();
-
-    //   // 將格式化後的時間輸出到控制台
-    //   console.log("當前時間：" + formattedTime);
 
 
 
+    // 格式化 當下時間
+    // let formattedTime = formatDateTime(currentDateTime);
+
+    //  console.log("抓取的當前時間：" + formattedTime);
+    // 使用split切割formattedTime
+    //  let [datePart, timePart] = formattedTime.split(', ');
+
+    // 顯示切割後的結果
+    //   console.log("抓取的日期部分：" + datePart);
+    //    console.log("抓取的時間部分：" + timePart);
 
 
+    // 迭代datas物件的每一組資料
+    // Object.entries(datas).forEach(([key, value]) => {
+    //   // 獲取每一組資料的stime和tdate
+    //   let stime = value.stime;
+    //   let tdate = value.tdate;
 
-      // 捕獲表單數據
-      let planpicker = $("#planpicker input[type='radio']:checked").val();
-      console.log(planpicker);
-
-      // 使用捕獲的數據更新#articleAA
-      $("#planpicker-result").text("行程：" + planpicker);
-
-      $("#ticketQuantity-result").text("票數：" + ticketQuantity);
-      console.log(ticketQuantity);
-      $("#searchingdate-result").text("出發日期：" + searchingdate);
-
-
-
-      // 重定向到#articleAA
-      window.location.href = "#articleAA";
-      searchingdate_next(datas); //調用出發日期，之後datas改RES
+    //   // 顯示stime和tdate
+    //   console.log(`Key: ${key}, stime: ${stime}, tdate: ${tdate}`);
+    // });
 
 
 
 
-      // 顯示#articleAA
-      $("#articleAA").show();
-
-      listNum = 0;
 
 
-    });
+
+    //                        捕獲表單數據更新#articleAA                          //
+    let planpicker = $("#planpicker input[type='radio']:checked").val();
+    console.log(planpicker);
+
+    // 使用捕獲的數據更新#articleAA
+    $("#planpicker-result").text("行程：" + planpicker);
+    $("#ticketQuantity-result").text("票數：" + ticketQuantity);
+    console.log(ticketQuantity);
+    $("#searchingdate-result").text("出發日期：" + searchingdate);
+
+
+
+    // 重定向到#articleAA
+    window.location.href = "#articleAA";
+    searchingdate_next(datas); //調用出發日期，之後datas改RES
+
+
+
+
+    // 顯示#articleAA
+    $("#articleAA").show();
+
+    listNum = 0;
+
+
+  });
 
 
 
@@ -121,8 +203,10 @@ $(document).ready(function () {
     // 将当前日期转换为 JavaScript Date 对象
     let dateObject = new Date(currentDate);
 
-    // 判断是 "Previous" 还是 "Next" 按钮，并进行相应的日期操作
+    // 判断this(被點擊的按鈕)的ID是 "Previous" 还是 "Next" 按钮，并进行相应的日期操作
     if ($(this).attr("id") === "carousel-control-prev") {
+
+      //讓按鈕點選範圍在+-2天內，限制 listNum 的值，以防止過度遞增遞減。
       if (listNum <= -2) {
         listNum = -2;
       } else {
@@ -135,13 +219,15 @@ $(document).ready(function () {
         listNum += 1;
       }
     }
+    // 將dateObject(獲取的日期).setDate(設定為)(dateObject.getDate(獲取物件"日"的部分) + listNum結果)
     dateObject.setDate(dateObject.getDate() + listNum);
 
+    // 根據計算後的 listNum 將 dateObject 的日期進行更新。
+    // 這樣，dateObject 現在包含了根據按鈕點擊進行調整的新日期。
 
 
 
-
-    // 将新日期显示在#searchingdate-result
+    // 将新日期显示在#searchingdate-result  (formatDate=呼叫自己定義的格式化日期的方法(帶入參數dateObject))
     $("#searchingdate-result").text("出發日期：" + formatDate(dateObject));
 
     // 调用 searchingdate_next(datas)，传入 datas 参数
@@ -150,15 +236,19 @@ $(document).ready(function () {
 
 
 
-
+  //定義searchingdate_next的方法
+  //方法目的:
+  //        (1)於 datas資料 中找出符合（日期等於 #searchingdate-result 的日期）條件 的子物件
+  //        (2)顯示 符合條件的資料 於（"#tickets-result"）中。   
   let searchingdate_next = function (datas) {
 
     let Z = {};
     //取符合條件的資料
     //datas=要回圈的範圍，之後=res
 
-    //因為不知道KEY是甚麼所以 用$.each找KEY
+
     $.each(datas, function (key, value) {
+      //因為不知道KEY是甚麼所以 用$.each找KEY
       if (value.tdate == $("#searchingdate-result").text().split("：")[1]) {
         //符合條件後要握甚麼
         // Z.push({key:value})
@@ -202,7 +292,10 @@ $(document).ready(function () {
   }
 
 
-//////////////////////測試資料如下///////////////////////////
+
+
+
+  //////////////////////測試資料如下///////////////////////////
 
   let datas = {
     "54035": {
@@ -211,9 +304,9 @@ $(document).ready(function () {
       "qty": 70,
       "status": "正常",
       "btime": "1030",
-      "etime": "1200", 
+      "etime": "1200",
       "stime": "1000",
-      "tdate": "2023-11-22"
+      "tdate": "2024-01-20"
     },
     "54034": {
       "port0": "水頭",
@@ -223,7 +316,7 @@ $(document).ready(function () {
       "btime": "1030",
       "etime": "1200",
       "stime": "1000",
-      "tdate": "2023-11-21"
+      "tdate": "2024-01-21"
     },
     "54033": {
       "port0": "水頭",
@@ -233,7 +326,7 @@ $(document).ready(function () {
       "btime": "1030",
       "etime": "1200",
       "stime": "1000",
-      "tdate": "2023-11-20"
+      "tdate": "2024-01-22"
     },
     "54066": {
       "port0": "水頭",
@@ -243,7 +336,7 @@ $(document).ready(function () {
       "btime": "1600",
       "etime": "1730",
       "stime": "1530",
-      "tdate": "2023-11-24"
+      "tdate": "2024-01-23"
     },
     "54065": {
       "port0": "水頭",
@@ -253,7 +346,7 @@ $(document).ready(function () {
       "btime": "1600",
       "etime": "1730",
       "stime": "1530",
-      "tdate": "2023-11-23"
+      "tdate": "2024-01-24"
     },
     "54037": {
       "port0": "水頭",
@@ -263,7 +356,7 @@ $(document).ready(function () {
       "btime": "1030",
       "etime": "1200",
       "stime": "1000",
-      "tdate": "2023-11-24"
+      "tdate": "2024-01-24"
     },
     "54036": {
       "port0": "水頭",
@@ -273,7 +366,7 @@ $(document).ready(function () {
       "btime": "1030",
       "etime": "1200",
       "stime": "1000",
-      "tdate": "2023-11-23"
+      "tdate": "2024-01-24"
     },
     "54064": {
       "port0": "水頭",
@@ -283,7 +376,7 @@ $(document).ready(function () {
       "btime": "1600",
       "etime": "1730",
       "stime": "1530",
-      "tdate": "2023-11-22"
+      "tdate": "2024-01-24"
     },
     "54063": {
       "port0": "水頭",
@@ -293,7 +386,7 @@ $(document).ready(function () {
       "btime": "1600",
       "etime": "1730",
       "stime": "1530",
-      "tdate": "2023-11-21"
+      "tdate": "2024-01-24"
     },
     "54062": {
       "port0": "水頭",
@@ -303,7 +396,7 @@ $(document).ready(function () {
       "btime": "1600",
       "etime": "1730",
       "stime": "1530",
-      "tdate": "2023-11-20"
+      "tdate": "2024-01-24"
     }
   }
 
