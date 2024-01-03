@@ -78,7 +78,8 @@ $(document).ready(function () {
 
   $("#articleA_send").click(function () {
 
-      let buyers_list = 0;
+    $("#buyers_list").empty();
+      //let buyers_list = 0;
         
       // 獲取"articleA表格內的值
       let orderName = $("#orderName").val();
@@ -88,78 +89,105 @@ $(document).ready(function () {
       
       let A=function(i,name,Uid){
         let htmlString ='<li class="my-2">' +
-        '<button class="btn d-inline-flex align-items-center collapsed border-0"' +
-          ' data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse'+i+'"' +
-          ' aria-controls="contents-collapse">其他旅客資料('+(parseInt(i) + parseInt(1))+')</button>' +
+        '<button class="btn d-inline-flex align-items-center collapsed border-0" ' +
+            'data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse'+i+'" ' +
+            'aria-controls="contents-collapse">乘客('+(parseInt(i) + parseInt(1))+')資料填寫(請下拉)</button>' +
         '<ul class="list-unstyled ps-3 collapse" id="contents-collapse'+i+'">' +
-          '<div class="table-responsive">' +
-            '<table>' +
-              '<div id="planpickered" class="pt-5 pb-1" style="background: rgb(102, 235, 226)">' +
-                '<label for="plan">' +
-                  '<h2 class="section-title mb-3 text-center text-white">其他旅客資料</h2>' +
-                '</label>' +
-              '</div>' +
-            '</table>' +
-            '<main>' +
-              '<div class="table-responsive pt-4" style="background-color: rgb(245, 240, 220);">' +
-                '<table class="table text-center">' +
-                  '<thead>' +
-                    '<tr>' +
-                      '<th style="width: 30%;">' +
-                        '<i class="fa-solid fa-earth-americas fa-4x"></i>' +
-                        '<h6>國籍</h6>' +
-                        '<select class="form-select" id="country" required>' +
-                          '<option value="">台灣</option>' +
-                          '<option>香港</option>' +
-                          '<option>大陸</option>' +
-                          '<option>其他</option>' +
-                        '</select>' +
-                      '</th>' +
-                      '<th style="width: 20%;" id="gender">' +
-                        '<i class="fa-solid fa-venus-mars fa-4x"></i>' +
-                        '<h6>性別</h6>' +
-                        '<select class="form-select" id="gender" required>' +
-                          '<option value="">女</option>' +
-                          '<option>男</option>' +
-                        '</select>' +
-                      '</th>' +
-                      '<th style="width: 40%;" id="country">' +
-                        '<i class="fa-solid fa-cake-candles fa-4x"></i>' +
-                        '<h6>出生日期</h6>' +
-                        '<div>' +
-                          '<input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">' +
-                        '</div>' +
-                      '</th>' +
-                    '</tr>' +
-                  '</thead>' +
-                  '<thead id="tickets-result2">' +
-                    '<tr>' +
-                      '<th style="width: 40%;">' +
-                        '<svg class="bi" width="24" height="24">' +
-                          '<use xlink:href="#check" />' +
-                        '</svg>' +
-                        '<h6>身分證/護照號碼</h6>' +
-                        '<input type="text" class="form-control" id="orderName" placeholder="" value="'+Uid+'" required>' +
-                      '</th>' +
-                      '<th scope="row" class="text-start">' +
-                        '<h6>姓名</h6>' +
-                        '<input type="text" class="form-control" id="orderName" placeholder="" value="'+name+'" required>' +
-                      '</th>' +
-                      '<th style="width: 50%;">' +
-                        '<svg class="bi" width="24" height="24">' +
-                          '<use xlink:href="#check" />' +
-                        '</svg>' +
-                        '<h6>電子郵件</h6>' +
-                        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
-                      '</th>' +
-                    '</tr>' +
-                  '</thead>' +
+            '<div class="table-responsive">' +
+                '<table>' +
+                    '<div id="planpickered" class="pt-5 pb-1" style="background: rgb(102, 235, 226)">' +
+                        '<label for="plan">' +
+                            '<h2 class="section-title mb-3 text-center text-white">乘客('+(parseInt(i) + parseInt(1))+')資料</h2>' +
+                    '</div>' +
                 '</table>' +
-              '</div>' +
-            '</main>' +
-          '</div>' +
+                '<main>' +
+                    '<div class="table-responsive pt-4" style="background-color: rgb(245, 240, 220);">' +
+                        '<table class="table text-center">' +
+                            '<thead>' +
+                                '<tr>' +
+                                    '<th style="width: 30%;" id="gender" class="intro-box">' +
+                                        '<span class="my-0" id="time-show">' +
+                                            '<i class="fa-solid fa-ticket fa-4x"></i>' +
+                                            '<h6>票種</h6>' +
+                                            '<div id="Quantity">' +
+                                                '<div>' +
+                                                    '<select id="ticketQuantity">' +
+                                                        '<option value="" selected>請選擇票種</option>' +
+                                                        '<option value="全票">全票</option>' +
+                                                        '<option value="敬老">敬老 </option>' +
+                                                        '<option value="兒童">兒童</option>' +
+                                                        '<option value="博愛">博愛</option>' +
+                                                    '</select>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</span>' +
+                                    '</th>' +
+                                    '<th style="width: 30%;" id="gender" class="intro-box">' +
+                                        '<span class="my-0" id="time-show">' +
+                                            '<i class="fa-solid fa-venus-mars fa-4x"></i>' +
+                                            '<h6>性別</h6>' +
+                                            '<select class="form-select" id="gender" required>' +
+                                                '<option value="">女</option>' +
+                                                '<option>男</option>' +
+                                            '</select>' +
+                                        '</span>' +
+                                    '</th>' +
+                                    '<th style="width: 40%;" id="country" class="intro-box">' +
+                                        '<span class="my-0" id="time-show">' +
+                                            '<i class="fa-solid fa-cake-candles fa-4x"></i>' +
+                                            '<h6>出生日期</h6>' +
+                                            '<div>' +
+                                                '<input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">' +
+                                            '</div>' +
+                                        '</span>' +
+                                    '</th>' +
+                                '</tr>' +
+                            '</thead>' +
+                            '<thead>' +
+                                '<tr>' +
+                                    '<th class="intro-box">' +
+                                        '<span class="my-0" id="time-show">' +
+                                            '<i class="fa-solid fa-earth-americas fa-4x"></i>' +
+                                            '<h6>國籍</h6>' +
+                                            '<select class="form-select" id="country" required>' +
+                                                '<option value="">台灣</option>' +
+                                                '<option>香港</option>' +
+                                                '<option>大陸</option>' +
+                                                '<option>其他</option>' +
+                                            '</select>' +
+                                        '</span>' +
+                                    '</th>' +
+                                    '<th class="intro-box" colspan="2">' +
+                                        '<svg class="bi" width="24" height="24">' +
+                                            '<use xlink:href="#check" />' +
+                                        '</svg>' +
+                                        '<h6>身分證/護照號碼</h6>' +
+                                        '<input type="text" class="form-control" id="orderName" placeholder="" value="'+Uid+'" required>' +
+                                    '</th>' +
+                                '</tr>' +
+                            '</thead>' +
+                            '<thead id="tickets-result2">' +
+                                '<tr>' +
+                                    '<th scope="row" class="text-start" class="intro-box">' +
+                                        '<h6>姓名</h6>' +
+                                        '<input type="text" class="form-control" id="orderName" placeholder="" value="'+name+'" required>' +
+                                    '</th>' +
+                                    '<th class="intro-box" colspan="2">' +
+                                        '<svg class="bi" width="24" height="24">' +
+                                            '<use xlink:href="#check" />' +
+                                        '</svg>' +
+                                        '<h6>email</h6>' +
+                                        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
+                                    '</th>' +
+                                '</tr>' +
+                            '</thead>' +
+                        '</table>' +
+                    '</div>' +
+                '</main>' +
+            '</div>' +
         '</ul>' +
-      '</li>';
+    '</li>';
+
       return htmlString;
     }
 
