@@ -1,5 +1,71 @@
 $(document).ready(function () {
 
+
+
+ //                      檢查"出發日期"或"票數"是否為空                   //
+
+  $("#search-hx-js").click(function () {
+    // 檢查"出發日期"或"票數"是否為空
+    let search_hx_phone = $("#hx-phone").val();
+
+    let search_hx_id = $("#hx-id").val();
+
+
+    // 获取当前日期
+    // currentDate = searchingdate;
+
+
+
+
+    if (!search_hx_phone && !search_hx_id) {
+      // 如果電話和id都未選擇，顯示相應的警告消息
+      $("#alert-text-c").text("欄位未填寫");
+      $("#custom-alert-c").show();
+      return; // 阻止進一步執行
+    } else if (!search_hx_phone) {
+      // 如果出發日期未選擇，顯示相應的警告消息
+      $("#alert-text-c").text("電話欄位未填寫");
+      $("#custom-alert-c").show();
+      return; // 阻止進一步執行
+    } else if (!search_hx_id) {
+      // 如果票數未選擇，顯示相應的警告消息
+      $("#alert-text-c").text("身分證欄位未填寫");
+      $("#custom-alert-c").show();
+      return; // 阻止進一步執行
+    } else {
+      // 如果兩個字段都有值，隱藏警告消息
+      $("#custom-alert").hide();
+    }
+
+
+    // 捕獲表單數據
+    //   let planpicker = $("#planpicker input[type='radio']:checked").val();
+    //    console.log(planpicker);
+
+    // 使用捕獲的數據更新#articleAA
+    $("#hx-phone-result").text("主要訂票人電話：" + search_hx_phone);
+    $("#hx-id-result").text("主要訂票人身分證/護照號碼：" + search_hx_id);
+    // $("#searchingdate-result").text("出發日期：" + searchingdate);
+
+
+
+    // 重定向到#articleCC
+    window.location.href = "#articleCC";
+    searchingdate_next(datas); //調用出發日期，之後datas改RES
+
+
+
+
+    // 顯示#articleCC
+    $("#articleCC").show();
+
+    listNum = 0;
+
+
+  });
+
+
+
   //                獲取 detail_其他買票人資料 "顯示" 於modal           //
   let get_detail_show = function (detail) {
     let travelers = detail.travelers;

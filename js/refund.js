@@ -243,7 +243,7 @@ $(document).ready(function () {
 
       console.log($(this).prop("checked"));
 
-      //獲取使用者於article CC選擇的訂單資訊   //
+      
       if ($(this).prop("checked")) {
         //如果".Refund_checkbox-input"的"checked"屬性值 = ture
 
@@ -320,6 +320,12 @@ $(document).ready(function () {
     $("#RefundModal_orderNum").text($(this).parent().parent().parent().parent().parent().parent().find("#RefundModal-orderNum").text());
     
     $("#RefundModal_ticCount").text("退票數：" + cont);
+
+    $("#RefundModal-col_2").append(
+      
+      '<button type="button" id="RefundModal_Send" class="btn btn-primary" data-dismiss="modal">' +
+    '<i class="fa-solid fa-paper-plane fa-2x">退票確認</i>' +
+'</button>')
     
     //console.log(cont);
   })

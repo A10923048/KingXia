@@ -1,18 +1,18 @@
 $(document).ready(function () {
 
-         //            獲取article B 顯示於 article AA              //
+  //            獲取article B 顯示於 article AA              //
 
 
   let listNum = 0;
   let currentDate = "";
-// 格式化期为 "YYYY-MM-DD" 形式
- 
+  // 格式化期为 "YYYY-MM-DD" 形式
+
   // 初始化日期選擇器
   //$("#datepicker").datepicker();
 
   // 設置日期選擇器的值為今天日期
   //$("#datepicker").datepicker("setDate", new Date());
-  
+
 
   let formatDate = function (date) {
     let year = date.getFullYear();
@@ -35,12 +35,12 @@ $(document).ready(function () {
     console.log($("#ticketQuantity").val());
     // 获取当前日期
     currentDate = searchingdate;
-
+    console.log(searchingdate);
 
     //如果 (日期=ture 以外的結果 以及 票數<1)執行...
     //沒驚嘆號:判斷結果=ture時會觸發
     //有驚嘆號:判斷結果=false(在這裡用來指稱searchingdate沒有值的時候)時會觸發
-    if (!searchingdate && ticketQuantity< 1) {
+    if (!searchingdate && ticketQuantity < 1) {
       // 如果出發日期和票數都未選擇，顯示相應的警告消息
       $("#alert-result").text("出發日期和票數都未選擇");
       $("#custom-alert").show();
@@ -50,7 +50,7 @@ $(document).ready(function () {
       $("#alert-result").text("出發日期未選擇");
       $("#custom-alert").show();
       return; // 阻止進一步執行
-    } else if (ticketQuantity<1) {
+    } else if (ticketQuantity < 1) {
       // 如果票數未選擇，顯示相應的警告消息
       $("#alert-result").text("票數未選擇");
       $("#custom-alert").show();
@@ -60,34 +60,55 @@ $(document).ready(function () {
       $("#custom-alert").hide();
     }
 
+    /////     獲取按下按鈕當下的時間並判斷是否超過訂票時間    //////
+    // 當按鈕被點擊時，取得當前時間
+    // var currentTime = new Date();
+    // // 設定當天早上 10 點的時間
+    // var tenAM = new Date();
+    // tenAM.setHours(10, 0, 0, 0);
 
-    // 捕獲表單數據
-    let planpicker = $("#planpicker input[type='radio']:checked").val();
-    console.log(planpicker);
+    // // 檢查當前時間是否超過當天早上 10 點
+    // if (currentTime > tenAM) {
+    //   console.log("無法訂當天日期的票，因為超過早上 10 點。");
+    // } else {
+    //   // 格式化時間，這只是一個範例格式，您可以根據需求進行更改
+    //   var formattedTime = currentTime.toLocaleString();
 
-    // 使用捕獲的數據更新#articleAA
-    $("#planpicker-result").text("行程：" + planpicker);
-
-    $("#ticketQuantity-result").text("票數：" + ticketQuantity);
-    console.log(ticketQuantity);
-    $("#searchingdate-result").text("出發日期：" + searchingdate);
-
-
-
-    // 重定向到#articleAA
-    window.location.href = "#articleAA";
-    searchingdate_next(datas); //調用出發日期，之後datas改RES
-
+    //   // 將格式化後的時間輸出到控制台
+    //   console.log("當前時間：" + formattedTime);
 
 
 
-    // 顯示#articleAA
-    $("#articleAA").show();
-
-    listNum = 0;
 
 
-  });
+
+      // 捕獲表單數據
+      let planpicker = $("#planpicker input[type='radio']:checked").val();
+      console.log(planpicker);
+
+      // 使用捕獲的數據更新#articleAA
+      $("#planpicker-result").text("行程：" + planpicker);
+
+      $("#ticketQuantity-result").text("票數：" + ticketQuantity);
+      console.log(ticketQuantity);
+      $("#searchingdate-result").text("出發日期：" + searchingdate);
+
+
+
+      // 重定向到#articleAA
+      window.location.href = "#articleAA";
+      searchingdate_next(datas); //調用出發日期，之後datas改RES
+
+
+
+
+      // 顯示#articleAA
+      $("#articleAA").show();
+
+      listNum = 0;
+
+
+    });
 
 
 
@@ -126,65 +147,9 @@ $(document).ready(function () {
     // 调用 searchingdate_next(datas)，传入 datas 参数
     searchingdate_next(datas);
   });
-  $("#search-hx-js").click(function () {
-    // 檢查"出發日期"或"票數"是否為空
-    let search_hx_phone = $("#hx-phone").val();
-
-    let search_hx_id = $("#hx-id").val();
-
-
-    // 获取当前日期
-    // currentDate = searchingdate;
 
 
 
-
-    if (!search_hx_phone && !search_hx_id) {
-      // 如果電話和id都未選擇，顯示相應的警告消息
-      $("#alert-text-c").text("欄位未填寫");
-      $("#custom-alert-c").show();
-      return; // 阻止進一步執行
-    } else if (!search_hx_phone) {
-      // 如果出發日期未選擇，顯示相應的警告消息
-      $("#alert-text-c").text("電話欄位未填寫");
-      $("#custom-alert-c").show();
-      return; // 阻止進一步執行
-    } else if (!search_hx_id) {
-      // 如果票數未選擇，顯示相應的警告消息
-      $("#alert-text-c").text("身分證欄位未填寫");
-      $("#custom-alert-c").show();
-      return; // 阻止進一步執行
-    } else {
-      // 如果兩個字段都有值，隱藏警告消息
-      $("#custom-alert").hide();
-    }
-
-
-    // 捕獲表單數據
-    //   let planpicker = $("#planpicker input[type='radio']:checked").val();
-    //    console.log(planpicker);
-
-    // 使用捕獲的數據更新#articleAA
-    $("#hx-phone-result").text("主要訂票人電話：" + search_hx_phone);
-    $("#hx-id-result").text("主要訂票人身分證/護照號碼：" + search_hx_id);
-    // $("#searchingdate-result").text("出發日期：" + searchingdate);
-
-
-
-    // 重定向到#articleCC
-    window.location.href = "#articleCC";
-    searchingdate_next(datas); //調用出發日期，之後datas改RES
-
-
-
-
-    // 顯示#articleCC
-    $("#articleCC").show();
-
-    listNum = 0;
-
-
-  });
 
   let searchingdate_next = function (datas) {
 
@@ -234,19 +199,19 @@ $(document).ready(function () {
         "</tr>"
       )
     })
-     } 
+  }
 
 
+//////////////////////測試資料如下///////////////////////////
 
-     
-let datas = {
+  let datas = {
     "54035": {
       "port0": "水頭",
       "port1": "水頭",
       "qty": 70,
       "status": "正常",
       "btime": "1030",
-      "etime": "1200",
+      "etime": "1200", 
       "stime": "1000",
       "tdate": "2023-11-22"
     },
@@ -341,7 +306,7 @@ let datas = {
       "tdate": "2023-11-20"
     }
   }
-    
+
 })
 
 
