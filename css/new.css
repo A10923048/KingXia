@@ -700,37 +700,48 @@ form>.container>.button{
 =                  Intro                      =
 =============================================*/
 .intro-box {
-  
-  
   border-color: #000;
   border-radius: 15%;
   padding: 5%;
   transition: all .5s ease-out;
   /* padding: 15px 15px; */
   text-align: center;
-  
 }
 
-
-
 .intro-box:hover {
-  background: rgba(240, 217, 164, 0.875);
+  background: rgba(240, 217, 164, 0.788);
   box-shadow: 0px 10px 10px rgba(0, 0, 0, .25);
-  border-radius: 10%;
+  border-radius: 5%;
   padding: 5%;
 }
 
-.intro-line {
-  width: 20px;
-  height: 6px;
-  border-radius: 3px;
-  margin: 5px auto;
-  transition: all .5s ease;
+intro-box-card {
+  border-color: #000;
+  border-radius: 15%;
+  padding: 5%;
+  transition: all .5s ease-out;
+  /* padding: 15px 15px; */
+  text-align: center;
+
+  opacity: .7;
+  position: relative;
+  top: 10px;
+  transition: all .3s ease;
 }
 
-.intro-box:hover .intro-line {
+
+intro-box-card:hover {
+  background: rgba(255, 250, 99, 0.883);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .25);
+  border-radius: 10%;
+  padding: 5%;
+
   width: 22px;
+
+  opacity: 1;
+  top: 0px;
 }
+
 
 .intro-box .icon {
   opacity: .7;
@@ -739,14 +750,16 @@ form>.container>.button{
   transition: all .3s ease;
 }
 
+.intro-box:hover .intro-line:hover {
+  width: 22px;
+}
+
 .intro-box:hover .icon {
   opacity: 1;
   top: 0px;
 }
 
-.intro-line {
-  background: #20bb94;
-}
+
 
 .intro-div{
   background: #20bb94;
@@ -759,7 +772,16 @@ form>.container>.button{
   margin-bottom: 1px;
 }
 
-
+.intro-line {
+  width: 20px;
+  height: 6px;
+  border-radius: 3px;
+  margin: 5px auto;
+  transition: all .5s ease;
+}
+.intro-line {
+  background: #20bb94;
+}
 
 
 /*=============================================

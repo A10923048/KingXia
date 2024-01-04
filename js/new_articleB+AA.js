@@ -265,10 +265,11 @@ $(document).ready(function () {
 
 
     $.each(datas, function (key, value) {
+      //循環datas裡的每組資料
       //因為不知道KEY是甚麼所以 用$.each找KEY
 
       if (value.tdate == $("#searchingdate-result").text().split("：")[1]) {
-        //符合條件後要握甚麼
+        //如果符合用戶選擇的日期資料
         // Z.push({key:value})
 
         if (datePart == $("#searchingdate-result").text().split("：")[1]) {
@@ -338,8 +339,8 @@ $(document).ready(function () {
       "status": "正常",
       "btime": "1030",
       "etime": "1200",
-      "stime": "1000",
-      "tdate": "2024-01-03"
+      "stime": "0900",
+      "tdate": "2024-01-04"
     },
     "54034": {
       "port0": "水頭",
@@ -349,7 +350,7 @@ $(document).ready(function () {
       "btime": "1030",
       "etime": "1200",
       "stime": "1900",
-      "tdate": "2024-01-03"
+      "tdate": "2024-01-04"
     },
     "54033": {
       "port0": "水頭",

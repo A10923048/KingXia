@@ -72,44 +72,42 @@ $(document).ready(function () {
 
 
 
-  //               NAVBAR +  Article-A NAVBAR 開闔功能                    //
-  // 初始設置展開狀態為 false
-  var isNavbarExpanded = false;
-  var isArticleAExpanded = false;
+ // 初始設置展開狀態為 false
+var isNavbarExpanded = false;
+var isArticleAExpanded = false;
 
-  // 綁定 Bootstrap 導覽列摺疊功能
-  $('[data-toggle="collapse"]').on('click', function () {
-    var target = $(this).data('target');
+// 綁定 Bootstrap 導覽列摺疊功能
+$('[data-toggle="collapse"]').on('click', function () {
+  var target = $(this).data('target');
 
-    // 根據展開狀態執行相應操作
-    if (target === '#collapsibleNavId') {
-      if (isNavbarExpanded) {
-        // 如果已展開，執行關閉操作
-        console.log('Navbar is expanded. Closing...');
-        $(target).hide();
-      } else {
-        // 如果未展開，執行展開操作
-        console.log('Navbar is not expanded. Opening...');
-        $(target).show();
-      }
-      // 切換展開狀態
-      isNavbarExpanded = !isNavbarExpanded;
-    } else if (target === '#collapsibleNavId2') {
-      if (isArticleAExpanded) {
-        // 如果已展開，執行關閉操作
-        console.log('ArticleA Navbar is expanded. Closing...');
-        $(target).hide();
-      } else {
-        // 如果未展開，執行展開操作
-        console.log('ArticleA Navbar is not expanded. Opening...');
-        $(target).show();
-      }
-      // 切換展開狀態
-      isArticleAExpanded = !isArticleAExpanded;
+  // 根據展開狀態執行相應操作
+  if (target === '#collapsibleNavId') {
+    if (isNavbarExpanded) {
+      // 如果已展開，執行關閉操作
+      console.log('Navbar is expanded. Closing...');
+      $(target).collapse('hide');
+    } else {
+      // 如果未展開，執行展開操作
+      console.log('Navbar is not expanded. Opening...');
+      $(target).collapse('show');
     }
+    // 切換展開狀態
+    isNavbarExpanded = !isNavbarExpanded;
+  } else if (target === '#collapsibleNavId2') {
+    if (isArticleAExpanded) {
+      // 如果已展開，執行關閉操作
+      console.log('ArticleA Navbar is expanded. Closing...');
+      $(target).collapse('hide');
+    } else {
+      // 如果未展開，執行展開操作
+      console.log('ArticleA Navbar is not expanded. Opening...');
+      $(target).collapse('show');
+    }
+    // 切換展開狀態
+    isArticleAExpanded = !isArticleAExpanded;
+  }
+});
 
-    $(target).toggleClass('show');
-  });
 
 
 

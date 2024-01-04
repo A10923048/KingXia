@@ -51,10 +51,10 @@ $(document).ready(function () {
 
     // 重定向到#articleCC
     window.location.href = "#articleCC";
-    searchingdate_next(datas); //調用出發日期，之後datas改RES
+    //searchingdate_next(datas); //調用出發日期，之後datas改RES
 
 
-
+    
 
     // 顯示#articleCC
     $("#articleCC").show();
