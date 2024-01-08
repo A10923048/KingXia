@@ -89,7 +89,7 @@ $(document).ready(function () {
       
       let A=function(i,name,Uid){
         let htmlString ='<li class="my-2">' +
-        '<button class="btn d-inline-flex align-items-center collapsed border-0" ' +
+        '<button class="btn d-inline-flex align-items-center collapsed border-0 mb-3" ' +
             'data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse'+i+'" ' +
             'aria-controls="contents-collapse">乘客('+(parseInt(i) + parseInt(1))+')資料填寫(請下拉)</button>' +
         '<ul class="list-unstyled ps-3 collapse" id="contents-collapse'+i+'">' +
@@ -117,6 +117,7 @@ $(document).ready(function () {
                                                         '<option value="敬老">敬老 </option>' +
                                                         '<option value="兒童">兒童</option>' +
                                                         '<option value="博愛">博愛</option>' +
+                                                        '<option value="博愛(陪同者)">博愛(陪同者)</option>' +
                                                     '</select>' +
                                                 '</div>' +
                                             '</div>' +
@@ -149,7 +150,7 @@ $(document).ready(function () {
                                         '<span class="my-0" id="time-show">' +
                                             '<i class="fa-solid fa-earth-americas fa-4x"></i>' +
                                             '<h6>國籍</h6>' +
-                                            '<select class="form-select" id="country" required>' +
+                                            '<select class="form-select" id="traveler_country" required>' +
                                                 '<option value="">台灣</option>' +
                                                 '<option>香港</option>' +
                                                 '<option>大陸</option>' +
@@ -162,7 +163,7 @@ $(document).ready(function () {
                                             '<use xlink:href="#check" />' +
                                         '</svg>' +
                                         '<h6>身分證/護照號碼</h6>' +
-                                        '<input type="text" class="form-control" id="orderName" placeholder="" value="'+Uid+'" required>' +
+                                        '<input type="text" class="form-control" id="traveler_Id" placeholder="" value="'+Uid+'" required>' +
                                     '</th>' +
                                 '</tr>' +
                             '</thead>' +
@@ -170,14 +171,14 @@ $(document).ready(function () {
                                 '<tr>' +
                                     '<th scope="row" class="text-start" class="intro-box">' +
                                         '<h6>姓名</h6>' +
-                                        '<input type="text" class="form-control" id="orderName" placeholder="" value="'+name+'" required>' +
+                                        '<input type="text" class="form-control" id="traveler_Name" placeholder="" value="'+name+'" required>' +
                                     '</th>' +
                                     '<th class="intro-box" colspan="2">' +
                                         '<svg class="bi" width="24" height="24">' +
                                             '<use xlink:href="#check" />' +
                                         '</svg>' +
                                         '<h6>email</h6>' +
-                                        '<input type="text" class="form-control" id="orderName" placeholder="" value="" required>' +
+                                        '<input type="text" class="form-control" id="traveler_email" placeholder="" value="" required>' +
                                     '</th>' +
                                 '</tr>' +
                             '</thead>' +
@@ -219,11 +220,12 @@ $(document).ready(function () {
         text_show=text_show+"電話:未填寫<br>"
        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
       }
-      if (!ticketQuantity){
-        T=false;
-        text_show=text_show+"票種:未選擇<br>"
-       // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
-      }
+
+      // if (!ticketQuantity){
+      //   T=false;
+      //   text_show=text_show+"票種:未選擇<br>"
+      //  // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      // }
 
       if (!orderId ){
         T=false;
@@ -336,7 +338,22 @@ $(document).ready(function () {
     window.location.href = "#articleB";
   }
 
+  //            博愛票陪同者-身分證欄位                        //
+  $(document).on("change", "#ticketQuantity", function () {
+    var selectedValue = $(this).val();
+  
+    // 根據所選擇的票種修改文字
+    if (selectedValue === "博愛(陪同者)") {
+      // 修改相應的文字
 
+      let text_change = $(this).parent().parent().parent().parent().parent().parent().find("#orderName").text();
+
+      $('#orderName').attr('placeholder', '請填寫被陪同者(愛心票持有者)的身分證/護照號碼');
+    } else {
+      // 恢復預設文字
+      $('#orderName').attr('placeholder', '');
+    }
+  });
 
 
 
