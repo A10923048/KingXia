@@ -160,20 +160,109 @@
                                   </h4>
                                 </li>
                               </ul>
+
+                              <form id="contact" action="" method="get" >
+                                <div class="table-responsive">
+                                  <table class="table text-center">
+                                    <thead>
+                                      <tr>
+                                        <h3>票種選擇</h3>
+                                        <h5 class="my-0"></h5>
+                                        <ul class="list-group mb-3">
+                                        <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
+                                          <h6 class="d-flex justify-content-between align-items-center">
+                                            <span class="badge bg-primary  text-white">(已選擇)</span>
+                                          </h6>
+                                          <h6 class="d-flex justify-content-between align-items-center">
+                                            <span class="badge bg-primary  text-white" id="tickets_choosed">張票</span>
+                                          </h6>
+                                        </li> -->
+                                          <li class="list-group-item d-flex justify-content-center lh-sm">
+                                          <h4 class="d-flex justify-content-between align-items-center">
+                                            <span class="badge bg-primary  text-white">(未選擇)</span>
+                                          </h4>
+                                          <h4 class="d-flex justify-content-between align-items-center">
+                                            <span class="badge   text-white" id="tickets_unchoosed"></span>
+                                            
+                                            <span class="badge bg-primary  text-white" ">張票</span>
+                                          </h4>
+                                        </li>
+                                      </ul>
+                                      </tr>
+                                      <tr>
+                                        <th style="width: 30%;">
+                                          <h6>全票</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>                                                             
+                                            <h6>票數</h6>
+                                            <!-- <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
+
+                                            </select>
+                                            <select class="ticketQuantity" data-group="B" id="ticketQuantity_B"></select>
+                                            <select class="ticketQuantity" data-group="C" id="ticketQuantity_C"></select>
+                                            <select class="ticketQuantity" data-group="D" id="ticketQuantity_D"></select>
+                                             -->
+                                             
+                                              <select  class="ticketQuantity" data-group="A" id="ticketQuantity_A">
+                                                <!-- <option value="" selected>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2 </option>
+                                                <option value="3">3</option>  -->
+                                              </select> 
+                                      </th>
+                                        <th style="width: 30%;">
+                                          <h6>敬老</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>                                                             
+                                            <h6>票數</h6>
+                                              <select id="ticketQuantity_B" class="ticketQuantity">
+                                              </select>
+                                        </th>
+                                        <th style="width: 30%;">
+                                          <h6>兒童</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>                                                             
+                                            <h6>票數</h6>
+                                              <select id="ticketQuantity_C" class="ticketQuantity">
+                                              </select>
+                                        </th>
+                                      </tr>
+                                       <tr>
+                                        <th style="width: 30%;">
+                                          <h6>博愛</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>                                                             
+                                            <h6>票數</h6>
+                                              <select id="ticketQuantity_D1" class="ticketQuantity">
+                                              </select>
+                                        </th>
+                                        <th style="width: 30%;">
+                                          <h6>博愛<br>(陪同者)</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>                                                             
+                                            <h6>票數</h6>
+                                              <select id="ticketQuantity_D2" class="ticketQuantity">
+                                              </select>
+                                        </th>
+                                      </tr> 
+                                    </thead>
+                                  </table>
+                                </div>
+                              </form>
+
+
                             </div>
 
 
 
                             <div class="col-md-7 col-lg-8 order-md-last" style="background-color: rgb(249, 249, 250);">
-
-
+                              <li id="custom-alert"  class="justify-content-between lh-sm mb-2 mt-2" role="alert"style="position: relative; background-color: rgb(255, 100, 86); display: none;">
+                                                     
+                                <p id="alert-result" class="text-white"></p>
+                                <i id="alert-result_i" class="fa-solid fa-circle-xmark fa-2x text-white" style="position: absolute; top: 5%; right: 0%;"
+                                  ></i>
+                              </li>
                               <h4 class="d-flex justify-content-center align-items-center mb-3">
                                 <span class="text-primary">購票人資料</span>
                               </h4>
 
                               <div class="col-lg-12 align-self-center"
                                 style="background-image: url(../img/contact-form-bg.png);">
-                                <!-- background-image: url(../img/contact-form-bg.png); -->
                                 <form id="contact" action="" method="get">
                                   <div class="row">
                                     <div class="col-lg-12">
@@ -190,26 +279,81 @@
                                     </div>
                                     <div class="col-lg-12">
                                       <fieldset>
-                                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                                          placeholder="Your Email" required="">
+                                        <input type="text" class="form-control" id="orderId" placeholder="身分證" value="" required>
                                       </fieldset>
                                     </div>
 
                                     
 
-
-
-
-
-
-
                                     <div class="col-lg-12">
-                                      <fieldset>
-                                        <!-- <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required=""> -->
-                                      </fieldset>
+                                    
+                                      <div class="col-md-12 mt-5 list-group-item d-flex justify-content-between lh-sm"
+                                        colspan="2">
+                                        <div class="table-responsive">
+                                          <table class="table text-center">
+                                            <thead>
+                                              <tr>
+                                                <h4>訂單開立方式</h4>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <th style="width: 30%;" >
+                                                  <div class="col">
+                                                    <input type="radio" name="orderMethods" value="統一開立購票證名"required>統一開立購票證名
+                                                  </div>
+                                                  
+                                                </th>
+                                                <th style="width: 30%;" >
+                                                  
+                                                  
+                                                  <div class="col">
+                                                    <input type="radio" name="orderMethods" value="分別開立購票證名"required>分別開立購票證名
+                                                  </div>
+                                                </th>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
                                     </div>
 
-                                    <div class="col-lg-12 mt-5 list-group-item d-flex justify-content-center lh-sm" colspan="2">
+                                    <div class="col-lg-12">
+                                    
+                                      <div class="col-md-12 mt-5 list-group-item d-flex justify-content-between lh-sm"
+                                        colspan="2">
+                                        <div class="table-responsive">
+                                          <table class="table text-center">
+                                            <thead>
+                                              <tr>
+                                                <h4>購票人是否為乘客?</h4>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <th style="width: 30%;" >
+                                                  <div class="col">
+                                                    <input name="isPassenger"  type="radio"  value="是" required>是
+                                                  </div>
+                                                  
+                                                </th>
+                                                <th style="width: 30%;" >
+                                                  
+                                                  
+                                                  <div class="col">
+                                                    <input name="isPassenger"  type="radio"  value="否" required>否
+                                                  </div>
+                                                </th>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    
+
+                                    <!-- <div class="col-lg-12 mt-5 list-group-item d-flex justify-content-center lh-sm" colspan="2">
                                       <div class="table-responsive">
                                         <table class="table text-center">
                                           <tdead>
@@ -221,8 +365,6 @@
                                                 <h6>敬老票種</h6>
                                                 <i class="fa-solid fa-ticket fa-4x"></i>
                                                 <div id="敬老_Quantity">
-                                                  <!-- <div>   
-                                                                                                                                          </div>   -->
                                                   <h6>票數</h6>
                                                   <div id="Quantity">
                                                     <div>
@@ -240,8 +382,6 @@
                                                 <h6>敬老票種</h6>
                                                 <i class="fa-solid fa-ticket fa-4x"></i>
                                                 <div id="敬老_Quantity">
-                                                  <!-- <div>   
-                                                                                                                                          </div>   -->
                                                   <h6>票數</h6>
                                                   <div id="Quantity">
                                                     <div>
@@ -255,12 +395,10 @@
                                                   </div>
                                                 </div>
                                               </td>
-                                              <td style="width: 30%;" id="ticketQuantityA">
+                                              <td style="width: 25%;" id="ticketQuantityA">
                                                 <h6>敬老票種</h6>
                                                 <i class="fa-solid fa-ticket fa-4x"></i>
                                                 <div id="敬老_Quantity">
-                                                  <!-- <div>   
-                                                                                                                                        </div>   -->
                                                   <h6>票數</h6>
                                                   <div id="Quantity">
                                                     <div>
@@ -274,12 +412,10 @@
                                                   </div>
                                                 </div>
                                               </td>
-                                              <td style="width: 30%;" id="ticketQuantityA">
+                                              <td style="width: 25%;" id="ticketQuantityA">
                                                 <h6>敬老票種</h6>
                                                 <i class="fa-solid fa-ticket fa-4x"></i>
                                                 <div id="敬老_Quantity">
-                                                  <!-- <div>   
-                                                                                                                                      </div>   -->
                                                   <h6>票數</h6>
                                                   <div id="Quantity">
                                                     <div>
@@ -293,12 +429,10 @@
                                                   </div>
                                                 </div>
                                               </td>
-                                              <td style="width: 30%;" id="ticketQuantityA">
+                                              <td style="width: 25%;" id="ticketQuantityA">
                                                 <h6>敬老票種</h6>
                                                 <i class="fa-solid fa-ticket fa-4x"></i>
                                                 <div id="敬老_Quantity">
-                                                  <!-- <div>   
-                                                                                                                                      </div>   -->
                                                   <h6>票數</h6>
                                                   <div id="Quantity">
                                                     <div>
@@ -316,147 +450,22 @@
                                             </thead>
                                         </table>
                                       </div>
-                                    </div>
+                                    </div> -->
+
 
                                     <div class="col-lg-12 mt-5">
-                                      <fieldset>
-                                        <button type="submit" id="form-submit" class="main-button">Submit
-                                          Request</button>
-                                      </fieldset>
+                                      
+                                          <button class="main-button" id="articleA_send"><span>送出</span></button>
+                                    
                                     </div>
+
                                   </div>
                                 </form>
                               </div>
-                              <div class="table-responsive">
-                                <table class="table text-center">
-                                  <thead>
-                                    <tr>
-                                      <h3>票種2</h3>
-                                    </tr>
-                                    <tr>
-                                      <th style="width: 30%;" id="ticketQuantityA">
-                                        <h6>敬老票種</h6>
-                                        <i class="fa-solid fa-ticket fa-4x"></i>
-                                        <div id="敬老_Quantity">                                                </div>   -->
-                                          <h6>票數</h6>
-                                          <div id="Quantity">
-                                            <div>
-                                              <select id="ticketQuantity">
-                                                <option value="" selected>0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2 </option>
-                                                <option value="3">3</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </th>
-                                      <th style="width: 30%;" id="ticketQuantityA">
-                                        <h6>敬老票種</h6>
-                                        <i class="fa-solid fa-ticket fa-4x"></i>
-                                        <div id="敬老_Quantity">
-                                          <!-- <div>   
-                                                                                                                                  </div>   -->
-                                          <h6>票數</h6>
-                                          <div id="Quantity">
-                                            <div>
-                                              <select id="ticketQuantity">
-                                                <option value="" selected>0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2 </option>
-                                                <option value="3">3</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </th>
-                                      <th style="width: 30%;" id="ticketQuantityA">
-                                        <h6>敬老票種</h6>
-                                        <i class="fa-solid fa-ticket fa-4x"></i>
-                                        <div id="敬老_Quantity">
-                                          <!-- <div>   
-                                                                                                                                </div>   -->
-                                          <h6>票數</h6>
-                                          <div id="Quantity">
-                                            <div>
-                                              <select id="ticketQuantity">
-                                                <option value="" selected>0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2 </option>
-                                                <option value="3">3</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </th>
-                                    </tr>
-                                    <tr>
-                                      <th style="width: 30%;" id="ticketQuantityA">
-                                        <h6>敬老票種</h6>
-                                        <i class="fa-solid fa-ticket fa-4x"></i>
-                                        <div id="敬老_Quantity">
-                                          <!-- <div>   
-                                                                                                                                  </div>   -->
-                                          <h6>票數</h6>
-                                          <div id="Quantity">
-                                            <div>
-                                              <select id="ticketQuantity">
-                                                <option value="" selected>0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2 </option>
-                                                <option value="3">3</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </th>
-                                      <th style="width: 30%;" id="ticketQuantityA">
-                                        <h6>敬老票種</h6>
-                                        <i class="fa-solid fa-ticket fa-4x"></i>
-                                        <div id="敬老_Quantity">
-                                          <!-- <div>   
-                                                                                                                                  </div>   -->
-                                          <h6>票數</h6>
-                                          <div id="Quantity">
-                                            <div>
-                                              <select id="ticketQuantity">
-                                                <option value="" selected>0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2 </option>
-                                                <option value="3">3</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </th>
-                                      <th style="width: 30%;" id="ticketQuantityA">
-                                        <h6>敬老票種</h6>
-                                        <i class="fa-solid fa-ticket fa-4x"></i>
-                                        <div id="敬老_Quantity">
-                                          <!-- <div>   
-                                                                                                                                </div>   -->
-                                          <h6>票數</h6>
-                                          <div id="Quantity">
-                                            <div>
-                                              <select id="ticketQuantity">
-                                                <option value="" selected>0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2 </option>
-                                                <option value="3">3</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </th>
-                                    </tr>
-                                  </thead>
+                              
+                              
 
-                                </table>
-                              </div>
-
-
-
-                              <div class="list-group mb-3">
+                              <!-- <div class="list-group mb-3"> -->
 
                                 <!-- <li id="custom-alert"  class="justify-content-between lh-sm mb-2 mt-2" role="alert"style="position: relative; background-color: rgb(255, 100, 86); display: none;">
                                                      
@@ -491,77 +500,29 @@
 
 
 
-                                
+                                <!-- <div class="row mt-5 list-group-item d-flex justify-content-between lh-sm" >
 
-
-
-
-                                <div class="row mt-5 list-group-item d-flex justify-content-between lh-sm" colspan="1">
-
-                                  <div class="col-md-6 mt-5 list-group-item d-flex justify-content-between lh-sm"
-                                    colspan="2">
+                                  <div class="col-md-4 mt-3 list-group-item d-flex justify-content-between lh-sm"
+                                    colspan="1">
                                     <div class="table-responsive">
                                       <table class="table text-center">
                                         <thead>
                                           <tr>
-                                            <h3>票種3</h3>
+                                            <h>購票人是否為乘客?</h3>
                                           </tr>
                                           <tr>
                                             <th style="width: 30%;" id="ticketQuantityA">
-                                              <h6>敬老票種</h6>
-                                              <i class="fa-solid fa-ticket fa-4x"></i>
-                                              <div id="敬老_Quantity">
-                                                <!-- <div>   
-                                                                                                                                        </div>   -->
-                                                <h6>票數</h6>
-                                                <div id="Quantity">
-                                                  <div>
-                                                    <select id="ticketQuantity">
-                                                      <option value="" selected>0</option>
-                                                      <option value="1">1</option>
-                                                      <option value="2">2 </option>
-                                                      <option value="3">3</option>
-                                                    </select>
-                                                  </div>
-                                                </div>
+                                              <div class="form-check">
+                                                <input name="isPassenger" type="radio" class="form-check-input" value="是" required>
+                                                <label class="form-check-label" for="credit"><span>是</span></label>
                                               </div>
+                                              
                                             </th>
                                             <th style="width: 30%;" id="ticketQuantityA">
-                                              <h6>敬老票種</h6>
-                                              <i class="fa-solid fa-ticket fa-4x"></i>
-                                              <div id="敬老_Quantity">
-                                                <!-- <div>   
-                                                                                                                                        </div>   -->
-                                                <h6>票數</h6>
-                                                <div id="Quantity">
-                                                  <div>
-                                                    <select id="ticketQuantity">
-                                                      <option value="" selected>0</option>
-                                                      <option value="1">1</option>
-                                                      <option value="2">2 </option>
-                                                      <option value="3">3</option>
-                                                    </select>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </th>
-                                            <th style="width: 30%;" id="ticketQuantityA">
-                                              <h6>敬老票種</h6>
-                                              <i class="fa-solid fa-ticket fa-4x"></i>
-                                              <div id="敬老_Quantity">
-                                                <!-- <div>   
-                                                                                                                                      </div>   -->
-                                                <h6>票數</h6>
-                                                <div id="Quantity">
-                                                  <div>
-                                                    <select id="ticketQuantity">
-                                                      <option value="" selected>0</option>
-                                                      <option value="1">1</option>
-                                                      <option value="2">2 </option>
-                                                      <option value="3">3</option>
-                                                    </select>
-                                                  </div>
-                                                </div>
+                                              
+                                              <div class="form-check">
+                                                <input name="isPassenger" type="radio" class="form-check-input" value="否" required>
+                                                <label class="form-check-label" for="debit"><span>否</span></label>
                                               </div>
                                             </th>
                                           </tr>
@@ -570,51 +531,26 @@
                                     </div>
                                   </div>
 
-                                  <div class="col-md-5 mt-5 list-group-item d-flex justify-content-between lh-sm"
+                                  <div class="col-md-6 mt-3 list-group-item d-flex justify-content-between lh-sm"
                                     colspan="2">
                                     <div class="table-responsive">
                                       <table class="table text-center">
                                         <thead>
                                           <tr>
-                                            <h3>票種</h3>
+                                            <h3>訂單開立方式</h3>
                                           </tr>
                                           <tr>
                                             <th style="width: 30%;" id="ticketQuantityA">
-                                              <h6>敬老票種</h6>
-                                              <i class="fa-solid fa-ticket fa-4x"></i>
-                                              <div id="敬老_Quantity">
-                                                <!-- <div>   
-                                                                                                                                        </div>   -->
-                                                <h6>票數</h6>
-                                                <div id="Quantity">
-                                                  <div>
-                                                    <select id="ticketQuantity">
-                                                      <option value="" selected>0</option>
-                                                      <option value="1">1</option>
-                                                      <option value="2">2 </option>
-                                                      <option value="3">3</option>
-                                                    </select>
-                                                  </div>
-                                                </div>
+                                              <div class="col">
+                                                <input type="radio" name="orderMethods" value="統一開立購票證名">統一開立購票證名
                                               </div>
+                                              
                                             </th>
                                             <th style="width: 30%;" id="ticketQuantityA">
-                                              <h6>敬老票種</h6>
-                                              <i class="fa-solid fa-ticket fa-4x"></i>
-                                              <div id="敬老_Quantity">
-                                                <!-- <div>   
-                                                                                                                                        </div>   -->
-                                                <h6>票數</h6>
-                                                <div id="Quantity">
-                                                  <div>
-                                                    <select id="ticketQuantity">
-                                                      <option value="" selected>0</option>
-                                                      <option value="1">1</option>
-                                                      <option value="2">2 </option>
-                                                      <option value="3">3</option>
-                                                    </select>
-                                                  </div>
-                                                </div>
+                                              
+                                              
+                                              <div class="col">
+                                                <input type="radio" name="orderMethods" value="分別開立購票證名">分別開立購票證名
                                               </div>
                                             </th>
                                           </tr>
@@ -623,9 +559,9 @@
                                     </div>
                                   </div>
 
-                                </div>
+                                </div> -->
 
-                                <div class="col-md-12 mt-5 list-group-item d-flex justify-content-between lh-sm"
+                                <!-- <div class="col-md-12 mt-5 list-group-item d-flex justify-content-between lh-sm"
                                   colspan="2">
                                   <div class="table-responsive">
                                     <table class="table text-center">
@@ -635,7 +571,6 @@
                                         </tr>
                                         <tr>
                                           <th style="width: 30%;" id="ticketQuantityA">
-                                            <!-- <h6>敬老票種</h6> -->
                                             <div class="form-check">
                                               <input name="isPassenger" type="radio" class="form-check-input" value="是" required>
                                               <label class="form-check-label" for="credit"><span>是</span></label>
@@ -657,43 +592,35 @@
 
                                 <div class="col-md-12 mt-5 list-group-item d-flex justify-content-between lh-sm"
                                 colspan="2">
-
-                                <div class="table-responsive">
-                                  <table class="table text-center">
-                                    <thead>
-                                      <tr>
-                                        <h3>訂單開立方式</h3>
-                                      </tr>
-                                      <tr>
-                                        <th style="width: 30%;" id="ticketQuantityA">
-                                          <div class="col">
-                                            <input type="radio" name="orderMethods" value="統一開立購票證名">統一開立購票證名
-                                          </div>
-                                          
-                                        </th>
-                                        <th style="width: 30%;" id="ticketQuantityA">
-                                          
-                                          
-                                          <div class="col">
-                                            <input type="radio" name="orderMethods" value="分別開立購票證名">分別開立購票證名
-                                          </div>
-                                        </th>
-                                      </tr>
-                                    </thead>
-                                  </table>
-                                </div>
-                                </div>
-
+                                  <div class="table-responsive">
+                                    <table class="table text-center">
+                                      <thead>
+                                        <tr>
+                                          <h3>訂單開立方式</h3>
+                                        </tr>
+                                        <tr>
+                                          <th style="width: 30%;" id="ticketQuantityA">
+                                            <div class="col">
+                                              <input type="radio" name="orderMethods" value="統一開立購票證名">統一開立購票證名
+                                            </div>
+                                            
+                                          </th>
+                                          <th style="width: 30%;" id="ticketQuantityA">
+                                            
+                                            
+                                            <div class="col">
+                                              <input type="radio" name="orderMethods" value="分別開立購票證名">分別開立購票證名
+                                            </div>
+                                          </th>
+                                        </tr>
+                                      </thead>
+                                    </table>
+                                  </div>
+                                </div> -->
 
 
 
-
-
-
-
-
-
-                                <div class="col-md-6 mt-5">
+                                <!-- <div class="col-md-6 mt-5">
                                   <h5 class="mb-3"><span>購票人是否為乘客?</span></h5>
                                   <div class="form-check">
                                     <input name="isPassenger" type="radio" class="form-check-input" value="是" required>
@@ -717,11 +644,11 @@
                                       <input type="radio" name="orderMethods" value="分別開立購票證名">分別開立購票證名
                                     </div>
                                   </div>
-                                </div>
+                                </div> -->
+<!-- 
                                 </li>
-                              </div>
-                              <button class="w-100 btn btn-primary btn-lg mt-2 mb-5" type="submit"
-                                id="articleA_send">(請點選)送出</button>
+                              </div> -->
+                             
                             </div>
                           </div>
 
@@ -736,8 +663,9 @@
                             <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">購票人資料填寫(請下拉選單)</h2>
                             <nav class="small" id="toc">
                               <ul class="list-unstyled" id="buyers_list">
+                                <!-- 用JS產生內容 -->
 
-                                <!-- <li class="my-2">
+                                 <li class="my-2">
                                                         <button class="btn d-inline-flex align-items-center collapsed border-0 mb-3"
                                                           data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
                                                           aria-controls="contents-collapse">其他旅客資料(1)</button>
@@ -843,8 +771,8 @@
                                                             </main>
                                                           </div>
                                                         </ul>
-                                                      </li>  -->
-
+                                                      </li>  
+                                  <!-- 用JS產生內容 -->
                               </ul>
                             </nav>
                           </aside>
