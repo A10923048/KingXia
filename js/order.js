@@ -87,6 +87,7 @@ $(document).ready(function () {
     let this_select = $(this);
     //取得正在被點擊的select
 
+    icon_color_cange(this_select);
     
     let y = 0;
     $('.ticketQuantity').each(function () {
@@ -109,7 +110,7 @@ $(document).ready(function () {
     if (other_tickets < 0) {
       //$("#alert-result").html(text_show);
       $("#custom-alert_2").show();
-      
+
       this_select.empty();
 
       // 根據票數動態產生選項
@@ -122,10 +123,10 @@ $(document).ready(function () {
     }else{
       if (other_tickets == 0) {
         $("#tickets_unchoosed").css("background-color", "green");
-        console.log("123");
+     
       } else {
         $("#tickets_unchoosed").css("background-color", "red");
-        console.log("456");
+      
       }
       // $("#tickets_choosed").text( other_tickets+"張票");
       $("#tickets_unchoosed").text(other_tickets);
@@ -137,7 +138,40 @@ $(document).ready(function () {
   });
 
 
+  let icon_color_cange = function (this_select){
 
+ //                 $ (".icon_color_cange")(同下面這行)
+    //let icon_find = this().find(".find_icon").text();演化成下面這行
+    let icon_find = this_select.parent().find(".find_icon").text();
+    
+   
+
+    if (icon_find == "全票") {
+    
+      this_select.parent().find(".icon_color_cange").css("color", "green");
+    }else if (icon_find == "敬老"){
+      this_select.parent().find(".icon_color_cange").css("color", "blue");
+
+    }else if (icon_find == "兒童"){
+      this_select.parent().find(".icon_color_cange").css("color", "yellow");
+     
+    }else if (icon_find == "博愛"){
+      this_select.parent().find(".icon_color_cange").css("color", "red");
+     
+    }else if (icon_find.includes("陪同者")){
+     //錯誤: $(this_select.parent().find(".icon_color_cange")).css("text-color", "pink");
+     //因為:      this_select.parent().find(".icon_color_cange") 
+     //       =   $                        (".icon_color_cange")(同上面這行)
+     //所以:  $(this_select.parent().find(".icon_color_cange")).css("text-color", "pink");
+     //    =  $(                       $ (".icon_color_cange"))
+    //正確:this_select.parent().find(".icon_color_cange").css("text-color", "green");
+    
+    this_select.parent().find(".icon_color_cange").css("color", "pink");
+   
+
+    }
+
+  }
 
 
 
@@ -182,6 +216,7 @@ $(document).ready(function () {
     let orderPhone = $("#orderPhone").val();
     let orderId = $("#orderId").val();
     let ticketQuantity = $("#ticketQuantity_A").val();
+    let tickets_unchoosed =$("#tickets_unchoosed").text();
 
     let A = function (i, name, Uid) {
       let htmlString = '<li class="my-2">' +
@@ -297,6 +332,8 @@ $(document).ready(function () {
     console.log("orderPhone: " + orderPhone);
     console.log("orderId: " + orderId);
     console.log("ticketQuantity: " + ticketQuantity);
+    
+    console.log("tickets_unchoosed: " + tickets_unchoosed);
 
     console.log("input[name='orderMethods']:checked" + '訂單開立方式的值');
 
@@ -309,17 +346,17 @@ $(document).ready(function () {
     let text_show = "";
 
     // 檢查"articleA表格內的值"是否為空
-    if (!orderName) {
-      T = false;
-      text_show = text_show + "姓名:未填寫<br>"
+    // if (!orderName) {
+    //   T = false;
+    //   text_show = text_show + "姓名:未填寫<br>"
       //  "姓名:未填寫"=""+"姓名:未填寫"
-    }
+    //}
 
-    if (!orderPhone) {
-      T = false;
-      text_show = text_show + "電話:未填寫<br>"
-      // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
-    }
+    // if (!orderPhone) {
+    //   T = false;
+    //   text_show = text_show + "電話:未填寫<br>"
+    //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+    // }
 
     // if (!ticketQuantity){
     //   T=false;
@@ -327,44 +364,52 @@ $(document).ready(function () {
     //  // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
     // }
 
-    if (!orderId) {
-      T = false;
-      text_show = text_show + "身分證/護照號碼:未填寫<br>"
-    }
+    // if (!orderId) {
+    //   T = false;
+    //   text_show = text_show + "身分證/護照號碼:未填寫<br>"
+    // }
 
-    if (!isPassenger) {
-      //如果 後面這個條件是  false
-      T = false;
-      text_show = text_show + "購票人是否為乘客(未選擇)<br>"
+    // if (!isPassenger) {
+    //   //如果 後面這個條件是  false
+    //   T = false;
+    //   text_show = text_show + "購票人是否為乘客(未選擇)<br>"
 
-    }
+    // }
 
-    if (!orderMethod) {
+    // if (!orderMethod) {
+    //   T = false;
+    //   text_show = text_show + "訂單開立方式(未選擇)"
+    // }
+
+    if(parseInt(tickets_unchoosed)!=0){
       T = false;
-      text_show = text_show + "訂單開立方式(未選擇)"
+      text_show = text_show + "票種選擇(未完成)"
     }
+    
 
     if (!T) {
       $("#alert-result").html(text_show);
       $("#custom-alert").show();
 
-    } else {
+    } 
+    else {
+
       let get_A_inedex = 0;
-      if (isPassenger === '是') {
-        let get_A = A(get_A_inedex, orderName, orderId);
-        $("#buyers_list").append(get_A);
-        get_A_inedex = 1;
-        console.log("購票人為乘客");
-      } else if (isPassenger === '否') {
-        console.log("購票人不是乘客");
-      }
+      // if (isPassenger === '是') {
+      //   let get_A = A(get_A_inedex, orderName, orderId);
+      //   $("#buyers_list").append(get_A);
+      //   get_A_inedex = 1;
+      //   console.log("購票人為乘客");
+      // } else if (isPassenger === '否') {
+      //   console.log("購票人不是乘客");
+      // }
 
       // 檢查訂單開立方式
-      if (orderMethod === '統一開立購票證名') {
-        console.log("統一開立購票證名");
-      } else if (orderMethod === '分別開立購票證名') {
-        console.log("分別開立購票證名");
-      }
+      // if (orderMethod === '統一開立購票證名') {
+      //   console.log("統一開立購票證名");
+      // } else if (orderMethod === '分別開立購票證名') {
+      //   console.log("分別開立購票證名");
+      // }
 
       //產生:購票人資料填寫(下拉選單)
       for (var i = get_A_inedex; i < ticket; i++) {
