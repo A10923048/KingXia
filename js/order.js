@@ -63,58 +63,78 @@ $(document).ready(function () {
 
 
   // 製作票種 下拉票數
-  $('.ticketQuantity').each(function (){
+  $('.ticketQuantity').each(function () {
 
-    let this_ticketQuantity=$(this);
+    let this_ticketQuantity = $(this);
 
     // 根據票數動態產生選項
     for (var i = 0; i <= ticket; i++) {
-      var option = $('<option></option>').attr('value',(i) ).text(i);
+      var option = $('<option></option>').attr('value', (i)).text(i);
       this_ticketQuantity.append(option);
     }
   })
-  $("#tickets_unchoosed").text( ticket);
+
+  //預設初始畫面的未選擇票數為紅色
+  $("#tickets_unchoosed").text(ticket);
   $("#tickets_unchoosed").css("background-color", "red");
 
   // 綁定所有擁有 class="ticketQuantity" 的 select 元素的 change 事件
   $('.ticketQuantity').on('change', function () {
     // 獲取被改變的 select 元素
+    
+    //用 console.log("yes"); 測試有沒有進入這個功能
 
-    console.log("yes");
     let this_select = $(this);
+    //取得正在被點擊的select
 
-    let this_select_val = $(this).val();
-    let y=0;
-    $('.ticketQuantity').each(function (){
-      if($(this)!=this_select){
-        y+= parseInt($(this).val());
+    
+    let y = 0;
+    $('.ticketQuantity').each(function () {
+      if ($(this) != this_select) {
+        //排除正在被點擊的select，
+        y += parseInt($(this).val());
+        //累加其他select的票數，用來計算餘票
+        //這裡用 parseInt 才不會被當字串累加
         // y=y+
         // y+=
-    
       }
     })
 
+    // 計算還剩多少餘票用
     console.log(y);
-    let other_tickets=ticket-y;
-        
-    if(other_tickets==0){
-      $("#tickets_unchoosed").css("background-color", "green");
-      console.log("123");
-    }else{
-      $("#tickets_unchoosed").css("background-color", "red");
-      console.log("456");
+    let other_tickets = ticket - y;
+
+    // 除非餘票=0不然都用紅色顯示
+    
+    if (other_tickets < 0) {
+      //$("#alert-result").html(text_show);
+      $("#custom-alert_2").show();
+      
+      this_select.empty();
+
+      // 根據票數動態產生選項
+    for (var i = 0; i <= ticket; i++) {
+      var option = $('<option></option>').attr('value', (i)).text(i);
+      this_select.append(option);
     }
 
 
-    // $("#tickets_choosed").text( other_tickets+"張票");
-    $("#tickets_unchoosed").text( other_tickets+"張票");
+    }else{
+      if (other_tickets == 0) {
+        $("#tickets_unchoosed").css("background-color", "green");
+        console.log("123");
+      } else {
+        $("#tickets_unchoosed").css("background-color", "red");
+        console.log("456");
+      }
+      // $("#tickets_choosed").text( other_tickets+"張票");
+      $("#tickets_unchoosed").text(other_tickets);
+  
+    }
 
-     
+
 
   });
-
-
-
 
 
 
@@ -134,6 +154,12 @@ $(document).ready(function () {
     $("#custom-alert").hide();
   })
 
+  //          票種選擇_警告框-關閉按鈕               //
+
+  $("#alert-result_i_2").click(function () {
+    $("#custom-alert_2").hide();
+  })
+
 
 
   //            獲取article A 顯示於 modal             //
@@ -143,10 +169,10 @@ $(document).ready(function () {
 
   $("#articleA_send").click(function (e) {
     e.preventDefault();
-  //因為#articleA_send"包在form 裡，
-  //所以這裡要阻止 input  form 會有 的預設的提交行為
-  //預設的提交行為=把前端資料傳給後端，但是我們這裡只要前端的資料處理
-  //所以在function (e)後 呼叫preventDefault方法;
+    //因為#articleA_send"包在form 裡，
+    //所以這裡要阻止 input  form 會有 的預設的提交行為
+    //預設的提交行為=把前端資料傳給後端，但是我們這裡只要前端的資料處理
+    //所以在function (e)後 呼叫preventDefault方法;
 
     $("#buyers_list").empty();
     //let buyers_list = 0;
