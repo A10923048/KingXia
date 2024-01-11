@@ -225,13 +225,7 @@
 
 
                             <div class="col-md-12 col-lg-12 order-md-last" style="background-color: rgb(249, 249, 250);">
-                              <li id="custom-alert" class="justify-content-between lh-sm mb-2 mt-2" role="alert"
-                                style="position: relative; background-color: rgb(255, 196, 191); display: none;">
-
-                                <h5 id="alert-result" class="text-red"></h5>
-                                <i id="alert-result_i" class="fa-solid fa-circle-xmark fa-2x text-white"
-                                  style="position: absolute; top: 5%; right: 0%;"></i>
-                              </li>
+                              
                               <h4 class="d-flex justify-content-center align-items-center mb-3">
                                 <span class="text-primary">購票人資料</span>
                               </h4>
@@ -281,11 +275,16 @@
                                               <h3>票種選擇</h3>
                                               <h5 class="my-0"></h5>
                                               <ul class="list-group mb-3">
+                                                <li id="custom-alert" class="justify-content-between lh-sm mb-2 mt-2" role="alert"
+                                                  style="position: relative; background-color: rgb(255, 196, 191); display: none;">  
+                                                  <h5 id="alert-result" class="text-red"></h5>
+                                                  <i id="alert-result_i" class="fa-solid fa-circle-xmark fa-2x text-white"
+                                                    style="position: absolute; top: 5%; right: 0%;"></i>
+                                                </li>
                                                 <li class="list-group-item d-flex justify-content-between lh-sm">
                                                   <h4 class="d-flex justify-content-between align-items-center bg-primary">
                                                     <span class="badge bg-primary  text-white">(未選擇)</span>
-                                                  </h4>
-                                                  <h4 class="d-flex justify-content-center align-items-center">
+                                                  </h4>   <h4 class="d-flex justify-content-center align-items-center">
                                                     <span class="badge rounded-pill  text-white " id="tickets_unchoosed"></span>
                                                   </h4>
                                                   <h4 class="d-flex justify-content-between align-items-center">
@@ -336,7 +335,7 @@
                                                 </select>
                                               </th>
                                               <th style="width: 30%;">
-                                                <h6 >博愛<br>(陪同者)</h6>
+                                                <h6 class="find_icon">博愛<br>(陪同者)</h6>
                                                 <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
                                                 <h6>票數</h6>
                                                 <select id="ticketQuantity_D2" class="ticketQuantity">
@@ -349,69 +348,7 @@
                                     </div>
 
 
-                                    <!-- 訂單開立方式 -->
-                                    <!-- <div class="col-lg-12">
-                                            <div class="col-md-12 mt-5 list-group-item d-flex justify-content-between lh-sm"
-                                              colspan="2">
-                                              <div class="table-responsive">
-                                                <table class="table text-center">
-                                                  <thead>
-                                                    <tr>
-                                                      <h4>訂單開立方式</h4>
-                                                    </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                    <tr>
-                                                      <th style="width: 30%;">
-                                                        <div class="col">
-                                                          <input type="radio" name="orderMethods" value="統一開立購票證名"
-                                                            required>統一開立購票證名
-                                                        </div>
-                                                      </th>
-                                                      <th style="width: 30%;">
-                                                        <div class="col">
-                                                          <input type="radio" name="orderMethods" value="分別開立購票證名"
-                                                            required>分別開立購票證名
-                                                        </div>
-                                                      </th>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </div>
-                                            </div>
-                                          </div> -->
-
-
-                                    <!-- 購票人是否為乘客? -->
-                                    <!-- <div class="col-lg-12">
-
-                                      <div class="col-md-12 mt-5 list-group-item d-flex justify-content-between lh-sm"
-                                        colspan="2">
-                                        <div class="table-responsive">
-                                          <table class="table text-center">
-                                            <thead>
-                                              <tr>
-                                                <h4>購票人是否為乘客?</h4>
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-                                              <tr>
-                                                <th style="width: 30%;">
-                                                  <div class="col">
-                                                    <input name="isPassenger" type="radio" value="是" required>是
-                                                  </div>
-                                                </th>
-                                                <th style="width: 30%;">
-                                                  <div class="col">
-                                                    <input name="isPassenger" type="radio" value="否" required>否
-                                                  </div>
-                                                </th>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                        </div>
-                                      </div>
-                                    </div> -->
+                                  
 
                                    <!--送出按鈕 -->
                                     <div class="col-lg-12 mt-5">
@@ -433,27 +370,25 @@
                         <div class="container text-white">
 
                           <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
-                            <h2 class="h6 mt-4 pb-3 mb-4 border-bottom">購票人資料填寫(請下拉選單)</h2>
+                            <h3 class="mt-5 pb-3 mb-4 border-bottom">資料填寫</h3>
+                            <h5 class=" pb-3 mb-4 ">(請下拉選單)</h5>
                             <nav class="small" id="toc">
                               <ul class="list-unstyled" id="buyers_list">
 
-                                <!-- 用JS產生內容 -->
+                                <!-- 用JS產生 旅客資料 -->
+                                <li class="my-2">
                                 <button class="btn d-inline-flex align-items-center collapsed border-0 mb-3"
                                     data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
-                                    aria-controls="contents-collapse">其他旅客資料(1)</button>
+                                    aria-controls="contents-collapse">旅客(1)表單</button>
                                   <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
                                       <div class="table-responsive">
                                           <form id="contact" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">
                                             <table>
                                               <div id="planpickered" class="mt-4 pt-3 pb-1 bg-primary ">
                                                 <h2  id="contact"  class=" section-title mb-3 text-center text-white">XX票種</h2>
-                                              </div>
                                             </table>
-                                            
-                                          <div class="row mt-5">
-
-                                            
-                                          <div class="col-lg-6">
+                                          <div class="row mt-5 justify-content-between" style="padding-left: 2%; padding-right: 2%;">
+                                          <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;" >
                                             <div class="row" style="padding-left: 10%;">
                                               <input type="text" class="form-control col" id="orderName" placeholder="姓名" value=""
                                                   required>
@@ -466,11 +401,22 @@
                                             <input type="text" class="form-control" id="email" placeholder="email" value=""
                                             required>
                                           </div>
-                                          
-                                          <div class="col-lg-6 col-md-12  col-sm-12 text-primary mt-5">
-                                            
-                                            <div class="table-responsive justify-content-center">
 
+                                          <div class="col-lg-6 col-md-12  col-sm-12 text-primary mt-3" style="padding-left: 5%; padding-right: 5%;">
+                                            
+                                            <div class="row justify-content-start" style="padding-left: 30%; padding-right: 10%;">
+                                              
+                                              <div style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
+                                                  <input type="checkbox" id="Orderer_check" style="width: 20px; height: 20px; margin-top: 20%;">
+                                                
+                                                  <h4  id="contact"  class=" section-title mb-3 pt-3 text-center text-primary">&nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
+                                                  </h4>
+                                              
+                                                </div>
+                                              
+                                            </div>
+
+                                            <div class="table-responsive justify-content-center">
                                               <table class=" text-center text-primary ">
                                                 <thead>
                                                   <tr>
@@ -504,8 +450,111 @@
                                                 </thead>
                                               </table>
                                             </div>
-
                                           </div>
+
+                                          <!-- 購票人是否為乘客? -->
+                                          <!-- <div class="col-lg-12">
+                                            <div class="col-md-12 mt-5 list-group-item d-flex justify-content-between lh-sm"
+                                              colspan="2">
+                                              <div class="table-responsive">
+                                                <table class="table text-center">
+                                                  <thead>
+                                                    <tr>
+                                                      <h4>購票人是否為乘客?</h4>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <th style="width: 30%;">
+                                                        <div class="col">
+                                                          <input name="isPassenger" type="radio" value="是" required>是
+                                                        </div>
+                                                      </th>
+                                                      <th style="width: 30%;">
+                                                        <div class="col">
+                                                          <input name="isPassenger" type="radio" value="否" required>否
+                                                        </div>
+                                                      </th>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                          </div>  -->
+                                          
+                                          
+                                        </div>
+                                          </form>
+                                      </div>
+                                  </ul>
+                                </li>
+
+                                <!-- 用JS產生 主要訂購人 資料 -->
+                                <li class="my-2">
+                                <button class="btn d-inline-flex align-items-center collapsed border-0 mb-3"
+                                    data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                                    aria-controls="contents-collapse">主要訂購人-表單</button>
+                                  <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                      <div class="table-responsive">
+                                          <form id="contact" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">
+                                            <table>
+                                              <div id="planpickered" class="mt-4 pt-3 pb-1 bg-primary ">
+                                                <h2  id="contact"  class=" section-title mb-3 text-center text-white">XX票種</h2>
+                                              </div>
+                                            </table>
+                                          <div class="row mt-5">
+                                          <div class="col-lg-6">
+                                            <div class="row" style="padding-left: 10%;">
+                                              <input type="text" class="form-control col" id="orderName" placeholder="姓名" value=""
+                                                  required>
+                                              <h4  id="contact"  class="col section-title  text-center text-primary">主要訂購人資料</h4>
+                                            </div>
+                                            <input type="text" class="form-control" id="orderPhone" placeholder="電話"
+                                            value="" required>
+                                            <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                            required>
+                                          </div>
+
+                                           <!-- 訂單開立方式 -->
+                                           <div class="col-lg-6 col-md-12  col-sm-12 text-primary mt-3   mb-5">
+                                            <div class="list-group-item d-flex justify-content-between lh-sm"colspan="2">
+                                              <div class="table-responsive">
+                                                <table class="table text-center">
+                                                  <thead>
+                                                    <tr>
+                                                      <h4>訂單開立方式</h4>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <th style="width: 50%;">
+                                                       <div class="col"> 
+                                                          <input type="radio" name="orderMethods" value="統一開立購票證名"
+                                                            required>統一開立購票證名
+                                                        </div>
+                                                      </th>
+                                                      <th style="width: 50%;">
+                                                        <div class="col">
+                                                          <input type="radio" name="orderMethods" value="分別開立購票證名"
+                                                            required>分別開立購票證名
+                                                        </div>
+                                                      </th>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+
+                                              </div>
+                                            </div>
+                                          </div>  
+
+                                          <!-- <div class="col-lg-6 col-md-12  col-sm-12 text-primary ">
+                                            <div class="table-responsive justify-content-center">
+                                              
+                                              <h3 class="mt-5 pb-3 mb-4 border-bottom"></h3>
+
+
+                                            </div>
+                                          </div> -->
 
       <!-- 
                                           <div class="col-lg-6  text-primary row">
@@ -546,6 +595,9 @@
                                           </form>
                                       </div>
                                   </ul>
+                                </li>
+                                
+                                
                                 
                                   
                                 <!-- 用JS產生 (舊)內容 -->
@@ -661,6 +713,7 @@
                                   </ul>
                                 </li> -->
                                 <!-- 用JS產生內容 -->
+
                               </ul>
                             </nav>
                           </aside>

@@ -85,9 +85,11 @@ $(document).ready(function () {
     //用 console.log("yes"); 測試有沒有進入這個功能
 
     let this_select = $(this);
-    //取得正在被點擊的select
+    //讓正在被點擊的select = this_select
 
     icon_color_cange(this_select);
+    //呼叫 icon_color_cange的方法，
+    //將正在被點擊的select當參數帶入
     
     let y = 0;
     $('.ticketQuantity').each(function () {
@@ -138,10 +140,11 @@ $(document).ready(function () {
   });
 
 
+  //實作icon_color_cange方法:判斷 正在被點擊的select 屬於哪個票種 做顏色變更
   let icon_color_cange = function (this_select){
 
- //                 $ (".icon_color_cange")(同下面這行)
-    //let icon_find = this().find(".find_icon").text();演化成下面這行
+ //                     $ (".find_icon")(同下面這行)
+    //let icon_find = t  h  i  s(  )    .find(".find_icon").text();演化成下面這行
     let icon_find = this_select.parent().find(".find_icon").text();
     
    
@@ -182,7 +185,7 @@ $(document).ready(function () {
 
 
 
-  //          ArticleB警告框-關閉按鈕               //
+  //          ArticleA警告框-關閉按鈕               //
 
   $("#alert-result_i").click(function () {
     $("#custom-alert").hide();
