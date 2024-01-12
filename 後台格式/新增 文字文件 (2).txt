@@ -1,4 +1,23 @@
 我要傳給光瑞的資料
+
+//要傳之前的工作
+let show_list = [];//暫存用
+
+一個搭船人的資料
+let B ={
+    orderName: $("周小寶").val(),
+    orderName: $("周小寶").val(),
+    };
+show_list.push(B);
+
+//要傳的東西
+let A= {
+    orderName: $("周小寶").val(),
+    orderName: $("周小寶").val(),
+    orderName: $("周小寶").val(),
+    tickets:show_list
+}
+--------------------------------------------
 {
     買票人資料
     "orderName": "周小寶",

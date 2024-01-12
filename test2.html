@@ -28,10 +28,11 @@
 
 
   <!-- 使用style.css -->
-  <link rel="stylesheet" href="./css/new.css">
+  <link rel="stylesheet" href="./css/test2.css">
   <!-- 使用日期輪用 -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
+  <link href="./lib/owlcarousel/owlcarousel/owl.carousel.min.js" rel="stylesheet">
+  <link href="./lib/owlcarousel/owlcarousel/owl.carousel.min.js" rel="stylesheet">
 
 </head>
 
@@ -115,10 +116,59 @@
 
 
                     <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
-
+                    
                       <article id="articleA" class="my-3  tab-pane show active " style="background: rgb(102, 235, 226)">
                         <h1 class=" section-title text-center text-white mt-5 mb-3 pt-5">訂票資訊
                         </h1>
+                    
+                    
+                    
+                        <!-- Project Start -->
+                        <div class="container-xl py-5">
+                          <div class="container">
+                            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                              <h6 class="section-title bg-white text-center text-primary px-3">Our Projects</h6>
+                              <h1 class="display-6 mb-4">Learn More About Our Complete Projects</h1>
+                            </div>
+                            <div class="owl-carousel project-carousel wow fadeInUp row" data-wow-delay="0.1s">
+                              <div class="project-item border rounded h-100 p-4" data-dot="01">
+                                <div class="position-relative mb-4">
+                                  <img class="img-fluid rounded" src="./img/gallery-image-1.jpg" alt="">
+                                  <a href="./img/gallery-image-1.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                                </div>
+                                <h6>UI / UX Design</h6>
+                                <span>Digital agency website design and development</span>
+                              </div>
+                              <div class="project-item border rounded h-100 p-4" data-dot="02">
+                                <div class="position-relative mb-4">
+                                  <img class="img-fluid rounded" src="./img/gallery-image-2.jpg" alt="">
+                                  <a href="./img/gallery-image-2.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                                </div>
+                                <h6>UI / UX Design</h6>
+                                <span>Digital agency website design and development</span>
+                              </div>
+                              <div class="project-item border rounded h-100 p-4" data-dot="03">
+                                <div class="position-relative mb-4">
+                                  <img class="img-fluid rounded" src="./img/gallery-image-3.jpg" alt="">
+                                  <a href="./img/gallery-image-3.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                                </div>
+                                <h6>UI / UX Design</h6>
+                                <span>Digital agency website design and development</span>
+                              </div>
+                              <div class="project-item border rounded h-100 p-4" data-dot="04">
+                                <div class="position-relative mb-4">
+                                  <img class="img-fluid rounded" src="./img/gallery-image-4.jpg" alt="">
+                                  <a href="./img/gallery-image-4.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                                </div>
+                                <h6>UI / UX Design</h6>
+                                <span>Digital agency website design and development</span>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Project End -->
+
                         <nav id="articleA-nav" class="navbar navbar-expand-md navbar-light bg-light  mt-5 mb-3 pt-5">
                           <!-- <a class="navbar-brand" href="./index.html">訂票資訊</a> -->
                           <button class=" articleA-navbar-toggler navbar-toggler d-lg-none" type="button"
@@ -297,23 +347,13 @@
                               <div id="Quantity">
                                 <div>
                                   <label for="ticketS">
-                                    <input type="number" min="1" max="15" id="ticketQuantity" value="1">
+                                    <input type="number" min="1" max="15" id="ticketQuantity" value="1">張
                                     <!-- <select >
-                                                                            <option value="" selected disabled hidden>請選擇數量</option>
-                                                                            <option value="1">1</option>
-                                                                            <option value="2">2</option>
-                                                                            <option value="3">3</option>
-                                                                            <option value="4">4</option>
-                                                                            <option value="5">5</option>
-                                                                            <option value="6">6</option>
-                                                                            <option value="1">7</option>
-                                                                            <option value="2">8</option>
-                                                                            <option value="3">9</option>
-                                                                            <option value="4">10</option>
-                                                                        </select> -->
-
-
-                                    張
+                                              <option value="" selected disabled hidden>請選擇數量</option>
+                                              <option value="1">1</option>
+                                              
+                                          </select> -->
+                                    
                                   </label>
                                 </div>
                               </div>
@@ -1214,6 +1254,7 @@
   <script src="./js/new_articleC+CC.js"></script>
   <script src="./js/new_articleC.js"></script>
   <script src="./js/new_articleCCC.js"></script>
+  <script src="./js/test2.js"></script>
 
 </body>
 

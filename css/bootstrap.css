@@ -10636,6 +10636,30 @@ button.bg-dark:focus {
   color: #fff !important;
 }
 
+.text-green {
+  color: #28a745 !important;
+}
+
+.text-pink {
+  color: #e83e8c !important;
+}
+
+.text-blue {
+  color: #007bff !important;
+}
+
+.text-orange {
+  color: #fd7e14 !important;
+}
+
+.text-red {
+  color: #dc3545 !important;
+}
+
+.text-yellow {
+  color: #ffc107 !important;
+}
+
 .text-primary {
   color: #20bb94 !important;
 }

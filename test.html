@@ -62,6 +62,7 @@
 
     <!-- header -->
     <header id="header">
+
         <div class="row justify-content-center  mb-1 "
             style="margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
 
@@ -84,41 +85,53 @@
                 </h1> -->
             </div>
         </div>
+
+        <!-- 瓶中船 -->
         <div class="container">
             <img id="ship-bottle" class="rounded-circle mt  my-element" src="img/瓶中船.png" alt="user photo"
                 style="width: 50%; margin-bottom: 20%;">
             <!-- <a class="btn btn-outline-primary" href="">Link</a> -->
         </div>
 
+        <!-- Article 內容-->
         <div class="container col-md-10  mt-5 bg-secondary"
             style="border-radius: 15px; padding-top: 5%; padding-bottom: 2%;">
+            
+            
+            <nav class="nav nav-pills flex-row justify-content-center" id="myNav">
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">行程介紹</button>
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleB')">線上訂票</button>
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">紀錄查詢</button>
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleD')">test</button>
+              </nav>
 
-            <ul class="nav nav-pills flex-row justify-content-center" id="myTabs">
+            <!-- <ul class="nav nav-pills flex-row justify-content-center" id="myTabs">
                 <li class="nav-item">
-                    <a class="nav-link active" id="tab1" data-bs-toggle="tab" href="#content1">目錄</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="tab2" data-bs-toggle="tab" href="#content2">公司介紹</a>
+                    <a class="nav-link active" id="tab1" data-bs-toggle="tab" href="#articleA">目錄</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="tab3" data-bs-toggle="tab" href="#content3">郵輪介紹</a>
+                    <a class="nav-link" id="tab2" data-bs-toggle="tab" href="#articleB">公司介紹</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="tab4" data-bs-toggle="tab" href="#content4">行程介紹</a>
+                    <a class="nav-link" id="tab3" data-bs-toggle="tab" href="#articleC">郵輪介紹</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab4" data-bs-toggle="tab" href="#articleD">行程介紹</a>
                 </li>
                 </li>
-            </ul>
+            </ul> -->
 
             <div class="tab-content mt-2 py-5 bg-secondary justify-content-center text-center"
                 style="border-radius: 15px; padding-left: 1%; padding-right: 1%">
-                <div class="tab-pane fade show active" id="content1">
+                
+                <div class="tab-pane fade show active" id="articleA">
                     <div class="my-3 text-white" style="background: rgb(102, 235, 226)">
 
                         <section id="introSection" class="py-5">
                             <div class="container bg-white mb-5">
                                 <h1 class="zoomOut section-title text-center text-secondary mt-5 mb-5 pt-5">
-                                    目錄</h1>
-                                <!-- 修正排版為三項排一排 -->
+                                    目錄
+                                </h1>
                                 <div class="row ">
                                     <div class="col-4">
                                         <div class="intro-box">
@@ -129,7 +142,6 @@
                                                 </div>
                                                 <h3 class="text-secondary">線上訂票</h3>
                                                 <div class="intro-line bg-primary"></div>
-
                                             </a>
                                         </div>
                                     </div>
@@ -185,39 +197,38 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </section>
                     </div>
 
                 </div>
 
-
-                <div class="tab-pane  fade show " id="content2">
+                <div class="tab-pane  fade show " id="articleB">
                     <div id="header" class="container pt-5 pb-5 py-5">
                         <!-- 設定row內的區塊置中對齊 -->
                         <div class="row justify-content-center  "
                             style="background-color: #f5fbfcdd; padding-top: 5%; padding-bottom: 2%; margin-left: 2%; margin-right: 2%;">
                             <div class="col-sm-10">
-
                                 <div class="bd-example-snippet bd-code-snippet">
                                     <div class="bd-example m-0 border-0">
-                                    <nav>
-                                      <div class="nav nav-tabs mb-3" id="nav-tab3" role="tablist">
-                                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-                                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-                                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-                                      </div>
-                                    </nav>
-                                    <div class="tab-content" id="nav-tabContent">
-                                      <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-home-tab">
-                                        <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
-                                      </div>
-                                      <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                        <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
-                                      </div>
-                                      <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                        <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
-                                      </div>
-                                    </div>
+                                        <nav>
+                                            <div class="nav nav-tabs mb-3" id="nav-tab3" role="tablist">
+                                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-1" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+                                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+                                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                            </div>
+                                        </nav>
+                                        <div class="tab-content" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-home-tab">
+                                            <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                            <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                            <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -238,27 +249,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade show" id="content3"
-                    style="background-color: rgba(249, 250, 251, 0.473);margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
-                    <!-- Tab 3 Content -->
-                    <div class="container">
-                        <!-- <section id="reviewsSection"> -->
-                        <!-- TODO: 使用輪播(Carousel)元件放入以下兩頁內容 -->
-                        <!-- 內容輪播 -->
-                        <!-- b4-carousel-default -->
+
+                <div class="tab-pane fade show" id="articleC">
+                  
+                    <div class="container" style="background-color: rgba(249, 250, 251, 0.473);">
                         <div id="carouselId" class="carousel slide" data-ride="carousel">
                             <h1 class="section-title mb-5 text-center">郵輪介紹</h1>
-                            <ol class="carousel-indicators">
+                        <!-- <ol class="carousel-indicators">
                                 <li data-target="#carouselId" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselId" data-slide-to="1"></li>
                                 <li data-target="#carouselId" data-slide-to="2"></li>
-
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img src="./img/小三通/初日號-卡通圖.png" class="d-block w-100" alt="Slide 1">
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item ">
                                     <img src="./img/小三通/初日號-卡通圖2.png" class="d-block w-100" alt="Slide 2">
                                     <div class="container">
                                         <div class="carousel-caption">
@@ -282,21 +288,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
-
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                         -->
                         <!-- </div> -->
                         <!-- 內容輪播 end -->
 
-                        <script>
+                        <!-- <script>
                             document.addEventListener('DOMContentLoaded', function () {
                                 var myTabs = new bootstrap.Tab(document.getElementById('tab1'));
                                 myTabs.show(); // 默认显示第一个Tab
@@ -317,140 +322,143 @@
                                     tab3.show();
                                 });
                             });
-                        </script>
-                    </div> 
-                </div><!-- Tab 3 Content end -->
-                    <div class="tab-pane fade show" id="content4" style="margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
-                        
-                        <!-- <div class="tab-pane fade show" id="content4"
-                        style="background-color: rgba(249, 250, 251, 0.473);margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
-                      -->
-                        <div class="container">
-                            <!-- <section id="reviewsSection"> -->
-                            <!-- TODO: 使用輪播(Carousel)元件放入以下兩頁內容 -->
-                            <!-- 內容輪播 -->
-                            <!-- b4-carousel-default -->
-                            <div id="carouselId2" class="carousel slide" data-ride="carousel">
-                                <h1 class="section-title mb-5 text-center">郵輪介紹</h1>
-                                
-                                <div class="carousel-inner">
+                        </script> -->
+                        </div> 
+                    </div><!-- Tab 3 Content end -->
+                </div>
 
-                                    <div class="carousel-item active">
-                                        <img src="./img/小三通/金門水頭碼頭(發船).jpg" class="d-block w-100" alt="Slide 1">
-                                    </div>
-                                    <div class="carousel-item ">
-                                        <img src="./img/小三通/復興嶼.jpg" class="d-block w-100" alt="Slide 2">
-                                    </div>
-                                    <div class="carousel-item ">
-                                        <img src="./img/小三通/猛虎嶼.jpg" class="d-block w-100" alt="Slide 3">
-                                    </div>
-                                    <div class="carousel-item ">
-                                        <img src="./img/小三通/大膽島.jpg" class="d-block w-100" alt="Slide 4">
-                                    </div>
-                                    <div class="carousel-item ">
-                                        <img src="./img/新增資料夾/賞廈門黃金海岸.jpg" class="d-block w-100" alt="Slide 5">
-                                    </div>
-                                    <div class="carousel-item ">
-                                        <img src="./img/小三通/金門大橋.jpg" class="d-block w-100" alt="Slide 6">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="./img/小三通/返回金門水頭碼頭.jpg" class="d-block w-100" alt="Slide 7">
-                                        <div class="container">
-                                            <div class="carousel-caption">
-                                                <h1>Another example headline.</h1>
-                                                <p>Some representative placeholder content for the second slide of the
-                                                    carousel.
-                                                </p>
-                                                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="./img/小三通/金廈遊輪-初日號.jpg" class="d-block w-100" alt="Slide 3">
-                                        <div class="container">
-                                            <div class="carousel-caption text-end">
-                                                <h1>One more for good measure.</h1>
-                                                <p>Some representative placeholder content for the third slide of this
-                                                    carousel.
-                                                </p>
-                                                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                                            </div>
+
+                <div class="tab-pane fade show" id="articleD" style="margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+                    
+                    <!-- <div class="tab-pane fade show" id="content4"
+                    style="background-color: rgba(249, 250, 251, 0.473);margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+                    -->
+                    <div class="container">
+                        <!-- <section id="reviewsSection"> -->
+                        <!-- TODO: 使用輪播(Carousel)元件放入以下兩頁內容 -->
+                        <!-- 內容輪播 -->
+                        <!-- b4-carousel-default -->
+                        <!-- <div id="carouselId2" class="carousel slide" data-ride="carousel">
+                            <h1 class="section-title mb-5 text-center">郵輪介紹</h1>
+                            
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./img/小三通/金門水頭碼頭(發船).jpg" class="d-block w-100" alt="Slide 1">
+                                </div>
+                                <div class="carousel-item ">
+                                    <img src="./img/小三通/復興嶼.jpg" class="d-block w-100" alt="Slide 2">
+                                </div>
+                                <div class="carousel-item ">
+                                    <img src="./img/小三通/猛虎嶼.jpg" class="d-block w-100" alt="Slide 3">
+                                </div>
+                                <div class="carousel-item ">
+                                    <img src="./img/小三通/大膽島.jpg" class="d-block w-100" alt="Slide 4">
+                                </div>
+                                <div class="carousel-item ">
+                                    <img src="./img/新增資料夾/賞廈門黃金海岸.jpg" class="d-block w-100" alt="Slide 5">
+                                </div>
+                                <div class="carousel-item ">
+                                    <img src="./img/小三通/金門大橋.jpg" class="d-block w-100" alt="Slide 6">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/小三通/返回金門水頭碼頭.jpg" class="d-block w-100" alt="Slide 7">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <h1>Another example headline.</h1>
+                                            <p>Some representative placeholder content for the second slide of the
+                                                carousel.
+                                            </p>
+                                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="indicators-container">
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#carouselId2" data-slide-to="0" class="active">
-                                            <img src="./img/小三通/金門水頭碼頭(發船).jpg" class="d-block w-100" alt="Slide 1">
-                                        </li>
-                                        <li data-target="#carouselId2" data-slide-to="1">
-                                            <img src="./img/小三通/復興嶼.jpg" class="d-block w-100" alt="Slide 2">
-                                        </li>
-                                        <li data-target="#carouselId2" data-slide-to="2">
-                                            <img src="../img/小三通/猛虎嶼.jpg" class="d-block w-100" alt="Slide 3">
-                                        </li>
-                                        <li data-target="#carouselId2" data-slide-to="3">
-                                            <img src="./img/小三通/大膽島.jpg" class="d-block w-100" alt="Slide 4">
-                                        </li>
-                                        <li data-target="#carouselId2" data-slide-to="4">
-                                            <img src="./img/新增資料夾/賞廈門黃金海岸.jpg" class="d-block w-100" alt="Slide 5">
-                                        </li>
-                                        <li data-target="#carouselId2" data-slide-to="5">
-                                            <img src="./img/小三通/金門大橋.jpg" class="d-block w-100" alt="Slide 6">
-                                        </li>
-                                        <li data-target="#carouselId2" data-slide-to="6">
-                                            <img src="./img/小三通/返回金門水頭碼頭.jpg" class="d-block w-100" alt="Slide 7">
-                                        </li>
-                                    </ol>   
+                                <div class="carousel-item">
+                                    <img src="./img/小三通/金廈遊輪-初日號.jpg" class="d-block w-100" alt="Slide 3">
+                                    <div class="container">
+                                        <div class="carousel-caption text-end">
+                                            <h1>One more for good measure.</h1>
+                                            <p>Some representative placeholder content for the third slide of this
+                                                carousel.
+                                            </p>
+                                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                                        </div>
+                                    </div>
                                 </div>
-
-    
                             </div>
-                            <a class="carousel-control-prev" href="#carouselId2" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselId2" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                            <!-- </div> -->
-                            <!-- 內容輪播 end -->
-    
-                            <script>
-                                document.addEventListener('DOMContentLoaded', function () {
-                                    var myTabs = new bootstrap.Tab(document.getElementById('tab1'));
-                                    myTabs.show(); // 默认显示第一个Tab
-    
-                                    var tab1 = new bootstrap.Tab(document.getElementById('tab1'));
-                                    var tab2 = new bootstrap.Tab(document.getElementById('tab2'));
-                                    var tab3 = new bootstrap.Tab(document.getElementById('tab3'));
-                                    var tab4 = new bootstrap.Tab(document.getElementById('tab4'));
-    
-                                    document.getElementById('tab1').addEventListener('click', function () {
-                                        tab1.show();
-                                    });
-    
-                                    document.getElementById('tab2').addEventListener('click', function () {
-                                        tab2.show();
-                                    });
-    
-                                    document.getElementById('tab3').addEventListener('click', function () {
-                                        tab3.show();
-                                    });
-                                    document.getElementById('tab4').addEventListener('click', function () {
-                                        tab4.show();
-                                    });
-                                });
-                            </script>
+                            <div class="indicators-container">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselId2" data-slide-to="0" class="active">
+                                        <img src="./img/小三通/金門水頭碼頭(發船).jpg" class="d-block w-100" alt="Slide 1">
+                                    </li>
+                                    <li data-target="#carouselId2" data-slide-to="1">
+                                        <img src="./img/小三通/復興嶼.jpg" class="d-block w-100" alt="Slide 2">
+                                    </li>
+                                    <li data-target="#carouselId2" data-slide-to="2">
+                                        <img src="../img/小三通/猛虎嶼.jpg" class="d-block w-100" alt="Slide 3">
+                                    </li>
+                                    <li data-target="#carouselId2" data-slide-to="3">
+                                        <img src="./img/小三通/大膽島.jpg" class="d-block w-100" alt="Slide 4">
+                                    </li>
+                                    <li data-target="#carouselId2" data-slide-to="4">
+                                        <img src="./img/新增資料夾/賞廈門黃金海岸.jpg" class="d-block w-100" alt="Slide 5">
+                                    </li>
+                                    <li data-target="#carouselId2" data-slide-to="5">
+                                        <img src="./img/小三通/金門大橋.jpg" class="d-block w-100" alt="Slide 6">
+                                    </li>
+                                    <li data-target="#carouselId2" data-slide-to="6">
+                                        <img src="./img/小三通/返回金門水頭碼頭.jpg" class="d-block w-100" alt="Slide 7">
+                                    </li>
+                                </ol>   
+                            </div>
+
+
                         </div>
+                        <a class="carousel-control-prev" href="#carouselId2" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselId2" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a> -->
+                        <!-- </div> -->
+                        <!-- 內容輪播 end -->
 
-                    </div><!-- Tab 4 Content end -->
-                   
+                        <!-- <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                var myTabs = new bootstrap.Tab(document.getElementById('tab1'));
+                                myTabs.show(); // 默认显示第一个Tab
 
-            </div><!-- tab-content END-->
+                                var tab1 = new bootstrap.Tab(document.getElementById('tab1'));
+                                var tab2 = new bootstrap.Tab(document.getElementById('tab2'));
+                                var tab3 = new bootstrap.Tab(document.getElementById('tab3'));
+                                var tab4 = new bootstrap.Tab(document.getElementById('tab4'));
+
+                                document.getElementById('tab1').addEventListener('click', function () {
+                                    tab1.show();
+                                });
+
+                                document.getElementById('tab2').addEventListener('click', function () {
+                                    tab2.show();
+                                });
+
+                                document.getElementById('tab3').addEventListener('click', function () {
+                                    tab3.show();
+                                });
+                                document.getElementById('tab4').addEventListener('click', function () {
+                                    tab4.show();
+                                });
+                            });
+                        </script> -->
+                    </div>
+
+                </div><!-- Tab 4 Content end -->
+            </div>   
+
+        </div>
+        
     </header>
-    </header>
+
     <!-- footer -->
     <footer id="footer" class="pt-5 bg-secondary text-white">
         <div class="container">
@@ -510,6 +518,7 @@
         crossorigin="anonymous"></script>
     <!-- 連結網頁主程式 -->
     <script src="./js/main.js"></script>
+    <script src="./js/new_articleA.js"></script>
 
     <!-- 引入 flatpickr 的 JavaScript 文件 -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
