@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <!-- TODO: 客製化Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/tickets/css/bootstrap.css">
 
   <!-- Bootstrap CSS -->
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -28,7 +28,7 @@
 
 
   <!-- 使用style.css -->
-  <link rel="stylesheet" href="./css/new.css">
+  <link rel="stylesheet" href="/tickets/css/new.css">
   <!-- 使用日期輪用 -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -69,7 +69,7 @@
 
       <div>
         <h1 class="loader ">
-          <img src="./img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
+          <img src="./tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
           <span class="m">訂</span>
           <span class="m">&nbsp;</span>
           <span class="m">票</span>
@@ -84,7 +84,7 @@
     </div>
 
     <div class="container">
-      <img id="ship-bottle" class="rounded-circle mt  my-element" src="img/瓶中船.png" alt="user photo"
+      <img id="ship-bottle" class="rounded-circle mt  my-element" src="/tickets/img/瓶中船.png" alt="user photo"
         style="width: 50%; margin-bottom: 20%;">
       <!-- <a class="btn btn-outline-primary" href="">Link</a> -->
     </div>
@@ -101,7 +101,6 @@
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">行程介紹</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleB')">線上訂票</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">紀錄查詢</button>
-                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleD')">test</button>
               </nav>
 
               <div class="col-12">
@@ -739,264 +738,6 @@
                         </main>
                       </article>
 
-                      <article id="articleD" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
-                        <div class="container text-white my-3 pb-5  bg-secondary">
-                          <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
-                            <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">購票人資料填寫(請下拉選單)</h2>
-                            <nav class="small" id="toc">
-                              <ul class="list-unstyled">
-                                <li class="my-2">
-                                  <button class="btn d-inline-flex align-items-center collapsed border-0"
-                                    data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
-                                    aria-controls="contents-collapse">其他旅客資料(1)</button>
-                                  <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
-                                    <div class="table-responsive">
-                                      <table>
-                                        <div id="planpickered" class="pt-5 pb-1" style="background: rgb(102, 235, 226)">
-                                          <label for="plan">
-                                            <h2 class="section-title mb-5 text-center text-white">其他旅客資料</h2>
-                                        </div>
-                                      </table>
-                                      <main>
-                                        <div class="table-responsive pt-4"
-                                          style=" background-color: rgb(245, 240, 220);">
-                                          <table class="table text-center">
-                                            <thead>
-                                              <tr>
-                                                <th style="width: 30%;">
-                                                  <i class="fa-solid fa-earth-americas fa-4x"></i>
-                                                  <h6>國籍</h6>
-                                                  <select class="form-select" id="country" required>
-                                                    <option value="">台灣</option>
-                                                    <option>香港</option>
-                                                    <option>大陸</option>
-                                                    <option>其他</option>
-                                                  </select>
-                                                </th>
-                                                <th style="width: 20%;" id="gender">
-                                                  <i class="fa-solid fa-venus-mars fa-4x"></i>
-                                                  <h6>性別</h6>
-                                                  <select class="form-select" id="gender" required>
-                                                    <option value="">女</option>
-                                                    <option>男</option>
-                                                  </select>
-                                                </th>
-                                                <th style="width: 40%;" id="country">
-                                                  <i class="fa-solid fa-cake-candles fa-4x"></i>
-                                                  <h6>出生日期</h6>
-                                                  <div>
-                                                    <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
-                                                      value="">
-                                                  </div>
-                                                </th>
-                                              </tr>
-                                            </thead>
-                                            <thead id="tickets-result2">
-                                              <tr>
-                                                <th style="width: 40%;">
-                                                  <svg class="bi" width="24" height="24">
-                                                    <use xlink:href="#check" />
-                                                  </svg>
-                                                  <h6>身分證/護照號碼</h6>
-                                                  <input type="text" class="form-control" id="orderName" placeholder=""
-                                                    value="" required>
-                                                </th>
-                                                <th scope="row" class="text-start">
-                                                  <h6>姓名</h6>
-                                                  <input type="text" class="form-control" id="orderName" placeholder=""
-                                                    value="" required>
-                                                </th>
-                                                <th style="width: 50%;">
-                                                  <svg class="bi" width="24" height="24">
-                                                    <use xlink:href="#check" />
-                                                  </svg>
-                                                  <h6>email</h6>
-                                                  <input type="text" class="form-control" id="orderName" placeholder=""
-                                                    value="" required>
-                                                </th>
-                                              </tr>
-                                            </thead>
-                                          </table>
-                                        </div>
-                                      </main>
-                                    </div>
-                                  </ul>
-                                </li>
-
-                                <!-- 內部隱藏 -->
-
-                                <li class="my-2">
-                                  <button class="btn d-inline-flex align-items-center collapsed border-0"
-                                    data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
-                                    aria-controls="contents-collapse">其他旅客資料(1)</button>
-                                  <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
-                                    <div class="table-responsive">
-
-
-                                      <div class="row g-5 text-primary">
-                                        <div class="col-md-5 col-lg-4 order-md-last">
-                                          <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                            <span class="text-primary">訂單內容</span>
-                                            <span class="badge bg-primary rounded-pill">3</span>
-                                          </h4>
-                                          <ul class="list-group mb-3">
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">行程:</h6>
-
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(行程顯示)</h6>
-                                              </div>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">票數:</h6>
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(票數顯示)</h6>
-                                              </div>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">船班:</h6>
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(船班顯示)</h6>
-                                              </div>
-                                            </li>
-
-                                          </ul>
-
-                                        </div>
-                                        <div class="col-md-5 col-lg-4 order-md-last">
-                                          <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                            <span class="text-primary">訂單內容2</span>
-                                            <span class="badge bg-primary rounded-pill">3</span>
-                                          </h4>
-                                          <ul class="list-group mb-3">
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">行程:</h6>
-
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(行程顯示)</h6>
-
-                                              </div>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">票數:</h6>
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(票數顯示)</h6>
-                                              </div>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">船班:</h6>
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(船班顯示)</h6>
-                                              </div>
-                                            </li>
-                                          </ul>
-
-                                        </div>
-                                        <div class="col-md-5 col-lg-4 order-md-last">
-                                          <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                            <span class="text-primary">訂單內容3</span>
-                                            <span class="badge bg-primary rounded-pill">3</span>
-                                          </h4>
-                                          <ul class="list-group mb-3">
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">行程:</h6>
-
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(行程顯示)</h6>
-
-                                              </div>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">票數:</h6>
-
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(票數顯示)</h6>
-
-                                              </div>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">船班:</h6>
-
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(船班顯示)</h6>
-
-                                              </div>
-                                            </li>
-
-                                          </ul>
-
-                                        </div>
-                                        <div class="col-md-5 col-lg-4 order-md-last">
-                                          <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                            <span class="text-primary">訂單內容3</span>
-                                            <span class="badge bg-primary rounded-pill">3</span>
-                                          </h4>
-                                          <ul class="list-group mb-3">
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">行程:</h6>
-
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(行程顯示)</h6>
-
-                                              </div>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">票數:</h6>
-
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(票數顯示)</h6>
-
-                                              </div>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                              <div>
-                                                <h6 class="my-0">船班:</h6>
-
-                                              </div>
-                                              <div>
-                                                <h6 class="my-0">(船班顯示)</h6>
-
-                                              </div>
-                                            </li>
-
-                                          </ul>
-
-                                        </div>
-                                      </div>
-
-                                    </div>
-                                  </ul>
-                                </li>
-                                <!-- 內部隱藏 -->
-                              </ul>
-                            </nav>
-                          </aside>
-                        </div>
-                      </article>
-
-
                     </div>
                   </div>
                 </section>
@@ -1397,14 +1138,14 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script> -->
   <!-- 連結網頁主程式 -->
-  <script src="./js/main.js"></script>
-  <script src="./js/new_articleA.js"></script>
-  <script src="./js/new_articleAA.js"></script>
-  <script src="./js/new_articleB+AA.js"></script>
-  <script src="./js/new_articleB.js"></script>
-  <script src="./js/new_articleC+CC.js"></script>
-  <script src="./js/new_articleC.js"></script>
-  <script src="./js/new_articleCCC.js"></script>
+  <script src="/tickets/js/main.js"></script>
+  <script src="/tickets/js/new_articleA.js"></script>
+  <script src="/tickets/js/new_articleAA.js"></script>
+  <script src="/tickets/js/new_articleB+AA.js"></script>
+  <script src="/tickets/js/new_articleB.js"></script>
+  <script src="/tickets/js/new_articleC+CC.js"></script>
+  <script src="/tickets/js/new_articleC.js"></script>
+  <script src="/tickets/js/new_articleCCC.js"></script>
 
 </body>
 

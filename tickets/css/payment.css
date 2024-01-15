@@ -89,7 +89,7 @@ button:focus {
     width: 100%;
     height: 100%;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/wood-591631_1280.jpg');
+    background-image: url('/tickets/img/wood-591631_1280.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -125,7 +125,7 @@ button:focus {
     margin-bottom: 0%;
     padding: 100px;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/sea.jpg');
+    background-image: url('/tickets/img/sea.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -217,7 +217,7 @@ button:focus {
     margin-bottom: 0;
     padding: 100px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/wood-591631_1280.jpg');
+    background-image: url('/tickets/img/wood-591631_1280.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -244,7 +244,7 @@ button:focus {
     margin-bottom: 0px;
     padding: 100px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/wood-591631_1280.jpg');
+    background-image: url('/tickets/img/wood-591631_1280.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;

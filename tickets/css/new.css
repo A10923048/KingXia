@@ -332,7 +332,7 @@ button:focus {
 form {
     border-radius: 0px;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    /* background-image: url('../img/wood-591631_1280.jpg'); */
+    /* background-image: url('/tickets/img/wood-591631_1280.jpg'); */
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -425,7 +425,7 @@ form>.container>.button{
     width: 100%;
     height: 100%;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/wood-591631_1280.jpg');
+    background-image: url('/tickets/img/wood-591631_1280.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -451,7 +451,7 @@ form>.container>.button{
     margin-bottom: 0;
     padding: 200px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/wood-591631_1280.jpg');
+    background-image: url('/tickets/img/wood-591631_1280.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -497,7 +497,7 @@ form>.container>.button{
     margin-bottom: 0px;
     padding: 100px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/ocean.jpg');
+    background-image: url('/tickets/img/ocean.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -568,7 +568,7 @@ form>.container>.button{
     padding: bottom 10px;
     padding: 100px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/ocean.jpg');
+    background-image: url('/tickets/img/ocean.jpg');
     background-size: cover;
     /* height: 50%70; */
     /* 固定背景 */
@@ -937,7 +937,7 @@ intro-box-card:hover {
     border-radius: 0px;
     margin-bottom: 0px;
     padding: 100px 0;
-    background-image: url("../img/wood-591631_1280.jpg");
+    background-image: url("/tickets/img/wood-591631_1280.jpg");
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -954,7 +954,7 @@ intro-box-card:hover {
     border-radius: 0px;
     margin-bottom: 0px;
     padding: 300px 0;
-    background-image: url("../img/wood-591631_1280.jpg");
+    background-image: url("/tickets/img/wood-591631_1280.jpg");
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -1042,69 +1042,69 @@ intro-box-card:hover {
 /* 放入背景圖片 */
 
 #galleryImage1 {
-  background-image: url('../img/小三通/金門水頭碼頭\(發船\).jpg');
+  background-image: url('/tickets/img/小三通/金門水頭碼頭\(發船\).jpg');
 }
 
 #galleryImage2 {
-  background-image: url('../img/小三通/復興嶼.jpg');
+  background-image: url('/tickets/img/小三通/復興嶼.jpg');
 }
 
 #galleryImage3 {
-  background-image: url('../img/小三通/猛虎嶼.jpg');
+  background-image: url('/tickets/img/小三通/猛虎嶼.jpg');
 }
 
 #galleryImage4 {
-  background-image: url('../img/小三通/大膽島.jpg');
+  background-image: url('/tickets/img/小三通/大膽島.jpg');
 }
 
 #galleryImage5 {
-  background-image: url('../img/小三通/大膽島.jpg');
+  background-image: url('/tickets/img/小三通/大膽島.jpg');
 }
 
 #galleryImage6 {
-  background-image: url('../img/新增資料夾/賞廈門黃金海岸.jpg');
+  background-image: url('/tickets/img/新增資料夾/賞廈門黃金海岸.jpg');
 }
 
 #galleryImage7 {
-  background-image: url('../img/小三通/金門大橋.jpg');
+  background-image: url('/tickets/img/小三通/金門大橋.jpg');
 }
 
 #galleryImage8 {
-  background-image: url('../img/小三通/返回金門水頭碼頭.jpg');
+  background-image: url('/tickets/img/小三通/返回金門水頭碼頭.jpg');
 }
 
 /* 放入背景圖片 */
 
 #galleryImage9 {
-  background-image: url('../img/小三通/金門水頭碼頭\(發船\).jpg');
+  background-image: url('/tickets/img/小三通/金門水頭碼頭\(發船\).jpg');
 }
 
 #galleryImage10 {
-  background-image: url('../img/小三通/復興嶼.jpg');
+  background-image: url('/tickets/img/小三通/復興嶼.jpg');
 }
 
 #galleryImage11 {
-  background-image: url('../img/小三通/猛虎嶼.jpg');
+  background-image: url('/tickets/img/小三通/猛虎嶼.jpg');
 }
 
 #galleryImage12 {
-  background-image: url('../img/小三通/大膽島.jpg');
+  background-image: url('/tickets/img/小三通/大膽島.jpg');
 }
 
 #galleryImage13 {
-  background-image: url('../img/小三通/大膽島.jpg');
+  background-image: url('/tickets/img/小三通/大膽島.jpg');
 }
 
 #galleryImage14 {
-  background-image: url('../img/新增資料夾/賞廈門黃金海岸.jpg');
+  background-image: url('/tickets/img/新增資料夾/賞廈門黃金海岸.jpg');
 }
 
 #galleryImage15 {
-  background-image: url('../img/小三通/金門大橋.jpg');
+  background-image: url('/tickets/img/小三通/金門大橋.jpg');
 }
 
 #galleryImage16 {
-  background-image: url('../img/小三通/返回金門水頭碼頭.jpg');
+  background-image: url('/tickets/img/小三通/返回金門水頭碼頭.jpg');
 }
 .custom-prev {
     position: absolute;

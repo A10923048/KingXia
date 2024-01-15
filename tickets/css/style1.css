@@ -54,7 +54,7 @@ button:focus {
 form {
     border-radius: 0px;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    /* background-image: url('../img/wood-591631_1280.jpg'); */
+    /* background-image: url('/tickets/img/wood-591631_1280.jpg'); */
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -147,7 +147,7 @@ form>.container>.button{
     width: 100%;
     height: 100%;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/wood-591631_1280.jpg');
+    background-image: url('/tickets/img/wood-591631_1280.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -173,7 +173,7 @@ form>.container>.button{
     margin-bottom: 0;
     padding: 200px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/wood-591631_1280.jpg');
+    background-image: url('/tickets/img/wood-591631_1280.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -219,7 +219,7 @@ form>.container>.button{
     margin-bottom: 0px;
     padding: 100px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/ocean.jpg');
+    background-image: url('/tickets/img/ocean.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -288,7 +288,7 @@ form>.container>.button{
     margin-bottom: 0px;
     padding: 100px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('../img/ocean.jpg');
+    background-image: url('/tickets/img/ocean.jpg');
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -436,7 +436,7 @@ form>.container>.button{
     border-radius: 0px;
     margin-bottom: 0px;
     padding: 300px 0;
-    background-image: url("../img/wood-591631_1280.jpg");
+    background-image: url("/tickets/img/wood-591631_1280.jpg");
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -453,7 +453,7 @@ form>.container>.button{
     border-radius: 0px;
     margin-bottom: 0px;
     padding: 300px 0;
-    background-image: url("../img/wood-591631_1280.jpg");
+    background-image: url("/tickets/img/wood-591631_1280.jpg");
     background-size: cover;
     /* 固定背景 */
     background-attachment: fixed;
@@ -554,35 +554,35 @@ form>.container>.button{
 /* 放入背景圖片 */
 
 #galleryImage1 {
-    background-image: url('../img/小三通地圖.png');
+    background-image: url('/tickets/img/小三通地圖.png');
 }
 
 #galleryImage2 {
-    background-image: url('../img/小三通地圖\(廈門市-石井\).png');
+    background-image: url('/tickets/img/小三通地圖\(廈門市-石井\).png');
 }
 
 #galleryImage3 {
-    background-image: url('../img/小三通地圖\(廈門市\).png');
+    background-image: url('/tickets/img/小三通地圖\(廈門市\).png');
 }
 
 #galleryImage4 {
-    background-image: url('../img/小三通地圖\(金門\).png');
+    background-image: url('/tickets/img/小三通地圖\(金門\).png');
 }
 
 #galleryImage5 {
-    background-image: url('../img/gallery-image-5.jpg');
+    background-image: url('/tickets/img/gallery-image-5.jpg');
 }
 
 #galleryImage6 {
-    background-image: url('../img/gallery-image-6.jpg');
+    background-image: url('/tickets/img/gallery-image-6.jpg');
 }
 
 #galleryImage7 {
-    background-image: url('../img/gallery-image-7.jpg');
+    background-image: url('/tickets/img/gallery-image-7.jpg');
 }
 
 #galleryImage8 {
-    background-image: url('../img/gallery-image-8.jpg');
+    background-image: url('/tickets/img/gallery-image-8.jpg');
 }
 
 .custom-prev {
