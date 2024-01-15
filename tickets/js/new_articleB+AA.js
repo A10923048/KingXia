@@ -1,4 +1,6 @@
 $(document).ready(function () {
+//傳給後台的網址
+let send_url="https://tickets.kingxia.com.tw";
 
   //            獲取article B 顯示於 article AA              //
 
@@ -72,7 +74,7 @@ $(document).ready(function () {
     let minDate = datePart;
 
     $("#datePicker").attr("max", maxDate);
-    $("#datePicker").attr("min", minDate);
+    $("#datePicker").attr("min", "2023/10/01");
 
     console.log("maxDate:" + maxDate);
     console.log("minDate:" + minDate);
@@ -167,22 +169,46 @@ $(document).ready(function () {
     console.log(ticketQuantity);
     $("#searchingdate-result").text("出發日期：" + searchingdate);
 
+    //傳給 AJAX 请求到后台
+    $.ajax({
+      url: send_url+"/csrf", // 后台处理数据的 URL
+      type: "get", // 使用 POST 请求发送数据
+     
+      success: function (data) {
+        // 请求成功后的处理
+        console.log(JSON.parse(data).token);
+
+        // 自动重定向到 articleB
+        //window.location.href = "#articleB";
+      },
+      error: function (error) {
+        // 请求失败时的处理
+        console.error("数据发送失败：", error);
+      },
+    });
 
 
     // 重定向到#articleAA
     window.location.href = "#articleAA";
     searchingdate_next(datas); //調用出發日期，之後datas改RES
 
-
-
-
     // 顯示#articleAA
     $("#articleAA").show();
 
     listNum = 0;
 
-
   });
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
@@ -331,108 +357,108 @@ $(document).ready(function () {
 
   //////////////////////測試資料如下///////////////////////////
 
-  let datas = {
-    "54035": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1030",
-      "etime": "1200",
-      "stime": "0900",
-      "tdate": "2024-01-04"
-    },
-    "54034": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1030",
-      "etime": "1200",
-      "stime": "1900",
-      "tdate": "2024-01-04"
-    },
-    "54033": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1030",
-      "etime": "1200",
-      "stime": "1000",
-      "tdate": "2024-01-22"
-    },
-    "54066": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1600",
-      "etime": "1730",
-      "stime": "1530",
-      "tdate": "2024-01-23"
-    },
-    "54065": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1600",
-      "etime": "1730",
-      "stime": "1530",
-      "tdate": "2024-01-24"
-    },
-    "54037": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1030",
-      "etime": "1200",
-      "stime": "1000",
-      "tdate": "2024-01-24"
-    },
-    "54036": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1030",
-      "etime": "1200",
-      "stime": "1000",
-      "tdate": "2024-01-24"
-    },
-    "54064": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1600",
-      "etime": "1730",
-      "stime": "1530",
-      "tdate": "2024-01-24"
-    },
-    "54063": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1600",
-      "etime": "1730",
-      "stime": "1530",
-      "tdate": "2024-01-24"
-    },
-    "54062": {
-      "port0": "水頭",
-      "port1": "水頭",
-      "qty": 70,
-      "status": "正常",
-      "btime": "1600",
-      "etime": "1730",
-      "stime": "1530",
-      "tdate": "2024-01-24"
-    }
-  }
+  // let datas = {
+  //   "54035": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1030",
+  //     "etime": "1200",
+  //     "stime": "0900",
+  //     "tdate": "2024-01-04"
+  //   },
+  //   "54034": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1030",
+  //     "etime": "1200",
+  //     "stime": "1900",
+  //     "tdate": "2024-01-04"
+  //   },
+  //   "54033": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1030",
+  //     "etime": "1200",
+  //     "stime": "1000",
+  //     "tdate": "2024-01-22"
+  //   },
+  //   "54066": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1600",
+  //     "etime": "1730",
+  //     "stime": "1530",
+  //     "tdate": "2024-01-23"
+  //   },
+  //   "54065": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1600",
+  //     "etime": "1730",
+  //     "stime": "1530",
+  //     "tdate": "2024-01-24"
+  //   },
+  //   "54037": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1030",
+  //     "etime": "1200",
+  //     "stime": "1000",
+  //     "tdate": "2024-01-24"
+  //   },
+  //   "54036": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1030",
+  //     "etime": "1200",
+  //     "stime": "1000",
+  //     "tdate": "2024-01-24"
+  //   },
+  //   "54064": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1600",
+  //     "etime": "1730",
+  //     "stime": "1530",
+  //     "tdate": "2024-01-24"
+  //   },
+  //   "54063": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1600",
+  //     "etime": "1730",
+  //     "stime": "1530",
+  //     "tdate": "2024-01-24"
+  //   },
+  //   "54062": {
+  //     "port0": "水頭",
+  //     "port1": "水頭",
+  //     "qty": 70,
+  //     "status": "正常",
+  //     "btime": "1600",
+  //     "etime": "1730",
+  //     "stime": "1530",
+  //     "tdate": "2024-01-24"
+  //   }
+  // }
 
 })
 

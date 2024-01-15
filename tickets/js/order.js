@@ -283,7 +283,7 @@ $(document).ready(function () {
       'aria-controls="contents-collapse">' + ticket_title + '旅客(' + (parseInt(i) + parseInt(1)) + ')表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse' + i + ii + '">' +
       '<div class="table-responsive text-green">' +
-      '<form id="contact" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">' +
+      '<form class="get_form" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">' +
       '<table>' +
       '<div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color:' + color[ii] + ';">' +
       '<h2 id="contact" class=" section-title mb-3 text-center text-white">' + ticket_title + '票種</h2>' +
@@ -363,7 +363,7 @@ $(document).ready(function () {
       'aria-controls="contents-collapse">聯絡人-表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse-order">' +
       '<div class="table-responsive">' +
-      '<form id="contact" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">' +
+      '<form class="get_form" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">' +
       '<table>' +
       '<div id="planpickered" class="mt-4 pt-3 pb-1 bg-primary ">' +
       '<h2 id="contact" class=" section-title mb-3 text-center text-white">聯絡人-資料填寫</h2>' +
@@ -647,6 +647,14 @@ $(document).ready(function () {
     //   return htmlString;
     // }
 
+
+    //let orderName = $("#orderName").val();
+    // let orderPhone = $("#orderPhone").val();
+    // let orderId = $("#orderId").val();
+    // let ticketQuantity = $("#ticketQuantity_A").val();
+    // let tickets_unchoosed = $("#tickets_unchoosed").text();
+
+
     // 獲取form-check 是否購票人為乘客的值
     // var isPassenger = $("input[name='isPassenger']:checked").val();
     // // 獲取form-check 訂單開立方式的值
@@ -798,10 +806,184 @@ $(document).ready(function () {
     window.location.href = "#articleB";
   }
 
-  //            博愛票陪同者-身分證欄位                        //
+  //            資料填寫完送出-格式檢查                       //
+
+  $("#form_send").click(function () {
+
+    $('.get_form').each(function () {
+
+
+    let orderName = $(this).find("#orderName").text();
+    let orderPhone = $(this).find("#orderPhone").text();
+    let orderId = $(this).find("#orderId").text();
+    let email = $(this).find("#email").text();
+    let country = $('#country').val();
+    let gender = $('#gender').val();
+    var birthdayPicker = $('#birthdayPicker').val();
+    var isChecked = $('#Orderer_check').is(':checked');
+
+
+    獲取form-check 是否購票人為乘客的值
+    var isPassenger = $("input[name='isPassenger']:checked").val();
+    // 獲取form-check 訂單開立方式的值
+    var orderMethod = $("input[name='orderMethods']:checked").val();
+
+    console.log("orderName: " + orderName);
+    console.log("orderPhone: " + orderPhone);
+    console.log("orderId: " + orderId);
+    console.log("ticketQuantity: " + ticketQuantity);
+
+    console.log("tickets_unchoosed: " + tickets_unchoosed);
+
+    console.log("input[name='orderMethods']:checked" + '訂單開立方式的值');
+
+    console.log("input[name='isPassenger']:checked" + '是否購票人為乘客的值');
+
+    檢查是否購票人為乘客
+
+
+    let T = true;
+    let text_show = "";
+
+    檢查"articleA表格內的值"是否為空
+    if (!orderName) {
+      T = false;
+      text_show = text_show + "姓名:未填寫<br>"
+     "姓名:未填寫"=""+"姓名:未填寫"
+    }
+
+    if (!orderPhone) {
+      T = false;
+      text_show = text_show + "電話:未填寫<br>"
+      // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+    }
+
+    if (!ticketQuantity){
+      T=false;
+      text_show=text_show+"票種:未選擇<br>"
+     // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+    }
+
+    if (!orderId) {
+      T = false;
+      text_show = text_show + "身分證/護照號碼:未填寫<br>"
+    }
+
+    if (!isPassenger) {
+      //如果 後面這個條件是  false
+      T = false;
+      text_show = text_show + "購票人是否為乘客(未選擇)<br>"
+
+    }
+
+    if (!orderMethod) {
+      T = false;
+      text_show = text_show + "訂單開立方式(未選擇)"
+    }
+
+
+    if (!T) {
+      $("#alert-result").html(text_show);
+      $("#custom-alert").show();
+
+    }
+    else {
+
+      let get_A_inedex = 0;
+      // if (isPassenger === '是') {
+      //   let get_A = A(get_A_inedex, orderName, orderId);
+      //   $("#buyers_list").append(get_A);
+      //   get_A_inedex = 1;
+      //   console.log("購票人為乘客");
+      // } else if (isPassenger === '否') {
+      //   console.log("購票人不是乘客");
+      // }
+
+      // 檢查訂單開立方式
+      // if (orderMethod === '統一開立購票證名') {
+      //   console.log("統一開立購票證名");
+      // } else if (orderMethod === '分別開立購票證名') {
+      //   console.log("分別開立購票證名");
+      // }
+
+      //產生:購票人資料填寫(下拉選單)
+      // for (var i = get_A_inedex; i < ticket; i++) {
+      //   let no_get = A(i, "", "");
+      //   $("#buyers_list").append(no_get);
+
+      // }
+    }
 
 
 
+
+
+      let this_ticketQuantity = $(this);
+  
+      // 根據票數動態產生選項
+      for (var i = 0; i <= ticket; i++) {
+        var option = $('<option></option>').attr('value', (i)).text(i);
+        this_ticketQuantity.append(option);
+      }
+
+    })
+
+    //                                  檢查"id"和"phone"是否為空                        //
+    let hx_id = $("#hx-id").val();
+    let hx_phone = $("#hx-phone").val();
+    let T = true;
+    let text_show = "";
+
+
+    // 判断总字数
+    // let hx_id_length = hx_id.length;
+    // let hx_phone_length = hx_phone.length;
+
+    // 轉換 hx_id 的英文字母為大寫
+    // hx_id = hx_id.toUpperCase();
+
+
+    // 確認第1個字是否為英文字母
+      // if (/^[A-Z]/.test(hx_id)) {
+      //   console.log("第1個字為英文字母");
+      //   if (hx_id_length >= 10) {
+      //     console.log("台湾");
+          
+      // } else {
+      //   console.log("大陸");
+      // }
+      // } else {
+      //   console.log("第1個字不為英文字母");
+      // }
+
+  
+    
+
+   //檢查"article表格內的值"是否為空
+   if (!hx-id) {
+    T = false;
+    text_show = text_show + "身分證/護照:未填寫<br>"
+   
+  }
+
+  if (!hx-phone) {
+    T = false;
+    text_show = text_show + "電話:未填寫<br>"
+  }
+
+
+  if (!T) {
+    $("#alert-text-c").html(text_show);
+    $("#custom-alert-c").show();
+
+  }
+  else {
+
+  }
+
+
+  
+})
 
 })
 

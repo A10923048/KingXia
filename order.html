@@ -149,7 +149,7 @@
                                 </li>
                               </ul> -->
                               <!-- old 票種選擇 -->
-                              <!-- <form id="contact" action="" method="get">
+                              <!-- <find class="get_form" action="" method="get">
                                 <div class="col table-responsive">
                                   <table class="table text-center">
                                     <thead>
@@ -232,7 +232,7 @@
 
                               <div class="col-lg-12 align-self-center"
                                 style="background-image: url(../img/contact-form-bg.png);">
-                                <form id="contact" action="" method="get">
+                                <find class="get_form" action="" method="get">
                                   <div class="row">
 
                                      <!-- 訂票資訊 -->
@@ -351,8 +351,8 @@
                                   
 
                                    <!--送出按鈕 -->
-                                    <div class="col-lg-12 mt-5">
-                                      <button class="main-button" id="articleA_send"><span>送出</span></button>
+                                    <div class="col-lg-12 ">
+                                      <button class="main-button pt-3" id="articleA_send"><h3>送出</h3></button>
                                     </div>
 
                                   </div>
@@ -382,76 +382,71 @@
                                     aria-controls="contents-collapse">旅客(1)表單</button>
                                   <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
                                       <div class="table-responsive text-green">
-                                          <form id="contact" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">
-                                            <table>
-                                              <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: green;">
-                                                <h2  id="contact"  class=" section-title mb-3 text-center text-white">XX票種</h2>
-                                            </table>
+                                        <find class="get_form" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">
+                                          <table>
+                                            <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: green;">
+                                              <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
+                                          </table>
                                           <div class="row mt-5 justify-content-between" style="padding-left: 2%; padding-right: 2%;">
-                                          <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;" >
-                                            <div class="row" style="padding-left: 10%;">
-                                              <input type="text" class="form-control col" id="orderName" placeholder="姓名" value=""
-                                                  required>
-                                              <h2  id="contact"  class="col section-title mb-3 text-center ">旅客資料</h2>
+                                            <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                              <div class="row" style="padding-left: 10%;">
+                                                <input type="text" class="form-control col" id="orderName" placeholder="姓名" value="" required>
+                                                <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                              </div>
+                                              <input type="text" class="form-control" id="orderPhone" placeholder="電話" value="" required>
+                                              <input type="text" class="form-control" id="orderId" placeholder="身分證" value="" required readonly>
+                                              <input type="text" class="form-control" id="email" placeholder="email" value="" required>
                                             </div>
-                                            <input type="text" class="form-control" id="orderPhone" placeholder="電話"
-                                            value="" required>
-                                            <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
-                                            required readonly>
-                                            <input type="text" class="form-control" id="email" placeholder="email" value=""
-                                            required>
-                                          </div>
-
-                                          <div class="col-lg-6 col-md-12  col-sm-12  mt-3" style="padding-left: 5%; padding-right: 5%;">
-                                            
-                                            <div class="row justify-content-start" style="padding-left: 30%; padding-right: 10%;">
-                                              
-                                              <div style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
+                                      
+                                            <div class="col-lg-6 col-md-12  col-sm-12  mt-3" style="padding-left: 5%; padding-right: 5%;">
+                                      
+                                              <div class="row justify-content-start" style="padding-left: 30%; padding-right: 10%;">
+                                      
+                                                <div style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
                                                   <input type="checkbox" id="Orderer_check" style="width: 20px; height: 20px; margin-top: 20%;">
-                                                
-                                                  <h4  id="contact"  class=" section-title mb-3 pt-3 text-center">&nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
+                                      
+                                                  <h4 id="contact" class=" section-title mb-3 pt-3 text-center">&nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
                                                   </h4>
-                                              
+                                      
                                                 </div>
-                                              
-                                            </div>
-
-                                            <div class="table-responsive justify-content-center">
-                                              <table class=" text-center text-primary ">
-                                                <thead>
-                                                  <tr>
-                                                    <th style=" width: 35%;">
-                                                      <i class="fa-solid fa-earth-americas fa-4x"></i>
-                                                      <h6>國籍</h6>
-                                                          <select class="form-select" id="country" required>
-                                                            <option value="">台灣</option>
-                                                            <option>香港</option>
-                                                            <option>大陸</option>
-                                                            <option>其他</option>
-                                                          </select>
-                                                    </th>
-                                                    <th style="width: 40%;margin-right: 10%;">
-                                                      <i class="fa-solid fa-venus-mars fa-4x"></i>
-                                                      <h6>性別</h6>
-                                                      <select class="form-select" id="gender" required>
-                                                        <option value="">女</option>
-                                                        <option>男</option>
-                                                      </select>
-                                                    </th>
-                                                    <th style="width: 40%; padding-top: 10%;">
-                                                      <i class="fa-solid fa-cake-candles fa-4x"></i>
-                                                      <h6>出生日期</h6>
-                                                      <div>
-                                                        <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
-                                                          value="">
-                                                      </div>
-                                                    </th>
-                                                  </tr>
-                                                </thead>
-                                              </table>
+                                      
+                                              </div>
+                                      
+                                              <div class="table-responsive justify-content-center">
+                                                <table class=" text-center text-primary ">
+                                                  <thead>
+                                                    <tr>
+                                                      <th style=" width: 35%;">
+                                                        <i class="fa-solid fa-earth-americas fa-4x"></i>
+                                                        <h6>國籍</h6>
+                                                        <select class="form-select" id="country" required>
+                                                          <option value="">台灣</option>
+                                                          <option>香港</option>
+                                                          <option>大陸</option>
+                                                          <option>其他</option>
+                                                        </select>
+                                                      </th>
+                                                      <th style="width: 40%;margin-right: 10%;">
+                                                        <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                                        <h6>性別</h6>
+                                                        <select class="form-select" id="gender" required>
+                                                          <option value="">女</option>
+                                                          <option>男</option>
+                                                        </select>
+                                                      </th>
+                                                      <th style="width: 40%; padding-top: 10%;">
+                                                        <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                                        <h6>出生日期</h6>
+                                                        <div>
+                                                          <input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">
+                                                        </div>
+                                                      </th>
+                                                    </tr>
+                                                  </thead>
+                                                </table>
+                                              </div>
                                             </div>
                                           </div>
-                                        </div>
                                           </form>
                                       </div>
                                   </ul>
@@ -465,7 +460,7 @@
                                     <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
                                         <div class="table-responsive text-green">
 
-                                            <form id="contact" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">
+                                            <find class="get_form" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">
                                               <!-- 愛心票 -->
                                               <table>
                                                 <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: green;">
@@ -620,7 +615,7 @@
                                     aria-controls="contents-collapse">主要訂購人-表單</button>
                                   <ul class="list-unstyled ps-3 collapse" id="contents-collapse-order">
                                       <div class="table-responsive">
-                                          <form id="contact" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">
+                                          <find class="get_form" action="" method="get" style="background-image: url(../img/contact-form-bg.png);">
                                             <table>
                                               <div id="planpickered" class="mt-4 pt-3 pb-1 bg-primary ">
                                                 <h2  id="contact"  class=" section-title mb-3 text-center text-white">XX票種</h2>
@@ -839,6 +834,9 @@
                                 <!-- 用JS產生內容 -->
 
                               </ul>
+                              <div class="col-lg-12 ">
+                                <button class="main-button pt-3" id="form_send"><h3>送出</h3></button>
+                              </div>
                             </nav>
                           </aside>
 

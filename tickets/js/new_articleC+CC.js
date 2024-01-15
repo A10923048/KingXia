@@ -351,6 +351,11 @@ $(document).ready(function () {
 
   });
 
+  //          ArticleC警告框-關閉按鈕               //
+  let closeAlertC = function () {
+  $("#custom-alert-c").hide();
+    }
+    
 
    //             獲取使用者於article CC選擇的訂單資訊 顯示於 "Refund.html             // 
    $(document).on("click", "#refund-button", function () {
