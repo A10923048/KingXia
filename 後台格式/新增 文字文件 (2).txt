@@ -17,6 +17,13 @@ let A= {
     orderName: $("周小寶").val(),
     tickets:show_list
 }
+
+"ticketcode" {
+    "01":全票,
+    "03":敬老,
+    "04":兒童(2-11y/o),
+    "05":博愛,博愛(陪同者)
+}
 --------------------------------------------
 {
     買票人資料
@@ -26,7 +33,7 @@ let A= {
     "qty": 7,(票數)
     "shipId0": "54014",
     "sp":true,sp=海上遊
-    "remType":true,remType=購票證名合併(一起開)與否(單獨開)
+    "remType":true,remType=購票證名合併(T:一起開)與否(F:單獨開)
     其他搭船人資料
     "tickets": [
         {

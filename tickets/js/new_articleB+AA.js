@@ -214,7 +214,7 @@ let send_url="https://tickets.kingxia.com.tw";
 
   // 假设 Carousel 控制按钮的 ID 分别为 carousel-control-prev 和 carousel-control-next
   $(document).on("click", "#carousel-control-prev, #carousel-control-next", function () {
-
+ 
     // 当"Previous" 或 "Next" 按钮被点击时执行以下代码
 
 

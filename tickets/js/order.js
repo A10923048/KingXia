@@ -184,8 +184,6 @@ $(document).ready(function () {
     } else {
       this_select.parent().find(".icon_color_cange").css("color", "black");
     }
-
-
   }
 
 
@@ -194,17 +192,28 @@ $(document).ready(function () {
 
   //          ArticleA警告框-關閉按鈕               //
 
-  $("#alert-result_i").click(function () {
-    $("#custom-alert").hide();
-  })
+  // $("#alert-result_i").click(function () {
+  //   $(this).parent().find(".custom-alert").hide();
+  // });
+ 
+    // 一旦 custom-alert 元素出现，添加点击事件
 
+  
   //          票種選擇_警告框-關閉按鈕               //
 
-  $("#alert-result_i_2").click(function () {
-    $("#custom-alert_2").hide();
+  // 監聽主checkbox，如果有變化觸發功能如下:
+  $(document).on("click", ".alert-result_i", function () {
+  
+
+    console.log("点击事件");
+    $(this).parent().hide(); 
+    // 隐藏当前的 custom-alert 元素
+    // $("#custom-alert_2").hide();
   })
 
 
+
+  //                 產生_旅客標單格式                //
   let traveler_list = function (i, ii, ticket_title) {
 
     //let return_list ="";暫存用
@@ -217,10 +226,21 @@ $(document).ready(function () {
       "pink"
     ]
 
+    // if(ii==3){
+    //   ticket_title="博愛";
+    // }
+
     let add_text = '<table>' +
       '<div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: red;">' +
-      '<h2 id="contact" class=" section-title mb-3 text-center text-white">博愛票</h2>' +
+      '<h2 id="contact" class=" ticket_title section-title mb-3 text-center text-white">博愛票</h2>' +
       '</table>' +
+      
+      '<!-- 警視窗 -->' +
+      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86);">' +
+      '<p class="text-white">Your Alert Text</p>' +
+      '<i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white" style="position: absolute; top: 5%; right: 0%; "></i>' +
+      '</li>' +
+
       '<div class="row mt-5 justify-content-between" style="padding-left: 2%; padding-right: 2%;">' +
       '<div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">' +
       '<div class="row" style="padding-left: 10%;">' +
@@ -228,7 +248,7 @@ $(document).ready(function () {
       '<h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>' +
       '</div>' +
       '<input type="text" class="form-control" class="orderPhone" placeholder="電話" value="" required>' +
-      '<input type="text" class="form-control" class="orderId" placeholder="身分證" value="" required readonly>' +
+      '<input type="text" class="form-control orderId orderIdd" placeholder="身分證" value="" required>' +
       '<input type="text" class="form-control email" placeholder="email" value="" required>' +
       '</div>' +
 
@@ -245,20 +265,23 @@ $(document).ready(function () {
       '<tr>' +
       '<th style=" width: 35%;">' +
       '<i class="fa-solid fa-earth-americas fa-4x"></i>' +
-      '<h6>國籍</h6>' +
+      '<h6>地區</h6>' +
       '<select class="form-select country" required>' +
-      '<option value="">台灣</option>' +
-      '<option>香港</option>' +
-      '<option>大陸</option>' +
-      '<option>其他</option>' +
+      '<option value=""></option>' +
+      '<option value="TWN">台灣</option>' +
+      '<option value="CHN">大陸</option>' +
+      '<option value="HKG">香港</option>' +
+      '<option value="MAC">澳門</option>' +
+      '<option value="NN">其他</option>' +
       '</select>' +
       '</th>' +
       '<th style="width: 40%;margin-right: 10%;">' +
       '<i class="fa-solid fa-venus-mars fa-4x"></i>' +
       '<h6>性別</h6>' +
       '<select class="form-select gender" required>' +
-      '<option value="">女</option>' +
-      '<option>男</option>' +
+      '<option value=""></option>' +
+      '<option value="女">女</option>' +
+      '<option value="男">男</option>' +
       '</select>' +
       '</th>' +
       '<th style="width: 40%; padding-top: 10%;">' +
@@ -277,29 +300,43 @@ $(document).ready(function () {
       ;
 
 
-
-
-    let htmlString = '<li class="my-2">' +
+    let htmlString_title = '<li class="my-2">' +
       '<button class="btn d-inline-flex align-items-center collapsed border-0 mb-3" ' +
       'data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse' + i + ii + '"' +
       'aria-controls="contents-collapse">' + ticket_title + '旅客(' + (parseInt(i) + parseInt(1)) + ')表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse' + i + ii + '">' +
       '<div class="table-responsive id="contact" class="get_form" text-green">' +
-      '<form  id="contact" class="get_form" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">' +
+      '<form  id="contact" class="get_form" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">'
+      ;
+
+    let htmlString_mid1 =
       '<table>' +
       '<div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color:' + color[ii] + ';">' +
-      '<h2 id="contact" class=" section-title mb-3 text-center text-white">' + ticket_title + '票種</h2>' +
+      '<h2 id="contact" class="ticket_title  section-title mb-3 text-center text-white">' + ticket_title + '票種</h2>' +
       '</table>' +
+
+      '<!-- 警視窗 -->' +
+      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86);">' +
+      '<p class="text-white">Your Alert Text</p>' +
+      '<i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white" style="position: absolute; top: 5%; right: 0%; "></i>' +
+      '</li>' +
+
+
       '<div class="row mt-5 justify-content-between" style="padding-left: 2%; padding-right: 2%;">' +
-
-
       '<div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">' +
       '<div class="row" style="padding-left: 10%;">' +
       '<input type="text" class="form-control col orderName"  placeholder="姓名" value="" required>' +
       '<h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>' +
       '</div>' +
-      '<input type="text" class="form-control orderPhone" placeholder="電話" value="" required>' +
-      '<input type="text" class="form-control orderId" placeholder="身分證" value="" required>' +
+      '<input type="text" class="form-control orderPhone" placeholder="電話" value="" required>';
+
+    let htmlString_mid2 =
+      '<input type="text" class="form-control orderId" placeholder="身分證" value="" required>';
+
+    let htmlString_mid2_readonly =
+      '<input type="text" class="form-control orderId orderIdd2" placeholder="身分證" value="" required readonly>';
+
+    let htmlString_mid3 =
       '<input type="text" class="form-control email" placeholder="email" value="" required>' +
       '</div>' +
       '<div class="col-lg-6 col-md-12 col-sm-12 mt-3" style="padding-left: 5%; padding-right: 5%;">' +
@@ -317,20 +354,23 @@ $(document).ready(function () {
       '<tr>' +
       '<th style=" width: 35%;">' +
       '<i class="fa-solid fa-earth-americas fa-4x"></i>' +
-      '<h6>國籍</h6>' +
+      '<h6>地區</h6>' +
       '<select class="form-select country" required>' +
-      '<option value="">台灣</option>' +
-      '<option>香港</option>' +
-      '<option>大陸</option>' +
-      '<option>其他</option>' +
+      '<option value=""></option>' +
+      '<option value="TWN">台灣</option>' +
+      '<option value="CHN">大陸</option>' +
+      '<option value="HKG">香港</option>' +
+      '<option value="MAC">澳門</option>' +
+      '<option value="NN">其他</option>' +
       '</select>' +
       '</th>' +
       '<th style="width: 40%;margin-right: 10%;">' +
       '<i class="fa-solid fa-venus-mars fa-4x"></i>' +
       '<h6>性別</h6>' +
       '<select class="form-select gender" required>' +
-      '<option value="">女</option>' +
-      '<option>男</option>' +
+      '<option value=""></option>' +
+      '<option value="女">女</option>' +
+      '<option value="男">男</option>' +
       '</select>' +
       '</th>' +
       '<th style="width: 40%; padding-top: 10%;">' +
@@ -345,27 +385,25 @@ $(document).ready(function () {
       '</table>' +
       '</div>' +
       '</div>' +
-      '</div>'
+      '</div>';
 
-      ;
 
-     let add_ending = '</form>' +
-     '</div>' +
-     '</ul>' +
-     '</li>';
-
+    let add_ending = '</form>' +
+      '</div>' +
+      '</ul>' +
+      '</li>';
 
 
 
-      
     if (ii <= 3) {
-
-      return htmlString + add_ending;
+      return htmlString_title + htmlString_mid1 + htmlString_mid2 + htmlString_mid3 + add_ending;
     } else {
-      return htmlString + add_text + add_ending;
+      return htmlString_title + add_text + htmlString_mid1 + htmlString_mid2_readonly + htmlString_mid3 + add_ending;
     }
 
   }
+
+
 
   //定義: 聯絡人-表單 方法 
   let buyer_form = function () {
@@ -375,20 +413,27 @@ $(document).ready(function () {
       'aria-controls="contents-collapse">聯絡人-表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse-order">' +
       '<div class="table-responsive">' +
-      '<form id="contact" class="get_form" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">' +
+      '<form id="contact" class="get_orderform" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">' +
       '<table>' +
       '<div id="planpickered" class="mt-4 pt-3 pb-1 bg-primary ">' +
-      '<h2 id="contact" class=" section-title mb-3 text-center text-white">聯絡人-資料填寫</h2>' +
+      '<h2 id="contact" class="ticket_title section-title mb-3 text-center text-white">聯絡人-資料填寫</h2>' +
       '</div>' +
       '</table>' +
+
+      '<!-- 警視窗 -->' +
+      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86);">' +
+      '<p class="text-white">Your Alert Text</p>' +
+      '<i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white" style="position: absolute; top: 5%; right: 0%; "></i>' +
+      '</li>' +
+
       '<div class="row mt-5">' +
       '<div class="col-lg-6">' +
       '<div class="row" style="padding-left: 5%;">' +
       '<h4  class="col section-title text-center text-primary">聯絡人</h4>' +
-      '<input type="text" class="form-control col" "id= orderName" placeholder="姓名" value="" required>' +
+      '<input type="text" class="form-control col" id="orderName" placeholder="姓名" value="" required>' +
       '</div>' +
-      '<input type="text" class="form-control" "id= orderPhone" placeholder="電話" value="" required>' +
-      '<input type="text" class="form-control" "id= orderId" placeholder="身分證" value="" required>' +
+      '<input type="text" class="form-control" id="orderPhone" placeholder="電話" value="" required>' +
+      '<input type="text" class="form-control" id="orderId" placeholder="身分證" value="" required>' +
       '</div>' +
       '<div class="col-lg-6 col-md-12 col-sm-12 text-primary mt-3 mb-5">' +
       '<div class="list-group-item d-flex justify-content-between lh-sm" colspan="2">' +
@@ -396,19 +441,19 @@ $(document).ready(function () {
       '<table class="table text-center">' +
       '<thead>' +
       '<tr>' +
-      '<h4>訂單開立方式</h4>' +
+      '<h4>購票證名開立方式</h4>' +
       '</tr>' +
       '</thead>' +
       '<tbody>' +
       '<tr>' +
       '<th style="width: 50%;">' +
       '<div class="col">' +
-      '<input type="radio" name="orderMethods" value="統一開立購票證名" required>統一開立購票證名' +
+      '<input type="radio" name="orderMethods" value="true" >統一開立' +
       '</div>' +
       '</th>' +
       '<th style="width: 50%;">' +
       '<div class="col">' +
-      '<input type="radio" name="orderMethods" value="分別開立購票證名" required>分別開立購票證名' +
+      '<input type="radio" name="orderMethods" value="false" >分別開立' +
       '</div>' +
       '</th>' +
       '</tr>' +
@@ -443,7 +488,7 @@ $(document).ready(function () {
     //所以在function (e)後 呼叫preventDefault方法;
 
     $("#buyers_list").empty();
-    let ii = 0;
+    let ii = 0; //票種設定
     let show_list = [];//暫存用
     let Universal_Ticket = 0;//計算博愛票
     let UniversalLove_Ticket = 0;//計算愛心陪同票
@@ -467,35 +512,25 @@ $(document).ready(function () {
       text_show = text_show + "票種選擇(未完成)"
       console.log("已選擇票種數=預定票數");
     }
-
     if (!T) {
       $("#alert-result").html(text_show);
       $("#custom-alert").show();
-
     } else {
-
-      console.log("123");
 
 
       $('.ticketQuantity').each(function () {
 
         let ticket_val = $(this).val();
-
         let find_title = $(this).parent().find(".find_title").text();
-
         console.log("find_title:" + find_title);
-
 
         if (ticket_val > 0) {
           console.log("ticket:" + ticket_val);
-
-
           if (ii < 3) {
             for (var i = 0; i < ticket_val; i++) {
               // show_list = traveler_list(i,ii,find_title);            
               //$("#buyers_list").append(traveler_list(i,ii,find_title));
               show_list.push(traveler_list(i, ii, find_title));//暫存用
-
             }
           }
           else if (ii == 3) {
@@ -503,14 +538,9 @@ $(document).ready(function () {
           } else if (ii == 4) {
             UniversalLove_Ticket = ticket_val;
           }
-
-
         }
-
         //讓不同票種有不同id
         ii += parseInt(1)
-
-
       })
 
 
@@ -519,17 +549,14 @@ $(document).ready(function () {
       //產生:博愛+陪同者的共同票
       for (var i = 0; i < UniversalLove_Ticket; i++) {
 
-        show_list.push(traveler_list(i, 4, "陪同者"));//暫存用
-
+        show_list.push(traveler_list(i, 4, "博愛(陪同者)"));//暫存用
       }
       ////產生:博愛票
       for (var i = 0; i < print_traveler_Universal_list; i++) {
 
-        show_list.push(traveler_list(i, 3, "愛心"));//暫存用
+        show_list.push(traveler_list(i, 3, "博愛"));//暫存用
 
       }
-
-
 
 
       $("#buyers_list").append(show_list);
@@ -761,11 +788,8 @@ $(document).ready(function () {
 
   })
 
-
-
   //呼叫名為 articleBtn 的函數，並將字串參數 "articleA" 傳遞給該函數
   articleBtn("articleA");
-
 
   //               NAVBAR +  Article-A NAVBAR 開闔功能                    //
   // 初始設置展開狀態為 false
@@ -819,34 +843,56 @@ $(document).ready(function () {
   }
 
 
-// 監聽主checkbox，如果有變化觸發功能如下:
-$(document).on("change",".orderer_check",function () {
+  // 監聽主checkbox，如果有變化觸發功能如下:
+  $(document).on("change", ".orderer_check", function () {
 
 
-  $(".orderer_check").not(this).prop("checked", false);
-  // 将所有拥有 "orderer_check" 类的复选框的状态设置为与当前复选框相反
+    $(".orderer_check").not(this).prop("checked", false);
+    // 将所有拥有 "orderer_check" 类的复选框的状态设置为与当前复选框相反
 
-let orderName = $(this).find(".orderName").val();
- let orderPhone = $(this).find(".orderPhone").val();
- let orderId = $(this).find(".orderId").val();
- //input 要用 val 接收值 不能用 .text
+    let orderName = $(this).parent().parent().parent().parent().find(".orderName").val();
+    let orderPhone = $(this).parent().parent().parent().parent().find(".orderPhone").val();
+    let orderId = $(this).parent().parent().parent().parent().find(".orderId").val();
+    //input 要用 val 接收值 不能用 .text
 
     console.log($(this).find(".orderName"));
-      console.log("orderPhone: " + orderPhone);
-      console.log("orderId: " + orderId);
+    console.log("orderPhone: " + orderPhone);
+    console.log("orderId: " + orderId);
 
-       // 将值设置到对应的输入框
-  $("#orderName").val(orderName);
-  $("#orderPhone").val(orderPhone);
-  $("#orderId").val(orderId);
-  
-  console.log("orderName: " + orderName);
-  console.log("orderPhone: " + orderPhone);
-  console.log("orderId: " + orderId);
+    // 将值设置到对应的输入框
+    $("#orderName").val(orderName);
+    $("#orderPhone").val(orderPhone);
+    $("#orderId").val(orderId);
 
 
-});
+    if ($(this).prop("checked") == false) {
 
+      console.log("empty");
+      $("#orderName").val("");
+      $("#orderPhone").val("");
+      $("#orderId").val("");
+    }
+    console.log($("#orderName"));
+    console.log("orderPhone: " + orderPhone);
+    console.log("orderId: " + orderId);
+
+
+  });
+
+
+  //           連動博愛(陪同者)   的  orderId input欄位          //
+  $(document).on("input", ".orderIdd", function () {
+
+    // 获取输入框的值
+    let orderIdValue = $(this).val();
+
+    // 在这里使用 orderIdValue 进行相应的操作
+    console.log("orderId的值：" + orderIdValue);
+
+    $(this).parent().parent().parent().find(".orderIdd2").val(orderIdValue + "(此欄位會自動帶入，毋需填寫)");
+
+
+  })
 
 
 
@@ -854,149 +900,163 @@ let orderName = $(this).find(".orderName").val();
 
   $("#form_send").click(function () {
 
+    //獲取:搭船人資料
     $('.get_form').each(function () {
-
-
-      let orderName = $(this).find("#orderName").text();
-      let orderPhone = $(this).find("#orderPhone").text();
-      let orderId = $(this).find("#orderId").text();
-      let email = $(this).find("#email").text();
-      let country = $('#country').val();
-      let gender = $('#gender').val();
-      var birthdayPicker = $('#birthdayPicker').val();
-      var isChecked = $('#Orderer_check').is(':checked');
-
-
-      // //獲取form-check 是否購票人為乘客的值
-      // var isPassenger = $("input[name='isPassenger']:checked").val();
-      // 獲取form-check 訂單開立方式的值
-      var orderMethod = $("input[name='orderMethods']:checked").val();
-
+      let ticket_title = $(this).find(".ticket_title").text();
+      let orderName = $(this).find(".orderName").val();
       console.log("orderName: " + orderName);
+      let orderPhone = $(this).find(".orderPhone").val();
+      let orderId = $(this).find(".orderId").val();
+      let email = $(this).find(".email").val();
+      let country = $('.country').val();
+      let gender = $('.gender').val();
+      let date = $('.birthdayPicker').val();
+
+
+      // 獲取form-check 訂單開立方式的值
+      //var orderMethod = $("input[name='orderMethods']:checked").val();
+
+      console.log("ticket_title: " + ticket_title);
       console.log("orderPhone: " + orderPhone);
       console.log("orderId: " + orderId);
-      console.log("ticketQuantity: " + ticketQuantity);
+      console.log("country: " + country);
+      console.log("email: " + email);
+      console.log("gender: " + gender);
+      console.log("birthdayPicker: " + date);
+      console.log("email: " + email);
 
-      console.log("tickets_unchoosed: " + tickets_unchoosed);
 
-      console.log("input[name='orderMethods']:checked" + '訂單開立方式的值');
-
-      console.log("input[name='isPassenger']:checked" + '是否購票人為乘客的值');
 
       //檢查是否購票人為乘客
+      // let T = true;
+      // let text_show = "";
+
+      // //檢查"articleA表格內的值"是否為空
+      // if (!orderName) {
+      //   T = false;
+      //   text_show = text_show + "姓名:未填寫<br>"
+      //   //"姓名:未填寫"=""+"姓名:未填寫"
+      // }
+
+      // if (!orderPhone) {
+      //   T = false;
+      //   text_show = text_show + "電話:未填寫<br>"
+      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      // }
+
+      // if (!orderId) {
+      //   T = false;
+      //   text_show = text_show + "身分證/護照號碼:未填寫<br>"
+      // }
+
+      // if (!email) {
+      //   T = false;
+      //   text_show = text_show + "email:未填寫<br>"
+      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      // }
+
+      // if (!country) {
+      //   T = false;
+      //   text_show = text_show + "國籍:未填寫<br>"
+      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      // }
+
+      // if (!gender) {
+      //   T = false;
+      //   text_show = text_show + "性別:未填寫<br>"
+      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      // }
+
+      // if (!birthdayPicker) {
+      //   T = false;
+      //   text_show = text_show + "性別:未填寫<br>"
+      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      // }
 
 
-      let T = true;
-      let text_show = "";
+      // if (!isPassenger) {
+      //   //如果 後面這個條件是  false
+      //   T = false;
+      //   text_show = text_show + "購票人是否為乘客(未選擇)<br>"
 
-      //檢查"articleA表格內的值"是否為空
-      if (!orderName) {
-        T = false;
-        text_show = text_show + "姓名:未填寫<br>"
-        //"姓名:未填寫"=""+"姓名:未填寫"
-      }
+      // }
 
-      if (!orderPhone) {
-        T = false;
-        text_show = text_show + "電話:未填寫<br>"
-        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
-      }
+      // if (!orderMethod) {
+      //   T = false;
+      //   text_show = text_show + "訂單開立方式(未選擇)"
+      // }
 
 
-      if (!orderId) {
-        T = false;
-        text_show = text_show + "身分證/護照號碼:未填寫<br>"
-      }
+      // if (!T) {
+      //   $("#alert-result").html(text_show);
+      //   $("#custom-alert").show();
 
-      if (!email) {
-        T = false;
-        text_show = text_show + "email:未填寫<br>"
-        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
-      }
+      // }
+      // else {
 
-      if (!country) {
-        T = false;
-        text_show = text_show + "國籍:未填寫<br>"
-        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
-      }
+      //   let get_A_inedex = 0;
+      // if (isPassenger === '是') {
+      //   let get_A = A(get_A_inedex, orderName, orderId);
+      //   $("#buyers_list").append(get_A);
+      //   get_A_inedex = 1;
+      //   console.log("購票人為乘客");
+      // } else if (isPassenger === '否') {
+      //   console.log("購票人不是乘客");
+      // }
 
-      if (!gender) {
-        T = false;
-        text_show = text_show + "性別:未填寫<br>"
-        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
-      }
+      // 檢查訂單開立方式
+      // if (orderMethod === '統一開立購票證名') {
+      //   console.log("統一開立購票證名");
+      // } else if (orderMethod === '分別開立購票證名') {
+      //   console.log("分別開立購票證名");
+      // }
 
-      if (!birthdayPicker) {
-        T = false;
-        text_show = text_show + "性別:未填寫<br>"
-        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
-      }
+      //產生:購票人資料填寫(下拉選單)
+      // for (var i = get_A_inedex; i < ticket; i++) {
+      //   let no_get = A(i, "", "");
+      //   $("#buyers_list").append(no_get);
 
+      // }
+    })
 
-      if (!isPassenger) {
-        //如果 後面這個條件是  false
-        T = false;
-        text_show = text_show + "購票人是否為乘客(未選擇)<br>"
+    //獲取:買票人資料
+    $('.get_orderform').each(function () {
+      let ticket_title = $(this).find(".ticket_title").text();
+      let orderName = $(this).find("#orderName").val();
+      let orderPhone = $(this).find("#orderPhone").val();
+      let orderId = $(this).find("#orderId").val();
+     
+      // 獲取form-check 訂單開立方式的值
+      let orderMethod = $("input[name='orderMethods']:checked").val();
 
-      }
-
-      if (!orderMethod) {
-        T = false;
-        text_show = text_show + "訂單開立方式(未選擇)"
-      }
-
-
-      if (!T) {
-        $("#alert-result").html(text_show);
-        $("#custom-alert").show();
-
-      }
-      else {
-
-        let get_A_inedex = 0;
-        // if (isPassenger === '是') {
-        //   let get_A = A(get_A_inedex, orderName, orderId);
-        //   $("#buyers_list").append(get_A);
-        //   get_A_inedex = 1;
-        //   console.log("購票人為乘客");
-        // } else if (isPassenger === '否') {
-        //   console.log("購票人不是乘客");
-        // }
-
-        // 檢查訂單開立方式
-        // if (orderMethod === '統一開立購票證名') {
-        //   console.log("統一開立購票證名");
-        // } else if (orderMethod === '分別開立購票證名') {
-        //   console.log("分別開立購票證名");
-        // }
-
-        //產生:購票人資料填寫(下拉選單)
-        // for (var i = get_A_inedex; i < ticket; i++) {
-        //   let no_get = A(i, "", "");
-        //   $("#buyers_list").append(no_get);
-
-        // }
-      }
-
-
-
-
-
-      let this_ticketQuantity = $(this);
-
-      // 根據票數動態產生選項
-      for (var i = 0; i <= ticket; i++) {
-        var option = $('<option></option>').attr('value', (i)).text(i);
-        this_ticketQuantity.append(option);
-      }
+      console.log("ticket_title: " + ticket_title);
+    console.log("orderName: " + orderName);
+    console.log("orderPhone: " + orderPhone);
+    console.log("orderId: " + orderId);
+    console.log("orderMethod: " + orderMethod);
 
     })
 
-    //                                  檢查"id"和"phone"是否為空                        //
-    let hx_id = $("#hx-id").val();
-    let hx_phone = $("#hx-phone").val();
-    let T = true;
-    let text_show = "";
+    
+
+
+
+
+    //   let this_ticketQuantity = $(this);
+
+    //   // 根據票數動態產生選項
+    //   for (var i = 0; i <= ticket; i++) {
+    //     var option = $('<option></option>').attr('value', (i)).text(i);
+    //     this_ticketQuantity.append(option);
+    //   }
+
+    // })
+
+    // //                                  檢查"id"和"phone"是否為空                        //
+    // let hx_id = $("#hx-id").val();
+    // let hx_phone = $("#hx-phone").val();
+    // let T = true;
+    // let text_show = "";
 
 
     // 判断总字数
@@ -1024,26 +1084,26 @@ let orderName = $(this).find(".orderName").val();
 
 
     //檢查"article表格內的值"是否為空
-    if (!hx - id) {
-      T = false;
-      text_show = text_show + "身分證/護照:未填寫<br>"
+    // if (!hx - id) {
+    //   T = false;
+    //   text_show = text_show + "身分證/護照:未填寫<br>"
 
-    }
+    // }
 
-    if (!hx - phone) {
-      T = false;
-      text_show = text_show + "電話:未填寫<br>"
-    }
+    // if (!hx - phone) {
+    //   T = false;
+    //   text_show = text_show + "電話:未填寫<br>"
+    // }
 
 
-    if (!T) {
-      $("#alert-text-c").html(text_show);
-      $("#custom-alert-c").show();
+    // if (!T) {
+    //   $("#alert-text-c").html(text_show);
+    //   $("#custom-alert-c").show();
 
-    }
-    else {
+    // }
+    // else {
 
-    }
+    // }
 
 
 

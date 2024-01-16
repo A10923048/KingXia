@@ -277,11 +277,11 @@
                                             <h3>票種選擇</h3>
                                             <h5 class="my-0"></h5>
                                             <ul class="list-group mb-3">
-                                              <li id="custom-alert" class="justify-content-between lh-sm mb-2 mt-2"
+                                              <li id="custom-alert" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
                                                 role="alert"
                                                 style="position: relative; background-color: rgb(255, 196, 191); display: none;">
                                                 <h5 id="alert-result" class="text-red"></h5>
-                                                <i id="alert-result_i" class="fa-solid fa-circle-xmark fa-2x text-white"
+                                                <i  class=" alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
                                                   style="position: absolute; top: 5%; right: 0%;"></i>
                                               </li>
                                               <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -297,13 +297,11 @@
                                                   <h2 class=" bg-primary  text-white" id="tickets_choosed">張票</h2>
                                                 </div>
                                               </li>
-                                              <li id="custom-alert_2" class="justify-content-between lh-sm mb-2 mt-2"
+                                              <li id="custom-alert_2" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
                                                 role="alert"
                                                 style="position: relative; background-color: rgb(255, 100, 86); display:none ;">
-
                                                 <p class="text-white">票種選擇已超過預定票數!</p>
-                                                <i id="alert-result_i_2"
-                                                  class="fa-solid fa-circle-xmark fa-2x text-white"
+                                                <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
                                                   style="position: absolute; top: 5%; right: 0%; "></i>
                                               </li>
                                             </ul>
@@ -390,6 +388,7 @@
                                 data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
                                 aria-controls="contents-collapse">旅客(1)表單</button>
                               <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                
                                 <div class="table-responsive text-green">
                                   <form id="contact" class="get_form" action="" method="get"
                                     style="background-image: url(/tickets/img/contact-form-bg.png);">
@@ -397,6 +396,16 @@
                                       <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: green;">
                                         <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
                                     </table>
+
+                                    <!-- 警視窗 -->
+                                    <li id="custom-alert_3" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                            role="alert" style="position: relative; background-color: rgb(255, 100, 86);">
+                                      <p class="text-white"></p>
+                                      <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                        style="position: absolute; top: 5%; right: 0%; "></i>
+                                    </li> 
+                                    <!--  -->
+
                                     <div class="row mt-5 justify-content-between"
                                       style="padding-left: 2%; padding-right: 2%;">
                                       <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
