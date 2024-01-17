@@ -399,9 +399,9 @@
 
                                     <!-- 警視窗 -->
                                     <li id="custom-alert_3" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
-                                            role="alert" style="position: relative; background-color: rgb(255, 100, 86);">
-                                      <p class="text-white"></p>
-                                      <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                            role="alert" style="position: relative; background-color: rgb(255, 100, 86); display: none;">
+                                      <p class="alert-text text-white"></p>
+                                      <i id="alert-result_3"class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
                                         style="position: absolute; top: 5%; right: 0%; "></i>
                                     </li> 
                                     <!--  -->
@@ -490,9 +490,13 @@
                               <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
                                 <div class="table-responsive text-green">
 
-                                  <form id="contact" class="get_form" action="" method="get"
+                               
+
+                                  <form id="contact"  action="" method="get"
                                     style="background-image: url(/tickets/img/contact-form-bg.png);">
                                     <!-- 愛心票 -->
+                                    <div class="get_form">
+
                                     <table>
                                       <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: green;">
                                         <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
@@ -601,7 +605,10 @@
 
                                     </div>
 
+                                  </div>
+
                                     <!-- 陪同票 -->
+                                    <div class="get_form">
                                     <table>
                                       <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: green;">
                                         <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
@@ -690,6 +697,9 @@
 
 
                                     </div>
+                                  </div>
+
+                                  <!-- add_ending = -->
                                   </form>
                                 </div>
                               </ul>

@@ -195,18 +195,18 @@ $(document).ready(function () {
   // $("#alert-result_i").click(function () {
   //   $(this).parent().find(".custom-alert").hide();
   // });
- 
-    // 一旦 custom-alert 元素出现，添加点击事件
 
-  
+  // 一旦 custom-alert 元素出现，添加点击事件
+
+
   //          票種選擇_警告框-關閉按鈕               //
 
   // 監聽主checkbox，如果有變化觸發功能如下:
   $(document).on("click", ".alert-result_i", function () {
-  
+
 
     console.log("点击事件");
-    $(this).parent().hide(); 
+    $(this).parent().hide();
     // 隐藏当前的 custom-alert 元素
     // $("#custom-alert_2").hide();
   })
@@ -230,24 +230,26 @@ $(document).ready(function () {
     //   ticket_title="博愛";
     // }
 
-    let add_text = '<table>' +
+    let add_text =
+      '<div class="get_form">' +
+      '<table>' +
       '<div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: red;">' +
-      '<h2 id="contact" class=" ticket_title section-title mb-3 text-center text-white">博愛票</h2>' +
+      '<h2 id="contact" class=" ticket_title section-title mb-3 text-center text-white">博愛</h2>' +
       '</table>' +
-      
+
       '<!-- 警視窗 -->' +
-      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86);">' +
-      '<p class="text-white">Your Alert Text</p>' +
+      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86);display: none;">' +
+      '<p class="alert-text text-white">Your Alert Text</p>' +
       '<i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white" style="position: absolute; top: 5%; right: 0%; "></i>' +
       '</li>' +
 
       '<div class="row mt-5 justify-content-between" style="padding-left: 2%; padding-right: 2%;">' +
       '<div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">' +
       '<div class="row" style="padding-left: 10%;">' +
-      '<input type="text" class="form-control col" class="orderName" placeholder="姓名" value="" required>' +
+      '<input type="text" class="form-control col orderName" placeholder="姓名" value="" required>' +
       '<h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>' +
       '</div>' +
-      '<input type="text" class="form-control" class="orderPhone" placeholder="電話" value="" required>' +
+      '<input type="text" class="form-control orderPhone" placeholder="電話" value="" required>' +
       '<input type="text" class="form-control orderId orderIdd" placeholder="身分證" value="" required>' +
       '<input type="text" class="form-control email" placeholder="email" value="" required>' +
       '</div>' +
@@ -296,6 +298,7 @@ $(document).ready(function () {
       '</table>' +
       '</div>' +
       '</div>' +
+      '</div>' +
       '</div>'
       ;
 
@@ -305,19 +308,20 @@ $(document).ready(function () {
       'data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse' + i + ii + '"' +
       'aria-controls="contents-collapse">' + ticket_title + '旅客(' + (parseInt(i) + parseInt(1)) + ')表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse' + i + ii + '">' +
-      '<div class="table-responsive id="contact" class="get_form" text-green">' +
-      '<form  id="contact" class="get_form" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">'
+      '<div class="table-responsive id="contact"  text-green">' +
+      '<form  id="contact"  action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">'
       ;
 
     let htmlString_mid1 =
+      '<div class="get_form">' +
       '<table>' +
       '<div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color:' + color[ii] + ';">' +
-      '<h2 id="contact" class="ticket_title  section-title mb-3 text-center text-white">' + ticket_title + '票種</h2>' +
+      '<h2 id="contact" class="ticket_title  section-title mb-3 text-center text-white">' + ticket_title + '</h2>' +
       '</table>' +
 
       '<!-- 警視窗 -->' +
-      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86);">' +
-      '<p class="text-white">Your Alert Text</p>' +
+      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86);display: none;">' +
+      '<p class="alert-text text-white">Your Alert Text</p>' +
       '<i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white" style="position: absolute; top: 5%; right: 0%; "></i>' +
       '</li>' +
 
@@ -421,8 +425,8 @@ $(document).ready(function () {
       '</table>' +
 
       '<!-- 警視窗 -->' +
-      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86);">' +
-      '<p class="text-white">Your Alert Text</p>' +
+      '<li  class="custom-alert justify-content-between lh-sm mb-2 mt-2" role="alert" style="position: relative; background-color: rgb(255, 100, 86); display: none; ">' +
+      '<p class="alert-text text-white">Your Alert Text</p>' +
       '<i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white" style="position: absolute; top: 5%; right: 0%; "></i>' +
       '</li>' +
 
@@ -859,11 +863,51 @@ $(document).ready(function () {
     console.log("orderPhone: " + orderPhone);
     console.log("orderId: " + orderId);
 
-    // 将值设置到对应的输入框
-    $("#orderName").val(orderName);
-    $("#orderPhone").val(orderPhone);
-    $("#orderId").val(orderId);
 
+    let T = true;
+    let text_show = "";
+
+    // 表格內的值是否為空 //
+    if (!orderName) {
+      console.log("有進入orderName ");
+      T = false;
+      text_show = text_show + "姓名:未填寫<br>"
+      //   //"姓名:未填寫"=""+"姓名:未填寫"
+    }
+
+    if (!orderPhone) {
+      console.log("有進入orderPhone");
+      T = false;
+      text_show = text_show + "電話:未填寫<br>"
+      // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+    }
+
+    if (!orderId) {
+      console.log("有進入orderId ");
+      T = false;
+      text_show = text_show + "身分證/護照號碼:未填寫<br> "
+    }
+
+    if (!T) {
+      console.log("有進入!T ");
+      // console.log($(this).parent().parent().parent().parent().parent());
+
+      $(this).parent().parent().parent().parent().parent().find(".alert-text").html(text_show);
+      $(this).parent().parent().parent().parent().parent().find(".custom-alert").show();
+
+      // $(".checked").prop("checked", false);
+      // $(this).prop("checked") == false;//判斷左邊有沒有等於右邊
+      // $(this).prop("checked") = false;//把右邊的值帶入左邊
+
+      $(this).prop("checked", false);
+    }
+    else {
+      console.log("有進入!T else ");
+      // 将值设置到对应的输入框
+      $("#orderName").val(orderName);
+      $("#orderPhone").val(orderPhone);
+      $("#orderId").val(orderId);
+    }
 
     if ($(this).prop("checked") == false) {
 
@@ -875,7 +919,6 @@ $(document).ready(function () {
     console.log($("#orderName"));
     console.log("orderPhone: " + orderPhone);
     console.log("orderId: " + orderId);
-
 
   });
 
@@ -889,10 +932,50 @@ $(document).ready(function () {
     // 在这里使用 orderIdValue 进行相应的操作
     console.log("orderId的值：" + orderIdValue);
 
-    $(this).parent().parent().parent().find(".orderIdd2").val(orderIdValue + "(此欄位會自動帶入，毋需填寫)");
+    $(this).parent().parent().parent().parent().find(".orderIdd2").val(orderIdValue + "(此欄位會自動帶入，毋需填寫)");
 
 
   })
+
+
+  // 票種轉換
+  let turn_ticketcode = function (ticket_title) {
+    //console.log("傳入ticket_title:" + ticket_title);
+    let ticketcode = {
+      "全票": "01",
+      "敬老": "03",
+      "兒童": "04",
+      "博愛": "05",
+      "博愛(陪同者)": "05"
+    }
+    let code = ticketcode[ticket_title]
+    // console.log("傳出code:" + code);
+    return code;
+  }
+
+  //計算現在的年齡
+  let calculate_Age = function calculateAge(date) {
+    // 將生日日期字串傳換為日期物件
+    let birthDate = new Date(date);
+    console.log("birthDate物件:" + birthDate);
+
+    // 獲取當前日期
+    let currentDate = new Date();
+    console.log("currentDate物件:" + currentDate);
+
+    // 計算年齡
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+
+    // 检查是否已过生日
+    if (currentDate.getMonth() < birthDate.getMonth() ||
+      (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    console.log("計算出age:" + age);
+    return age;
+  }
+
+
 
 
 
@@ -908,208 +991,263 @@ $(document).ready(function () {
       let orderPhone = $(this).find(".orderPhone").val();
       let orderId = $(this).find(".orderId").val();
       let email = $(this).find(".email").val();
-      let country = $('.country').val();
-      let gender = $('.gender').val();
-      let date = $('.birthdayPicker').val();
+      let country = $(this).find('.country').val();
+      let gender = $(this).find('.gender').val();
+      let date = $(this).find('.birthdayPicker').val();
 
 
       // 獲取form-check 訂單開立方式的值
       //var orderMethod = $("input[name='orderMethods']:checked").val();
 
-      console.log("ticket_title: " + ticket_title);
-      console.log("orderPhone: " + orderPhone);
-      console.log("orderId: " + orderId);
-      console.log("country: " + country);
-      console.log("email: " + email);
-      console.log("gender: " + gender);
+      // console.log("ticket_title: " + ticket_title);
+      // console.log("orderName: " + orderName);
+      // console.log("orderPhone: " + orderPhone);
+      // console.log("orderId: " + orderId);
+      // console.log("country: " + country);
+      // console.log("email: " + email);
+      // console.log("gender: " + gender);
       console.log("birthdayPicker: " + date);
-      console.log("email: " + email);
+      // console.log("email: " + email);
 
 
+      let T = true;
+      let text_show = "";
 
-      //檢查是否購票人為乘客
-      // let T = true;
-      // let text_show = "";
-
-      // //檢查"articleA表格內的值"是否為空
+      // 檢查送出表格內的值是否為空 //
       // if (!orderName) {
       //   T = false;
       //   text_show = text_show + "姓名:未填寫<br>"
-      //   //"姓名:未填寫"=""+"姓名:未填寫"
+      //   //   //"姓名:未填寫"=""+"姓名:未填寫"
       // }
-
       // if (!orderPhone) {
       //   T = false;
       //   text_show = text_show + "電話:未填寫<br>"
-      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
       // }
-
       // if (!orderId) {
       //   T = false;
       //   text_show = text_show + "身分證/護照號碼:未填寫<br>"
       // }
-
       // if (!email) {
       //   T = false;
       //   text_show = text_show + "email:未填寫<br>"
-      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
       // }
-
       // if (!country) {
       //   T = false;
       //   text_show = text_show + "國籍:未填寫<br>"
-      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
       // }
-
       // if (!gender) {
       //   T = false;
       //   text_show = text_show + "性別:未填寫<br>"
-      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
       // }
-
-      // if (!birthdayPicker) {
+      // if (!date) {
       //   T = false;
-      //   text_show = text_show + "性別:未填寫<br>"
-      //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+      //   text_show = text_show + "出生日期:未填寫<br>"
       // }
 
+      if (!T) {
+        // $(".alert-text").html(text_show);
+        // $(".custom-alert").show();
 
-      // if (!isPassenger) {
-      //   //如果 後面這個條件是  false
-      //   T = false;
-      //   text_show = text_show + "購票人是否為乘客(未選擇)<br>"
+        $(this).find(".alert-text").html(text_show);
+        $(this).find(".custom-alert").show();
+      }
+      else {
 
-      // }
+        //turn_ticketcode(ticket_title);
 
-      // if (!orderMethod) {
-      //   T = false;
-      //   text_show = text_show + "訂單開立方式(未選擇)"
-      // }
+        console.log("turn_ticketcode:" + turn_ticketcode(ticket_title));
+
+        //敬老票判斷
+        if (turn_ticketcode(ticket_title) == "03") {
+          console.log("進入敬老票判斷");
+
+          let age = calculate_Age(date);
+          console.log("回傳Age:" + age);
+
+          if (age < 65) {
+
+            console.log("進入:回傳Age< 65判斷式");
+
+            text_show = text_show + "年齡條件不符，請重新選擇票種<br>"
+
+            $(this).find(".alert-text").html(text_show);
+            $(this).find(".custom-alert").show();
+          }
+
+          //兒童票判斷
+        } else if (turn_ticketcode(ticket_title) == "04") {
+          console.log("進入兒童票判斷");
+
+          let age = calculate_Age(date);
+
+          console.log("回傳年齡值:" + age);
+
+          if (age < 2) {
+            console.log("回傳年齡值不足2歲");
+
+            text_show = text_show + "年齡不足2歲，不需購票<br>，請重新選擇票種<br>"
+
+            $(this).find(".alert-text").html(text_show);
+            $(this).find(".custom-alert").show();
+
+            console.log("回傳年齡值不足2歲: " + $(this));
+
+          } else if (age > 11) {
+
+            console.log("回傳年齡值 > 11 : " + $(this));
+
+            text_show = text_show + "年齡已超過兒童票適用年齡，<br>請重新選擇票種<br>"
+            $(this).find(".alert-text").html(text_show);
+            $(this).find(".custom-alert").show();
+          }
+
+        }
+
+        //判斷ID格式
+        if (country == "TWN") {
+
+          // 定義格式:字串應以英文字母開頭，接著是9位數字
+          let regex = /^[A-Za-z]\d{9}$/;
+
+          // 檢查輸入值是否符合正則表達式
+
+          if (!regex.test(orderId)) {
+            //console.log("regex.test(orderId):"+regex.test(orderId));
+            //console.log得出的結果為T/F
+            //因此判斷式 (當結果=F)的寫法有兩種
+            //方法一:(!regex.test(orderId))
+            //方法二:(regex.test(orderId)==false)
+
+            text_show = text_show + "格式不正確，請重新輸入後再送出！<br>"
 
 
-      // if (!T) {
-      //   $("#alert-result").html(text_show);
-      //   $("#custom-alert").show();
+            //$(this).find(".alert-text").text(text_show);
+            $(this).find(".alert-text").html(text_show);
+            //.html 與 .text 的差別在於 
+            //.html包含字串+標籤
+            //.text單指字串
+            $(this).find(".custom-alert").show();
 
-      // }
-      // else {
+          }
 
-      //   let get_A_inedex = 0;
-      // if (isPassenger === '是') {
-      //   let get_A = A(get_A_inedex, orderName, orderId);
-      //   $("#buyers_list").append(get_A);
-      //   get_A_inedex = 1;
-      //   console.log("購票人為乘客");
-      // } else if (isPassenger === '否') {
-      //   console.log("購票人不是乘客");
-      // }
 
-      // 檢查訂單開立方式
-      // if (orderMethod === '統一開立購票證名') {
-      //   console.log("統一開立購票證名");
-      // } else if (orderMethod === '分別開立購票證名') {
-      //   console.log("分別開立購票證名");
-      // }
 
-      //產生:購票人資料填寫(下拉選單)
-      // for (var i = get_A_inedex; i < ticket; i++) {
-      //   let no_get = A(i, "", "");
-      //   $("#buyers_list").append(no_get);
+        } else if (country == "CHN") {
 
-      // }
-    })
+          if (orderId.length !== 9) {
 
-    //獲取:買票人資料
-    $('.get_orderform').each(function () {
-      let ticket_title = $(this).find(".ticket_title").text();
-      let orderName = $(this).find("#orderName").val();
-      let orderPhone = $(this).find("#orderPhone").val();
-      let orderId = $(this).find("#orderId").val();
-     
-      // 獲取form-check 訂單開立方式的值
-      let orderMethod = $("input[name='orderMethods']:checked").val();
+            console.log("進入長度判斷式");
 
-      console.log("ticket_title: " + ticket_title);
-    console.log("orderName: " + orderName);
-    console.log("orderPhone: " + orderPhone);
-    console.log("orderId: " + orderId);
-    console.log("orderMethod: " + orderMethod);
+            text_show = text_show + "格式不正確，請重新輸入後再送出！<br>"
 
-    })
+
+            //$(this).find(".alert-text").text(text_show);
+            $(this).find(".alert-text").html(text_show);
+            $(this).find(".custom-alert").show();
+          }
+
+        }
+
+
+      }
 
     
 
+      })
 
 
+  //獲取:買票人資料
+  $('.get_orderform').each(function () {
+    let ticket_title = $(this).find(".ticket_title").text();
+    let orderName = $(this).find("#orderName").val();
+    let orderPhone = $(this).find("#orderPhone").val();
+    let orderId = $(this).find("#orderId").val();
 
-    //   let this_ticketQuantity = $(this);
+    // 獲取form-check 訂單開立方式的值
+    let orderMethod = $(this).find("input[name='orderMethods']:checked").val();
 
-    //   // 根據票數動態產生選項
-    //   for (var i = 0; i <= ticket; i++) {
-    //     var option = $('<option></option>').attr('value', (i)).text(i);
-    //     this_ticketQuantity.append(option);
-    //   }
-
-    // })
-
-    // //                                  檢查"id"和"phone"是否為空                        //
-    // let hx_id = $("#hx-id").val();
-    // let hx_phone = $("#hx-phone").val();
-    // let T = true;
-    // let text_show = "";
-
-
-    // 判断总字数
-    // let hx_id_length = hx_id.length;
-    // let hx_phone_length = hx_phone.length;
-
-    // 轉換 hx_id 的英文字母為大寫
-    // hx_id = hx_id.toUpperCase();
+    console.log("ticket_title: " + ticket_title);
+    // console.log("orderName: " + orderName);
+    // console.log("orderPhone: " + orderPhone);
+    // console.log("orderId: " + orderId);
+    //console.log("orderMethod: " + orderMethod);
 
 
-    // 確認第1個字是否為英文字母
-    // if (/^[A-Z]/.test(hx_id)) {
-    //   console.log("第1個字為英文字母");
-    //   if (hx_id_length >= 10) {
-    //     console.log("台湾");
+    let T = true;
+    let text_show = "";
 
-    // } else {
-    //   console.log("大陸");
-    // }
-    // } else {
-    //   console.log("第1個字不為英文字母");
-    // }
-
-
-
-
-    //檢查"article表格內的值"是否為空
-    // if (!hx - id) {
+    // 檢查送出表格內的值是否為空 //
+    // if (!orderName) {
     //   T = false;
-    //   text_show = text_show + "身分證/護照:未填寫<br>"
-
+    //   text_show = text_show + "姓名:未填寫<br>"
     // }
-
-    // if (!hx - phone) {
+    // if (!orderPhone) {
     //   T = false;
     //   text_show = text_show + "電話:未填寫<br>"
     // }
-
-
-    // if (!T) {
-    //   $("#alert-text-c").html(text_show);
-    //   $("#custom-alert-c").show();
-
+    // if (!orderId) {
+    //   T = false;
+    //   text_show = text_show + "身分證/護照號碼:未填寫<br>"
     // }
-    // else {
-
+    // if (!orderMethod) {
+    //   T = false;
+    //   text_show = text_show + "訂單開立方式(未選擇)"
     // }
+    if (!T) {
+      $(this).find(".alert-text").html(text_show);
+      $(this).find(".custom-alert").show();
+    }
+    else {
+
+
+      // //檢查訂單開立方式
+      // if (orderMethod === 'ture') {
+      //   console.log("統一開立購票證名");
+      // } else if (orderMethod === 'false') {
+      //   console.log("分別開立購票證名");
+      // }
+
+    }
+
 
 
 
   })
 
+
+
+  // //                                  檢查"id"和"phone"是否為空                        //
+  // let hx_id = $("#hx-id").val();
+  // let hx_phone = $("#hx-phone").val();
+  // let T = true;
+  // let text_show = "";
+
+
+  // 判断总字数
+  // let hx_id_length = hx_id.length;
+  // let hx_phone_length = hx_phone.length;
+
+  // 轉換 hx_id 的英文字母為大寫
+  // hx_id = hx_id.toUpperCase();
+
+
+  // 確認第1個字是否為英文字母
+  // if (/^[A-Z]/.test(hx_id)) {
+  //   console.log("第1個字為英文字母");
+  //   if (hx_id_length >= 10) {
+  //     console.log("台湾");
+
+  // } else {
+  //   console.log("大陸");
+  // }
+  // } else {
+  //   console.log("第1個字不為英文字母");
+  // }
+
+
 })
+
+  })
 
 
 
