@@ -1146,8 +1146,8 @@ $(document).ready(function () {
 
   $("#form_send").click(function () {
 
-    // $(this).find(".alert-text").empty();
-    // $(this).find(".custom-alert").hide();
+    // $(this).parent().find(".alert-text").empty();
+     $(this).parent().parent().find(".custom-alert").hide();
     let send_list = [];
     let T = true;
 
@@ -1273,76 +1273,34 @@ $(document).ready(function () {
         }
         //檢查 除 陪同者 以外的資料 
         if (!ticket_title.includes("陪同者")) {
-
-          //判斷:國內/國外 ID格式
-          if (country == "TWN") {
-            verifyId(orderId);
-            console.log(verifyId(orderId));
-            if (!verifyId(orderId)) {
-              //console.log("regex.test(orderId):"+regex.test(orderId));
-              //console.log得出的結果為T/F
-              //因此判斷式 (當結果=F)的寫法有兩種
-              //方法一:(!regex.test(orderId))
-              //方法二:(regex.test(orderId)==false)
-
-              Ta = false;
-              text_show = text_show + "身分證/護照欄位格式不正確，請重新輸入後再送出！<br>"
-
-
-              //$(this).find(".alert-text").text(text_show);
-              $(this).find(".alert-text").html(text_show);
-              //.html 與 .text 的差別在於 
-              //.html包含字串+標籤
-              //.text單指字串
-              $(this).find(".custom-alert").show();
-
-            }
-          } else {
-            if (orderId.length != 9) {
-
-              console.log("進入長度判斷式");
-
-              text_show = text_show + "身分證/護照欄位格式不正確，請重新輸入後再送出！<br>"
-              Ta = false;
-
-              //$(this).find(".alert-text").text(text_show);
-              $(this).find(".alert-text").html(text_show);
-              $(this).find(".custom-alert").show();
-            }
-          }
-
-          //判斷:email格式
-          if (email != "") {
-            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!emailRegex.test(email)) {
-              Ta = false;
-              text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
-
-              //$(this).find(".alert-text").text(text_show);
-              $(this).find(".alert-text").html(text_show);
-              $(this).find(".custom-alert").show();
-              console.log("Ta = email格式不正確" + T);
-            }
-          }
+          console.log(ticket_title+"進入:檢查除陪同者以外的資料");
+         
 
         } else {
+    
+         
+          console.log(ticket_title+"進入:檢查陪同者的資料");
           //因為(陪同者)的ID 由 博愛票帶入所以 只要驗證博愛票就好，避免被 陪同者不同國籍產生錯誤結果
 
           //判斷:email格式
-          if (email != "") {
-            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          // if (email != "") {
+          //   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            if (!emailRegex.test(email)) {
-              Ta = false;
-              text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
+          //   if (!emailRegex.test(email)) {
+          //     Ta = false;
+          //     text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
 
-              //$(this).find(".alert-text").text(text_show);
-              $(this).find(".alert-text").html(text_show);
-              $(this).find(".custom-alert").show();
-              console.log("Ta = email格式不正確" + T);
-            }
-          }
+          //     //$(this).find(".alert-text").text(text_show);
+          //     $(this).find(".alert-text").html(text_show);
+          //     $(this).find(".custom-alert").show();
+          //     console.log("Ta = email格式不正確" + T);
+          //   }
+          // }
+          
+          //切割orderId 避免輸出 "此欄位會自動帶入，毋需填寫"
+           orderId = orderId.split("(")[0];
+          console.log("切割後的陪同者orderId:"+orderId);
+          
 
         }
 
@@ -1351,23 +1309,30 @@ $(document).ready(function () {
 
         //整理:搭船人的資料
         if (Ta) {
+            
+          console.log("搭船人的資料格式:" + Ta);
 
-          console.log("搭船人的資料格式正確" + T);
 
-          let send_item = {
-            name: orderName,
-            uid: orderId,
-            phone: orderPhone,
-            gender: gender,
-            birthday: date,
-            email: email,
-            country: country,
-            ticketcode: ticketcode
-          };
+            let send_item = {
+              name: orderName,
+              uid: orderId,
+              phone: orderPhone,
+              gender: gender,
+              birthday: date,
+              email: email,
+              country: country,
+              ticketcode: ticketcode
+            };
+  
+            console.log("send_item:" + send_item);
+            send_list.push(send_item);
 
-          console.log("send_item:" + send_item);
-          send_list.push(send_item);
-        } else {
+          }
+
+
+
+        
+        else {
           T = false
         }
       }
