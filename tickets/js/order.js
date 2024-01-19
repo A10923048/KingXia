@@ -120,7 +120,7 @@ $(document).ready(function () {
         this_select.append(option);
 
       }
-      y=0;
+      y = 0;
       $('.ticketQuantity').each(function () {
         if ($(this) != this_select) {
           //排除正在被點擊的select，
@@ -130,17 +130,17 @@ $(document).ready(function () {
       })
       other_tickets = ticket - y
       $("#tickets_unchoosed").text(other_tickets);
-      
+
 
     } else {
-      
+
       // $("#tickets_choosed").text( other_tickets+"張票");
       $("#tickets_unchoosed").text(other_tickets);
 
     }
     if (other_tickets == 0) {
       $("#tickets_unchoosed").css("background-color", "green");
-     
+
 
     } else {
       $("#tickets_unchoosed").css("background-color", "red");
@@ -263,7 +263,7 @@ $(document).ready(function () {
       '<input type="text" class="form-control col orderName" placeholder="姓名" value="" required>' +
       '<h2 id="contact" class="col section-title mb-3 text-center text-red">旅客資料</h2>' +
       '</div>' +
-      '<input type="text" class="form-control orderPhone" placeholder="電話" value="" required>' +
+      '<input type="text" class="form-control orderPhone" placeholder="手機/行動電話" value="" required>' +
       '<input type="text" class="form-control orderId orderIdd" placeholder="身分證" value="" required>' +
       '<input type="text" class="form-control email" placeholder="email" value="" required>' +
       '</div>' +
@@ -273,12 +273,13 @@ $(document).ready(function () {
 
       '<div style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">' +
       '<input type="checkbox" class="orderer_check" style="width: 20px; height: 20px; margin-top: 20%;">' +
-      '<h4 id="contact" class=" section-title mb-3 pt-3 text-center">&nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)</h4>' +
+      '<h4 id="contact" class=" section-title mb-3 pt-3 text-center text-red">&nbsp;&nbsp;&nbsp;旅客=聯絡人</h4>' +
+      '<p id="contact" class="  mb-3 pt-3 text-center text-red">&nbsp;&nbsp;&nbsp;(請打勾)</p>' +
       '</div>' +
       '</div>' +
 
       '<div class="table-responsive justify-content-center">' +
-      '<table class=" text-center text-primary ">' +
+      '<table class=" text-center text-red ">' +
       '<thead>' +
       '<tr>' +
       '<th style=" width: 35%;">' +
@@ -331,7 +332,7 @@ $(document).ready(function () {
     let htmlString_mid1 =
       '<div class="get_form">' +
       '<table>' +
-      '<div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color:' + color[ii] + ' ;">' +
+      '<div id="planpickered" class="mt-4 pt-3 pb-1 bg-'+ color[ii] + '" >' +
       '<h2 id="contact" class="ticket_title  section-title mb-3 text-center text-white">' + ticket_title + '</h2>' +
       '</table>' +
 
@@ -348,7 +349,7 @@ $(document).ready(function () {
       '<input type="text" class="form-control col orderName"  placeholder="姓名" value="" required>' +
       '<h2 id="contact" class="col section-title mb-3 text-center  text-' + color[ii] + ' ">旅客資料</h2>' +
       '</div>' +
-      '<input type="text" class="form-control orderPhone" placeholder="電話" value="" required>';
+      '<input type="text" class="form-control orderPhone" placeholder="手機/行動電話" value="" required>';
 
     let htmlString_mid2 =
       '<input type="text" class="form-control orderId" placeholder="身分證" value="" required>';
@@ -365,13 +366,13 @@ $(document).ready(function () {
       '<div class="row justify-content-start" style="padding-left: 30%; padding-right: 10%;">' +
       '<div style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">' +
       '<input type="checkbox" class="orderer_check" style="width: 20px; height: 20px; margin-top: 20%;">' +
-      '<h4 id="contact" class=" section-title mb-3 pt-3 text-center">&nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)</h4>' +
+      '<h4 id="contact" class=" section-title mb-3 pt-3 text-center text-' + color[ii] + '">&nbsp;&nbsp;&nbsp;旅客=聯絡人<br>(請打勾)</h4>' +
       '</div>' +
       '</div>';
 
     let htmlString_mid4 =
       '<div class="table-responsive justify-content-center">' +
-      '<table class=" text-center text-primary ">' +
+      '<table class=" text-center  text-'+ color[ii] +' ">' +
       '<thead>' +
       '<tr>' +
       '<th style=" width: 35%;">' +
@@ -475,7 +476,7 @@ $(document).ready(function () {
       '<h4  class="col section-title text-center text-primary">聯絡人</h4>' +
       '<input type="text" class="form-control col" id="orderName" placeholder="姓名" value="" required>' +
       '</div>' +
-      '<input type="text" class="form-control" id="orderPhone" placeholder="電話" value="" required>' +
+      '<input type="text" class="form-control" id="orderPhone" placeholder="手機/行動電話" value="" required>' +
       '<input type="text" class="form-control" id="orderId" placeholder="身分證" value="" required>' +
       '</div>' +
       '<div class="col-lg-6 col-md-12 col-sm-12 text-primary mt-3 mb-5">' +
@@ -766,7 +767,7 @@ $(document).ready(function () {
 
     // if (!orderPhone) {
     //   T = false;
-    //   text_show = text_show + "電話:未填寫<br>"
+    //   text_show = text_show + "手機/行動電話:未填寫<br>"
     //   // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
     // }
 
@@ -884,9 +885,11 @@ $(document).ready(function () {
   }
 
 
-  // 監聽主checkbox，如果有變化觸發功能如下:
+  //             旅客=聯絡人:checkbox連動                //
   $(document).on("change", ".orderer_check", function () {
-
+      
+      //隱藏警示窗
+    $(this).parent().parent().find(".custom-alert").hide();
 
     $(".orderer_check").not(this).prop("checked", false);
     // 将所有拥有 "orderer_check" 类的复选框的状态设置为与当前复选框相反
@@ -918,7 +921,7 @@ $(document).ready(function () {
       if (!orderPhone) {
         console.log("有進入orderPhone");
         T = false;
-        text_show = text_show + "電話:未填寫<br>"
+        text_show = text_show + "手機/行動電話:未填寫<br>"
         // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
       }
 
@@ -981,8 +984,8 @@ $(document).ready(function () {
       if (!orderPhone) {
         console.log("有進入orderPhone");
         T = false;
-        text_show = text_show + "電話:未填寫<br>"
-        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"電話:未填寫"
+        text_show = text_show + "手機/行動電話:未填寫<br>"
+        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"手機/行動電話:未填寫"
       }
 
       if (!orderId) {
@@ -1044,7 +1047,7 @@ $(document).ready(function () {
 
   })
 
-  // 票種轉換
+  //             票種轉換                                      //
   let turn_ticketcode = function (ticket_title) {
     //console.log("傳入ticket_title:" + ticket_title);
     let ticketcode = {
@@ -1059,7 +1062,7 @@ $(document).ready(function () {
     return code;
   }
 
-  //計算現在的年齡
+  //               計算現在的年齡                              //
   let calculate_Age = function (date) {
     // 將生日日期字串傳換為日期物件
     let birthDate = new Date(date);
@@ -1083,8 +1086,7 @@ $(document).ready(function () {
 
 
 
-  //驗證台灣身分證
-
+  //驗證台灣身分證                                   //
   let verifyId = function (id) {
     id = id.trim();
 
@@ -1140,15 +1142,29 @@ $(document).ready(function () {
   //console.log(             verifyId(    "A123456789"       )     );
 
 
+  // 驗證台灣手機/行動電話
+  let verifyPhone =function(orderPhone){
+
+      // 手機/行動電話號碼格式
+    let phoneRegex = /^[0-9]{10}$/;
+
+    // 检查
+    return phoneRegex.test(orderPhone);
+  }
+
+
 
 
   //            資料填寫完送出-格式檢查                       //
 
   $("#form_send").click(function () {
 
-    // $(this).parent().find(".alert-text").empty();
-     $(this).parent().parent().find(".custom-alert").hide();
+    //隱藏警示窗
+    $(this).parent().parent().find(".custom-alert").hide();
+    
+    //獲取通過檢查的搭船人資料
     let send_list = [];
+    //判斷能否進入:彙整買票人資料的動作
     let T = true;
 
     //獲取:搭船人資料
@@ -1164,10 +1180,7 @@ $(document).ready(function () {
       let date = $(this).find('.birthdayPicker').val();
 
 
-      // 獲取form-check 訂單開立方式的值
-      //var orderMethod = $("input[name='orderMethods']:checked").val();
-
-      // console.log("ticket_title: " + ticket_title);
+      console.log("ticket_title: " + ticket_title);
       // console.log("orderName: " + orderName);
       // console.log("orderPhone: " + orderPhone);
       // console.log("orderId: " + orderId);
@@ -1182,49 +1195,50 @@ $(document).ready(function () {
       let text_show = "";
       let Ta = true;
 
-      //檢查送出表格內的值是否為空 //
-      // if (!orderName) {
-      //   Ta = false;
-      //   text_show = text_show + "姓名:未填寫<br>"
-      //   //   //"姓名:未填寫"=""+"姓名:未填寫"
-      // }
-      // if (!orderPhone) {
-      //   Ta = false;
-      //   text_show = text_show + "電話:未填寫<br>"
-      // }
-      // if (!orderId) {
-      //   Ta = false;
-      //   text_show = text_show + "身分證/護照號碼:未填寫<br>"
-      // }
-      // if (!email) {
-      //   Ta = false;
-      //   text_show = text_show + "email:未填寫<br>"
-      // }
-      // if (!country) {
-      //   Ta = false;
-      //   text_show = text_show + "國籍:未填寫<br>"
-      // }
-      // if (!gender) {
-      //   Ta = false;
-      //   text_show = text_show + "性別:未填寫<br>"
-      // }
-      // if (!date) {
-      //   Ta = false;
-      //   text_show = text_show + "出生日期:未填寫<br>"
-      // }
-
+      //第一步:檢查送出表格內的值是否為空 //
+      if (!orderName) {
+        Ta = false;
+        text_show = text_show + "姓名:未填寫<br>"
+        //   //"姓名:未填寫"=""+"姓名:未填寫"
+      }
+      if (!orderPhone) {
+        Ta = false;
+        text_show = text_show + "手機/行動電話:未填寫<br>"
+      }
+      if (!orderId) {
+        Ta = false;
+        text_show = text_show + "身分證/護照號碼:未填寫<br>"
+      }
+      if (!email) {
+        Ta = false;
+        text_show = text_show + "email:未填寫<br>"
+      }
+      if (!country) {
+        Ta = false;
+        text_show = text_show + "國籍:未填寫<br>"
+      }
+      if (!gender) {
+        Ta = false;
+        text_show = text_show + "性別:未填寫<br>"
+      }
+      if (!date) {
+        Ta = false;
+        text_show = text_show + "出生日期:未填寫<br>"
+      }
+       
+      //第二步:內容檢查 //
       if (!Ta) {
-        // $(".alert-text").html(text_show);
-        // $(".custom-alert").show();
-
         $(this).find(".alert-text").html(text_show);
         $(this).find(".custom-alert").show();
       }
-      else {
 
+      //(確認都有值)進行...
+      else {
+        
+        //確認票種
         let ticketcode = turn_ticketcode(ticket_title)
 
-        //敬老票判斷
+        //確認票種符合資格:敬老票+兒童票判斷
         if (ticketcode == "03") {
           console.log("進入敬老票判斷");
 
@@ -1243,7 +1257,8 @@ $(document).ready(function () {
           }
 
           //兒童票判斷
-        } else if (ticketcode == "04") {
+        } 
+        else if (ticketcode == "04") {
           console.log("進入兒童票判斷");
 
           let age = calculate_Age(date);
@@ -1271,70 +1286,140 @@ $(document).ready(function () {
           }
 
         }
-        //檢查 除 陪同者 以外的資料 
-        if (!ticket_title.includes("陪同者")) {
-          console.log(ticket_title+"進入:檢查除陪同者以外的資料");
-         
 
-        } else {
-    
-         
-          console.log(ticket_title+"進入:檢查陪同者的資料");
+        // 檢查'非'陪同者的資料
+        if (!ticket_title.includes("陪同者")) {
+            console.log(ticket_title + "進入:檢查除陪同者以外的資料");
+
+            //判斷:國內 ID格式
+            if (country == "TWN") {
+            verifyId(orderId);
+            if (!verifyId(orderId)) {
+              //console.log("regex.test(orderId):"+regex.test(orderId));
+              //console.log得出的結果為T/F
+              //因此判斷式 (當結果=F)的寫法有兩種
+              //方法一:(!regex.test(orderId))
+              //方法二:(regex.test(orderId)==false)
+
+              Ta = false;
+              text_show = text_show + "身分證/護照欄位格式不正確，請重新輸入後再送出！<br>"
+
+
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+            }
+
+            if (!verifyPhone (orderPhone)) {
+             
+              Ta = false;
+              console.log("无效的电话号码");
+
+              text_show = text_show + "手機號碼欄位格式不正確，請重新輸入後再送出！<br>"
+
+
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+            }
+
+
+            }
+
+            //判斷:國外 ID格式
+            else {
+                  if (orderId.length != 9) {
+
+              console.log("進入長度判斷式");
+
+              text_show = text_show + "身分證/護照欄位格式不正確，請重新輸入後再送出！<br>"
+              Ta = false;
+
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+                     }
+            }
+
+            //判斷:email格式
+            if (email != "") {
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+              Ta = false;
+              text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
+
+              //$(this).find(".alert-text").text(text_show);
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+              console.log("Ta = email格式不正確" + T);
+            }
+            }
+       
+        }  
+        //檢查陪同者的資料
+        else {
+          console.log(ticket_title + "進入:檢查陪同者的資料");
           //因為(陪同者)的ID 由 博愛票帶入所以 只要驗證博愛票就好，避免被 陪同者不同國籍產生錯誤結果
 
           //判斷:email格式
-          // if (email != "") {
-          //   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (email != "") {
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-          //   if (!emailRegex.test(email)) {
-          //     Ta = false;
-          //     text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
+            if (!emailRegex.test(email)) {
+              Ta = false;
+              text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
 
-          //     //$(this).find(".alert-text").text(text_show);
-          //     $(this).find(".alert-text").html(text_show);
-          //     $(this).find(".custom-alert").show();
-          //     console.log("Ta = email格式不正確" + T);
-          //   }
-          // }
+              //$(this).find(".alert-text").text(text_show);
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+              console.log("Ta = email格式不正確" + T);
+            }
+           }
           
-          //切割orderId 避免輸出 "此欄位會自動帶入，毋需填寫"
-           orderId = orderId.split("(")[0];
-          console.log("切割後的陪同者orderId:"+orderId);
-          
+          //判斷:國內 手機格式
+          if (country == "TWN") {         
+                if (!verifyPhone (orderPhone)) {
+             
+              Ta = false;
+              console.log("无效的电话号码");
+
+              text_show = text_show + "手機號碼欄位格式不正確，請重新輸入後再送出！<br>"
+
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+                }
+            }
+
+          //以上都無誤再去掉orderId"提示字"
+          if(Ta){
+              //切割orderId 避免輸出 "此欄位會自動帶入，毋需填寫"
+              orderId = orderId.split("(")[0];
+              console.log("切割後的陪同者orderId:" + orderId);
+          }
 
         }
 
-
-
-
-        //整理:搭船人的資料
+        //(以上檢查無誤後)整理:搭船人的資料
         if (Ta) {
-            
+
           console.log("搭船人的資料格式:" + Ta);
 
-
-            let send_item = {
-              name: orderName,
-              uid: orderId,
-              phone: orderPhone,
-              gender: gender,
-              birthday: date,
-              email: email,
-              country: country,
-              ticketcode: ticketcode
-            };
-  
-            console.log("send_item:" + send_item);
-            send_list.push(send_item);
-
-          }
-
-
-
-        
+          let send_item = {
+            name: orderName,
+            uid: orderId,
+            phone: orderPhone,
+            gender: gender,
+            birthday: date,
+            email: email,
+            country: country,
+            ticketCode: ticketcode
+          };
+          console.log("send_item:" + send_item);
+          send_list.push(send_item);
+        }
+        //(以上檢查有誤)不進入下一步:彙整買票人資料的動作
         else {
           T = false
         }
+
       }
 
     })
@@ -1360,23 +1445,23 @@ $(document).ready(function () {
       let Tb = true;
       let text_show = "";
 
-      // 檢查送出表格內的值是否為空 //
-      // if (!orderName) {
-      //   Tb = false;
-      //   text_show = text_show + "姓名:未填寫<br>"
-      // }
-      // if (!orderPhone) {
-      //   Tb = false;
-      //   text_show = text_show + "電話:未填寫<br>"
-      // }
-      // if (!orderId) {
-      //   Tb = false;
-      //   text_show = text_show + "身分證/護照號碼:未填寫<br>"
-      // }
-      // if (!orderMethod) {
-      //   Tb = false;
-      //   text_show = text_show + "訂單開立方式(未選擇)"
-      // }
+      //檢查送出表格內的值是否為空 //
+      if (!orderName) {
+        Tb = false;
+        text_show = text_show + "姓名:未填寫<br>"
+      }
+      if (!orderPhone) {
+        Tb = false;
+        text_show = text_show + "手機/行動電話號碼:未填寫<br>"
+      }
+      if (!orderId) {
+        Tb = false;
+        text_show = text_show + "身分證/護照號碼:未填寫<br>"
+      }
+      if (!orderMethod) {
+        Tb = false;
+        text_show = text_show + "訂單開立方式(未選擇)"
+      }
 
       if (!Tb) {
         $(this).find(".alert-text").html(text_show);

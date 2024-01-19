@@ -162,7 +162,7 @@ a {
 
 a:hover {
   color: #157a60;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 a:not([href]) {
@@ -7160,6 +7160,32 @@ button.bg-secondary:focus {
   background-image: url('../img/wood-591631_1280.jpg') !important;
 }
 
+
+
+
+.bg-green {
+  background-color: #28a745 !important;
+}
+
+.bg-pink {
+  background-color: #e83e8c !important;
+}
+
+.bg-blue {
+  background-color: #007bff !important;
+}
+
+.bg-orange {
+  background-color: #fd7e14 !important;
+}
+
+.bg-red {
+  background-color: #f60a22 !important;
+}
+
+.bg-yellow {
+  background-color: #ffc107 !important;
+}
 
 
 .bg-success {

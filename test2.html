@@ -104,8 +104,11 @@
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">目錄</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleB')">行程介紹</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">公司介紹</button>
-                
+
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleE')">test</button>
+
               </nav>
+
 
               <div class="col-12">
 
@@ -116,7 +119,7 @@
 
 
                     <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
-                      
+
                       <article id="articleA" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <div id="custom-alert" class="alert alert-danger" role="alert"
                           style="position: relative;display: none;">
@@ -132,94 +135,104 @@
                         <!-- 修正排版為三項排一排 -->
                         <div class="row mt-5 mb-5 text-white" style="padding-left: 5%; padding-right: 5%;">
                           <div class="col-md-4 pt-5 pb-5">
-                           
-                              <div class="intro-box">
-                                  <a href="./new.html">
-                                      <div class="icon  py-3">
-                                          <i class="fa-solid fa-ticket fa-6x" aria-hidden="true" style="color: #ff3224;">
-                                          </i>
-                                      </div>
-                                      <h3 class="text-secondary">線上訂票</h3>
-                                      <!-- <div class="intro-line "></div> -->
-                                  </a>
-                              </div>
-                            
+
+                            <div class="intro-box">
+                              <a href="./new.html">
+                                <div class="icon  py-3">
+                                  <i class="fa-solid fa-ticket fa-6x" aria-hidden="true" style="color: #ff3224;">
+                                  </i>
+                                </div>
+                                <h3 class="text-secondary">線上訂票</h3>
+                                <!-- <div class="intro-line "></div> -->
+                              </a>
+                            </div>
+
                           </div>
 
                           <div class="col-md-4 pt-5 pb-5">
-                           
+
                             <div class="intro-box">
-                                <a href="#">
-                                    <div class="icon  py-3">
-                                        <i class="fa-solid fa-anchor fa-6x" aria-hidden="true" style="color: #243aff;">
-                                        </i>
-                                    </div>
-                                    <h3 class="text-secondary">行程介紹</h3>
-                                    <!-- <div class="intro-line "></div> -->
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 pt-5 pb-5">
-                           
-                          <div class="intro-box">
-                              <a href="./new.html">
-                                  <div class="icon  py-3">
-                                      <i class="fa-solid fa-bullhorn fa-6x" aria-hidden="true" style="color: #ffe224;">
-                                      </i>
-                                  </div>
-                                  <h3 class="text-secondary">公司介紹</h3>
-                                  <!-- <div class="intro-line "></div> -->
+                              <a href="#">
+                                <div class="icon  py-3">
+                                  <i class="fa-solid fa-anchor fa-6x" aria-hidden="true" style="color: #243aff;">
+                                  </i>
+                                </div>
+                                <h3 class="text-secondary">行程介紹</h3>
+                                <!-- <div class="intro-line "></div> -->
                               </a>
+                            </div>
                           </div>
-                        
-                      </div>
 
-                          
+                          <div class="col-md-4 pt-5 pb-5">
+
+                            <div class="intro-box">
+                              <a href="./new.html">
+                                <div class="icon  py-3">
+                                  <i class="fa-solid fa-bullhorn fa-6x" aria-hidden="true" style="color: #ffe224;">
+                                  </i>
+                                </div>
+                                <h3 class="text-secondary">公司介紹</h3>
+                                <!-- <div class="intro-line "></div> -->
+                              </a>
+                            </div>
+
+                          </div>
+
+
                         </div>
 
                         <button class="article-button mt-5 mb-5 " type="button" id="search-js">查詢</button>
 
                       </article>
 
-                      <article id="articleB" class="my-3  tab-pane show active " style="background: rgba(38, 128, 238, 0.769)">
+                      <article id="articleB" class="my-3  tab-pane show active "
+                        style="background: rgba(38, 128, 238, 0.769)">
                         <h1 class=" section-title text-center text-white mt-5 mb-3 pt-5">行程介紹
                         </h1>
 
                         <div class="table-responsive text-green">
-                          <form id="contact" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">
+                          <form id="contact" action="" method="get"
+                            style="background-image: url(/tickets/img/contact-form-bg.png);">
                             <!-- 愛心票 -->
                             <table>
-                              <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: rgba(244, 246, 247, 0.632);">
-                                <h2  id="contact"  class=" section-title mb-3 text-center text-primary">海上遊</h2>
+                              <div id="planpickered" class="mt-4 pt-3 pb-1"
+                                style="background-color: rgba(244, 246, 247, 0.632);">
+                                <h2 id="contact" class=" section-title mb-3 text-center text-primary">海上遊</h2>
                             </table>
                             <div class="row mt-5 justify-content-between" style="padding-left: 2%; padding-right: 2%;">
-                            <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;" >
-                              <div class="row" style="padding-left: 10%;">
-                                <!-- 圖片輪播A -->
-                                <div class="col-lg-12 mb-3 text-center"
-                                style="padding-left: 2%;padding-right: 2%;">
-                                  <div class="justify-content-center row mt-5">
-                                    <!-- md-6第一排-->
-                                    <div>
-                                      <div class="intro-box">
-                                        <div class="icon text-brown  py-3">
-                                          <i class="fa-solid fa-anchor fa-5x aria-hidden="true"></i>
-                                        </div>
-                                        <h3 class=" section-title mb-5 text-center">行程:A線介紹</h3>
-                                      
+                              <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                <div class="row" style="padding-left: 10%;">
+                                  <!-- 圖片輪播A -->
+                                  <div class="col-lg-12 mb-3 text-center" style="padding-left: 2%;padding-right: 2%;">
+                                    <div class="justify-content-center row mt-5">
+                                      <!-- md-6第一排-->
+                                      <div>
+                                        <div class="intro-box">
+                                          <div class="icon text-brown  py-3">
+                                            <i class="fa-solid fa-anchor fa-5x aria-hidden=" true"></i>
+                                          </div>
+                                          <h3 class=" section-title mb-5 text-center">行程:A線介紹</h3>
+
                                           <div class="container py-5 bg-secondary text-white">
                                             <div id="imageCarousel_A" class="carousel" data-ride="carousel">
                                               <!-- 頁碼提示 -->
                                               <ol class="carousel-indicators" style="display: none;">
-                                                <li data-target="#imageCarousel_A" data-slide-to="0" class="active" id="galleryImage1"></li>
-                                                <li data-target="#imageCarousel_A" data-slide-to="1"id="galleryImage2"></li>
-                                                <li data-target="#imageCarousel_A" data-slide-to="2"id="galleryImage3"></li>
-                                                <li data-target="#imageCarousel_A" data-slide-to="3"id="galleryImage4"></li>
-                                                <li data-target="#imageCarousel_A" data-slide-to="4"id="galleryImage5"></li>
-                                                <li data-target="#imageCarousel_A" data-slide-to="5"id="galleryImage6"></li>
-                                                <li data-target="#imageCarousel_A" data-slide-to="6"id="galleryImage7"></li>
-                                                <li data-target="#imageCarousel_A" data-slide-to="7"id="galleryImage8"></li>
+                                                <li data-target="#imageCarousel_A" data-slide-to="0" class="active"
+                                                  id="galleryImage1"></li>
+                                                <li data-target="#imageCarousel_A" data-slide-to="1" id="galleryImage2">
+                                                </li>
+                                                <li data-target="#imageCarousel_A" data-slide-to="2" id="galleryImage3">
+                                                </li>
+                                                <li data-target="#imageCarousel_A" data-slide-to="3" id="galleryImage4">
+                                                </li>
+                                                <li data-target="#imageCarousel_A" data-slide-to="4" id="galleryImage5">
+                                                </li>
+                                                <li data-target="#imageCarousel_A" data-slide-to="5" id="galleryImage6">
+                                                </li>
+                                                <li data-target="#imageCarousel_A" data-slide-to="6" id="galleryImage7">
+                                                </li>
+                                                <li data-target="#imageCarousel_A" data-slide-to="7" id="galleryImage8">
+                                                </li>
                                               </ol>
                                               <!-- 頁面容器 -->
                                               <div class="carousel-inner " role="listbox">
@@ -227,45 +240,45 @@
                                                 <div class="carousel-item active">
                                                   <h2>A線：海上巡航賞景</h2>
                                                   <!-- <div class="container-fluid"> -->
-                                                      <div id="galleryImage1" class="col">
-                                                        <div class="gallery-text">金門水頭碼頭發船</div>
-                                                      </div>
+                                                  <div id="galleryImage1" class="col">
+                                                    <div class="gallery-text">金門水頭碼頭發船</div>
+                                                  </div>
                                                 </div>
-                                                  <!-- </div> -->
-                                                
+                                                <!-- </div> -->
+
                                                 <!-- page 1-2 -->
                                                 <div class="carousel-item ">
                                                   <!-- <div class="container-fluid"> -->
-                                                    <h2>A線：海上巡航賞景</h2>
-                                                    <div id="galleryImage2" class="col">
-                                                      <div class="gallery-text">復興嶼</div>
-                                                    </div>
+                                                  <h2>A線：海上巡航賞景</h2>
+                                                  <div id="galleryImage2" class="col">
+                                                    <div class="gallery-text">復興嶼</div>
+                                                  </div>
                                                   <!-- </div> -->
                                                 </div>
 
                                                 <!-- page 1-3 -->
                                                 <div class="carousel-item ">
                                                   <!-- <div class="container-fluid"> -->
-                                                    <h2>A線：海上巡航賞景</h2>
-                                                    <div id="galleryImage3" class="col">
-                                                      <div class="gallery-text">猛虎嶼</div>
-                                                    </div>
+                                                  <h2>A線：海上巡航賞景</h2>
+                                                  <div id="galleryImage3" class="col">
+                                                    <div class="gallery-text">猛虎嶼</div>
+                                                  </div>
                                                   <!-- </div> -->
                                                 </div>
 
                                                 <!-- page 1-4 -->
                                                 <div class="carousel-item ">
-                                                    <h2>A線：海上巡航賞景</h2>
-                                                    <div id="galleryImage4" class="col">
-                                                      <div class="gallery-text ">大、二膽島</div>
-                                                    </div>
+                                                  <h2>A線：海上巡航賞景</h2>
+                                                  <div id="galleryImage4" class="col">
+                                                    <div class="gallery-text ">大、二膽島</div>
+                                                  </div>
                                                 </div>
                                                 <!-- page 1-5 -->
                                                 <div class="carousel-item ">
-                                                    <h2>A線：海上巡航賞景</h2>
-                                                    <div id="galleryImage5" class="col">
-                                                      <div class="gallery-text">二膽島</div>
-                                                    </div>
+                                                  <h2>A線：海上巡航賞景</h2>
+                                                  <div id="galleryImage5" class="col">
+                                                    <div class="gallery-text">二膽島</div>
+                                                  </div>
                                                 </div>
                                                 <!-- page 1-6 -->
                                                 <div class="carousel-item ">
@@ -275,71 +288,80 @@
                                                   </div>
                                                 </div>
                                                 <!-- page 1-7 -->
-                                                  <div class="carousel-item ">
-                                                      <h2>A線：海上巡航賞景</h2>
-                                                    <div id="galleryImage7" class="col">
-                                                      <div class="gallery-text">金門大橋</div>
-                                                    </div>
+                                                <div class="carousel-item ">
+                                                  <h2>A線：海上巡航賞景</h2>
+                                                  <div id="galleryImage7" class="col">
+                                                    <div class="gallery-text">金門大橋</div>
                                                   </div>
+                                                </div>
                                                 <!-- page 1-8 -->
                                                 <div class="carousel-item ">
-                                                <h2>A線：海上巡航賞景</h2>
-                                                <div id="galleryImage8" class="col">
-                                                  <div class="gallery-text">返回金門水頭碼頭</div>
+                                                  <h2>A線：海上巡航賞景</h2>
+                                                  <div id="galleryImage8" class="col">
+                                                    <div class="gallery-text">返回金門水頭碼頭</div>
+                                                  </div>
                                                 </div>
-                                                </div>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
+                                        <!-- 上一頁 -->
+                                        <div class="bg-secondary"><a class="carousel-control-prev"
+                                            href="#imageCarousel_A" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                          </a>
                                         </div>
-                                      <!-- 上一頁 -->
-                                      <div class="bg-secondary"><a class="carousel-control-prev" href="#imageCarousel_A" role="button"
-                                          data-slide="prev">
-                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                          <span class="sr-only">Previous</span>
-                                        </a>
-                                      </div>
-                                      <!-- 下一頁 -->
-                                      <div><a class="carousel-control-next" href="#imageCarousel_A" role="button" data-slide="next">
-                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                          <span class="sr-only">Next</span>
-                                        </a>
+                                        <!-- 下一頁 -->
+                                        <div><a class="carousel-control-next" href="#imageCarousel_A" role="button"
+                                            data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                          </a>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                                <!-- 圖片輪播 End -->
+                                  <!-- 圖片輪播 End -->
 
+                                </div>
                               </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12  col-sm-12  mt-3" style="padding-left: 5%; padding-right: 5%;">
-                              <div class="row" style="padding-left: 10%;">
-                                
-                                <!-- 圖片輪播B -->
-                                <div class="col-lg-12 mb-3 text-center"
-                                style="padding-left: 2%;padding-right: 2%;">
-                                  <div class="justify-content-center row mt-5">
-                                    <!-- md-6第一排-->
-                                    <div>
-                                      <div class="intro-box">
-                                        <div class="icon text-brown  py-3">
-                                          <i class="fa-solid fa-anchor fa-5x aria-hidden="true"></i>
-                                        </div>
-                                        <h3 class=" section-title mb-5 text-center">行程:B線介紹</h3>
-                                      
+                              <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                style="padding-left: 5%; padding-right: 5%;">
+                                <div class="row" style="padding-left: 10%;">
+
+                                  <!-- 圖片輪播B -->
+                                  <div class="col-lg-12 mb-3 text-center" style="padding-left: 2%;padding-right: 2%;">
+                                    <div class="justify-content-center row mt-5">
+                                      <!-- md-6第一排-->
+                                      <div>
+                                        <div class="intro-box">
+                                          <div class="icon text-brown  py-3">
+                                            <i class="fa-solid fa-anchor fa-5x aria-hidden=" true"></i>
+                                          </div>
+                                          <h3 class=" section-title mb-5 text-center">行程:B線介紹</h3>
+
                                           <!-- 圖片輪播 -->
                                           <div class="container py-5 bg-secondary text-white">
                                             <div id="imageCarousel_B" class="carousel" data-ride="carousel">
                                               <!-- 頁碼提示 -->
                                               <ol class="carousel-indicators" style="display: none;">
-                                                <li data-target="#imageCarousel_B" data-slide-to="0" class="active" id="galleryImage9"></li>
-                                                <li data-target="#imageCarousel_B" data-slide-to="1"id="galleryImage10"></li>
-                                                <li data-target="#imageCarousel_B" data-slide-to="2"id="galleryImage11"></li>
-                                                <li data-target="#imageCarousel_B" data-slide-to="3"id="galleryImage12"></li>
-                                                <li data-target="#imageCarousel_B" data-slide-to="4"id="galleryImage13"></li>
-                                                <li data-target="#imageCarousel_B" data-slide-to="5"id="galleryImage14"></li>
-                                                <li data-target="#imageCarousel_B" data-slide-to="6"id="galleryImage15"></li>
-                                                <li data-target="#imageCarousel_B" data-slide-to="7"id="galleryImage16"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="0" class="active"
+                                                  id="galleryImage9"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="1"
+                                                  id="galleryImage10"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="2"
+                                                  id="galleryImage11"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="3"
+                                                  id="galleryImage12"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="4"
+                                                  id="galleryImage13"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="5"
+                                                  id="galleryImage14"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="6"
+                                                  id="galleryImage15"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="7"
+                                                  id="galleryImage16"></li>
                                               </ol>
                                               <!-- 頁面容器 -->
                                               <div class="carousel-inner " role="listbox">
@@ -347,283 +369,574 @@
                                                 <div class="carousel-item active">
                                                   <h2>B線：海上巡航賞景</h2>
                                                   <!-- <div class="container-fluid"> -->
-                                                    <div id="galleryImage9" class="col">
-                                                      <div class="gallery-text">金門水頭碼頭發船</div>
+                                                  <div id="galleryImage9" class="col">
+                                                    <div class="gallery-text">金門水頭碼頭發船</div>
                                                   </div>
-                                                  
+
                                                 </div>
-                                                  <!-- </div> -->
-                                                
+                                                <!-- </div> -->
+
                                                 <!-- page 2-2 -->
                                                 <div class="carousel-item ">
-                                                    <h2>B線：海上巡航賞景</h2>
-                                                  
+                                                  <h2>B線：海上巡航賞景</h2>
+
                                                   <div id="galleryImage10" class="col">
-                                                      <div class="gallery-text">復興嶼</div>
+                                                    <div class="gallery-text">復興嶼</div>
                                                   </div>
-                                                  
+
                                                 </div>
 
                                                 <!-- page 2-3 -->
                                                 <div class="carousel-item ">
                                                   <!-- <div class="container-fluid"> -->
-                                                    <h2>B線：海上巡航賞景</h2>
-                                                    <div id="galleryImage11" class="col">
-                                                      <div class="gallery-text">猛虎嶼</div>
+                                                  <h2>B線：海上巡航賞景</h2>
+                                                  <div id="galleryImage11" class="col">
+                                                    <div class="gallery-text">猛虎嶼</div>
                                                   </div>
-                                                  
+
                                                 </div>
 
                                                 <!-- page 2-4 -->
                                                 <div class="carousel-item ">
-                                                    <h2>B線：海上巡航賞景</h2>
-                                                    <div id="galleryImage12" class="col">
-                                                      <div class="gallery-text ">大膽島</div>
+                                                  <h2>B線：海上巡航賞景</h2>
+                                                  <div id="galleryImage12" class="col">
+                                                    <div class="gallery-text ">大膽島</div>
                                                   </div>
                                                 </div>
                                                 <!-- page 2-5 -->
                                                 <div class="carousel-item ">
                                                   <h2>B線：海上巡航賞景</h2>
-                                                  
-                                                <div id="galleryImage13" class="col">
-                                                  <div class="gallery-text">二膽島</div>
-                                              </div>
-                                              </div>
-                                              
+
+                                                  <div id="galleryImage13" class="col">
+                                                    <div class="gallery-text">二膽島</div>
+                                                  </div>
+                                                </div>
+
                                                 <!-- page 2-6 -->
                                                 <div class="carousel-item ">
                                                   <h2>B線：海上巡航賞景</h2>
                                                   <div id="galleryImage14" class="col">
                                                     <div class="gallery-text">廈門黃金海岸</div>
-                                                </div>
+                                                  </div>
                                                 </div>
                                                 <!-- page 2-7 -->
-                                                  <div class="carousel-item ">
-                                                      <h2>B線：海上巡航賞景</h2>
-                                                    <div id="galleryImage15" class="col">
-                                                      <div class="gallery-text">金門大橋</div>
-                                                    </div>
+                                                <div class="carousel-item ">
+                                                  <h2>B線：海上巡航賞景</h2>
+                                                  <div id="galleryImage15" class="col">
+                                                    <div class="gallery-text">金門大橋</div>
                                                   </div>
+                                                </div>
                                                 <!-- page 2-8 -->
                                                 <div class="carousel-item ">
-                                                <h2>B線：海上巡航賞景</h2>
-                                                
+                                                  <h2>B線：海上巡航賞景</h2>
+
                                                   <div id="galleryImage16" class="col">
                                                     <div class="gallery-text">返回金門水頭碼頭</div>
                                                   </div>
                                                 </div>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
+                                        <!-- 圖片輪播 end -->
+                                        <!-- 上一頁 -->
+                                        <div class="bg-secondary"><a class="carousel-control-prev"
+                                            href="#imageCarousel_B" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                          </a>
                                         </div>
-                                      <!-- 圖片輪播 end -->
-                                      <!-- 上一頁 -->
-                                      <div class="bg-secondary"><a class="carousel-control-prev" href="#imageCarousel_B" role="button"
-                                          data-slide="prev">
-                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                          <span class="sr-only">Previous</span>
-                                        </a>
-                                      </div>
-                                      <!-- 下一頁 -->
-                                      <div><a class="carousel-control-next" href="#imageCarousel_B" role="button" data-slide="next">
-                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                          <span class="sr-only">Next</span>
-                                        </a>
+                                        <!-- 下一頁 -->
+                                        <div><a class="carousel-control-next" href="#imageCarousel_B" role="button"
+                                            data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                          </a>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
+                                  <!-- 圖片輪播 End -->
+
                                 </div>
-                                <!-- 圖片輪播 End -->
 
-                          </div>
-
-                            </div>
+                              </div>
                             </div>
                           </form>
                         </div>
 
                       </article>
 
-                      <article id="articleC" class="my-3  tab-pane"style=" background-color: rgb(245, 240, 220);">
+                      <article id="articleC" class="my-3  tab-pane" style=" background-color: rgb(245, 240, 220);">
                         <h1 class=" section-title text-center text-white mt-5 mb-3 pt-5">公司介紹
                         </h1>
 
                         <div class="table-responsive text-green">
-                          <form id="contact" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">
-                            
+                          <form id="contact" action="" method="get"
+                            style="background-image: url(/tickets/img/contact-form-bg.png);">
+
                             <table>
-                              <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: rgba(244, 246, 247, 0.632);">
+                              <div id="planpickered" class="mt-4 pt-3 pb-1"
+                                style="background-color: rgba(244, 246, 247, 0.632);">
                                 <!-- <h2  id="contact"  class=" section-title mb-3 text-center text-primary">海上遊</h2> -->
                             </table>
-                            <div class="col-lg-12" style="padding-right: 3%; padding-left: 3%;" >
-                              <div class="row" >
+                            <div class="col-lg-12" style="padding-right: 3%; padding-left: 3%;">
+                              <div class="row">
                                 <!-- 圖片輪播A -->
-                                <div class="col-lg-12 mb-3 text-center"
-                                style="padding-left: 2%;padding-right: 2%;">
+                                <div class="col-lg-12 mb-3 text-center" style="padding-left: 2%;padding-right: 2%;">
                                   <div class="justify-content-center row mt-5">
                                     <!-- md-6第一排-->
                                     <div>
+
                                       <div class="intro-box">
-                                          <div class="icon text-brown  py-3">
-                                            <i class="fas fa-briefcase fa-5x" aria-hidden="true"></i>
-                                          </div>
-                                          <div class="intro-line bg-primary"></div>
-                                          <h3 class=" section-title mb-5 text-center">公司介紹</h3>
-                                        
-                                          <div class="container py-5 bg-secondary text-white">
-                                            <div id="imageCarousel_A1" class="carousel" data-ride="carousel">
-                                              <!-- 頁碼提示 -->
-                                              <ol class="carousel-indicators" style="display: none;">
-                                                <li data-target="#imageCarousel_A1" data-slide-to="0" class="active"></li>
-                                                <li data-target="#imageCarousel_A1" data-slide-to="1"></li>
-                                                <li data-target="#imageCarousel_A1" data-slide-to="2"></li>
-                                                <li data-target="#imageCarousel_A1" data-slide-to="3"></li>
-                                                <li data-target="#imageCarousel_A1" data-slide-to="4"></li>
-                                                <li data-target="#imageCarousel_A1" data-slide-to="5"></li>
-                                                <li data-target="#imageCarousel_A1" data-slide-to="6"></li>
-                                              </ol>
-                                              <!-- 頁面容器 -->
-                                              <div class="carousel-inner " role="listbox">
-                                                <!-- page 1-1 -->
-                                                <div class="carousel-item active">
-                                                  <h2>公司名稱「金廈」</h2>
-                                                      <div  class="col">
-                                                        <div class="gallery-text">
-                                                          <h4>
-                                                            <strong>金門-廈門兩島隔海相望，自古唇齒相依，猶如昆仲；<br>
-                                                            公司名稱「金廈」，<br>
-                                                            取用「金門與廈門」兩島命名，配合政府「開放金、馬、澎離島試辦兩岸小三通」政策，公司名稱相得益彰，極具意義與價值。
-                                                          </strong>
-                                                            
-                                                          </h4>
-                                                        </div>
-                                                      </div>
-                                                </div>
-                                                
-                                                <!-- page 1-2 -->
-                                                <div class="carousel-item ">
-                                                    <h2>A線：海上巡航賞景</h2>
-                                                    <div  class="col">
-                                                      <div class="gallery-text">
-                                                        <h4>
-                                                          <strong>
-                                                          民國90年為兩岸小三通「創辦元年」，次年公司成立，初創購置「金龍輪」投入金-廈航線營運，
-                                                          <br>復於民國93年自澳洲購入客容量較大之「新金龍輪」替航，「金龍輪」轉賣馬祖長億公司經營兩馬小三通。
-                                                        </strong>
-                                                          
-                                                        </h4>
-                                                      </div>
-                                                    </div>
-                                                </div>
+                                        <div class="icon text-brown  py-3">
+                                          <i class="fas fa-briefcase fa-5x" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="intro-line bg-primary"></div>
+                                        <h3 class=" section-title mb-5 text-center">公司介紹</h3>
 
-                                                <!-- page 1-3 -->
-                                                <div class="carousel-item ">
-                                                    <h2>A線：海上巡航賞景</h2>
-                                                    <div  class="col">
-                                                      <div class="gallery-text">
-                                                        <h4>
-                                                          <strong>
-                                                          <br>因應小三通年年創新高客群，及石井、五通碼頭新增通航點，公司續於95、96年擴充船舶，先後添購日製「金祥龍及泉金」兩輪。</p>
-                                                          </strong>
-                                                        </h4>
-                                                      </div>
-                                                    </div>
-                                                  <!-- </div> -->
-                                                </div>
+                                        <div class="container py-5 bg-secondary text-white">
+                                          <div id="imageCarousel_A1" class="carousel" data-ride="carousel">
+                                            <!-- 頁碼提示 -->
+                                            <ol class="carousel-indicators" style="display: none;">
+                                              <li data-target="#imageCarousel_A1" data-slide-to="0" class="active"></li>
+                                              <li data-target="#imageCarousel_A1" data-slide-to="1"></li>
+                                              <li data-target="#imageCarousel_A1" data-slide-to="2"></li>
+                                              <li data-target="#imageCarousel_A1" data-slide-to="3"></li>
+                                              <li data-target="#imageCarousel_A1" data-slide-to="4"></li>
+                                              <li data-target="#imageCarousel_A1" data-slide-to="5"></li>
+                                              <li data-target="#imageCarousel_A1" data-slide-to="6"></li>
+                                            </ol>
 
-                                                <!-- page 1-4 -->
-                                                <div class="carousel-item ">
-                                                    <h2>A線：海上巡航賞景</h2>
-                                                    <div  class="col">
-                                                      <div class="gallery-text ">
-                                                        <h4>
-                                                          <strong>
-                                                            <br>為響應交通部航港局船舶汰舊換新政策，於106年8月起陸續新造「金瑞龍」、「新金祥龍」輪，汰換舊船投入金廈小三通航線，繼續服務兩岸往來旅客，參與締造「兩岸通航」歷史。
-                                                          </strong>
-                                                        </h4>
-                                                    </div>
-                                                    </div>
-                                                </div>
+                                            <!-- 頁面容器 -->
+                                            <div class="carousel-inner " role="listbox">
 
-                                                <!-- page 1-5 -->
-                                                <div class="carousel-item ">
-                                                    <h2>A線：海上巡航賞景</h2>
-                                                    <div  class="col">
-                                                      <div class="gallery-text">
-                                                        <h4>
-                                                          <strong>
-                                                          <br>公司位於金門金城鎮市區，成立10餘年來歷經3次董事會改組，經營團隊始終本著「以客為尊、真誠服務」的專業態度，樹立「航行安全、維保安全、旅客安全」之經營三安目標，秉持以「用心、誠心、信心」，金廈海運公司載運旅客，
-                                                          請「放心、安心、開心」之使命，全面創造全方位營運竸爭力，永續為兩岸小三通提供「安全、便捷」的服務。
-                                                          </strong>
-                                                          </h4>
-                                                      </div>
-                                                    </div>
-                                                </div>
+                                              <!-- page 1-1 -->
+                                              <div class="carousel-item active">
+                                                <h2>公司名稱「金廈」</h2>
+                                                <div class="col">
+                                                  <div class="gallery-text">
+                                                    <h4>
+                                                      <strong>金門-廈門兩島隔海相望，自古唇齒相依，猶如昆仲；<br>
+                                                        公司名稱「金廈」，<br>
+                                                        取用「金門與廈門」兩島命名，配合政府「開放金、馬、澎離島試辦兩岸小三通」政策，公司名稱相得益彰，極具意義與價值。
+                                                      </strong>
 
-                                                <!-- page 1-6 -->
-                                                <div class="carousel-item ">
-                                                  <h2>A線：海上巡航賞景</h2>
-                                                  <div id= class="col">
-                                                    <div class="gallery-text">
-                                                      <h4>
-                                                        <strong>
+                                                    </h4>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <!-- page 1-2 -->
+                                              <div class="carousel-item ">
+                                                <h2>A線：海上巡航賞景</h2>
+                                                <div class="col">
+                                                  <div class="gallery-text">
+                                                    <h4>
+                                                      <strong>
+                                                        民國90年為兩岸小三通「創辦元年」，次年公司成立，初創購置「金龍輪」投入金-廈航線營運，
+                                                        <br>復於民國93年自澳洲購入客容量較大之「新金龍輪」替航，「金龍輪」轉賣馬祖長億公司經營兩馬小三通。
+                                                      </strong>
+
+                                                    </h4>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <!-- page 1-3 -->
+                                              <div class="carousel-item ">
+                                                <h2>A線：海上巡航賞景</h2>
+                                                <div class="col">
+                                                  <div class="gallery-text">
+                                                    <h4>
+                                                      <strong>
+                                                        <br>因應小三通年年創新高客群，及石井、五通碼頭新增通航點，公司續於95、96年擴充船舶，先後添購日製「金祥龍及泉金」兩輪。
+                                                        </p>
+                                                      </strong>
+                                                    </h4>
+                                                  </div>
+                                                </div>
+                                                <!-- </div> -->
+                                              </div>
+                                              <!-- page 1-4 -->
+                                              <div class="carousel-item ">
+                                                <h2>A線：海上巡航賞景</h2>
+                                                <div class="col">
+                                                  <div class="gallery-text ">
+                                                    <h4>
+                                                      <strong>
+                                                        <br>為響應交通部航港局船舶汰舊換新政策，於106年8月起陸續新造「金瑞龍」、「新金祥龍」輪，汰換舊船投入金廈小三通航線，繼續服務兩岸往來旅客，參與締造「兩岸通航」歷史。
+                                                      </strong>
+                                                    </h4>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <!-- page 1-5 -->
+                                              <div class="carousel-item ">
+                                                <h2>A線：海上巡航賞景</h2>
+                                                <div class="col">
+                                                  <div class="gallery-text">
+                                                    <h4>
+                                                      <strong>
+                                                        <br>公司位於金門金城鎮市區，成立10餘年來歷經3次董事會改組，經營團隊始終本著「以客為尊、真誠服務」的專業態度，樹立「航行安全、維保安全、旅客安全」之經營三安目標，秉持以「用心、誠心、信心」，金廈海運公司載運旅客，
+                                                        請「放心、安心、開心」之使命，全面創造全方位營運竸爭力，永續為兩岸小三通提供「安全、便捷」的服務。
+                                                      </strong>
+                                                    </h4>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <!-- page 1-6 -->
+                                              <div class="carousel-item ">
+                                                <h2>A線：海上巡航賞景</h2>
+                                                <div id=class="col">
+                                                  <div class="gallery-text">
+                                                    <h4>
+                                                      <strong>
                                                         <br>公司91年成立，為讓兩岸旅客與國際遊客清楚識別標幟，特以「紅色三角形」為基色背景，三角形內設計1個「K」字，右下劃「3條細白線」，作為公司簡易標幟圖樣。
                                                       </strong>
-                                                        
-                                                        </h4>
-                                                    </div>
+
+                                                    </h4>
                                                   </div>
                                                 </div>
-
-                                                <!-- page 1-7 -->
-                                                  <div class="carousel-item ">
-                                                      <h2>A線：海上巡航賞景</h2>
-                                                    <div id=class="col">
-                                                      <div class="gallery-text">
-                                                        <h4>
-                                                          <strong>
-                                                          <br>紅色三角形代表兩岸開啟「小三通」和平曙光，白色「K」代表「金門」，「3條細白線」代表小三通，與K字右下筆劃交叉，形成「X」，代表與「廈門」小三通；「金廈海運公司標幟」的設計，張顯公司緊密結合兩岸小三通之開展，與列記成為兩岸交流的圖像。
-                                                          </strong>
-                                                          </h4>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                
                                               </div>
-                                            </div>
+                                              <!-- page 1-7 -->
+                                              <div class="carousel-item ">
+                                                <h2>A線：海上巡航賞景</h2>
+                                                <div id=class="col">
+                                                  <div class="gallery-text">
+                                                    <h4>
+                                                      <strong>
+                                                        <br>紅色三角形代表兩岸開啟「小三通」和平曙光，白色「K」代表「金門」，「3條細白線」代表小三通，與K字右下筆劃交叉，形成「X」，代表與「廈門」小三通；「金廈海運公司標幟」的設計，張顯公司緊密結合兩岸小三通之開展，與列記成為兩岸交流的圖像。
+                                                      </strong>
+                                                    </h4>
+                                                  </div>
+                                                </div>
+                                              </div>
+
+                                            </div><!-- 頁面容器 -->
+
                                           </div>
+                                        </div>
                                       </div>
-                                    
+
                                       <!-- 上一頁 -->
-                                      <div class="bg-secondary"><a class="carousel-control-prev" href="#imageCarousel_A1" role="button"
+                                      <div class="bg-secondary">
+                                        <a class="carousel-control-prev" href="#imageCarousel_A1" role="button"
                                           data-slide="prev">
                                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                           <span class="sr-only">Previous</span>
                                         </a>
                                       </div>
                                       <!-- 下一頁 -->
-                                      <div><a class="carousel-control-next" href="#imageCarousel_A1" role="button" data-slide="next">
+                                      <div>
+                                        <a class="carousel-control-next" href="#imageCarousel_A1" role="button"
+                                          data-slide="next">
                                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                           <span class="sr-only">Next</span>
                                         </a>
                                       </div>
+
                                     </div>
+
                                   </div>
-                                </div>
+
+                                </div> <!-- 圖片輪播A -->
+
                               </div>
                               <!-- 圖片輪播 End -->
                             </div>
 
-                            </div>
+
                           </form>
                         </div>
 
-                       
+
                       </article>
 
+                      <article id="articleE" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
 
-                     
-                      
+                        <nav class=" col-12 row nav nav-pills flex-row justify-content-center intro-box" id="myNav"
+                          style="background-color: #fefdfbfc;">
+                          <div class="container">
+
+                            <a href="test2.html#articleB" target="_blank">
+                              <i class="fa-solid fa-anchor fa-6x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                              <span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                              <h3>目錄0</h3>
+                            </a>
+                            <a href="test2.html#articleB" target="_blank">
+                              <i class="fa-solid fa-anchor fa-6x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                              <span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                              <h3>目錄0</h3>
+                            </a>
+                            <a href="test2.html#articleB" target="_blank">
+                              <i class="fa-solid fa-anchor fa-6x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                              <span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                              <h3>目錄0</h3>
+                            </a>
+
+
+                          </div>
+                        </nav>
+
+                        <nav class=" col-12 row nav nav-pills flex-row justify-content-center intro-box" id="myNav"
+                          style="background-color: #fefdfbfc;">
+                          <div class="container">
+
+                            <a href="test2.html#articleB" target="_blank">
+                              <i class="fa-solid fa-anchor fa-6x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                              <span>
+                              <h3>目錄20</h3>
+                              
+                              <h3>目錄21</h3>
+                              
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                                
+                              </span>
+                              
+                            </a>
+                            <h3>目錄2</h3>
+
+
+                            <a href="test2.html#articleB" target="_blank">
+                              <i class="fa-solid fa-anchor fa-6x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                              <span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                            </a>
+                            <h3>目錄1</h3>
+                          </div>
+                        </nav>
+
+                        <nav class=" col-12 row nav nav-pills flex-row justify-content-center intro-box" id="myNav"
+                          style="background-color: #fefdfbfc;">
+                          <div class="container">
+                            <a href="test2.html#articleB" target="_blank">
+                              <i class="fa-solid fa-anchor fa-3x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                              <span>
+
+                                <h3>目錄3</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                            </a>
+
+                            <a href="test2.html#articleB" target="_blank" >
+                              <i class="fa-solid fa-anchor fa-3x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                              <span>
+                                <h3>目錄3</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                            </a>
+                            
+
+                            <a href="test2.html#articleB" target="_blank" >
+                              <i class="fa-solid fa-anchor fa-6x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                              <span>
+
+                                <h3>目錄3</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                            </a>
+
+
+                          </div>
+                        </nav>
+
+                        <nav class=" col-12 row nav nav-pills flex-row justify-content-center intro-box" id="myNav"
+                          style="background-color: #fefdfbfc;">
+                          <div class="container">
+                            <a href="test2.html#articleB" target="_blank">
+                              
+                              <span>
+
+                                <i class="fa-solid fa-anchor fa-3x " aria-hidden="true" style="color: #243aff;">
+                                </i>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                            </a>
+
+                            <a href="test2.html#articleB" target="_blank" >
+                              
+                              <span>
+                                <i class="fa-solid fa-anchor fa-3x " aria-hidden="true" style="color: #243aff;">
+                              </i>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                            </a>
+                            
+
+                            <a href="test2.html#articleB" target="_blank" >
+                              
+                              <span>
+                                <i class="fa-solid fa-anchor fa-3x " aria-hidden="true" style="color: #243aff;">
+                                </i>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                  <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                    stroke-linecap="round" points="72,16 184,128 72,240" />
+                                </svg>
+                              </span>
+                            </a>
+
+
+                          </div>
+                        </nav>
+
+
+
+                        <h1 class=" section-title text-center text-white mt-5 mb-5 pt-5">訂票資訊
+                        </h1>
+
+                        <!-- 修正排版為三項排一排 -->
+                        <div class="row mt-5 mb-5 text-white" style="padding-left: 5%; padding-right: 5%;">
+                          <div class="col-lg-12 pt-5 pb-5">
+
+                            <div class="page-wrap">
+
+                              <div class="row">
+
+                                <div class="column">
+                                  <a href="http://www.verse-co.com/journal/2016/1/27/design-tip-1-use-a-baseline-grid"
+                                    target="_blank">Design
+                                    tip 1 - use a baseline grid
+
+                                    <span>
+
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                          stroke-linecap="round" points="72,16 184,128 72,240" />
+                                      </svg>
+                                    </span>
+                                  </a>
+                                  <a href="http://thinkingwithtype.com/grid/" target="_blank">Grid - Thinking with type
+                                    <span>
+
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                          stroke-linecap="round" points="72,16 184,128 72,240" />
+                                      </svg>
+                                    </span>
+                                  </a>
+                                  <a href="https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly/"
+                                    target="_blank">CSS
+                                    Baseline
+                                    <span>
+
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                          stroke-linecap="round" points="72,16 184,128 72,240" />
+                                      </svg>
+                                    </span>
+                                  </a>
+                                  <a href="http://jasonsantamaria.com/articles/baseline-grids-on-the-web"
+                                    target="_blank">行程
+
+                                    <i class="fa-solid fa-anchor fa-6x" aria-hidden="true" style="color: #243aff;">
+                                    </i>介紹
+                                    <span>
+
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <polyline fill="none" stroke="#ea1821" stroke-width="32" stroke-linejoin="round"
+                                          stroke-linecap="round" points="72,16 184,128 72,240" />
+                                      </svg>
+                                    </span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="col-md-4 pt-5 pb-5">
+
+                            <div class="intro-box">
+                              <a href="#">
+
+                                <div class="icon  py-3">
+                                  <i class="fa-solid fa-anchor fa-6x" aria-hidden="true" style="color: #243aff;">
+                                  </i>
+                                </div>
+                                <h3 class>行程介紹</h3>
+
+                                <div class="iline ">
+                                </div>
+
+
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-md-4 pt-5 pb-5">
+
+
+
+                            <div class="intro-box">
+                              <a href="./new.html">
+                                <div class="icon  py-3">
+                                  <i class="fa-solid fa-bullhorn fa-6x" aria-hidden="true" style="color: #ffe224;">
+                                  </i>
+                                </div>
+                                <h3 class="text-secondary">公司介紹</h3>
+                                <div class="intro-line "></div>
+                              </a>
+                            </div>
+
+                          </div>
+
+
+                        </div>
+
+                        <button class="article-button mt-5 mb-5 " type="button" id="search-js">查詢</button>
+
+
+                      </article>
+
 
                     </div>
                   </div>
@@ -742,17 +1055,17 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          
+
         </div>
-  
+
         <div class="modal-body col-md-12 col-lg-12 order-md-last" style="background-color: rgb(102, 235, 226)">
-          
+
           <table class="">
             <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center text-white"
               style="background: rgb(35, 166, 157)">
               <label for="plan">
                 <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
-    
+
                 <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
                 <p class="article-p" id="RefundModal-pno">航班代碼：</p>
                 <p class="article-p" id="RefundModal-tdate">出發日期：</p>
@@ -765,16 +1078,16 @@
                     <label class="form-check-label" for="same-address">全部退票(請打勾)</label>
                   </div>
                 </div>
-    
+
             </div>
-    
+
           </table>
 
           <h3 class="d-flex justify-content-center align-items-center mb-5 mt-5">
             <span class="text-primary">其他買票人資料</span>
             <span class="badge bg-primary rounded-pill"></span>
           </h3>
-  
+
           <div class="row" id="RefundModal-col">
             <!--
               <div class="col-md-5 col-lg-6 order-md-last">
@@ -828,24 +1141,25 @@
                 </ul>
               </div>
               -->
-  
+
           </div>
-          <button type="button" id="RefundModal_Send" class="btn btn-primary" data-toggle='modal' data-target='#RefundModal2'>
+          <button type="button" id="RefundModal_Send" class="btn btn-primary" data-toggle='modal'
+            data-target='#RefundModal2'>
             <i class="fa-solid fa-paper-plane fa-2x">送出</i>
           </button>
         </div>
 
         <div class="modal-footer">
-         
-          <button type="button" class="btn btn-primary">Save changes</button> 
+
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 
-    <!-- Modal-退票細節確認2 -->
-    <div class="modal fade" id="RefundModal2" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
+  <!-- Modal-退票細節確認2 -->
+  <div class="modal fade" id="RefundModal2" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -854,17 +1168,17 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          
+
         </div>
-  
+
         <div class="modal-body col-md-12 col-lg-12 order-md-last" style="background-color: rgb(102, 235, 226)">
-          
+
           <table class="">
             <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center text-white"
               style="background: rgb(35, 166, 157)">
               <label for="plan">
                 <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
-    
+
                 <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
                 <p class="article-p" id="RefundModal-pno">航班代碼：</p>
                 <p class="article-p" id="RefundModal-tdate">出發日期：</p>
@@ -877,16 +1191,16 @@
                     <label class="form-check-label" for="same-address">全部退票(請打勾)</label>
                   </div>
                 </div>
-    
+
             </div>
-    
+
           </table>
 
           <h3 class="d-flex justify-content-center align-items-center mb-5 mt-5">
             <span class="text-primary">其他買票人資料</span>
             <span class="badge bg-primary rounded-pill"></span>
           </h3>
-  
+
           <div class="row" id="RefundModal-col_2">
             <!--
               <div class="col-md-5 col-lg-6 order-md-last">
@@ -940,7 +1254,7 @@
                 </ul>
               </div>
               -->
-  
+
           </div>
           <button type="button" id="RefundModal_Send" class="btn btn-primary" data-dismiss="modal">
             <i class="fa-solid fa-paper-plane fa-2x">送出</i>
@@ -948,11 +1262,11 @@
         </div>
 
         <div class="modal-footer">
-         
-          <button type="button" class="btn btn-primary">Save changes</button> 
+
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -1025,7 +1339,7 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script> -->
   <!-- 連結網頁主程式 -->
- 
+
   <script src="/tickets/js/main.js"></script>
   <script src="/tickets/js/new_articleA.js"></script>
   <script src="/tickets/js/new_articleAA.js"></script>
@@ -1035,8 +1349,8 @@
   <script src="/tickets/js/new_articleC.js"></script>
   <script src="/tickets/js/new_articleCCC.js"></script>
   <script src="/tickets/js/test2.js"></script>
-  
- 
+
+
 
 </body>
 
