@@ -222,7 +222,9 @@ $(document).ready(function () {
     $(this).parent().hide();
     // 隐藏当前的 custom-alert 元素
     // $("#custom-alert_2").hide();
+    focus_custom_alert();
   })
+
 
 
 
@@ -1152,6 +1154,18 @@ $(document).ready(function () {
     return phoneRegex.test(orderPhone);
   }
 
+  // 游標移動至的第一個警示div的位置
+  let focus_custom_alert=function(){
+
+        // 获取第一个显示的 .custom-alert 元素
+      let visibleCustomAlert = $(".custom-alert:visible").first();
+      
+      // 如果有可见的 .custom-alert 元素，则将焦点设置到它
+      if (visibleCustomAlert.length > 0) {
+        $("html,body").animate({scrollTop:visibleCustomAlert.offset().top-200},500);
+        //在可见的 .custom-alert 元素上创建自定义动画(页面滚动)，将页面滚动到该元素的顶部，持续时间为 500 毫秒
+        }
+  }
 
 
 
@@ -1166,6 +1180,7 @@ $(document).ready(function () {
     let send_list = [];
     //判斷能否進入:彙整買票人資料的動作
     let T = true;
+
 
     //獲取:搭船人資料
     $('.get_form').each(function () {
@@ -1422,6 +1437,8 @@ $(document).ready(function () {
 
       }
 
+
+
     })
 
 
@@ -1497,6 +1514,10 @@ $(document).ready(function () {
         }
       }
     })
+
+    focus_custom_alert();
+
+
   })
 })
 
