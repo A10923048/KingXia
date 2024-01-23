@@ -229,6 +229,17 @@ $(document).ready(function () {
 
 
   //                 產生_旅客標單格式                //
+
+  let  htmlString_title =
+    '<aside class="bd-aside sticky-xl-top  align-self-start mb-3 mb-xl-5 px-2">' +
+  '<h3 class="mt-5 pb-3 mb-4 border-bottom">資料填寫</h3>' +
+  '<h5 class="pb-3 mb-4">(請下拉選單)</h5>' +
+  '<nav class="small" id="toc">' +
+  '<ul class="list-unstyled " id="buyers_list"> ' ;
+
+  
+  
+
   let traveler_list = function (i, ii, ticket_title) {
 
     //let return_list ="";暫存用
@@ -322,8 +333,12 @@ $(document).ready(function () {
       ;
 
 
-    let htmlString_title = '<li class="my-2">' +
-      '<button class="btn d-inline-flex align-items-center collapsed border-0 mb-3" ' +
+  
+
+
+    let htmlString_mid0 =
+    '<li class="my-2">' +
+      '<button class="btn d-inline-flex align-items-center collapsed border-0 mb-3 text-white" ' +
       'data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse' + i + ii + '"' +
       'aria-controls="contents-collapse">' + ticket_title + '旅客(' + (parseInt(i) + parseInt(1)) + ')表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse' + i + ii + '">' +
@@ -436,14 +451,12 @@ $(document).ready(function () {
 
 
     if (ii == 2) {
-      return htmlString_title + htmlString_mid1 + htmlString_mid2 + htmlString_mid3 + htmlString_mid4 + add_ending;
+      return htmlString_mid0+ htmlString_mid1 + htmlString_mid2 + htmlString_mid3 + htmlString_mid4 + add_ending;
     } else if (ii == 4) {
-      return htmlString_title + add_text + htmlString_mid1 + htmlString_mid2_readonly + htmlString_mid3 + htmlString_mid4_checkbox + htmlString_mid4 + add_ending;
+      return htmlString_mid0+ add_text + htmlString_mid1 + htmlString_mid2_readonly + htmlString_mid3 + htmlString_mid4_checkbox + htmlString_mid4 + add_ending;
     } else {
-      return htmlString_title + htmlString_mid1 + htmlString_mid2 + htmlString_mid3 + htmlString_mid4_checkbox + htmlString_mid4 + add_ending;
+      return htmlString_mid0+ htmlString_mid1 + htmlString_mid2 + htmlString_mid3 + htmlString_mid4_checkbox + htmlString_mid4 + add_ending;
     }
-
-
 
 
 
@@ -454,7 +467,7 @@ $(document).ready(function () {
   //定義: 聯絡人-表單 方法 
   let buyer_form = function () {
     var htmlString = '<li class="my-2">' +
-      '<button class="btn d-inline-flex align-items-center collapsed border-0 mb-3" ' +
+      '<button class="btn d-inline-flex align-items-center collapsed border-0 mb-3 text-white" ' +
       'data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse-order" ' +
       'aria-controls="contents-collapse">聯絡人-表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse-order">' +
@@ -514,7 +527,17 @@ $(document).ready(function () {
       '</form>' +
       '</div>' +
       '</ul>' +
-      '</li>';
+      '</li>'+
+
+
+      '</ul>' +
+      '<div class="col-lg-12">' +
+      '<button class="main-button pt-3" id="form_send">' +
+      '<h3>送出</h3>' +
+      '</button>' +
+      '</div>' +
+      '</nav>'+
+      '</aside>';
 
     return htmlString;
   }
@@ -587,9 +610,14 @@ $(document).ready(function () {
         ii += parseInt(1)
       })
 
+      
+      
+
 
       let print_traveler_Universal_list = Universal_Ticket - UniversalLove_Ticket;
 
+
+      
       //產生:博愛+陪同者的共同票
       for (var i = 0; i < UniversalLove_Ticket; i++) {
 
@@ -603,6 +631,8 @@ $(document).ready(function () {
       }
 
 
+      show_list.unshift(htmlString_title);
+      
       $("#buyers_list").append(show_list);
 
       let buyer_form_show = buyer_form();
@@ -1171,7 +1201,8 @@ $(document).ready(function () {
 
   //            資料填寫完送出-格式檢查                       //
 
-  $("#form_send").click(function () {
+  $(document).on("click", "#form_send", function () {
+  
 
     //隱藏警示窗
     $(this).parent().parent().find(".custom-alert").hide();
