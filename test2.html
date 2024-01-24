@@ -126,13 +126,173 @@
                       <article id="articleG" class="my-3  tab-pane show active" style="background: rgb(102, 235, 226)">
                         <h1 class=" section-title text-center text-white mt-5 mb-5 pt-5">articleG
                         </h1>
-                        <div class="container text-center py-5">
-                          <div class="mx-auto" style="max-width: 700px;">
-                          <h1>Bootstrap 5 Lightbox Example</h1>
-                          <p class="lead">A simple lightbox gallery example using only default included Bootstrap 5 classes and components—no other JavaScript necessary.</p>
-                          <p class="mb-4">See it on <a href="https://gist.github.com/trvswgnr/34f19f37276068e0f2e3eb2c8a450755">GitHub</a></p>
+
+                        <!-- myCarousel. -->
+                       <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          
+                          <div class="carousel-item active" data-slide-number="0">
+                            <img src="https://source.unsplash.com/Pn6iimgM-wo/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                           </div>
-                          <div class="row justify-content-center">
+                          <div class="carousel-item" data-slide-number="1">
+                            <img src="https://source.unsplash.com/tXqVe7oO-go/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="2">
+                            <img src="https://source.unsplash.com/qlYQb7B9vog/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="3">
+                            <img src="https://source.unsplash.com/QfEfkWk1Uhk/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="4">
+                            <img src="https://source.unsplash.com/CSIcgaLiFO0/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="5">
+                            <img src="https://source.unsplash.com/a_xa7RUKzdc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="6">
+                            <img src="https://source.unsplash.com/uanoYn1AmPs/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/uanoYn1AmPs/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="7">
+                            <img src="https://source.unsplash.com/_snqARKTgoc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/_snqARKTgoc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="8">
+                            <img src="https://source.unsplash.com/M9F8VR0jEPM/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="9">
+                            <img src="https://source.unsplash.com/Q1p7bh3SHj8/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="10">
+                            <img src="./tickets/img/gallery-image-1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="11">
+                            <img src="./tickets/img/gallery-image-2.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>  -->
+                      
+                      <!-- Carousel Navigation -->
+                       <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <div class="row mx-0">
+                              <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+                                <img src="https://source.unsplash.com/Pn6iimgM-wo/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
+                                <img src="https://source.unsplash.com/tXqVe7oO-go/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
+                                <img src="https://source.unsplash.com/qlYQb7B9vog/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
+                                <img src="https://source.unsplash.com/QfEfkWk1Uhk/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
+                                <img src="https://source.unsplash.com/CSIcgaLiFO0/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
+                                <img src="https://source.unsplash.com/a_xa7RUKzdc/600x400/" class="img-fluid" alt="...">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <div class="row mx-0">
+                              <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
+                                <img src="https://source.unsplash.com/uanoYn1AmPs/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-7" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="7">
+                                <img src="https://source.unsplash.com/_snqARKTgoc/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-8" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="8">
+                                <img src="https://source.unsplash.com/M9F8VR0jEPM/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-9" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="9">
+                                <img src="https://source.unsplash.com/Q1p7bh3SHj8/600x400/" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-10" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="10">
+                                <img src="./tickets/img/gallery-image-1.jpg" class="img-fluid" alt="...">
+                              </div>
+                              <div id="carousel-selector-11" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="11">
+                                <img src="./tickets/img/gallery-image-2.jpg" class="img-fluid" alt="...">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+
+                      </div> 
+                      <!-- myCarousel.End -->
+
+                          <!-- carousel -->
+                          <!-- <ul class="carousel-container radio">
+                            <li>
+                              <input class="carousel-toggle" id="slide-1" type="radio" name="c-toggle" checked/> 
+                              <label class="dot" for="slide-1"></label>
+                              <ul class="carousel-content">
+                                <li>
+                                  <img src="./tickets/img/gallery-image-7.jpg"/>
+                                  <label class="arrow back" for="slide-2">&#8250;	</label>      
+                                  <label class="arrow next" for="slide-4">&#8249;</label>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <input class="carousel-toggle" id="slide-2" type="radio" name="c-toggle" />   
+                              <label class="dot" for="slide-2"></label>
+                              <ul class="carousel-content">
+                                <li>
+                                  <img src="./tickets/img/gallery-image-4.jpg"/>
+                                  <label class="arrow back" for="slide-3">&#8250;	</label>       
+                                  <label class="arrow next" for="slide-1">&#8249;</label>  
+                                </li>  
+                              </ul>    
+                            </li>
+                            <li>
+                              <input class="carousel-toggle" id="slide-3" type="radio" name="c-toggle" /> 
+                              <label class="dot" for="slide-3"></label> 
+                              <ul class="carousel-content">
+                                <li>
+                                  <img src="./tickets/img/gallery-image-5.jpg"/>
+                                  <label class="arrow back" for="slide-4">&#8250;	</label>                  
+                                  <label class="arrow next" for="slide-2">&#8249;</label>
+                                </li>
+                              </ul>  
+                            </li>  
+                            <li>
+                              <input class="carousel-toggle" id="slide-4" type="radio" name="c-toggle" />        
+                              <label class="dot" for="slide-4"></label>
+                              <ul class="carousel-content">
+                                <img src="./tickets/img/gallery-image-6.jpg"/>
+                                <label class="arrow back" for="slide-1">&#8250;	</label>                     
+                                <label class="arrow next" for="slide-3">&#8249;</label>                  
+                              </ul>    
+                            </li>  
+                          </ul> -->
+
+                      <!-- exampleLightbox -->
+                      <div class="container text-center py-5">
+                        <div class="mx-auto" style="max-width: 700px;">
+                        <h1>Bootstrap 5 Lightbox Example</h1>
+                        <p class="lead">A simple lightbox gallery example using only default included Bootstrap 5 classes and components—no other JavaScript necessary.</p>
+                        <p class="mb-4">See it on <a href="https://gist.github.com/trvswgnr/34f19f37276068e0f2e3eb2c8a450755">GitHub</a></p>
+                        </div>
+                        <div class="row justify-content-center">
                             <div class="col-md-8">
                               <div class="row justify-content-center">
                                 <a href="#" class="col-sm-3" data-bs-toggle="modal" data-bs-target="#exampleLightbox">
@@ -144,131 +304,189 @@
                                 <a href="#" class="col-sm-3" data-bs-toggle="modal" data-bs-target="#exampleLightbox">
                                   <img data-bs-target="#lightboxExampleCarousel" data-bs-slide-to="2" src="https://unsplash.it/200.jpg?image=252" class="img-fluid">
                                 </a>
+
+                                <a href="#" class="col-sm-3" data-bs-toggle="modal" data-bs-target="#exampleLightbox2">
+                                  <img data-bs-target="#lightboxExampleCarousel2" data-bs-slide-to="0" src="./tickets/img/gallery-image-1.jpg" class="img-fluid">
+                                </a>
+
                               </div>
                             </div>
-                          </div>
                         </div>
+                      </div>
+
+                      <!-- exampleLightbox2 -->
+                      <div class="container text-center py-5">
+                        <div class="mx-auto" style="max-width: 700px;">
+                        <h1>Bootstrap 5 Lightbox Example</h1>
+                        <p class="lead">A simple lightbox gallery example using only default included Bootstrap 5 classes and components—no other JavaScript necessary.</p>
+                        <p class="mb-4">See it on <a href="https://gist.github.com/trvswgnr/34f19f37276068e0f2e3eb2c8a450755">GitHub</a></p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                              <div class="row justify-content-center">
+                                <a href="#" class="col-sm-3" data-bs-toggle="modal" data-bs-target="#exampleLightbox2">
+                                  <img data-bs-target="#lightboxExampleCarousel2" data-bs-slide-to="0" src="./tickets/img/gallery-image-1.jpg" class="img-fluid">
+                                </a>
+                                <a href="#" class="col-sm-3" data-bs-toggle="modal" data-bs-target="#exampleLightbox2">
+                                  <img data-bs-target="#lightboxExampleCarousel2" data-bs-slide-to="1" src="./tickets/img/gallery-image-2.jpg" class="img-fluid">
+                                </a>
+                                <a href="#" class="col-sm-3" data-bs-toggle="modal" data-bs-target="#exampleLightbox2">
+                                  <img data-bs-target="#lightboxExampleCarousel2" data-bs-slide-to="2" src="./tickets/img/gallery-image-3.jpg" class="img-fluid">
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      
+
+
+
+
+                      <!-- exampleLightbox3 -->
+                      <div class="container text-center py-5">
+                        <div class="mx-auto" style="max-width: 700px;">
+                        <h1>Bootstrap 5 Lightbox Example</h1>
+                        <p class="lead">A simple lightbox gallery example using only default included Bootstrap 5 classes and components—no other JavaScript necessary.</p>
+                        <p class="mb-4">See it on <a href="https://gist.github.com/trvswgnr/34f19f37276068e0f2e3eb2c8a450755">GitHub</a></p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                              <div class="row justify-content-center">
+                                <a href="#" class="col-sm-3" data-bs-toggle="modal" data-bs-target="#exampleLightbox3" >
+                                  <img data-bs-target="#lightboxExampleCarousel3" data-bs-slide-to="0"  src="./tickets/img/gallery-image-3.jpg" class="img-fluid">
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+
+
                       </article>
 
                     
                       <article id="articleF" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <h1 class=" section-title text-center text-white mt-5 mb-5 pt-5">articleF
                         </h1>
+
+                          <!-- new -->
+                       
+                         <!-- new -->
+                              
+
+                              
+                              <ul class="accordion-container radio">
+                                <li class="accordion-category">
+                                  <input type="radio" name="a-toggle" id="one" checked>      
+                                  <label for="one" class="accordion-title">Accordions</label>
+                                  <ul class="accordion-items">    
+                                    <li>Item One</li>                    
+                                    <li>Item Two</li>                     
+                                    <li>Item Three</li>                                   
+                                  </ul>      
+                                </li>
+                                <li class="accordion-category">
+                                  <input id="two" type="radio" name="a-toggle">      
+                                  <label for="two" class="accordion-title">Condense</label>
+                                  <ul class="accordion-items">
+                                    <li>Item A</li>                     
+                                    <li>Item B</li>                     
+                                  </ul>      
+                                </li>  
+                                <li class="accordion-category">
+                                  <input id="tre" type="radio" name="a-toggle">      
+                                  <label for="tre" class="accordion-title">Stuff</label>
+                                  <ul class="accordion-items">
+                                    <li>Item 1</li>          
+                                    <li>Item 2</li> 
+                                    <li>Item 3</li>          
+                                    <li>Item 4</li>            
+                                  </ul>
+                              </ul>
+
+                              
+                              <div class="step-container">
+                                <input type="checkbox" id="step-1" name="toggler" checked/>
+                                <div class="step-dot one">Ready</div> 
+                                <div class="step-content">
+                                  <label for="step-2">Next</label>         
+                                  <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. </div>
+                                </div>
+                                <input type="checkbox" id="step-2" name="toggler" />
+                                <div class="step-dot two">Set</div>  
+                                <div class="step-content">
+                                  <label for="step-3">Next</label>            
+                                  <div class="text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                                </div>
+                                <input type="checkbox" id="step-3" name="toggler" />
+                                  <div class="step-dot three">Go!</div>  
+                                <div class="step-content">
+                                  <div class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+                                </div>
+                              </div>
+
+                              <ul class="tab-container radio">
+                                <li>
+                                  <input class="tab-toggle" id="tab-1" type="radio" name="toggle" checked /> 
+                                  <label data-title="Tab 1" class="tab l-b" for="tab-1">Tabs</label>            
+                                  <ul class="tab-content-container">
+                                    <li class="tab-content">
+                                      This is a testing text to test the tab content container. Lorem Ipsum dolor sit amet! Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                      This is a testing text to test the tab content container. Lorem Ipsum dolor sit amet! 
+                                      <div class="arrows">
+                                        <label class="back" for="tab-4">&#8249;</label>
+                                        <label class="next" for="tab-2">&#8250;	</label>   
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <input class="tab-toggle" id="tab-2" type="radio" name="toggle" />
+                                  <label class="tab" for="tab-2">Are</label> 
+                                  <ul class="tab-content-container">
+                                    <li class="tab-content">
+                                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                      <div class="arrows">
+                                        <label class="back" for="tab-1">&#8249;</label>
+                                        <label class="next" for="tab-3">&#8250;	</label>   
+                                      </div>   
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <input class="tab-toggle" id="tab-3" type="radio" name="toggle"/>        
+                                  <label class="tab" for="tab-3">Pretty</label>
+                                  <ul class="tab-content-container">
+                                    <li class="tab-content">
+                                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                      <div class="arrows">
+                                        <label class="back" for="tab-2">&#8249;</label>
+                                        <label class="next" for="tab-4">&#8250;	</label>   
+                                      </div>
+                                    </li>
+                                  </ul>    
+                                </li>
+                                <li>
+                                  <input class="tab-toggle" id="tab-4" type="radio" name="toggle"/>     
+                                  <label class="tab" for="tab-4">Cool</label> 
+                                  <ul class="tab-content-container">
+                                    <li class="tab-content">
+                                      This is the final content for the tab example.
+                                      <div class="arrows">
+                                        <label class="back" for="tab-3">&#8249;</label>
+                                        <label class="next" for="tab-1">&#8250;	</label>   
+                                      </div>
+                                    </li>  
+                                  </ul>  
+                                </li>
+                              </ul>
+                              
+                            <!-- new finish -->
                         <div class="container mt-5">
                           <div class="carousel-container position-relative row">   
-                          <!-- myCarousel. -->
-                          <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                              
-                              <div class="carousel-item active" data-slide-number="0">
-                                <img src="https://source.unsplash.com/Pn6iimgM-wo/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="1">
-                                <img src="https://source.unsplash.com/tXqVe7oO-go/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="2">
-                                <img src="https://source.unsplash.com/qlYQb7B9vog/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="3">
-                                <img src="https://source.unsplash.com/QfEfkWk1Uhk/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="4">
-                                <img src="https://source.unsplash.com/CSIcgaLiFO0/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="5">
-                                <img src="https://source.unsplash.com/a_xa7RUKzdc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="6">
-                                <img src="https://source.unsplash.com/uanoYn1AmPs/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/uanoYn1AmPs/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="7">
-                                <img src="https://source.unsplash.com/_snqARKTgoc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/_snqARKTgoc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="8">
-                                <img src="https://source.unsplash.com/M9F8VR0jEPM/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="9">
-                                <img src="https://source.unsplash.com/Q1p7bh3SHj8/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="10">
-                                <img src="./tickets/img/gallery-image-1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                              <div class="carousel-item" data-slide-number="11">
-                                <img src="./tickets/img/gallery-image-1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                              </div>
-                            </div>
-
-                            <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Next</span>
-                            </a>
-                          </div> 
                           
-                          <!-- Carousel Navigation -->
-                           <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                <div class="row mx-0">
-                                  <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
-                                    <img src="https://source.unsplash.com/Pn6iimgM-wo/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
-                                    <img src="https://source.unsplash.com/tXqVe7oO-go/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
-                                    <img src="https://source.unsplash.com/qlYQb7B9vog/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
-                                    <img src="https://source.unsplash.com/QfEfkWk1Uhk/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
-                                    <img src="https://source.unsplash.com/CSIcgaLiFO0/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
-                                    <img src="https://source.unsplash.com/a_xa7RUKzdc/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="carousel-item">
-                                <div class="row mx-0">
-                                  <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
-                                    <img src="https://source.unsplash.com/uanoYn1AmPs/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-7" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="7">
-                                    <img src="https://source.unsplash.com/_snqARKTgoc/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-8" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="8">
-                                    <img src="https://source.unsplash.com/M9F8VR0jEPM/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-9" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="9">
-                                    <img src="https://source.unsplash.com/Q1p7bh3SHj8/600x400/" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-10" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="10">
-                                    <img src="./tickets/img/gallery-image-1.jpg" class="img-fluid" alt="...">
-                                  </div>
-                                  <div id="carousel-selector-11" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="11">
-                                    <img src="./tickets/img/gallery-image-2.jpg" class="img-fluid" alt="...">
-                                  </div>
-                                  <div class="col-2 px-1 py-2"></div>
-                                  <div class="col-2 px-1 py-2"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Next</span>
-                            </a>
-
-                          </div> 
-                          <!-- myCarousel.End -->
 
                           </div> <!-- /row -->
                         </div> <!-- /container -->
@@ -1110,6 +1328,7 @@
 
   </header>
 
+  <!--Modal- exampleLightbox -->
   <div class="modal fade" id="exampleLightbox" tabindex="-1" aria-labelledby="exampleLightboxLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content">
@@ -1143,7 +1362,187 @@
       </div>
     </div>
   </div>
+
+  <!--Modal- exampleLightbox2 -->
+  <div class="modal fade" id="exampleLightbox2" tabindex="-1" aria-labelledby="exampleLightboxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleLightboxLabel">Lightbox Example</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <div id="lightboxExampleCarousel2" class="carousel slide">
+            <div class="carousel-inner ratio ratio-16x9 bg-dark">
+              <div class="carousel-item text-center active">
+                <img src="./tickets/img/gallery-image-1.jpg" class="img-fluid mh-100">
+              </div>
+              <div class="carousel-item text-center">
+                <img src="./tickets/img/gallery-image-2.jpg" class="img-fluid mh-100">
+              </div>
+              <div class="carousel-item text-center">
+                <img src="./tickets/img/gallery-image-3.jpg" class="img-fluid mh-100">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#lightboxExampleCarousel2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#lightboxExampleCarousel2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   
+  <!--Modal- exampleLightbox3 -->
+  <div class="modal fade" id="exampleLightbox3" tabindex="-1" aria-labelledby="exampleLightboxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleLightboxLabel">Lightbox Example</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="lightboxExampleCarousel3" class="carousel slide">
+
+            <!-- carousel -->
+              <ul id="lightboxExampleCarousel3" class="carousel-container radio">
+              <li>
+                <input class="carousel-toggle" id="slide-1" type="radio" name="c-toggle" /> 
+                <label class="dot" for="slide-1"></label>
+                <ul class="carousel-content">
+                  <li>
+                    <img src="./tickets/img/gallery-image-7.jpg"/>
+                    <label class="arrow back" for="slide-2">&#8250;	</label>      
+                    <label class="arrow next" for="slide-4">&#8249;</label>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <input class="carousel-toggle" id="slide-2" type="radio" name="c-toggle" checked/>   
+                <label class="dot" for="slide-2"></label>
+                <ul class="carousel-content">
+                  <li>
+                    <img src="./tickets/img/gallery-image-3.jpg"/>
+                    <label class="arrow back" for="slide-3">&#8250;	</label>       
+                    <label class="arrow next" for="slide-1">&#8249;</label>  
+                  </li>  
+                </ul>    
+              </li>
+              <li>
+                <input class="carousel-toggle" id="slide-3" type="radio" name="c-toggle" /> 
+                <label class="dot" for="slide-3"></label> 
+                <ul class="carousel-content">
+                  <li>
+                    <img src="./tickets/img/gallery-image-5.jpg"/>
+                    <label class="arrow back" for="slide-4">&#8250;	</label>                  
+                    <label class="arrow next" for="slide-2">&#8249;</label>
+                  </li>
+                </ul>  
+              </li>  
+              <li>
+                <input class="carousel-toggle" id="slide-4" type="radio" name="c-toggle" />        
+                <label class="dot" for="slide-4"></label>
+                <ul class="carousel-content">
+                  <img src="./tickets/img/gallery-image-6.jpg"/>
+                 <label class="arrow back" for="slide-1">&#8250;	</label>                     
+                  <label class="arrow next" for="slide-3">&#8249;</label>                
+                </ul>    
+              </li>  
+            </ul>  
+
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#lightboxExampleCarousel3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#lightboxExampleCarousel3" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!--Modal- myCarousel -->
+  <div class="modal fade" id="myCarouselModal" tabindex="-1" aria-labelledby="exampleLightboxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleLightboxLabel">Lightbox Example</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+              <!-- myCarousel. -->
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          
+                          <div class="carousel-item active" data-slide-number="0">
+                            <img src="https://source.unsplash.com/Pn6iimgM-wo/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="1">
+                            <img src="https://source.unsplash.com/tXqVe7oO-go/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="2">
+                            <img src="https://source.unsplash.com/qlYQb7B9vog/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="3">
+                            <img src="https://source.unsplash.com/QfEfkWk1Uhk/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="4">
+                            <img src="https://source.unsplash.com/CSIcgaLiFO0/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="5">
+                            <img src="https://source.unsplash.com/a_xa7RUKzdc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="6">
+                            <img src="https://source.unsplash.com/uanoYn1AmPs/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/uanoYn1AmPs/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="7">
+                            <img src="https://source.unsplash.com/_snqARKTgoc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/_snqARKTgoc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="8">
+                            <img src="https://source.unsplash.com/M9F8VR0jEPM/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="9">
+                            <img src="https://source.unsplash.com/Q1p7bh3SHj8/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="10">
+                            <img src="./tickets/img/gallery-image-1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="11">
+                            <img src="./tickets/img/gallery-image-2.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                  </div>  
+            
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- Modal-訂票紀錄查詢>_詳細資訊 -->
   <div class="modal fade" id="DetailModal" tabindex="-1" role="dialog" aria-labelledby="DetailModalLabel"
