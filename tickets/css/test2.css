@@ -1334,12 +1334,8 @@ a:hover span {
 
 ------------------------
 /*=============================================
-=                  test2                   =
+=          myCarousel                   =
 =============================================*/
-
-
-
-
 .carousel {
   position: relative;
 }
@@ -1347,26 +1343,49 @@ a:hover span {
   object-fit: cover;
 }
 #carousel-thumbs {
-  background: rgba(255,255,255,.3);
+  background: rgb(4, 35, 47);
   bottom: 0;
   left: 0;
-  padding: 0 50px;
+  padding: 30px 50px;
   right: 0;
 }
 #carousel-thumbs img {
   border: 5px solid transparent;
   cursor: pointer;
 }
+
 #carousel-thumbs img:hover {
-  border-color: rgba(255,255,255,.3);
+  border-color: rgb(255, 62, 62);
 }
 #carousel-thumbs .selected img {
   border-color: #fff;
 }
+
+
+.thumb+.thumb {
+  margin-left:2px ;
+}
+
+
+.dashed-border {
+  border: 5px dashed #fffcfc; /* 1px宽度，虚线，黑色 */
+  padding: 10px; /* 为了让效果更明显，添加一些内边距 */
+}
+
+
 .carousel-control-prev,
 .carousel-control-next {
   width: 50px;
 }
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  
+  background: rgba(255, 255, 255, 0.749);
+  width: 50px;
+}
+
+
+
 @media all and (max-width: 767px) {
   .carousel-container #carousel-thumbs img {
     border-width: 3px;
@@ -1385,24 +1404,71 @@ a:hover span {
 
 
 /*=============================================
-=                  test3                   =
+=              myCarousel                  =
 =============================================*/
-.thumbnail {margin-bottom:6px;}
-
-.carousel-control.left,.carousel-control.right{
-  background-image:none;
-  margin-top:10%;
-  width:5%;
+.carousel {
+  position: relative;
 }
-.hidden {
-  display: none;
+.carousel-item img {
+  object-fit: cover;
+}
+#carousel-thumbs2 {
+  background: rgb(3, 33, 44);
+  bottom: 0;
+  left: 0;
+  padding: 30px 50px;
+  width: fit-content;
+  right: 0;
+ 
+}
+#carousel-thumbs img {
+  border: 5px solid transparent;
+  cursor: pointer;
+}
+#carousel-thumbs img:hover {
+  border-color: rgb(255, 62, 62);
+}
+#carousel-thumbs .selected img {
+  border-color: #fff;
+}
+
+.dashed-border {
+  border: 5px dashed #fffcfc; /* 1px宽度，虚线，黑色 */
+  padding: 10px; /* 为了让效果更明显，添加一些内边距 */
 }
 
 
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  
+  background: rgba(255, 255, 255, 0.749);
+  width: 50px;
+}
+
+
+
+@media all and (max-width: 767px) {
+  .carousel-container #carousel-thumbs img {
+    border-width: 3px;
+  }
+}
+@media all and (min-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    position: absolute;
+  }
+}
+@media all and (max-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    background: #ccccce;
+  }
+}
 /*=============================================
-=                  test4                   =
+=                                    =
 =============================================*/
-
 body, html { margin: 0; font-family: arial; height: 100vh; background:  #ccc; }
 *, *:before, *:after { box-sizing: border-box; }
 
@@ -2083,7 +2149,7 @@ body, html { margin: 0; font-family: arial; height: 100vh; background:  #ccc; }
     position: absolute;
     width: 100%;
     bottom: 0px;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255,0.94) 95%, rgba(255,255,255,1) 100%); /* w3c */
+background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255,0.94) 95%, rgba(255,255,255,1) 100%); /* w3c */
     
     &:after {
       content: "\203A";

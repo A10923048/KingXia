@@ -44,9 +44,9 @@ $(document).ready(function () {
   $(document).on("show", "#myCarouselModal", function () {
 
       //1.將大圖的自動滑動設置為 false，禁用自動切換。
-        $('#myCarousel').carousel({
-            interval: false
-          });
+        // $('#myCarousel').carousel({
+        //     interval: false
+        //   });
 
       //   //1.將縮圖的自動滑動設置為 false，禁用自動切換。
         $('#carousel-thumbs').carousel({

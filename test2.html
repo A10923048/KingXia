@@ -97,8 +97,12 @@
             <!-- <h1 class=" mb-5 text-center text-white">訂票資訊</h1> -->
             <!-- 設定row內的區塊置中對齊 -->
             <div class="row justify-content-center">
-
+                
+              <marquee class="text-white">最新消息:</marquee>
               <nav class="nav nav-pills flex-row justify-content-center" id="myNav">
+                
+
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleH')">H</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleG')">G</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleF')">test</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">目錄</button>
@@ -106,7 +110,7 @@
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">公司介紹</button>
 
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleE')">test</button>
-
+              
               </nav>
 
 
@@ -117,15 +121,143 @@
                             -->
                   <div class="container  mb-5">
 
-                    
-                    
-
 
                     <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
 
-                      <article id="articleG" class="my-3  tab-pane show active" style="background: rgb(102, 235, 226)">
+                      <article id="articleH" class="my-3  tab-pane show active" style="background: rgb(102, 235, 226); border-radius: 1%;">
+                        <h1 class=" section-title text-center text-white mt-5 mb-5 pt-5">行程:A線介紹
+                        </h1>
+                        <marquee>Change text between marquee tags</marquee>
+                        <marquee behavior="alternate">Alternate marquee behavior</marquee>
+                        <marquee width="100">Reoccuring Marquee1</marquee>
+                       
+
+                        <!-- myCarousel. -->
+                            <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          
+                          <div class="carousel-item active" data-slide-number="0">
+                            <img src="https://source.unsplash.com/Pn6iimgM-wo/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="1">
+                            <img src="https://source.unsplash.com/tXqVe7oO-go/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="2">
+                            <img src="https://source.unsplash.com/qlYQb7B9vog/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="3">
+                            <img src="https://source.unsplash.com/QfEfkWk1Uhk/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="4">
+                            <img src="https://source.unsplash.com/CSIcgaLiFO0/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="5">
+                            <img src="https://source.unsplash.com/a_xa7RUKzdc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="6">
+                            <img src="https://source.unsplash.com/uanoYn1AmPs/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/uanoYn1AmPs/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="7">
+                            <img src="https://source.unsplash.com/_snqARKTgoc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/_snqARKTgoc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="8">
+                            <img src="https://source.unsplash.com/M9F8VR0jEPM/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="9">
+                            <img src="https://source.unsplash.com/Q1p7bh3SHj8/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="10">
+                            <img src="./tickets/img/gallery-image-1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                          <div class="carousel-item" data-slide-number="11">
+                            <img src="./tickets/img/gallery-image-2.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>  -->
+                      
+                        <!-- Carousel Navigation -->
+                              <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner ">
+                                  <div class="carousel-item active ">
+                                    <h3 class=" section-title mb-5 text-center text-white">
+                                      A線介紹
+                                    </h3>
+                                    <marquee class="text-white" width="1000">金門水頭碼頭發船⇀復興嶼⇀猛虎嶼⇀大、二膽島⇀廈門黃金海岸⇀金門大橋⇀返回金門水頭碼頭
+                                    </marquee>
+
+                                    <div class="row mx-0 dashed-border">
+                                      <div id="carousel-selector-0" class="thumb col-6 col-sm-2 px-1 py-4 selected" data-target="#myCarousel" data-slide-to="0">
+                                        <img src="https://source.unsplash.com/Pn6iimgM-wo/600x400/" class="img-fluid" alt="...">
+                                      </div>
+                                      <div id="carousel-selector-1" class="thumb col-6 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
+                                        <img src="https://source.unsplash.com/tXqVe7oO-go/600x400/" class="img-fluid" alt="...">
+                                      </div>
+                                      <div id="carousel-selector-2" class="thumb col-6 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
+                                        <img src="https://source.unsplash.com/qlYQb7B9vog/600x400/" class="img-fluid" alt="...">
+                                      </div>
+                                      <div id="carousel-selector-3" class="thumb col-6 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
+                                        <img src="https://source.unsplash.com/QfEfkWk1Uhk/600x400/" class="img-fluid" alt="...">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item">
+                                    <h3 class=" section-title mb-5 text-center text-white">
+                                      B線介紹
+                                    </h3>
+                                    <marquee class="text-white" width="1000">金門水頭碼頭發船⇀金門大橋⇀廈門黃金海岸⇀賞廈門百萬夜景⇀返回金門水頭碼頭
+                                    </marquee>
+                                    <div class="row mx-0 dashed-border">
+                                      <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
+                                        <img src="https://source.unsplash.com/CSIcgaLiFO0/600x400/" class="img-fluid" alt="...">
+                                      </div>
+                                      <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
+                                        <img src="https://source.unsplash.com/a_xa7RUKzdc/600x400/" class="img-fluid" alt="...">
+                                      </div>
+                                      <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
+                                        <img src="https://source.unsplash.com/uanoYn1AmPs/600x400/" class="img-fluid" alt="...">
+                                      </div>
+                                      <div id="carousel-selector-7" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="7">
+                                        <img src="https://source.unsplash.com/_snqARKTgoc/600x400/" class="img-fluid" alt="...">
+                                      </div>
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                                
+                              </div> 
+                        <!-- myCarousel.End -->
+
+
+                         
+
+
+                      </article>
+
+                      <article id="articleG" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <h1 class=" section-title text-center text-white mt-5 mb-5 pt-5">articleG
                         </h1>
+                        <marquee>Change text between marquee tags</marquee>
+                        <marquee behavior="alternate">Alternate marquee behavior</marquee>
+                        <marquee width="200">Reoccuring Marquee1</marquee>
+                       
 
                         <!-- myCarousel. -->
                        <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -181,9 +313,9 @@
                       
                       <!-- Carousel Navigation -->
                        <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <div class="row mx-0">
+                        <div class="carousel-inner dashed-border">
+                          <div class="carousel-item active ">
+                            <div class="row mx-0 ">
                               <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
                                 <img src="https://source.unsplash.com/Pn6iimgM-wo/600x400/" class="img-fluid" alt="...">
                               </div>
@@ -227,6 +359,7 @@
                             </div>
                           </div>
                         </div>
+                        
                         <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                           <span class="sr-only">Previous</span>
@@ -235,7 +368,7 @@
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="sr-only">Next</span>
                         </a>
-
+                        
                       </div> 
                       <!-- myCarousel.End -->
 
@@ -338,11 +471,6 @@
                         </div>
                       </div>
 
-                      
-
-
-
-
                       <!-- exampleLightbox3 -->
                       <div class="container text-center py-5">
                         <div class="mx-auto" style="max-width: 700px;">
@@ -362,9 +490,39 @@
                       </div>
 
 
+                      <!-- Carousel Navigation -->
+                      <div id="carousel-thumbs2" class="carousel slide " data-ride="carousel">
+                        <div class="carousel-inner dashed-border">
+                          <div class="carousel-item active">
+                            <div class="row mx-0">
+                              <div id="carousel-selector-0" class="thumb col-md-12 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+                                <img src="https://source.unsplash.com/Pn6iimgM-wo/600x400/" class="img-fluid" alt="...">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <div class="row mx-0">
+                              <div id="carousel-selector-6" class="thumb col-md-12 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
+                                <img src="https://source.unsplash.com/uanoYn1AmPs/600x400/" class="img-fluid" alt="...">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-thumbs2" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-thumbs2" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+
+                      </div> 
+
+
                       </article>
 
-                    
+                      <!-- test -->
                       <article id="articleF" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <h1 class=" section-title text-center text-white mt-5 mb-5 pt-5">articleF
                         </h1>
@@ -494,6 +652,7 @@
 
                       </article>
 
+                      <!-- 目錄 -->
                       <article id="articleA" class="my-3  tab-pane " style="background: rgb(102, 235, 226)">
                         <div id="custom-alert" class="alert alert-danger" role="alert"
                           style="position: relative;display: none;">
@@ -559,10 +718,42 @@
 
                       </article>
 
+                      <!-- 行程介紹 -->
                       <article id="articleB" class="my-3  tab-pane"
                         style="background: rgba(38, 128, 238, 0.769)">
                         <h1 class=" section-title text-center text-white mt-5 mb-3 pt-5">行程介紹
                         </h1>
+
+
+                        <!-- Carousel Navigation -->
+                        <div id="carousel-thumbs2" class="carousel slide " data-ride="carousel">
+                          <div class="carousel-inner dashed-border">
+                            <div class="carousel-item active">
+                              <div class="row mx-0">
+                                <div id="carousel-selector-0" class="thumb col-md-12 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+                                  <img src="https://source.unsplash.com/Pn6iimgM-wo/600x400/" class="img-fluid" alt="...">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="row mx-0">
+                                <div id="carousel-selector-6" class="thumb col-md-12 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
+                                  <img src="https://source.unsplash.com/uanoYn1AmPs/600x400/" class="img-fluid" alt="...">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carousel-thumbs2" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carousel-thumbs2" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+
+                        </div>
+
 
                         <div class="table-responsive text-green">
                           <form id="contact" action="" method="get"
@@ -574,12 +765,228 @@
                                 <h2 id="contact" class=" section-title mb-3 text-center text-primary">海上遊</h2>
                             </table>
                             <div class="row mt-5 justify-content-between" style="padding-left: 2%; padding-right: 2%;">
+                              <!-- A -->
                               <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
                                 <div class="row" style="padding-left: 10%;">
-                                  <!-- 圖片輪播A -->
+
+                                  <!-- 輪播 -->
+                                  <div class="col-lg-12 mb-3 text-center" style="padding-left: 2%;padding-right: 2%;">
+                                    <div class="justify-content-center row mt-5">
+                                      <div>
+                                        <div class="intro-box">
+                                          <div class="icon text-brown  py-3">
+                                            
+                                          <i class="fa-solid fa-anchor fa-5x aria-hidden=" true"></i>
+                                          </div>
+                                          
+
+                                          <h3 class=" section-title mb-5 text-center">
+                                            行程:A線介紹
+                                          </h3>
+                                          
+
+                                          <div class="container py-5 bg-secondary text-white">
+                                            
+                                          <h3 class=" section-title mb-5 text-center">行程:A線介紹</h3>
+                                            <div id="carousel-thumbs2" class="carousel slide " data-ride="carousel">
+                                              <div class="carousel-inner dashed-border">
+                                                <div class="carousel-item active">
+                                                  <div class="row mx-0">
+                                                    <div id="carousel-selector-0" class="thumb col-md-12 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+                                                      <img src="https://source.unsplash.com/Pn6iimgM-wo/600x400/" class="img-fluid" alt="...">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                  <div class="row mx-0">
+                                                    <div id="carousel-selector-6" class="thumb col-md-12 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
+                                                      <img src="https://source.unsplash.com/uanoYn1AmPs/600x400/" class="img-fluid" alt="...">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <a class="carousel-control-prev" href="#carousel-thumbs2" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                              </a>
+                                              <a class="carousel-control-next" href="#carousel-thumbs2" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                              </a>
+                    
+                                            </div>
+                                          </div>
+                                        </div>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- 輪播 End -->
+
+                                </div>
+                              </div>
+                              <!-- A End -->
+
+                              <!-- B -->
+                              <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                style="padding-left: 5%; padding-right: 5%;">
+                                <div class="row" style="padding-left: 10%;">
+
+                                  <!-- 輪播 -->
                                   <div class="col-lg-12 mb-3 text-center" style="padding-left: 2%;padding-right: 2%;">
                                     <div class="justify-content-center row mt-5">
                                       <!-- md-6第一排-->
+                                      <div>
+                                        <div class="intro-box">
+                                          <div class="icon text-brown  py-3">
+                                            <i class="fa-solid fa-anchor fa-5x aria-hidden=" true"></i>
+                                          </div>
+                                          <h3 class=" section-title mb-5 text-center">行程:B線介紹</h3>
+
+                                          <!-- 圖片輪播 -->
+                                          <div class="container py-5 bg-secondary text-white">
+                                            <div id="imageCarousel_B" class="carousel" data-ride="carousel">
+                                              <!-- 頁碼提示 -->
+                                              <ol class="carousel-indicators" style="display: none;">
+                                                <li data-target="#imageCarousel_B" data-slide-to="0" class="active"
+                                                  id="galleryImage9"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="1"
+                                                  id="galleryImage10"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="2"
+                                                  id="galleryImage11"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="3"
+                                                  id="galleryImage12"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="4"
+                                                  id="galleryImage13"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="5"
+                                                  id="galleryImage14"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="6"
+                                                  id="galleryImage15"></li>
+                                                <li data-target="#imageCarousel_B" data-slide-to="7"
+                                                  id="galleryImage16"></li>
+                                              </ol>
+                                              <!-- 頁面容器 -->
+                                              <div class="carousel-inner " role="listbox">
+                                                <!-- page 2-1 -->
+                                                <div class="carousel-item active">
+                                                  <h2>B線：海上巡航賞景</h2>
+                                                  <!-- <div class="container-fluid"> -->
+                                                  <div id="galleryImage9" class="col">
+                                                    <div class="gallery-text">金門水頭碼頭發船</div>
+                                                  </div>
+
+                                                </div>
+                                                <!-- </div> -->
+
+                                                <!-- page 2-2 -->
+                                                <div class="carousel-item ">
+                                                  <h2>B線：海上巡航賞景</h2>
+
+                                                  <div id="galleryImage10" class="col">
+                                                    <div class="gallery-text">復興嶼</div>
+                                                  </div>
+
+                                                </div>
+
+                                                <!-- page 2-3 -->
+                                                <div class="carousel-item ">
+                                                  <!-- <div class="container-fluid"> -->
+                                                  <h2>B線：海上巡航賞景</h2>
+                                                  <div id="galleryImage11" class="col">
+                                                    <div class="gallery-text">猛虎嶼</div>
+                                                  </div>
+
+                                                </div>
+
+                                                <!-- page 2-4 -->
+                                                <div class="carousel-item ">
+                                                  <h2>B線：海上巡航賞景</h2>
+                                                  <div id="galleryImage12" class="col">
+                                                    <div class="gallery-text ">大膽島</div>
+                                                  </div>
+                                                </div>
+                                                <!-- page 2-5 -->
+                                                <div class="carousel-item ">
+                                                  <h2>B線：海上巡航賞景</h2>
+
+                                                  <div id="galleryImage13" class="col">
+                                                    <div class="gallery-text">二膽島</div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- page 2-6 -->
+                                                <div class="carousel-item ">
+                                                  <h2>B線：海上巡航賞景</h2>
+                                                  <div id="galleryImage14" class="col">
+                                                    <div class="gallery-text">廈門黃金海岸</div>
+                                                  </div>
+                                                </div>
+                                                <!-- page 2-7 -->
+                                                <div class="carousel-item ">
+                                                  <h2>B線：海上巡航賞景</h2>
+                                                  <div id="galleryImage15" class="col">
+                                                    <div class="gallery-text">金門大橋</div>
+                                                  </div>
+                                                </div>
+                                                <!-- page 2-8 -->
+                                                <div class="carousel-item ">
+                                                  <h2>B線：海上巡航賞景</h2>
+
+                                                  <div id="galleryImage16" class="col">
+                                                    <div class="gallery-text">返回金門水頭碼頭</div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- 圖片輪播 end -->
+
+                                        <!-- 上一頁 -->
+                                        <div class="bg-secondary"><a class="carousel-control-prev"
+                                            href="#imageCarousel_B" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                          </a>
+                                        </div>
+                                        <!-- 下一頁 -->
+                                        <div><a class="carousel-control-next" href="#imageCarousel_B" role="button"
+                                            data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                          </a>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- 輪播 End -->
+
+                                </div>
+                              </div>
+                              <!-- B End -->
+
+                            </div>
+                          </form>
+                        </div>
+
+                        <div class="table-responsive text-green">
+                          <form id="contact" action="" method="get"
+                            style="background-image: url(/tickets/img/contact-form-bg.png);">
+                           
+                            <table>
+                              <div id="planpickered" class="mt-4 pt-3 pb-1"
+                                style="background-color: rgba(244, 246, 247, 0.632);">
+                                <h2 id="contact" class=" section-title mb-3 text-center text-primary">海上遊</h2>
+                            </table>
+                            <div class="row mt-5 justify-content-between" style="padding-left: 2%; padding-right: 2%;">
+                              <!-- A -->
+                              <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                <div class="row" style="padding-left: 10%;">
+
+                                  <!-- 輪播 -->
+                                  <div class="col-lg-12 mb-3 text-center" style="padding-left: 2%;padding-right: 2%;">
+                                    <div class="justify-content-center row mt-5">
                                       <div>
                                         <div class="intro-box">
                                           <div class="icon text-brown  py-3">
@@ -589,7 +996,7 @@
 
                                           <div class="container py-5 bg-secondary text-white">
                                             <div id="imageCarousel_A" class="carousel" data-ride="carousel">
-                                              <!-- 頁碼提示 -->
+                                             
                                               <ol class="carousel-indicators" style="display: none;">
                                                 <li data-target="#imageCarousel_A" data-slide-to="0" class="active"
                                                   id="galleryImage1"></li>
@@ -608,21 +1015,17 @@
                                                 <li data-target="#imageCarousel_A" data-slide-to="7" id="galleryImage8">
                                                 </li>
                                               </ol>
-                                              <!-- 頁面容器 -->
                                               <div class="carousel-inner " role="listbox">
                                                 <!-- page 1-1 -->
                                                 <div class="carousel-item active">
                                                   <h2>A線：海上巡航賞景</h2>
-                                                  <!-- <div class="container-fluid"> -->
                                                   <div id="galleryImage1" class="col">
                                                     <div class="gallery-text">金門水頭碼頭發船</div>
                                                   </div>
                                                 </div>
-                                                <!-- </div> -->
 
                                                 <!-- page 1-2 -->
                                                 <div class="carousel-item ">
-                                                  <!-- <div class="container-fluid"> -->
                                                   <h2>A線：海上巡航賞景</h2>
                                                   <div id="galleryImage2" class="col">
                                                     <div class="gallery-text">復興嶼</div>
@@ -632,7 +1035,6 @@
 
                                                 <!-- page 1-3 -->
                                                 <div class="carousel-item ">
-                                                  <!-- <div class="container-fluid"> -->
                                                   <h2>A線：海上巡航賞景</h2>
                                                   <div id="galleryImage3" class="col">
                                                     <div class="gallery-text">猛虎嶼</div>
@@ -696,15 +1098,18 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <!-- 圖片輪播 End -->
+                                  <!-- 輪播 End -->
 
                                 </div>
                               </div>
+                              <!-- A End -->
+
+                              <!-- B -->
                               <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
                                 style="padding-left: 5%; padding-right: 5%;">
                                 <div class="row" style="padding-left: 10%;">
 
-                                  <!-- 圖片輪播B -->
+                                  <!-- 輪播 -->
                                   <div class="col-lg-12 mb-3 text-center" style="padding-left: 2%;padding-right: 2%;">
                                     <div class="justify-content-center row mt-5">
                                       <!-- md-6第一排-->
@@ -830,17 +1235,19 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <!-- 圖片輪播 End -->
+                                  <!-- 輪播 End -->
 
                                 </div>
-
                               </div>
+                              <!-- B End -->
+
                             </div>
                           </form>
                         </div>
 
                       </article>
 
+                      <!-- 公司介紹 -->
                       <article id="articleC" class="my-3  tab-pane" style=" background-color: rgb(245, 240, 220);">
                         <h1 class=" section-title text-center text-white mt-5 mb-3 pt-5">公司介紹
                         </h1>

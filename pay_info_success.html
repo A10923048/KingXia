@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <title>金廈海運-首頁</title>
+    <!-- <link rel="icon shortcut" href="./img/favicon.ico"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+    <!-- TODO: 客製化Bootstrap CSS -->
+    <link rel="stylesheet" href="/tickets/css/bootstrap.css">
+
+    <!-- 使用style.css -->
+    <link rel="stylesheet" href="/tickets/css/pay_info.css">
+</head>
+
+<body>
+    <div class="col-lg-12">
+        <div id="header">
+            <h2>付款成功</h2>
+
+            <h3 class="quote">"Payment Successful"</h3>
+            <p class="author"><em>~金廈海運~</em></p>
+        </div>
+
+        <div class="warning">
+            <div>
+                <h4 class="text-center"><i class="sign tip">Tip: </i><strong>付款商品如下</strong></h4>
+
+               
+                    <div class="row">
+
+                        <!-- 訂票資訊 -->
+                        <ul class="col-lg-12 text-black">
+
+                                <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <h5 class="my-0">訂單編號:</h5>
+                                    <span class="my-0" id="shipID-show">(訂單編號)</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-sm">
+    
+                                            <h5 class="my-0">搭船日</h5>
+                                            <span class="my-0" id="time-show">(時間顯示)</span>
+                                         
+                                    
+                                        
+                                            <h5 class="my-0">搭船時間</h5>
+                                            <span class="my-0" id="time-show">(時間顯示)</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <h5 class="my-0">船班:</h5>
+                                    <span class="my-0" id="shipID-show">(船班顯示)</span>
+                                </li>
+                              
+                                
+                    
+                        </ul>
+                        
+                           
+                        <ul class=" col-lg-12  mb-3">
+
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <h5 class="my-0">時間:</h5>
+                                <span class="my-0" id="time-show">(時間顯示)</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <h5 class="my-0">船班:</h5>
+                                <span class="my-0" id="shipID-show">(船班顯示)</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <h5 class="my-0">票數:</h5>
+                                <h4 class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
+                                </h4>
+                            </li>
+                        </ul>
+
+                    </div>
+                
+                     <!-- old 票種選擇 -->
+                          <form id="contact" action="" method="get">
+                                <div class="col table-responsive">
+                                  <table class="table text-center">
+                                    <thead>
+                                      <tr>
+                                        <h3>票種選擇</h3>
+                                        <h5 class="my-0"></h5>
+                                        <ul class="list-group mb-3">
+                                          <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h4 class="d-flex justify-content-between align-items-center bg-primary">
+                                              <span class="badge bg-primary  text-white">購買</span>
+                                            </h4>
+                                            <h4 class="d-flex justify-content-center align-items-center">
+                                              <span class="badge   text-white" id="tickets_unchoosed"></span>
+                                            </h4>
+                                            <h4 class="d-flex justify-content-between align-items-center">
+                                              <span class="badge bg-primary  text-white" id="tickets_choosed">張票</span>
+                                            </h4>
+                                          </li>
+                                          
+                                        </ul>
+                                      </tr>
+                                      <tr>
+                                        <th style=" width: 30%;">
+                                          <h6>全票</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>
+                                          <h6>票數</h6>
+                                          <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
+                                          </select>
+                                        </th>
+                                        <th style="width: 30%;">
+                                          <h6>敬老</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>
+                                          <h6>票數</h6>
+                                          <select id="ticketQuantity_B" class="ticketQuantity">
+                                          </select>
+                                        </th>
+                                        <th style="width: 30%;">
+                                          <h6>兒童</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>
+                                          <h6>票數</h6>
+                                          <select id="ticketQuantity_C" class="ticketQuantity">
+                                          </select>
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th style="width: 30%;">
+                                          <h6>博愛</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>
+                                          <h6>票數</h6>
+                                          <select id="ticketQuantity_D1" class="ticketQuantity">
+                                          </select>
+                                        </th>
+                                        <th style="width: 30%;">
+                                          <h6>博愛<br>(陪同者)</h6>
+                                          <i class="fa-solid fa-ticket fa-4x"></i>
+                                          <h6>票數</h6>
+                                          <select id="ticketQuantity_D2" class="ticketQuantity">
+                                          </select>
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                  </table>
+                                </div>
+                              </form> 
+                
+                <li>訂單編號：
+                    <ul>
+                        <li>Check your spelling</li>
+                        <li>Go to the main site and search again</li>
+                        <li><a href="javascript:history.back()">Go back to the previous page</a></li>
+                    </ul>
+                </li>
+
+                <li>Go to the main site and search again</li>
+                <li><a href="javascript:history.back()">Go back to the previous page</a></li>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="footer">
+            <div class="contact"><i class="sign call">Tip: </i>
+                <p class="marquee">If you think this is a server error, please contact the system administrator.</p>
+            </div>
+
+            <p class="copyright">&copy; 2013 Redfrost.com</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
