@@ -102,8 +102,8 @@
             }
 
             .container {
-                max-width: 468px;
-                _width: 468px;
+                max-width: 1500px;
+                width: 1500px;
                 margin: 0 auto;
             }
             
@@ -170,7 +170,7 @@
             
             /* Glass cover */
             body:before {         
-                background: -moz-linear-gradient(-40deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.1) 40%, rgba(10,14,10,0.09) 40%, rgba(255,255,255,0.2) 90%); /* FF3.6+ */
+                background: -moz-linear-gradient(-100deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.1) 40%, rgba(10,14,10,0.09) 40%, rgba(255,255,255,0.2) 90%); /* FF3.6+ */
                 background: -webkit-linear-gradient(-40deg, rgba(255,255,255,0.09) 0%,rgba(255,255,255,0.1) 40%,rgba(10,14,10,0.09) 40%,rgba(255,255,255,0.2) 90%); /* Chrome10+,Safari5.1+ */            
                 background: -o-linear-gradient(-40deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.1) 40%, rgba(10,14,10,0.09) 40%, rgba(255,255,255,0.2) 90%); /* Opera 11.10+ */
                 background: -ms-linear-gradient(-40deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.1) 40%, rgba(10,14,10,0.09) 40%, rgba(255,255,255,0.2) 90%); /* IE10+ */
@@ -189,7 +189,7 @@
                 width: 1500px;
             }                           
                    
-            /* Cover holder */            
+            /* 外周釘Cover holder */            
               #header:before, #header:after, .copyright:before, .copyright:after {
                     background: -moz-linear-gradient(-40deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 50%, #0A0E0A 50%, #FFFFFF 100%); /* FF3.6+ */
                     background: -webkit-linear-gradient(-40deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 50%, #0A0E0A 50%, #FFFFFF 100%); /* Chrome10+,Safari5.1+ */            
@@ -197,7 +197,7 @@
                     background: -ms-linear-gradient(-40deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 50%, #0A0E0A 50%, #FFFFFF 100%); /* IE10+ */
                     background: linear-gradient(-220deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 50%, #0A0E0A 50%, #FFFFFF 100%);
 
-                    border: 0px solid #999999;
+                    border: 0px solid #ff7272;
                     border-radius: 10px 10px 10px 10px;
                     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset, 0 0 3px #000000;
                     content: " ";
@@ -225,40 +225,11 @@
                        
                        
              /* Animation */          
-                    .sign.alert {
-                        -webkit-animation: blink 1s infinite;
-                        -moz-animation:    blink 1s infinite;
-                        -ms-animation:     blink 1s infinite;
-                         animation:        blink 1s infinite;
-                    }
-                    
-                    @-webkit-keyframes blink {
-                       0% { opacity: 0.1; }
-                       50% { opacity: 1; }
-                       100% { opacity: 0.1; }  
-                    }
-                    
-                    @-moz-keyframes blink {
-                       0% { opacity: 0.1; }
-                       50% { opacity: 1; }
-                       100% { opacity: 0.1; }  
-                    }
-                    
-                    @-ms-keyframes blink {
-                       0% { opacity: 0.1; }
-                       50% { opacity: 1; }
-                       100% { opacity: 0.1; }  
-                    }
-                    
-                    @keyframes blink {
-                       0% { opacity: 0.1; }
-                       50% { opacity: 1; }
-                       100% { opacity: 0.1; }            
-                    }
+    ㄋ */
 
 
             /* Marquee Animation */                    
-                    #footer, .marquee { overflow: hidden; }
+                    /* #footer, .marquee { overflow: hidden; }
             
                     .marquee {
                         -webkit-animation: scroll 10s ease infinite;
@@ -292,6 +263,6 @@
                         50% { transform:translateX(0%); } 
                         90% { opacity:1;}  
                         100% { opacity:0;}            
-                    }            
+                    }             */
 
 

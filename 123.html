@@ -29,7 +29,7 @@
   <!-- TODO: 客製化Bootstrap CSS -->
   <link rel="stylesheet" href="/tickets/css/bootstrap.css">
   <!-- 使用style.css -->
-  <link rel="stylesheet" href="/tickets/css/order.css">
+  <link rel="stylesheet" href="/tickets/css/123.css">
   <!-- 使用日期輪用 -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -73,303 +73,362 @@
       <div>
         <h1 class="loader ">
           <img src="/tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
-          <span class="m">訂</span>
+          <span class="m">付</span>
           <span class="m">&nbsp;</span>
-          <span class="m">票</span>
+          <span class="m">款</span>
           <span class="m">&nbsp;</span>
-          <span class="m">頁</span>
+          <span class="m">資</span>
           <span class="m">&nbsp;</span>
-          <span class="m">面</span>
+          <span class="m">訊</span>
           <span class="m"></span>
         </h1>
 
       </div>
     </div>
-    <div class="container">
-      <img id="ship-bottle" class="rounded-circle mt  my-element" src="/tickets/img/瓶中船.png" alt="user photo"
-        style="width: 50%; margin-bottom: 20%;">
-      <!-- <a class="btn btn-outline-primary" href="">Link</a> -->
-    </div>
 
 
 
-    <header id="header" class="jumbotron text-center bg-dark">
-      
+    <header id="header" class=" glass jumbotron text-center bg-dark">
+      <div  id="glass" class="container">
 
-        <section id="featuresSection" class="py-5 bg-secondary" style="border-radius: 15px;">
-          <div class="container">
-
-            <!-- <h1 class=" mb-5 text-center text-white">訂票資訊</h1> -->
-            <!-- 設定row內的區塊置中對齊 -->
+        <section id="featuresSection" class="py-5" style="border-radius: 15px;">
+          <div >
             <div class="row justify-content-center">
-
-              <nav class="nav nav-pills flex-row justify-content-center" id="myNav">
-                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">訂票資訊</button>
-
-              </nav>
-
               <div class="col-12">
-
                 <section id="introSection" class="py-5">
-                  <!-- <div class="container  mb-5" style="background-color: rgba(213, 194, 155, 0.663); padding-top: 5%; padding-bottom: 5%;padding-left: 5%;padding-right: 5%;">
-                            -->
-                  <div class="mb-2">
+                  <div class="container  mb-5">
                     <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
                       <article id="articleA" class="my-3 tab-pane">
-                        <main>
-                          <div class="py-5 text-center text-primary">
+                        <main id="inner">
+                          <div class=" py-5 text-center text-white">
                             <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-                            <h2>訂票資訊2</h2>
+                            <h2>付款成功</h2>
+                            <h3 class="quote">"Payment Successful"</h3>
+                            <p class="author"><em>~金廈海運~</em></p>
                           </div>
 
+                          <div  class="col-md-12 col-lg-12 order-md-last">
 
-
-                          <!-- <div class="row g-5 text-primary">
-                            <div class="col-md-5 col-lg-4 order-md-last">
-                              <div class="py-5 text-center text-primary">
-                                <h2>訂票資訊3</h2>
-                              </div>
-                              <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge bg-primary rounded-pill">訂票數:3</span>
+                            <!-- <h4 class="d-flex justify-content-center align-items-center mb-3">
+                                <span class="text-primary">購票人資料</span>
                               </h4> -->
-                          <!-- 訂票資訊 -->
-                          <!-- <ul class="list-group mb-3">
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                  <h5 class="my-0">時間:</h5>
-                                  <span class="my-0" id="time-show">(時間顯示)</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                  <h5 class="my-0">船班:</h5>
-                                  <span class="my-0" id="shipID-show">(船班顯示)</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                  <h5 class="my-0">票數:</h5>
-                                  <h4 class="d-flex justify-content-between align-items-center">
-                                    <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
-                                  </h4>
-                                </li>
-                              </ul> -->
-                          <!-- old 票種選擇 -->
-                          <!-- <form id="contact" action="" method="get">
-                                <div class="col table-responsive">
-                                  <table class="table text-center">
-                                    <thead>
-                                      <tr>
-                                        <h3>票種選擇</h3>
-                                        <h5 class="my-0"></h5>
-                                        <ul class="list-group mb-3">
-                                          <li class="list-group-item d-flex justify-content-between lh-sm">
-                                            <h4 class="d-flex justify-content-between align-items-center bg-primary">
-                                              <span class="badge bg-primary  text-white">(未選擇)</span>
-                                            </h4>
-                                            <h4 class="d-flex justify-content-center align-items-center">
-                                              <span class="badge   text-white" id="tickets_unchoosed"></span>
-                                            </h4>
-                                            <h4 class="d-flex justify-content-between align-items-center">
-                                              <span class="badge bg-primary  text-white" id="tickets_choosed">張票</span>
-                                            </h4>
-                                          </li>
-                                          <li id="custom-alert_2" class="justify-content-between lh-sm mb-2 mt-2"
-                                            role="alert"
-                                            style="position: relative; background-color: rgb(255, 100, 86); display:none ;">
-                                            <p class="text-white">票種選擇已超過預定票數!</p>
-                                            <i id="alert-result_i_2" class="fa-solid fa-circle-xmark fa-2x text-white"
-                                              style="position: absolute; top: 5%; right: 0%; "></i>
-                                          </li>
-                                        </ul>
-                                      </tr>
-                                      <tr>
-                                        <th style=" width: 30%;">
-                                          <h6>全票</h6>
-                                          <i class="fa-solid fa-ticket fa-4x"></i>
-                                          <h6>票數</h6>
-                                          <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
-                                          </select>
-                                        </th>
-                                        <th style="width: 30%;">
-                                          <h6>敬老</h6>
-                                          <i class="fa-solid fa-ticket fa-4x"></i>
-                                          <h6>票數</h6>
-                                          <select id="ticketQuantity_B" class="ticketQuantity">
-                                          </select>
-                                        </th>
-                                        <th style="width: 30%;">
-                                          <h6>兒童</h6>
-                                          <i class="fa-solid fa-ticket fa-4x"></i>
-                                          <h6>票數</h6>
-                                          <select id="ticketQuantity_C" class="ticketQuantity">
-                                          </select>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th style="width: 30%;">
-                                          <h6>博愛</h6>
-                                          <i class="fa-solid fa-ticket fa-4x"></i>
-                                          <h6>票數</h6>
-                                          <select id="ticketQuantity_D1" class="ticketQuantity">
-                                          </select>
-                                        </th>
-                                        <th style="width: 30%;">
-                                          <h6>博愛<br>(陪同者)</h6>
-                                          <i class="fa-solid fa-ticket fa-4x"></i>
-                                          <h6>票數</h6>
-                                          <select id="ticketQuantity_D2" class="ticketQuantity">
-                                          </select>
-                                        </th>
-                                      </tr>
-                                    </thead>
-                                  </table>
-                                </div>
-                              </form> -->
-                          <!-- </div> -->
+  
+                              <div class="col-lg-12 align-self-center">
+                                <form id="contact" action="" method="get">
+                                  <div class="row">
 
+                                    
 
-
-                          <div class="col-md-12 col-lg-12 order-md-last" style="background-color: rgb(249, 249, 250);">
-
-                            <h4 class="d-flex justify-content-center align-items-center mb-3">
-                              <span class="text-primary">購票人資料</span>
-                            </h4>
-
-                            <div class="col-lg-12 align-self-center"
-                              style="background-image: url(/tickets/img/contact-form-bg.png);">
-                              <form id="contact" action="" method="get">
-                                <div class="row">
-
-                                  <!-- 訂票資訊 -->
-                                  <div class="col-lg-6">
-                                    <div class="py-5 text-center text-primary">
-                                      <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-                                      <h2>訂票資訊</h2>
-                                    </div>
-                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-
-                                      <!-- <span class="badge bg-primary rounded-pill">訂票數:3</span> -->
-                                    </h4>
-                                    <ul class="list-group mb-3">
-
-
-                                      </li>
-                                      <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <h5 class="my-0">時間:</h5>
-                                        <span class="my-0" id="time-show">(時間顯示)</span>
-                                      </li>
-                                      <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <h5 class="my-0">船班:</h5>
-                                        <span class="my-0" id="shipID-show">(船班顯示)</span>
-                                      </li>
-                                      <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <h5 class="my-0">票數:</h5>
-                                        <h4 class="d-flex justify-content-between align-items-center">
-                                          <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
-                                        </h4>
-                                      </li>
-                                    </ul>
-                                  </div>
-
-                                  <!-- 票種選擇 -->
-                                  <div class="col-lg-6">
-                                    <div class="col table-responsive">
-                                      <table class="table text-center">
-                                        <thead>
-                                          <tr>
-                                            <h3>票種選擇</h3>
-                                            <h5 class="my-0"></h5>
-                                            <ul class="list-group mb-3">
-                                              <li id="custom-alert" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
-                                                role="alert"
-                                                style="position: relative; background-color: rgb(255, 196, 191); display: none;">
-                                                <h5 id="alert-result" class="text-red"></h5>
-                                                <i  class=" alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
-                                                  style="position: absolute; top: 5%; right: 0%;"></i>
-                                              </li>
-                                              <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                <div
-                                                  class="d-flex justify-content-between align-items-center bg-primary">
-                                                  <h2 class=" bg-primary  text-white">(未選擇)</h2>
-                                                </div>
-                                                <div class="d-flex justify-content-center align-items-center">
-                                                  <h2 class=" rounded-pill main-button text-white "
-                                                    id="tickets_unchoosed"></h2>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                  <h2 class=" bg-primary  text-white" id="tickets_choosed">張票</h2>
-                                                </div>
-                                              </li>
-                                              <li id="custom-alert_2" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
-                                                role="alert"
-                                                style="position: relative; background-color: rgb(255, 100, 86); display:none ;">
-                                                <p class="text-white">票種選擇已超過預定票數!</p>
-                                                <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
-                                                  style="position: absolute; top: 5%; right: 0%; "></i>
-                                              </li>
+  
+                                    <!-- 訂票資訊 -->
+                                    <div class="col-lg-6 text-white "> 
+                                      <ul class="list-group mb-3">
+                                        <li class="list-group-item d-flex justify-content-center lh-sm">
+                                          
+                                          <div class="py-5 text-center text-primary">
+                                              <h2>訂票資訊</h2>
+                                              <div class="table-responsive">
+                                                <table class="table text-center">
+                                                  <thead>
+                                                    <tr>
+                                                      <th style="width: 50%;" id="etime">訂單編號：</th>
+                                                      <th style="width: 50%;">[[${orderNum}]]</th>
+                                                    </tr>
+                                                  </thead>
+                                                
+                                                  <tbody id="tickets-result" class="text-center">
+                                                    
+                                                    <tr>
+                                                        <th>航班代碼：</th>
+                                                        <th>[[${pno}]]</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>出發日期：</th>
+                                                        <th>[[${tdate}]]</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>出發時間：</th>
+                                                        <th>[[${btime}]]</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>票數：</th>
+                                                        <th>[[${btime}]]</th>
+                                                    </tr>
+                                                    
+                                                  </tbody>
+            
+                                                </table>
+                                              </div>
+                                            </div>
+  
+                                        </li>
+                                        
+                                      </ul>
+                                    </div> 
+  
+                                    <!-- 聯絡人資料 -->
+                                     <div class="col-lg-6 text-white ">
+                                  
+                                      <ul class="list-group mb-3">
+  
+                                        <li class="list-group-item d-flex justify-content-center lh-sm">
+                                          
+                                          <div class="py-5 text-center text-primary">
+                                              <h2>聯絡人資料</h2>
+                                              <div class="table-responsive">
+                                                <table class="table text-center justify-content-between ">
+                                                  <thead>
+                                                    <tr>
+                                                      <th style="width: 40%;" id="etime">姓名:</th>
+                                                      <th style="width: 60%;">王曉明</th>
+                                                    </tr>
+                                                  </thead>
+                                                
+                                                  <tbody id="tickets-result" class="text-center">
+                                                    
+                                                    <tr>
+                                                        <th>身分證/護照號碼：</th>
+                                                        <th>A123456789</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>手機/行動電話:</th>
+                                                        <th>0912-123-123</th>
+                                                    </tr>
+                                                    
+                                                  </tbody>
+            
+                                                </table>
+                                              </div>
+                                            </div>
+  
+                                        </li>
+                                        
+                                      </ul>
+                                    </div> 
+  
+                                    <div class="col-lg-12 text-white ">
+                                        <aside class="bd-aside   align-self-start mb-3  px-2">
+                                            <h3 class="mt-5 pb-3 mb-4 border-bottom">付款細項</h3>
+                                            <!-- <h5 class=" pb-3 mb-4 ">(請下拉選單)</h5> -->
+                                            <button class="btn d-inline-flex align-items-center collapsed border-0"
+                                            data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                                            aria-controls="contents-collapse">請下拉選單</button>
+                                            <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                            <li class="my-2">
+                                            <div class="table-responsive">
+                                                <form id="contact" class="get_form bg-light">
+                                                    <h2 id="contact" class=" section-title mb-3 text-center text-secondary">付款細項</h2>
+                                                    
+                
+                                                    <div class="table-responsive">
+                                                    <table class="table text-center">
+                                                        <thead>
+                                                        <tr>
+                                                            
+                                                            <th style="width: 20%;" id="shipID0">票種</th>
+                                                            <th style="width: 10%;" id="shipID0">X</th>
+                                                            <th style="width: 20%;" id="btime">張</th>
+                
+                                                            <th style="width: 10%;" id="etime">X</th>
+                                                            <th style="width: 20%;" id="qty">票價</th>
+                                                            
+                                                            <th style="width: 10%;" id="etime">=</th>
+                                                            <th style="width: 20%;">價格</th>
+                                                        </tr>
+                                                        </thead>
+                                                    
+                                                        <tbody id="tickets-result" class="text-center">
+                                                        <tr>
+                                                            <td>全票</td>
+                                                            <td>×</td>
+                                                            <td>2</td>
+                                                            <td>×</td>
+                                                            <td>50</td>
+                                                            <td>=</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>敬老票</td>
+                                                            <td>×</td>
+                                                            <td>2</td>
+                                                            <td>×</td>
+                                                            <td>50</td>
+                                                            <td>=</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>兒童票</td>
+                                                            <td>×</td>
+                                                            <td>2</td>
+                                                            <td>×</td>
+                                                            <td>50</td>
+                                                            <td>=</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>愛心票</td>
+                                                            <td>×</td>
+                                                            <td>2</td>
+                                                            <td>×</td>
+                                                            <td>50</td>
+                                                            <td>=</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>愛心陪同票</td>
+                                                            <td>×</td>
+                                                            <td>2</td>
+                                                            <td>×</td>
+                                                            <td>50</td>
+                                                            <td>=</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <td ></td>
+                                                            <td ></td>
+                                                            <td ></td>
+                                                            <td ></td>
+                                                            <td >總金額:</td>
+                                                            
+                                                            <td>$</td>
+                                                            <td >100</td>
+                                                        </tr>
+                
+                
+                        
+                                                        </tbody>
+                
+                                                    </table>
+                                                    </div>
+                
+                                                </form>
+                                            </div>
+                                            </li>
                                             </ul>
-                                          </tr>
-                                          <tr>
-                                            <th style=" width: 30%;">
-                                              <h6 class="find_title">全票</h6>
-                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                              <h6>票數</h6>
-                                              <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
-                                                <!-- <option value="" selected>0</option>
-                                                      <option value="1">1</option> -->
-                                              </select>
-                                            </th>
-                                            <th style="width: 30%;">
-                                              <h6 class="find_title">敬老</h6>
-                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                              <h6>票數</h6>
-                                              <select id="ticketQuantity_B" class="ticketQuantity">
-                                              </select>
-                                            </th>
-                                            <th style="width: 30%;">
-                                              <h6 class="find_title">兒童</h6>
-                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                              <h6>票數</h6>
-                                              <select id="ticketQuantity_C" class="ticketQuantity">
-                                              </select>
-                                            </th>
-                                          </tr>
-                                          <tr>
-                                            <th style="width: 30%;">
-                                              <h6 class="find_title">博愛</h6>
-                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                              <h6>票數</h6>
-                                              <select id="ticketQuantity_D1" class="ticketQuantity">
-                                              </select>
-                                            </th>
-                                            <th style="width: 30%;">
-                                              <h6 class="find_title">博愛<br>(陪同者)</h6>
-                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                              <h6>票數</h6>
-                                              <select id="ticketQuantity_D2" class="ticketQuantity">
-                                              </select>
-                                            </th>
-                                          </tr>
-                                        </thead>
-                                      </table>
+                                        </aside>
+                                        
                                     </div>
+  
+  
+                                    <!--送出按鈕 -->
+                                    <div class="col-lg-12 ">
+                                      <button class="main-button" id="articleA_send">
+                                        <h3>返回首頁</h3>
+                                      </button>
+                                    </div>
+  
                                   </div>
+                                </form>
+                              </div>
 
-
-
-
-                                  <!--送出按鈕 -->
-                                  <div class="col-lg-12 ">
-                                    <button class="main-button pt-3" id="articleA_send">
-                                      <h3>送出</h3>
-                                    </button>
-                                  </div>
-
-                                </div>
-                              </form>
-                            </div>
+                            
 
                           </div>
-                    </div>
 
-                    </main>
+                     
+                       
+                          <!-- <aside class="bd-aside   align-self-start mb-3  px-2">
+                            <h3 class="mt-5 pb-3 mb-4 border-bottom">付款細項</h3>
+                            <button class="btn d-inline-flex align-items-center collapsed border-0"
+                            data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                            aria-controls="contents-collapse">請下拉選單</button>
+                            <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                            <li class="my-2">
+                            <div class="table-responsive">
+                                <form id="contact" class="get_form bg-light">
+                                    <h2 id="contact" class=" section-title mb-3 text-center text-secondary">付款細項</h2>
+                                    
+
+                                    <div class="table-responsive">
+                                    <table class="table text-center">
+                                        <thead>
+                                        <tr>
+                                            
+                                            <th style="width: 20%;" id="shipID0">票種</th>
+                                            <th style="width: 10%;" id="shipID0">X</th>
+                                            <th style="width: 20%;" id="btime">張</th>
+
+                                            <th style="width: 10%;" id="etime">X</th>
+                                            <th style="width: 20%;" id="qty">票價</th>
+                                            
+                                            <th style="width: 10%;" id="etime">=</th>
+                                            <th style="width: 20%;">價格</th>
+                                        </tr>
+                                        </thead>
+                                    
+                                        <tbody id="tickets-result" class="text-center">
+                                        <tr>
+                                            <td>全票</td>
+                                            <td>×</td>
+                                            <td>2</td>
+                                            <td>×</td>
+                                            <td>50</td>
+                                            <td>=</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>敬老票</td>
+                                            <td>×</td>
+                                            <td>2</td>
+                                            <td>×</td>
+                                            <td>50</td>
+                                            <td>=</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>兒童票</td>
+                                            <td>×</td>
+                                            <td>2</td>
+                                            <td>×</td>
+                                            <td>50</td>
+                                            <td>=</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>愛心票</td>
+                                            <td>×</td>
+                                            <td>2</td>
+                                            <td>×</td>
+                                            <td>50</td>
+                                            <td>=</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>愛心陪同票</td>
+                                            <td>×</td>
+                                            <td>2</td>
+                                            <td>×</td>
+                                            <td>50</td>
+                                            <td>=</td>
+                                            <td>100</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td ></td>
+                                            <td ></td>
+                                            <td ></td>
+                                            <td ></td>
+                                            <td >總金額:</td>
+                                            
+                                            <td>$</td>
+                                            <td >100</td>
+                                        </tr>
+
+
+        
+                                        </tbody>
+
+                                    </table>
+                                    </div>
+
+                                </form>
+                            </div>
+                            </li>
+                            </ul>
+                        </aside> -->
+
+                        </main>
 
 
 
@@ -377,106 +436,7 @@
                     <section class="container text-white" id="buyers_list">
                       <div  id="buyers_list">
 
-                      <!-- <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
-                        <h3 class="mt-5 pb-3 mb-4 border-bottom">資料填寫</h3>
-                        <h5 class=" pb-3 mb-4 ">(請下拉選單)</h5>
-                        <nav class="small" id="toc">
-                          <ul class="list-unstyled" > -->
-
-                            <!-- 用JS產生 旅客資料 -->
-                            <li class="my-2">
-                              <button class="btn d-inline-flex align-items-center collapsed border-0 mb-3 text-green"
-                                data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
-                                aria-controls="contents-collapse">旅客(1)表單</button>
-                              <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
-                                
-                                <div class="table-responsive text-green">
-                                  <form id="contact" class="get_form" action="" method="get"
-                                    style="background-image: url(/tickets/img/contact-form-bg.png);">
-                                    <table>
-                                      <div id="planpickered" class="mt-4 pt-3 pb-1 bg-green" >
-                                        <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
-                                    </table>
-
-
-                                    <div class="row mt-5 justify-content-between"
-                                      style="padding-left: 2%; padding-right: 2%;">
-                                      <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
-                                        <div class="row" style="padding-left: 10%;">
-                                          <input type="text" class="form-control col" id="orderName" placeholder="姓名"
-                                            value="" required>
-                                          <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
-                                        </div>
-                                        <input type="text" class="form-control" id="orderPhone" placeholder="電話"
-                                          value="" required>
-                                        <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
-                                          required readonly>
-                                        <input type="text" class="form-control" id="email" placeholder="email" value=""
-                                          required>
-                                      </div>
-
-                                      <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
-                                        style="padding-left: 5%; padding-right: 5%;">
-
-                                        <div class="row justify-content-start"
-                                          style="padding-left: 30%; padding-right: 10%;">
-
-                                          <div
-                                            style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
-                                            <input type="checkbox" id="Orderer_check"
-                                              style="width: 20px; height: 20px; margin-top: 20%;">
-
-                                            <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
-                                              &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
-                                            </h4>
-
-                                          </div>
-
-                                        </div>
-
-                                        <div class="table-responsive justify-content-center">
-                                          <table class=" text-center text-primary ">
-                                            <thead>
-                                              <tr>
-                                                <th style=" width: 35%;">
-                                                  <i class="fa-solid fa-earth-americas fa-4x"></i>
-                                                  <h6>國籍</h6>
-                                                  <select class="form-select" id="country" required>
-                                                    <option value="">台灣</option>
-                                                    <option>香港</option>
-                                                    <option>大陸</option>
-                                                    <option>其他</option>
-                                                  </select>
-                                                </th>
-                                                <th style="width: 40%;margin-right: 10%;">
-                                                  <i class="fa-solid fa-venus-mars fa-4x"></i>
-                                                  <h6>性別</h6>
-                                                  <select class="form-select" id="gender" required>
-                                                    <option value="">女</option>
-                                                    <option>男</option>
-                                                  </select>
-                                                </th>
-                                                <th style="width: 40%; padding-top: 10%;">
-                                                  <i class="fa-solid fa-cake-candles fa-4x"></i>
-                                                  <h6>出生日期</h6>
-                                                  <div>
-                                                    <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
-                                                      value="">
-                                                  </div>
-                                                </th>
-                                              </tr>
-                                            </thead>
-                                          </table>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </form>
-                                </div>
-                              </ul>
-                            </li>
-
-
-      
+                  
 
                      
 
@@ -496,6 +456,7 @@
 
     </header>
   </header>
+
   <!-- footer -->
   <footer id="footer" class="pt-5 bg-secondary text-white">
     <div class="container">
