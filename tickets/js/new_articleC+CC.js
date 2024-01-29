@@ -20,7 +20,7 @@ $(document).ready(function () {
     if (!search_hx_phone && !search_hx_id) {
       // 如果電話和id都未選擇，顯示相應的警告消息
       $("#alert-text-c").text("欄位未填寫");
-      $("#custom-alert-c").show();
+      show
       return; // 阻止進一步執行
     } else if (!search_hx_phone) {
       // 如果出發日期未選擇，顯示相應的警告消息
@@ -368,7 +368,6 @@ $(document).ready(function () {
     //獲取使用者於article CC選擇的訂單資訊   //
 
 
-
     //傳給後端的資料//
     let get_order_phone = $("#hx-phone-result").text();
     let get_order_id = $("#hx-id-resultd").text();
@@ -393,29 +392,13 @@ $(document).ready(function () {
       tdate:Refund_tdate,
       btime:Refund_btime,
       orderName:get_order_Name
-
     };
 
 
-    //顯示於 Modal //
-    // $("#Refund_orderNum").text("訂單編號：" + Refund_orderNum);
-    // $("#Refund_pno").text("航班代碼：" + Refund_pno);
-    // $("#Refund_tdate").text("出發日期：" + Refund_tdate);
-    // $("#Refund_btime").text("出發時間：" + Refund_btime);
-
-
-    // let hx_orderName = $("#hx-orderName").text();
-    // $("#Modal-orderName").text(  hx_orderName  );
-
-    //$("#RefundModal-orderName").text($("#hx-orderName").text());
-
-
-    //呼叫get_detail方法其他買票人資料 顯示於modal//
     get_detail_refund(detail);
 
     $("#RefundModal-ticCount").text("票數：" + detail.ticCount);
     //取得票數
-    
 
 
   })

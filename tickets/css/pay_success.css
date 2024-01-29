@@ -21,7 +21,7 @@ h2 {
 }
 
 h3 {
-    margin: 30px 0 8px;
+    margin: 10px 0 8px;
     text-align: center;
     font-weight: 500;
     line-height: 1.4;
@@ -644,10 +644,13 @@ footer ul {
 =============================================*/
 
 form#contact {
+  
+
   margin-left: 0px;
   position: relative;
   z-index: 2;
   /* background-image: url(/tickets/img/contact-form-bg.png); */
+  background-color: rgb(203, 201, 201);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -657,8 +660,10 @@ form#contact {
   margin-bottom: 35px;
   margin-top: 35px;
 
-  border-top:    1px solid #999;
+  border-top:    2px solid #100f0f;
   border-bottom: 1px solid #999;
+  
+  
 
 }
 
@@ -683,31 +688,30 @@ form#contact input {
 
 
 
-form#contact input::placeholder {
-  color: #afafaf;
-}
 
 form#contact button {
-  display: inline-block;
-  background-color: #ff695f;
-  font-size: 15px;
-  font-weight: 400;
-  color: #fff;
-  text-transform: capitalize;
-  padding: 12px 25px;
-  border-radius: 23px;
-  letter-spacing: 0.25px;
-  border: none;
-  outline: none;
-  transition: all .3s;
+    display: inline-block;
+    background-color:#20bb94;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 23px;
+    letter-spacing: 0.25px;
+    border: none;
+    outline: none;
+    transition: all .3s;
+  }
+  
+  form#contact button:hover {
+    background-color: rgb(248, 41, 41);
+  }
+  
+
+  table th, .table td {
+    font-size: 25px;
 }
-
-form#contact button:hover {
-  background-color: #03a4ed;
-}
-
-
-
 
 
 
@@ -733,7 +737,40 @@ form#contact button:hover {
   padding-top: 5px;
   padding: 0px 0px;
   margin-bottom: 3px;
-}
+} 
+
+.main_button {
+    display: inline-block;
+    background-color: rgb(203, 201, 201);
+    font-size: 15px;
+    font-weight: 300;
+    /* color: #f33d3d; */
+    color: #21896f;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 23px;
+    letter-spacing: 0.25px;
+    border: none;
+    outline: none;
+    transition: all .3s;
+  }
+  
+  .main_button:hover {
+      color: #f33d3d;
+  }
+
+  .bg {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+  }
+  
+  .bg:hover {
+    background-color: #03a4ed;
+  }
+  
 
 
 /*=============================================
