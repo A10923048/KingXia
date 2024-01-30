@@ -52,12 +52,14 @@ $(document).ready(function () {
 
   // 获取 URL 中的参数值
   var shipid = url.searchParams.get("shipid");
+  var btime = url.searchParams.get("btime");
   var ticket = url.searchParams.get("ticket");
   var timeid = url.searchParams.get("time");
 
 
   // 将参数值插入到相应的元素中
   $("#shipID-show").text(shipid);
+  $("#clock-show").text(btime);
   $("#showtickets").text("訂票數:" + ticket);
   $("#time-show").text(timeid);
 
@@ -976,37 +978,61 @@ $(document).ready(function () {
 
   let send_all = function (package){
 
+    console.log("又進入");
+
     $("#carousel-inner").empty();//不累加清空
 
 
-    // 顯示於 Modal 訂票資訊欄位 //
+    // // 顯示於 Modal 訂票資訊欄位 //
     $("#m_shipid").text(package.shipId0);
     $("#m_date").text(timeid);
-    $("#m_time").text(timeid);
-    $("#m_tCount").text(qty);
+    $("#m_time").text(btime);
+    $("#m_tCount").text(package.qty);
 
 
 
-    // 顯示於 Modal 訂票人欄位 //
-    $("#order_name").text(orderName);
-    $("#order_id").text(orderUid);
-    $("#order_pno").text(orderPhone);
+    // // 顯示於 Modal 訂票人欄位 //
+    $("#order_name").text(package.orderName);
+    $("#order_id").text(package.orderUid);
+    $("#order_pno").text(package.orderPhone);
 
 
 
 
-    $.each(tickets, function (index, value) {
+    $.each(package.tickets, function (index, value) {
 
       let active ="";
       if (index==0){
          active =" active";
-
       }
+
+      let Tcode= value.ticketCode;
+      // "01" = value.ticketCode
+      console.log("Tcode="+Tcode);
+
+      let ticket = {
+        "01":"全票",
+        "03":"敬老",
+        "04":"兒童",
+        "05":"博愛"
+      }
+
+    let tT = ticket[Tcode];
+    console.log("tT="+tT);
+      // 
+      // value.ticketCode=01;
+      // ticket.01= "全票"
+
+      // 01=value.ticketCode
+
+      //+ticket.Tcode+
+      //ticket.01 = 全票
 
       $("#carousel-inner").append(
 
         '<div class="carousel-item'+active+'" data-slide-number="'+index+'">' +
-        '<h2>'+value.uid+'</h2>' +
+        '<h2>'+tT+'</h2>' +
+         
         '<div class="col">' +
             '<div class="gallery-text">' +
                 '<h4>' +
@@ -1054,9 +1080,10 @@ $(document).ready(function () {
     '</div>'
 
       )
-    
+     
     
     })
+    console.log("結束");
   }
 
 
@@ -1104,35 +1131,35 @@ $(document).ready(function () {
       let Ta = true;
 
       //第一步:檢查送出表格內的值是否為空 //
-      if (!orderName) {
-        Ta = false;
-        text_show = text_show + "姓名:未填寫<br>"
-        //   //"姓名:未填寫"=""+"姓名:未填寫"
-      }
-      // if (!orderPhone) {
+       if (!orderName) {
+      //   Ta = false;
+      //   text_show = text_show + "姓名:未填寫<br>"
+      //   //   //"姓名:未填寫"=""+"姓名:未填寫"
+       }
+       if (!orderPhone) {
       //   Ta = false;
       //   text_show = text_show + "手機/行動電話:未填寫<br>"
-      // }
-      // if (!orderId) {
+       }
+       if (!orderId) {
       //   Ta = false;
       //   text_show = text_show + "身分證/護照號碼:未填寫<br>"
-      // }
-      // if (!email) {
+       }
+       if (!email) {
       //   Ta = false;
       //   text_show = text_show + "email:未填寫<br>"
-      // }
-      // if (!country) {
+       }
+       if (!country) {
       //   Ta = false;
       //   text_show = text_show + "國籍:未填寫<br>"
-      // }
-      // if (!gender) {
+       }
+      if (!gender) {
       //   Ta = false;
       //   text_show = text_show + "性別:未填寫<br>"
-      // }
-      // if (!date) {
-      //   Ta = false;
-      //   text_show = text_show + "出生日期:未填寫<br>"
-      // }
+       }
+       if (!date) {
+         Ta = false;
+         text_show = text_show + "出生日期:未填寫<br>"
+       }
        
       //第二步:內容檢查 //
       if (!Ta) {
@@ -1148,52 +1175,52 @@ $(document).ready(function () {
 
         //確認票種符合資格:敬老票+兒童票判斷
         if (ticketcode == "03") {
-          console.log("進入敬老票判斷");
+           console.log("進入敬老票判斷");
 
-          let age = calculate_Age(date);
-          console.log("回傳Age:" + age);
+        //   let age = calculate_Age(date);
+        //   console.log("回傳Age:" + age);
 
-          if (age < 65) {
+        //   if (age < 65) {
 
-            console.log("進入:回傳Age< 65判斷式");
+        //     console.log("進入:回傳Age< 65判斷式");
 
-            text_show = text_show + "年齡條件不符，請重新選擇票種<br>"
+        //     text_show = text_show + "年齡條件不符，請重新選擇票種<br>"
 
-            Ta = false;
-            $(this).find(".alert-text").html(text_show);
-            $(this).find(".custom-alert").show();
-          }
+        //     Ta = false;
+        //     $(this).find(".alert-text").html(text_show);
+        //     $(this).find(".custom-alert").show();
+        //  }
 
-          //兒童票判斷
-        } 
-        else if (ticketcode == "04") {
+          
+                //兒童票判斷
+       } else if (ticketcode == "04") {
           console.log("進入兒童票判斷");
 
-          let age = calculate_Age(date);
+        //   let age = calculate_Age(date);
 
-          console.log("回傳年齡值:" + age);
+        //   console.log("回傳年齡值:" + age);
 
-          if (age < 2) {
-            console.log("回傳年齡值不足2歲");
+        //   if (age < 2) {
+        //     console.log("回傳年齡值不足2歲");
 
-            text_show = text_show + "年齡不足2歲，不需購票<br>，請重新選擇票種<br>"
+        //     text_show = text_show + "年齡不足2歲，不需購票<br>，請重新選擇票種<br>"
 
-            Ta = false;
-            $(this).find(".alert-text").html(text_show);
-            $(this).find(".custom-alert").show();
+        //     Ta = false;
+        //     $(this).find(".alert-text").html(text_show);
+        //     $(this).find(".custom-alert").show();
 
-            console.log("回傳年齡值不足2歲: " + $(this));
+        //     console.log("回傳年齡值不足2歲: " + $(this));
 
-          } else if (age > 11) {
+        //   } else if (age > 11) {
 
-            console.log("回傳年齡值 > 11 : " + $(this));
-            Ta = false;
-            text_show = text_show + "年齡已超過兒童票適用年齡，<br>請重新選擇票種<br>"
-            $(this).find(".alert-text").html(text_show);
-            $(this).find(".custom-alert").show();
-          }
+        //     console.log("回傳年齡值 > 11 : " + $(this));
+        //     Ta = false;
+        //     text_show = text_show + "年齡已超過兒童票適用年齡，<br>請重新選擇票種<br>"
+        //     $(this).find(".alert-text").html(text_show);
+        //     $(this).find(".custom-alert").show();
+        //   }
 
-        }
+         }
 
         // 檢查'非'陪同者的資料
         if (!ticket_title.includes("陪同者")) {
@@ -1203,11 +1230,11 @@ $(document).ready(function () {
             if (country == "TWN") {
             // verifyId(orderId);
             if (!verifyId(orderId)) {
-              //console.log("regex.test(orderId):"+regex.test(orderId));
-              //console.log得出的結果為T/F
-              //因此判斷式 (當結果=F)的寫法有兩種
-              //方法一:(!regex.test(orderId))
-              //方法二:(regex.test(orderId)==false)
+            //   //console.log("regex.test(orderId):"+regex.test(orderId));
+            //   //console.log得出的結果為T/F
+            //   //因此判斷式 (當結果=F)的寫法有兩種
+            //   //方法一:(!regex.test(orderId))
+            //   //方法二:(regex.test(orderId)==false)
 
               Ta = false;
               text_show = text_show + "身分證/護照欄位格式不正確，請重新輸入後再送出！<br>"
@@ -1217,20 +1244,20 @@ $(document).ready(function () {
               $(this).find(".custom-alert").show();
             }
 
-            // if (!verifyPhone (orderPhone)) {
+            if (!verifyPhone (orderPhone)) {
              
-            //   Ta = false;
-            //   console.log("无效的电话号码");
+              Ta = false;
+              console.log("无效的电话号码");
 
-            //   text_show = text_show + "手機號碼欄位格式不正確，請重新輸入後再送出！<br>"
-
-
-            //   $(this).find(".alert-text").html(text_show);
-            //   $(this).find(".custom-alert").show();
-            // }
+              text_show = text_show + "手機號碼欄位格式不正確，請重新輸入後再送出！<br>"
 
 
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
             }
+
+
+             }
 
             //判斷:國外 ID格式
             else {
@@ -1247,67 +1274,65 @@ $(document).ready(function () {
             }
 
             //判斷:email格式
-            // if (email != "") {
-            // let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email != "") {
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            // if (!emailRegex.test(email)) {
-            //   Ta = false;
-            //   text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
+            if (!emailRegex.test(email)) {
+              Ta = false;
+              text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
 
-            //   $(this).find(".alert-text").html(text_show);
-            //   $(this).find(".custom-alert").show();
-            //   console.log("Ta = email格式不正確" + T);
-            // }
-            // }
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+              console.log("Ta = email格式不正確" + T);
+            }
+            }
        
-        }  
+         }  
         //檢查陪同者的資料
-        else {
-          console.log(ticket_title + "進入:檢查陪同者的資料");
+         else {
+           console.log(ticket_title + "進入:檢查陪同者的資料");
           //因為(陪同者)的ID 由 博愛票帶入所以 只要驗證博愛票就好，避免被 陪同者不同國籍產生錯誤結果
 
           //判斷:email格式
-          // if (email != "") {
-          //   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email != "") {
+             let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-          //   if (!emailRegex.test(email)) {
-          //     Ta = false;
-          //     text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
+            if (!emailRegex.test(email)) {
+              Ta = false;
+              text_show = text_show + "email格式不正確，請重新輸入後再送出！<br>"
 
-          //     $(this).find(".alert-text").html(text_show);
-          //     $(this).find(".custom-alert").show();
-          //     console.log("Ta = email格式不正確" + T);
-          //   }
-          //  }
+              $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+              console.log("Ta = email格式不正確" + T);
+            }
+            }
           
           //判斷:國內 手機格式
-          // if (country == "TWN") {         
-          //       if (!verifyPhone (orderPhone)) {
+           if (country == "TWN") {         
+                 if (!verifyPhone (orderPhone)) {
              
-          //     Ta = false;
-          //     console.log("无效的电话号码");
+              Ta = false;
+              console.log("无效的电话号码");
 
-          //     text_show = text_show + "手機號碼欄位格式不正確，請重新輸入後再送出！<br>"
+              text_show = text_show + "手機號碼欄位格式不正確，請重新輸入後再送出！<br>"
 
-          //     $(this).find(".alert-text").html(text_show);
-          //     $(this).find(".custom-alert").show();
-          //       }
-          //   }
+               $(this).find(".alert-text").html(text_show);
+              $(this).find(".custom-alert").show();
+               }
+             }
 
           //以上都無誤再去掉orderId"提示字"
-          if(Ta){
-              //切割orderId 避免輸出 "此欄位會自動帶入，毋需填寫"
+            if(Ta){
+          // //     //切割orderId 避免輸出 "此欄位會自動帶入，毋需填寫"
               orderId = orderId.split("(")[0];
               console.log("切割後的陪同者orderId:" + orderId);
-          }
+           }
 
-        }
+         }
 
         //(以上檢查無誤後)整理:搭船人的資料
         if (Ta) {
-
           console.log("搭船人的資料格式:" + Ta);
-
           let send_item = {
             name: orderName,
             uid: orderId,
@@ -1318,18 +1343,16 @@ $(document).ready(function () {
             country: country,
             ticketCode: ticketcode
           };
-          console.log("send_item:" + send_item);
+
+          
           send_list.push(send_item);
+
         }
         //(以上檢查有誤)不進入下一步:彙整買票人資料的動作
         else {
           T = false
         }
-
       }
-
-
-
     })
 
 
@@ -1402,7 +1425,10 @@ $(document).ready(function () {
             tickets: send_list
           };
 
-          $("#DetailModal").show(send_all(package) );
+
+          send_all(package);
+
+          $("#DetailModal").modal('show');
 
 
           console.log(JSON.stringify(package, null, 2));
@@ -1411,12 +1437,33 @@ $(document).ready(function () {
         }
       }
     })
-
+    console.log("頭");
+    //移動到位上方的警示窗
     focus_custom_alert();
-
+    console.log("尾");
 
   })
 })
+
+
+
+
+$(document).on("click", "#modaltop_btn", function () {
+
+  console.log("modaltop_btn 按鈕被觸發了");
+  $("#DetailModal").modal('hide');
+
+})
+
+$(document).on("click", "#modalfooter_btn", function () {
+
+  console.log("modalfooter_btn 按鈕被觸發了");
+  $("#DetailModal").modal('hide');
+
+})
+
+
+
 
 
 

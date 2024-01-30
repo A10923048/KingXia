@@ -146,8 +146,12 @@
 
                                       </li>
                                       <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <h5 class="my-0">時間:</h5>
-                                        <span class="my-0" id="time-show">(時間顯示)</span>
+                                        <h5 class="my-0">出發日期:</h5>
+                                        <span class="my-0" id="time-show">(日期顯示)</span>
+                                      </li>
+                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">出發時間:</h5>
+                                        <span class="my-0" id="clock-show">(時間顯示)</span>
                                       </li>
                                       <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <h5 class="my-0">船班:</h5>
@@ -253,7 +257,7 @@
                                     </button>
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DetailModal">
                                       開啟模態對話框
-                                  </button>
+                                    </button>
                                   </div>
 
                                 </div>
@@ -851,8 +855,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <!-- <h5 class="modal-title" id="exampleModalLabel">主要訂票人資料顯示</h5> -->
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+        
+          <button type="button" id="modaltop_btn" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
           </button>
         </div>
 
@@ -935,13 +940,13 @@
                             </ul>
                         </div>
                         <!-- 付款細項 -->
-                        <div class=" col-lg-12">
+                        <!-- <div class=" col-lg-12">
                             <aside
                                 class="bd-aside   align-self-start mb-3  px-2">
                                 <h3
                                     class="mt-2 pb-3 mb-4  text-white">
                                 </h3>
-                                <!-- <h5 class=" pb-3 mb-4 ">(請下拉選單)</h5> -->
+                                <h5 class=" pb-3 mb-4 ">(請下拉選單)</h5>
                                 <button
                                     class="btn d-inline-flex align-items-center collapsed border-0"
                                     data-bs-toggle="collapse"
@@ -1013,7 +1018,7 @@
                                     </li>
                                 </ul>
                             </aside>
-                        </div>
+                        </div> -->
 
                         
                         <!-- introbox -->
@@ -1034,7 +1039,7 @@
                                       <!-- lightbox -->
                                           <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner" id="carousel-inner">
-                                              <!-- <div class="carousel-item active" data-slide-number="0">
+                                              <div class="carousel-item active" data-slide-number="0">
                                                 
                                                 <div class="col">
                                                   <div class="gallery-text">
@@ -1219,7 +1224,7 @@
                                                     
                                                   </div>
                                                 </div>
-                                              </div> -->
+                                              </div> 
                                             </div>
                     
                                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -1261,7 +1266,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="modalfooter_btn" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>

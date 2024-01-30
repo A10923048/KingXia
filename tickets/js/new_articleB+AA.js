@@ -272,7 +272,7 @@ let send_url="https://tickets.kingxia.com.tw";
     // 顯示切割後的結果
     console.log("抓取的日期部分：" + datePart);
     console.log("抓取的時間部分：" + timePart);
- // 迭代datas物件的每一組資料
+    // 迭代datas物件的每一組資料
      Object.entries(datas).forEach(([key, value]) => {
     //   // 獲取每一組資料的stime和tdate
        let stime = value.stime;
@@ -338,7 +338,7 @@ let send_url="https://tickets.kingxia.com.tw";
         "</svg>" +
 
 
-        "<a class='article-button' href='./order.html?shipid=" + key + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "&'>" +
+        "<a class='article-button' href='./order.html?shipid=" + key + "&btime=" + value.btime + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "&'>" +
 
 
 
@@ -463,6 +463,10 @@ let send_url="https://tickets.kingxia.com.tw";
 })
 
 
-
+// "<a class='article-button' href='./order.html?
+// "shipid=" + key + 
+// "&btime=" + key + 
+// "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + 
+// "&time=" + $("#searchingdate-result").text().split("：")[1] + "'>" 
 
 
