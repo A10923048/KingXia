@@ -323,7 +323,9 @@ let send_url="https://tickets.kingxia.com.tw";
     $.each(Z, function (key, value) {
       $("#tickets-result").append(
         "<tr>" +
-        "<td scope='row' class='text-start'>" + key + "</td>" +
+        " <td><svg class='bi' width='24' height='24'>" +
+        "<use xlink:href='#check' />" +
+        " </svg>" + key  + "</td>" +
         " <td><svg class='bi' width='24' height='24'>" +
         "<use xlink:href='#check' />" +
         " </svg>" + value.btime + "</td>" +

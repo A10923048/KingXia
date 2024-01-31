@@ -247,9 +247,73 @@ button:focus {
     .nav-tab {
       font-size: 3vw;
     }
+
   }
   
-  @media screen only (min-width: 360px) {
+
+    /* 在屏幕寬度小於 770 像素時應用的樣式 */
+    @media screen and (max-width: 770px) {
+      tr th:first-child {
+        color: #eb3030; /* 你的颜色值 */
+        font-size: 18px; /* 你的字体大小值 */
+      }
+      tr th:first-child {
+        color: #eb3030; /* 你的颜色值 */
+        font-size: 18px; /* 你的字体大小值 */
+      }
+      tr th:nth-child(2){
+        color: #3036eb; /* 你的颜色值 */
+        font-size: 18px; /* 你的字体大小值 */
+      }
+  
+    }
+
+
+     /* 在屏幕寬度小於 770 像素時應用的樣式 */
+     @media screen and (max-width: 520px) {
+      tr th:first-child {
+        color: #eb3030; /* 你的颜色值 */
+        font-size: 15px; /* 你的字体大小值 */
+      }
+      tr th:first-child {
+        color: #eb3030; /* 你的颜色值 */
+        font-size: 15px; /* 你的字体大小值 */
+      }
+      tr th:nth-child(2){
+        color: #3036eb; /* 你的颜色值 */
+        font-size: 15px; /* 你的字体大小值 */
+      }
+  
+    }
+
+    /* 在屏幕寬度小於 460 像素時應用的樣式 */
+    @media screen and (max-width: 460px) {
+      tr th:first-child {
+        color: #eb3030; /* 你的颜色值 */
+        font-size: 12px; /* 你的字体大小值 */
+      }
+      tr th:first-child {
+        color: #eb3030; /* 你的颜色值 */
+        font-size: 12px; /* 你的字体大小值 */
+      }
+      tr th:nth-child(2){
+        color: #3036eb; /* 你的颜色值 */
+        font-size: 12px; /* 你的字体大小值 */
+      }
+  
+    }
+
+   /* 在屏幕寬度小於 360 像素時應用的樣式 */
+  @media screen and (max-width: 359px) {
+    h1.loader span {
+      font-size: 10vw; /* 在小螢幕上的字體大小 */
+      letter-spacing: 0.2vw; /* 在小螢幕上的字母間距 */
+    }
+
+  }
+
+
+  @media screen and (min-width: 360px) {
     .nav h1,
     .slider h1 {
       font-size: 8vw;
@@ -265,6 +329,7 @@ button:focus {
       font-size: 1.2vw;
     }
   }
+
   .background {
     position: absolute;
     height: 100vh;
@@ -353,10 +418,6 @@ button:focus {
   
 
 /* NEW NAVEND */
-
-
-
-
 
 
 
@@ -831,11 +892,142 @@ form#contact button {
     position: absolute;
     width: 110%;
 
-
-
-
 }                           
 
 
+ /* 在屏幕寬度小於 360 像素時應用的樣式 */
+ @media screen and (max-width: 800px) {
 
 
+  #featuresSection:before {   
+      content: " ";
+      height: 120%;
+      margin: -20% 0% 0% -55%;
+      position: absolute;
+      width: 110%;
+  } 
+  .font-rwd h2 {
+     
+      font-size: 30px; /* 你的字体大小值 */
+  }
+  
+  .font-rwd h3 {
+      
+      font-size: 22px; /* 你的字体大小值 */
+  }
+
+
+  .main_button {
+      width: 120px;
+      display: inline-block;
+      background-color: #95e7f6;
+      /* font-size: 15px; */
+      /* font-weight: 400; */
+      color: #f33d3d;
+      text-transform: capitalize;
+      padding: 15px 15px;
+      border-radius: 23px;
+      letter-spacing: 0.5px;
+      border: none;
+      outline: none;
+      transition: all .3s;
+    }
+
+  .main_button h3{
+      font-size: 18px;
+      font-weight: 200;
+    }
+
+    .main_buttons:hover {
+      background-color: #03a4ed;
+    }
+
+}               
+
+/* 在屏幕寬度小於 700 像素時應用的樣式 */
+/* @media screen and (max-width: 700px) {
+
+  #inner  {
+
+       width: 110%;
+      margin-left: 0px;
+      z-index: 2;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+      
+      border-radius: 5px;
+      margin-bottom: 35px;
+      margin-top: 35px;
+  
+    }
+
+  #featuresSection:before {   
+      content: " ";
+      height: 115%;
+      margin: -18% 0% -0% -55%;
+      position: absolute;
+      width: 110%;
+  } 
+  .font-rwd h2 {
+     
+      font-size: 30px; 
+  }
+  
+  .font-rwd h3 {
+      
+      font-size: 22px; 
+  }
+
+  .main_button h3{
+      font-size: 18px;
+      font-weight: 100;
+    }
+
+}                */
+
+
+/* 在屏幕寬度小於 700 像素時應用的樣式 */
+@media screen and (max-width: 620px) {
+
+  #inner  {
+
+       width: 110%;
+      margin-left: 0px;
+      z-index: 2;
+      /* background-image: url(/tickets/img/contact-form-bg.png); */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+      
+      border-radius: 5px;
+      margin-bottom: 35px;
+      margin-top: 35px;
+  
+    }
+
+  #featuresSection:before {   
+      content: " ";
+      height: 115%;
+      margin: -18% 0% -0% -55%;
+      position: absolute;
+      width: 110%;
+  } 
+  .font-rwd h2 {
+     
+      font-size: 30px; /* 你的字体大小值 */
+  }
+  
+  .font-rwd h3 {
+      
+      font-size: 22px; /* 你的字体大小值 */
+  }
+
+  .main_button h3{
+      font-size: 18px;
+      font-weight: 100;
+    }
+
+} 

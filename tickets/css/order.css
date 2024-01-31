@@ -1262,45 +1262,6 @@ form#contact button:hover {
 /*=============================================
 =                   icon重疊                 =
 =============================================*/
-.background-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e0efeb; /* 替換為您希望的背景顏色 */
-  height: 100px; /* 設置容器的高度 */
-}
-
-.background-icons i {
-  color: transparent; /* 隱藏文字內容 */
-  margin: 0 10px; /* 設置圖標之間的間距 */
-}
-.background-icon {
-  font-size: 100px; /* 設定字體大小 */
-  background-size: cover; /* 調整背景大小以覆蓋整個元素 */
-  background-position: center; /* 調整背景位置為中心 */
-  /* 可根據需要添加其他樣式 */
-}
-
-
-/* 產生重疊效果 */
-.icon-container {
-  position: relative; /* 設定相對位置，使 z-index 生效 */
-}
-
-.background-icon, .foreground-icon {
-  position: absolute; /* 設定絕對位置，相對於包含它們的相對位置元素 */
-}
-
-.background-icon {
-  font-size: 100px; /* 設定字體大小 */
-  z-index: 1; /* 將底層圖示的 z-index 設為較小的值 */
-}
-
-.foreground-icon {
-  font-size: 80px; /* 設定字體大小 */
-  z-index: 2; /* 將表層圖示的 z-index 設為較大的值，使它位於底層圖示上方 */
-  /* 可根據需要添加其他樣式 */
-}
 
 
 

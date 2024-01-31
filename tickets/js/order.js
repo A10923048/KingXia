@@ -345,7 +345,7 @@ $(document).ready(function () {
       'aria-controls="contents-collapse">' + ticket_title + '旅客(' + (parseInt(i) + parseInt(1)) + ')表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse' + i + ii + '">' +
       '<div class="table-responsive id="contact"  text-green">' +
-      '<form  id="contact"  action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">'
+      '<form  id="contact"  action="" method="get" style="background-image: url(/tickets/img/contact-form-bg-2.png);">'
       ;
 
     let htmlString_mid1 =
@@ -474,7 +474,7 @@ $(document).ready(function () {
       'aria-controls="contents-collapse">聯絡人-表單</button>' +
       '<ul class="list-unstyled ps-3 collapse" id="contents-collapse-order">' +
       '<div class="table-responsive">' +
-      '<form id="contact" class="get_orderform" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg.png);">' +
+      '<form id="contact" class="get_orderform" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg-2.png);">' +
       '<table>' +
       '<div id="planpickered" class="mt-4 pt-3 pb-1 bg-primary ">' +
       '<h2 id="contact" class="ticket_title section-title mb-3 text-center text-white">聯絡人-資料填寫</h2>' +
