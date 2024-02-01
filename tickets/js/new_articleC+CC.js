@@ -18,8 +18,8 @@ $(document).ready(function () {
 
                                               if (!search_hx_phone && !search_hx_id) {
                                                 // 如果電話和id都未選擇，顯示相應的警告消息
-                                                $("#alert-text-c").text("欄位未填寫");
-                                                show
+                                                $("#alert-text-c").text("電話/身分證 欄位未填寫");
+                                                $("#custom-alert-c").show();
                                                 return; // 阻止進一步執行
                                               } else if (!search_hx_phone) {
                                                 // 如果出發日期未選擇，顯示相應的警告消息
@@ -28,7 +28,7 @@ $(document).ready(function () {
                                                 return; // 阻止進一步執行
                                               } else if (!search_hx_id) {
                                                 // 如果票數未選擇，顯示相應的警告消息
-                                                $("#alert-text-c").text("身分證欄位未填寫");
+                                                $("#alert-text-c").text("欄位未填寫");
                                                 $("#custom-alert-c").show();
                                                 return; // 阻止進一步執行
                                               } else {
@@ -41,56 +41,84 @@ $(document).ready(function () {
                                                               orderUid: search_hx_id,
                                                               };
                                                               console.log(JSON.stringify(send_item, null, 2));
-
+                                                              
+                                                            //   let send = {
+                                                            //     "orderUid": "idWrong"//(頁面輸入)
+                                                            //  }
+                                                          
+                                                            
+                                                            
 
                                                               //                ajax使用後刪除整段                 //
-                                                              if(send!==null){
-                                                                  
-                                                                                  // 使用捕獲的數據更新#articleCC
-                                                                                  $("#hx-phone-result").text("主要訂票人電話：" + search_hx_phone);
-                                                                                  $("#hx-id-result").text("主要訂票人身分證/護照號碼：" + search_hx_id);
-                                                                              
-                                                                                  // 重定向到#articleCC
-                                                                                  window.location.href = "#articleCC";
-                                                                              
-                                                                                  //方法:抓取買票人所有訂票紀錄 
-                                                                                  get_send(send);
-                                                                              
-                                                                                  // 顯示#articleCC
-                                                                                  $("#articleCC").show();
-                                                          
-                                                                              }else{
-                                                                                      $("#alert-text-c").text("查無此訂票人");
-                                                                                      $("#custom-alert-c").show();
-                                                                                      return; // 阻止進一步執行
-                                                                                    }
+                                                              if(send!=null){
+                                                                console.log("有進入null");
+                                                                                if (send == "phoneWrong" ) {
+                                                                                    console.log("有進入phoneWrong");
+                                                                                    $("#alert-text-c").text("電話 輸入錯誤");
+                                                                                    $("#custom-alert-c").show();
+                                                                                    return; // 阻止進一步執行
+                                                                                }else if(send == "idWrong" ) {
+                                                                                    $("#alert-text-c").text("身分證/護照號碼 輸入錯誤");
+                                                                                    $("#custom-alert-c").show();
+                                                                                    return; // 阻止進一步執行
+                                                                                }else{
+                                                                                    // 使用捕獲的數據更新#articleCC
+                                                                                    $("#hx-phone-result").text("主要訂票人電話：" + search_hx_phone);
+                                                                                    $("#hx-id-result").text("主要訂票人身分證/護照號碼：" + search_hx_id);
+                                                                                
+                                                                                    // 重定向到#articleCC
+                                                                                    window.location.href = "#articleCC";
+                                                                                
+                                                                                    //方法:抓取買票人所有訂票紀錄 
+                                                                                    get_send(send);
+                                                                                
+                                                                                    // 顯示#articleCC
+                                                                                    $("#articleCC").show();
+                                                                                  }
+                                                                            }
+                                                              else{ //接收到null時
+                                                                      $("#alert-text-c").text("查無此訂票人");
+                                                                      $("#custom-alert-c").show();
+                                                                      return; // 阻止進一步執行
+                                                                    }
                                                           
                                                               //傳給後台
                                                               // $.ajax({
                                                               //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
                                                               //   type: "POST", // 使用 POST 请求发送数据
-                                                              //   contentType:"application/json",//指定格式
-                                                              //   date:JSON.stringify(send_item),//塞入整理好的資料
+                                                              //   //contentType:"application/json",//指定格式(這次不用)
+                                                              //   data:send_item,//塞入整理好的資料
                                                               //   success: function (send) {    // 後台回傳
-                                                                                              // if(send!==null){
-                                                                                              //                   // 使用捕獲的數據更新#articleCC
-                                                                                              //                   $("#hx-phone-result").text("主要訂票人電話：" + search_hx_phone);
-                                                                                              //                   $("#hx-id-result").text("主要訂票人身分證/護照號碼：" + search_hx_id);
-                                                                                                            
-                                                                                              //                   // 重定向到#articleCC
-                                                                                              //                   window.location.href = "#articleCC";
-                                                                                                            
-                                                                                              //                   //方法:抓取買票人所有訂票紀錄 
-                                                                                              //                   get_send(send);
-                                                                                                            
-                                                                                              //                   // 顯示#articleCC
-                                                                                              //                   $("#articleCC").show();
-                                                                                            
-                                                                                              //                 }else{
-                                                                                              //                         $("#alert-text-c").text("查無此訂票人");
-                                                                                              //                         $("#custom-alert-c").show();
-                                                                                              //                         return; // 阻止進一步執行
-                                                                                              //                       }
+                                                                                              // if(send!=null){
+                                                                                              //                   if (send == "phoneWrong" ) {
+                                                                                              //                       console.log("有進入phoneWrong");
+                                                                                              //                       $("#alert-text-c").text("電話 輸入錯誤");
+                                                                                              //                       $("#custom-alert-c").show();
+                                                                                              //                       return; // 阻止進一步執行
+                                                                                              //                   }else if(send == "idWrong" ) {
+                                                                                              //                       $("#alert-text-c").text("身分證/護照號碼 輸入錯誤");
+                                                                                              //                       $("#custom-alert-c").show();
+                                                                                              //                       return; // 阻止進一步執行
+                                                                                              //                   }else{
+                                                                                              //                       // 使用捕獲的數據更新#articleCC
+                                                                                              //                       $("#hx-phone-result").text("主要訂票人電話：" + search_hx_phone);
+                                                                                              //                       $("#hx-id-result").text("主要訂票人身分證/護照號碼：" + search_hx_id);
+                                                                                                                
+                                                                                              //                       // 重定向到#articleCC
+                                                                                              //                       window.location.href = "#articleCC";
+                                                                                                                
+                                                                                              //                       //方法:抓取買票人所有訂票紀錄 
+                                                                                              //                       get_send(send);
+                                                                                                                
+                                                                                              //                       // 顯示#articleCC
+                                                                                              //                       $("#articleCC").show();
+                                                                                              //                     }
+                                                                                              //               }
+                                                                                              // else{ //接收到null時
+                                                                                              //         $("#alert-text-c").text("查無此訂票人");
+                                                                                              //         $("#custom-alert-c").show();
+                                                                                              //         return; // 阻止進一步執行
+                                                                                              //       }                         
 
                                                               //                              },
                                                               //   error: function (error) {
@@ -651,7 +679,15 @@ $(document).ready(function () {
   }
 
   //            訂票人 訂票紀錄查詢 歷史資料 (null值)           //
-  // let send = null;
+  //  let send = null;
+
+  //            訂票人 訂票紀錄查詢 歷史資料 (idWrong值)           //
+  //if(send == "idWrong") //(頁面輸入)
+
+ 
+  //            訂票人 訂票紀錄查詢 歷史資料 (phoneWrong值)           //
+  // let send =  "phoneWrong" ; //(頁面輸入) 
+  
   
 
 

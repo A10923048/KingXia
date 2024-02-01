@@ -128,14 +128,14 @@ button:focus {
   span:hover {
     color: #ff7c02;
     font-weight: 500;
-    font-size: 2.2vw;
+    /* font-size: 2.2vw; */
     margin-top: 5px;
     
   }
   
-  a {
+  /* a {
     text-decoration: none;
-  }
+  } */
   
   .nav-container {
 
@@ -218,7 +218,7 @@ button:focus {
         letter-spacing: 0.2vw; /* 在小螢幕上的字母間距 */
       }
     }
-    
+
   
   .background {
     position: absolute;
@@ -1200,46 +1200,28 @@ footer ul {
 /*=============================================
 =                   icon重疊                 =
 =============================================*/
-.background-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e0efeb; /* 替換為您希望的背景顏色 */
-  height: 100px; /* 設置容器的高度 */
+
+table ul {
+  list-style-type: decimal; /* 大寫羅馬數字 */
+  /* 或使用 lower-roman 來顯示小寫羅馬數字 */
 }
 
-.background-icons i {
-  color: transparent; /* 隱藏文字內容 */
-  margin: 0 10px; /* 設置圖標之間的間距 */
-}
-.background-icon {
-  font-size: 100px; /* 設定字體大小 */
-  background-size: cover; /* 調整背景大小以覆蓋整個元素 */
-  background-position: center; /* 調整背景位置為中心 */
-  /* 可根據需要添加其他樣式 */
+.decimal ul {
+  list-style-type: decimal; /* 大寫羅馬數字 */
+  /* 或使用 lower-roman 來顯示小寫羅馬數字 */
 }
 
 
-/* 產生重疊效果 */
-.icon-container {
-  position: relative; /* 設定相對位置，使 z-index 生效 */
+
+table.circle ul {
+  list-style-type: circle; /* 或者你想要的其他樣式 */
+  
 }
 
-.background-icon, .foreground-icon {
-  position: absolute; /* 設定絕對位置，相對於包含它們的相對位置元素 */
+table.circle tbody {
+  text-align: left;
+ 
 }
-
-.background-icon {
-  font-size: 100px; /* 設定字體大小 */
-  z-index: 1; /* 將底層圖示的 z-index 設為較小的值 */
-}
-
-.foreground-icon {
-  font-size: 80px; /* 設定字體大小 */
-  z-index: 2; /* 將表層圖示的 z-index 設為較大的值，使它位於底層圖示上方 */
-  /* 可根據需要添加其他樣式 */
-}
-
 
 
 /*=============================================
@@ -1263,3 +1245,78 @@ footer ul {
   max-width: 80%; /* 可根據需要調整模態框的大小 */
 }
 
+/*=============================================
+=                   日曆 2           =
+=============================================*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+}
+.datepicker {
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  overflow: hidden;
+}
+.datepicker .datepicker-header {
+  height: 250px;
+  background-image: url('/tickets/img/小三通/初日號-卡通圖.png');
+  background-position: center center;
+  background-size: 100%;
+}
+.datepicker .ui-datepicker-inline {
+  padding: 30px;
+}
+.datepicker .ui-datepicker-header {
+  text-align: center;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-prev, .datepicker .ui-datepicker-header .ui-datepicker-next {
+  display: inline;
+  float: left;
+  cursor: pointer;
+  font-size: 1.4em;
+  padding: 0 10px;
+  margin-top: -10px;
+  color: #ccc;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-next {
+  float: right;
+}
+.datepicker .ui-datepicker-calendar {
+  width: 100%;
+  text-align: center;
+}
+.datepicker .ui-datepicker-calendar thead {
+  color: #ccc;
+}
+.datepicker .ui-datepicker-calendar tr th, .datepicker .ui-datepicker-calendar tr td {
+  padding-bottom: 0.5em;
+}
+.ddatepicker .ui-datepicker-calendar a {
+  color: #444;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+    width: 35px;
+    height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.datepicker .ui-datepicker-calendar .ui-state-highlight {
+  border-color: #d24d57;
+  color: #d24d57;
+}
