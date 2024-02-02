@@ -101,12 +101,7 @@ let send_url="https://tickets.kingxia.com.tw";
     let searchingdate = $("#datePicker").val();
     let ticketQuantity = $("#ticketQuantity").val();
 
-    // 當"查詢"按鈕被點擊時，取得當下時間
-    //  let currentDateTime = new Date();
-
-
-
-
+   
     // 获取当前日期
     currentDate = searchingdate;
 
@@ -298,25 +293,20 @@ let send_url="https://tickets.kingxia.com.tw";
         //如果符合用戶選擇的日期資料
         // Z.push({key:value})
 
-        if (datePart == $("#searchingdate-result").text().split("：")[1]) {
-          //  如果選擇日期是今天進入下面的判斷式
-          if (value.stime > timePart) {
-            //進一步判斷 有沒有超過 
+          if (datePart == $("#searchingdate-result").text().split("：")[1]) {
+              //  如果選擇日期是今天進入下面的判斷式
+                if (value.stime > timePart) {
+                  //進一步判斷 有沒有超過 
+                  Z[key] = value;
+                }
+          }else{
             Z[key] = value;
           }
-        }else{
-          Z[key] = value;
-        }
       }
 
 
     })
-    
-
-
-
-
-
+ 
     $("#tickets-result").empty();//不累加清空
 
     //將資料顯示於articleAA

@@ -1,7 +1,7 @@
 
   
 /*=============================================
-=                   日曆 2           =
+=                   日曆 1           =
 =============================================*/
 *, *:before, *:after {
     box-sizing: border-box;
@@ -59,7 +59,7 @@ body {
 .datepicker .ui-datepicker-calendar tr th, .datepicker .ui-datepicker-calendar tr td {
     padding-bottom: 0.5em;
 }
-.ddatepicker .ui-datepicker-calendar a {
+.datepicker .ui-datepicker-calendar a {
     color: #444;
     text-decoration: none;
     display: block;
@@ -75,3 +75,8 @@ body {
     border-color: #d24d57;
     color: #d24d57;
 }
+
+ 
+/*=============================================
+=                   日曆 2           =
+=============================================*/

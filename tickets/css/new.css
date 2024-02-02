@@ -1246,7 +1246,7 @@ table.circle tbody {
 }
 
 /*=============================================
-=                   日曆 2           =
+=                   日曆            =
 =============================================*/
 *, *:before, *:after {
   box-sizing: border-box;
@@ -1268,13 +1268,15 @@ body {
   overflow: hidden;
 }
 .datepicker .datepicker-header {
-  height: 250px;
-  background-image: url('/tickets/img/小三通/初日號-卡通圖.png');
+  height: 22rem;
+  background-image: url('../img/小三通/初日號-卡通圖.png');
   background-position: center center;
   background-size: 100%;
 }
 .datepicker .ui-datepicker-inline {
+  width: 23rem;
   padding: 30px;
+  /* margin-left: 5%; */
 }
 .datepicker .ui-datepicker-header {
   text-align: center;
@@ -1304,13 +1306,13 @@ body {
 .datepicker .ui-datepicker-calendar tr th, .datepicker .ui-datepicker-calendar tr td {
   padding-bottom: 0.5em;
 }
-.ddatepicker .ui-datepicker-calendar a {
+.datepicker .ui-datepicker-calendar a {
   color: #444;
   text-decoration: none;
   display: block;
   margin: 0 auto;
-    width: 35px;
-    height: 35px;
+  width: 35px;
+  height: 35px;
   line-height: 35px;
   border-radius: 50%;
   border: 1px solid transparent;
@@ -1320,3 +1322,4 @@ body {
   border-color: #d24d57;
   color: #d24d57;
 }
+
