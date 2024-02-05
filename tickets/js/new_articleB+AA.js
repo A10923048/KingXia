@@ -278,8 +278,6 @@ let send_url="https://tickets.kingxia.com.tw";
      });
 
 
-
-
     let Z = {};
     //取符合條件的資料
     //datas=要回圈的範圍，之後=res
@@ -331,8 +329,6 @@ let send_url="https://tickets.kingxia.com.tw";
 
 
         "<a class='article-button' href='./order.html?shipid=" + key + "&btime=" + value.btime + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "&'>" +
-
-
 
         " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true'></i>" +
         " <span class='sr-only'>訂票</span>" +
@@ -453,6 +449,9 @@ let send_url="https://tickets.kingxia.com.tw";
   }
 
 })
+
+//"<a class='article-button' href='./order.html? shipid=" + key + "&btime=" + value.btime + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "&'>" +
+
 
 
 // "<a class='article-button' href='./order.html?

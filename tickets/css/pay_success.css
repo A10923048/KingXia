@@ -304,31 +304,31 @@ button:focus {
     }
 
    /* 在屏幕寬度小於 360 像素時應用的樣式 */
-  @media screen and (max-width: 359px) {
-    h1.loader span {
-      font-size: 10vw; /* 在小螢幕上的字體大小 */
-      letter-spacing: 0.2vw; /* 在小螢幕上的字母間距 */
+    @media screen and (max-width: 359px) {
+      h1.loader span {
+        font-size: 10vw; /* 在小螢幕上的字體大小 */
+        letter-spacing: 0.2vw; /* 在小螢幕上的字母間距 */
+      }
+
     }
 
-  }
 
-
-  @media screen and (min-width: 360px) {
-    .nav h1,
-    .slider h1 {
-      font-size: 8vw;
+    @media screen and (min-width: 360px) {
+      .nav h1,
+      .slider h1 {
+        font-size: 8vw;
+      }
+    
+      .nav h2,
+      .slider h2 {
+        font-size: 2vw;
+        letter-spacing: 0.2vw;
+      }
+    
+      .nav-tab {
+        font-size: 1.2vw;
+      }
     }
-  
-    .nav h2,
-    .slider h2 {
-      font-size: 2vw;
-      letter-spacing: 0.2vw;
-    }
-  
-    .nav-tab {
-      font-size: 1.2vw;
-    }
-  }
 
   .background {
     position: absolute;
@@ -1031,3 +1031,6 @@ form#contact button {
     }
 
 } 
+
+
+

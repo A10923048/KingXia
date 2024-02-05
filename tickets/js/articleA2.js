@@ -1,6 +1,7 @@
 // 網頁的主程式寫在這裡
 $(document).ready(function () {
 
+    
 
     // 票價表-按鈕 open/close
     $("#Tprice").hide();
@@ -27,11 +28,12 @@ $(document).ready(function () {
 
     //日曆-獲取選擇日期
     $(".datepicker").datepicker({
+        
         prevText: '<i class="fa fa-fw fa-angle-left"></i>',
         nextText: '<i class="fa fa-fw fa-angle-right"></i>',
         firstDay: 0,
         onSelect: function (dateText) {
-            console.log("選擇的日期是：" + dateText);
+            console.log("選擇的日期是：" + dateText)
 
             let selectedDate = new Date(dateText);
             let formattedDate = formatDate(selectedDate);
@@ -39,16 +41,16 @@ $(document).ready(function () {
 
             let send_item = {
                 tdate: formattedDate,
-            };
+            }
             console.log(JSON.stringify(send_item, null, 2));
 
 
             //ajax啟用後註解掉
             if (datas != null) {
 
-                console.log("123");
-                //$("#ship-result").empty();//不累加清空
-
+                console.log("datas != null");
+                
+                $("#ship-result").empty();//不累加清空
                 // 使用捕獲的數據更新表單內容
                 $("#date").text("出發日期：" + formattedDate);
 
@@ -59,13 +61,11 @@ $(document).ready(function () {
                 // $("#ship-result").show();
             }
             else { //接收到null時
+                $("#ship_result").hide()
                 $("#ship_unchoose").hide();
                 $("#ship_result_null").show();
                 return; // 阻止進一步執行
             }
-
-
-
 
             //傳給後台
             // $.ajax({
@@ -74,21 +74,25 @@ $(document).ready(function () {
             //   //contentType:"application/json",//指定格式(這次不用)
             //   data:send_item,//塞入整理好的資料
             //   success: function (datas) {    // 後台回傳
-            // if(datas!=null){
-            // 使用捕獲的數據更新表單內容
-            // $("#ship_result_null").hide();
-            // $("#date").text("出發日期：" + formattedDate);
+            // if (datas != null) {
 
-            //       //方法:抓取買票人所有訂票紀錄 
-            //       get_send(send);
+            //     console.log("datas != null");
+            //     $("#ship-result").empty();//不累加清空
 
-            //       // 顯示船班資料
-            //       $("#ship-result").show();
-        }
-        // else{ //接收到null時
-        //         $("#ship_result_null").show();
-        //         return; // 阻止進一步執行
-        //       }                         
+            //     // 使用捕獲的數據更新表單內容
+            //     $("#date").text("出發日期：" + formattedDate);
+
+            //     //方法:抓取買票人所有訂票紀錄 
+            //     show_datas(datas, formattedDate);
+
+            //     // // 顯示船班資料
+            //     // $("#ship-result").show();
+            // }
+            // else { //接收到null時
+            //     $("#ship_unchoose").hide();
+            //     $("#ship_result_null").show();
+            //     return; // 阻止進一步執行
+            // }                      
 
         //                              },
         //   error: function (error) {
@@ -101,10 +105,8 @@ $(document).ready(function () {
         //   }
         // });
 
-
-
-
-    });
+        }
+    })
 
 
     //日期格式轉換
@@ -118,42 +120,72 @@ $(document).ready(function () {
 
     let show_datas = function (datas, formattedDate) {
 
-        let Z = {};
+        
+        
+        
+       //用來測試自己的datas用 與後台連接後要註解
+       //let Z = {};
+        // let unmatchFound = 0; 
+        //let d_length = Object.keys(datas).length;
+        // console.log("datas.length: " + d_length);
+
+        $("#ship-result").empty
 
         $.each(datas, function (key, value) {
+
             console.log("value.tdate: " + value.tdate);
+         
+            // 找到匹配的日期
+            console.log("value.tdate: " + value.tdate);
+            console.log("formattedDate: " + formattedDate);
+            
+                $("#ship-result").append(
+                    '<tr class="ship-result-row">' +
+                    '<td>' + key + '</td>' +
+                    '<td>' + value.btime + '</td>' +
+                    '<td>' + value.etime + '</td>' +
+                    '</tr>'
+                );
+            
 
-            if (value.tdate == formattedDate) {
+            //用來測試自己的datas用 與後台連接後要註解
+            // if (value.tdate == formattedDate) {
 
-                // 找到匹配的日期
-                console.log("value.tdate: " + value.tdate);
-                console.log("formattedDate: " + formattedDate);
-                console.log("value.tdate == formattedDate: " + (value.tdate == formattedDate));
+            //     // 找到匹配的日期
+            //     console.log("value.tdate: " + value.tdate);
+            //     console.log("formattedDate: " + formattedDate);
+            //     console.log("value.tdate == formattedDate: " + (value.tdate == formattedDate));
 
-                Z[key] = value;
+            //     Z[key] = value;
 
+            //     // 添加到表格
+            //     $.each(Z, function (key, value2) {
+            //         // 清空現有的表格內容
 
-                $("#ship-result").empty();
-                // 添加到表格
-                $.each(Z, function (key, value2) {
-                    // 清空現有的表格內容
+            //         $("#ship-result").append(
+            //             '<tr class="ship-result-row">' +
+            //             '<td>' + key + '</td>' +
+            //             '<td>' + value2.btime + '</td>' +
+            //             '<td>' + value2.etime + '</td>' +
+            //             '</tr>'
+            //         );
+            //          unmatchFound = false;
+            //     })
+            // }else {
+            //     unmatchFound += 1;
+            // }
+            //     console.log("unmatchFound : " + unmatchFound );
 
-                    $("#ship-result").append(
-                        '<tr class="ship-result-row">' +
-                        '<td>' + key + '</td>' +
-                        '<td>' + value2.btime + '</td>' +
-                        '<td>' + value2.etime + '</td>' +
-                        '</tr>'
-                    );
-                })
-            } else {
-                console.log("ship-result");
-                $("#ship-result").append($("#ship_result_null").html());
-                $("#ship_unchoose").hide();
-                $("#ship_result_null").show();
+            //     if (unmatchFound == d_length) {
+            //         console.log("unmatchFound 的值 == datas 的量");
+            //         $("#ship-result").append(
+            //             '<tr>' +
+            //             '<td colspan="3">' + "當日無船班" + '</td>' +
+            //             '</tr>'
+            //         );
+            //     }
 
-                //return; // 阻止進一步執行
-            }
+              
 
         });
     };
@@ -171,109 +203,110 @@ $(document).ready(function () {
 
     //////////////////////測試資料如下///////////////////////////
 
-    let datas = {
-        "54035": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1030",
-            "etime": "1200",
-            "stime": "0900",
-            "tdate": "2024-02-04"
-        },
-        "54034": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1030",
-            "etime": "1200",
-            "stime": "1900",
-            "tdate": "2024-02-05"
-        },
-        "54033": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1030",
-            "etime": "1200",
-            "stime": "1000",
-            "tdate": "2024-02-06"
-        },
-        "54066": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1600",
-            "etime": "1730",
-            "stime": "1530",
-            "tdate": "2024-02-07"
-        },
-        "54065": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1600",
-            "etime": "1730",
-            "stime": "1530",
-            "tdate": "2024-02-08"
-        },
-        "54037": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1030",
-            "etime": "1200",
-            "stime": "1000",
-            "tdate": "2024-02-09"
-        },
-        "54036": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1030",
-            "etime": "1200",
-            "stime": "1000",
-            "tdate": "2024-02-10"
-        },
-        "54064": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1600",
-            "etime": "1730",
-            "stime": "1530",
-            "tdate": "2024-02-11"
-        },
-        "54063": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1600",
-            "etime": "1730",
-            "stime": "1530",
-            "tdate": "2024-02-12"
-        },
-        "54062": {
-            "port0": "水頭",
-            "port1": "水頭",
-            "qty": 70,
-            "status": "正常",
-            "btime": "1600",
-            "etime": "1730",
-            "stime": "1530",
-            "tdate": "2024-02-13"
-        }
-    }
+    // let datas = {
+    //     "54035": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1030",
+    //         "etime": "1200",
+    //         "stime": "0900",
+    //         "tdate": "2024-02-04"
+    //     },
+    //     "54034": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1030",
+    //         "etime": "1200",
+    //         "stime": "1900",
+    //         "tdate": "2024-02-05"
+    //     }
+    //     ,
+    //     "54033": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1030",
+    //         "etime": "1200",
+    //         "stime": "1000",
+    //         "tdate": "2024-02-06"
+    //     },
+    //     "54066": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1600",
+    //         "etime": "1730",
+    //         "stime": "1530",
+    //         "tdate": "2024-02-07"
+    //     },
+    //     "54065": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1600",
+    //         "etime": "1730",
+    //         "stime": "1530",
+    //         "tdate": "2024-02-08"
+    //     },
+    //     "54037": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1030",
+    //         "etime": "1200",
+    //         "stime": "1000",
+    //         "tdate": "2024-02-09"
+    //     },
+    //     "54036": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1030",
+    //         "etime": "1200",
+    //         "stime": "1000",
+    //         "tdate": "2024-02-10"
+    //     },
+    //     "54064": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1600",
+    //         "etime": "1730",
+    //         "stime": "1530",
+    //         "tdate": "2024-02-11"
+    //     },
+    //     "54063": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1600",
+    //         "etime": "1730",
+    //         "stime": "1530",
+    //         "tdate": "2024-02-12"
+    //     },
+    //     "54062": {
+    //         "port0": "水頭",
+    //         "port1": "水頭",
+    //         "qty": 70,
+    //         "status": "正常",
+    //         "btime": "1600",
+    //         "etime": "1730",
+    //         "stime": "1530",
+    //         "tdate": "2024-02-13"
+    //     }
+    // }
 
-    //let datas =null;
+    let datas =null;
 
 })
