@@ -23,7 +23,8 @@ body {
 }
 /*form styles*/
 #msform {
-	width: 400px;
+	width:75vw;
+	padding: 0 12vw 0 0;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;

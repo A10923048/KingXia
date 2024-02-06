@@ -1462,11 +1462,6 @@ $(document).on("click", "#modalfooter_btn", function () {
 
 })
 
-
-
-
-
-
 // let send_all = {
 //   "orderName": "13",
 //   "orderPhone": "0912345678",

@@ -110,6 +110,7 @@
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA2')">航班查詢</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleB')">線上訂票</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">紀錄查詢</button>
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleD')">團體訂票</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articletest')">test</button>
               </nav>
 
@@ -303,7 +304,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td>嬰兒</td> 
-                                                                         <td>$1</td> 
+                                                                         <td>$0</td> 
                                                                         <td>0歲以上未滿2歲</td>
                                                                     </tr>
                                                                 </tbody>
@@ -473,8 +474,8 @@
 
 
                         <!-- 修正排版為三項排一排 -->
-                        <div class="row mt-5 mb-5 text-white">
-                          <div class="col-md-4 pt-5 pb-5">
+                        <div class="row mt-5 mb-5 text-white justify-content-center">
+                          <div class="col-lg-4 col-md-3 col-sm-3 pb-5">
                             <!-- <div class="col-md-6 "> -->
                             <div class="intro-box">
                               <label for="plan">
@@ -493,27 +494,50 @@
                             </div>
                           </div>
 
-                          <div class="col-md-4 pt-5 pb-5">
-                            <!-- <div class="col-md-6 "> -->
+                          <div class="col-lg-4 col-md-3  col-sm-3 pb-5">
+                              <!-- hover -->
+                              <!-- <div class="tooltip-container">
+                                <div class="tooltip-btn tooltip-toggle">Tooltip hover</div> 
+                                <div class="tooltip-content">
+                                  <p>Hello from inside the CSS tooltip!</p> 
+                                </div>          
+                              </div> -->
 
-                            <div class="intro-box">
+                              <!-- test -->
+                             
+                              <div class="intro-box ">
+                                
+                                <label for="plan">
+                                  <i class="fa-solid fa-ticket fa-6x"></i>
+                                  <h6>&nbsp;票數選擇:&nbsp;</h6>
+                                </label>
+                                <div class=" tooltip-container " >
+                                    
+                                 <input class="tooltip-btn tooltip-toggle" type="number" min="1" max="15" id="ticketQuantity" value="1">
+                                      張
+                                  <div class="tooltip-content">
+                                    <p>2歲以下嬰兒需要計票，費用另計!</p> 
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- 原版 -->
+                            <!-- <div class="intro-box">
                               <label for="plan">
                                 <i class="fa-solid fa-ticket fa-6x"></i>
                                 <h6>&nbsp;票數選擇:&nbsp;</h6>
                               </label>
                               <div id="Quantity">
-                                <div>
                                   <label for="ticketS">
                                     <input type="number" min="1" max="15" id="ticketQuantity" value="1">
                                     張
                                   </label>
-                                </div>
                               </div>
-                            </div>
+                            </div> -->
 
                           </div>
 
-                          <div class="col-md-4 pt-5 pb-5">
+                          <div class="col-lg-4 col-md-3 col-sm-3  pb-5">
                             <div class="intro-box">
                               <div class="datetimepicker">
                                 <label for="datetime">

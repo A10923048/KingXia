@@ -1,9 +1,55 @@
 $(document).ready(function () {
 
 
+  let orderUid = $("#orderId").text();
+  let orderPhone = $("#orderPhone").text();
+  let orderNum = $("#RefundModal-orderNum").text();
+
+  $("#orderId").remove();
+  $("#orderPhone").remove();
+
+  console.log("orderUid:"+orderUid);
+  console.log("orderPhone:"+orderPhone);
+
+  //傳給後台前格是整理
+  let send_item = {
+    orderUid: orderUid,
+    orderPhone:orderPhone,
+    orderNum: orderNum,
+    }
+  console.log(JSON.stringify(send_item, null, 2));
+
+  
+  //傳給後台後獲得的資料
+          // $.ajax({
+          //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
+          //   type: "POST", // 使用 POST 请求发送数据
+          //   //contentType:"application/json",//指定格式(這次不用)
+          //   data:send_item,//塞入整理好的資料
+          //   success: function (detail) {    // 後台回傳
+                      
+          //     get_detail_refund(detail);
+      //                              },
+      //   error: function (error) {
+      //   // 请求失败时的处理
+      //   console.error("数据发送失败：", error);    
+      // },
+      //   beforeSend: function (xhr) {
+      //     // 添加CSRF令牌到请求头部
+      //     xhr.setRequestHeader(csrfHeader, csrfToken);
+      //   }
+      // });
+
+
 
 
   //            獲取 detail_其他買票人資料 顯示於modal           //
+
+  
+
+
+
+  //////////////////            測試資料                 ///////////////////////////////////////////////////////////
   let detail = {
 
     //詳細訂票紀錄 
@@ -17,10 +63,11 @@ $(document).ready(function () {
         "id": "111111",
         "tname": "王A明",//航班代碼
         "gender": "1030",
+        "birthday": "" ,
         "sbr": "2020/01/01",//(訂票最後時間)
         "email": "123@gmail.com",
         "mobile": "0912345678",
-        "ticnum": "123456",
+        "ticnum": "01",
         "tictype": "全票",
 
       },
@@ -28,86 +75,44 @@ $(document).ready(function () {
         "id": "222222",
         "tname": "王B明",//航班代碼
         "gender": "1030",
+        "birthday": "" ,
         "sbr": "2020/01/01",//(訂票最後時間)
         "email": "456@gmail.com",
         "mobile": "0912-345-678",
-        "ticnum": "123456",
+        "ticnum": "02",
         "tictype": "全票",
       },
       {   //其他搭船人資料
         "id": "333333",
         "tname": "王B明",//航班代碼
         "gender": "1030",
+        "birthday": "" ,
         "sbr": "2020/01/01",//(訂票最後時間)
         "email": "789@gmail.com",
         "mobile": "0912-345-678",
-        "ticnum": "123456",
+        "ticnum": "03",
         "tictype": "全票",
       }
 
     ]
   }
+  ////////////////////////////////////               測試資料                        ///////////////////////////
 
 
-
-  //           抓取 訂票人 所有訂票紀錄  顯示於articleCC         //
-  let send = {
-
-
-    //買票人資料
-    "orderName": "周小寶",
-    "orderPhone": "0912345678",//(頁面輸入)
-    "orderUid": "F197728291",//(頁面輸入)
-
-
-    "orms": [
-      {   //訂單紀錄1
-        "orderNum": "112233",
-        "pno": 54035,//航班代碼
-        "tdate": "2023-11-22",
-        "btime": "1030",
-        "etime": "1200",
-        "stime": "1000",//(訂票最後時間)
-        "port0": "水頭",
-        "port1": "水頭",
-        "sp": true,
-      },
-      {   //訂單紀錄2
-        "orderNum": "112233",
-        "pno": 54035,//航班代碼
-        "tdate": "2023-11-22",
-        "btime": "1030",
-        "etime": "1200",
-        "stime": "1000",//(訂票最後時間)
-        "port0": "水頭",
-        "port1": "水頭",
-        "sp": true,
-      },
-      {   //訂單紀錄3
-        "orderNum": "112233",
-        "pno": 54035,//航班代碼
-        "tdate": "2023-11-22",
-        "btime": "1030",
-        "etime": "1200",
-        "stime": "1000",//(訂票最後時間)
-        "port0": "水頭",
-        "port1": "水頭",
-        "sp": true,
-      }
-    ]
-  }
-
-
-
-
-
-  //////////////////            測試資料                 ///////////////////////////////////////////////////////////
 
   //                獲取 detail_其他買票人資料 顯示於 "退票"articleA         //
+
+
+
+  //帶入後台資料後 製作旅客表單
   let get_detail_refund = function (detail) {
 
+    //取得票數
+    $("#RefundModal-ticCount").text("票數：" + detail.ticCount);
+  
+    //製作旅客表單
     let travelers = detail.travelers;
-
+    
     $("#RefundModal-col").empty();//不累加清空
 
     $.each(travelers, function (index, value) {
@@ -117,7 +122,7 @@ $(document).ready(function () {
 
 
         "<div class='refund_col col-md-6 col-lg-6 order-md-last '>" +
-        "<h5 class='d-flex justify-content-between align-items-center mb-3'>買票人" +
+        "<h5 class='d-flex justify-content-between align-items-center mb-3'>旅客" +
 
         "<span class='badge rounded-pill text-primary' style='color: #f7cf02; '>" + (parseInt(index) + parseInt(1)) + "</span>" +
 
@@ -197,16 +202,13 @@ $(document).ready(function () {
       )
     })
   }
+
+  //後台呼叫成功後刪除
   get_detail_refund(detail);
+  
 
-
-  $("#RefundModal-ticCount").text("票數：" + detail.ticCount);
-  //取得票數
-
-
-  //          退票modal_功能_全部選取後退票           //
-
-  // 監聽主checkbox，如果有變化觸發功能如下:
+ 
+  // checkbox:全部退票打勾
   $("#AllRefund_check").change(function () {
 
 
@@ -224,10 +226,7 @@ $(document).ready(function () {
   });
 
 
-
-
-  //               獲取被勾選的退票資料                //
-
+  //             <退票>按鈕功能               //
   $("#Refund_Send").click(function () {
     // console.log($(".Refund_checkbox-input"));
 
@@ -236,100 +235,134 @@ $(document).ready(function () {
 
 
     //選取 有checkbox 的物件
-    //chat GPT整合成下列:
     let cont = 0;
     $(".Refund_checkbox-input").each(function () {
       // 在這裡使用 $(this) 可以正確取得當前的 checkbox 元素
 
-      console.log($(this).prop("checked"));
+      //console.log($(this).prop("checked"));
 
       
       if ($(this).prop("checked")) {
         //如果".Refund_checkbox-input"的"checked"屬性值 = ture
 
-        // //其他要顯示的資料//
-        // let Refund_pno = $(this).parent().parent().parent().find("#ticnum").text();
-        // //往上一層td  //再往上一層tr       //取得買票人票號
-        // let Refund_tdate = $(this).parent().parent().parent().find("#tname").text();
-        // //往上一層td  //再往上一層tr       //取得買票人姓名
-        // let Refund_btime = $(this).parent().parent().parent().find("#tid").text();
-        // //往上一層td  //再往上一層tr       //取得買票人姓身分證/護照號碼
-
-
-        // 抓取整個表單的HTML
-        
         cont+=1;
 
-
+        // 抓取整個表單的HTML
         var formHTML = $(this).parent().parent().parent().parent().html();
         //var formHTML = $(".refund_col").html();
         // console.log("--------");
-        // console.log("formHTML");
-        // console.log(formHTML);
+         //console.log("formHTML:"+formHTML);
 
         // 使用 jQuery 創建一個臨時的 <div> 元素，並將抓到的 HTML 放入其中
+        
         var tempDiv = $("<table>").html(formHTML);
+
+        console.log("<table>:"+tempDiv);
 
         // 保留您想要顯示的元素
         var desiredElements = tempDiv.find(" li:contains('姓名'), li:contains('票號'), li:contains('身分證/護照號碼'), li:contains('票種'), .Refund_checkbox-input:checked");
 
+       // console.log("保留您想要顯示的元素:"+desiredElements);
+
         // 在 desiredElements 中加入額外的 Bootstrap 類別
-        desiredElements.addClass("justify-content-center");
+        // desiredElements.addClass("justify-content-center");
 
         // 將 desiredElements 作為子元素包裝在一個 row 中
-        //var row = $("<div class='row'></div>").append(desiredElements);
+        var ul = $("<ul class='ulclass mb-5 justify-content-center'></ul>").html(desiredElements);;
 
         // 移除不需要的元素
         //tempDiv.find(":not(#ticnum, #tname, li:contains('身分證/護照號碼'), li:contains('票種'), .Refund_checkbox-input:checked)").remove();
 
         //  $("#RefundModal-col_2").html(row);
-        $("#RefundModal-col_2").append(desiredElements);
-        $("#RefundModal-col_2").append("<p></p>");
+        $("#RefundModal-col_2").append(ul);
+        // $("#RefundModal-col_2").append("<p></p>");
         // 將HTML顯示在 Modal 中
         // $("#RefundModal-col_2").html(formHTML);
-
-
-
-
-
-
-
-        // // 獲取相應訂單的資訊
-        // var orderDiv = $(this).closest(".col-md-5");
-        // var ticketNumber = orderDiv.find("#ticnum").text();
-        // var name = orderDiv.find("#tname").text();
-        // var idNumber = orderDiv.find("li:contains(': 身分證/護照號碼') h6").text();
-        // var email = orderDiv.find("li:contains(':email') h6").text();
-        // var mobile = orderDiv.find("li:contains('mobile:') h6").text();
-
-        // // 在這裡使用獲取到的訂單資訊進行操作
-        // console.log(orderDiv);
-        // console.log("Ticket Number:", ticketNumber);
-        // console.log("Name:", name);
-        // console.log("ID Number:", idNumber);
-        // console.log("Email:", email);
-        // console.log("Mobile:", mobile);
-
 
 
       }
 
 
     })
-    console.log($(this).parent().parent().parent().parent().parent().parent().find("#RefundModal-orderNum").text());
+    //console.log($(this).parent().parent().parent().parent().parent().parent().find("#RefundModal-orderNum").text());
     $("#RefundModal_orderNum").text($(this).parent().parent().parent().parent().parent().parent().find("#RefundModal-orderNum").text());
     
     $("#RefundModal_ticCount").text("退票數：" + cont);
 
-    $("#RefundModal-col_2").append(
+    // $("#RefundModal-col_2").append(
       
-      '<button type="button" id="RefundModal_Send" class="btn btn-primary" data-dismiss="modal">' +
-    '<i class="fa-solid fa-paper-plane fa-2x">退票確認</i>' +
-'</button>')
+    // '<button type="button" id="RefundModal_Send" class="btn btn-primary" data-dismiss="modal">' +
+    //     '<i class="fa-solid fa-paper-plane fa-2x">退票確認</i>' +
+    // '</button>')
     
-    //console.log(cont);
+  })
+
+
+  //           <退票確認>按鈕功能            //
+  $("#RefundModal_Send").click(function () {
+
+    let send_list = [];
+
+    $(".ulclass").each(function () {
+
+
+      let ticNum = $("#ticnum").text();
+
+      console.log("ticNum:"+ticNum);
+
+      let send_item = {
+              ticNum: ticNum
+                              };
+          send_list.push(send_item);
+          
+       console.log(JSON.stringify(send_item, null, 2)); 
+          
+       })
+
+       
+       console.log(JSON.stringify(send_list, null, 2));  
+
+
+        let send_item = {
+          orderNum:orderNum,
+          orderUid:orderUid,
+          orderPhone:orderPhone,
+          sp:true,
+          tickets: send_list
+          }
+          console.log(JSON.stringify(send_item, null, 2));
+
+         //傳給後台
+            // $.ajax({
+            //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
+            //   type: "SEND", // 使用 POST 请求发送数据
+            //   //contentType:"application/json",//指定格式(這次不用)
+            //   data:send_item,//塞入整理好的資料
+            //   success: function (detail) {    // 後台回傳
+                        
+            //     window.location.href="refund.html";
+        //                              },
+        //   error: function (error) {
+        //   // 请求失败时的处理
+        //   console.error("数据发送失败：", error);    
+        // },
+        //   beforeSend: function (xhr) {
+        //     // 添加CSRF令牌到请求头部
+        //     xhr.setRequestHeader(csrfHeader, csrfToken);
+        //   }
+        // });
+    
+
   })
 
 
 
 })
+
+
+
+
+
+  
+    
+      

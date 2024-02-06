@@ -210,9 +210,14 @@ $(document).ready(function () {
 
             let orderUid = $("#hx-id-result").text().split("：")[1];
             let orderPhone = $("#hx-phone-result").text().split("：")[1];
+            
+            let orderName = $("#hx-orderName").text().split("：")[1];
+            
 
             console.log("orderUid:"+orderUid);
             console.log("orderPhone:"+orderPhone);
+            
+            console.log("orderName:"+orderName);
 
             //傳給後台前格是整理
             let send_item = {
@@ -223,24 +228,28 @@ $(document).ready(function () {
       
             $("#hx-result").append(
               "<tr>" +
+                
+              //訂單編號
               "<td scope='row' class='text-start' id='value.orderNum '>" + value.orderNum + "</td>" +
+              //航班代碼  
               " <td id='value_pno'>" + value.pno + "</td>" +
-      
+              //出發日期
               " <td id='value_tdate'> " + value.tdate.split("T")[0] + "</td>" +
-      
+              //出發時間
               " <td id='value_btime'>" + value.btime + "</td>" +
-      
+
+              
+              //詳細資訊 icon
               " <td >" +
-              //  "<a class='article-button' href='./order.html?shipid=" + key + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "'>" +
               "<a id='detail-button' class='article-button' href='#' data-toggle='modal' data-target='#DetailModal'>" +
-              // <i class="fa-solid fa-circle-info"></i>
               " <i class='fa-solid fa-circle-info fa-3x' aria-hidden='true' style='color: #f7cf02;'></i>" +
               " </a>" +
               "</td>" +
-              " <td >" +
 
-               //超連結到退票畫面+夾帶該資料線索                                 
-              "<a id='refund-button' class='article-button' href='refund.html?orderUid=" +orderUid +"&orderPhone="+orderPhone+"&orderNum="+ value.orderNum+ "'>" +
+              //退票 icon
+              " <td >" +
+               //超連結到退票畫面+夾帶給後台的資料                                 
+              "<a id='refund-button' class='article-button' href='refund.html?orderUid=" +orderUid +"&orderPhone="+orderPhone+"&orderNum="+ value.orderNum+"&orderName="+orderName+"&pno="+value.pno+"&tdate="+value.tdate+"&btime="+value.btime+"'>"+
               " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true' style='color: #2b02f7;'></i>" +
               " </a>" +
               "</td>" +
@@ -843,53 +852,7 @@ $(document).ready(function () {
     ]
   }
 
-  let others = {
-    //其他搭船人資料
-    "orderNum": "abc",
-    "ticCount": 3,
-    "travelers": [
-      {
-        "id": 54035, //航班代碼   
-        "tname": "2023-11-22",
-        "gender": "1030",
-        "birthday": [2011, 1, 2, 4, 16, 6],
-        "sbr": "1000", //(訂票最後時間)
-        "email": "456@456",
-        "mobile": "水頭",
-        "ticnum": true,
-      },
-      {
-        "id": 54035, //航班代碼   
-        "tname": "2023-11-22",
-        "gender": "1030",
-        "birthday": [2011, 1, 2, 4, 16, 6],
-        "sbr": "1000", //(訂票最後時間)
-        "email": "456@456",
-        "mobile": "水頭",
-        "ticnum": true,
-      },
-      {
-        "id": 54035, //航班代碼   
-        "tname": "2023-11-22",
-        "gender": "1030",
-        "birthday": [2011, 1, 2, 4, 16, 6],
-        "sbr": "1000", //(訂票最後時間)
-        "email": "456@456",
-        "mobile": "水頭",
-        "ticnum": true,
-      },
-      {
-        "id": 54035, //航班代碼   
-        "tname": "2023-11-22",
-        "gender": "1030",
-        "birthday": [2011, 1, 2, 4, 16, 6],
-        "sbr": "1000", //(訂票最後時間)
-        "email": "456@456",
-        "mobile": "水頭",
-        "ticnum": true,
-      },
-    ]
-  }
+  
 
 
 })
