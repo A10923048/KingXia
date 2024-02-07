@@ -964,7 +964,7 @@ $(document).ready(function () {
   // 游標移動至的第一個警示div的位置
   let focus_custom_alert=function(){
 
-        // 获取第一个显示的 .custom-alert 元素
+      // 获取第一个显示的 .custom-alert 元素
       let visibleCustomAlert = $(".custom-alert:visible").first();
       
       // 如果有可见的 .custom-alert 元素，则将焦点设置到它
@@ -1437,6 +1437,7 @@ $(document).ready(function () {
         }
       }
     })
+
     console.log("頭");
     //移動到位上方的警示窗
     focus_custom_alert();

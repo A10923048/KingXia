@@ -1461,12 +1461,6 @@ body {
 
 
 
-
-
-
-
-
-
 /*=============================================
 =               tooltip-container           =
 =============================================*/
@@ -1588,4 +1582,16 @@ body {
   position: absolute;
   top: -10px;
   left: 30px;
+}
+
+
+/*=============================================
+=             articleB-icon                   =
+=============================================*/
+
+
+@media (max-width: 80px) {
+  .tooltip-container #tooltip-toggle.active ~ .tooltip-content, .tooltip-container #tooltip-toggle:checked ~ .tooltip-content {
+    left: 0;
+ }
 }

@@ -20,41 +20,37 @@ Fonts - Google Fonts
 //    置於$(document).ready(function () 之外的程式碼               //
 
 //            Article NAVBAR- 轉換按鈕功能                    //
-let articleBtn = function (tabId) {
-    $("#articleAA").hide();
+//  let articleBtn = function (tabId) {
+//     $("#articleAA").hide();
   
-    // 檢查是否需要關閉 #articleAA
-    if ($("#articleAA").hasClass("show")) {
-      // 關閉 #articleAA
-      $("#articleAA").removeClass("show active");
-    }
+//     // 檢查是否需要關閉 #articleAA
+//     if ($("#articleAA").hasClass("show")) {
+//       // 關閉 #articleAA
+//       $("#articleAA").removeClass("show active");
+//     }
   
-    // 關閉當前已打開的頁面
-    $(".tab-pane").removeClass("show active");
+//     // 關閉當前已打開的頁面
+//     $(".tab-pane").removeClass("show active");
   
-    // 打開新的頁面
-    $(`#${tabId}`).addClass("show active");
+//     // 打開新的頁面
+//     $(`#${tabId}`).addClass("show active");
   
-    // 如果需要手動跳轉到新的頁面
-    window.location.href = `#${tabId}`;
-  }
-  //  ↑↑ ↑↑ 置於$(document).ready(function () 之外的程式碼 ENd    ↑↑ ↑↑       //
+//     // 如果需要手動跳轉到新的頁面
+//     window.location.href = `#${tabId}`;
+//    }
+
+
+//  ↑↑ ↑↑ 置於$(document).ready(function () 之外的程式碼 ENd    ↑↑ ↑↑       //
   
   
   
   $(document).ready(function () {
   
-  
-    
    
-  
-    //呼叫名為 articleBtn 的函數，並將字串參數 "articleA" 傳遞給該函數
-    articleBtn("articleA");
+    // articleBtn("articleA");
   
 
     //           Step Form with Progress Bar                     //
-    //jQuery time
-    
         var current_fs, next_fs, previous_fs; //fieldsets
         var left, opacity, scale; //fieldset properties which we will animate
         var animating; //flag to prevent quick multi-click glitches
@@ -133,6 +129,96 @@ let articleBtn = function (tabId) {
 
             
         });
+
+
+    // "付款細項" 按鈕功能
+    $("#toggleButton").click(function(){
+       
+        var $button = $(this); // 保存按钮元素的引用
+
+        var $target = $($(this).data("bs-target")); // 获取目标折叠内容的jQuery对象
+
+            $target.collapse("toggle"); // 切换折叠内容的展开状态
+            console.log("$target.collapse(toggle):"+$target.collapse("toggle"));
+
+        //按鈕open
+        if($(this).attr("aria-expanded") == "true") {
+
+            
+
+            //螢幕大小
+            if($(window).width() >=1500) {
+                console.log("window.width:"+$(window).width());
+                //滑動動畫
+                $("html, body").animate({
+                    scrollTop: $button.offset().top-500
+                }, 600);
+            }
+            //螢幕大小
+            if($(window).width() <1500) {
+
+                console.log("window.width:"+$(window).width());
+                
+                //滑動動畫
+                $("html, body").animate({
+                    scrollTop: $button.offset().top-80
+                }, 600);
+            }
+         
+        }else{ //再按一次按鈕時 
+            //螢幕大小
+            if($(window).width() >1500) {
+                
+                //滑動動畫
+                $("html, body").animate({
+                    scrollTop: $button.offset().top-800
+                }, 700);
+            }
+            //螢幕大小
+            if($(window).width() <1500) {
+                
+                //滑動動畫
+                $("html, body").animate({
+                    scrollTop: $button.offset().top-600
+                }, 600);
+            }
+        }
+    });
+
+
+    //"付款細項" 表格 內容計算
+
+    // <th id="ticCount">5 </th>
+    // <td id="totalPrice">$1000</td>
+
+    let ticCount = parseInt($("#ticCount").text().trim());
+    let totalPrice = parseInt($("#totalPrice").text().trim());
+    
+    console.log("ticCount:" + ticCount);
+    console.log("totalPrice:" + totalPrice);
+
+    let payTcount= totalPrice / 650;
+
+    if (payTcount==ticCount){
+        $("#AduitCount").text(payTcount);
+        $("#babyCount").text("0");
+        //$("#AduitPrice").text("$"+totalPrice);
+
+    }else{
+        $("#AduitCount").text(payTcount);
+        let babyCount=ticCount-payTcount;
+        $("#babyCount").text(babyCount);
+        
+    }
+
+    console.log("babyCount:" +  $("#babyCount").text());
+    console.log("AduitCount:" +  $("#AduitCount").text());
+
+
+
+
+
+
 
 
    
