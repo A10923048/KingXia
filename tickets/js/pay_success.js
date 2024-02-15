@@ -19,25 +19,26 @@ Fonts - Google Fonts
 
 //    置於$(document).ready(function () 之外的程式碼               //
 
+
 //            Article NAVBAR- 轉換按鈕功能                    //
-//  let articleBtn = function (tabId) {
-//     $("#articleAA").hide();
+  let articleBtn = function (tabId) {
+    $("#articleAA").hide();
   
-//     // 檢查是否需要關閉 #articleAA
-//     if ($("#articleAA").hasClass("show")) {
-//       // 關閉 #articleAA
-//       $("#articleAA").removeClass("show active");
-//     }
+    // 檢查是否需要關閉 #articleAA
+    if ($("#articleAA").hasClass("show")) {
+      // 關閉 #articleAA
+      $("#articleAA").removeClass("show active");
+    }
   
-//     // 關閉當前已打開的頁面
-//     $(".tab-pane").removeClass("show active");
+    // 關閉當前已打開的頁面
+    $(".tab-pane").removeClass("show active");
   
-//     // 打開新的頁面
-//     $(`#${tabId}`).addClass("show active");
+    // 打開新的頁面
+    $(`#${tabId}`).addClass("show active");
   
-//     // 如果需要手動跳轉到新的頁面
-//     window.location.href = `#${tabId}`;
-//    }
+    // 如果需要手動跳轉到新的頁面
+    window.location.href = `#${tabId}`;
+   }
 
 
 //  ↑↑ ↑↑ 置於$(document).ready(function () 之外的程式碼 ENd    ↑↑ ↑↑       //
@@ -47,7 +48,7 @@ Fonts - Google Fonts
   $(document).ready(function () {
   
    
-    // articleBtn("articleA");
+     articleBtn("articleA");
   
 
     //           Step Form with Progress Bar                     //
@@ -133,6 +134,8 @@ Fonts - Google Fonts
 
     // "付款細項" 按鈕功能
     $("#toggleButton").click(function(){
+
+       
        
         var $button = $(this); // 保存按钮元素的引用
 
@@ -143,8 +146,11 @@ Fonts - Google Fonts
 
         //按鈕open
         if($(this).attr("aria-expanded") == "true") {
-
             
+
+            $(this).find("ul").addClass("show active");
+            
+             $(this).removeClass("collapsed");
 
             //螢幕大小
             if($(window).width() >=1500) {
@@ -166,6 +172,13 @@ Fonts - Google Fonts
             }
          
         }else{ //再按一次按鈕時 
+
+            $(this).attr("aria-expanded") 
+
+            $(this).find("ul").removeClass("show");
+            console.log("find(ul)"+$(this).find("ul").addClass("show active"));
+            $(this).addClass("collapsed");
+
             //螢幕大小
             if($(window).width() >1500) {
                 
@@ -183,6 +196,7 @@ Fonts - Google Fonts
                 }, 600);
             }
         }
+        
     });
 
 
@@ -217,11 +231,6 @@ Fonts - Google Fonts
 
 
 
-
-
-
-
-   
   
   
   })

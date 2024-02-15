@@ -21,11 +21,11 @@ html {
 body {
 	font-family: montserrat, arial, verdana;
 }
-/*form styles*/
+/* msform form styles*/
 #msform {
-	width:75vw;
+	/* width:75vw;
 	padding: 0 12vw 0 0;
-	margin: 50px auto;
+	margin: 50px auto; */
 	text-align: center;
 	position: relative;
 }
@@ -140,3 +140,25 @@ body {
 
 
 
+/* contact form styles*/
+#contact {
+	text-align: center;
+	position: relative;
+}
+#contact fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	position: relative;
+}
+
+/*Hide all except first fieldset*/
+#contact fieldset:not(:first-of-type) {
+	display: none;
+}

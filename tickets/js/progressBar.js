@@ -6,17 +6,57 @@ $(document).ready(function () {
 		var animating; //flag to prevent quick multi-click glitches
 
 		$(".next").click(function(){
-			if(animating) return false;
-			animating = true;
+
+			console.log(".next");
+			console.log("animating:"+animating);
+
+			if(animating == false) {
+				animating == true;
+			}
 			
-			current_fs = $(this).parent();
-			next_fs = $(this).parent().next();
+			// 得到當前步驟的 fieldset 元素。
+
+			//let current_fs = $(this).closest('fieldset');
 			
-			//activate next step on progressbar using the index of next_fs
-			$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+			let  current_fs = $(this).parent().parent();
+			  console.log("current_fs"+current_fs);
 			
+			//console.log(JSON.stringify(current_fs, null, 2));
+			
+			// 得到下一個步驟的 fieldset 元素。
+			//next_fs = current_fs.next('fieldset');
+
+			//next_fs = $(this).parent().parent().next('fieldset');
+			let next_fs = current_fs.next('fieldset');
+			
+			
+			//activate next step on contact using the index of next_fs
+			//$("#contact li").eq($("fieldset").index(next_fs)).addClass("active");
+			// 找到对应的 li 元素
+			let corresponding_li = $("#progressbar li").eq(next_fs.index());
+			
+			console.log("next_fs.index"+$("#progressbar li").eq(next_fs.index()));
+
+			// 在添加 active 类之前，先移除其他兄弟元素的 active 类
+			corresponding_li.addClass("active");
+	
+			// 显示下一个 fieldset
+			next_fs.show();
+	
+			// 隐藏当前 fieldset
+			current_fs.hide();
+
+			//console.log("index:"+$("#contact li").eq($("fieldset").index(next_fs)));
+			
+			
+
+			//更新進度條上的步驟狀態，將下一個步驟的 li 元素添加 active 類別，以便標記為當前步驟。
+
+
 			//show the next fieldset
 			next_fs.show(); 
+
+
 			//hide the current fieldset with style
 			current_fs.animate({opacity: 0}, {
 				step: function(now, mx) {
@@ -36,7 +76,9 @@ $(document).ready(function () {
 				duration: 800, 
 				complete: function(){
 					current_fs.hide();
+
 					animating = false;
+					//將 animating 變數設置為 false，表示動畫執行完畢。
 				}, 
 				//this comes from the custom easing plugin
 				easing: 'easeInOutBack'
@@ -44,14 +86,21 @@ $(document).ready(function () {
 		});
 
 		$(".previous").click(function(){
-			if(animating) return false;
-			animating = true;
+
+			if(animating == false) {
+				animating == true;
+			}
+
 			
-			current_fs = $(this).parent();
-			previous_fs = $(this).parent().prev();
+			// 得到當前步驟的 fieldset 元素。
+			current_fs = $(this).closest('fieldset');
+
+			// 得到下一個步驟的 fieldset 元素。
+			previous_fs = current_fs.prev('fieldset');
+
 			
-			//de-activate current step on progressbar
-			$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+			//de-activate current step on contact
+			$("#contact li").eq($("fieldset").index(current_fs)).removeClass("active");
 			
 			//show the previous fieldset
 			previous_fs.show(); 

@@ -198,95 +198,96 @@
                                                                     </h3>
                                                                     <!-- <h5 class=" pb-3 mb-4 ">(請下拉選單)</h5> -->
                                                                     <button 
+                                                                        id="toggleButton"
                                                                         class="btn d-inline-flex align-items-center collapsed border-0"
                                                                         data-bs-toggle="collapse"
                                                                         aria-expanded="false"
                                                                         data-bs-target="#contents_collapse"
-                                                                        aria-controls="contents_collapse">付款細項</button>
-                                                                        <div id="contents_collapse" class="collapse">
-                                                                            <ul class="list-unstyled ps-3 collapse ">
-                                                                                <li class="my-2">
-                                                                                    <div class="table-responsive">
-                                                                                        <form id="contact"
-                                                                                            class="get_form bg-light ">
-                                                                                            <h2 id="contact"
-                                                                                                class=" section-title mb-3 text-center text-primary">
-                                                                                                付款細項</h2>
-                                                                                            <div
-                                                                                                class="table-responsive ">
-                                                                                                <table
-                                                                                                    class="table text-center text-">
-                                                                                                    <thead>
-                                                                                                        <tr>
+                                                                        aria-controls="contents_collapse">付款細項
+                                                                    </button>
+                                                                    <ul id="contents_collapse" class="list-unstyled ps-3 collapse">
+                                                                        <li class="my-2">
+                                                                            <div class="table-responsive">
+                                                                                <form id="contact"
+                                                                                    class="get_form bg-light ">
+                                                                                    <h2 id="contact"
+                                                                                        class=" section-title mb-3 text-center text-primary">
+                                                                                        付款細項</h2>
+                                                                                    <div
+                                                                                        class="table-responsive ">
+                                                                                        <table
+                                                                                            class="table text-center text-">
+                                                                                            <thead>
+                                                                                                <tr>
 
-                                                                                                            <th style="width: 20%;"
-                                                                                                                id="shipID0">
-                                                                                                                票種</th>
-                                                                                                            <th style="width: 10%;"
-                                                                                                                id="shipID0">
-                                                                                                                x</th>
-                                                                                                            <th style="width: 20%;"
-                                                                                                                id="btime">
-                                                                                                                張</th>
+                                                                                                    <th style="width: 20%;"
+                                                                                                        id="shipID0">
+                                                                                                        票種</th>
+                                                                                                    <th style="width: 10%;"
+                                                                                                        id="shipID0">
+                                                                                                        x</th>
+                                                                                                    <th style="width: 20%;"
+                                                                                                        id="btime">
+                                                                                                        張</th>
 
-                                                                                                            <th style="width: 10%;"
-                                                                                                                id="etime">
-                                                                                                                x</th>
-                                                                                                            <th style="width: 20%;"
-                                                                                                                id="qty">
-                                                                                                                票價</th>
+                                                                                                    <th style="width: 10%;"
+                                                                                                        id="etime">
+                                                                                                        x</th>
+                                                                                                    <th style="width: 20%;"
+                                                                                                        id="qty">
+                                                                                                        票價</th>
 
-                                                                                                            <th style="width: 10%;"
-                                                                                                                id="etime">
-                                                                                                                =</th>
-                                                                                                            <th
-                                                                                                                style="width: 20%;">
-                                                                                                                價格</th>
-                                                                                                        </tr>
-                                                                                                    </thead>
+                                                                                                    <th style="width: 10%;"
+                                                                                                        id="etime">
+                                                                                                        =</th>
+                                                                                                    <th
+                                                                                                        style="width: 20%;">
+                                                                                                        價格</th>
+                                                                                                </tr>
+                                                                                            </thead>
 
-                                                                                                    <tbody
-                                                                                                        id="tickets-result"
-                                                                                                        class="text-center">
-                                                                                                        <tr class="tr_1">
-                                                                                                            <td>全票</td>
-                                                                                                            <td>×</td>
-                                                                                                            <td id="AduitCount"></td>
-                                                                                                            <td>×</td>
-                                                                                                            <td>$650</td>
-                                                                                                            <td>=</td>
-                                                                                                            <td>[[${totalPrice}]]</td>
-                                                                                                            
-                                                                                                        </tr>
-                                                                                                        <tr class="tr_2">
-                                                                                                            <td>兒童票</td>
-                                                                                                            <td>×</td>
-                                                                                                            <td id="babyCount"></td>
-                                                                                                            <td>×</td>
-                                                                                                            <td>$0</td>
-                                                                                                            <td>=</td>
-                                                                                                            <td>0</td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td></td>
-                                                                                                            <td></td>
-                                                                                                            <td></td>
-                                                                                                            <td></td>
-                                                                                                            <td></i>
-                                                                                                                總金額:
-                                                                                                            </td>
+                                                                                            <tbody
+                                                                                                id="tickets-result"
+                                                                                                class="text-center">
+                                                                                                <tr class="tr_1">
+                                                                                                    <td>全票</td>
+                                                                                                    <td>×</td>
+                                                                                                    <td id="AduitCount"></td>
+                                                                                                    <td>×</td>
+                                                                                                    <td>$650</td>
+                                                                                                    <td>=</td>
+                                                                                                    <td>[[${totalPrice}]]</td>
+                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr class="tr_2">
+                                                                                                    <td>兒童票</td>
+                                                                                                    <td>×</td>
+                                                                                                    <td id="babyCount"></td>
+                                                                                                    <td>×</td>
+                                                                                                    <td>$0</td>
+                                                                                                    <td>=</td>
+                                                                                                    <td>0</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></i>
+                                                                                                        總金額:
+                                                                                                    </td>
 
-                                                                                                            <td>$</td>
-                                                                                                            <td id="totalPrice">1300</td>
-                                                                                                        </tr>
-                                                                                                    </tbody>
-                                                                                                </table>
-                                                                                            </div>
-                                                                                        </form>
+                                                                                                    <td>$</td>
+                                                                                                    <td id="totalPrice">1300</td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
                                                                                     </div>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                        
                                                                 </aside>
 
                                                             </div>
@@ -366,9 +367,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
   <!-- datepicker會引用到 --> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/i18n/jquery.ui.datepicker-zh-TW.min.js"></script>
-  
+   -->
 
 
   <!-- 連結網頁主程式 -->

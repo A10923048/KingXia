@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- 光瑞給的<meta name="_csrf" th:content="${_csrf.token}">
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"> -->
+
+  <title>金廈海運-訂票首頁</title>
+  <!-- <link rel="icon shortcut" href="./img/favicon.ico"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- TODO: 客製化Bootstrap CSS -->
+  <link rel="stylesheet" href="/tickets/css/bootstrap.css">
+
+  <!-- Bootstrap CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+  <!-- 使用font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+  <!-- 使用style.css -->
+  <!-- <link rel="stylesheet" href="/tickets/css/new.css"> -->
+  
+  <!-- <link rel="stylesheet" href="/tickets/css/groupBooking.css"> -->
+
+  
+  <link rel="stylesheet" href="/tickets/css/dashboard.css">
+
+  <!-- 日期用 -->
+  <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  
+  <!-- 日期用 -->
+  <link rel="stylesheet" href="/tickets/css/jquery-ui/1.12.1.css">
+  
+
+  <!-- 日曆用 -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
+
+
+
+</head>
+
+<body>
+  <nav class="main-menu">
+    <h1>Fitness App</h1>
+    <img class="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
+    <ul>
+      <li class="nav-item active">
+        <b></b>
+        <b></b>
+        <a href="#login">
+          <i class="fa fa-user nav-icon"></i>
+          <span class="nav-text">登入</span>
+        </a>
+      </li>
+
+      <li class="nav-item ">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <i class="fa fa-house nav-icon"></i>
+          <span class="nav-text">Home</span>
+        </a>
+      </li>
+
+      
+
+      <li class="nav-item">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <i class="fa fa-clipboard nav-icon"></i>
+          <span class="nav-text">訂票紀錄查詢</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <i class="fa fa-person-running nav-icon"></i>
+          <span class="nav-text">Activities</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <b></b>
+        <b></b>
+        <a href="#">
+          <i class="fa fa-sliders nav-icon"></i>
+          <span class="nav-text">Settings</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- header -->
+  <header id="header">
+    <div class=" justify-content-center  mb-1 " >
+
+      <div >
+        <h1 class="loader ">
+          <img src="./tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
+          <span class="m">訂</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">票</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">頁</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">面</span>
+          <span class="m"></span>
+        </h1>
+
+      </div>
+    </div>
+
+        
+
+        
+  
+        <section class="content">
+          <div class="left-content">
+           
+            <div class="left-bottom">
+              <div class="weekly-schedule">
+                <h1>Weekly Schedule</h1>
+                <div class="calendar">
+                  <div class="day-and-activity activity-one">
+                    <div class="day">
+                      <h1>13</h1>
+                      <p>mon</p>
+                    </div>
+                    <div class="activity">
+                      <h2>Swimming</h2>
+                      <div class="participants">
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 1" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/90affa88-8da0-40c8-abe7-f77ea355a9de" style="--i: 2" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" style="--i: 3" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e082b965-bb88-4192-bce6-0eb8b0bf8e68" style="--i: 4" alt="" />
+                      </div>
+                    </div>
+                    <button class="btn">Join</button>
+                  </div>
+  
+                  <div class="day-and-activity activity-two">
+                    <div class="day">
+                      <h1>15</h1>
+                      <p>wed</p>
+                    </div>
+                    <div class="activity">
+                      <h2>Yoga</h2>
+                      <div class="participants">
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 1" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/32037044-f076-433a-8a6e-9b80842f29c9" style="--i: 2" alt="" />
+                      </div>
+                    </div>
+                    <button class="btn">Join</button>
+                  </div>
+  
+                  <div class="day-and-activity activity-three">
+                    <div class="day">
+                      <h1>17</h1>
+                      <p>fri</p>
+                    </div>
+                    <div class="activity">
+                      <h2>Tennis</h2>
+                      <div class="participants">
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/32037044-f076-433a-8a6e-9b80842f29c9" style="--i: 1" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e082b965-bb88-4192-bce6-0eb8b0bf8e68" style="--i: 2" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 3" alt="" />
+                      </div>
+                    </div>
+                    <button class="btn">Join</button>
+                  </div>
+  
+                  <div class="day-and-activity activity-four">
+                    <div class="day">
+                      <h1>18</h1>
+                      <p>sat</p>
+                    </div>
+                    <div class="activity">
+                      <h2>Hiking</h2>
+                      <div class="participants">
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" style="--i: 1" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/32037044-f076-433a-8a6e-9b80842f29c9" style="--i: 2" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 4" alt="" />
+                        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/90affa88-8da0-40c8-abe7-f77ea355a9de" style="--i: 5" alt="" />
+                      </div>
+                    </div>
+                    <button class="btn">Join</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activities">
+                <h1>Popular Activities</h1>
+                <div class="activity-container">
+                  <div class="image-container img-one">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/467cf682-03fb-4fae-b129-5d4f5db304dd" alt="tennis" />
+                    <div class="overlay">
+                      <h3>Tennis</h3>
+                    </div>
+                  </div>
+    
+                  <div class="image-container img-two">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/3bab6a71-c842-4a50-9fed-b4ce650cb478" alt="hiking" />
+                    <div class="overlay">
+                      <h3>Hiking</h3>
+                    </div>
+                  </div>
+    
+                  <div class="image-container img-three">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c8e88356-8df5-4ac5-9e1f-5b9e99685021" alt="running" />
+                    <div class="overlay">
+                      <h3>Running</h3>
+                    </div>
+                  </div>
+    
+                  <div class="image-container img-four">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/69437d08-f203-4905-8cf5-05411cc28c19" alt="cycling" />
+                    <div class="overlay">
+                      <h3>Cycling</h3>
+                    </div>
+                  </div>
+    
+                  <div class="image-container img-five">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e1a66078-1927-4828-b793-15c403d06411" alt="yoga" />
+                    <div class="overlay">
+                      <h3>Yoga</h3>
+                    </div>
+                  </div>
+    
+                  <div class="image-container img-six">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/7568e0ff-edb5-43dd-bff5-aed405fc32d9" alt="swimming" />
+                    <div class="overlay">
+                      <h3>Swimming</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="personal-bests">
+                <h1>Personal Bests</h1>
+                <div class="personal-bests-container">
+                  <div class="best-item box-one">
+                    <p>Fastest 5K Run: 22min</p>
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
+                  </div>
+                  <div class="best-item box-two">
+                    <p>Longest Distance Cycling: 4 miles</p>
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
+                  </div>
+                  <div class="best-item box-three">
+                    <p>Longest Roller-Skating: 2 hours</p>
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div id="login" class="right-content">
+            <div class="user-info">
+              <div class="icon-container">
+                <i class="fa fa-bell nav-icon"></i>
+                <i class="fa fa-message nav-icon"></i>
+              </div>
+              <h4>登入帳號</h4>
+              <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/40b7cce2-c289-4954-9be0-938479832a9c" alt="user" />
+            </div>
+
+            <!-- <div class="weekly-schedule">
+              <h1>Weekly Schedule</h1>
+              <div class="calendar">
+                <div class="day-and-activity activity-one">
+                  <div class="day">
+                    <h1>13</h1>
+                    <p>mon</p>
+                  </div>
+                  <div class="activity">
+                    <h2>Swimming</h2>
+                    <div class="participants">
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 1" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/90affa88-8da0-40c8-abe7-f77ea355a9de" style="--i: 2" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" style="--i: 3" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e082b965-bb88-4192-bce6-0eb8b0bf8e68" style="--i: 4" alt="" />
+                    </div>
+                  </div>
+                  <button class="btn">Join</button>
+                </div>
+
+                <div class="day-and-activity activity-two">
+                  <div class="day">
+                    <h1>15</h1>
+                    <p>wed</p>
+                  </div>
+                  <div class="activity">
+                    <h2>Yoga</h2>
+                    <div class="participants">
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 1" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/32037044-f076-433a-8a6e-9b80842f29c9" style="--i: 2" alt="" />
+                    </div>
+                  </div>
+                  <button class="btn">Join</button>
+                </div>
+
+                <div class="day-and-activity activity-three">
+                  <div class="day">
+                    <h1>17</h1>
+                    <p>fri</p>
+                  </div>
+                  <div class="activity">
+                    <h2>Tennis</h2>
+                    <div class="participants">
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/32037044-f076-433a-8a6e-9b80842f29c9" style="--i: 1" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e082b965-bb88-4192-bce6-0eb8b0bf8e68" style="--i: 2" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 3" alt="" />
+                    </div>
+                  </div>
+                  <button class="btn">Join</button>
+                </div>
+
+                <div class="day-and-activity activity-four">
+                  <div class="day">
+                    <h1>18</h1>
+                    <p>sat</p>
+                  </div>
+                  <div class="activity">
+                    <h2>Hiking</h2>
+                    <div class="participants">
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" style="--i: 1" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/32037044-f076-433a-8a6e-9b80842f29c9" style="--i: 2" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/07d4fa6f-6559-4874-b912-3968fdfe4e5e" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c61daa1c-5881-43f8-a50f-62be3d235daf" style="--i: 4" alt="" />
+                      <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/90affa88-8da0-40c8-abe7-f77ea355a9de" style="--i: 5" alt="" />
+                    </div>
+                  </div>
+                  <button class="btn">Join</button>
+                </div>
+              </div>
+            </div> -->
+  
+            <div class="active-calories">
+              <h1 style="align-self: flex-start">Active Calories</h1>
+              <div class="active-calories-container">
+                <div class="box" style="--i: 85%">
+                  <div class="circle">
+                    <h2>85<small>%</small></h2>
+                  </div>
+                </div>
+                <div class="calories-content">
+                  <p><span>Today:</span> 400</p>
+                  <p><span>This Week:</span> 3500</p>
+                  <p><span>This Month:</span> 14000</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="mobile-personal-bests">
+              <h1>Personal Bests</h1>
+              <div class="personal-bests-container">
+                <div class="best-item box-one">
+                  <p>Fastest 5K Run: 22min</p>
+                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/05dfc444-9ed3-44cc-96af-a9cf195f5820" alt="" />
+                </div>
+                <div class="best-item box-two">
+                  <p>Longest Distance Cycling: 4 miles</p>
+                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9ca170e9-1252-4fa6-8677-36493540c1f2" alt="" />
+                </div>
+                <div class="best-item box-three">
+                  <p>Longest Roller-Skating: 2 hours</p>
+                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/262d1611-ed4c-4297-981c-480cf7f95714" alt="" />
+                </div>
+              </div>
+            </div>
+  
+            <div class="friends-activity">
+              <h1>Friends Activity</h1>
+              <div class="card-container">
+                <div class="card">
+                  <div class="card-user-info">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9290037d-a5b2-4f50-aea3-9f3f2b53b441" alt="" />
+                    <h2>Jane</h2>
+                  </div>
+                  <img class="card-img" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/bef54506-ea45-4e42-a1b6-23a48f61c5e8" alt="" />
+                  <p>We completed the 30-Day Running Streak Challenge!🏃‍♀️🎉</p>
+                </div>
+  
+                <div class="card card-two">
+                  <div class="card-user-info">
+                    <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/42616ef2-ba96-49c7-80ea-c3cf1e2ecc89" alt="" />
+                    <h2>Mike</h2>
+                  </div>
+                  <img class="card-img" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2dcc1b94-06c5-4c62-b886-53b9e433fd44" alt="" />
+                  <p>I just set a new record in cycling: 30 miles!💪</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+  </header>
+
+  <!-- Modal-訂票紀錄查詢>_詳細資訊 -->
+  <div class="modal fade" id="DetailModal" tabindex="-1" role="dialog" aria-labelledby="DetailModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">主要訂票人資料顯示</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <table class="">
+          <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center"
+            style="background: rgb(102, 235, 226)">
+            <label for="plan">
+              <h1 class="section-title mb-5">訂單詳細資料顯示</h1>
+
+              <p class="article-p" id="Modal-orderNum">訂單編號：</p>
+              <p class="article-p" id="Modal-pno">航班代碼：</p>
+              <p class="article-p" id="Modal-tdate">出發日期：</p>
+              <p class="article-p" id="Modal-btime">出發時間：</p>
+              <p class="article-p" id="Modal-orderName">主要訂票人姓名：</p>
+              <p class="article-p" id="Modal-ticCount">票數：</p>
+          </div>
+        </table>
+        <div class="modal-body row" id="modal-col">
+          <!--
+            <div class="col-md-5 col-lg-6 order-md-last">
+              <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-primary">其他買票人資料</span>
+                <span class="badge bg-primary rounded-pill">3</span>
+              </h4>
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">票號:</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0" id="ticnum">(票數顯示)</h6>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">姓名:</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0">id="tname"</h6>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">: 身分證/護照號碼</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0">id</h6>
+                  </div>
+            
+                </li>
+            
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">:email</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0">(email顯示)</h6>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">mobile:</h6>
+                  </div>
+                  <div>
+                    <h6 class="my-0">(mobile顯示)</h6>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            -->
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal-退票1 -->
+  <div class="modal fade" id="RefundModal" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">主要訂票人資料顯示</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+  
+        <div class="modal-body col-md-12 col-lg-12 order-md-last" style="background-color: rgb(102, 235, 226)">
+          
+          <table class="">
+            <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center text-white"
+              style="background: rgb(35, 166, 157)">
+              <label for="plan">
+                <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
+    
+                <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
+                <p class="article-p" id="RefundModal-pno">航班代碼：</p>
+                <p class="article-p" id="RefundModal-tdate">出發日期：</p>
+                <p class="article-p" id="RefundModal-btime">出發時間：</p>
+                <p class="article-p" id="RefundModal-orderName">主要訂票人姓名：</p>
+                <div class="justify-content-between">
+                  <p class="article-p" id="RefundModal-ticCount">票數：</p>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="AllRefund_check">
+                    <label class="form-check-label" for="same-address">全部退票(請打勾)</label>
+                  </div>
+                </div>
+    
+            </div>
+    
+          </table>
+
+          <h3 class="d-flex justify-content-center align-items-center mb-5 mt-5">
+            <span class="text-primary">其他買票人資料</span>
+            <span class="badge bg-primary rounded-pill"></span>
+          </h3>
+  
+          <div class="row" id="RefundModal-col">
+            <!--
+              <div class="col-md-5 col-lg-6 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-primary">其他買票人資料</span>
+                  <span class="badge bg-primary rounded-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">票號:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0" id="ticnum">(票數顯示)</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">姓名:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">id="tname"</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">: 身分證/護照號碼</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">id</h6>
+                    </div>
+              
+                  </li>
+              
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">:email</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">(email顯示)</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">mobile:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">(mobile顯示)</h6>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              -->
+  
+          </div>
+          <button type="button" id="RefundModal_Send" class="btn btn-primary" data-toggle='modal' data-target='#RefundModal2'>
+            <i class="fa-solid fa-paper-plane fa-2x">送出</i>
+          </button>
+        </div>
+
+        <div class="modal-footer">
+         
+          <button type="button" class="btn btn-primary">Save changes</button> 
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    <!-- Modal-退票細節確認2 -->
+    <div class="modal fade" id="RefundModal2" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">主要訂票人資料顯示</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+  
+        <div class="modal-body col-md-12 col-lg-12 order-md-last" style="background-color: rgb(102, 235, 226)">
+          
+          <table class="">
+            <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center text-white"
+              style="background: rgb(35, 166, 157)">
+              <label for="plan">
+                <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
+    
+                <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
+                <p class="article-p" id="RefundModal-pno">航班代碼：</p>
+                <p class="article-p" id="RefundModal-tdate">出發日期：</p>
+                <p class="article-p" id="RefundModal-btime">出發時間：</p>
+                <p class="article-p" id="RefundModal-orderName">主要訂票人姓名：</p>
+                <div class="justify-content-between">
+                  <p class="article-p" id="RefundModal-ticCount">票數：</p>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="AllRefund_check">
+                    <label class="form-check-label" for="same-address">全部退票(請打勾)</label>
+                  </div>
+                </div>
+    
+            </div>
+    
+          </table>
+
+          <h3 class="d-flex justify-content-center align-items-center mb-5 mt-5">
+            <span class="text-primary">其他買票人資料</span>
+            <span class="badge bg-primary rounded-pill"></span>
+          </h3>
+  
+          <div class="row" id="RefundModal-col_2">
+            <!--
+              <div class="col-md-5 col-lg-6 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-primary">其他買票人資料</span>
+                  <span class="badge bg-primary rounded-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">票號:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0" id="ticnum">(票數顯示)</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">姓名:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">id="tname"</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">: 身分證/護照號碼</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">id</h6>
+                    </div>
+              
+                  </li>
+              
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">:email</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">(email顯示)</h6>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">mobile:</h6>
+                    </div>
+                    <div>
+                      <h6 class="my-0">(mobile顯示)</h6>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              -->
+  
+          </div>
+          <button type="button" id="RefundModal_Send" class="btn btn-primary" data-dismiss="modal">
+            <i class="fa-solid fa-paper-plane fa-2x">送出</i>
+          </button>
+        </div>
+
+        <div class="modal-footer">
+         
+          <button type="button" class="btn btn-primary">Save changes</button> 
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- footer -->
+  <!-- <footer id="footer" class="pt-5 bg-secondary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5>團體票聯絡資訊</h5>
+          <a href="mailto:service@brand.com">service@brand.com</a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5 class="text-uppercase">公司聯絡資訊</h5>
+
+          <ul>
+            <li>
+              <a href="#">電話</a>
+            </li>
+            <li>
+              <a href="#">傳真</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5 class="text-uppercase">其他資訊</h5>
+          <ul>
+            <li>
+              <a href="#">Help Center</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-end bg-dark mt-5 py-2 justify-content-center">
+      <p class="text-center">&copy; Copy right 2020</p>
+    </div>
+
+  </footer> -->
+  <!-- footer end -->
+
+
+
+  <!--                              引用資料                                -->
+
+  <!-- 引用 https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js-->
+  <script> src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"</script>
+  <!-- <script> src = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"</script> -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- moadal會引用到 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- datepicker會引用到 --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/i18n/jquery.ui.datepicker-zh-TW.min.js"></script>
+  
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+
+  <!-- jquery.min.js -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+
+  <!-- popper.min.js -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@5.3.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script> -->
+  <!-- bootstrap.min.js -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script> -->
+
+
+  <!-- jQuery easing plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
+
+  <!-- 連結網頁主程式 -->
+  <script src="/tickets/js/main.js"></script>
+  <script src="/tickets/js/dashboard.js"></script>
+
+  
+
+
+</body>
+
+
+</html>
