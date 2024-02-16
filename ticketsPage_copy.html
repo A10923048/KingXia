@@ -26,20 +26,18 @@
     <!-- TODO: 客製化Bootstrap CSS -->
     <link rel="stylesheet" href="/tickets/css/bootstrap.css">
     <!-- 使用style.css -->
-    <link rel="stylesheet" href="/tickets/css/pay_success.css">
-    <!-- Progress Bar -->
-    <link rel="stylesheet" href="/tickets/css/Progress Bar.css">
-
+    <link rel="stylesheet" href="/tickets/css/ticketsPage_copy.css">
+    
+    <link rel="stylesheet" href="/tickets/css/login.css">
+    
+    <link rel="stylesheet" href="/tickets/css/form.css">
+    <!-- <link rel="stylesheet" href="/tickets/css/dashboard2.css"> -->
 
 </head>
 
 <body>
     <!-- navbar -->
-    <!-- 使用Boostrap Navbar -->
-    <!-- TODO: 設定Navbar緊貼畫面上緣 -->
-    <!-- TODO: 點擊滾動目標 -->
-    <!-- b4-navbar-default -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
+    <!-- <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
         <a class="navbar-brand" href="/index">首頁</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +54,7 @@
 
             </ul>
         </div>
-    </nav>
-
-    <!-- navbar end -->
+    </nav> -->
 
 
     <!-- header -->
@@ -69,13 +65,13 @@
             <div>
                 <h1 class="loader ">
                     <img src="/tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
-                    <span class="m">付</span>
+                    <span class="m">團</span>
                     <span class="m">&nbsp;</span>
-                    <span class="m">款</span>
+                    <span class="m">體</span>
                     <span class="m">&nbsp;</span>
-                    <span class="m">資</span>
+                    <span class="m">訂</span>
                     <span class="m">&nbsp;</span>
-                    <span class="m">訊</span>
+                    <span class="m">票</span>
                     <span class="m"></span>
                 </h1>
 
@@ -87,342 +83,617 @@
         <header id="header" class=" jumbotron text-center bg-dark">
             <div class="container">
 
-                <section id="featuresSection" class="py-5" style="border-radius: 15px;">
-                    <div>
-                        <div class="row justify-content-center">
-                            <div class="col-12">
-                                <section id="introSection" class="py-5">
-                                    <div class="container  mb-5">
-                                        <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
-                                            <article id="articleA" class="my-3 tab-pane">
-                                                <main>
-                                                    <div class=" py-5 text-center text-white">
-                                                        <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-                                                        <h2>付款成功</h2>
-                                                        <h3 class="quote">"Payment Successful"</h3>
-                                                        <p class="author"><em>~金廈海運~</em></p>
-                                                    </div>
+                <section id="featuresSection" class="py-1" style="border-radius: 15px;">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <section id="introSection" class="py-1">
 
-                                                    <!-- <div class="col-lg-12"> -->
-                                                        <!-- multistep form -->
+                                    <!-- login -->
+                                    <div class="login">
+                                        <div class="form-structor">
+                                            <div class="signup">
+                                                <h2 class="form-title" id="signup"><span>or</span>註冊帳號</h2>
+
+                                                <!-- form -->
+                                                    <div class="form">
+        
+                                                        <ul class="tab-group">
+                                                        <li class="tab active"><a href="#content1">旅行社資料</a></li>
+                                                        <li class="tab"><a href="#content2">轉帳資料</a></li>
+                                                        <li class="tab"><a href="#content3">聯絡人資料</a></li>
+                                                        </ul>
                                                         
-
-                                                    <!-- </div> -->
-
-                                                    <div class=" align-self-center" >
-
-                                                        <form id="msform"> 
-
-                                                            <!-- progressbar -->
-                                                            <ul id="progressbar">
-                                                                <li class="active">Step1</li>
-                                                                <li>Step2</li>
-                                                                <li>Personal Details</li>
-                                                            </ul>
-
-                                                            <!-- fieldsets -->
-                                                           
+                                                        <div class="tab-content">
+                                                            <div id="content1">   
+                                                                <h1>Sign Up for Free</h1>
                                                                 
-                                                            <fieldset>
-                                                                <h2 class="fs-title">聯絡人資料</h2>
-                                                                <h3 class="fs-subtitle">This is step 1</h3>
+                                                                <form action="/" method="post">
+
+                                                                <div class="top-row">
+                                                                <div class="field-wrap">
+                                                                    <label>
+                                                                    First Name<span class="req">*</span>
+                                                                    </label>
+                                                                    <input type="text" required autocomplete="off" />
+                                                                </div>
+                                                            
+                                                                <div class="field-wrap">
+                                                                    <label>
+                                                                    Last Name<span class="req">*</span>
+                                                                    </label>
+                                                                    <input type="text"required autocomplete="off"/>
+                                                                </div>
+                                                                </div>
+                                                    
+                                                                <div class="field-wrap">
+                                                                <label>
+                                                                    Email Address<span class="req">*</span>
+                                                                </label>
+                                                                <input type="email"required autocomplete="off"/>
+                                                                </div>
                                                                 
-                                                                <ul class="list-group mb-3">
-                                                                    </li>
-                                                                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                    <h5 class="my-0">出發日期:</h5>
-                                                                    <span class="my-0" id="time-show">(日期顯示)</span>
-                                                                    </li>
-                                                                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                    <h5 class="my-0">出發時間:</h5>
-                                                                    <span class="my-0" id="clock-show">(時間顯示)</span>
-                                                                    </li>
-                                                                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                    <h5 class="my-0">船班:</h5>
-                                                                    <span class="my-0" id="shipID-show">(船班顯示)</span>
-                                                                    </li>
-                                                                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                    <h5 class="my-0">票數:</h5>
-                                                                    <h4 class="d-flex justify-content-between align-items-center">
-                                                                        <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
-                                                                    </h4>
-                                                                    </li>
-                                                                    
-                                                                </ul>
-
-                                                                <div class="col table-responsive">
-                                                                    <table class="table text-center">
-                                                                    <thead>
-                                                                        <tr>
-                                                                        <h3>票種選擇</h3>
-                                                                        <h5 class="my-0"></h5>
-                                                                        <ul class="list-group mb-3">
-                                                                            <li id="custom-alert" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
-                                                                            role="alert"
-                                                                            style="position: relative; background-color: rgb(255, 196, 191); display: none;">
-                                                                            <h5 id="alert-result" class="text-red"></h5>
-                                                                            <i  class=" alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
-                                                                                style="position: absolute; top: 5%; right: 0%;"></i>
-                                                                            </li>
-                                                                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                            <div
-                                                                                class="d-flex justify-content-between align-items-center bg-primary">
-                                                                                <h2 class=" bg-primary  text-white">(未選擇)</h2>
-                                                                            </div>
-                                                                            <div class="d-flex justify-content-center align-items-center">
-                                                                                <h2 class=" rounded-pill main-button text-white "
-                                                                                id="tickets_unchoosed"></h2>
-                                                                            </div>
-                                                                            <div class="d-flex justify-content-between align-items-center">
-                                                                                <h2 class=" bg-primary  text-white" id="tickets_choosed">張票</h2>
-                                                                            </div>
-                                                                            </li>
-                                                                            <li id="custom-alert_2" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
-                                                                            role="alert"
-                                                                            style="position: relative; background-color: rgb(255, 100, 86); display:none ;">
-                                                                            <p class="text-white">票種選擇已超過預定票數!</p>
-                                                                            <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
-                                                                                style="position: absolute; top: 5%; right: 0%; "></i>
-                                                                            </li>
-                                                                        </ul>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <th style=" width: 30%;">
-                                                                            <h6 class="find_title">全票</h6>
-                                                                            <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                                                            <h6>票數</h6>
-                                                                            <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
-                                                                        
-                                                                            </select>
-                                                                        </th>
-                                                                        <th style="width: 30%;">
-                                                                            <h6 class="find_title">嬰兒票</h6>
-                                                                            <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                                                            <h6>票數</h6>
-                                                                            <select id="ticketQuantity_C" class="ticketQuantity">
-                                                                            </select>
-                                                                        </th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    </table>
+                                                                <div class="field-wrap">
+                                                                <label>
+                                                                    Set A Password<span class="req">*</span>
+                                                                </label>
+                                                                <input type="password"required autocomplete="off"/>
                                                                 </div>
-
-                                                                <input type="button" name="next" class="next action-button" value="Next" />
-                                                            </fieldset>
-
-                                                            <fieldset>
-                                                            <h2 class="fs-title">客戶需求</h2>
-                                                            <h3 class="fs-subtitle">Your presence on the social network</h3>
-                                                            <input type="text" name="twitter" placeholder="Twitter" />
-                                                            <input type="text" name="facebook" placeholder="Facebook" />
-                                                            <input type="text" name="gplus" placeholder="Google Plus" />
-                                                            <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                                            <input type="button" name="next" class="next action-button" value="Next" />
-                                                            </fieldset>
-
-                                                            <fieldset>
-                                                            <h2 class="fs-title">Personal Details</h2>
-                                                            <h3 class="fs-subtitle">We will never sell it</h3>
-                                                            <input type="text" name="fname" placeholder="First Name" />
-                                                            <input type="text" name="lname" placeholder="Last Name" />
-                                                            <input type="text" name="phone" placeholder="Phone" />
-                                                            <textarea name="address" placeholder="Address"></textarea>
-                                                            <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                                            <a href="https://twitter.com/GoktepeAtakan" class="submit action-button" target="_top">Submit</a>
-                                                            </fieldset>
+                                                                
+                                                                <button type="submit" class="button button-block"/>Get Started</button>
+                                                                
+                                                                </form>
+                                                    
+                                                            </div>
                                                             
-                                                        </form> 
-
-                                                         <!-- <form id="contact" >
-                                                            <ul id="progressbar">
-                                                                <li class="active">Step1</li>
-                                                                <li>Step2</li>
-                                                                <li>Step3</li>
-                                                            </ul>
-                                                            <fieldset>
-                            
-                                                                <div class="col-lg-12" >
-                                                                    <div class="py-5 text-center text-primary">
-                                                                        <h2>訂票資訊</h2>
-                                                                    </div>
-                                                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-
-                                                                    </h4>
-                                                                    <ul class="list-group mb-3">
-                                                                        </li>
-                                                                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                        <h5 class="my-0">出發日期:</h5>
-                                                                        <span class="my-0" id="time-show">(日期顯示)</span>
-                                                                        </li>
-                                                                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                        <h5 class="my-0">出發時間:</h5>
-                                                                        <span class="my-0" id="clock-show">(時間顯示)</span>
-                                                                        </li>
-                                                                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                        <h5 class="my-0">船班:</h5>
-                                                                        <span class="my-0" id="shipID-show">(船班顯示)</span>
-                                                                        </li>
-                                                                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                        <h5 class="my-0">票數:</h5>
-                                                                        <h4 class="d-flex justify-content-between align-items-center">
-                                                                            <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
-                                                                        </h4>
-                                                                        </li>
-                                                                    </ul>
-                                                               
-                                                                    <button class="next main-button pt-3">
-                                                                        <h3>送出</h3>
-                                                                    </button>
+                                                            <div id="content2">   
+                                                                <h1>Welcome Back!</h1>
+                                                                
+                                                                <form action="/" method="post">
+                                                                
+                                                                <div class="field-wrap">
+                                                                <label>
+                                                                    Email Address<span class="req">*</span>
+                                                                </label>
+                                                                <input type="email"required autocomplete="off"/>
                                                                 </div>
-                                
-                                                            </fieldset>
-
-                                                            <fieldset>
-                                                         
-                                                                <div class="col-lg-12">
-                                                                    <div class="col table-responsive">
-                                                                        <table class="table text-center">
-                                                                        <thead>
-                                                                            <tr>
-                                                                            <h3>票種選擇</h3>
-                                                                            <h5 class="my-0"></h5>
-                                                                            <ul class="list-group mb-3">
-                                                                                <li id="custom-alert" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
-                                                                                role="alert"
-                                                                                style="position: relative; background-color: rgb(255, 196, 191); display: none;">
-                                                                                <h5 id="alert-result" class="text-red"></h5>
-                                                                                <i  class=" alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
-                                                                                    style="position: absolute; top: 5%; right: 0%;"></i>
-                                                                                </li>
-                                                                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                                <div
-                                                                                    class="d-flex justify-content-between align-items-center bg-primary">
-                                                                                    <h2 class=" bg-primary  text-white">(未選擇)</h2>
-                                                                                </div>
-                                                                                <div class="d-flex justify-content-center align-items-center">
-                                                                                    <h2 class=" rounded-pill main-button text-white "
-                                                                                    id="tickets_unchoosed"></h2>
-                                                                                </div>
-                                                                                <div class="d-flex justify-content-between align-items-center">
-                                                                                    <h2 class=" bg-primary  text-white" id="tickets_choosed">張票</h2>
-                                                                                </div>
-                                                                                </li>
-                                                                                <li id="custom-alert_2" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
-                                                                                role="alert"
-                                                                                style="position: relative; background-color: rgb(255, 100, 86); display:none ;">
-                                                                                <p class="text-white">票種選擇已超過預定票數!</p>
-                                                                                <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
-                                                                                    style="position: absolute; top: 5%; right: 0%; "></i>
-                                                                                </li>
-                                                                            </ul>
-                                                                            </tr>
-                                                                            <tr>
-                                                                            <th style=" width: 30%;">
-                                                                                <h6 class="find_title">全票</h6>
-                                                                                <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                                                                <h6>票數</h6>
-                                                                                <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
-                                                                            
-                                                                                </select>
-                                                                            </th>
-                                                                            <th style="width: 30%;">
-                                                                                <h6 class="find_title">敬老</h6>
-                                                                                <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                                                                <h6>票數</h6>
-                                                                                <select id="ticketQuantity_B" class="ticketQuantity">
-                                                                                </select>
-                                                                            </th>
-                                                                            <th style="width: 30%;">
-                                                                                <h6 class="find_title">兒童</h6>
-                                                                                <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                                                                <h6>票數</h6>
-                                                                                <select id="ticketQuantity_C" class="ticketQuantity">
-                                                                                </select>
-                                                                            </th>
-                                                                            </tr>
-                                                                            <tr>
-                                                                            <th style="width: 30%;">
-                                                                                <h6 class="find_title">博愛</h6>
-                                                                                <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                                                                <h6>票數</h6>
-                                                                                <select id="ticketQuantity_D1" class="ticketQuantity">
-                                                                                </select>
-                                                                            </th>
-                                                                            <th style="width: 30%;">
-                                                                                <h6 class="find_title">博愛<br>(陪同者)</h6>
-                                                                                <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
-                                                                                <h6>票數</h6>
-                                                                                <select id="ticketQuantity_D2" class="ticketQuantity">
-                                                                                </select>
-                                                                            </th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        </table>
-                                                                    </div>
-                                                                    <button class="main-button pt-3">
-                                                                        <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                                                    </button>
-
-                                                                    <button class="main-button pt-3">
-                                                                        <input type="button" name="next" class="next action-button" value="Next" />
-                                                                    </button>
+                                                                
+                                                                <div class="field-wrap">
+                                                                <label>
+                                                                    Password<span class="req">*</span>
+                                                                </label>
+                                                                <input type="password"required autocomplete="off"/>
                                                                 </div>
-                                                            </fieldset>
-                                                            
-                                                            <fieldset>
-                                                                <div class="row">
-                                                                    <div class="col-lg-6" >
-                                                                    <div class="py-5 text-center text-primary">
-                                                                        <h2>3</h2>
-                                                                    </div>
-                                                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                
-                                                                        
-                                                                    </h4>
-                                                                    <ul class="list-group mb-3">
-                                                                        </li>
-                                                                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                        <h5 class="my-0">出發日期:</h5>
-                                                                        <span class="my-0" id="time-show">(日期顯示)</span>
-                                                                        </li>
-                                                                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                        <h5 class="my-0">出發時間:</h5>
-                                                                        <span class="my-0" id="clock-show">(時間顯示)</span>
-                                                                        </li>
-                                                                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                        <h5 class="my-0">船班:</h5>
-                                                                        <span class="my-0" id="shipID-show">(船班顯示)</span>
-                                                                        </li>
-                                                                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                                                                        <h5 class="my-0">票數:</h5>
-                                                                        <h4 class="d-flex justify-content-between align-items-center">
-                                                                            <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
-                                                                        </h4>
-                                                                        </li>
-                                                                    </ul>
-                                                                    </div>
-                                
-                                
-                                                                    <div class="col-lg-12 ">
-                                                                        <button class="main-button pt-3" id="articleA_send">
-                                                                            <h3>送出</h3>
-                                                                        </button>
-                                                                    </div>
-                                
+                                                                
+                                                                <p class="forgot"><a href="#">Forgot Password?</a></p>
+                                                                
+                                                                <button class="button button-block"/>Log In</button>
+                                                                
+                                                                </form>
+                                                    
+                                                            </div>
+
+                                                            <div id="content3">   
+                                                                <h1>Welcome Back!</h1>
+                                                                
+                                                                <form action="/" method="post">
+                                                                
+                                                                <div class="field-wrap">
+                                                                <label>
+                                                                    Email Address<span class="req">*</span>
+                                                                </label>
+                                                                <input type="email"required autocomplete="off"/>
                                                                 </div>
-                                                            </fieldset>                                                            
-                                                        </form>  -->
+                                                                
+                                                                <div class="field-wrap">
+                                                                <label>
+                                                                    Password<span class="req">*</span>
+                                                                </label>
+                                                                <input type="password"required autocomplete="off"/>
+                                                                </div>
+                                                                
+                                                                <p class="forgot"><a href="#">Forgot Password?</a></p>
+                                                                
+                                                                <button class="button button-block"/>Log In</button>
+                                                                
+                                                                </form>
+                                                    
+                                                            </div>
+
                                                         
-                                                    </div>
+                                                        </div><!-- tab-content -->
+                                                        
+                                                    </div> 
+                                                <!-- /form -->
 
-                                                </main>
+                                                <!-- <div class="form-holder">
+                                                    <input type="text" class="input" placeholder="旅行社名稱" />
+                                                    <input type="email" class="input" placeholder="分公司" />
+                                                </div>
+                                                <div class="form-holder">
+                                                    <input type="text" class="input" placeholder="公司所在地" />
+                                                    <input type="email" class="input" placeholder="公司電話" />
+                                                    
+                                                    <input type="email" class="input" placeholder="統一編號" />
+                                                    
+                                                    <input type="email" class="input" placeholder="轉帳銀行" />
+                                                    
+                                                    <input type="email" class="input" placeholder="轉帳銀行(分行)" />
+                                                    <input type="email" class="input" placeholder="銀行帳號" />
+                                                    
+                                                    <input type="email" class="input" placeholder="戶名" />
+
+                                                </div>
+                                                <div class="form-holder">
+                                                    <input type="text" class="input" placeholder="聯絡人" />
+                                                    <input type="email" class="input" placeholder="職稱" />
+                                                    
+                                                    <input type="text" class="input" placeholder="電話" />
+                                                    <input type="email" class="input" placeholder="分機" />
+                                                    
+                                                    <input type="text" class="input" placeholder="行動電話" />
+                                                    <input type="email" class="input" placeholder="Email" />
+                                                    
+                                                    <input type="email" class="input" placeholder="備註" />
+                                                </div>  -->
+                                                
+                                                <button class="submit-btn">送出</button>
+                                            </div>
+                                            <div class="login slide-up">
+                                                <div class="center">
+                                                    <h2 class="form-title" id="login"><span>登入</span>帳號密碼</h2>
+                                                    <div class="form-holder">
+                                                        <input type="account" class="input" placeholder="帳號" />
+                                                        <input type="password" class="input" placeholder="密碼" />
+                                                    </div>
+                                                    <button class="submit-btn">登入</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                            </div>
-                            <!-- featuresSection end -->
-                            </article>
+                                    
+                                    <!-- app-sidebar -->
+                                    <div class="app-sidebar " style="display: none;">
+                                        <div class="app-header-right">
+                                            <button class="mode-switch" title="Switch Theme">
+                                            <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+                                                <defs></defs>
+                                                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                                            </svg>
+                                            </button>
+                                            <button class="add-btn" title="Add New Project">
+                                            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                                <line x1="12" y1="5" x2="12" y2="19" />
+                                                <line x1="5" y1="12" x2="19" y2="12" /></svg>
+                                            </button>
+                                            <button class="notification-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+                                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                                                <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+                                            </button>
+                                            <button class="profile-btn">
+                                                <a href="" class="app-sidebar-link active">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                                        <polyline points="9 22 9 12 15 12 15 22" /></svg>
+                                                    </a>
+                                                <span>登入</span>
+                                            </button>
+                                        </div>
+
+                                        <a href="" class="app-sidebar-link active">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                            <polyline points="9 22 9 12 15 12 15 22" /></svg>
+                                        </a>
+                                        <a href="" class="app-sidebar-link">
+                                        <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-pie-chart" viewBox="0 0 24 24">
+                                            <defs />
+                                            <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z" />
+                                        </svg>
+                                        </a>
+                                        <a href="" class="app-sidebar-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                            <line x1="3" y1="10" x2="21" y2="10" /></svg>
+                                        </a>
+                                        <a href="" class="app-sidebar-link">
+                                        <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
+                                            <defs />
+                                            <circle cx="12" cy="12" r="3" />
+                                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+                                        </svg>
+                                        </a>
+                                        
+                                    </div>
+
+                                    <!-- projects -->
+                                    <div class="projects-section" style="display: none;">
+                                        <div class="projects-section-header">
+                                        <p>Projects</p>
+                                        <p class="time">December, 12</p>
+                                        </div>
+                                        <div class="projects-section-line">
+                                        <div class="projects-status">
+                                            <div class="item-status">
+                                            <span class="status-number">45</span>
+                                            <span class="status-type">In Progress</span>
+                                            </div>
+                                            <div class="item-status">
+                                            <span class="status-number">24</span>
+                                            <span class="status-type">Upcoming</span>
+                                            </div>
+                                            <div class="item-status">
+                                            <span class="status-number">62</span>
+                                            <span class="status-type">Total Projects</span>
+                                            </div>
+                                        </div>
+                                        <div class="view-actions">
+                                            <button class="view-btn list-view" title="List View">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                                                <line x1="8" y1="6" x2="21" y2="6" />
+                                                <line x1="8" y1="12" x2="21" y2="12" />
+                                                <line x1="8" y1="18" x2="21" y2="18" />
+                                                <line x1="3" y1="6" x2="3.01" y2="6" />
+                                                <line x1="3" y1="12" x2="3.01" y2="12" />
+                                                <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+                                            </button>
+                                            <button class="view-btn grid-view active" title="Grid View">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                                                <rect x="3" y="3" width="7" height="7" />
+                                                <rect x="14" y="3" width="7" height="7" />
+                                                <rect x="14" y="14" width="7" height="7" />
+                                                <rect x="3" y="14" width="7" height="7" /></svg>
+                                            </button>
+                                        </div>
+                                        </div>
+                                        <div class="project-boxes jsGridView">
+                                        <div class="project-box-wrapper">
+                                            <div class="project-box" style="background-color: #fee4cb;">
+                                            <div class="project-box-header">
+                                                <span>December 10, 2020</span>
+                                                <div class="more-wrapper">
+                                                <button class="project-btn-more">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                    <circle cx="12" cy="12" r="1" />
+                                                    <circle cx="12" cy="5" r="1" />
+                                                    <circle cx="12" cy="19" r="1" /></svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="project-box-content-header">
+                                            <p class="box-content-header">Web Designing</p>
+                                            <p class="box-content-subheader">Prototyping</p>
+                                        </div>
+                                        <div class="box-progress-wrapper">
+                                            <p class="box-progress-header">Progress</p>
+                                            <div class="box-progress-bar">
+                                            <span class="box-progress" style="width: 60%; background-color: #ff942e"></span>
+                                            </div>
+                                            <p class="box-progress-percentage">60%</p>
+                                        </div>
+                                        <div class="project-box-footer">
+                                            <div class="participants">
+                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                            <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                            <button class="add-participant" style="color: #ff942e;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                                <path d="M12 5v14M5 12h14" />
+                                                </svg>
+                                            </button>
+                                            </div>
+                                            <div class="days-left" style="color: #ff942e;">
+                                            2 Days Left
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-box-wrapper">
+                                        <div class="project-box" style="background-color: #e9e7fd;">
+                                        <div class="project-box-header">
+                                            <span>December 10, 2020</span>
+                                            <div class="more-wrapper">
+                                            <button class="project-btn-more">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1" />
+                                                <circle cx="12" cy="5" r="1" />
+                                                <circle cx="12" cy="19" r="1" /></svg>
+                                            </button>
+                                            </div>
+                                        </div>
+                                        <div class="project-box-content-header">
+                                            <p class="box-content-header">Testing</p>
+                                            <p class="box-content-subheader">Prototyping</p>
+                                        </div>
+                                        <div class="box-progress-wrapper">
+                                            <p class="box-progress-header">Progress</p>
+                                            <div class="box-progress-bar">
+                                            <span class="box-progress" style="width: 50%; background-color: #4f3ff0"></span>
+                                            </div>
+                                            <p class="box-progress-percentage">50%</p>
+                                        </div>
+                                        <div class="project-box-footer">
+                                            <div class="participants">
+                                            <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1215&q=80" alt="participant">
+                                            <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80" alt="participant">
+                                            <button class="add-participant" style="color: #4f3ff0;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                                <path d="M12 5v14M5 12h14" />
+                                                </svg>
+                                            </button>
+                                            </div>
+                                            <div class="days-left" style="color: #4f3ff0;">
+                                            2 Days Left
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-box-wrapper">
+                                        <div class="project-box">
+                                        <div class="project-box-header">
+                                            <span>December 10, 2020</span>
+                                            <div class="more-wrapper">
+                                            <button class="project-btn-more">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1" />
+                                                <circle cx="12" cy="5" r="1" />
+                                                <circle cx="12" cy="19" r="1" /></svg>
+                                            </button>
+                                            </div>
+                                        </div>
+                                        <div class="project-box-content-header">
+                                            <p class="box-content-header">Svg Animations</p>
+                                            <p class="box-content-subheader">Prototyping</p>
+                                        </div>
+                                        <div class="box-progress-wrapper">
+                                            <p class="box-progress-header">Progress</p>
+                                            <div class="box-progress-bar">
+                                            <span class="box-progress" style="width: 80%; background-color: #096c86"></span>
+                                            </div>
+                                            <p class="box-progress-percentage">80%</p>
+                                        </div>
+                                        <div class="project-box-footer">
+                                            <div class="participants">
+                                            <img src="https://images.unsplash.com/photo-1587628604439-3b9a0aa7a163?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                            <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1215&q=80" alt="participant">
+                                            <button class="add-participant" style="color: #096c86;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                                <path d="M12 5v14M5 12h14" />
+                                                </svg>
+                                            </button>
+                                            </div>
+                                            <div class="days-left" style="color: #096c86;">
+                                            2 Days Left
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-box-wrapper">
+                                        <div class="project-box" style="background-color: #ffd3e2;">
+                                        <div class="project-box-header">
+                                            <span>December 10, 2020</span>
+                                            <div class="more-wrapper">
+                                            <button class="project-btn-more">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1" />
+                                                <circle cx="12" cy="5" r="1" />
+                                                <circle cx="12" cy="19" r="1" /></svg>
+                                            </button>
+                                            </div>
+                                        </div>
+                                        <div class="project-box-content-header">
+                                            <p class="box-content-header">UI Development</p>
+                                            <p class="box-content-subheader">Prototyping</p>
+                                        </div>
+                                        <div class="box-progress-wrapper">
+                                            <p class="box-progress-header">Progress</p>
+                                            <div class="box-progress-bar">
+                                            <span class="box-progress" style="width: 20%; background-color: #df3670"></span>
+                                            </div>
+                                            <p class="box-progress-percentage">20%</p>
+                                        </div>
+                                        <div class="project-box-footer">
+                                            <div class="participants">
+                                            <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                            <img src="https://images.unsplash.com/photo-1587628604439-3b9a0aa7a163?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                            <button class="add-participant" style="color: #df3670;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                                <path d="M12 5v14M5 12h14" />
+                                                </svg>
+                                            </button>
+                                            </div>
+                                            <div class="days-left" style="color: #df3670;">
+                                            2 Days Left
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-box-wrapper">
+                                        <div class="project-box" style="background-color: #c8f7dc;">
+                                        <div class="project-box-header">
+                                            <span>December 10, 2020</span>
+                                            <div class="more-wrapper">
+                                            <button class="project-btn-more">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1" />
+                                                <circle cx="12" cy="5" r="1" />
+                                                <circle cx="12" cy="19" r="1" /></svg>
+                                            </button>
+                                            </div>
+                                        </div>
+                                        <div class="project-box-content-header">
+                                            <p class="box-content-header">Data Analysis</p>
+                                            <p class="box-content-subheader">Prototyping</p>
+                                        </div>
+                                        <div class="box-progress-wrapper">
+                                            <p class="box-progress-header">Progress</p>
+                                            <div class="box-progress-bar">
+                                            <span class="box-progress" style="width: 60%; background-color: #34c471"></span>
+                                            </div>
+                                            <p class="box-progress-percentage">60%</p>
+                                        </div>
+                                        <div class="project-box-footer">
+                                            <div class="participants">
+                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                            <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                                            <button class="add-participant" style="color: #34c471;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                                <path d="M12 5v14M5 12h14" />
+                                                </svg>
+                                            </button>
+                                            </div>
+                                            <div class="days-left" style="color: #34c471;">
+                                            2 Days Left
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-box-wrapper">
+                                        <div class="project-box" style="background-color: #d5deff;">
+                                        <div class="project-box-header">
+                                            <span>December 10, 2020</span>
+                                            <div class="more-wrapper">
+                                            <button class="project-btn-more">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1" />
+                                                <circle cx="12" cy="5" r="1" />
+                                                <circle cx="12" cy="19" r="1" /></svg>
+                                            </button>
+                                            </div>
+                                        </div>
+                                        <div class="project-box-content-header">
+                                            <p class="box-content-header">Web Designing</p>
+                                            <p class="box-content-subheader">Prototyping</p>
+                                        </div>
+                                        <div class="box-progress-wrapper">
+                                            <p class="box-progress-header">Progress</p>
+                                            <div class="box-progress-bar">
+                                            <span class="box-progress" style="width: 40%; background-color: #4067f9"></span>
+                                            </div>
+                                            <p class="box-progress-percentage">40%</p>
+                                        </div>
+                                        <div class="project-box-footer">
+                                            <div class="participants">
+                                            <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                                            <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80" alt="participant">
+                                            <button class="add-participant" style="color: #4067f9;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                                <path d="M12 5v14M5 12h14" />
+                                                </svg>
+                                            </button>
+                                            </div>
+                                            <div class="days-left" style="color: #4067f9;">
+                                            2 Days Left
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    </div>
+
+                                    <!-- messages-section -->
+                                    <div class="messages-section" style="display: none;">
+                                        <button class="messages-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <line x1="15" y1="9" x2="9" y2="15" />
+                                            <line x1="9" y1="9" x2="15" y2="15" /></svg>
+                                        </button>
+                                        <div class="projects-section-header">
+                                        <p>Client Messages</p>
+                                        </div>
+                                        <div class="messages">
+                                        <div class="message-box">
+                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+                                            <div class="message-content">
+                                            <div class="message-header">
+                                                <div class="name">Stephanie</div>
+                                                <div class="star-checkbox">
+                                                <input type="checkbox" id="star-1">
+                                                <label for="star-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                                                </label>
+                                                </div>
+                                            </div>
+                                            <p class="message-line">
+                                                I got your first assignment. It was quite good. 🥳 We can continue with the next assignment.
+                                            </p>
+                                            <p class="message-line time">
+                                                Dec, 12
+                                            </p>
+                                            </div>
+                                        </div>
+                                        <div class="message-box">
+                                            <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+                                            <div class="message-content">
+                                            <div class="message-header">
+                                                <div class="name">Mark</div>
+                                                <div class="star-checkbox">
+                                                <input type="checkbox" id="star-2">
+                                                <label for="star-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                                                </label>
+                                                </div>
+                                            </div>
+                                            <p class="message-line">
+                                                Hey, can tell me about progress of project? I'm waiting for your response.
+                                            </p>
+                                            <p class="message-line time">
+                                                Dec, 12
+                                            </p>
+                                            </div>
+                                        </div>
+                                        <div class="message-box">
+                                            <img src="https://images.unsplash.com/photo-1543965170-4c01a586684e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDZ8fG1hbnxlbnwwfDB8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile image">
+                                            <div class="message-content">
+                                            <div class="message-header">
+                                                <div class="name">David</div>
+                                                <div class="star-checkbox">
+                                                <input type="checkbox" id="star-3">
+                                                <label for="star-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                                                </label>
+                                                </div>
+                                            </div>
+                                            <p class="message-line">
+                                                Awesome! 🤩 I like it. We can schedule a meeting for the next one.
+                                            </p>
+                                            <p class="message-line time">
+                                                Dec, 12
+                                            </p>
+                                            </div>
+                                        </div>
+                                        <div class="message-box">
+                                            <img src="https://images.unsplash.com/photo-1533993192821-2cce3a8267d1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWFuJTIwbW9kZXJufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile image">
+                                            <div class="message-content">
+                                            <div class="message-header">
+                                                <div class="name">Jessica</div>
+                                                <div class="star-checkbox">
+                                                <input type="checkbox" id="star-4">
+                                                <label for="star-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                                                </label>
+                                                </div>
+                                            </div>
+                                            <p class="message-line">
+                                                I am really impressed! Can't wait to see the final result.
+                                            </p>
+                                            <p class="message-line time">
+                                                Dec, 11
+                                            </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                            </section>
                         </div>
-                    </div> <!-- containter END-->
+                    </div>
                 </section>
 
             </div>
@@ -497,11 +768,9 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <!-- 連結網頁主程式 -->
-    <script src="/tickets/js/pay_success.js"></script>
+    <script src="/tickets/js/ticketsPage_copy.js"></script>
+    
 
-    <!-- 轉頁特效 -->
-    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <!-- <script src="/tickets/js/progressBar.js"></script> -->
 
 
 
