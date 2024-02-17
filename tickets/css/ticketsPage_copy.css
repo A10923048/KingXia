@@ -291,7 +291,7 @@ button:focus {
     background-color: #03dac6;
     margin-bottom: 10px;
     
-    padding: 100px 0;
+    padding: 10px 0;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
     background-image: url('/tickets/img/ocean.jpg');
     background-size: cover;
@@ -370,9 +370,11 @@ footer ul {
 #featuresSection {
     
     /* background-color: #172659f9; */
-    background-color: #e1e8ee;
+    background-color: #0457a0;
+    border-color: #ffee00;
+    border-width: 5px;
     border-radius: 15px;
-    padding: 0 5vw;
+    padding:1 5vw;
 }
 
 
