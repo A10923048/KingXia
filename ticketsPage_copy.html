@@ -98,37 +98,58 @@
                                                     <div class="form">
         
                                                         <ul class="tab-group">
-                                                        <li class="tab active"><a href="#content1">旅行社資料</a></li>
-                                                        <li class="tab"><a href="#content2">轉帳資料</a></li>
-                                                        <li class="tab"><a href="#content3">聯絡人資料</a></li>
+                                                        <li class="tab active"><a href="#content1">步驟一</a></li>
+                                                        <li class="tab"><a href="#content2">步驟二</a></li>
+                                                        <li class="tab"><a href="#content3">步驟三</a></li>
                                                         </ul>
                                                         
                                                         <div class="tab-content">
                                                             <div id="content1">   
-                                                                <h1>公司資料</h1>
+                                                                <h1>旅行社資料</h1>
                                                                 
                                                                 <form action="/" method="post">
-                                                                
+
                                                                 <div class="field-wrap">
                                                                     <label>
                                                                         旅行社名稱<span class="req">*</span>
                                                                     </label>
-                                                                    <input type="email"required autocomplete="off"/>
+                                                                    <input type="text" name="cusName" required autocomplete="off"/>
                                                                 </div>
 
                                                                 <div class="top-row">
                                                                 
                                                                     <div class="field-wrap">
                                                                         <label>
-                                                                            分公司<span class="req">*</span>
+                                                                            公司電話<span></span>
                                                                         </label>
-                                                                        <input type="text"required autocomplete="off"/>
+                                                                        <input type="text" name="tel" autocomplete="off"/>
                                                                     </div>
+
                                                                     <div class="field-wrap">
                                                                         <label>
-                                                                            位在縣市<span class="req">*</span>
+                                                                            縣市<span class="req">*</span>
                                                                         </label>
-                                                                        <input type="text"required autocomplete="off"/>
+                                                                        <!-- <input type="text" required autocomplete="off"/> -->
+                                                                        <select name="city" required autocomplete="off">
+                                                                            <option value=""></option>
+                                                                            <option value="CHANGHUA">彰化</option>
+                                                                            <option value="HONG KONG">香港</option>
+                                                                            <option value="JIAYI">嘉義</option>
+                                                                            <option value="JINMEN">金門</option>
+                                                                            <option value="KAOXIONG">高雄</option>
+                                                                            <option value="PINGDONG">屏東</option>
+                                                                            <option value="Ponghu">澎湖</option>
+                                                                            <option value="QUANZHOU">泉州市</option>
+                                                                            <option value="TAINAN">台南</option>
+                                                                            <option value="TAIPEI">台北</option>
+                                                                            <option value="TAIZHONG">台中</option>
+                                                                            <option value="TAOYUAN">桃園</option>
+                                                                            <option value="XIAMEN">廈門市</option>
+                                                                            <option value="YI LAN">宜蘭</option>
+                                                                            <option value="YUNLIN">雲林</option>
+                                                                            <option value="NULL">其他</option>
+                                                                        </select>
+                                                                        
                                                                     </div>
 
                                                                 </div>
@@ -136,17 +157,28 @@
 
                                                                 <div class="top-row">
                                                                     <div class="field-wrap">
+                                                                        <label class="active_gun">
+                                                                            沒有統一編號<span class="req">*</span>
+                                                                        </label>
+                                                                        <input class="active_gun" type="checkbox" name="noGun" autocomplete="off"/>
+
+
                                                                         <label>
                                                                             統一編號<span class="req">*</span>
                                                                         </label>
-                                                                        <input type="text"required autocomplete="off"/>
+                                                                        <input type="text" name="gun" required autocomplete="off"/>
+
+                                                                       
                                                                     </div>
                                                                 
                                                                     <div class="field-wrap">
-                                                                        <label>
-                                                                            公司電話<span class="req">*</span>
+                                                                        <label class="active_R">
+                                                                            (非必填)<span></span>
                                                                         </label>
-                                                                        <input type="text"required autocomplete="off"/>
+                                                                        <label>
+                                                                            傳真<span class="req"></span>
+                                                                        </label>
+                                                                        <input type="text" name="fax" required autocomplete="off"/>
                                                                     </div>
 
                                                                 </div>
@@ -155,9 +187,12 @@
                                                                     <label>
                                                                         公司地址<span class="req">*</span>
                                                                     </label>
-                                                                    <input type="email"required autocomplete="off"/>
+                                                                    <input type="text" name="cusAdd" autocomplete="off"/>
                                                                 </div>
                                                                 
+
+                                                                <button id="sendRegistered1" type="submit" class="button button-block"/>送出</button>
+                                                               
                                                               
                                                                 
                                                                 </form>
@@ -173,7 +208,7 @@
                                                                     <label>
                                                                         銀行帳號<span class="req">*</span>
                                                                     </label>
-                                                                    <input type="email"required autocomplete="off"/>
+                                                                    <input type="email" name="bankCount" autocomplete="off"/>
                                                                 </div>
 
                                                                 <div class="top-row">
@@ -181,14 +216,14 @@
                                                                         <label>
                                                                             銀行名稱<span class="req">*</span>
                                                                         </label>
-                                                                        <input type="text"required autocomplete="off"/>
+                                                                        <input type="text" name="bankName" required autocomplete="off"/>
                                                                     </div>
                                                                 
                                                                     <div class="field-wrap">
                                                                         <label>
                                                                             分公司<span class="req">*</span>
                                                                         </label>
-                                                                        <input type="text"required autocomplete="off"/>
+                                                                        <input type="text" name="branchName" required autocomplete="off"/>
                                                                     </div>
                                                                 </div>
                                                     
@@ -196,9 +231,12 @@
                                                                 <label>
                                                                     戶名<span class="req">*</span>
                                                                 </label>
-                                                                <input type="email"required autocomplete="off"/>
+                                                                <input type="text" name="bankCName" required autocomplete="off"/>
                                                                 </div>
                                                                 </form>
+
+                                                                <button id="sendRegistered2" type="submit" class="button button-block"/>送出</button>
+                                                               
                                                     
                                                             </div>
 
@@ -218,7 +256,7 @@
                                                                             <label>
                                                                                 職稱<span class="req">*</span>
                                                                             </label>
-                                                                            <input type="title" id="title" name="title" required minlength="2" maxlength="6" size="10" autocomplete="off"/>
+                                                                            <input type="title" id="title" name="post" required minlength="2" maxlength="6" size="10" autocomplete="off"/>
                                                                         </div>
                                                                     </div>
 
@@ -228,24 +266,24 @@
                                                                         <label>
                                                                             電話<span class="req">:02-1234-1234</span>
                                                                         </label>
-                                                                        <input type="tel" id="tel" name="tel" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required autocomplete="off" />
+                                                                        <input type="tel" id="tel" name="tel"  required autocomplete="off" />
                                                                     
                                                                     </div>
                                                                 
                                                                     <div class="field-wrap">
                                                                         <label>
-                                                                            分機<span class="req">*</span>
+                                                                            分機<span class="req">(非必填)</span>
                                                                         </label>
-                                                                        <input type="tel" id="tel" name="tel" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required autocomplete="off" />
+                                                                        <input type="tel" id="ext" name="number" required autocomplete="off" />
                                                                     
                                                                     </div>
                                                                 </div>
                                                                 
                                                                 <div class="field-wrap">
                                                                     <label>
-                                                                        行動電話<span class="req">*</span>
+                                                                        行動電話<span class="req">:0912-345-678</span>
                                                                     </label>
-                                                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required autocomplete="off" />
+                                                                    <input type="tel" id="phone" name="mobile" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required autocomplete="off" />
                                                                     
                                                                 </div>
 
@@ -254,10 +292,10 @@
                                                                 <label>
                                                                     Email<span class="req">*</span>
                                                                 </label>
-                                                                <input type="email"required autocomplete="off"/>
+                                                                <input type="email" name="email" required autocomplete="off"/>
                                                                 </div>
                                                                 
-                                                                <button id="sendRegistered" type="submit" class="button button-block"/>送出</button>
+                                                                <button id="sendRegistered3" type="submit" class="button button-block"/>送出</button>
                                                                 
                                                                 </form>
                                                             </div>
@@ -271,7 +309,7 @@
                                                     <h2 class=" form-title" id="login"><span>使用者</span>登入</h2>
                                                         <div class="form" >
                                                             <h2 class=" form-title" id="login"><span>使用者</span>登入</h2>
-                                                            <div class=" form-holder">
+                                                            <div class="loginForm  form-holder">
                                                                 
                                                                 <label>
                                                                     帳號<span class="req"></span>
@@ -331,7 +369,7 @@
                                                     </div> -->
 
                                                                 
-                                                    <button  class="submit-btn">登入</button>
+                                                    <button id="loginBtn" class="submit-btn">登入</button>
                                                 </div>
                                             </div>
                                         </div>

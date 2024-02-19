@@ -97,13 +97,37 @@
 	 font-size: 14px;
 	 color: rgb(42, 91, 165);
 }
+label.active_R{
+	transform: translateY(-20px)translateX(120px);
+	 left: 2px;
+	 font-size: 14px;
+	 color: rgb(42, 91, 165);
+
+}
+
+label.active_gun{
+	transform: translateY(-20px)translateX(20px);
+	 left: 2px;
+	 font-size: 14px;
+	 color: rgb(237, 187, 24);
+
+}
+
+label.active_gun .active { 
+	transform: translateY(-20px)translateX(20px);
+	 left: 2px;
+	 font-size: 14px;
+	 color: rgb(237, 95, 24);
+
+}
+
  label.active .req {
 	 opacity: 0;
 }
  label.highlight {
 	 color: #fff;
 }
- input, textarea {
+ input, textarea ,select {
 	 font-size: 22px;
 	 display: block;
 	 width: 100%;
@@ -116,7 +140,7 @@
 	 border-radius: 0;
 	 transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
- input:focus, textarea:focus {
+ input:focus, textarea:focus ,select:focus {
 	 outline: 0;
 	 border-color: #1ab188;
 }
