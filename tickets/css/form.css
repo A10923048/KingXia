@@ -98,26 +98,42 @@
 	 color: rgb(42, 91, 165);
 }
 label.active_R{
-	transform: translateY(-20px)translateX(120px);
+	transform: translateY(-20px)translateX(100px);
 	 left: 2px;
 	 font-size: 14px;
 	 color: rgb(42, 91, 165);
 
 }
 
+input[type="checkbox"]{
+	transform: translateY(0px)translateX(10px);
+	 left: 2px;
+	 font-size: 14px;
+	 color: rgb(5, 12, 22);
+
+}
+
 label.active_gun{
-	transform: translateY(-20px)translateX(20px);
+	transform: translateY(-5px)translateX(130px);
 	 left: 2px;
 	 font-size: 14px;
 	 color: rgb(237, 187, 24);
 
 }
 
-label.active_gun .active { 
+label.active_gun active { 
 	transform: translateY(-20px)translateX(20px);
 	 left: 2px;
 	 font-size: 14px;
-	 color: rgb(237, 95, 24);
+	 color: rgb(98, 237, 24);
+
+}
+
+label.active_gun active highlight { 
+	transform: translateY(-20px)translateX(20px);
+	 left: 2px;
+	 font-size: 14px;
+	 color: rgb(237, 141, 24);
 
 }
 
@@ -125,7 +141,7 @@ label.active_gun .active {
 	 opacity: 0;
 }
  label.highlight {
-	 color: #fff;
+	 color: #0084ff;
 }
  input, textarea ,select {
 	 font-size: 22px;
