@@ -320,11 +320,11 @@ $(document).ready(function () {
             // 当点击下一步按钮时
            
             //  $(document).on("click", ".next", function() {
-              $("#next1").click(function () {
+              $("#next1").click(function (event) {
 
 
                 // 阻止表单的提交行为
-                 //event.preventDefault();
+                 event.preventDefault();
 
                 // 初始化一个变量来记录是否所有输入字段都通过了验证
                 let allFieldsValid = true;
@@ -349,6 +349,8 @@ $(document).ready(function () {
                         // 这里可以根据需要进行相应的提示操作，比如添加一个警告样式、显示一个提示信息等
                         $(this).addClass("invalid-field").focus();
                         console.log("input " + inputName + " is not valid");
+
+                        this.reportValidity();
                         return false;
 
                         console.log( allFieldsValid);
