@@ -20,7 +20,7 @@
 }
  .form {
 	 /* background: rgb(168, 183, 219); */
-	 background: rgb(250, 250, 250);
+	 background: rgb(0 68 113 / 94%);
 	 padding: 40px;
 	 max-width: 600px;
 	 margin: 50px auto;
@@ -72,7 +72,7 @@
 }
  h1 {
 	 text-align: center;
-	 color: #1ab188;
+	 color: #feffff;
 	 font-weight: 550;
 	 font-size: 2rem;
 	 margin: 0 0 30px;
@@ -81,7 +81,7 @@
 	 position: absolute;
 	 transform: translateY(6px);
 	 left: 13px;
-	 color: rgba(13, 181, 117, 0.909);
+	 color: rgba(254, 255, 255, 0.909);
 	 transition: all 0.25s ease;
 	 -webkit-backface-visibility: hidden;
 	 pointer-events: none;

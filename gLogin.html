@@ -101,6 +101,7 @@
                                                         <li class="tab active"><a href="#content1">步驟一</a></li>
                                                         <li class="tab"><a href="#content2">步驟二</a></li>
                                                         <li class="tab"><a href="#content3">步驟三</a></li>
+                                                        <!-- <li class="tab"><a href="#content4">步驟三</a></li> -->
                                                         </ul>
                                                         
                                                         <div class="tab-content">
@@ -179,7 +180,7 @@
                                                                         <label>
                                                                             傳真<span class="req"></span>
                                                                         </label>
-                                                                        <input type="text" name="fax" required autocomplete="off"/>
+                                                                        <input type="text" name="fax"  autocomplete="off"/>
                                                                     </div>
 
                                                                 </div>
@@ -188,14 +189,12 @@
                                                                     <label>
                                                                         公司地址<span class="req">*</span>
                                                                     </label>
-                                                                    <input type="text" name="cusAdd" required minlength="2" autocomplete="off"/>
+                                                                    <input type="text" name="cusAdd" required required minlength="10" maxlength="20" size="20" autocomplete="off"/>
                                                                 </div>
                                                                 
 
-                                                                <a id="next1" type="submit" class="next button button-block"/>下一步</a>
+                                                                <button id="next1" type="submit" class="next button button-block"/>下一步</button>
                                                                
-                                                              
-                                                                
                                                                 </form>
                                                      
                                                             </div>
@@ -209,7 +208,7 @@
                                                                     <label>
                                                                         銀行帳號<span class="req">*</span>
                                                                     </label>
-                                                                    <input type="email" name="bankCount" autocomplete="off"/>
+                                                                    <input type="text" name="bankCount" autocomplete="off"/>
                                                                 </div>
 
                                                                 <div class="top-row">
@@ -238,7 +237,7 @@
 
                                                                 <div class="top-row">
                                                                     <div class="field-wrap">
-                                                                        <button id="prev2" type="submit" class="prev button button-block"/>前一步</button>
+                                                                        <button type="submit" class="prev button button-block"/>前一步</button>
                                                                     </div>
                                                                 
                                                                     <div class="field-wrap">
@@ -302,20 +301,34 @@
                                                                 </label>
                                                                 <input type="email" name="email" required autocomplete="off"/>
                                                                 </div>
-                                                                
-                                                                <!-- <div class="top-row"> -->
-                                                                    <div class="top-row field-wrap">
-                                                                        <button id="prev2" type="submit" class="prev button button-block"/>前一步</button>
+
+                                                                <div class="top-row">
+                                                                    <div class="field-wrap">
+                                                                        <button  type="submit" class="prev button button-block"/>前一步</button>
                                                                     </div>
                                                                 
-                                                                    <div class="top-row field-wrap">
+                                                                    <div class="field-wrap">
                                                                         <button id="sendRegistered3" type="submit" class="button button-block"/>送出</button>
                                                                     </div>
-                                                                <!-- </div> -->
+                                                                </div>
                                                                
                                                                 
                                                                 </form>
                                                             </div>
+
+                                                            <div class="content" id="content4">   
+                                                                <h1>聯絡人資料</h1>
+                                                                <form action="/" method="post">
+                                                                    <div class="button button-block"> 
+                                                                        您的註冊資料已送出，<br>
+                                                                        待金廈海運核准過後，<br>
+                                                                        會寄發Email通知您。<br>
+                                                                        (內含會員帳號密碼)<br>
+                                                                        <br>連絡電話:
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+
                                                         </div>
                                                         
                                                     </div> 
@@ -323,70 +336,30 @@
                                             <div class="login slide-up">
                                                 <div class="center">
                                                     
-                                                    <h2 class=" form-title" id="login"><span>使用者</span>登入</h2>
-                                                        <div class="form" >
-                                                            <h2 class=" form-title" id="login"><span>使用者</span>登入</h2>
-                                                            <div class="loginForm  form-holder">
+                                                    <h2 class=" form-title" id="login"><span>會員</span>登入</h2>
+                                                        
+                                                    
+                                                        <form class="form mt-5">
                                                                 
+                                                            <div class="field-wrap">
                                                                 <label>
-                                                                    帳號<span class="req"></span>
+                                                                    帳號:統一編號/身分證<span class="req">*</span>
                                                                 </label>
-                                                                <input type="account" class="input" required>
-
-                                                                <label>
-                                                                    密碼<span class="req" ></span>
-                                                                </label>
-                                                                <input type="password" class="input" required >
+                                                                <input type="account"autocomplete="off"/>
                                                             </div>
-                                                        </div>
-                                                    <!-- <div class="form">
 
-                                                        <h1>聯絡人資料</h1>
-                                                        
-                                                        <form action="/" method="post">
-                                                        
-                                                            <h2 class="form-title" id="login"><span>登入</span>帳號密碼</h2>
-                                                            <div class="form-holder">
-      
-                                                                <label>
-                                                                    帳號<span class="req">*</span>
-                                                                </label>
-                                                                <input type="account" class="input" placeholder="帳號" />
-
-                                                                <label>
-                                                                    密碼<span class="req">*</span>
-                                                                </label>
-                                                                <input type="password" class="input" placeholder="密碼" />
+                                                            <div class="field-wrap">
+                                                            <label>
+                                                                戶名<span class="req">*</span>
+                                                            </label>
+                                                            <input type="password"  required autocomplete="off"/>
                                                             </div>
-        
-                                                            <div class="form">
 
-
-                                                        
-                                                        <div class="field-wrap">
-                                                            <label>
-                                                                Set A Password<span class="req">*</span>
-                                                            </label>
-                                                            <input type="password"required autocomplete="off"/>
-                                                        </div>
-                                                        
-                                                        <div class="field-wrap">
-                                                            <label>
-                                                                行動電話<span class="req">*</span>
-                                                            </label>
-                                                            <input type="email"required autocomplete="off"/>
-                                                        </div>
-                                                        
-                                                        <button type="submit" class="button button-block"/>送出</button>
-                                                        
+                                                            
+                                                            <button id="loginBtn" class="submit-btn">登入</button>
                                                         </form>
                                             
-                                                    
 
-                                                    </div> -->
-
-                                                                
-                                                    <button id="loginBtn" class="submit-btn">登入</button>
                                                 </div>
                                             </div>
                                         </div>

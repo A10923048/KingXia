@@ -1,0 +1,12 @@
+因為<button id="next1" type="submit" class="next button button-block"/>下一步</button>
+要阻止 預設提交行為event.preventDefault();
+,又想保留瀏覽器的預設警告消息:
+
+if (this.validity.valid == false) {
+    // 如果字段无效，则将 allFieldsValid 设置为 false
+   
+    // 显示浏览器默认的验证提示
+    this.reportValidity();
+    // 终止循环并停止检查其他输入字段
+    return false;
+    }

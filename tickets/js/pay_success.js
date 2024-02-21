@@ -146,7 +146,6 @@ Fonts - Google Fonts
 
         //按鈕open
         if($(this).attr("aria-expanded") == "true") {
-            
 
             $(this).find("ul").addClass("show active");
             
