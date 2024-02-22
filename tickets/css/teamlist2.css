@@ -1,0 +1,1562 @@
+/*=============================================
+=                  General                    =
+=============================================*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+/*=============================================
+=                  Navbar                     =
+=============================================*/
+
+.navbar {
+    box-shadow: 0 3px 18px rgba(0, 0, 0, .11);
+}
+
+/* 添加顶部空间 */
+.navbar+#header {
+    /* margin-top: 60px;
+    /* 在NAVBAR上方创建额外的顶部空间 */
+} */
+
+
+.nav-pills .nav-link {
+    font-size: 30px;
+    /* 設定文字大小為16像素，您可以根據需要進行調整 */
+}
+
+/* #header1:hover:after {
+    opacity: .6;
+} */
+
+
+
+/* NEW NAV */
+
+
+  
+  body {
+    font-family: "ROBOTO", sans-serif;
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    position: relative;
+    /* background-color: #287897; */
+    text-align: center;
+    padding: 5%;
+  }
+  .slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* width:  ; */
+    position: relative;
+    background-color: #287897;
+    text-align: center;
+    padding: 0 2em;
+  }
+  
+  .nav h1,
+  .slider h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 5vw;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.5rem;
+    color: #333976;
+    transition: all 0.3s ease;
+    z-index: 3;
+  }
+  .h1.nav h1,
+  .slider h1:hover {
+    transform: translate3d(0, -10px, 22px);
+    color: #e74c04;
+  }
+  
+  .slider h2 {
+    font-size: 2vw;
+    letter-spacing: 0.3rem;
+    font-family: "ROBOTO", sans-serif;
+    font-weight: 300;
+    color: #faebd7;
+    z-index: 4;
+  }
+  h3.span {
+    font-size: 5vw;
+    letter-spacing: 0.7em;
+    font-family: "ROBOTO", sans-serif;
+    font-weight: 300;
+    color: #faebd7;
+    z-index: 4;
+    
+  }
+
+  #order_label{
+    
+    margin-bottom: 20%;
+
+  }
+
+
+  #order_label:hover{
+    
+    margin-bottom: 5%;
+
+  }
+
+  span:hover {
+    color: #ff7c02;
+    font-weight: 500;
+    /* font-size: 2.2vw; */
+    margin-top: 5px;
+    
+  }
+  
+  /* a {
+    text-decoration: none;
+  } */
+  
+  .nav-container {
+
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background: #f1f6f8;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .nav-container--top-first {
+    position: fixed;
+    top: 75px;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .nav-container--top-second {
+    position: fixed;
+    top: 0;
+  }
+  .nav-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #03dac6;
+    letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: 2vw;
+  }
+  
+  .nav-tab:hover {
+    color: #ececf0;
+    background: #03dac6;
+    transition: all 0.5s ease;
+  }
+  
+  .nav-tab-slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #03dac6;
+    transition: left 0.3s ease;
+  }
+  .background {
+    position: absolute; 
+    height: 90vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: auto;
+  }
+  @media (min-width: 800px) {
+    .nav h1,
+    .slider h1 {
+      font-size: 5vw;
+    }
+  
+    .nav h2,
+    .slider h2 {
+      font-size: 3vw;
+    }
+  
+    .nav-tab {
+      font-size: 3vw;
+    }
+  }
+  
+  /* 在屏幕寬度小於 360 像素時應用的樣式 */
+    @media screen and (max-width: 359px) {
+      h1.loader span {
+        font-size: 8vw; /* 在小螢幕上的字體大小 */
+        letter-spacing: 0.2vw; /* 在小螢幕上的字母間距 */
+      }
+    }
+
+  
+  .background {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+  .loader span {
+    color: #faebd7;
+    text-shadow: 0 0 0 #faebd7;
+    -webkit-animation: loading 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes loading {
+    to {
+      text-shadow: 20px 0 70px #ff0266;
+      color: #ff0266;
+    }
+  }
+  .loader span:nth-child(2) {
+    -webkit-animation-delay: 0.1s;
+  }
+  .loader span:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+  }
+  .loader span:nth-child(4) {
+    -webkit-animation-delay: 0.3s;
+  }
+  .loader span:nth-child(5) {
+    -webkit-animation-delay: 0.4s;
+  }
+  .loader span:nth-child(6) {
+    -webkit-animation-delay: 0.5s;
+  }
+  .loader span:nth-child(7) {
+    -webkit-animation-delay: 0.6s;
+  }
+  .loader span:nth-child(8) {
+    -webkit-animation-delay: 0.7s;
+  }
+  .loader span:nth-child(9) {
+    -webkit-animation-delay: 0.8s;
+  }
+  
+  .loader span:nth-child(10) {
+    -webkit-animation-delay: 0.9s;
+  }
+  .loader span:nth-child(11) {
+    -webkit-animation-delay: 1s;
+  }
+  .loader span:nth-child(12) {
+    -webkit-animation-delay: 1.1s;
+  }
+  .loader span:nth-child(13) {
+    -webkit-animation-delay: 1.2s;
+  }
+  .loader span:nth-child(14) {
+    -webkit-animation-delay: 1.3s;
+  }
+  .loader span:nth-child(15) {
+    -webkit-animation-delay: 1.4s;
+  }
+  .loader span:nth-child(16) {
+    -webkit-animation-delay: 1.5s;
+  }
+  .loader span:nth-child(17) {
+    -webkit-animation-delay: 1.6s;
+  }
+  .loader span:nth-child(18) {
+    -webkit-animation-delay: 1.7s;
+  }
+  .loader span:nth-child(19) {
+    -webkit-animation-delay: 1.8s;
+  }
+  .loader span:nth-child(20) {
+    -webkit-animation-delay: 1.9s;
+  }
+  .loader span:nth-child(21) {
+    -webkit-animation-delay: 2s;
+  }
+  .loader span:nth-child(22) {
+    -webkit-animation-delay: 2.1s;
+  }
+  
+
+/* NEW NAVEND */
+
+
+
+
+
+
+
+
+
+
+/*=============================================
+=                 FORM                =
+=============================================*/
+
+form {
+    border-radius: 0px;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    /* background-image: url('/tickets/img/wood-591631_1280.jpg'); */
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(0.5); */
+    position: relative;
+}
+
+form>.container {
+    position: relative;
+    z-index: 2;
+    margin-top: 40%px;
+    margin-bottom: 20%px;
+    padding: 100; 
+}
+
+form>.container>.button{
+    margin-top: 40%px;
+    margin-bottom: 20%px;
+}
+
+/* 表格對齊方式 */
+
+/* 
+#planpicker, #datetimepicker  {
+    display: flex;
+    justify-content: space-between;
+} */
+
+#container {
+    display: block;
+    justify-content: space-between;
+}
+
+
+/* 如果你想进一步定制内部子元素的样式，可以添加以下规则 */
+#container>div {
+    /* 子元素的样式 */
+    display: flex;
+    justify-content: space-between;
+}
+
+#ticketTableAA {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    width: 100%; /* 表格宽度设置为100%以适应容器 */
+    
+}
+
+
+#ticketTableAA thead,
+
+#ticketTableAA tfoot {
+    background-color: lightpink;
+    
+}
+
+#ticketTableAA tbody {
+    background-color: rgb(210, 208, 208);
+}
+
+#ticketTableAA th,
+#ticketTableAA td {
+    border: 1px solid gray;
+    padding: 5px;
+    text-align: center; /* 文本居中对齐 */
+}
+#ticketTableAA  td>div {
+    display:inline-flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+
+/* 表單內容物格式 */
+/* 設定 */
+
+
+
+/*=============================================
+=                  introSection                  =
+=============================================*/
+
+
+
+
+
+/*=============================================
+=                  Header1                     =
+=============================================*/
+
+
+/* 加入背景圖片 */
+#header1 {
+    border-radius: 0px;
+    margin-bottom: 0;
+    padding: 200px 0;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    background-image: url('/tickets/img/wood-591631_1280.jpg');
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(0.5); */
+    position: relative;
+}
+
+#header1>.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* #header1:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    opacity: .4;
+    display: block;
+    /* 定位到上層元素#header的左上角 */
+/* position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all .5s ease;
+} */
+
+/* #header1:hover:after {
+    opacity: .6;
+} */
+
+
+
+
+
+/*=============================================
+=                  Header2                    =
+=============================================*/
+/* 加入背景圖片 */
+#header2 {
+    border-radius: 0px;
+    margin-bottom: 0px;
+    padding: 100px 0;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    background-image: url('/tickets/img/ocean.jpg');
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(0.5); */
+    position: relative;
+    /* opacity: 1; */
+}
+
+#header2>.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 裁切邊角設定 */
+#header2::before,
+#header2::after {
+    content: "";
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 200px;
+    height: 70px;
+    background: rgba(242, 241, 245, 0.708);
+    /* opacity: .4; */
+    /* display: block; */
+}
+
+#header2::before {
+
+    top: -20px;
+
+    left: -100px;
+
+    border-bottom: 1px solid #aaa;
+    /**/
+
+}
+
+
+#header2::after {
+
+    bottom: -20px;
+
+    right: -110px;
+
+    border-top: 1px solid #aaa;
+
+
+}
+
+/* 裁切邊角設定 */
+
+
+/* #header:hover:after {
+    opacity: .6;
+} */
+
+
+
+/*=============================================
+=                  Header                     =
+=============================================*/
+/* 加入背景圖片 */
+#header {
+    border-radius: 0px;
+    background-color: #03dac6;
+    margin-bottom: 10px;
+    padding: bottom 10px;
+    padding: 100px 0;
+    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
+    background-image: url('/tickets/img/ocean.jpg');
+    background-size: cover;
+    /* height: 50%70; */
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(0.9); */
+    position: relative;
+}
+
+#header>.container {
+   filter: brightness(1.);
+    position: relative;
+    z-index: 2;
+}
+
+
+/* 動畫 */
+
+@keyframes enter {
+  0%  {
+    transform: translateX(-200%); /* 从左边进入并停在0位置 */
+  }
+  50%{
+    transform: translateX(0); /* 暂停，元素停在0位置 */
+  }
+}
+
+@keyframes exit {
+  100% {
+    transform: translateX(+100%); /* 从0位置移出到右边 */
+  }
+}
+
+
+.my-element {
+  /* display: inline-block; */
+  margin: 0 0.5rem;
+  animation:enter 4s ease-in infinite, swing 6s infinite , exit 4s ease-out infinite; 
+  /* 使用 'enterAndExit' 和 'bounce' 动画效果 */
+}
+
+
+
+
+
+
+
+/* #header::before,::after {
+    content: "";
+    position:absolute;
+    transform: rotate(-35deg);
+    width: 70px;
+    height: 25px;
+    background: rgb(57, 6, 167);
+    opacity: .4;
+    display: block;
+} */
+
+/* #header:hover:after {
+    opacity: .6;
+} */
+
+
+/* tab */
+/* .main-tab {
+    position: relative;
+}
+.main-tab ul.tabs {
+    border-bottom: 1px solid #ccc;
+    margin: 16px 0;
+}
+
+.main-tab ul.tabs li {
+    font-size: 1.125em;
+    min-width: 125px;
+    text-align: center;
+    float: left;
+}
+
+.main-tab ul.tabs a {
+    display: block;
+    padding: 8px 16px;
+    background: #4e9de1;
+    border-top: 4px solid #0fcce5;
+    border-bottom: 1px solid #47d5c0;
+    margin-right: 1px;
+    cursor: pointer;
+	color: #2222d4!important;
+}
+
+.main-tab ul.tabs .active a,
+.main-tab ul.tabs a:hover {
+    border-top: 4px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    background: #fff;
+    position: relative;
+    bottom: -1px;
+}
+
+.main-tab-box {
+    padding: 8px; */
+}
+
+/* .tabs-right {
+    text-align: right;
+    top: 0;
+    right: 0;
+    position: absolute;
+} */
+/* .btn-tabs  li {
+    display: inline-block;
+    margin-right: 5px;
+    text-align: center;
+    border-radius: 5px;
+} */
+/* .btn-tabs  li a{ 
+    display: block;  */
+
+/* tab end */
+
+/* NEW */
+
+/* NEW END */
+
+/*=============================================
+=                  Intro                      =
+=============================================*/
+.intro-box {
+  border-color: #000;
+  border-radius: 15%;
+  padding: 5%;
+  transition: all .5s ease-out;
+  /* padding: 15px 15px; */
+  text-align: center;
+}
+
+.intro-box:hover {
+  background: rgba(240, 217, 164, 0.788);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .25);
+  border-radius: 5%;
+  padding: 5%;
+}
+
+intro-box-card {
+  border-color: #000;
+  border-radius: 15%;
+  padding: 5%;
+  transition: all .5s ease-out;
+  /* padding: 15px 15px; */
+  text-align: center;
+
+  opacity: .7;
+  position: relative;
+  top: 10px;
+  transition: all .3s ease;
+}
+
+
+intro-box-card:hover {
+  background: rgba(255, 250, 99, 0.883);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .25);
+  border-radius: 10%;
+  padding: 5%;
+
+  width: 22px;
+
+  opacity: 1;
+  top: 0px;
+}
+
+
+.intro-box .icon {
+  opacity: .7;
+  position: relative;
+  top: 10px;
+  transition: all .3s ease;
+}
+
+.intro-box:hover .intro-line:hover {
+  width: 22px;
+}
+
+.intro-box:hover .icon {
+  opacity: 1;
+  top: 0px;
+}
+
+
+
+.intro-div{
+  background: #20bb94;
+}
+
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1px;
+}
+
+.intro-line {
+  width: 20px;
+  height: 6px;
+  border-radius: 3px;
+  margin: 5px auto;
+  transition: all .5s ease;
+}
+.intro-line {
+  background: #20bb94;
+}
+
+
+/*=============================================
+=                   articleA                 =
+=============================================*/
+
+/* Table of contents */
+.bd-aside a {
+  padding: .1875rem .5rem;
+  margin-top: .125rem;
+  margin-left: .3125rem;
+  color: var(--bs-body-color);
+}
+
+.bd-aside a:hover,
+.bd-aside a:focus {
+  color: var(--bs-body-color);
+  background-color: rgba(121, 82, 179, .1);
+}
+
+.bd-aside .active {
+  font-weight: 600;
+  color: var(--bs-body-color);
+}
+
+.bd-aside .btn {
+  padding: .25rem .5rem;
+  font-weight: 600;
+  color: var(--bs-body-color);
+}
+
+.bd-aside .btn:hover,
+.bd-aside .btn:focus {
+  color: var(--bs-body-color);
+  background-color: rgba(121, 82, 179, .1);
+}
+
+.bd-aside .btn:focus {
+  box-shadow: 0 0 0 1px rgba(121, 82, 179, .7);
+}
+
+.bd-aside .btn::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ccc' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+
+  /* rtl:raw:
+  transform: rotate(180deg) translateX(-2px);
+  */
+  transform-origin: .5em 50%;
+}
+
+.bd-aside .btn[aria-expanded="true"]::before {
+  transform: rotate(90deg)/* rtl:ignore */;
+}
+/*=============================================
+=                  articleB                 =
+=============================================*/
+
+
+.close-btn {
+  cursor: pointer;
+  float: right;
+  font-size: 0px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+/*=============================================
+=                  articleAA                 =
+=============================================*/
+
+#closeButton {
+  position: absolute;
+  top: 600px; /* 距離上邊緣的距離，可以根據需要調整 */
+  right: 50px; /* 距離右邊緣的距離，可以根據需要調整 */
+}
+
+
+
+  .calendar {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .calendar-header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .month-year {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+  }
+
+  .day {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+  }
+
+  .day:hover {
+    background-color: #e0e0e0;
+  }
+
+/*=============================================
+=                tab4 content                =
+=============================================*/
+.indicators-container {
+  text-align: center; /* 將指示器置中 */
+  margin-bottom: 10px; /* 可選：增加上邊距 */
+}   
+.carousel-indicators li {
+  width: 100px; /* 調整寬度 */
+  height: 100px; /* 調整高度 */
+  margin: 0 3px; /* 調整間距 */
+  border: 2px solid #fff; /* 可選：增加邊框 */
+  border-radius: 5%; /* 使圖片呈現圓形 */
+}
+
+.carousel-indicators img {
+  width: 100%; /* 圖片填滿 li 元素 */
+  height: 100%; /* 圖片填滿 li 元素 */
+  border-radius: 50%; /* 使圖片呈現圓形 */
+}
+
+
+
+
+
+/*=============================================
+=                  Reviews 2                   =
+=============================================*/
+/* 加入背景圖片 */
+#reviewsSection2 {
+    border-radius: 0px;
+    margin-bottom: 0px;
+    padding: 300px 0;
+    background-image: url("/tickets/img/wood-591631_1280.jpg");
+    background-size: cover;
+    /* 固定背景 */
+    background-attachment: fixed;
+    background-position: center center;
+    /* filter: brightness(1);  */
+    position: relative;
+}
+
+.container1 {
+    width: 100%;
+    /* 設定圖片寬度為100% */
+    height: auto;
+    /* 讓高度自動調整，以保持圖片比例 */
+}
+
+.carousel-inner .carousel-item img {
+    width: 200px;
+    /* 設定圖片寬度為100% */
+    height: auto;
+    /* 讓高度自動調整，以保持圖片比例 */
+}
+
+/* 調整圖片輪播的最大寬度，以防止溢出 */
+#imageCarouselA,
+#imageCarouselB {
+    max-width: 50%;
+    /* 使圖片輪播寬度不超過其容器 */
+}
+
+/* 調整輪播內部圖片的大小 */
+#imageCarouselA .carousel-inner img,
+#imageCarouselB .carousel-inner img {
+    max-width: 80%;
+    /* 使圖片寬度不超過其容器 */
+    height: auto;
+    /* 讓高度自動調整，以保持圖片比例 */
+}
+
+.imageCarouselA {
+    background-size: cover;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    filter: grayscale(100%);
+    transition: all .5s ease;
+}
+
+
+/*=============================================
+=                  Intro                      =
+=============================================*/
+
+
+/*=============================================
+=                  Gallery                    =
+=============================================*/
+
+/* TODO: 設定Hover特效 */
+
+[id^='galleryImage'] {
+    background-size: cover;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    filter: grayscale(100%);
+    transition: all .5s ease;
+}
+
+[id^='galleryImage']>.gallery-text {
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 8px 10px rgba(0, 0, 0, .5);
+    text-align: center;
+    transition: all .5s ease;
+}
+
+[id^='galleryImage']:hover {
+    filter: grayscale(0%);
+}
+
+[id^='galleryImage']:hover>.gallery-text {}
+
+/* 放入背景圖片 */
+
+#galleryImage1 {
+  background-image: url('/tickets/img/小三通/金門水頭碼頭\(發船\).jpg');
+}
+
+#galleryImage2 {
+  background-image: url('/tickets/img/小三通/復興嶼.jpg');
+}
+
+#galleryImage3 {
+  background-image: url('/tickets/img/小三通/猛虎嶼.jpg');
+}
+
+#galleryImage4 {
+  background-image: url('/tickets/img/小三通/大膽島.jpg');
+}
+
+#galleryImage5 {
+  background-image: url('/tickets/img/小三通/大膽島.jpg');
+}
+
+#galleryImage6 {
+  background-image: url('/tickets/img/新增資料夾/賞廈門黃金海岸.jpg');
+}
+
+#galleryImage7 {
+  background-image: url('/tickets/img/小三通/金門大橋.jpg');
+}
+
+#galleryImage8 {
+  background-image: url('/tickets/img/小三通/返回金門水頭碼頭.jpg');
+}
+
+/* 放入背景圖片 */
+
+#galleryImage9 {
+  background-image: url('/tickets/img/小三通/金門水頭碼頭\(發船\).jpg');
+}
+
+#galleryImage10 {
+  background-image: url('/tickets/img/小三通/復興嶼.jpg');
+}
+
+#galleryImage11 {
+  background-image: url('/tickets/img/小三通/猛虎嶼.jpg');
+}
+
+#galleryImage12 {
+  background-image: url('/tickets/img/小三通/大膽島.jpg');
+}
+
+#galleryImage13 {
+  background-image: url('/tickets/img/小三通/大膽島.jpg');
+}
+
+#galleryImage14 {
+  background-image: url('/tickets/img/新增資料夾/賞廈門黃金海岸.jpg');
+}
+
+#galleryImage15 {
+  background-image: url('/tickets/img/小三通/金門大橋.jpg');
+}
+
+#galleryImage16 {
+  background-image: url('/tickets/img/小三通/返回金門水頭碼頭.jpg');
+}
+.custom-prev {
+    position: absolute;
+    top: 50%;
+    /* 以父元素上边缘为基准垂直居中 */
+    left: 10px;
+    /* 距离左侧 10px */
+    transform: translateY(-50%);
+    /* 使元素垂直居中 */
+}
+
+
+
+/*=============================================
+=                  Start Now                  =
+=============================================*/
+
+/*=============================================
+=                   Footer                    =
+=============================================*/
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-end p {
+    font-size: 8px;
+    margin: 0;
+}
+
+#goBackBtn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+/*=============================================
+=                   AD-BOX                    =
+=============================================*/
+
+.ad-box {
+    width: 300px;
+    position: fixed;
+    right: -275px;
+    bottom: 80px;
+    z-index: 100;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    display: flex;
+    box-shadow: 0px 20px 15px rgba(0, 0, 0, 0.2);
+    transition: all .3s ease;
+}
+
+/* 選到同時擁有.ad-box跟.active的元素 */
+.ad-box.active {
+    right: 0px;
+}
+
+.left-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #ddd;
+}
+
+.ad-toggle-btn {
+    width: 25px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+}
+
+.ad-toggle-btn>i {
+    transform: rotateZ(90deg);
+}
+
+.ad-toggle-btn:hover {
+    color: #666;
+}
+
+.right-part {
+    padding: 10px;
+}
+
+.right-part>p {
+    margin-bottom: 0;
+}
+
+
+
+/*=============================================
+=                   icon重疊                 =
+=============================================*/
+
+table ul {
+  list-style-type: decimal; /* 大寫羅馬數字 */
+  /* 或使用 lower-roman 來顯示小寫羅馬數字 */
+}
+
+.decimal ul {
+  list-style-type: decimal; /* 大寫羅馬數字 */
+  /* 或使用 lower-roman 來顯示小寫羅馬數字 */
+}
+
+
+
+table.circle ul {
+  list-style-type: circle; /* 或者你想要的其他樣式 */
+  
+}
+
+table.circle tbody {
+  text-align: left;
+ 
+}
+
+
+/*=============================================
+=                   輪播modal                =
+=============================================*/
+
+/* 調整小圖片的樣式 */
+.small-image {
+  cursor: pointer; /* 將光標設定為手型，表示可點擊 */
+  max-width: 100%;
+}
+
+/* 調整大圖片的樣式 */
+.large-image {
+  max-width: 100%;
+  height: auto; /* 維持原始寬高比例 */
+}
+
+/* 調整模態框大小 */
+.modal-lg {
+  max-width: 80%; /* 可根據需要調整模態框的大小 */
+}
+
+/*=============================================
+=                   日曆            =
+=============================================*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+}
+.datepicker {
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  overflow: hidden;
+}
+.datepicker-header {
+  height: 22rem;
+  background-image: url('../img/小三通/初日號-卡通圖.png');
+  background-position: center center;
+  background-size: 100%;
+}
+.datepicker .ui-datepicker-inline {
+  width: 23rem;
+  padding: 30px;
+  /* margin-left: 5%; */
+}
+.datepicker .ui-datepicker-header {
+  text-align: center;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-prev, .datepicker .ui-datepicker-header .ui-datepicker-next {
+  display: inline;
+  float: left;
+  cursor: pointer;
+  font-size: 1.4em;
+  padding: 0 10px;
+  margin-top: -10px;
+  color: #ccc;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-next {
+  float: right;
+}
+.datepicker .ui-datepicker-calendar {
+  width: 100%;
+  text-align: center;
+}
+.datepicker .ui-datepicker-calendar thead {
+  color: #ccc;
+}
+.datepicker .ui-datepicker-calendar tr th, .datepicker .ui-datepicker-calendar tr td {
+  padding-bottom: 0.5em;
+}
+.datepicker .ui-datepicker-calendar a {
+  color: #444;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.datepicker .ui-datepicker-calendar .ui-state-highlight {
+  border-color: #d24d57;
+  color: #d24d57;
+}
+
+/* 在屏幕寬度小於 540 像素時應用的樣式 */
+@media screen and (max-width: 540px) {
+
+  .datepicker {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    overflow: hidden;
+  }
+  .datepicker .datepicker-header {
+    height: 16rem;
+    background-image: url('../img/小三通/初日號-卡通圖.png');
+    background-position: center center;
+    background-size: 100%;
+  }
+  .datepicker .ui-datepicker-inline {
+    width: 58vw;
+    padding: 15px;
+    /* margin-left: 5%; */
+  }
+  .datepicker .ui-datepicker-header {
+    text-align: center;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .datepicker .ui-datepicker-header .ui-datepicker-prev, .datepicker .ui-datepicker-header .ui-datepicker-next {
+    display: inline;
+    float: left;
+    cursor: pointer;
+    font-size: 1.4em;
+    padding: 0 10px;
+    margin-top: -10px;
+    color: #ccc;
+  }
+  .datepicker .ui-datepicker-header .ui-datepicker-next {
+    float: right;
+  }
+  .datepicker .ui-datepicker-calendar {
+    width: 100%;
+    text-align: center;
+  }
+  .datepicker .ui-datepicker-calendar thead {
+    color: #ccc;
+  }
+  .datepicker .ui-datepicker-calendar tr th, .datepicker .ui-datepicker-calendar tr td {
+    padding-bottom: 0.5em;
+  }
+  .datepicker .ui-datepicker-calendar a {
+    color: #444;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+
+}
+
+/* 在屏幕寬度小於 700 像素時應用的樣式 */
+@media screen and (max-width: 430px) {
+  .datepicker {
+    width: 280px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    overflow: hidden;
+  }
+  .datepicker .datepicker-header {
+    height: 14rem;
+    background-image: url('../img/小三通/初日號-卡通圖.png');
+    background-position: center center;
+    background-size: 100%;
+  }
+  .datepicker .ui-datepicker-inline {
+    width: 17rem;
+    padding: 30px 30px 0 0;
+    /* margin-left: 5%; */
+  }
+}
+
+/* 在屏幕寬度小於 360 像素時應用的樣式 */
+@media screen and (max-width: 380px) {
+
+  .datepicker {
+    width: 230px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    overflow: hidden;
+  }
+  .datepicker .datepicker-header {
+    height: 14rem;
+    background-image: url('../img/小三通/初日號-卡通圖.png');
+    background-position: center center;
+    background-size: 110%;
+  }
+  .ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+  }
+  .datepicker .ui-datepicker-header {
+    text-align: center;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .datepicker .ui-datepicker-header .ui-datepicker-prev, .datepicker .ui-datepicker-header .ui-datepicker-next {
+    display: inline;
+    float: left;
+    cursor: pointer;
+    font-size: 1.4em;
+    padding: 0 10px;
+    margin-top: -10px;
+    color: #ccc;
+  }
+  .datepicker .ui-datepicker-header .ui-datepicker-next {
+    float: right;
+  }
+
+}
+
+/* 在屏幕寬度小於 700 像素時應用的樣式 */
+@media screen and (max-width: 700px) {
+  
+}
+
+
+
+
+/*=============================================
+=               tooltip-container           =
+=============================================*/
+
+.tooltip-container {
+  margin: 60px auto;
+  padding-top: 0px;
+  position: relative;
+  width: 160px;
+}
+.tooltip-container .tooltip-content p {
+  color: red;
+}
+.tooltip-container .tooltip-btn {
+  display: block;
+  margin: 0 auto;
+  color: #fb5656;
+  width: 160px;
+  height: 50px;
+  line-height: 50px;
+  background: #fffefe;
+  font-size: 22px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 5px 5px -5px #333;
+  transition: background 0.3s ease-in;
+}
+.tooltip-container .tooltip-btn:hover {
+  background: #ffe9e9;
+}
+.tooltip-container .tooltip-btn.tooltip-toggle:hover ~ .tooltip-content {
+  opacity: 1;
+  background-color: #fff;
+  max-width: 400px;
+  width: 200px;
+  min-height: 70px;
+  padding: 0px 20px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 145%;
+  border-radius: 4px;
+  z-index: 999;
+  pointer-events: auto;
+  cursor: auto;
+  visibility: visible;
+  overflow: visible;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 400px) {
+  .tooltip-container .tooltip-btn.tooltip-toggle:hover ~ .tooltip-content {
+    left: 0;
+ }
+}
+.tooltip-container .tooltip-btn.tooltip-toggle:hover ~ .tooltip-content:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  top: -10px;
+  left: 30px;
+}
+.tooltip-container .tooltip-content, .tooltip-container .tooltip-backdrop {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: opacity 0.2s ease-in;
+}
+.tooltip-container #tooltip-toggle {
+  display: none;
+}
+.tooltip-container #tooltip-toggle.active ~ .tooltip-backdrop, .tooltip-container #tooltip-toggle:checked ~ .tooltip-backdrop {
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+.tooltip-container #tooltip-toggle.active ~ .tooltip-content, .tooltip-container #tooltip-toggle:checked ~ .tooltip-content {
+  opacity: 1;
+  background-color: #fff;
+  max-width: 400px;
+  width: 200px;
+  min-height: 70px;
+  padding: 0px 20px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 145%;
+  border-radius: 4px;
+  z-index: 999;
+  pointer-events: auto;
+  visibility: visible;
+  overflow: visible;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 400px) {
+  .tooltip-container #tooltip-toggle.active ~ .tooltip-content, .tooltip-container #tooltip-toggle:checked ~ .tooltip-content {
+    left: 0;
+ }
+}
+.tooltip-container #tooltip-toggle.active ~ .tooltip-content:before, .tooltip-container #tooltip-toggle:checked ~ .tooltip-content:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  top: -10px;
+  left: 30px;
+}
+
+
+/*=============================================
+=             articleB-icon                   =
+=============================================*/
+
+
+@media (max-width: 80px) {
+  .tooltip-container #tooltip-toggle.active ~ .tooltip-content, .tooltip-container #tooltip-toggle:checked ~ .tooltip-content {
+    left: 0;
+ }
+}
