@@ -1,0 +1,19 @@
+<團體訂票>
+    (2)cusCode=旅行社代號
+    (3)先只要選擇航班日期就能查航班代碼(無須關乎餘票數)
+    (4)完成訂票傳給後台格式
+        private String cusCode;
+        
+        private String qty;
+        
+        private String order1(班次);
+        
+        private String order2;
+        
+        private String order3;
+
+    (5) 最多只能訂3個月內的票
+    
+
+<旅行社資料變更>
+    統編V.S.身分證的區別:字數8碼V.S.字數10碼

@@ -1,0 +1,53 @@
+package fecorp.biz.kingxia.Dto.SEA.CUS;
+
+import lombok.Data;
+
+/**旅行社註冊時傳回後端 */
+@Data
+public class S_CUS_RIS {
+    /** 旅行社名稱 */
+    private String cusName;
+    
+    /** 縣市 */
+    private String ctCode;
+    
+    /** 旅行社電話 */
+    private String tel;
+    
+    /** 傳真 */
+    private String fax;
+    
+    /** 旅行社地址 */
+    private String cusAdd;
+    
+    /** 統編 */
+    private String gun;
+    
+    /** 付款資訊 */
+    private String bank;
+
+    private att att;
+    
+    /** 聯絡人 */
+    @Data
+    public static class att{
+        
+        /** 聯絡人姓名 */
+        private String name;
+        
+        /** 職稱 */
+        private String post;
+        
+        /** 電話 */
+        private String tel;
+        
+        /** 分機 */
+        private String ext;
+        
+        /** 手機 */
+        private String mobile;
+        
+        /** email */
+        private String email;
+    }
+}

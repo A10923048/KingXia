@@ -406,10 +406,45 @@ form>.container>.button{
 
 
 /*=============================================
-=                  introSection                  =
+=                  button                 =
 =============================================*/
 
+.send {
+    display: inline-block;
+    background-color: #20bb94 ;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #fff;
+    width: 100%;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 10px;
+    letter-spacing: 0.25px;
+    border: none;
+    outline: none;
+    transition: all .3s;
+  }
+  
+ .send:hover {
+    background-color: #ff695f;
+  }
 
+  .dBtn {
+    display: inline-block;
+    background-color: #20bb94 ;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 10px;
+    letter-spacing: 0.25px;
+    border: none;
+    outline: none;
+    transition: all .3s;
+  }
+  
+  .dBtn:hover {
+    background-color: #ff695f;
+  }
 
 
 
@@ -752,6 +787,10 @@ intro-box-card:hover {
 }
 .intro-line {
   background: #20bb94;
+}
+
+.card-title {
+    color: #000;
 }
 
 

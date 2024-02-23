@@ -145,8 +145,8 @@ label.highlight {
 }
 input, textarea ,select {
     font-size: 22px;
-    display: block;
-    width: 100%;
+    display: inline;
+    width: 12vw;
     height: 100%;
     padding: 5px 10px;
     background: none;
