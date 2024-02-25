@@ -241,29 +241,164 @@ $(document).ready(function () {
         });
     };
 
-    //當
+
+
+    //訂票checkbox:打勾
     $(document).on('change', 'input[type="checkbox"].checked', function() {
 
-        $("#ship_resultR_none").hide();
-        
         if ($(this).is(':checked')) {
 
-            var date = $("#datePicker").val();
-            var shipID = $(this).closest('tr').find('td:eq(0)').text(); // 获取第一列的值
-            var btime = $(this).closest('tr').find('td:eq(1)').text(); // 获取第二列的值
-            var etime = $(this).closest('tr').find('td:eq(2)').text(); // 获取第三列的值
-           
-            console.log("日期: " + date);
-            console.log('船次：', shipID);
-            console.log('出發時間：', btime);
-            console.log('結束時間：', etime);
+        let checkedCheckboxes = $('input[type="checkbox"].checked:checked');
+
+        if (checkedCheckboxes.length > 3) {
+            // 超过3个选中的复选框，显示警告模态框
+            $('#myModal').modal('show');
+
+            $(this).prop('checked', false);// 取消勾選新的核取方塊來防止它被勾選
+
+        }else{
+
+            console.log("checkedCheckboxes.length:"+checkedCheckboxes.length);
+
+            if (checkedCheckboxes.length == 1) {
+                $(this).attr('id', '1');
+                
+            }else  if (checkedCheckboxes.length == 2) {
+                
+                $(this).attr('id', '2');
+            }else  if (checkedCheckboxes.length ==3) {
+                
+                $(this).attr('id', '3');
+            }
+
+            console.log("'id': " + $(this).attr('id'));
+            $(".CRhide").hide();
+            
+            
+            
+            //獲取:被選中的航班資訊
+            
+
+                //被選中的航班:產生表格列
+            let madeTr=function(date,shipID ,btime,etime,boxID){
+                
+                let htmlString = '<tr id="' + boxID +'" class="checkResult">' +
+                                    '<td class="">' +
+                                    '<select id="' + shipID + "-" + date+'" class="selectR" onchange="updateDate()">' +
+                                    '<option value="1">最優先</option>' +
+                                    '<option value="2">次優先</option>' +
+                                    '<option value="3">第三優先</option>' +
+                                    '</select>' +
+                                    '</td>' +
+                                    '<td class="">'+date+'</td>' +
+                                    '<td class="">'+shipID+'</td>' +
+                                    '<td class="">'+btime+"~"+etime+'</td>' +
+                                    '<td class="">' + '<i class="fa-solid fa-trash-can fa-lg" style="color: #ee174c;"></i>' + '</td>' +
+                                '</tr>';
+    
+                // 将 HTML 字符串添加到 DOM 中
+                $("#checkResult").append(htmlString);
+
+                                        };
+    
+                $(".checkResult_none").hide();
+    
+                var date = $("#datePicker").val();
+                var shipID = $(this).closest('tr').find('td:eq(0)').text(); // 获取第一列的值
+                var btime = $(this).closest('tr').find('td:eq(1)').text(); // 获取第二列的值
+                var etime = $(this).closest('tr').find('td:eq(2)').text(); // 获取第三列的值
+                var boxID = $(this).attr('id'); // 獲取第四列的ID屬性值
+
+                console.log("日期: " + date);
+                console.log('船次：', shipID);
+                console.log('出發時間：', btime);
+                console.log('結束時間：', etime);
+                console.log('boxID：'+boxID);
+                
+                madeTr(date,shipID ,btime,etime,boxID);
+                
+          
+                
+                
+                SRorder();
+                
+            }
+
+
+        }
+
+        //訂票checkbox:打勾(取消)
+        if (!$(this).is(':checked')) {
+
+            //刪除具有相同ID的"已選擇票種"列
+            var boxID = $(this).attr('id');
+            console.log('取消boxID：'+boxID);
+
+            $(this).closest('.table-responsive').next().find('tr').each(function() {
+                console.log(' $("#checkResult").find：'+ $("#checkResult").find('tr').each);
+                if ($(this).attr('id') === boxID) {
+                    $(this).remove(); // 刪除該 <tr>
+                }
+            });
             
         }
         
 
+
         });
 
+    
 
+    //删除:被選中航班的表格列
+    $(document).on('click', '.fa-trash-can', function() {
+
+        var boxID =$(this).closest("tr").attr("id");
+        console.log('取消boxID：'+boxID);
+
+        // 找到删除图标所在的行，并删除
+        $(this).closest("tr").remove();
+        
+        $(this).closest('.table-responsive').prev().find('tr').filter(function() {
+            return $(this).attr('id') === boxID;
+        }).remove();
+
+        // 检查是否需要隐藏 checkResult_none 行
+        if ($(".checkResult_none").length > 0 && $("#checkResult").children(":not(.checkResult_none)").length === 0) {
+            $(".checkResult_none").show();
+        }
+
+    });
+
+
+    //次序變動
+    let SRorder = function() { 
+        $('#checkResult tr.checkResult select').each(function() {
+            let value = $(this).val();
+            //console.log(value); // 在這裡可以使用獲取到的值
+    
+            // 先移除目前的行
+            let currentRow = $(this).closest('tr');
+
+            console.log($(this).closest('tr'));
+            
+            if (value === "1") {
+                // 將行移動到最上方
+                currentRow.prependTo('#checkResult');
+            } else if (value === "2") {
+                // 將行移動到 select 值為 1 的行之後
+                let targetRow = $('#checkResult tr.checkResult_none select[value="1"]:last').closest('tr');
+                currentRow.insertAfter(targetRow);
+            } else {
+                // 將行移動到最下方
+                currentRow.appendTo('#checkResult');
+            }
+        });
+    };
+    
+
+   
+
+   
 
 
 
@@ -383,4 +518,4 @@ $(document).ready(function () {
     }
 
 
-})
+})                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
