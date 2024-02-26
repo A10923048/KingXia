@@ -34,9 +34,7 @@ $(document).ready(function () {
   };
 
   //設置日期選擇範圍:+3個月
-  $("#datePicker").on("focus", function () {
-    // 在日期輸入框被打開時執行的操作
-    console.log("日期輸入框被打開了！");
+  $("#OdatePicker").on("focus", function () {
 
     // 當"查詢"按鈕被點擊時，取得當下時間
     let currentDateTime = new Date();
@@ -71,8 +69,8 @@ $(document).ready(function () {
     let maxDate = currentDate.toISOString().split("T")[0];
     let minDate = datePart;
 
-    $("#datePicker").attr("max", maxDate);
-    $("#datePicker").attr("min", "2023/10/01");
+    $("#OdatePicker").attr("max", maxDate);
+    $("#OdatePicker").attr("min", "2023/10/01");
 
     console.log("maxDate:" + maxDate);
     console.log("minDate:" + minDate);
@@ -80,10 +78,10 @@ $(document).ready(function () {
   });
 
 
-    $("#ship_result_null,#ship_result").hide();
+    $("#ship_result_null,#ship_result,#qtytr").hide();
 
     //選擇出發日期
-    $("#datePicker").change(function() {
+    $("#OdatePicker").change(function() {
 
         // 获取日期输入框的值
         let selectedDate = $(this).val();
@@ -183,18 +181,18 @@ $(document).ready(function () {
 
         $.each(datas, function (key, value) {
 
-            console.log("value.tdate: " + value.tdate);
+            // console.log("value.tdate: " + value.tdate);
          
-            // 找到匹配的日期
-            console.log("value.tdate: " + value.tdate);
-            console.log("formattedDate: " + formattedDate);
+            // // 找到匹配的日期
+            // console.log("value.tdate: " + value.tdate);
+            // console.log("formattedDate: " + formattedDate);
             
                 $("#ship-result").append(
                     '<tr class="ship-result-row">' +
                     '<td>' + key + '</td>' +
                     '<td>' + value.btime + '</td>' +
                     '<td>' + value.etime + '</td>' +
-                    '<td class=""><input type="checkbox" class="checked" name="myCheckbox" value="checkbox_value"></td>' +
+                    '<td class=""><button class="order send"><i class="fa-solid fa-hand-pointer"></i>訂票</button>' +
                     '</tr>'
                 );
             
@@ -243,135 +241,178 @@ $(document).ready(function () {
 
 
 
-    //訂票checkbox:打勾
-    $(document).on('change', 'input[type="checkbox"].checked', function() {
+    //訂票按鈕被點擊
+    $(document).on('click', '.order', function() {
 
-        if ($(this).is(':checked')) {
+        var tr = $(this).closest('.table-responsive').next().find('.checkResult');
+        var count = tr.length;
+        console.log("数量：" + count);
 
-        let checkedCheckboxes = $('input[type="checkbox"].checked:checked');
-
-        if (checkedCheckboxes.length > 3) {
+        if (count > 2) {
             // 超过3个选中的复选框，显示警告模态框
             $('#myModal').modal('show');
 
-            $(this).prop('checked', false);// 取消勾選新的核取方塊來防止它被勾選
+            return;
 
         }else{
+                    //被選中的航班:產生表格列
+                    let madeTr=function(date,shipID ,btime,etime,boxID,trIndex){
+                        console.log("trIndex:"+trIndex);
+                        let select = ''; 
 
-            console.log("checkedCheckboxes.length:"+checkedCheckboxes.length);
+                        if(trIndex==1){
 
-            if (checkedCheckboxes.length == 1) {
-                $(this).attr('id', '1');
+                            select = '<select  class="selectR" onchange="updateDate()">' +
+                            '<option value="1"selected>最優先</option>' +
+                            '<option value="2">第二優先</option>' +
+                            '<option value="3">第三優先</option>' +
+                            '</select>' 
+                        }else if(trIndex==2){
+
+                            select = '<select  class="selectR" onchange="updateDate()">' +
+                            '<option value="1">最優先</option>' +
+                            '<option value="2"selected>次優先</option>' +
+                            '<option value="3">第三優先</option>' +
+                            '</select>' 
+                        }else if(trIndex==3){
+
+                            select = '<select  class="selectR" onchange="updateDate()">' +
+                            '<option value="1">最優先</option>' +
+                            '<option value="2">次優先</option>' +
+                            '<option value="3"selected>第三優先</option>' +
+                            '</select>' 
+                        }
+                        
+                        let htmlString = '<tr id="' + boxID +'" class="checkResult">' +
+                                            '<td class="">' +
+                                            select +
+                                            '</td>' +
+                                            '<td class="">'+date+'</td>' +
+                                            '<td class="">'+shipID+'</td>' +
+                                            '<td class="">'+btime+"~"+etime+'</td>' +
+                                            '<td class="">' + '<i class="fa-solid fa-trash-can fa-lg" style="color: #ee174c;"></i>' + '</td>' +
+                                        '</tr>';
+            
+                        // 将 HTML 字符串添加到 DOM 中
+                        $("#checkResult").append(htmlString);
+
+                                                };
+                    
+                    //獲取:被選中的航班資訊
+                    
+                    $(".checkResult_none").hide();
+            
+                    var date = $("#OdatePicker").val();
+                    var shipID = $(this).closest('tr').find('td:eq(0)').text(); // 获取第一列的值
+                    var btime = $(this).closest('tr').find('td:eq(1)').text(); // 获取第二列的值
+                    var etime = $(this).closest('tr').find('td:eq(2)').text(); // 获取第三列的值
+                    var boxID = $(this).attr('id'); // 獲取第四列的ID屬性值
+
+                    //  console.log("日期: " + date);
+                    //  console.log('船次：', shipID);
+                    //  console.log('出發時間：', btime);
+                    //  console.log('結束時間：', etime);
+                    //  console.log('boxID：'+boxID);
+
+                    for (var i = 0; i < count; i++) {
+
+                        // 获取出发日期对应的表格数据单元格内容
+                        var trDate = tr.eq(i).find("td:eq(1)").text()
+            
+                        // 获取班次对应的表格数据单元格内容
+                        var trshipID = tr.eq(i).find("td:eq(2)").text();
+            
+                        console.log('第 ' + (i + 1) + ' 行 - 出发日期：', trDate);
+                        console.log('第 ' + (i + 1) + ' 行 - 班次：', trshipID);
+
+                        if (trDate == date && trshipID == shipID) {
+                            // 如果相同，则不需要创建新行，直接退出循环
+                            console.log('一樣' +trDate == date && trshipID == shipID);
+                            return;
+                        }
+
+                        
+                        
+
+                    }
+
+                    let trIndex = count+ parseInt(1);
+
+                    // 如果没有找到匹配的行，则调用 madeTr 函数创建新行
+                    madeTr(date, shipID, btime, etime, boxID,trIndex );
+
+                    $(".CRhide").hide();
+
+                    //次序變動更新
+                    SRorder();
+                    $("#qtytr").show();
                 
-            }else  if (checkedCheckboxes.length == 2) {
-                
-                $(this).attr('id', '2');
-            }else  if (checkedCheckboxes.length ==3) {
-                
-                $(this).attr('id', '3');
             }
 
-            console.log("'id': " + $(this).attr('id'));
-            $(".CRhide").hide();
-            
-            
-            
-            //獲取:被選中的航班資訊
-            
+    });
 
-                //被選中的航班:產生表格列
-            let madeTr=function(date,shipID ,btime,etime,boxID){
-                
-                let htmlString = '<tr id="' + boxID +'" class="checkResult">' +
-                                    '<td class="">' +
-                                    '<select id="' + shipID + "-" + date+'" class="selectR" onchange="updateDate()">' +
-                                    '<option value="1">最優先</option>' +
-                                    '<option value="2">次優先</option>' +
-                                    '<option value="3">第三優先</option>' +
-                                    '</select>' +
-                                    '</td>' +
-                                    '<td class="">'+date+'</td>' +
-                                    '<td class="">'+shipID+'</td>' +
-                                    '<td class="">'+btime+"~"+etime+'</td>' +
-                                    '<td class="">' + '<i class="fa-solid fa-trash-can fa-lg" style="color: #ee174c;"></i>' + '</td>' +
-                                '</tr>';
-    
-                // 将 HTML 字符串添加到 DOM 中
-                $("#checkResult").append(htmlString);
-
-                                        };
-    
-                $(".checkResult_none").hide();
-    
-                var date = $("#datePicker").val();
-                var shipID = $(this).closest('tr').find('td:eq(0)').text(); // 获取第一列的值
-                var btime = $(this).closest('tr').find('td:eq(1)').text(); // 获取第二列的值
-                var etime = $(this).closest('tr').find('td:eq(2)').text(); // 获取第三列的值
-                var boxID = $(this).attr('id'); // 獲取第四列的ID屬性值
-
-                console.log("日期: " + date);
-                console.log('船次：', shipID);
-                console.log('出發時間：', btime);
-                console.log('結束時間：', etime);
-                console.log('boxID：'+boxID);
-                
-                madeTr(date,shipID ,btime,etime,boxID);
-                
-          
-                
-                
-                SRorder();
-                
-            }
-
-
-        }
-
-        //訂票checkbox:打勾(取消)
-        if (!$(this).is(':checked')) {
-
-            //刪除具有相同ID的"已選擇票種"列
-            var boxID = $(this).attr('id');
-            console.log('取消boxID：'+boxID);
-
-            $(this).closest('.table-responsive').next().find('tr').each(function() {
-                console.log(' $("#checkResult").find：'+ $("#checkResult").find('tr').each);
-                if ($(this).attr('id') === boxID) {
-                    $(this).remove(); // 刪除該 <tr>
-                }
-            });
-            
-        }
-        
-
-
-        });
-
-    
 
     //删除:被選中航班的表格列
     $(document).on('click', '.fa-trash-can', function() {
 
-        var boxID =$(this).closest("tr").attr("id");
-        console.log('取消boxID：'+boxID);
+        var oldValue =  $(this).closest("tr").find("option:selected").val();
+
+        console.log('oldValue：' + oldValue);
+
 
         // 找到删除图标所在的行，并删除
         $(this).closest("tr").remove();
+
+        var nextValue =  $(this).closest("tr").next().find("option:selected").val();
+
+        console.log('nextValue：' + nextValue);
+
+         // 找到被删除行底下的其他<select>元素并处理
+        $(this).closest("tr").find('select').each(function() {
+            // 在这里进行您的处理逻辑
+            var selectValue = $(this).val(); // 获取<select>的值
+            console.log('被删除行底下的<select>的值：' + selectValue);
+        });
         
-        $(this).closest('.table-responsive').prev().find('tr').filter(function() {
-            return $(this).attr('id') === boxID;
-        }).remove();
+
 
         // 检查是否需要隐藏 checkResult_none 行
-        if ($(".checkResult_none").length > 0 && $("#checkResult").children(":not(.checkResult_none)").length === 0) {
-            $(".checkResult_none").show();
+        if ($(".checkResult").length == 0 ) {
+            $(".CRhide").show();
         }
+
+        // $('#checkResult tr.checkResult').val();
+
+        // $('#checkResult tr.checkResult').each(function() {
+
+        //     let value = $(this).val();
+        //     //console.log(value); // 在這裡可以使用獲取到的值
+    
+        //     // 先移除目前的行
+        //     let currentRow = $(this).closest('tr');
+
+        //     console.log($(this).closest('tr'));
+            
+        //     if (value === "1") {
+        //         // 將行移動到最上方
+        //         currentRow.prependTo('#checkResult');
+        //     } else if (value === "2") {
+        //         // 將行移動到 select 值為 1 的行之後
+        //         let targetRow = $('#checkResult tr.checkResult_none select[value="1"]:last').closest('tr');
+        //         currentRow.insertAfter(targetRow);
+        //     } else {
+        //         // 將行移動到最下方
+        //         currentRow.appendTo('#checkResult');
+        //     }
+        // });
 
     });
 
 
     //次序變動
     let SRorder = function() { 
+         
+        
         $('#checkResult tr.checkResult select').each(function() {
             let value = $(this).val();
             //console.log(value); // 在這裡可以使用獲取到的值
@@ -395,12 +436,164 @@ $(document).ready(function () {
         });
     };
     
+    //用戶變更:優先次序
+    $(document).on('click', '.selectR', function() {
 
+        // 使用 jQuery 获取当前选中的值
+        var oldValue = $(this).find("option:selected").val();
+        console.log("Old value:", oldValue);
+
+        $(this).change(function() {
+            var newValue = $(this).val();
+            console.log("New value:", newValue);
+        
+        // 移除旧值的选中状态，为新值添加选中状态
+        $(this).find("option[value='" + oldValue + "']").removeAttr("selected");
+        $(this).find("option[value='" + newValue + "']").attr("selected", "selected");
+
+        SRorder ();
+
+        })
+       
    
+    });
 
-   
+
+    //確認訂票按鈕
+    $(document).on('click', '#sendtoServer', function() {
 
 
+        var tr = $(this).closest('table').find('.checkResult');
+        let count = $(this).closest('table').find('.checkResult').length;
+        console.log("sendtoServer 数量：" + count);
+
+        
+        let cusCode = $('#cusCode').text().split(':')[1].trim();
+        //console.log("cusCode"+cusCode);
+
+        let qty = $('#qtyInput').val();
+        console.log("输入的数量：" + qty);
+
+
+
+        //確認不超過3筆
+        if (count<1 || qty=="") {
+
+            console.log("return");
+            return;
+
+        }else{
+
+            let send_item={};
+            var order = []; 
+
+            for (var i = 0; i < count; i++) {
+
+                var value= tr.eq(i).find(".selectR").val();
+
+                // trDate= tr.eq(i).find("td:eq(1)").text();
+                // trshipID= tr.eq(i).find("td:eq(2)").text();
+
+                console.log('第 ' + (i + 1) + ' 行 - 優先次序：', value);
+
+                // console.log('第 ' + (i + 1) + ' 行 - 出发日期：', order);
+                //  console.log('第 ' + (i + 1) + ' 行 - 出发日期：', trDate);
+                // console.log('第 ' + (i + 1) + ' 行 - 班次：', trshipID);
+
+
+                // 检查当前值是否已经存在于 order 对象中
+                if (order[value]) {
+                    console.log("重複：" + value);
+                    order[value] = false;
+                    return;
+
+                } else {
+                    order[value] = true;
+                    console.log("沒重複：" + value);
+                }
+
+            }
+
+            if(order[value]){
+
+                for (var i = 0; i < count; i++) {
+
+                    // 获取出发日期对应的表格数据单元格内容
+                    
+                    order[i + 1]= tr.eq(i).find("td:eq(2)").text();
+        
+                    console.log('第 ' + (i + 1) + ' 行 - 出发日期：', order);
+                    
+                }
+
+            }
+
+            
+            console.log("order1:"+order[1]);
+            
+            console.log("order2:"+order[2]);
+            
+            console.log("order3:"+order[3]);
+
+            send_item = {
+                cusCode:cusCode,
+                qty: qty,
+                order1:order[1],
+                order2:order[2],
+                order2:order[3]
+            }
+            console.log(JSON.stringify(send_item, null, 2));
+
+
+        }
+
+
+       
+
+
+
+        //傳給後台
+        // $.ajax({
+        //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
+        //   type: "POST", // 使用 POST 请求发送数据
+        //   //contentType:"application/json",//指定格式(這次不用)
+        //   data:send_item,//塞入整理好的資料
+        //   success: function (datas) {    // 後台回傳
+        // if (datas != null) {
+
+        //     console.log("datas != null");
+        //     $("#ship-result").empty();//不累加清空
+
+        //     // 使用捕獲的數據更新表單內容
+        //     $("#date").text("出發日期：" + formattedDate);
+
+        //     //方法:抓取買票人所有訂票紀錄 
+        //     show_datas(datas, formattedDate);
+
+        //     // // 顯示船班資料
+        //     // $("#ship-result").show();
+        // }
+        // else { //接收到null時
+        //     $("#ship_unchoose").hide();
+        //     $("#ship_result_null").show();
+        //     return; // 阻止進一步執行
+        // }                      
+
+        //                              },
+        //   error: function (error) {
+        //   // 请求失败时的处理
+        //   console.error("数据发送失败：", error);    
+        // },
+        //   beforeSend: function (xhr) {
+        //     // 添加CSRF令牌到请求头部
+        //     xhr.setRequestHeader(csrfHeader, csrfToken);
+        //   }
+        // });
+
+
+
+
+    });
 
 
     //顯示datepicker
@@ -518,4 +711,5 @@ $(document).ready(function () {
     }
 
 
-})                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+})    
+

@@ -116,7 +116,7 @@
                     <i class="fa-solid fa-user-check fa-6x"></i>
                     
                         <h5 id="cusName" class="text-uppercase">使用者:[[${cusName}]]</h5>
-                        <h5 id="cusCode" class="text-uppercase">使用者:[[${cusCode}]]</h5>
+                        <h5 id="cusCode" class="text-uppercase">使用者代號:[[${cusCode}]]</h5>
                         <h6 class="text-uppercase">登入!</h5>
                 </div>
 
@@ -518,15 +518,15 @@
                                                                       <th>出發日期</th>
                                                                       <th id="date" colspan="3">
 
-                                                                        <button class="dBtn pre " onclick="">
+                                                                        <!-- <button class="dBtn pre " onclick="">
                                                                         <i class="fa-solid fa-play fa-rotate-180 fa-2xl" ></i>
-                                                                        </button>
+                                                                        </button> -->
                                                                         
-                                                                        <input type="date" id="datePicker" class="datePicker" placeholder="選擇日期範圍" value="">
+                                                                        <input type="date" id="OdatePicker" class="datePicker" placeholder="選擇日期範圍" value="">
 
-                                                                        <button class="dBtn next" onclick="">
+                                                                        <!-- <button class="dBtn next" onclick="">
                                                                         <i class="fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>
-                                                                        </button>
+                                                                        </button> -->
                                                                         
                                                                       </th>
                                                                       <div class='datepicker justify-content-center'>
@@ -547,7 +547,7 @@
                                                                         <th style="width: 25%;"
                                                                             id="check">
                                                                             訂票
-                                                                            (最多3筆)
+                                                                            <p id="showT">(最多3筆)</p>
 
                                                                         </th>
                                                                     </tr>
@@ -555,18 +555,9 @@
       
                                                                 <tbody id="ship-result" class="text-center">
                                                                     <tr>
-                                                                      <td id="ship_unchoose" colspan="4">尚未選擇日期</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td id="ship_unchoose" colspan="4">
-                                                                            
-                                                                    <div id="custom-alert-c" class="alert alert-danger" role="alert"
-                                                                    style="position: relative;">
-                                                                    <p id="alert-text-c">打勾欄位已</p>
-                                                                    <i class="fa-solid fa-circle-xmark fa-2x" style="position: absolute; top: 5%; right: 0%;"
-                                                                    onclick="closeAlertC()"></i>
-                                                                    </div>
-                                                                        </td>
+                                                                      <td id="d_unchoose" colspan="4" class="text-red">尚未選擇日期
+                                                                       
+                                                                      </td>
                                                                     </tr>
                                                                     
                                                                     <tr id="ship_result">
@@ -574,7 +565,10 @@
                                                                         <td class=""></td>
                                                                         <td class=""></td>
                                                                         <td class="">
-                                                                            <input type="checkbox" class="checked" id="" name="myCheckbox" value="checkbox_value">
+                                                                          <button class="send " onclick="order()">
+                                                                            <i class=" fa-solid fa-hand-pointer"></i>確認訂票
+                                                                          </button>
+                                                                            <!-- <input type="checkbox" class="checked" id="" name="myCheckbox" value="checkbox_value"> -->
                                                                         </td>
                                                                     </tr>
                                                                     <tr id="ship_result_null">
@@ -617,27 +611,21 @@
                                                                 </thead>
       
                                                                 <tbody id="checkResult" class="text-center">
-                                                                    <!-- js產生 -->
-                                                                    <!-- <tr class="checkResult CRhide">
-                                                                      <td id="ship_unchoose" colspan="5">尚未選擇日期</td>
-                                                                    </tr> -->
-                                                                    <tr class="checkResult CRhide">
-                                                                        <td class=""> 
-                                                                            <select id="" class="selectR" onchange="updateDate()">
-                                                                                <option value="1">最優先</option>
-                                                                                <option value="2">次優先</option>
-                                                                                <option value="3">第三優先</option>
-                                                                            </select>
-                                                                        </td>
-                                                                        <td id="ship_unchoose" colspan="3">尚未選擇日期</td>
-                                                                        <td class=""><i class="fa-solid fa-trash-can fa-lg" style="color: #ee174c;"></i></td>
+                                                                    
+                                                                    <tr class=" CRhide">
+                                                                        <td id="t_unchoose" colspan="5" class="text-red">尚未選擇訂票</td>
                                                                     </tr>
                                                                 </tbody>
                                                                 <tbody class="text-center">
+                                                                  <tr id="qtytr">
+                                                                    <td  colspan="5">
+                                                                     訂票數 <input type="number" id="qtyInput">
+                                                                    </td>
+                                                                  </tr>
                                                                     <tr>
                                                                       <td  colspan="5">
 
-                                                                          <button class="send " onclick="openArticleB()">
+                                                                          <button id="sendtoServer" class="send" >
                                                                             <i class=" fa-solid fa-hand-pointer"></i>確認訂票
                                                                           </button>
                                                                           

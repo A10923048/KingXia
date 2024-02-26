@@ -2,15 +2,16 @@
     (2)cusCode=旅行社代號
     (3)先只要選擇航班日期就能查航班代碼(無須關乎餘票數)
     (4)完成訂票傳給後台格式
-        private String cusCode;
+
+        private String cusCode(旅行社帳號);
         
-        private String qty;
+        private String qty:(票數);
         
-        private String order1(班次);
+        private String order1:(班次);
         
-        private String order2;
+        private String order2:(班次);
         
-        private String order3;
+        private String order3:(班次);
 
     (5) 最多只能訂3個月內的票
     
