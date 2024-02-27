@@ -452,8 +452,21 @@ $(document).ready(function () {
 
 
         //確認不超過3筆
-        if (count<1 || qty=="") {
+        if (count<1) {
+            
+            console.log("return");
+            
+            $("#t_unchoose").addClass("loader");
+            $("#t_unchoose").text("尚未選擇訂票");
+            $("html,body").animate({scrollTop: $("#t_unchoose").offset().top-400},500);
+            return;
 
+        }else if (qty=="") { 
+            let span=$("#qtytr").find("span");
+            span.addClass("text-red");
+            span.text("訂票數尚未填寫");
+
+            $("html,body").animate({scrollTop: span.offset().top - 400}, 500);
             console.log("return");
             return;
 
