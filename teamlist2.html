@@ -122,7 +122,7 @@
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">訂票資訊</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleB')">航班查詢/訂票</button>
                 <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleC')">使用者資料</button>
-                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleHx')">歷史紀錄查詢</button>
+                <button id="articleHxBtn" class="nav-link btn btn-outline-primary" onclick="articleBtn('articleHx')">歷史紀錄查詢</button>
               </nav>
 
               <div class="col-12">
@@ -263,222 +263,136 @@
                       </article>
 
                       <!-- 航班查詢 -->
-                      <article id="articleB" class="my-3  tab-pane active  " style="background: rgb(102, 235, 226)">
+                      <article id="articleB" class="my-3  tab-pane   " style="background: rgb(102, 235, 226)">
 
                         <h1 class=" section-title text-center text-white mt-5 mb-3 pt-5">訂票資訊
                         </h1>
 
                             <nav id="articleA-nav" class="navbar navbar-expand-md navbar-light bg-light  mt-5 mb-3 pt-5">
                               <div class="container justify-content-center">
-                              <button class=" articleA-navbar-toggler navbar-toggler d-lg-none mb-5" type="button"
-                                data-toggle="collapse" data-target="#collapsibleNavId2" aria-controls="collapsibleNavId2"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                              </button>
+                                <button class=" articleA-navbar-toggler navbar-toggler d-lg-none mb-5" type="button"
+                                  data-toggle="collapse" data-target="#collapsibleNavId2" aria-controls="collapsibleNavId2"
+                                  aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>
 
-                              <div class="collapse navbar-collapse " id="collapsibleNavId2">
-                                <!-- <div class="container justify-content-center">
-                                  <div class="row"> -->
-                                    
-                                    <!-- 票價表 -->
-                                    <div  class="col-md-6 mb-4 text-white">
+                                <div class="collapse navbar-collapse " id="collapsibleNavId2">
+                                  <!-- <div class="container justify-content-center">
+                                    <div class="row"> -->
+                                      
+                                      <!-- 票價表 -->
+                                      <div  class="col-md-6 mb-4 text-white">
 
-                                      <button id="openTprice" class="w-100 btn btn-lg btn-outline-primary" >
-                                        <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
-                                        票價表
-                                      </button>
-                                        <ul id="Tprice" class="list-group mb-1">
-                                            <li class="list-group-item justify-content-center lh-sm pt-1">
-                                                <div class="py-5 text-center text-primary">
-                                                    <div class="table-responsive">
-                                                      <form id="contact" class="get_form  ">
-                                                        <h4 id="contact"class=" section-title mb-3 text-center text-primary">
-                                                          日航標準版</h4>
-                                                        <div  class="table-responsive ">
-                                                            <table class="table text-center " border="1">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th style="width: 20%;"
-                                                                            id="shipID0">
-                                                                            票種</th>
-                                                                        <th style="width: 20%;"
-                                                                            id="btime">
-                                                                            票價</th>
-                                                                        <th style="width: 60%;">
-                                                                            備註</th>
-                                                                    </tr>
-                                                                </thead>
-      
-                                                                <tbody  class="text-center">
-                                                                    <tr>
-                                                                        <td>全票</td>
-                                                                         <td>$650</td>
-                                                                        <td>一般民眾</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>嬰兒</td> 
-                                                                         <td>$0</td> 
-                                                                        <td>0歲以上未滿2歲</td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                      </form>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- 注意事項 -->
-                                    <div class="col-md-6 mb-4 text-white">
-                                      <button id="openTattention" class="w-100 btn btn-lg btn-outline-primary" >
-                                        <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
-                                        注意事項
-                                      </button>
-                                        <ul id="Tattention" class="list-group mb-1">
-                                            <li class="list-group-item justify-content-center lh-sm pt-1">
-                                                <div class="py-5 text-center text-primary">
-                                                    <div class="table-responsive">
-                                                      <form id="contact" class="get_form  ">
-                                                          
+                                        <button id="openTprice" class="w-100 btn btn-lg btn-outline-primary" >
+                                          <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
+                                          票價表
+                                        </button>
+                                          <ul id="Tprice" class="list-group mb-1">
+                                              <li class="list-group-item justify-content-center lh-sm pt-1">
+                                                  <div class="py-5 text-center text-primary">
+                                                      <div class="table-responsive">
+                                                        <form id="contact" class="get_form  ">
+                                                          <h4 id="contact"class=" section-title mb-3 text-center text-primary">
+                                                            日航標準版</h4>
                                                           <div  class="table-responsive ">
-                                                            <!-- <h5 id="contact" class=" section-title mb-3 text-center text-primary">
-                                                              日期:2021/10/23
-                                                            </h5> -->
                                                               <table class="table text-center " border="1">
                                                                   <thead>
                                                                       <tr>
-                                                                        <td id="date" colspan="3">退票手續費級距:以出發日算起</td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                          <th style="width: 30%;"
+                                                                          <th style="width: 20%;"
                                                                               id="shipID0">
-                                                                              退票時間</th>
-                                                                          <th style="width: 30%;"
+                                                                              票種</th>
+                                                                          <th style="width: 20%;"
                                                                               id="btime">
-                                                                              手續費</th>
-                                                                          <th style="width: 30%;">
-                                                                              退票</th>
+                                                                              票價</th>
+                                                                          <th style="width: 60%;">
+                                                                              備註</th>
                                                                       </tr>
                                                                   </thead>
         
-                                                                  <tbody class="text-center">
+                                                                  <tbody  class="text-center">
                                                                       <tr>
-                                                                        <td>8天前</td>
-                                                                        <td>退票不扣手續費</td>
-                                                                        <td>(全額退費)</td>
+                                                                          <td>全票</td>
+                                                                          <td>$650</td>
+                                                                          <td>一般民眾</td>
                                                                       </tr>
-                                                                        <tr>
-                                                                          <td>7天內</td>
-                                                                          <td>收取手續費為票價的10%</td>
-                                                                          <td>(退費90%)</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                          <td>5-6天</td>
-                                                                          <td>收取手續費為票價的20%</td>
-                                                                          <td>(退費80%)</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                          <td>3-4天</td>
-                                                                          <td>收取手續費為票價的30%</td>
-                                                                          <td>(退費70%)</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                          <td>1-2天</td>
-                                                                          <td>收取手續費為票價的50%</td>
-                                                                          <td>(退費50%)</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                          <td>當天</td>
-                                                                          <td>,收取手續費為票價的100%</td>
-                                                                          <td>(不予以退費)</td>
-                                                                        </tr>
+                                                                      <tr>
+                                                                          <td>嬰兒</td> 
+                                                                          <td>$0</td> 
+                                                                          <td>0歲以上未滿2歲</td>
+                                                                      </tr>
                                                                   </tbody>
                                                               </table>
                                                           </div>
-                                                      </form>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                                        </form>
+                                                      </div>
+                                                  </div>
+                                              </li>
                                           </ul>
-                                    </div>
-                              </div>
-                            </div>
-                            </nav> 
-
-                            <div class="col-md-12 col-lg-12 order-md-last">
-                              <div class="col-lg-12 align-self-center">
-                                  <form id="contact" action="" method="get">
-                                    <!-- 手機模式 -->
-                                      <div class="row mt-5">
-                                      
-                                          <!-- 日曆 -->
-                                          <!-- <div class="col-lg-6 text-white bg-white">
-                                              <div class="py-5 text-center text-primary">
-                                                  <i class=" fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: 45deg;"></i>
-                                                  <h2>日曆</h2>
-                                              </div>
-
-
-                                              <div class='datepicker justify-content-center' style="display:inherit;">
-                                                <div class=" datepicker-header">
-                                                    
-                                                </div>
-                                                
-                                                <input type="date" id="datePicker" placeholder="選擇日期範圍" value="">
-                                                
-                                              </div>
-                                          </div> -->
-                                          <!-- 航班表 -->
-                                          <!-- <div class=" col-lg-6">
-                                            <ul class="list-group mb-1">
+                                      </div>
+                                      <!-- 注意事項 -->
+                                      <div class="col-md-6 mb-4 text-white">
+                                        <button id="openTattention" class="w-100 btn btn-lg btn-outline-primary" >
+                                          <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
+                                          注意事項
+                                        </button>
+                                          <ul id="Tattention" class="list-group mb-1">
                                               <li class="list-group-item justify-content-center lh-sm pt-1">
                                                   <div class="py-5 text-center text-primary">
-                                                      <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
-                                                      <h2>  航班表： </h2>
-                                                    
                                                       <div class="table-responsive">
                                                         <form id="contact" class="get_form  ">
-                                                            <h4 class=" section-title mb-3 text-center text-primary">
-                                                                日航標準版
-                                                            </h4>
+                                                            
                                                             <div  class="table-responsive ">
+                                                              <!-- <h5 id="contact" class=" section-title mb-3 text-center text-primary">
+                                                                日期:2021/10/23
+                                                              </h5> -->
                                                                 <table class="table text-center " border="1">
                                                                     <thead>
                                                                         <tr>
-                                                                          <td id="date" colspan="3">出發日期:2021/10/23</td>
-                                                                          <div class='datepicker justify-content-center' style="display:inherit;">
-                                                                            <div class=" datepicker-header">
-                                                                                
-                                                                            </div>
-                                                                            
-                                                                            <input type="date" id="datePicker" placeholder="選擇日期範圍" value="">
-                                                                            
-                                                                          </div>
+                                                                          <td id="date" colspan="3">退票手續費級距:以出發日算起</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <th style="width: 30%;"
                                                                                 id="shipID0">
-                                                                                班次</th>
+                                                                                退票時間</th>
                                                                             <th style="width: 30%;"
                                                                                 id="btime">
-                                                                                出發時間</th>
-                                                                            <th style="width: 30%;"
-                                                                                id="qty">
-                                                                                結束時間</th>
-                                                                            <th style="width: 30%;"
-                                                                                id="qty">
-                                                                                訂票</th>
+                                                                                手續費</th>
+                                                                            <th style="width: 30%;">
+                                                                                退票</th>
                                                                         </tr>
                                                                     </thead>
           
-                                                                    <tbody id="ship-result" class="text-center">
+                                                                    <tbody class="text-center">
                                                                         <tr>
-                                                                          <td id="ship_unchoose" colspan="3">尚未選擇日期</td>
+                                                                          <td>8天前</td>
+                                                                          <td>退票不扣手續費</td>
+                                                                          <td>(全額退費)</td>
                                                                         </tr>
-                                                                        <tr id="ship_result_null">
-                                                                          <td  colspan="3">當日無船班</td>
-                                                                        </tr>
+                                                                          <tr>
+                                                                            <td>7天內</td>
+                                                                            <td>收取手續費為票價的10%</td>
+                                                                            <td>(退費90%)</td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                            <td>5-6天</td>
+                                                                            <td>收取手續費為票價的20%</td>
+                                                                            <td>(退費80%)</td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                            <td>3-4天</td>
+                                                                            <td>收取手續費為票價的30%</td>
+                                                                            <td>(退費70%)</td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                            <td>1-2天</td>
+                                                                            <td>收取手續費為票價的50%</td>
+                                                                            <td>(退費50%)</td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                            <td>當天</td>
+                                                                            <td>,收取手續費為票價的100%</td>
+                                                                            <td>(不予以退費)</td>
+                                                                          </tr>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -486,17 +400,22 @@
                                                       </div>
                                                   </div>
                                               </li>
-                                          </ul>
-                                          </div> -->
+                                            </ul>
                                       </div>
-                                       <!-- 電腦模式 -->
+                                </div>
+                              </div>
+                            </nav> 
+
+                            <!-- 訂票區 -->
+                            <div class="col-md-12 col-lg-12 order-md-last">
+                              <div class="col-lg-12 align-self-center">
+                                  <form id="contact" action="" method="get">
                                       <div class=" col-lg-12">
                                         <ul class="list-group mb-1">
                                           <li class="list-group-item justify-content-center lh-sm pt-1">
                                               <div class="py-5 text-center text-primary">
                                                   <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
                                                   <h2>  航班表： </h2>
-
                                                   <button id="openModalButton1" class="btn btn-primary" data-toggle="modal" data-target="#DetailModal">
                                                     打开模态框1
                                                 </button>
@@ -925,7 +844,7 @@
 
 
                       <!-- 歷史紀錄查詢 -->
-                      <article id="articleHx" class="my-3 pb-5 tab-pane  "style=" background-color: rgb(245, 240, 220);">
+                      <article id="articleHx" class="my-3 pb-5 tab-pane active "style=" background-color: rgb(245, 240, 220);">
 
                         <table>
                           <div id="planpickered" class="col-lg-12 pt-5 pb-5 text-white" style="background: rgb(102, 235, 226)">
@@ -961,31 +880,48 @@
                                   </tr>
                                 </thead>
                                 <tbody id="hx-result">
-                                  <tr>
-                                        <td scope="row" class="text-start">hx_oreder</td>
-                                        <td>
-                                            hx_oredertime
-                                        </td>
-                                        <td>
-                                            hx_shipID
-                                        </td>
-                                        <td>
-                                            hx_date + hx_btime
-                                        </td>
-                                        <td>
-                                            <a class="article-button"
-                                                href="./Payment Page.html">
+                                  
+                                  <!-- 格式範例 -->
+                                   <!-- <tr>
+                                            <td scope="row" class="text-start">hx_oreder</td>
+                                            <td>
+                                                hx_oredertime
+                                            </td>
+                                            <td>
+                                                hx_shipID
+                                            </td>
+                                            <td>
+                                                hx_date + hx_btime
+                                            </td>
+                                            <td>
+                                              <a id="detail-button" class="article-button" href="#" data-toggle="modal" data-target="#DetailModal"> 
+                                                <i class="fa-solid fa-circle-info fa-3x" aria-hidden="true" style="color: #f7cf02;"></i> 
+                                              </a>
+                                            </td>
+                                            <td>
+                                              <a id="refundBtn" class="article-button" href="#" data-toggle="modal" data-target="#RefundModal">
                                                 <i class="fa-solid fa-ticket fa-3x"
-                                                    aria-hidden="true"></i>
-                                                <span class="sr-only">訂票</span>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a id="detail-button" class="article-button" href="#" data-toggle="modal" data-target="#DetailModal"> <i class="fa-solid fa-circle-info fa-3x" aria-hidden="true" style="color: #f7cf02;"></i> </a>
-                                        </td>
-                                    </tr>
+                                                  aria-hidden="true"></i>
+                                              </a>
+                                            </td>
+                                        </tr>  -->
+
+                                  <!-- 查無訂單時 使用 -->
+                                  <!-- <tr>
+                                    <td colspan="2">
+                                    </td>
+                                    <td colspan="2">
+                                      <marquee behavior="alternate"><h5>查無訂單</h5></marquee>
+                                    </td>
+                                    <td colspan="2">
+                                    </td>
+                                  </tr> -->
+
                                 </tbody>
                               </table>
+
+                              
+
                           </div>
                         </main>
 
@@ -1006,6 +942,65 @@
     </header>
 
   </header>
+
+
+  
+    <!-- Modal-退票資訊 -->
+    <div class="modal fade" id="RefundModal" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">主要訂票人資料顯示</h5> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+  
+          <table class="">
+            <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center"
+              style="background: rgb(182, 167, 80)">
+                <h1 class="section-title text-blue2 mb-5">
+                  <span class="badge bg-warning rounded-pill">
+                    請自行連絡金廈海運公司
+                </span></h1>
+  
+                <h5 class="text-white d-flex justify-content-center align-items-center mb-3">
+                  聯繫方式
+                </h5>
+  
+                
+                <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div><h5 class="my-0">
+                      <span class="text-blue2">電話:</span>
+                    </h5>
+                    </div>
+                    <div><h5 class="my-0">
+                      <span class="text-blue">082-312656</span>
+                    </h5>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div><h5 class="my-0">
+                      <span class="text-blue">email:</span>
+                    </h5>
+                    </div>
+                    <div><h5 class="my-0">
+                      <span class="text-blue">king.xia@msa.hinet.net</span>
+                    </h5>
+                    </div>
+                  </li>
+                </ul>
+
+            </div>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+    </div>
 
   <!-- Modal-訂票紀錄查詢>_詳細資訊 -->
   <div class="modal fade" id="DetailModal" tabindex="-1" role="dialog" aria-labelledby="DetailModalLabel"
@@ -1135,115 +1130,6 @@
     </div>
   </div>
 
-    <!-- Modal-退票細節確認2 -->
-    <div class="modal fade" id="RefundModal2" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <!-- <h5 class="modal-title" id="exampleModalLabel">主要訂票人資料顯示</h5> -->
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          
-        </div>
-  
-        <div class="modal-body col-md-12 col-lg-12 order-md-last" style="background-color: rgb(102, 235, 226)">
-          
-          <table class="">
-            <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center text-white"
-              style="background: rgb(35, 166, 157)">
-              <label for="plan">
-                <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
-    
-                <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
-                <p class="article-p" id="RefundModal-pno">航班代碼：</p>
-                <p class="article-p" id="RefundModal-tdate">出發日期：</p>
-                <p class="article-p" id="RefundModal-btime">出發時間：</p>
-                <p class="article-p" id="RefundModal-orderName">主要訂票人姓名：</p>
-                <div class="justify-content-between">
-                  <p class="article-p" id="RefundModal-ticCount">票數：</p>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="AllRefund_check">
-                    <label class="form-check-label" for="same-address">全部退票(請打勾)</label>
-                  </div>
-                </div>
-    
-            </div>
-    
-          </table>
-
-          <h3 class="d-flex justify-content-center align-items-center mb-5 mt-5">
-            <span class="text-primary">其他買票人資料</span>
-            <span class="badge bg-primary rounded-pill"></span>
-          </h3>
-  
-          <div class="row" id="RefundModal-col_2">
-            
-              <div class="col-md-5 col-lg-6 order-md-last">
-                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                  <span class="text-primary">其他買票人資料</span>
-                  <span class="badge bg-primary rounded-pill">3</span>
-                </h4>
-                <ul class="list-group mb-3">
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">票號:</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0" id="ticnum">(票數顯示)</h6>
-                    </div>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">姓名:</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0">id="tname"</h6>
-                    </div>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">: 身分證/護照號碼</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0">id</h6>
-                    </div>
-              
-                  </li>
-              
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">:email</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0">(email顯示)</h6>
-                    </div>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">mobile:</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0">(mobile顯示)</h6>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-          </div>
-          <button type="button" id="RefundModal_Send" class="btn btn-primary" data-dismiss="modal">
-            <i class="fa-solid fa-paper-plane fa-2x">送出</i>
-          </button>
-        </div>
-
-        <div class="modal-footer">
-         
-          <button type="button" class="btn btn-primary">Save changes</button> 
-        </div>
-      </div>
-      
-    </div>
-  </div>
 
   <!-- footer -->
   <footer id="footer" class="pt-5 bg-secondary text-white">
