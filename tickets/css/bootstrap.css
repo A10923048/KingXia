@@ -10674,6 +10674,9 @@ button.bg-dark:focus {
 .text-blue {
   color: #007bff !important;
 }
+.text-blue2 {
+  color:#244dde;
+}
 
 .text-orange {
   color: #fd7e14 !important;

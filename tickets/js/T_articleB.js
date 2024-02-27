@@ -454,7 +454,24 @@ $(document).ready(function () {
         let qty = $('#qtyInput').val();
         console.log("票數：" + qty);
 
+        let Alert =function(isTrue){
 
+            if (isTrue) {
+                let span = $("#qty").find("span");
+                span.addClass("text-red");
+                span.text("優先次序不能重複");
+            
+                $("html,body").animate({scrollTop: span.offset().top - 400}, 500);
+            
+                // 如果为 true，表示添加类
+            } else {
+                let span = $("#qty").find("span");
+                span.removeClass("text-red");
+                span.text("優先次序");
+            
+                // 如果为 false，表示移除类
+            }
+        }
 
         //確認不超過3筆
         if (count<1) {
@@ -480,110 +497,83 @@ $(document).ready(function () {
 
             let send_item={};
             var order = [];
+            let go=true;
             console.log("tr:"+tr);
             tr.each(function() {
 
                 let value= $(this).find(".selectR").val();
 
                 console.log("value:"+value);
-                console.log('第 ' + (i + 1) + ' 行 - 優先次序：', value);
-
-
-
+             
                 // 检查当前值是否已经存在于 order 对象中
                 if (order[value]) {
                     console.log("重複：" + value);
-                    order[value] = false;
-                    let span=$("#qty").find("span");
-                        span.addClass("text-red");
-                        span.text("優先次序不能重複");
-
-            $("html,body").animate({scrollTop: span.offset().top - 400}, 500);
-           
+                    go = false;
+                    Alert (true);
                     return;
 
                 } else {
-                    order[value] = true;
+                    Alert(false); 
+                    go = true;
                     console.log("沒重複：" + value);
                 }
 
             });
 
-            if(order[value]){
+            if(go){
+                
+                tr.each(function() {
 
-                for (var i = 0; i < count; i++) {
+                    let value= $(this).find(".selectR").val();
+                    let shipID= $(this).find("td:eq(2)").text();
 
-                    // 获取出发日期对应的表格数据单元格内容
-                    
-                    order[i + 1]= tr.eq(i).find("td:eq(2)").text();
-        
-                    console.log('第 ' + (i + 1) + ' 行 - 出发日期：', order);
-                    
-                }
-
+                    order[value]=shipID;
+                });
             }
-
-            
-            console.log("order1:"+order[1]);
-            
-            console.log("order2:"+order[2]);
-            
-            console.log("order3:"+order[3]);
 
             send_item = {
                 cusCode:cusCode,
                 qty: qty,
                 order1:order[1],
                 order2:order[2],
-                order2:order[3]
+                order3:order[3]
             }
             console.log(JSON.stringify(send_item, null, 2));
+
+            
+            //傳給後台
+            // $.ajax({
+            //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
+            //   type: "POST", // 使用 POST 请求发送数据
+            //   //contentType:"application/json",//指定格式(這次不用)
+            //   data:send_item,//塞入整理好的資料
+            //   success: function (datas) {    // 後台回傳
+            // if (datas) {
+                
+            //     $('#orderSend').modal('show'); // 显示模态框
+            // }             
+            //           },
+            //   error: function (error) {
+            //   // 请求失败时的处理
+            //   console.error("数据发送失败：", error);    
+            // },
+            //   beforeSend: function (xhr) {
+            //     // 添加CSRF令牌到请求头部
+            //     xhr.setRequestHeader(csrfHeader, csrfToken);
+            //   }
+            // });
+
+
+            //模擬收到後台的回傳值
+
+            let datas = true;
+            if (datas) {
+                $('#orderSend').modal('show'); // 显示模态框
+            } 
 
 
         }
 
-
-       
-
-
-
-        //傳給後台
-        // $.ajax({
-        //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
-        //   type: "POST", // 使用 POST 请求发送数据
-        //   //contentType:"application/json",//指定格式(這次不用)
-        //   data:send_item,//塞入整理好的資料
-        //   success: function (datas) {    // 後台回傳
-        // if (datas != null) {
-
-        //     console.log("datas != null");
-        //     $("#ship-result").empty();//不累加清空
-
-        //     // 使用捕獲的數據更新表單內容
-        //     $("#date").text("出發日期：" + formattedDate);
-
-        //     //方法:抓取買票人所有訂票紀錄 
-        //     show_datas(datas, formattedDate);
-
-        //     // // 顯示船班資料
-        //     // $("#ship-result").show();
-        // }
-        // else { //接收到null時
-        //     $("#ship_unchoose").hide();
-        //     $("#ship_result_null").show();
-        //     return; // 阻止進一步執行
-        // }                      
-
-        //                              },
-        //   error: function (error) {
-        //   // 请求失败时的处理
-        //   console.error("数据发送失败：", error);    
-        // },
-        //   beforeSend: function (xhr) {
-        //     // 添加CSRF令牌到请求头部
-        //     xhr.setRequestHeader(csrfHeader, csrfToken);
-        //   }
-        // });
 
 
 
@@ -591,9 +581,11 @@ $(document).ready(function () {
     });
 
 
-    //顯示datepicker
-    //$( "#datepicker2" ).datepicker();
-
+    $('#openModalButton1, #orderSendBtn, #openModalButton3').click(function(event) {
+        event.preventDefault(); // 阻止按钮的默认提交行为
+        // 根据按钮的 data-target 属性获取模态框的 ID，并使用 Bootstrap 方法显示模态框
+        $($(this).data('target')).modal('show');
+    });
 
 
     //////////////////////測試資料如下///////////////////////////

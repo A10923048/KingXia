@@ -304,8 +304,7 @@
                                                                         <th style="width: 20%;"
                                                                             id="btime">
                                                                             票價</th>
-                                                                        <th style="width: 60%;"
-                                                                            id="qty">
+                                                                        <th style="width: 60%;">
                                                                             備註</th>
                                                                     </tr>
                                                                 </thead>
@@ -358,8 +357,7 @@
                                                                           <th style="width: 30%;"
                                                                               id="btime">
                                                                               手續費</th>
-                                                                          <th style="width: 30%;"
-                                                                              id="qty">
+                                                                          <th style="width: 30%;">
                                                                               退票</th>
                                                                       </tr>
                                                                   </thead>
@@ -498,6 +496,16 @@
                                               <div class="py-5 text-center text-primary">
                                                   <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
                                                   <h2>  航班表： </h2>
+
+                                                  <button id="openModalButton1" class="btn btn-primary" data-toggle="modal" data-target="#DetailModal">
+                                                    打开模态框1
+                                                </button>
+                                                <button id="orderSendBtn" class="btn btn-primary" data-toggle="modal" data-target="#orderSend">
+                                                  打开模态框2
+                                              </button>
+                                              <button id="openModalButton3" class="btn btn-primary" data-toggle="modal" data-target="#RefundModal2">
+                                                打开模态框1
+                                            </button>
                                                 
                                                   <div class="table-responsive">
                                                     <form id="shiplist" class="get_form  ">
@@ -1026,7 +1034,7 @@
           </div>
         </table>
         <div class="modal-body row" id="modal-col">
-          <!--
+          
             <div class="col-md-5 col-lg-6 order-md-last">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-primary">其他買票人資料</span>
@@ -1077,9 +1085,6 @@
                 </li>
               </ul>
             </div>
-            -->
-
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -1090,8 +1095,8 @@
   </div>
 
 
-  <!-- Modal-退票1 -->
-  <div class="modal fade" id="RefundModal" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
+  <!-- orderSend-傳送成功 -->
+  <div class="modal fade" id="orderSend" tabindex="-1" role="dialog" aria-labelledby="RefundModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -1100,105 +1105,33 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          
         </div>
-  
-        <div class="modal-body col-md-12 col-lg-12 order-md-last" style="background-color: rgb(102, 235, 226)">
-          
-          <table class="">
-            <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center text-white"
-              style="background: rgb(35, 166, 157)">
-              <label for="plan">
-                <h1 class="section-title mb-5">主要訂票人資料顯示</h1>
-    
-                <p class="article-p" id="RefundModal-orderNum">訂單編號：</p>
-                <p class="article-p" id="RefundModal-pno">航班代碼：</p>
-                <p class="article-p" id="RefundModal-tdate">出發日期：</p>
-                <p class="article-p" id="RefundModal-btime">出發時間：</p>
-                <p class="article-p" id="RefundModal-orderName">主要訂票人姓名：</p>
-                <div class="justify-content-between">
-                  <p class="article-p" id="RefundModal-ticCount">票數：</p>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="AllRefund_check">
-                    <label class="form-check-label" for="same-address">全部退票(請打勾)</label>
+
+        <table class="">
+          <div id="planpickered" class="pt-5 pb-5 col-md-12 col-lg-12  text-center"
+            style="background: rgb(102, 235, 226)">
+              <h1 class="section-title text-blue2 mb-5">
+                <span class="badge bg-warning rounded-pill">
+                  傳送成功
+              </span></h1>
+
+              <h6 class="d-flex justify-content-center align-items-center mb-3">
+                <span class="text-blue">您的資料已成功</span>
+                <span class="text-blue">傳送給金廈海運公司</span>
+              </h6>
+
+              
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-center lh-sm">
+                  <div><h5 class="my-0">
+                    <span class="text-red">待金廈海運公司與您聯繫</span>
+                  </h5>
                   </div>
-                </div>
-    
-            </div>
-    
-          </table>
-
-          <h3 class="d-flex justify-content-center align-items-center mb-5 mt-5">
-            <span class="text-primary">其他買票人資料</span>
-            <span class="badge bg-primary rounded-pill"></span>
-          </h3>
-  
-          <div class="row" id="RefundModal-col">
-            <!--
-              <div class="col-md-5 col-lg-6 order-md-last">
-                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                  <span class="text-primary">其他買票人資料</span>
-                  <span class="badge bg-primary rounded-pill">3</span>
-                </h4>
-                <ul class="list-group mb-3">
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">票號:</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0" id="ticnum">(票數顯示)</h6>
-                    </div>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">姓名:</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0">id="tname"</h6>
-                    </div>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">: 身分證/護照號碼</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0">id</h6>
-                    </div>
-              
-                  </li>
-              
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">:email</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0">(email顯示)</h6>
-                    </div>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">mobile:</h6>
-                    </div>
-                    <div>
-                      <h6 class="my-0">(mobile顯示)</h6>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              -->
-  
+                </li>
+              </ul>
           </div>
-          <button type="button" id="RefundModal_Send" class="btn btn-primary" data-toggle='modal' data-target='#RefundModal2'>
-            <i class="fa-solid fa-paper-plane fa-2x">送出</i>
-          </button>
-        </div>
-
-        <div class="modal-footer">
-         
-          <button type="button" class="btn btn-primary">Save changes</button> 
-        </div>
+        </table>
       </div>
-      
     </div>
   </div>
 
@@ -1246,7 +1179,7 @@
           </h3>
   
           <div class="row" id="RefundModal-col_2">
-            <!--
+            
               <div class="col-md-5 col-lg-6 order-md-last">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                   <span class="text-primary">其他買票人資料</span>
@@ -1297,8 +1230,6 @@
                   </li>
                 </ul>
               </div>
-              -->
-  
           </div>
           <button type="button" id="RefundModal_Send" class="btn btn-primary" data-dismiss="modal">
             <i class="fa-solid fa-paper-plane fa-2x">送出</i>
