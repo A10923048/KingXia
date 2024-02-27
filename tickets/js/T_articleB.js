@@ -355,56 +355,31 @@ $(document).ready(function () {
     //删除:被選中航班的表格列
     $(document).on('click', '.fa-trash-can', function() {
 
-        var oldValue =  $(this).closest("tr").find("option:selected").val();
+        var currentRow = $(this).closest("tr");
+        var oldValue = currentRow.find("option:selected").val();
 
         console.log('oldValue：' + oldValue);
+    
+        var nextRow = currentRow.nextAll('.checkResult');
+       
+    
+        currentRow.remove();
 
+        nextRow.each(function() {
 
-        // 找到删除图标所在的行，并删除
-        $(this).closest("tr").remove();
+            var nextSelect = $(this).find("select");
+            
+            var nextOption = nextSelect.find("option:selected");
+            nextOption .removeAttr("selected");
 
-        var nextValue =  $(this).closest("tr").next().find("option:selected").val();
-
-        console.log('nextValue：' + nextValue);
-
-         // 找到被删除行底下的其他<select>元素并处理
-        $(this).closest("tr").find('select').each(function() {
-            // 在这里进行您的处理逻辑
-            var selectValue = $(this).val(); // 获取<select>的值
-            console.log('被删除行底下的<select>的值：' + selectValue);
+            var newSelectedOption = nextOption.prev("option");
+            newSelectedOption.prop("selected", true);
         });
-        
-
 
         // 检查是否需要隐藏 checkResult_none 行
         if ($(".checkResult").length == 0 ) {
             $(".CRhide").show();
         }
-
-        // $('#checkResult tr.checkResult').val();
-
-        // $('#checkResult tr.checkResult').each(function() {
-
-        //     let value = $(this).val();
-        //     //console.log(value); // 在這裡可以使用獲取到的值
-    
-        //     // 先移除目前的行
-        //     let currentRow = $(this).closest('tr');
-
-        //     console.log($(this).closest('tr'));
-            
-        //     if (value === "1") {
-        //         // 將行移動到最上方
-        //         currentRow.prependTo('#checkResult');
-        //     } else if (value === "2") {
-        //         // 將行移動到 select 值為 1 的行之後
-        //         let targetRow = $('#checkResult tr.checkResult_none select[value="1"]:last').closest('tr');
-        //         currentRow.insertAfter(targetRow);
-        //     } else {
-        //         // 將行移動到最下方
-        //         currentRow.appendTo('#checkResult');
-        //     }
-        // });
 
     });
 
