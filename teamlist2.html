@@ -50,11 +50,7 @@
 </head>
 
 <body>
-  <!-- navbar -->
-  <!-- 使用Boostrap Navbar -->
-  <!-- TODO: 設定Navbar緊貼畫面上緣 -->
-  <!-- TODO: 點擊滾動目標 -->
-  <!-- b4-navbar-default -->
+
   <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
     <a class="navbar-brand" href="./index.html">首頁</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -593,8 +589,11 @@
                                                                     <tr>
                                                                         
                                                                         <th style="width: 20%;"
-                                                                            id="qty">
-                                                                            優先次序</th>
+                                                                            id="qty" class="">
+                                                                            <span>
+                                                                            優先次序
+                                                                            </span>
+                                                                                    </th>
                                                                         <th style="width: 20%;"
                                                                             id="Cdate">
                                                                             出發日期</th>
@@ -614,15 +613,13 @@
                                                                     
                                                                     <tr class=" CRhide">
                                                                         <td id="t_unchoose"class="text-red " colspan="5" >
-                                                                          <span >
-                                                                            Step2:選擇訂票
-                                                                          </span>
+                                                                          <span>Step2:選擇訂票</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
                                                                 <tbody class="text-center">
                                                                   <tr id="qtytr">
-                                                                    <td  colspan="5">
+                                                                    <td id="qtytd"  class="text-red " colspan="5">
                                                                       <span class="">訂票數</span>
                                                                       <input type="number"  id="qtyInput">
                                                                     </td>

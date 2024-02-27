@@ -242,7 +242,9 @@ $(document).ready(function () {
 
 
     //訂票按鈕被點擊
-    $(document).on('click', '.order', function() {
+    $(document).on('click', '.order', function(event) {
+        event.preventDefault(); // 阻止默认行为，即表单提交
+
 
         var tr = $(this).closest('.table-responsive').next().find('.checkResult');
         var count = tr.length;
@@ -435,36 +437,40 @@ $(document).ready(function () {
 
 
     //確認訂票按鈕
-    $(document).on('click', '#sendtoServer', function() {
+    $(document).on('click', '#sendtoServer', function(event) {
+
+        event.preventDefault();//阻止默认行为，即表单提交
 
 
         var tr = $(this).closest('table').find('.checkResult');
+        
         let count = $(this).closest('table').find('.checkResult').length;
-        console.log("sendtoServer 数量：" + count);
+        //console.log("sendtoServer 数量：" + count);
 
         
         let cusCode = $('#cusCode').text().split(':')[1].trim();
         //console.log("cusCode"+cusCode);
 
         let qty = $('#qtyInput').val();
-        console.log("输入的数量：" + qty);
+        console.log("票數：" + qty);
 
 
 
         //確認不超過3筆
         if (count<1) {
-            
+
+            let span=$("#t_unchoose").find("span");
             console.log("return");
-            
+            span.text("尚未選擇訂票");
             $("#t_unchoose").addClass("loader");
-            $("#t_unchoose").text("尚未選擇訂票");
             $("html,body").animate({scrollTop: $("#t_unchoose").offset().top-400},500);
             return;
 
         }else if (qty=="") { 
             let span=$("#qtytr").find("span");
-            span.addClass("text-red");
             span.text("訂票數尚未填寫");
+
+            $("#qtytd").addClass("loader");
 
             $("html,body").animate({scrollTop: span.offset().top - 400}, 500);
             console.log("return");
@@ -473,26 +479,27 @@ $(document).ready(function () {
         }else{
 
             let send_item={};
-            var order = []; 
+            var order = [];
+            console.log("tr:"+tr);
+            tr.each(function() {
 
-            for (var i = 0; i < count; i++) {
+                let value= $(this).find(".selectR").val();
 
-                var value= tr.eq(i).find(".selectR").val();
-
-                // trDate= tr.eq(i).find("td:eq(1)").text();
-                // trshipID= tr.eq(i).find("td:eq(2)").text();
-
+                console.log("value:"+value);
                 console.log('第 ' + (i + 1) + ' 行 - 優先次序：', value);
 
-                // console.log('第 ' + (i + 1) + ' 行 - 出发日期：', order);
-                //  console.log('第 ' + (i + 1) + ' 行 - 出发日期：', trDate);
-                // console.log('第 ' + (i + 1) + ' 行 - 班次：', trshipID);
 
 
                 // 检查当前值是否已经存在于 order 对象中
                 if (order[value]) {
                     console.log("重複：" + value);
                     order[value] = false;
+                    let span=$("#qty").find("span");
+                        span.addClass("text-red");
+                        span.text("優先次序不能重複");
+
+            $("html,body").animate({scrollTop: span.offset().top - 400}, 500);
+           
                     return;
 
                 } else {
@@ -500,7 +507,7 @@ $(document).ready(function () {
                     console.log("沒重複：" + value);
                 }
 
-            }
+            });
 
             if(order[value]){
 

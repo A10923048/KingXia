@@ -1,12 +1,22 @@
-因為<button id="next1" type="submit" class="next button button-block"/>下一步</button>
-要阻止 預設提交行為event.preventDefault();
-,又想保留瀏覽器的預設警告消息:
+1.在form 裡面的 button  都有預設提交行為
+    因此要事前阻止
+    例如
+    $(document).on('click', '#sendtoServer', function(event) {
+        event.preventDefault(); // 阻止默认行为，即表单提交
+        // 在这里添加您想要执行的代码
+    });
 
-if (this.validity.valid == false) {
-    // 如果字段无效，则将 allFieldsValid 设置为 false
-   
-    // 显示浏览器默认的验证提示
-    this.reportValidity();
-    // 终止循环并停止检查其他输入字段
-    return false;
-    }
+
+2.因為<button id="next1" type="submit" class="next button button-block"/>下一步</button>
+    要阻止 預設提交行為event.preventDefault();
+    ,又想保留瀏覽器的預設警告消息:
+
+    if (this.validity.valid == false) {
+        // 如果字段无效，则将 allFieldsValid 设置为 false
+    
+        // 显示浏览器默认的验证提示
+        this.reportValidity();
+        // 终止循环并停止检查其他输入字段
+        return false;
+        }
+
