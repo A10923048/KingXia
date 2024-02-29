@@ -86,7 +86,7 @@ $(document).ready(function () {
           //退票 icon
           " <td >" +
             //超連結到退票畫面+夾帶給後台的資料                                 
-          "<a id='refund-button' class='article-button' href=''>"+
+          "<a id='refund-button' class='article-button' href='#' data-toggle='modal' data-target='#RefundModal'>"+
           " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true' style='color: #2b02f7;'></i>" +
           " </a>" +
           "</td>" +
@@ -104,13 +104,46 @@ $(document).ready(function () {
     $("#refundBtn").on("click", function(event) {
         // 阻止默认行为
         event.preventDefault();
+
+
         
+
     });
     
+  
     
-    
-    
-    
+  $(document).on("click", "#detail-button", function (e) {
+
+    e.preventDefault();
+
+
+    // list or grid 模式
+      $('.list-view').click(function () {
+        $('.grid-view').removeClass('active');
+        $(this).addClass('active');
+        $('.project-boxes').removeClass('jsGridView').addClass('jsListView');
+      });
+
+      $('.grid-view').click(function () {
+          $(this).addClass('active');
+          $('.list-view').removeClass('active');
+          $('.project-boxes').removeClass('jsListView').addClass('jsGridView');
+      });
+
+      //
+      $('.messages-btn').click(function () {
+          $('.messages-section').addClass('show');
+      });
+
+      $('.messages-close').click(function () {
+          $('.messages-section').removeClass('show');
+      });
+
+    });
+
+
+
+
     
     
     //                獲取 detail_其他買票人資料 "顯示" 於modal           //
@@ -592,6 +625,52 @@ $(document).ready(function () {
     })
   
   
+  
+   
+    
+    //Only needed for the filename of export files.
+	//Normally set in the title tag of your page.
+	document.title = "Simple DataTable";
+	// Create search inputs in footer
+	$("#example tfoot th").each(function () {
+		var title = $(this).text();
+		$(this).html('<input type="text" placeholder="Search ' + title + '" />');
+	});
+	// DataTable initialisation
+	var table = $("#example").DataTable({
+		dom: '<"dt-buttons"Bf><"clear">lirtp',
+		paging: true,
+		autoWidth: true,
+		buttons: [
+			"colvis",
+			"copyHtml5",
+			"csvHtml5",
+			"excelHtml5",
+			"pdfHtml5",
+			"print"
+		],
+		initComplete: function (settings, json) {
+			var footer = $("#example tfoot tr");
+			$("#example thead").append(footer);
+		}
+	});
+
+	// Apply the search
+	$("#example thead").on("keyup", "input", function () {
+		table.column($(this).parent().index())
+		.search(this.value)
+		.draw();
+	});
+    
+
+
+
+
+
+
+
+
+
   //~~~~~~~~~~~~~~~~~~~~~articleCC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// 
      //            獲取 detail_其他買票人資料 顯示於modal           //
    

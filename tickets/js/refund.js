@@ -119,16 +119,12 @@ $(document).ready(function () {
 
       $("#RefundModal-col").append(
 
-
-
         "<div class='refund_col col-md-6 col-lg-6 order-md-last '>" +
         "<h5 class='d-flex justify-content-between align-items-center mb-3'>旅客" +
 
         "<span class='badge rounded-pill text-primary' style='color: #f7cf02; '>" + (parseInt(index) + parseInt(1)) + "</span>" +
 
         "資料</h5>" +
-
-
 
         "<ul class='list-group mb-3'>" +
 
@@ -182,7 +178,7 @@ $(document).ready(function () {
         "<h6 class='my-0'>票種:</h6>" +
         "</div>" +
         "<div>" +
-        "<h6 class='my-0' id='tmobile'>" + value.tictype + "</h6>" +
+        "<h6 class='my-0' id='ttictype'>" + value.tictype + "</h6>" +
         "</div>" +
         "</li>" +
 
@@ -232,8 +228,6 @@ $(document).ready(function () {
 
     $("#RefundModal-col_2").empty();//不累加清空
 
-
-
     //選取 有checkbox 的物件
     let cont = 0;
     $(".Refund_checkbox-input").each(function () {
@@ -268,16 +262,14 @@ $(document).ready(function () {
         // desiredElements.addClass("justify-content-center");
 
         // 將 desiredElements 作為子元素包裝在一個 row 中
-        var ul = $("<ul class='ulclass mb-5 justify-content-center'></ul>").html(desiredElements);;
+        var ul = $("<ul class='ulclass mb-5 justify-content-center'></ul>").html(desiredElements);
 
-        // 移除不需要的元素
-        //tempDiv.find(":not(#ticnum, #tname, li:contains('身分證/護照號碼'), li:contains('票種'), .Refund_checkbox-input:checked)").remove();
-
-        //  $("#RefundModal-col_2").html(row);
-        $("#RefundModal-col_2").append(ul);
-        // $("#RefundModal-col_2").append("<p></p>");
-        // 將HTML顯示在 Modal 中
-        // $("#RefundModal-col_2").html(formHTML);
+        if (cont== 0){
+          
+          
+        }else{
+          $("#RefundModal-col_2").append(ul);
+        }
 
 
       }
