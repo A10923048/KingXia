@@ -1204,6 +1204,12 @@ table ul {
   /* 或使用 lower-roman 來顯示小寫羅馬數字 */
 }
 
+table li {
+  list-style-type: disc; /* 或者你想要的其他樣式 */
+  text-align: left;
+ 
+}
+
 .decimal ul {
   list-style-type: decimal; /* 大寫羅馬數字 */
   /* 或使用 lower-roman 來顯示小寫羅馬數字 */
@@ -1246,7 +1252,7 @@ table.circle tbody {
 /*=============================================
 =                   日曆            =
 =============================================*/
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: border-box;
 }
 html {
@@ -1256,7 +1262,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   line-height: 1.6;
-}
+} */
 .datepicker {
   width: 400px;
   background: #fff;
@@ -1458,6 +1464,24 @@ body {
   
 }
 
+/*=============================================
+=               團體訂票-注意事項            =
+=============================================*/
+
+.note {
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  overflow: hidden;
+}
+.note .note-header {
+  height: 22rem;
+  background-image: url('../img/小三通/初日號-卡通圖.png');
+  background-position: center center;
+  background-size: 100%;
+}
 
 
 
