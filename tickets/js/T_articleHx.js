@@ -643,8 +643,6 @@ $(document).ready(function () {
 		autoWidth: true,
 		buttons: [
 			"colvis",
-			"copyHtml5",
-			"csvHtml5",
 			"excelHtml5",
 			"pdfHtml5",
 			"print"
@@ -680,18 +678,20 @@ $(document).ready(function () {
   
       //買票人資料
       "orderNum": "123456789",
-      "ticCount": 3,//(底下搭船人數)
+      "ticCount": 3,//(總票數)
   
       "travelers": [
         {   //其他買票人資料資料
-          "id": "111111",
-          "tname": "王A明",//航班代碼
-          "gender": "1030",
-          "sbr": "2020/01/01",//(訂票最後時間)
-          "email": "123@gmail.com",
-          "mobile": "0912345678",
+          
           "ticnum": "123456",
           "tictype": "全票",
+          "tname": "王A明",//航班代碼
+          "gender": "1030",
+          "birthday":"2020/01/01",//(訂票最後時間)
+          "country":"TWN",
+          "id": "111111",
+          "email": "123@gmail.com",
+          "mobile": "0912345678",
   
         },
         {   //其他搭船人資料

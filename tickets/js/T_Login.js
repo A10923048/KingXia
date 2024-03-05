@@ -90,7 +90,6 @@ $(document).ready(function () {
                 });
 
 
-
             //沒有統一編號checkbox
             $('input[name="noGun"]').change(function() {
                 if(this.checked) {
@@ -104,7 +103,6 @@ $(document).ready(function () {
                     $('#gun').text('統一編號');
                 }
             });
-            
             
         
             //註冊帳號"送出"按鈕
@@ -225,7 +223,6 @@ $(document).ready(function () {
                     console.log("有字段未通过验证，请填写所有必填字段！");
                 }
             });
-
 
             $(".prev").click(function (event) { // 當送出按鈕被點擊時
 
@@ -405,8 +402,6 @@ $(document).ready(function () {
                 }
             });
 
-
-
             //"登入"按鈕
             $("#loginBtn").click(function () {
                 // 创建一个空对象，用于存储输入的值
@@ -433,9 +428,5 @@ $(document).ready(function () {
 
 
             });
-
-
-
-
 
 });

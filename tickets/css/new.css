@@ -405,27 +405,6 @@ form>.container>.button{
 
 
 
-/*=============================================
-=                  introSection                  =
-=============================================*/
-#content1 {
-    border-radius: 0px;
-    /* margin-left:50px ; */
-    /* margin-right:50px ; */
-    margin-bottom: 10px;
-    /* padding-top: 100px; 
-    padding-bottom:100px; */
-    width: 100%;
-    height: 100%;
-    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('/tickets/img/wood-591631_1280.jpg');
-    background-size: cover;
-    /* 固定背景 */
-    background-attachment: fixed;
-    background-position: center center;
-    /* filter: brightness(0.5); */
-    position: relative;
-}
 
 
 
@@ -920,22 +899,6 @@ intro-box-card:hover {
 
 
 
-/*=============================================
-=                  Reviews                    =
-=============================================*/
-/* 加入背景圖片 */
-#content3 {
-    border-radius: 0px;
-    margin-bottom: 0px;
-    padding: 100px 0;
-    background-image: url("/tickets/img/wood-591631_1280.jpg");
-    background-size: cover;
-    /* 固定背景 */
-    background-attachment: fixed;
-    background-position: center center;
-    /* filter: brightness(1);  */
-    position: relative;
-}
 
 /*=============================================
 =                  Reviews 2                   =
@@ -1204,6 +1167,8 @@ table ul {
   /* 或使用 lower-roman 來顯示小寫羅馬數字 */
 }
 
+
+
 table li {
   list-style-type: disc; /* 或者你想要的其他樣式 */
   text-align: left;
@@ -1216,17 +1181,48 @@ table li {
 }
 
 
-
-table.circle ul {
-  list-style-type: circle; /* 或者你想要的其他樣式 */
-  
+.content{
+  padding: 1rem;
+}
+.content li {
+  list-style-type: disc; /* 或者你想要的其他樣式 */
+  text-align: center;
+  padding-left: 0px;
+}
+.content li {
+  list-style-type: disc; /* 或者你想要的其他樣式 */
+  text-align: center;
+  padding-left: 0px;
 }
 
-table.circle tbody {
-  text-align: left;
- 
+.tab-group  {
+  background: rgba(37, 4, 103, 0.892);
+}
+.tab-group td  {
+  text-decoration: none;
+  /* padding: 8%; */
+  background: rgba(55, 29, 107, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.tab-group td :hover {
+  background: #f5d326;
+  color: #fff;
+}
+.tab-group .active  {
+  background: #fafffe;
+  color: #020c76;
 }
 
+.tab>a{
+  color: #fefeff;
+}
+.tab.active >a{
+  color: #111151;
+}
 
 /*=============================================
 =                   輪播modal                =
@@ -1469,21 +1465,22 @@ body {
 =============================================*/
 
 .note {
-  width: 400px;
+  max-width: 90%; /* 设置最大宽度为浏览器窗口宽度的90% */
+  width: 40em; /* 设置一个固定宽度作为备用，以便在浏览器窗口宽度超过40em时使用 */
+ 
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
   margin: 50px auto;
   overflow: hidden;
 }
+
 .note .note-header {
-  height: 22rem;
+  height: 32rem;
   background-image: url('../img/小三通/初日號-卡通圖.png');
   background-position: center center;
   background-size: 100%;
 }
-
-
 
 /*=============================================
 =               tooltip-container           =
@@ -1619,3 +1616,28 @@ body {
     left: 0;
  }
 }
+
+/*=============================================
+=             form                   =
+=============================================*/
+
+
+/* .tab-group li a {
+  text-decoration: none;
+  padding: 10px;
+  background: rgba(160, 179, 176, .25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 33%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.tab-group li a:hover {
+  background: #179b77;
+  color: #fff;
+}
+.tab-group .active a {
+  background: #1ab188;
+  color: #fff; */

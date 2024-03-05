@@ -1055,7 +1055,7 @@
                                                                         <td></td>
                                                                         <td>
                                                                           <ul>
-                                                                            <li>會員資格:以"公司"為單位</li>
+                                                                            <li>會員資格:以公司為單位</li>
                                                                             <li>經過2-3個工作日審核會員資格後</li>
                                                                             <li>Email通知會員帳號/密碼</li>
                                                                           </ul>
@@ -1119,86 +1119,187 @@
                                           <div class="py-5 text-center text-primary">
                                               <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
                                               <h2>  團體訂票</h2>
-                                            
-                                              <!-- <div class="table-responsive"> -->
-                                                <form  class="">
-                                                    <h4 class=" section-title mb-3 text-center text-primary">
-                                                        訂票流程
-                                                    </h4>
-                                                    <div  class="table-responsive ">
-                                                      <!-- <h5 id="contact" class=" section-title mb-3 text-center text-primary">
-                                                        日期:2021/10/23
-                                                      </h5> -->
-                                                        <table class=" note table text-center " >
-                                                            <thead>
-                                                                <tr>
-                                                                  <td class="note-header" colspan="3"></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th style="width: 20%;">
-                                                                        Step1:</th>
-                                                                    <th style="width: 80%;">
-                                                                        註冊會員</th>
-                                                                </tr>
-                                                              </thead>
-                                                              <tbody>
-                                                                <tr>
-                                                                  <td></td>
-                                                                  <td>
-                                                                    <ul>
-                                                                      <li>會員資格:公司</li>
-                                                                      <li>經過2-3個工作日審核會員資格後</li>
-                                                                      <li>Email通知會員帳號/密碼</li>
-                                                                    </ul>
-                                                                </tr>
-                                                            </tbody>
-                                                          <thead>
-                                                            <tr>
-                                                                <th style="width: 20%;">
-                                                                    Step2:</th>
-                                                                <th style="width: 80%;">
-                                                                  <a href="index.html" class="w-100 btn btn-lg btn-outline-primary">
-                                                                    <i class="fa-solid fa-hand-pointer"></i>會員登入
-                                                                  </a>
-                                                                </th>
-                                                            </tr>
+                                              <h4 class=" section-title mb-3 text-center text-primary">
+                                                  訂票流程
+                                              </h4>
+
+
+
+                                              <div  class="table-responsive ">
+                                                <!-- <h5 id="contact" class=" section-title mb-3 text-center text-primary">
+                                                  日期:2021/10/23
+                                                </h5> -->
+                                                  <table class=" note table text-center " >
+                                                      <thead>
+                                                          <tr>
+                                                            <td class="note-header" colspan="3"></td>
+                                                          </tr>
+                                                          <tr class="tab-group">
                                                             
-                                                          </thead>
-                                                          <tbody>
-                                                            <tr>
-                                                              <td class=""></td>
-                                                              <td>
+                                                          <td class="tab active"><a href="#content1">步驟一</a></td>
+                                                          <td class="tab"><a href="#content2">步驟二</a></td>
+                                                          <td class="tab"><a href="#content3">步驟三</a></td>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="tab-content" >
+                                                          <tr class="content" id="content1" >
+                                                              <td colspan="3">
+                                                                  <h4>Step1:註冊會員</h4>
+                                                                  <div class="button button-block" >
+                                                                  <ul>
+                                                                    <li>會員資格:公司</li>
+                                                                    <li>經過2-3個工作日審核會員資格後</li>
+                                                                    <li>Email通知會員帳號/密碼</li>
+                                                                  </ul>
+                                                              </td>
+                                                          </tr>
+                                                          <tr class="content" id="content2">
+                                                            <td  colspan="3">
+                                                              <h4>Step2:會員登入</h4>
+                                                              <div class="button button-block" > 
                                                                 <ul>
-                                                                  <li>會員登入後即點擊<航班查詢/訂票></li>
+                                                                  <li>會員登入後即點擊<br><航班查詢/訂票></li>
                                                                   <li>填寫完成後，2-3個工作日</li>
                                                                   <li>會有專人聯繫您</li>
                                                                 </ul>
+                                                              </div>
+                                                          </td>
                                                           </tr>
-                                                        </tbody>
+                                                          <tr class="content" id="content3">
+                                                            <td  colspan="3">
+                                                              <h4>Step3:訂票完成</h4>
+                                                                  <div class="button button-block" > 
+                                                                      <ul>
+                                                                        <li>訂票完成後點擊<br><歷史紀錄查詢></li>
+                                                                        <li>即可看見詳細資訊</li>
+                                                                      </ul>
+                                                                  </div>
+                                                            </td>
+                                                          </tr>
+                                                      </tbody>
+                                                  
+                                                </table>
+                                              </div>
+                                              
+                                              <!-- <div class="note">
+        
+                                                <ul class="tab-group">
+                                                <li class="tab active"><a href="#content1">步驟一</a></li>
+                                                <li class="tab"><a href="#content2">步驟二</a></li>
+                                                <li class="tab"><a href="#content3">步驟三</a></li>
+                                                </ul>
+                                                
+                                                <div class="tab-content">
+                                                    <div class="content" id="content1">   
+                                                        <h4>Step1:註冊會員</h4>
+                                                        <div class="button button-block" >
+                                                        <ul>
+                                                          <li>會員資格:公司</li>
+                                                          <li>經過2-3個工作日審核會員資格後</li>
+                                                          <li>Email通知會員帳號/密碼</li>
+                                                        </ul>
+                                                      </div>
+                                                    </div>
+                                                    
+                                                    <div class="content" id="content2">   
+                                                        <h4>Step2:會員登入</h4>
+                                                          <div class="button button-block" > 
+                                                            <ul>
+                                                              <li>會員登入後即點擊<br><航班查詢/訂票></li>
+                                                              <li>填寫完成後，2-3個工作日</li>
+                                                              <li>會有專人聯繫您</li>
+                                                            </ul>
+                                                          </div>
                                                         
-                                                        <thead>
+                                                    </div>
+                                                    <div class="content" id="content3">   
+                                                        <h4>Step3:訂票完成</h4>
+                                                            <div class="button button-block" > 
+                                                                <ul>
+                                                                  <li>訂票完成後點擊<br><歷史紀錄查詢></li>
+                                                                  <li>即可看見詳細資訊</li>
+                                                                </ul>
+                                                            </div>
+                                                    </div>
+
+                                                </div>
+                                                
+                                              </div> -->
+
+                                              <div  class="table-responsive ">
+                                                <!-- <h5 id="contact" class=" section-title mb-3 text-center text-primary">
+                                                  日期:2021/10/23
+                                                </h5> -->
+                                                  <table class=" note table text-center " >
+                                                      
+                                                      <thead>
+                                                          <tr>
+                                                            <td class="note-header" colspan="3"></td>
+                                                          </tr>
                                                           <tr>
                                                               <th style="width: 20%;">
-                                                                  Step3:</th>
-                                                              <th style="width: 80%;">訂票完成
-                                                              </th>
+                                                                  Step1:</th>
+                                                              <th style="width: 80%;">
+                                                                  註冊會員</th>
                                                           </tr>
+                                                        </thead>
+                                                        <tbody>
                                                           <tr>
-                                                            <td class=""></td>
+                                                            <td></td>
                                                             <td>
                                                               <ul>
-                                                                <li>訂票完成後點擊<歷史紀錄查詢></li>
-                                                                <li>即可看見詳細資訊</li>
+                                                                <li>會員資格:公司</li>
+                                                                <li>經過2-3個工作日審核會員資格後</li>
+                                                                <li>Email通知會員帳號/密碼</li>
                                                               </ul>
-                                                        </tr>
-                                                      </thead>
-                                                      </table>
-                                                    </div>
-                                                </form>
+                                                          </tr>
+                                                      </tbody>
+                                                    <thead>
+                                                      <tr>
+                                                          <th style="width: 20%;">
+                                                              Step2:</th>
+                                                          <th style="width: 80%;">
+                                                            <a href="index.html" class="w-100 btn btn-lg btn-outline-primary">
+                                                              <i class="fa-solid fa-hand-pointer"></i>會員登入
+                                                            </a>
+                                                          </th>
+                                                      </tr>
+                                                      
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr>
+                                                        <td class=""></td>
+                                                        <td>
+                                                          <ul>
+                                                            <li>會員登入後即點擊<航班查詢/訂票></li>
+                                                            <li>填寫完成後，2-3個工作日</li>
+                                                            <li>會有專人聯繫您</li>
+                                                          </ul>
+                                                    </tr>
+                                                  </tbody>
+                                                  
+                                                  <thead>
+                                                    <tr>
+                                                        <th style="width: 20%;">
+                                                            Step3:</th>
+                                                        <th style="width: 80%;">訂票完成
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class=""></td>
+                                                      <td>
+                                                        <ul>
+                                                          <li>訂票完成後點擊<歷史紀錄查詢></li>
+                                                          <li>即可看見詳細資訊</li>
+                                                        </ul>
+                                                  </tr>
+                                                </thead>
+                                                </table>
                                               </div>
+
                                           </div>
                                       </li>
-                                  </ul>
+                                    </ul>
                                   </div>
 
 
@@ -1619,7 +1720,8 @@
   <script src="/tickets/js/new_articleB+AA.js"></script>
   <script src="/tickets/js/new_articleB.js"></script>
   <script src="/tickets/js/new_articleC.js"></script>
-  
+
+  <script src="/tickets/js/articleT.js"></script>
   <script src="/tickets/js/articleA2.js"></script>
   
 
