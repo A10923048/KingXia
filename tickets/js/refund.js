@@ -17,7 +17,7 @@ $(document).ready(function () {
     orderPhone:orderPhone,
     orderNum: orderNum,
     }
-  console.log(JSON.stringify(send_item, null, 2));
+  //console.log(JSON.stringify(send_item, null, 2));
 
   
   //傳給後台後獲得的資料
@@ -227,67 +227,57 @@ $(document).ready(function () {
     // console.log($(".Refund_checkbox-input"));
 
     $("#RefundModal-col_2").empty();//不累加清空
-
     //選取 有checkbox 的物件
     let cont = 0;
-    $(".Refund_checkbox-input").each(function () {
-      // 在這裡使用 $(this) 可以正確取得當前的 checkbox 元素
+    $(".Refund_checkbox-input").each(function ()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         {
 
-      //console.log($(this).prop("checked"));
-
-      
       if ($(this).prop("checked")) {
-        //如果".Refund_checkbox-input"的"checked"屬性值 = ture
-
         cont+=1;
-
-        // 抓取整個表單的HTML
-        var formHTML = $(this).parent().parent().parent().parent().html();
-        //var formHTML = $(".refund_col").html();
-        // console.log("--------");
-         //console.log("formHTML:"+formHTML);
-
-        // 使用 jQuery 創建一個臨時的 <div> 元素，並將抓到的 HTML 放入其中
-        
-        var tempDiv = $("<table>").html(formHTML);
-
-        console.log("<table>:"+tempDiv);
-
-        // 保留您想要顯示的元素
-        var desiredElements = tempDiv.find(" li:contains('姓名'), li:contains('票號'), li:contains('身分證/護照號碼'), li:contains('票種'), .Refund_checkbox-input:checked");
-
-       // console.log("保留您想要顯示的元素:"+desiredElements);
-
-        // 在 desiredElements 中加入額外的 Bootstrap 類別
-        // desiredElements.addClass("justify-content-center");
-
-        // 將 desiredElements 作為子元素包裝在一個 row 中
-        var ul = $("<ul class='ulclass mb-5 justify-content-center'></ul>").html(desiredElements);;
-
-        // 移除不需要的元素
-        //tempDiv.find(":not(#ticnum, #tname, li:contains('身分證/護照號碼'), li:contains('票種'), .Refund_checkbox-input:checked)").remove();
-
-        //  $("#RefundModal-col_2").html(row);
-        $("#RefundModal-col_2").append(ul);
-        // $("#RefundModal-col_2").append("<p></p>");
-        // 將HTML顯示在 Modal 中
-        // $("#RefundModal-col_2").html(formHTML);
-
-
+        console.log("cont:"+cont);
       }
+    });
 
+    if(cont==0){
+      console.log("cont==0");
+      $("#RefundModal-col_2").empty(); // 清空之前的内容
+      $("#RefundModal2").modal("hide"); // 隐藏 #RefundModal2 模态框
+      $("#Refund_null").modal("show"); // 显示 #Refund_null 模态框
+    }else{
+      $(".Refund_checkbox-input").each(function ()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         {
 
-    })
-    //console.log($(this).parent().parent().parent().parent().parent().parent().find("#RefundModal-orderNum").text());
-    $("#RefundModal_orderNum").text(orderNum);
-    
-    $("#RefundModal_ticCount").text("退票數：" + cont);
+          if ($(this).prop("checked")) {
+            
+            // 抓取整個表單的HTML
+            var formHTML = $(this).parent().parent().parent().parent().html();
+            //var formHTML = $(".refund_col").html();
+            // console.log("--------");
+            //console.log("formHTML:"+formHTML);
 
-    // $("#RefundModal-col_2").append(
-      
-    // '<button type="button" id="RefundModal_Send" class="btn btn-primary" data-dismiss="modal">' +
-    //     '<i class="fa-solid fa-paper-plane fa-2x">退票確認</i>' +
-    // '</button>')
+            // 使用 jQuery 創建一個臨時的 <div> 元素，並將抓到的 HTML 放入其中
+            
+            var tempDiv = $("<table>").html(formHTML);
+
+            console.log("<table>:"+tempDiv);
+
+            // 保留您想要顯示的元素
+            var desiredElements = tempDiv.find(" li:contains('姓名'), li:contains('票號'), li:contains('身分證/護照號碼'), li:contains('票種'), .Refund_checkbox-input:checked");
+
+          // console.log("保留您想要顯示的元素:"+desiredElements);
+
+            // 在 desiredElements 中加入額外的 Bootstrap 類別
+            // desiredElements.addClass("justify-content-center");
+
+            // 將 desiredElements 作為子元素包裝在一個 row 中
+            var ul = $("<ul class='ulclass mb-5 justify-content-center'></ul>").html(desiredElements);;
+            $("#RefundModal-col_2").append(ul);
+          }
+
+        });
+      $("#RefundModal_orderNum").text($(this).parent().parent().parent().parent().parent().parent().find("#RefundModal-orderNum").text());
+      $("#RefundModal_ticCount").text("退票數：" + cont);
+      $("#RefundModal2").modal("show"); // 隐藏 #RefundModal2 模态框
+      console.log("cont!==0");     
+    }
     
   })
 
@@ -296,40 +286,33 @@ $(document).ready(function () {
 
     let send_list = [];
 
-    let E= $("this").closest(".modal").find(".ulclass")
-    
-     E.each(function(){
-      let ticnum= $(this).hasClass('ticnum').text();
+    $(".ulclass").each(function () {
+
+
+      let ticNum = $(this).find(".ticnum").text();
 
       console.log("ticNum:"+ticNum);
 
-    
-
-     
-
-      // let send_item = {
-      //         ticNum: ticNum
-      //                         };
-         
-      //  send_list.push(send_item);
-
+      let send_p = {
+        ticNum: ticNum
+        };
        
-      //  console.log(JSON.stringify(send_item, null, 2)); 
-          
-       });
+       send_list.push(send_p);
+       console.log(JSON.stringify(send_p, null, 2)); 
+       
+      });
+       
+       console.log(JSON.stringify(send_list, null, 2));  
 
-          
-      //  console.log(JSON.stringify(send_list, null, 2));  
 
-
-        // let send_item = {
-        //   orderNum:orderNum,
-        //   orderUid:orderUid,
-        //   orderPhone:orderPhone,
-        //   sp:true,
-        //   tickets: send_list
-        //   }
-        //   console.log(JSON.stringify(send_item, null, 2));
+        let send_item = {
+          orderNum:orderNum,
+          orderUid:orderUid,
+          orderPhone:orderPhone,
+          sp:true,
+          tickets: send_list
+          }
+          console.log(JSON.stringify(send_item, null, 2));
 
          //傳給後台
             // $.ajax({
@@ -354,6 +337,10 @@ $(document).ready(function () {
 
   })
 
+  //     未選擇退票的 <返回>按鈕功能      //
+  $("#Refund_null_btn").click(function(){
+    $("#Refund_null").hide();
+  })
 
 })
 

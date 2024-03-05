@@ -588,12 +588,10 @@ $(document).ready(function () {
       $("#custom-alert").show();
     } else {
 
-
       $('.ticketQuantity').each(function () {
 
         let ticket_val = $(this).val();
         let find_title = $(this).parent().find(".find_title").text();
-
 
         if (ticket_val > 0) {
           console.log(find_title + "ticket:" + ticket_val);
@@ -612,14 +610,8 @@ $(document).ready(function () {
         ii += parseInt(1)
       })
 
-      
-      
-
-
       let print_traveler_Universal_list = Universal_Ticket - UniversalLove_Ticket;
 
-
-      
       //產生:博愛+陪同者的共同票
       for (var i = 0; i < UniversalLove_Ticket; i++) {
 
@@ -692,7 +684,6 @@ $(document).ready(function () {
     // 如果需要手動跳轉到 #articleB 頁面
     window.location.href = "#articleB";
   }
-
 
   //             旅客=聯絡人:checkbox連動                //
   $(document).on("change", ".orderer_check", function () {
