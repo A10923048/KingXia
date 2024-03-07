@@ -2169,3 +2169,50 @@ body {
 /*=============================================
 =                 new           =
 =============================================*/
+.amenties {
+  padding-top: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.amenity-card {
+  margin-left: 20px;
+  width: 250px;
+  padding: 25px 15px;
+  background-color: #f9fbfb;
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #5a6c7a;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  box-shadow: 0 1rem 3rem #aac 17;
+}
+.amenity-card hr {
+  width: 50%;
+  border: 0;
+  border-top: 1px solid darkgray;
+}
+.amenity-card .icon {
+  height: 20%;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.amenity-card .head {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.amenity-card .head span {
+  font-size: 0.8rem;
+  color: silver;
+}
+.amenity-card .item {
+  color: gray;
+  font-size: 0.9rem;
+}
+.amenity-card .item span {
+  float: right;
+}

@@ -1208,10 +1208,7 @@ table li {
   cursor: pointer;
   transition: 0.5s ease;
 }
-.tab-group td :hover {
-  background: #f5d326;
-  color: #fff;
-}
+
 .tab-group .active  {
   background: #fafffe;
   color: #020c76;
