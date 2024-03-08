@@ -21,35 +21,21 @@ Fonts - Google Fonts
 //    置於$(document).ready(function () 之外的程式碼               //
 
 //       轉換Article時    -    關閉預設hide的Article                   //
-let articleBtn = function (tabId) {
-    $("#articleAA").hide();
-    $("#articleCC").hide();
+
   
-    // 檢查是否需要關閉 #articleAA
-    if ($("#articleAA").hasClass("show")) {
-      // 關閉 #articleAA
-      $("#articleAA").removeClass("show active");
-    }
-  
-  
-    // 檢查是否需要關閉 #articleCC
-    if ($("#articleCC").hasClass("show")) {
-      // 关闭 #articleCC
-      $("#articleCC").removeClass("show active");
-    }
-  
-  
-    // 關閉當前已打開的頁面
-    $(".tab-pane").removeClass("show active");
-  
-    // 打開新的頁面
+ function articleBtn(tabId) {
+
+    $(".tab-pane").each(function() {
+      if ($(this).hasClass("show")) {
+          $(this).removeClass("show active");
+      }
+    });
     $(`#${tabId}`).addClass("show active");
   
     // 如果需要手動跳轉到新的頁面
     window.location.href = `#${tabId}`;
-  }
-  
-  
+}
+
   
   //          ArticleC警告框-關閉按鈕               //
   /*

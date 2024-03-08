@@ -292,7 +292,6 @@ $(document).ready(function () {
                   // 阻止表單的提交行為
                   e.preventDefault();
 
-
                 // 對於每個 input 元素
                 // 初始化一个变量来记录是否所有输入字段都通过了验证
                 let allFieldsValid = true;

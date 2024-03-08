@@ -44,7 +44,7 @@
 
 
     <!-- Hx表格用 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css"> -->
 
@@ -1104,253 +1104,255 @@
                         </article>
 
                         <!-- 歷史紀錄查詢 -->
-                        <article id="articleT" class="my-3 pb-5 tab-pane active "style=" background-color: rgb(245, 240, 220);">
-                            
-                            <script src="js/handlebar-config.js"></script>
+                        <article id="articleT" class="my-3 pb-5 tab-pane show active ">
+                        
+                            <div class=" row" id="box">
 
-                                <form id="formT" action="">
-                               
-                                <div id="outer" class="container-fluid">
-                                <div class="row" id="box">
+                                <!-- 旅行社資料 -->
+                                <div id="settings" class="row col-lg-offset-0 col-lg-12 col-lg-offset-0 
+                                        col-md-offset-0 col-md-12 col-md-offset-0 
+                                        col-sm-offset-0 col-sm-12 col-sm-offset-0 
+                                        col-xs-offset-0 col-xs-12 col-xs-offset-0">
 
-                                    <div id="settings" hb-template="templates/general.hbs" hb-name="general"
-                                        class="col-lg-offset-0 col-lg-12 col-lg-offset-0 
-                                                col-md-offset-0 col-md-12 col-md-offset-0 
-                                                col-sm-offset-0 col-sm-12 col-sm-offset-0 
-                                                col-xs-offset-0 col-xs-12 col-xs-offset-0">
 
-                                        <div id="general">
-                                            <h2><div class="inline">旅行社資料</div></h2>
-                                            <div class="form-group">
-                                                <label>
-                                                    名稱<span class="req"></span>
-                                                </label>
-                                                <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                
-                                            </div>
-                                            <div class="form-group">
-                                                <label>
-                                                    電話<span class="req"></span>
-                                                </label>
-                                                <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                
-                                            </div>
-                                            <div class="form-group">
-                                                <label>
-                                                    傳真<span class="req"></span>
-                                                </label>
-                                                <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                
-                                            </div>
-                                            <div class="form-group">
-                                                <label>
-                                                    傳真<span class="req"></span>
-                                                </label>
-                                                <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                <span class="help-block">Your full name or the name of your company.</span>
-                                            
-                                                <label>
-                                                    電話<span class="req"></span>
-                                                </label>
-                                                <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                <span class="help-block">Your full name or the name of your company.</span>
-                                            </div>
 
-                                            <div class="form-group">
-                                                <label> 統編
-                                                </label>
-                                                <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                <span class="help-block">Your full name or the name of your company.</span>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <h2 class="border_line">
+                                            <div class="inline">旅行社資料</div>
+                                            <span class="">Your full name or the name</span>
+                                            <label>
+                                                <input id="editBtn" type="checkbox"checked>
+                                                <span>ON開始編輯</span>
+                                                <span>OFF</span>
+                                            </label>
 
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label> 縣市</label>
-
-                                                <div class="field-wrap">
-                                                    <label>
-                                                    </label>
-                                                    <!-- <input type="text" required autocomplete="off"/> -->
-                                                    <select name="city" required autocomplete="off">
-                                                        <option value=""></option>
-                                                        <option value="CHANGHUA">彰化</option>
-                                                        <option value="HONG KONG">香港</option>
-                                                        <option value="JIAYI">嘉義</option>
-                                                        <option value="JINMEN">金門</option>
-                                                        <option value="KAOXIONG">高雄</option>
-                                                        <option value="PINGDONG">屏東</option>
-                                                        <option value="Ponghu">澎湖</option>
-                                                        <option value="QUANZHOU">泉州市</option>
-                                                        <option value="TAINAN">台南</option>
-                                                        <option value="TAIPEI">台北</option>
-                                                        <option value="TAIZHONG">台中</option>
-                                                        <option value="TAOYUAN">桃園</option>
-                                                        <option value="XIAMEN">廈門市</option>
-                                                        <option value="YI LAN">宜蘭</option>
-                                                        <option value="YUNLIN">雲林</option>
-                                                        <option value="NULL">其他</option>
-                                                    </select>
-                                                    
-                                                </div>
-                                                <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="地址" />
-                                                
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label> 地址 </label>
-                                                <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                <span class="help-block">Your full name or the name of your company.</span>
-
-                                            </div>
-
-                                              
-                                                <div class="tab-content">
-                                                    <div  class="content" id="content1">   
-                                                        
-                                                        <div class="top-row">
-                                    
-                                                            <div class="field-wrap">
-                                                                <label>
-                                                                    縣市<span class="req">*</span>
-                                                                </label>
-                                                                <!-- <input type="text" required autocomplete="off"/> -->
-                                                                <select name="city" required autocomplete="off">
-                                                                    <option value=""></option>
-                                                                    <option value="CHANGHUA">彰化</option>
-                                                                    <option value="HONG KONG">香港</option>
-                                                                    <option value="JIAYI">嘉義</option>
-                                                                    <option value="JINMEN">金門</option>
-                                                                    <option value="KAOXIONG">高雄</option>
-                                                                    <option value="PINGDONG">屏東</option>
-                                                                    <option value="Ponghu">澎湖</option>
-                                                                    <option value="QUANZHOU">泉州市</option>
-                                                                    <option value="TAINAN">台南</option>
-                                                                    <option value="TAIPEI">台北</option>
-                                                                    <option value="TAIZHONG">台中</option>
-                                                                    <option value="TAOYUAN">桃園</option>
-                                                                    <option value="XIAMEN">廈門市</option>
-                                                                    <option value="YI LAN">宜蘭</option>
-                                                                    <option value="YUNLIN">雲林</option>
-                                                                    <option value="NULL">其他</option>
-                                                                </select>
-                                                                
-                                                            </div>
-        
-                                                        </div>
-                                            
-                                                            <div class="field-wrap">
-        
-                                                                <label class="active_gun">
-                                                                    沒有統一編號<span class="req">*</span>
-                                                                </label>
-                                                                <input  type="checkbox" name="noGun"autocomplete="off"/>
-
-        
-                                                                <label id="gun">
-                                                                    統一編號<span class="req">*</span>
-                                                                </label>
-                                                                <input type="text" name="gun" required autocomplete="off"/>
-        
-                                                            </div>
-                                            
-                                                    </div>
-                                                </div>
+                                        </h2>
+                                        <div class="form-group ">
+                                            <label class="label_n">
+                                                名稱<span class="req"></span>
+                                            </label>
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
                                         </div>
                                     </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-                                    <!-- 匯款資料 -->
-                                    <div id="settings"
-                                        class="col-lg-offset-0 col-lg-6 col-lg-offset-0 
-                                                col-md-offset-0 col-md-6 col-md-offset-0 
-                                                col-sm-offset-0 col-sm-6 col-sm-offset-1
-                                                col-xs-offset-0 col-xs-12 col-xs-offset-0">
-                                        <div id="webdev">
-                                            <h2><div class="inline togglebutton togglebutton-material-indigo"><label></label></div> 匯款資料</h2>
-                                            <div id="webdev_settings" container="child" class="section">
-
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                    <label>
-                                                        銀行<span class="req"></span>
-                                                    </label>
-                                                    <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                    
-                                                    <label>
-                                                        分公司<span class="req"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>
-                                                        帳號<span class="req"></span>
-                                                    </label>
-                                                    <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                    
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>
-                                                        戶名<span class="req"></span>
-                                                    </label>
-                                                    <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                                    
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-
-                                    <!-- 聯絡人資料 -->
-                                    <div id="contract-data-cont"
-                                        class="col-lg-offset-0 col-lg-6 col-lg-offset-0 
-                                                col-md-offset-0 col-md-6 col-md-offset-0 
-                                                col-sm-offset-0 col-sm-6 col-sm-offset-0 
-                                                col-xs-offset-0 col-xs-12 col-xs-offset-0">
-                                    <h2><div class="inline">聯絡人資料</div></h2>
-                                    <div id="contract-data" class="section">
                                         <div class="form-group">
-                                            <label>
-                                                姓名<span class="req"></span>
+                                            <label class="label_n">
+                                                傳真<span class="req"></span>
                                             </label>
-                                            <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                            
-                                            <label>
-                                                職稱<span class="req"></span>
-                                            </label>
-                                            <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                            
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
                                         </div>
+
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
                                         <div class="form-group">
-                                            <label>
+                                            <label class="label_n">
                                                 電話<span class="req"></span>
                                             </label>
-                                            <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                            
-                                            <label>
-                                                分機<span class="req"></span>
-                                            </label>
-                                            <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                            
-                                        </div>
-                                        <div class="form-group">
-                                            <label>
-                                                行動電話<span class="req"></span>
-                                            </label>
-                                            <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                            
-                                        </div>
-                                        <div class="form-group">
-                                            <label>
-                                                電子郵件<span class="req"></span>
-                                            </label>
-                                            <input type="text" class="form-control floating-label" id="txtYourName" serialize-as="general.your_name" placeholder="Your Name" />
-                                            
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
+
                                         </div>
 
                                     </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="">
+                                            <label class="label_n"> 縣市</label>
+                                            <select name="city" required autocomplete="off">
+                                                <option value=""></option>
+                                                <option value="CHANGHUA">彰化</option>
+                                                <option value="HONG KONG">香港</option>
+                                                <option value="JIAYI">嘉義</option>
+                                                <option value="JINMEN">金門</option>
+                                                <option value="KAOXIONG">高雄</option>
+                                                <option value="PINGDONG">屏東</option>
+                                                <option value="Ponghu">澎湖</option>
+                                                <option value="QUANZHOU">泉州市</option>
+                                                <option value="TAINAN">台南</option>
+                                                <option value="TAIPEI">台北</option>
+                                                <option value="TAIZHONG">台中</option>
+                                                <option value="TAOYUAN">桃園</option>
+                                                <option value="XIAMEN">廈門市</option>
+                                                <option value="YI LAN">宜蘭</option>
+                                                <option value="YUNLIN">雲林</option>
+                                                <option value="NULL">其他</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="label_n"> 地址
+                                            </label>
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="地址" />
+
+                                        </div>
+
+
                                     </div>
-                                    
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-4">
+
+
+                                        <div class="field-wrap">
+
+                                            <input type="checkbox" name="noGun"
+                                                autocomplete="off" />
+                                            <label class="label_m">
+                                                沒有統一編號<span class="req">*</span>
+                                            </label>
+
+
+                                            <label id="gun" class="label_n">
+                                                統一編號
+                                            </label>
+                                            <div class="form-group">
+                                                <label id="gunlab" class="label_n">
+                                                    統編
+                                                </label>
+                                                <input type="text"
+                                                    class="form-control floating-label"
+                                                    id="txtYourName"
+                                                    serialize-as="general.your_name"
+                                                    placeholder="Your Name" />
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
+
+                                <!-- 匯款資料 -->
+                                <div id="settings" class="col-lg-offset-0 col-lg-6 col-lg-offset-0 
+                                                            col-md-offset-0 col-md-12 col-md-offset-0 
+                                                            col-sm-offset-0 col-sm-12 col-sm-offset-0
+                                                            col-xs-offset-0 col-xs-12 col-xs-offset-0">
+                                    <div id="webdev">
+                                        <h2 class="border_line">
+                                            <div
+                                                class="inline togglebutton togglebutton-material-indigo">
+                                                <label></label></div> 匯款資料
+                                        </h2>
+                                        <div id="webdev_settings" container="child" class="section">
+
+                                            <div class="form-group">
+                                                <input type="text"
+                                                    class="form-control floating-label"
+                                                    id="txtYourName"
+                                                    serialize-as="general.your_name"
+                                                    placeholder="Your Name" />
+                                                <label class="label_n">
+                                                    銀行<span class="req"></span>
+                                                </label>
+                                                <input type="text"
+                                                    class="form-control floating-label"
+                                                    id="txtYourName"
+                                                    serialize-as="general.your_name"
+                                                    placeholder="Your Name" />
+
+                                                <label class="label_n">
+                                                    <span class="row">分<br>公司</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label_n">
+                                                    帳號<span class="req"></span>
+                                                </label>
+                                                <input type="text"
+                                                    class="form-control floating-label"
+                                                    id="txtYourName"
+                                                    serialize-as="general.your_name"
+                                                    placeholder="Your Name" />
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label_n">
+                                                    戶名<span class="req"></span>
+                                                </label>
+                                                <input type="text"
+                                                    class="form-control floating-label"
+                                                    id="txtYourName"
+                                                    serialize-as="general.your_name"
+                                                    placeholder="Your Name" />
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                </form>
+
+                                <!-- 聯絡人資料 -->
+                                <div id="settings" class="col-lg-offset-0 col-lg-6 col-lg-offset-0 
+                                                        col-md-offset-0 col-md-12 col-md-offset-0 
+                                                        col-sm-offset-0 col-sm-12 col-sm-offset-0 
+                                                        col-xs-offset-0 col-xs-12 col-xs-offset-0">
+                                    <h2 class="border_line">
+                                        <div class="inline">聯絡人資料</div>
+                                    </h2>
+                                    <div id="contract-data" class="section">
+                                        <div class="form-group">
+                                            <label class="label_n">
+                                                姓名<span class="req"></span>
+                                            </label>
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
+
+                                            <label class="label_n">
+                                                職稱<span class="req"></span>
+                                            </label>
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label_n">
+                                                電話<span class="req"></span>
+                                            </label>
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
+
+                                            <label class="label_n">
+                                                分機<span class="req"></span>
+                                            </label>
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label_n">
+                                                手機<span class="req"></span>
+                                            </label>
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label_n">
+                                                信箱<span class="req"></span>
+                                            </label>
+                                            <input type="text" class="form-control floating-label"
+                                                id="txtYourName" serialize-as="general.your_name"
+                                                placeholder="Your Name" />
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
                             
+                        
                         </article>
                         </div>
                     </div>
@@ -1855,7 +1857,7 @@
 
     <!--  jQuery 库，是 DataTables 的基础依赖 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
     <!-- moadal會引用到 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
@@ -1897,7 +1899,7 @@
     
     <script src="/tickets/js/T_articleB.js"></script>
     <script src="/tickets/js/T_articleC.js"></script>
-    <script src="/tickets/js/T_articleHx.js"></script>
+    <!-- <script src="/tickets/js/T_articleHx.js"></script> -->
     
     <script src="/tickets/js/T_articleT.js"></script>
     <script src="/tickets/js/try3.js"></script>

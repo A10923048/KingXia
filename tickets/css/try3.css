@@ -1,40 +1,9 @@
-/* Reset for common elements to avoid issues cross-browser */
-/* html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
-pre, form, fieldset, input, textarea, p, blockquote, th, td { 
-  padding:0;
-  margin:0;
-} */
 
-/* Spacing */
-/* Note: You will need to replace the value of $settings_width with a specific value */
-/* colours */
-/* Note: You will need to replace the value of $h2_color with a specific color value */
-
-/* * {
-  box-sizing: border-box;
-} */
-
-
-
-
-#formT {
-  background-image: url("img/ignasi_pattern_s.png");
-  font-family: 'Roboto', 'sans-serif';
-  font-weight: 400;
-  margin-top: 3em;
-}
-
-a {
-  text-decoration: none;
-}
-
-#outer {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-}
-
-#settings {
+/*************表格***************/
+.settings {
   max-width: 100%; /* Replace with a specific value */
+  padding: 0% 5%;
+  margin: 2%  0%;
 }
 
 #box {
@@ -47,48 +16,34 @@ a {
   box-shadow: 0 20px 20px rgba(0,0,0,.3); /* Replace with a specific value */
 }
 
-.tagcode {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 3em;
-  max-width: 700px;
-  height: 100%;
-}
 
-.tagcode pre {
-  font-size: 14px;
-  background: #4a4a4a;
-  padding-left: 10px; 
-  padding-top: 10px; 
-  height: 100%;
-  box-shadow: 0 20px 20px rgba(0,0,0,.3);
-}
 
-/* Individual page element styles */
-h2 {
-  font-size: 22px;
-  text-transform: uppercase;
-  font-weight: 300;
-  text-align: left;
-  color: #506982; /* Replace with a specific color value */
-  border-bottom: 1px solid #506982; /* Replace with a specific color value */
-  padding-bottom: 3px;
-  margin-bottom: 20px;
-}
+.border_line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+    color: #8dbceb; 
+    border-bottom: 2px solid #ffb71c; 
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+  }
 
 .inline {
-  display: inline-block;
-  vertical-align: middle;
+  /* display: inline-block;
+  vertical-align: middle; */
+  display: flex;
+    align-items: center;
   padding-bottom: 5px;
 }
 
-/* Overrides for material controls */
-.control-label {
-  font-weight: bold;
-  font-size: 14px;
+.inline > span {
+    margin-left: 10px; /* 調整文字和圖標之間的間距 */
 }
 
-.checkbox, .radio {
+.checkbox{
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -97,30 +52,20 @@ h2 {
   margin-right: 5px;
 }
 
-.help-block {
-  font-size: 12px;
-  color: #b30000;
-}
-
-.help-block em {
-  font-weight: bold;
-}
-
-.help-block {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    color: #737373;
-}
 
 .form-group .floating-label {
   font-weight: bold;
-  color: black;
+  color: rgb(210, 47, 47);
 }
+
+.form-group .floating-label.off{
+    font-weight: bold;
+    color: rgb(86, 57, 57);
+  }
 
 /* Reduce spacing */
 .form-group {
-  margin: 0px;
+  margin: 2px 0;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -135,19 +80,7 @@ h2 {
 .form-group input {
     flex: 1 1 auto;
 }
-.help-block {
-    font-size: 12px;
-    color: #b30000;
-}
-.form-group .help-block {
-    margin-top: 0;
-    font-size: 12px;
-}
 
-.form-group .help-block {
-    position: absolute;
-    display: none;
-}
 
 .form-control, .form-group .form-control {
     border: 0;
@@ -170,29 +103,7 @@ h2 {
     border-radius: 0;
 }
 
-.form-control {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
 
-
-.form-control {
-    margin-bottom: 7px;
-}
 
 /* Spacing for the contract data only if we're in small or x-small layout */
 #contract-data-cont {
@@ -200,132 +111,303 @@ h2 {
 }
 
 
-/* Initially hide all the settins sections */
-.section {
-  padding-left: 10px;
-  padding-bottom: 30px;
-}
-
-/* div{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
-} */
 .form-group {
     margin: 2% 2% 2% 2%;
 }
 
-.togglebutton label input[type=checkbox]:checked+.toggle:after {
-    background-color: #009688;
-}
-
-.togglebutton label input[type=checkbox]:checked+.toggle:after {
-    left: 15px;
-}
-
-.togglebutton label .toggle:after {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #F1F1F1;
-    border-radius: 20px;
-    position: relative;
-    -webkit-box-shadow: 0 1px 3px 1px rgba(0,0,0,.4);
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,.4);
-    left: -5px;
-    top: -2px;
-    -webkit-transition: left .3s ease, background .3s ease, -webkit-box-shadow .1s ease;
-    -o-transition: left .3s ease, background .3s ease, box-shadow .1s ease;
-    transition: left .3s ease, background .3s ease, box-shadow .1s ease;
-}
-
-.togglebutton label .toggle {
-    text-align: left;
-}
-
-.togglebutton label {
-    cursor: pointer;
-    color: rgba(0, 0, 0, .26);
-}
-
-.checkbox label, .radio label, label {
-    font-size: 16px;
-    line-height: 1.42857143;
-    color: #BDBDBD;
-    font-weight: 400;
-}
-
-label {
+.label_n {
+    color:rgb(129, 79, 8);
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700;
 }
 
-.form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label, .form-group.label-static label.control-label {
-    top: -30px;
-    left: 0;
-    font-size: 12px;
-    line-height: 1.07142857;
+
+
+.label_m {
+    color:rgb(20, 130, 12);
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
 }
 
-.form-group.label-floating label.control-label, .form-group.label-placeholder label.control-label {
-    top: -7px;
-    font-size: 16px;
-    line-height: 1.42857143;
+
+
+/****************************carousel************************************** */
+h1{
+    color: lightseagreen;
+    text-align: center;
+  }
+  
+  .slideshow {
+      position: relative;
+      overflow: hidden;
+  }
+  input[name="slideshow"] {
+      display: none;
+  }
+  
+  /* :::::: slideContents :::::: */
+  .slideContents {
+      position: relative;
+      background: lightSeaGreen;
+      text-align: center;
+      -webkit-user-select: none;
+      user-select: none;
+      transition: transform .6s;
+  }
+  .slideContents section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: translateX(100%);
+      transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  
+.slideContents section #settings  {
+    background: #fff;
+      max-width: 90%;
+      /* padding: 0 50px; */
+      box-sizing: border-box;
+      vertical-align: middle;
+  }
+
+  .slideContents section img {
+        max-width: 100%;
+        padding: 0 50px;
+        box-sizing: border-box;
+        vertical-align: middle;
+    }
+  
+  /* :::::: arrows :::::: */
+  .arrow,
+  .arrow label,
+  .arrow .ico {
+      position: absolute;
+  }
+  .arrow {
+      top: 0;
+      margin: 0;
+      transition: background .3s;
+  }
+  .prev {
+      left: 0;
+  }
+  .next {
+      right: 0;
+  }
+  .arrow:hover {
+      background: rgba(255,255,255,.2);
+  }
+  .arrow,
+  .arrow label {
+      cursor: pointer;
+      width: 50px;
+      height: 100%;
+  }
+  .arrow label {
+      top: 0;
+      left: 0;
+      z-index: 1;
+  }
+  .arrow .ico {
+      top: calc(50% - 6px);
+      width: 12px;
+      height: 12px;
+      border-top: 3px solid #fff;
+      opacity: 0;
+  }
+  .prev .ico {
+      left: 50%;
+      border-left: 3px solid #fff;
+      transform: rotate(-45deg);
+      transition: left .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+  }
+  .next .ico {
+      right: 50%;
+      border-right: 3px solid #fff;
+      transform: rotate(45deg);
+      transition: right .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+  }
+  .arrow:hover .ico {
+      opacity: .6;
+  }
+  .prev:hover .ico {
+      left: calc(50% - 6px);
+  }
+  .next:hover .ico {
+      right: calc(50% - 6px);
+  }
+  
+  /* :::::: contents :::::: */
+  .slideContents section {
+      opacity: 0;
+  }
+  .slideContents section .contents {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      box-sizing: border-box;
+  }
+  .slideContents section h1,
+  .slideContents section p {
+      margin: 0;
+      color: lightseagreen;
+      opacity: 0;
+  }
+  .slideContents section h1 {
+      font-size: 16px;
+  }
+  .slideContents section p {
+      margin-top: .5em;
+      font-size: 12px;
+  }
+  
+  /* :::::: mechanism :::::: */
+  #switch1:checked ~ .slideContents #slide1,
+  #switch2:checked ~ .slideContents #slide2,
+  #switch3:checked ~ .slideContents #slide3 {
+      position: relative;
+      opacity: 1;
+      transform: none;
+  }
+  #switch1:checked ~ .slideContents #slide3,
+  #switch2:checked ~ .slideContents #slide1,
+  #switch3:checked ~ .slideContents #slide2 {
+      transform: translateX(-100%);
+  }
+  #switch1:checked ~ .slideContents #slide1 h1,
+  #switch1:checked ~ .slideContents #slide1 p,
+  #switch2:checked ~ .slideContents #slide2 h1,
+  #switch2:checked ~ .slideContents #slide2 p,
+  #switch3:checked ~ .slideContents #slide3 h1,
+  #switch3:checked ~ .slideContents #slide3 p {
+      opacity: 1;
+  }
+  
+  /* 要素を立体的に */
+  .slideContents {
+      perspective: 1000px;
+  }
+  .slideContents section,
+  .slideContents h1,
+  .slideContents p {
+      transition: opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .slideContents section {
+      transform: translateX(500px) rotateY(-90deg);
+      transition-duration: .8s, 1.2s;
+  }
+  #switch1:checked ~ .slideContents #slide1 h1,
+  #switch2:checked ~ .slideContents #slide2 h1,
+  #switch3:checked ~ .slideContents #slide3 h1 {
+      transition-delay: .6s, 0s;
+  }
+  #switch1:checked ~ .slideContents #slide1 p,
+  #switch2:checked ~ .slideContents #slide2 p,
+  #switch3:checked ~ .slideContents #slide3 p {
+      transition-delay: .4s, 0s;
+  }
+  #switch1:checked ~ .slideContents #slide1,
+  #switch2:checked ~ .slideContents #slide2,
+  #switch3:checked ~ .slideContents #slide3 {
+      transform: translateX(0) rotateY(0deg);
+      transition-delay: .2s, 0s;
+  }
+  #switch1:checked ~ .slideContents #slide3,
+  #switch2:checked ~ .slideContents #slide1,
+  #switch3:checked ~ .slideContents #slide2 {
+      transform: translateX(-500px) rotateY(90deg);
+  }
+  
+  /* :::::: arrow mechanism :::::: */
+  .arrow label {
+      pointer-events: none;
+  }
+  #switch1:checked ~ .prev label[for="switch3"],
+  #switch2:checked ~ .prev label[for="switch1"],
+  #switch3:checked ~ .prev label[for="switch2"],
+  #switch1:checked ~ .next label[for="switch2"],
+  #switch2:checked ~ .next label[for="switch3"],
+  #switch3:checked ~ .next label[for="switch1"] {
+      pointer-events: auto;
+  }
+
+
+
+
+
+
+
+
+
+
+
+/****************************button************************************** */
+ 
+/* ---- 共通部 ---- */
+#editBtn {
+    display: none;
+}
+label>input[type=checkbox]~span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+     font-family: 'Lato', sans-serif;
+    border-style: none;
+    border-radius: 15px; 
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
 }
 
-.form-group.label-floating label.control-label {
-    will-change: left, top, contents;
+/* ---- スイッチがONのとき ---- */
+label>input[type=checkbox]:checked+span {
+    display: flex;
+
+    /* ---- ボタンのデザイン ---- */
+    padding-left: 8px;
+    color: #fff;
+    background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+}
+label>input[type=checkbox]:checked+span+span {
+    display: none;
 }
 
-.form-group.label-floating label.control-label, .form-group.label-placeholder label.control-label, .form-group.label-static label.control-label {
-    position: absolute;
-    pointer-events: none;
-    -webkit-transition: .3s ease all;
-    -o-transition: .3s ease all;
-    transition: .3s ease all;
+/* ---- スイッチがOFFのとき ---- */
+label>input[type=checkbox]+span {
+    display: none;
+}
+label>input[type=checkbox]+span+span {
+    display: flex;
+
+    /* ---- ボタンのデザイン ---- */
+    padding-right: 8px;
+    color: #6a859c;
+    background-color: #cfd8e4;
 }
 
-.form-group label.control-label {
-    font-size: 12px;
-    line-height: 1.07142857;
-    font-weight: 400;
-    margin: 16px 0 0 0;
-}
-
-.form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label, .form-group.label-static label.control-label {
-    top: -30px;
-    left: 0;
-    font-size: 12px;
-    line-height: 1.07142857;
-}
-
-.form-group.label-floating label.control-label, .form-group.label-placeholder label.control-label {
-    top: -7px;
-    font-size: 16px;
-    line-height: 1.42857143;
-}
-
-.form-group .checkbox label, .form-group .radio label, .form-group label {
-    font-size: 16px;
-    line-height: 1.42857143;
-    color: #BDBDBD;
-    font-weight: 400;
-}
-
-label.control-label {
-    font-size: 12px;
-    line-height: 1.07142857;
-    font-weight: 400;
-    margin: 16px 0 0 0;
-}
-
-.control-label {
-    font-weight: bold;
-    font-size: 14px;
+/* ---- 丸ボタンのデザイン ---- */
+label>input[type=checkbox]:checked+span::after, label>input[type=checkbox]+span+span::before {
+    display: block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: 3px;
+    border-radius: 50%;
+    background-color: #e0e5ec;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+    content: "";
 }
