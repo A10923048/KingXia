@@ -79,7 +79,6 @@ $(document).ready(function () {
         }
     });
 
-    //觸發編輯按鈕OFF功能
     $('#editBtn').trigger('click').prop('checked', false);
 
 
@@ -103,34 +102,39 @@ $(document).ready(function () {
         }
     });
     
-
-    //編輯按鈕ON_OFF功能
+    // 編輯按鈕ON_OFF功能
     $('#editBtn').on('click', function() {
+        let value = $(this).prop('checked');
+
+        console.log(value);
+
+        let inputs = $(".settings").find('.form-control');
+
+        // 當編輯按鈕OFF
+        if (!value) {
             
-            let value = $(this).prop('checked');
+            
+            //讓inputs無法輸入
+            inputs.each(function() {
+                $(this).prop('disabled', true).addClass('off');
+            });
+            
+        } 
+        // 當編輯按鈕ON
+        else {
 
-            console.log(value);
+            //警示
+            $('#eSpan').text('編輯完成後\n請將按鈕切換成OFF');
+            //讓inputs可輸入
+            inputs.each(function() {
+                $(this).prop('disabled', false).removeClass('off');
+            });
+            
+        } 
 
-            let inputs = $(".settings").find('.form-control');
+    });
 
-            //當編輯按鈕OFF
-            if (!value) {
-                //讓inputs無法輸入
-                inputs.each(function() {
-                    $(this).prop('disabled', true).addClass('off');
-                });
-            } 
-            //當編輯按鈕ON
-            else {
-                //讓inputs可輸入
-                inputs.each(function() {
-                    $(this).prop('disabled', false).removeClass('off');
-                });
 
-            } 
-    
-    })
-    
     // 使用者資料傳入
     get_send(datas);  
   

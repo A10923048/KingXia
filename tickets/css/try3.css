@@ -31,6 +31,13 @@
     margin-bottom: 20px;
   }
 
+  @media screen and (max-width: 580px) {
+    .border_line {
+        display: block;
+    }
+  }
+
+
 .inline {
   /* display: inline-block;
   vertical-align: middle; */
@@ -410,4 +417,17 @@ label>input[type=checkbox]:checked+span::after, label>input[type=checkbox]+span+
    7px 7px 20px 0px rgba(0,0,0,.1),
    4px 4px 5px 0px rgba(0,0,0,.1);
     content: "";
+}
+
+#addloader span {
+    color: #8dbceb;
+    text-shadow: 0 0 0 #ffffff;
+    -webkit-animation: addLoading 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes addLoading {
+    to {
+        text-shadow: 20px 0 70px #f4f4f5;
+        color: #020fff;
+    }
 }
