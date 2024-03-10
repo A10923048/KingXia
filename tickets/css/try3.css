@@ -15,7 +15,11 @@
   border-radius: 5px; /* Replace with a specific value */
   box-shadow: 0 20px 20px rgba(0,0,0,.3); /* Replace with a specific value */
 }
-
+@media screen and (max-width: 580px) {
+    #box {
+        margin: 0px;
+    }
+  }
 
 
 .border_line {
@@ -405,19 +409,34 @@ label>input[type=checkbox]+span+span {
 }
 
 /* ---- 丸ボタンのデザイン ---- */
-label>input[type=checkbox]:checked+span::after, label>input[type=checkbox]+span+span::before {
-    display: block;
-    vertical-align: middle;
-    width: 24px;
-    height: 24px;
-    margin: 3px;
-    border-radius: 50%;
-    background-color: #e0e5ec;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-    content: "";
-}
+    label>input[type=checkbox]:checked+span::after, 
+    label>input[type=checkbox]+span+span::before {
+        display: block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        margin: 3px;
+        border-radius: 50%;
+        background-color: #e0e5ec;
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+        content: "";
+    }
+
+    /* label.checked > input[type=checkbox]+span::after{
+        display: block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        margin: 3px;
+        border-radius: 50%;
+        background-color: #e0e5ec;
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+        7px 7px 20px 0px rgba(0,0,0,.1),
+        4px 4px 5px 0px rgba(0,0,0,.1);
+        content: "";
+    } */
 
 #addloader span {
     color: #8dbceb;

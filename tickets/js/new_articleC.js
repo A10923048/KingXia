@@ -822,7 +822,7 @@ $(document).ready(function () {
       {   //其他買票人資料資料
         "id": "111111",
         "tname": "王A明",//航班代碼
-        "gender": "1030",
+        "gender": "男",
         "sbr": "2020/01/01",//(訂票最後時間)
         "email": "123@gmail.com",
         "mobile": "0912345678",

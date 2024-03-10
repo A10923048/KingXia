@@ -23,18 +23,11 @@ Fonts - Google Fonts
     let editBtnClicked = $('#editBtn').prop('checked'); 
     
     
-    if (editBtnClicked === true) {
+    if (editBtnClicked == true) {
 
       //產生警示
-      $('#eSpan').text('編輯完成後\n請將按鈕切換成OFF');
-      // $('#addloader').addClass('loader');
-
-      var target = $('#eSpan').attr('href');
-      $("html, body").animate({
-        scrollTop: $(target).offset().top 50
-        }, 500);
-    
-
+      $('#eSpan').text('請將按鈕切換成OFF');
+     
       //不執行換頁
       return;
 
@@ -44,10 +37,10 @@ Fonts - Google Fonts
       //執行換頁
       $(".tab-pane").each(function() {
         if ($(this).hasClass("show")) {
-            $(this).removeClass("show active");
+            $(this).removeClass("active show");
         }
       });
-      $(`#${tabId}`).addClass("show active");
+      $(`#${tabId}`).addClass("active show");
     
       // 如果需要手動跳轉到新的頁面
       window.location.href = `#${tabId}`;
