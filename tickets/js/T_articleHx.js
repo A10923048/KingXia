@@ -5,7 +5,7 @@ $(document).ready(function () {
     // let csrfToken = $("meta[name='_csrf']").attr("content");
     // let csrfHeader = $("meta[name='_csrf_header']").attr("content");
     
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~模擬進入頁面的畫面(連後端後直接刪除整段)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~articleHx~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
     
     //            訂票紀錄查詢 歷史資料 (有值)           //
     
@@ -97,10 +97,11 @@ $(document).ready(function () {
   
       })
     }
-    get_send(send);
-  
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~articleHx(以下:連後端後"不能"刪除)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// 
+    get_send(send);
+
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~articleT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// 
     
     $("#refundBtn").on("click", function(event) {
         // 阻止默认行为
@@ -109,8 +110,6 @@ $(document).ready(function () {
     });
     
   
-    
-    
     
     //                獲取 detail_其他買票人資料 "顯示" 於modal           //
     let get_detail_show = function (detail) {
@@ -136,8 +135,8 @@ $(document).ready(function () {
       })
     }
 
-    	// //輸出成外部檔案
-  function initDataTable() {
+    //                輸出成外部檔案                                 //
+  	function initDataTable() {
     // 設置文件標題
     document.title = "旅客清單";
 
@@ -161,7 +160,7 @@ $(document).ready(function () {
             $("#example thead").append(footer);
         }
     });
-}
+		}
   
     //                獲取 detail_其他買票人資料 顯示於 "退票"modal           //
     // let get_detail_refund = function (detail) {
@@ -326,15 +325,6 @@ $(document).ready(function () {
   
     })
   
-  
-  
-  
-   
-    
-  
-
-	
-
   // document.title = "旅客清單";
 	// // Create search inputs in footer
 	// $("#example tfoot th").each(function () {
