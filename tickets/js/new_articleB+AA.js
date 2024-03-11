@@ -195,18 +195,6 @@ let send_url="https://tickets.kingxia.com.tw";
   });
 
   
-
-
-
-
-
-
-
-
-
-
-
-
   // 假设 Carousel 控制按钮的 ID 分别为 carousel-control-prev 和 carousel-control-next
   $(document).on("click", "#carousel-control-prev, #carousel-control-next", function () {
  

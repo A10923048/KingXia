@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- 光瑞給的 -->
+  <!-- <meta name="_csrf" th:content="${_csrf.token}">
+  <meta name="_csrf_header" th:content="${_csrf.headerName}">  -->
+
+  <title>金廈海運-訂票</title>
+  <link rel="icon shortcut" href="/tickets/img/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+
+  <!-- Bootstrap CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+  <!-- 使用font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <!-- TODO: 客製化Bootstrap CSS -->
+  <link rel="stylesheet" href="/tickets/css/bootstrap.css">
+  <!-- 使用style.css -->
+  <link rel="stylesheet" href="/tickets/css/order.css">
+  <!-- 使用日期輪用 -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <!-- 使用Boostrap Navbar -->
+  <!-- TODO: 設定Navbar緊貼畫面上緣 -->
+  <!-- TODO: 點擊滾動目標 -->
+  <!-- b4-navbar-default -->
+  <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
+    <a class="navbar-brand" href="/index">首頁</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#introSection">訂票</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#featuresSection">行程介紹</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- navbar end -->
+
+
+  <!-- header -->
+  <header id="header">
+    <div class="row justify-content-center  mb-1 "
+      style="margin-left: 2%;margin-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+
+      <div>
+        <h1 class="loader ">
+          <img src="/tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
+          <span class="m">訂</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">票</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">頁</span>
+          <span class="m">&nbsp;</span>
+          <span class="m">面</span>
+          <span class="m"></span>
+        </h1>
+
+      </div>
+    </div>
+    <div class="container">
+      <img id="ship-bottle" class="rounded-circle mt  my-element" src="/tickets/img/瓶中船.png" alt="user photo"
+        style="width: 50%; margin-bottom: 20%;">
+      <!-- <a class="btn btn-outline-primary" href="">Link</a> -->
+    </div>
+
+
+
+    <header id="header" class="jumbotron text-center bg-dark">
+      <div class="container">
+
+        <section id="featuresSection" class="py-5 bg-secondary" style="border-radius: 15px;">
+          <div class="container">
+
+            <!-- <h1 class=" mb-5 text-center text-white">訂票資訊</h1> -->
+            <!-- 設定row內的區塊置中對齊 -->
+            <div class="row justify-content-center">
+
+              <nav class="nav nav-pills flex-row justify-content-center" id="myNav">
+                <button class="nav-link btn btn-outline-primary" onclick="articleBtn('articleA')">訂票資訊</button>
+
+              </nav>
+
+              <div class="col-12">
+
+                <section id="introSection" class="py-5">
+                  <div class="container  mb-5">
+                    <div class="tab-content" style="padding-left: 2%;padding-right: 2%;">
+                      <article id="articleA" class="my-3 tab-pane">
+                        <main>
+                          <div class="py-5 text-center text-primary">
+                            <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                            <h2>訂票資訊2</h2>
+                          </div>
+
+                          <div class="col-md-12 col-lg-12 order-md-last">
+
+                            <div class="col-lg-12 align-self-center" >
+                              <form id="contact" action="" method="get">
+                                <div class="row">
+
+                                  <!-- 訂票資訊 -->
+                                  <div class="col-lg-6" >
+                                    <div class="py-5 text-center text-primary">
+                                      <h2>訂票資訊</h2>
+                                    </div>
+                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+
+                                      <!-- <span class="badge bg-primary rounded-pill">訂票數:3</span> -->
+                                    </h4>
+                                    <ul class="list-group mb-3">
+                                      </li>
+                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">出發日期:</h5>
+                                        <span class="my-0" id="time-show">(日期顯示)</span>
+                                      </li>
+                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">出發時間:</h5>
+                                        <span class="my-0" id="clock-show">(時間顯示)</span>
+                                      </li>
+                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">船班:</h5>
+                                        <span class="my-0" id="shipID-show">(船班顯示)</span>
+                                      </li>
+                                      <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">票數:</h5>
+                                        <h4 class="d-flex justify-content-between align-items-center">
+                                          <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
+                                        </h4>
+                                      </li>
+                                    </ul>
+                                  </div>
+
+                                  <!-- 票種選擇 -->
+                                  <div class="col-lg-6">
+                                    <div class="col table-responsive">
+                                      <table class="table text-center">
+                                        <thead>
+                                          <tr>
+                                            <h3>票種選擇</h3>
+                                            <h5 class="my-0"></h5>
+                                            <ul class="list-group mb-3">
+                                              <li id="custom-alert" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                role="alert"
+                                                style="position: relative; background-color: rgb(255, 196, 191); display: none;">
+                                                <h5 id="alert-result" class="text-red"></h5>
+                                                <i  class=" alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                  style="position: absolute; top: 5%; right: 0%;"></i>
+                                              </li>
+                                              <li class="list-group-item d-flex justify-content-between lh-sm">
+                                                <div
+                                                  class="d-flex justify-content-between align-items-center bg-primary">
+                                                  <h2 class=" bg-primary  text-white">(未選擇)</h2>
+                                                </div>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                  <h2 class=" rounded-pill main-button text-white "
+                                                    id="tickets_unchoosed"></h2>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                  <h2 class=" bg-primary  text-white" id="tickets_choosed">張票</h2>
+                                                </div>
+                                              </li>
+                                              <li id="custom-alert_2" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                role="alert"
+                                                style="position: relative; background-color: rgb(255, 100, 86); display:none ;">
+                                                <p class="text-white">票種選擇已超過預定票數!</p>
+                                                <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                  style="position: absolute; top: 5%; right: 0%; "></i>
+                                              </li>
+                                            </ul>
+                                          </tr>
+                                          <tr>
+                                            <th style=" width: 30%;">
+                                              <h6 class="find_title">全票</h6>
+                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                              <h6>票數</h6>
+                                              <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
+                                                <!-- <option value="" selected>0</option>
+                                                      <option value="1">1</option> -->
+                                              </select>
+                                            </th>
+                                            <th style="width: 30%;">
+                                              <h6 class="find_title">敬老</h6>
+                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                              <h6>票數</h6>
+                                              <select id="ticketQuantity_B" class="ticketQuantity">
+                                              </select>
+                                            </th>
+                                            <th style="width: 30%;">
+                                              <h6 class="find_title">兒童</h6>
+                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                              <h6>票數</h6>
+                                              <select id="ticketQuantity_C" class="ticketQuantity">
+                                              </select>
+                                            </th>
+                                          </tr>
+                                          <tr>
+                                            <th style="width: 30%;">
+                                              <h6 class="find_title">博愛</h6>
+                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                              <h6>票數</h6>
+                                              <select id="ticketQuantity_D1" class="ticketQuantity">
+                                              </select>
+                                            </th>
+                                            <th style="width: 30%;">
+                                              <h6 class="find_title">博愛<br>(陪同者)</h6>
+                                              <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                              <h6>票數</h6>
+                                              <select id="ticketQuantity_D2" class="ticketQuantity">
+                                              </select>
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                      </table>
+                                    </div>
+                                  </div>
+
+                                  <!--送出按鈕 -->
+                                  <div class="col-lg-12 ">
+                                    <button class="main-button pt-3" id="articleA_send">
+                                      <h3>送出</h3>
+                                    </button>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DetailModal">
+                                      開啟模態對話框
+                                    </button>
+                                  </div>
+
+                                </div>
+                              </form>
+                            </div>
+
+                          </div>
+                    </div>
+
+                    </main>
+
+
+
+
+                    <section class="container text-white" id="buyers_list">
+                      <div  id="buyers_list">
+
+                      <!-- <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
+                        <h3 class="mt-5 pb-3 mb-4 border-bottom">資料填寫</h3>
+                        <h5 class=" pb-3 mb-4 ">(請下拉選單)</h5>
+                        <nav class="small" id="toc">
+                          <ul class="list-unstyled" > -->
+
+                            <!-- 用JS產生 旅客資料 -->
+                            <li class="my-2">
+                              <button class="btn d-inline-flex align-items-center collapsed border-0 mb-3 text-green"
+                                data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                                aria-controls="contents-collapse">旅客(1)表單</button>
+                              <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                
+                                <div class="table-responsive text-green">
+                                  <form id="contact" class="get_form" action="" method="get"
+                                    style="background-image: url(/tickets/img/contact-form-bg-2.png);">
+                                    <table>
+                                      <div id="planpickered" class="mt-4 pt-3 pb-1 bg-green" >
+                                        <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
+                                    </table>
+
+                                    <!-- 警視窗 -->
+                                    <li id="custom-alert_3" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                            role="alert" style="position: relative; background-color: rgb(255, 100, 86); display: none;">
+                                      <p class="alert-text text-white"></p>
+                                      <i id="alert-result_3"class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                        style="position: absolute; top: 5%; right: 0%; "></i>
+                                    </li> 
+                                    <!--  -->
+
+                                    <div class="row mt-5 justify-content-between"
+                                      style="padding-left: 2%; padding-right: 2%;">
+                                      <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                        <div class="row" style="padding-left: 10%;">
+                                          <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                            value="" required>
+                                          <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                        </div>
+                                        <input type="text" class="form-control" id="orderPhone" placeholder="電話"
+                                          value="" required>
+                                        <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                          required readonly>
+                                        <input type="text" class="form-control" id="email" placeholder="email" value=""
+                                          required>
+                                      </div>
+
+                                      <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                        style="padding-left: 5%; padding-right: 5%;">
+
+                                        <div class="row justify-content-start"
+                                          style="padding-left: 30%; padding-right: 10%;">
+
+                                          <div
+                                            style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
+                                            <input type="checkbox" id="Orderer_check"
+                                              style="width: 20px; height: 20px; margin-top: 20%;">
+
+                                            <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
+                                              &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
+                                            </h4>
+
+                                          </div>
+
+                                        </div>
+
+                                        <div class="table-responsive justify-content-center">
+                                          <table class=" text-center text-primary ">
+                                            <thead>
+                                              <tr>
+                                                <th style=" width: 35%;">
+                                                  <i class="fa-solid fa-earth-americas fa-4x"></i>
+                                                  <h6>國籍</h6>
+                                                  <select class="form-select" id="country" required>
+                                                    <option value="">台灣</option>
+                                                    <option>香港</option>
+                                                    <option>大陸</option>
+                                                    <option>其他</option>
+                                                  </select>
+                                                </th>
+                                                <th style="width: 40%;margin-right: 10%;">
+                                                  <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                                  <h6>性別</h6>
+                                                  <select class="form-select" id="gender" required>
+                                                    <option value="">女</option>
+                                                    <option>男</option>
+                                                  </select>
+                                                </th>
+                                                <th style="width: 40%; padding-top: 10%;">
+                                                  <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                                  <h6>出生日期</h6>
+                                                  <div>
+                                                    <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
+                                                      value="">
+                                                  </div>
+                                                </th>
+                                              </tr>
+                                            </thead>
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </ul>
+                              
+                            </li>
+
+                            <!-- 用JS產生 愛心+陪同旅客資料 -->
+                            <!-- <li class="my-2">
+                              <button class="btn d-inline-flex align-items-center collapsed border-0 mb-3"
+                                data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                                aria-controls="contents-collapse">愛心+陪同旅客旅客(1)表單</button>
+                              <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                <div class="table-responsive text-green"> -->
+
+
+                                  <!-- <form id="contact"  action="" method="get"
+                                    style="background-image: url(/tickets/img/contact-form-bg.png);"> -->
+                                    <!-- 愛心票 -->
+                                    <!-- <div class="get_form">
+
+                                    <table>
+                                      <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: green;">
+                                        <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
+                                    </table>
+                                    <div class="row mt-5 justify-content-between"
+                                      style="padding-left: 2%; padding-right: 2%;">
+                                      <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                        <div class="row" style="padding-left: 10%;">
+                                          <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                            value="" required>
+                                          <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                        </div>
+                                        <input type="text" class="form-control" id="orderPhone" placeholder="電話"
+                                          value="" required>
+                                        <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                          required readonly>
+                                        <input type="text" class="form-control" id="email" placeholder="email" value=""
+                                          required>
+                                      </div>
+
+                                      <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                        style="padding-left: 5%; padding-right: 5%;"> -->
+
+                                        <!-- <div class="row justify-content-start"
+                                          style="padding-left: 30%; padding-right: 10%;">
+
+                                          <div
+                                            style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
+                                            <input type="checkbox" id="Orderer_check"
+                                              style="width: 20px; height: 20px; margin-top: 20%;">
+
+                                            <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
+                                              &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
+                                            </h4>
+
+                                          </div>
+
+                                        </div> -->
+<!-- 
+                                        <div class="table-responsive justify-content-center">
+                                          <table class=" text-center text-primary ">
+                                            <thead>
+                                              <tr>
+                                                <th style=" width: 35%;">
+                                                  <i class="fa-solid fa-earth-americas fa-4x"></i>
+                                                  <h6>國籍</h6>
+                                                  <select class="form-select" id="country" required>
+                                                    <option value="">台灣</option>
+                                                    <option>香港</option>
+                                                    <option>大陸</option>
+                                                    <option>其他</option>
+                                                  </select>
+                                                </th>
+                                                <th style="width: 40%;margin-right: 10%;">
+                                                  <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                                  <h6>性別</h6>
+                                                  <select class="form-select" id="gender" required>
+                                                    <option value="">女</option>
+                                                    <option>男</option>
+                                                  </select>
+                                                </th>
+                                                <th style="width: 40%; padding-top: 10%;">
+                                                  <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                                  <h6>出生日期</h6>
+                                                  <div>
+                                                    <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
+                                                      value="">
+                                                  </div>
+                                                </th>
+                                              </tr>
+                                            </thead>
+                                          </table>
+                                        </div>
+
+                                      </div> -->
+
+                                      <!-- 訂單開立方式 -->
+                                      <!-- <div id="orderMethods_show" class="col-lg-6 col-md-12  col-sm-12 text-primary mt-3 mb-5" style="display: none;">
+                                        <div class="list-group-item d-flex justify-content-between lh-sm" colspan="2">
+                                          <div class="table-responsive">
+                                            <table class="table text-center">
+                                              <thead>
+                                                <tr>
+                                                  <h4>訂單開立方式</h4>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <th style="width: 50%;">
+                                                    <div class="col">
+                                                      <input type="radio" name="orderMethods" value="統一開立購票證名"
+                                                        required>統一開立購票證名
+                                                    </div>
+                                                  </th>
+                                                  <th style="width: 50%;">
+                                                    <div class="col">
+                                                      <input type="radio" name="orderMethods" value="分別開立購票證名"
+                                                        required>分別開立購票證名
+                                                    </div>
+                                                  </th>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+
+                                  </div> -->
+
+                                    <!-- 陪同票 -->
+                                    <!-- <div class="get_form">
+                                    <table>
+                                      <div id="planpickered" class="mt-4 pt-3 pb-1" style="background-color: green;">
+                                        <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
+                                    </table>
+                                    <div class="row mt-5 justify-content-between"
+                                      style="padding-left: 2%; padding-right: 2%;">
+                                      <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                        <div class="row" style="padding-left: 10%;">
+                                          <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                            value="" required>
+                                          <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                        </div>
+                                        <input type="text" class="form-control" id="orderPhone" placeholder="電話"
+                                          value="" required>
+                                        <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                          required readonly>
+                                        <input type="text" class="form-control" id="email" placeholder="email" value=""
+                                          required>
+                                      </div>
+
+
+                                      <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                        style="padding-left: 5%; padding-right: 5%;"> -->
+
+                                        <!-- <div class="row justify-content-start"
+                                          style="padding-left: 30%; padding-right: 10%;">
+
+                                          
+
+                                        </div> -->
+                   
+<!-- 
+                                        <div class="table-responsive justify-content-center">
+                                          <table class=" text-center text-primary ">
+                                            <thead>
+                                              <tr>
+                                                <th style=" width: 35%;">
+                                                  <i class="fa-solid fa-earth-americas fa-4x"></i>
+                                                  <h6>國籍</h6>
+                                                  <select class="form-select" id="country" required>
+                                                    <option value="">台灣</option>
+                                                    <option>香港</option>
+                                                    <option>大陸</option>
+                                                    <option>其他</option>
+                                                  </select>
+                                                </th>
+                                                <th style="width: 40%;margin-right: 10%;">
+                                                  <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                                  <h6>性別</h6>
+                                                  <select class="form-select" id="gender" required>
+                                                    <option value="">女</option>
+                                                    <option>男</option>
+                                                  </select>
+                                                </th>
+                                                <th style="width: 40%; padding-top: 10%;">
+                                                  <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                                  <h6>出生日期</h6>
+                                                  <div>
+                                                    <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
+                                                      value="">
+                                                  </div>
+                                                </th>
+                                              </tr>
+                                              
+                                            </thead>
+                                            <tbody>
+                                              <tr colspan="3"> -->
+
+                                                <!-- <li class="list-group-item d-flex justify-content-between lh-sm "> 
+                                                    <input type="checkbox" id="Orderer_check"
+                                                      style="width: 20px; height: 20px;">
+                                                    <h4 id="contact" class="py-5 pt-5 section-title  text-center">
+                                                      &nbsp;&nbsp;&nbsp;旅客=訂票負責人(請打勾)
+                                                    </h4>
+                                                 </li> -->
+                                              <!-- </tr>
+                                            </tbody>
+
+
+                                          </table>
+                                        </div>
+                                        
+                                      </div>
+
+
+                                    </div>
+                                  </div> -->
+
+                                  <!-- add_ending = -->
+                                  <!-- </form>
+                                </div>
+                              </ul>
+                            </li> -->
+
+
+                            <!-- 用JS產生 主要訂購人 資料 -->
+                            <!-- <li class="my-2">
+                              <button class="btn d-inline-flex align-items-center collapsed border-0 mb-3"
+                                data-bs-toggle="collapse" aria-expanded="false"
+                                data-bs-target="#contents-collapse-order"
+                                aria-controls="contents-collapse">主要訂購人-表單</button>
+                              <ul class="list-unstyled ps-3 collapse" id="contents-collapse-order">
+                                <div class="table-responsive">
+                                  <form id="contact" class="get_form" action="" method="get"
+                                    style="background-image: url(/tickets/img/contact-form-bg.png);">
+                                    <table>
+                                      <div id="planpickered" class="mt-4 pt-3 pb-1 bg-primary ">
+                                        <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
+                                      </div>
+                                    </table>
+                                    <div class="row mt-5">
+                                      <div class="col-lg-6">
+                                        <div class="row" style="padding-left: 10%;">
+                                          <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                            value="" required>
+                                          <h4 id="contact" class="col section-title  text-center text-primary"
+                                            style="font-size: 150%;">主要訂購人資料</h4>
+                                        </div>
+                                        <input type="text" class="form-control" id="orderPhone" placeholder="電話"
+                                          value="" required>
+                                        <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                          required>
+                                      </div> -->
+
+                                      <!-- 訂單開立方式 -->
+                                      <!-- <div class="col-lg-6 col-md-12  col-sm-12 text-primary mt-3   mb-5">
+                                        <div class="list-group-item d-flex justify-content-between lh-sm" colspan="2">
+                                          <div class="table-responsive">
+                                            <table class="table text-center">
+                                              <thead>
+                                                <tr>
+                                                  <h4>訂單開立方式</h4>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <th style="width: 50%;">
+                                                    <div class="col">
+                                                      <input type="radio" name="orderMethods" value="統一開立購票證名"
+                                                        required>統一開立購票證名
+                                                    </div>
+                                                  </th>
+                                                  <th style="width: 50%;">
+                                                    <div class="col">
+                                                      <input type="radio" name="orderMethods" value="分別開立購票證名"
+                                                        required>分別開立購票證名
+                                                    </div>
+                                                  </th>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-6 col-md-12  col-sm-12 text-primary ">
+                                        <div class="table-responsive justify-content-center">
+                                          <h3 class="mt-5 pb-3 mb-4 border-bottom"></h3>
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-6  text-primary row">
+                                        <fieldset>
+                                          <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                          <h6>出生日期</h6>
+                                          <div>
+                                            <input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="">
+                                          </div>
+                                        </fieldset>
+                                        <fieldset>
+                                          <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                          <h6>性別</h6>
+                                          <select class="form-select" id="gender" required>
+                                            <option value="">女</option>
+                                            <option>男</option>
+                                          </select>
+                                        </fieldset>
+                                        <fieldset>
+                                          <i class="fa-solid fa-earth-americas fa-4x"></i>
+                                          <h6>國籍</h6>
+                                          <select class="form-select" id="country" required>
+                                            <option value="">台灣</option>
+                                            <option>香港</option>
+                                            <option>大陸</option>
+                                            <option>其他</option>
+                                          </select>
+                                        </fieldset>
+                                      </div>
+                                      <div class="col-lg-2 col-md-4  col-sm-2 text-primary">
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </ul>
+                            </li>
+ -->
+
+
+
+                            <!-- 用JS產生 (舊)內容 -->
+                            <!-- <li class="my-2">
+                                  <button class="btn d-inline-flex align-items-center collapsed border-0 mb-3"
+                                    data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse"
+                                    aria-controls="contents-collapse">其他旅客資料(1)</button>
+                                  <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+                                    <div class="table-responsive">
+                                      <table>
+                                        <div id="planpickered" class="pt-4 pb-1 "
+                                          style="background: rgb(102, 235, 226)">
+                                          <label for="plan">
+                                            <h2 class="section-title mb-3 text-center text-white">其他旅客資料</h2>
+                                        </div>
+                                      </table>
+                                      <main>
+                                        <div class="table-responsive pt-2"
+                                          style=" background-color: rgb(245, 240, 220);">
+                                          <table class="table text-center">
+                                            <thead>
+                                              <tr>
+                                                <th style="width: 30%;" id="gender" class="intro-box ">
+                                                  <span class="my-0" id="time-show">
+                                                    <i class="fa-solid fa-ticket fa-4x"></i></label>
+                                                    <h6>票種</h6>
+                                                    <div id="Quantity">
+                                                      <div>
+                                                        <select id="ticketQuantity">
+                                                          <option value="" selected>請選擇票種</option>
+                                                          <option value="全票">全票</option>
+                                                          <option value="敬老">敬老 </option>
+                                                          <option value="兒童">兒童</option>
+                                                          <option value="博愛">博愛</option>
+                                                        </select>
+                                                      </div>
+                                                    </div>
+                                                  </span>
+                                                </th>
+
+                                                <th style="width: 30%;" id="gender" class="intro-box">
+                                                  <span class="my-0" id="time-show">
+                                                    <i class="fa-solid fa-venus-mars fa-4x"></i>
+                                                    <h6>性別</h6>
+                                                    <select class="form-select" id="gender" required>
+                                                      <option value="">女</option>
+                                                      <option>男</option>
+                                                    </select>
+                                                  </span>
+                                                </th>
+
+                                                <th style="width: 40%;" id="country" class="intro-box">
+                                                  <span class="my-0" id="time-show">
+                                                    <i class="fa-solid fa-cake-candles fa-4x"></i>
+                                                    <h6>出生日期</h6>
+                                                    <div>
+                                                      <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
+                                                        value="">
+                                                    </div>
+                                                  </span>
+                                                </th>
+
+                                              </tr>
+                                            </thead>
+                                            <thead>
+                                              <tr>
+                                                <th class="intro-box">
+                                                  <span class="my-0" id="time-show">
+                                                    <i class="fa-solid fa-earth-americas fa-4x"></i>
+                                                    <h6>國籍</h6>
+                                                    <select class="form-select" id="country" required>
+                                                      <option value="">台灣</option>
+                                                      <option>香港</option>
+                                                      <option>大陸</option>
+                                                      <option>其他</option>
+                                                    </select>
+                                                  </span>
+                                                </th>
+                                                <th class="intro-box" colspan="2">
+                                                  <svg class="bi" width="24" height="24">
+                                                    <use xlink:href="#check" />
+                                                  </svg>
+                                                  <h6>身分證/護照號碼</h6>
+                                                  <input type="text" class="form-control" id="orderName" placeholder=""
+                                                    value="" required>
+                                                </th>
+                                              </tr>
+
+                                            </thead>
+
+                                            <thead id="tickets-result2">
+                                              <tr>
+                                                <th scope="row" class="text-start" class="intro-box">
+                                                  <h6>姓名</h6>
+                                                  <input type="text" class="form-control" id="orderName" placeholder=""
+                                                    value="" required>
+                                                </th>
+                                                <th class="intro-box" colspan="2">
+                                                  <svg class="bi" width="24" height="24">
+                                                    <use xlink:href="#check" />
+                                                  </svg>
+                                                  <h6>email</h6>
+                                                  <input type="text" class="form-control" id="orderName" placeholder=""
+                                                    value="" required>
+                                                </th>
+                                              </tr>
+                                            </thead>
+
+                                          </table>
+                                        </div>
+                                      </main>
+                                    </div>
+                                  </ul>
+                                </li> -->
+                            <!-- 用JS產生內容 -->
+
+                          <!-- </ul>
+                          <div class="col-lg-12 ">
+                            <button class="main-button pt-3" id="form_send">
+                              <h3>送出</h3>
+                            </button>
+                          </div>
+                        </nav>
+                      </aside> -->
+
+
+                     
+
+                    </div>
+                    </section>
+                  </div>
+              </div>
+            </div>
+            <!-- featuresSection end -->
+            </article>
+          </div>
+      </div> <!-- containter END-->
+
+      </div>
+      </div>
+      <!-- md-6 END-->
+
+    </header>
+  </header>
+
+    <!-- Modal-訂票紀錄查詢>_詳細資訊 -->
+    <div class="modal fade" id="DetailModal" tabindex="-1" role="dialog" aria-labelledby="DetailModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">主要訂票人資料顯示</h5> -->
+        
+          <button type="button" id="modaltop_btn" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <div class="modal-body row" id="modal-col">
+         
+          <div class="col-lg-12 order-md-last">
+            <div class=" align-self-center">
+                <form id="contact" action="" method="get">
+                    <div class="row mt-5">
+                        <!-- 訂票資訊 -->
+                        <div class="col-lg-12 text-white ">
+                            <ul class="list-group mb-1">
+                                
+                                <li class="list-group-item justify-content-center lh-sm pt-1">
+                                    
+                                    <div class="py-5 text-center text-primary">
+                                        <i class="mb-4 fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: -45deg;"></i>
+                                        <h2> 訂票資訊 </h2>
+                                       
+                                        <div class="table-responsive">
+                                            <table class="table text-center">
+                                                <tbody id="order_info" class="text-center">
+                                                    <tr>
+                                                        <th class="shipId0">航班代碼：</th>
+                                                        <th id="m_shipid"></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>出發日期：</th>
+                                                        <th id="m_date">  
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>出發時間：</th>
+                                                        <th id="m_time"></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>票數：</th>
+                                                        <th id="m_tCount"></th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 聯絡人資料 -->
+                        <div class="col-lg-12 text-white ">
+                            <ul class="list-group mb-3">
+                                <li class="list-group-item  justify-content-center lh-sm">
+                                    <div class="py-5 text-center text-primary">
+                                        <i class=" fa-solid fa-thumbtack fa-rotate-by fa-2xl" style="color: #ff282c; --fa-rotate-angle: 45deg;"></i>
+                                        <h2>聯絡人資料</h2>
+                                        <div class="table-responsive">
+                                            <table
+                                                class="table text-center justify-content-between ">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 50%;"
+                                                            id="etime">姓名:
+                                                        </th>
+                                                        <th style="width: 50%;" id="order_name"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tickets-result"
+                                                    class="text-center">
+                                                    <tr>
+                                                        <th>身分證/護照號碼：</th>
+                                                        <th id="order_id"></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>手機/行動電話:</th>
+                                                        <th id="order_pno"></th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 付款細項 -->
+                        <!-- <div class=" col-lg-12">
+                            <aside
+                                class="bd-aside   align-self-start mb-3  px-2">
+                                <h3
+                                    class="mt-2 pb-3 mb-4  text-white">
+                                </h3>
+                                <h5 class=" pb-3 mb-4 ">(請下拉選單)</h5>
+                                <button
+                                    class="btn d-inline-flex align-items-center collapsed border-0"
+                                    data-bs-toggle="collapse"
+                                    aria-expanded="false"
+                                    data-bs-target="#contents-collapse"
+                                    aria-controls="contents-collapse">付款細項</button>
+                                <ul class="list-unstyled ps-3 collapse"
+                                    id="contents-collapse">
+                                    <li class="my-2">
+                                        <div class="table-responsive">
+                                            <form id="contact"
+                                                class="get_form bg-light ">
+                                                <h2 id="contact"
+                                                    class=" section-title mb-3 text-center text-primary ">
+                                                    付款細項</h2>
+                                                <div
+                                                    class="table-responsive ">
+                                                    <table
+                                                        class="table text-center text-black">
+                                                        <thead>
+                                                          <tr>
+                                                            <th style="width: 20%;">
+                                                              票種
+                                                            </th>
+                                                            <td>王曉明</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th style="width: 20%;" id="shipID0">
+                                                              姓名</th>
+                                                              <td>王曉明</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th style="width: 10%;" id="shipID0">
+                                                              電話</th>
+                                                              <td>09123456789</td>
+                                                          </tr>
+                                                        
+                                                          <tr>
+                                                            <th style="width: 20%;" id="btime">
+                                                              身分證</th>
+                                                              <td>A12345678</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th style="width: 10%;" id="etime">
+                                                              Email</th>
+                                                              <td>A123456789</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th style="width: 20%;" id="qty">
+                                                              國籍</th>
+                                                              <td>國籍</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th style="width: 10%;" id="etime">
+                                                              性別</th>
+                                                              <td>國籍</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th style="width: 10%;" id="etime">
+                                                              生日</th>
+                                                              <td>123456</td>
+                                                          </tr>
+                                                          
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div> -->
+
+                        
+                        <!-- introbox -->
+                        <div class="col-lg-12" style="padding-right: 3%; padding-left: 3%;">
+                          
+                            <div class="col-lg-12 mb-3 text-center" style="padding-left: 2%;padding-right: 2%;">
+                              <div class="justify-content-center row mt-5">
+                                <!-- md-6第一排-->
+                                <div>
+
+                                    <div class="icon text-brown  py-3">
+                                      <i class="fas fa-briefcase fa-5x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="intro-line bg-primary"></div>
+                                    <h3 class=" section-title mb-5 text-center">旅客資料</h3>
+
+                                    <div class="container py-5 bg-secondary text-white">
+                                      <!-- lightbox -->
+                                          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner" id="carousel-inner">
+                                              <div class="carousel-item active" data-slide-number="0">
+                                                
+                                                <div class="col">
+                                                  <div class="gallery-text">
+                                                    <h2><strong>全票0</strong></h2>
+                                                  </div>
+                                                    
+                                                  <div class="table-responsive">
+                                                    <form id="contact"
+                                                        class="get_form bg-light ">
+                                                        <h4 id="contact" class=" section-title mb-3 text-center text-primary ">
+                                                            姓名:王曉明</h4>
+                                                        <div
+                                                            class="table-responsive ">
+                                                            <table
+                                                                class="table text-center text-black">
+                                                                <thead>
+                                                                  <tr>
+                                                                    <th style="width: 10%;" id="shipID0">
+                                                                      電話</th>
+                                                                      <td>09123456789</td>
+                                                                  </tr>
+                                                                
+                                                                  <tr>
+                                                                    <th style="width: 20%;" id="btime">
+                                                                      身分證</th>
+                                                                      <td>A12345678</td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <th style="width: 10%;" id="etime">
+                                                                      Email</th>
+                                                                      <td>A123456789</td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <th style="width: 20%;" id="qty">
+                                                                      國籍</th>
+                                                                      <td>國籍</td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <th style="width: 10%;" id="etime">
+                                                                      性別</th>
+                                                                      <td>國籍</td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <th style="width: 10%;" id="etime">
+                                                                      生日</th>
+                                                                      <td>123456</td>
+                                                                  </tr>
+                                                                  
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                    </form>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="carousel-item" data-slide-number="1">
+                                                <h2>全票1</h2>
+                                                              <div class="col">
+                                                                <div class="gallery-text">
+
+                                                                  <h4>
+                                                                    <strong><br>
+                                                                      姓名:王曉明
+                                                                    </strong>
+
+                                                                  </h4>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                  <form id="contact"
+                                                                      class="get_form bg-light ">
+                                                                      <h2 id="contact" class=" section-title mb-3 text-center text-primary ">
+                                                                         </h2>
+                                                                      <div
+                                                                          class="table-responsive ">
+                                                                          <table
+                                                                              class="table text-center text-black">
+                                                                              <thead>
+                                                                                <tr>
+                                                                                  <th style="width: 20%;" id="shipID0">
+                                                                                    姓名</th>
+                                                                                    <td>王曉明</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                  <th style="width: 10%;" id="shipID0">
+                                                                                    電話</th>
+                                                                                    <td>09123456789</td>
+                                                                                </tr>
+                                                                              
+                                                                                <tr>
+                                                                                  <th style="width: 20%;" id="btime">
+                                                                                    身分證</th>
+                                                                                    <td>A12345678</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                  <th style="width: 10%;" id="etime">
+                                                                                    Email</th>
+                                                                                    <td>A123456789</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                  <th style="width: 20%;" id="qty">
+                                                                                    國籍</th>
+                                                                                    <td>國籍</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                  <th style="width: 10%;" id="etime">
+                                                                                    性別</th>
+                                                                                    <td>國籍</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                  <th style="width: 10%;" id="etime">
+                                                                                    生日</th>
+                                                                                    <td>123456</td>
+                                                                                </tr>
+                                                                                
+                                                                              </thead>
+                                                                          </table>
+                                                                      </div>
+                                                                  </form>
+                                                              </div>
+                                                              </div>
+                                              </div>
+                                              <div class="carousel-item" data-slide-number="2">
+                                                <h2>全票2</h2>
+                                                <div class="col">
+                                                  <div class="gallery-text">
+                                                    <h2>旅客姓名:王曉明
+                                                      <strong>
+                                                      </strong>
+                                                    </h2>
+                                                    <div class="table-responsive">
+                                                      <form id="contact"
+                                                          class="get_form bg-light ">
+                                                          <h2 id="contact" class=" section-title mb-3 text-center text-primary ">
+                                                              姓名:王曉明</h2>
+                                                          <div
+                                                              class="table-responsive ">
+                                                              <table
+                                                                  class="table text-center text-black">
+                                                                  <thead>
+                                                                    <tr>
+                                                                      <th style="width: 20%;" id="shipID0">
+                                                                        姓名</th>
+                                                                        <td>王曉明</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style="width: 10%;" id="shipID0">
+                                                                        電話</th>
+                                                                        <td>09123456789</td>
+                                                                    </tr>
+                                                                  
+                                                                    <tr>
+                                                                      <th style="width: 20%;" id="btime">
+                                                                        身分證</th>
+                                                                        <td>A12345678</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style="width: 10%;" id="etime">
+                                                                        Email</th>
+                                                                        <td>A123456789</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style="width: 20%;" id="qty">
+                                                                        國籍</th>
+                                                                        <td>國籍</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style="width: 10%;" id="etime">
+                                                                        性別</th>
+                                                                        <td>國籍</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style="width: 10%;" id="etime">
+                                                                        生日</th>
+                                                                        <td>123456</td>
+                                                                    </tr>
+                                                                    
+                                                                  </thead>
+                                                              </table>
+                                                          </div>
+                                                      </form>
+                                                    </div>
+                                                    
+                                                  </div>
+                                                </div>
+                                              </div> 
+                                            </div>
+                    
+                                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                              <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                              <span class="sr-only">Next</span>
+                                            </a>
+                                          </div> 
+
+                                    </div>
+                                  
+
+                                </div>
+
+                              </div>
+
+                            </div> <!-- 圖片輪播A -->
+                        </div>
+
+                        
+                    </div>
+                </form>
+                <!--送出按鈕 -->
+                <div class="col-lg-12 ">
+                    <a class="main_button" href="./ticketsPage.html#articleB">
+                         
+                         <i class="fa-solid fa-house fa-2xl" ></i>
+                         <h4>返回訂票頁面</h4>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+            
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="modalfooter_btn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer id="footer" class="pt-5 bg-secondary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5>團體票聯絡資訊</h5>
+          <a href="mailto:service@brand.com">service@brand.com</a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5 class="text-uppercase">公司聯絡資訊</h5>
+
+          <ul>
+            <li>
+              <a href="#">電話</a>
+            </li>
+            <li>
+              <a href="#">傳真</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 footer-list">
+          <h5 class="text-uppercase">其他資訊</h5>
+          <ul>
+            <li>
+              <a href="#">Help Center</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-end bg-dark mt-5 py-2 justify-content-center">
+      <p class="text-center">&copy; Copy right 2020</p>
+    </div>
+
+  </footer>
+  <!-- footer end -->
+
+
+
+  <!-- 引用 https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js-->
+  <script> src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"</script>
+  <!-- <script> src = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"</script> -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- jquery.min.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <!-- popper.min.js -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@5.3.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script> -->
+  <!-- bootstrap.min.js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <!-- 連結網頁主程式 -->
+  <script src="/tickets/js/order_old.js"></script>
+
+
+
+</body>
+
+
+</html>

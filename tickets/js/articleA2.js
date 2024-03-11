@@ -11,6 +11,7 @@ $(document).ready(function () {
         $("#Tprice").toggle("fold", 500);
     });
 
+    
     // 注意事項-按鈕 open/close
     $("#Tattention").hide();
 

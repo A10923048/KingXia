@@ -24,13 +24,6 @@ button:focus {
     box-shadow: 0 3px 18px rgba(0, 0, 0, .11);
 }
 
-/* 添加顶部空间 */
-.navbar+#header {
-    /* margin-top: 60px;
-    /* 在NAVBAR上方创建额外的顶部空间 */
-} */
-
-
 .nav-pills .nav-link {
     font-size: 30px;
     /* 設定文字大小為16像素，您可以根據需要進行調整 */
@@ -268,42 +261,7 @@ button:focus {
   .loader span:nth-child(10) {
     -webkit-animation-delay: 0.9s;
   }
-  .loader span:nth-child(11) {
-    -webkit-animation-delay: 1s;
-  }
-  .loader span:nth-child(12) {
-    -webkit-animation-delay: 1.1s;
-  }
-  .loader span:nth-child(13) {
-    -webkit-animation-delay: 1.2s;
-  }
-  .loader span:nth-child(14) {
-    -webkit-animation-delay: 1.3s;
-  }
-  .loader span:nth-child(15) {
-    -webkit-animation-delay: 1.4s;
-  }
-  .loader span:nth-child(16) {
-    -webkit-animation-delay: 1.5s;
-  }
-  .loader span:nth-child(17) {
-    -webkit-animation-delay: 1.6s;
-  }
-  .loader span:nth-child(18) {
-    -webkit-animation-delay: 1.7s;
-  }
-  .loader span:nth-child(19) {
-    -webkit-animation-delay: 1.8s;
-  }
-  .loader span:nth-child(20) {
-    -webkit-animation-delay: 1.9s;
-  }
-  .loader span:nth-child(21) {
-    -webkit-animation-delay: 2s;
-  }
-  .loader span:nth-child(22) {
-    -webkit-animation-delay: 2.1s;
-  }
+ 
   
 
 /* NEW NAVEND */
@@ -338,7 +296,7 @@ form>.container {
     z-index: 2;
     margin-top: 40%px;
     margin-bottom: 20%px;
-    padding: 100; */
+    padding: 100; 
 }
 
 form>.container>.button{
@@ -354,7 +312,7 @@ form>.container>.button{
     justify-content: space-between;
 } */
 
-#container, {
+#container {
     display: block;
     justify-content: space-between;
 }
@@ -397,87 +355,6 @@ form>.container>.button{
     text-align: center;
     justify-content: space-between;
 }
-
-
-/* 表單內容物格式 */
-/* 設定 */
-
-
-
-/*=============================================
-=                  introSection                  =
-=============================================*/
-#content1 {
-    border-radius: 0px;
-    /* margin-left:50px ; */
-    /* margin-right:50px ; */
-    margin-bottom: 10px;
-    /* padding-top: 100px; 
-    padding-bottom:100px; */
-    width: 100%;
-    height: 100%;
-    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('/tickets/img/wood-591631_1280.jpg');
-    background-size: cover;
-    /* 固定背景 */
-    background-attachment: fixed;
-    background-position: center center;
-    /* filter: brightness(0.5); */
-    position: relative;
-}
-
-
-
-
-
-
-
-/*=============================================
-=                  Header1                     =
-=============================================*/
-
-
-/* 加入背景圖片 */
-#header1 {
-    border-radius: 0px;
-    margin-bottom: 0;
-    padding: 200px 0;
-    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('/tickets/img/wood-591631_1280.jpg');
-    background-size: cover;
-    /* 固定背景 */
-    background-attachment: fixed;
-    background-position: center center;
-    /* filter: brightness(0.5); */
-    position: relative;
-}
-
-#header1>.container {
-    position: relative;
-    z-index: 2;
-}
-
-/* #header1:after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0);
-    opacity: .4;
-    display: block;
-    /* 定位到上層元素#header的左上角 */
-/* position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    transition: all .5s ease;
-} */
-
-/* #header1:hover:after {
-    opacity: .6;
-} */
-
-
-
 
 
 /*=============================================
@@ -575,9 +452,7 @@ form>.container>.button{
     position: relative;
     z-index: 2;
 }
-#header>div{
 
-}
 
 /* 動畫 */
 
@@ -606,87 +481,6 @@ form>.container>.button{
 
 
 
-
-
-
-
-/* #header::before,::after {
-    content: "";
-    position:absolute;
-    transform: rotate(-35deg);
-    width: 70px;
-    height: 25px;
-    background: rgb(57, 6, 167);
-    opacity: .4;
-    display: block;
-} */
-
-/* #header:hover:after {
-    opacity: .6;
-} */
-
-
-/* tab */
-/* .main-tab {
-    position: relative;
-}
-.main-tab ul.tabs {
-    border-bottom: 1px solid #ccc;
-    margin: 16px 0;
-}
-
-.main-tab ul.tabs li {
-    font-size: 1.125em;
-    min-width: 125px;
-    text-align: center;
-    float: left;
-}
-
-.main-tab ul.tabs a {
-    display: block;
-    padding: 8px 16px;
-    background: #4e9de1;
-    border-top: 4px solid #0fcce5;
-    border-bottom: 1px solid #47d5c0;
-    margin-right: 1px;
-    cursor: pointer;
-	color: #2222d4!important;
-}
-
-.main-tab ul.tabs .active a,
-.main-tab ul.tabs a:hover {
-    border-top: 4px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    background: #fff;
-    position: relative;
-    bottom: -1px;
-}
-
-.main-tab-box {
-    padding: 8px; */
-}
-
-/* .tabs-right {
-    text-align: right;
-    top: 0;
-    right: 0;
-    position: absolute;
-} */
-/* .btn-tabs  li {
-    display: inline-block;
-    margin-right: 5px;
-    text-align: center;
-    border-radius: 5px;
-} */
-/* .btn-tabs  li a{ 
-    display: block;  */
-
-/* tab end */
-
-/* NEW */
-
-/* NEW END */
 
 /*=============================================
 =                  Intro                      =
@@ -899,222 +693,6 @@ intro-box-card:hover {
   }
 
 /*=============================================
-=                tab4 content                =
-=============================================*/
-.indicators-container {
-  text-align: center; /* 將指示器置中 */
-  margin-bottom: 10px; /* 可選：增加上邊距 */
-}   
-.carousel-indicators li {
-  width: 100px; /* 調整寬度 */
-  height: 100px; /* 調整高度 */
-  margin: 0 3px; /* 調整間距 */
-  border: 2px solid #fff; /* 可選：增加邊框 */
-  border-radius: 5%; /* 使圖片呈現圓形 */
-}
-
-.carousel-indicators img {
-  width: 100%; /* 圖片填滿 li 元素 */
-  height: 100%; /* 圖片填滿 li 元素 */
-  border-radius: 50%; /* 使圖片呈現圓形 */
-}
-
-
-
-/*=============================================
-=                  Reviews                    =
-=============================================*/
-/* 加入背景圖片 */
-#content3 {
-    border-radius: 0px;
-    margin-bottom: 0px;
-    padding: 100px 0;
-    background-image: url("/tickets/img/wood-591631_1280.jpg");
-    background-size: cover;
-    /* 固定背景 */
-    background-attachment: fixed;
-    background-position: center center;
-    /* filter: brightness(1);  */
-    position: relative;
-}
-
-/*=============================================
-=                  Reviews 2                   =
-=============================================*/
-/* 加入背景圖片 */
-#reviewsSection2 {
-    border-radius: 0px;
-    margin-bottom: 0px;
-    padding: 300px 0;
-    background-image: url("/tickets/img/wood-591631_1280.jpg");
-    background-size: cover;
-    /* 固定背景 */
-    background-attachment: fixed;
-    background-position: center center;
-    /* filter: brightness(1);  */
-    position: relative;
-}
-
-.container1 {
-    width: 100%;
-    /* 設定圖片寬度為100% */
-    height: auto;
-    /* 讓高度自動調整，以保持圖片比例 */
-}
-
-.carousel-inner .carousel-item img {
-    width: 200px;
-    /* 設定圖片寬度為100% */
-    height: auto;
-    /* 讓高度自動調整，以保持圖片比例 */
-}
-
-/* 調整圖片輪播的最大寬度，以防止溢出 */
-#imageCarouselA,
-#imageCarouselB {
-    max-width: 50%;
-    /* 使圖片輪播寬度不超過其容器 */
-}
-
-/* 調整輪播內部圖片的大小 */
-#imageCarouselA .carousel-inner img,
-#imageCarouselB .carousel-inner img {
-    max-width: 80%;
-    /* 使圖片寬度不超過其容器 */
-    height: auto;
-    /* 讓高度自動調整，以保持圖片比例 */
-}
-
-.imageCarouselA {
-    background-size: cover;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    filter: grayscale(100%);
-    transition: all .5s ease;
-}
-
-
-/*=============================================
-=                  Intro                      =
-=============================================*/
-
-
-/*=============================================
-=                  Gallery                    =
-=============================================*/
-
-/* TODO: 設定Hover特效 */
-
-[id^='galleryImage'] {
-    background-size: cover;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    filter: grayscale(100%);
-    transition: all .5s ease;
-}
-
-[id^='galleryImage']>.gallery-text {
-    color: white;
-    font-weight: 700;
-    text-shadow: 0 8px 10px rgba(0, 0, 0, .5);
-    text-align: center;
-    transition: all .5s ease;
-}
-
-[id^='galleryImage']:hover {
-    filter: grayscale(0%);
-}
-
-[id^='galleryImage']:hover>.gallery-text {}
-
-/* 放入背景圖片 */
-
-#galleryImage1 {
-  background-image: url('/tickets/img/小三通/金門水頭碼頭\(發船\).jpg');
-}
-
-#galleryImage2 {
-  background-image: url('/tickets/img/小三通/復興嶼.jpg');
-}
-
-#galleryImage3 {
-  background-image: url('/tickets/img/小三通/猛虎嶼.jpg');
-}
-
-#galleryImage4 {
-  background-image: url('/tickets/img/小三通/大膽島.jpg');
-}
-
-#galleryImage5 {
-  background-image: url('/tickets/img/小三通/大膽島.jpg');
-}
-
-#galleryImage6 {
-  background-image: url('/tickets/img/新增資料夾/賞廈門黃金海岸.jpg');
-}
-
-#galleryImage7 {
-  background-image: url('/tickets/img/小三通/金門大橋.jpg');
-}
-
-#galleryImage8 {
-  background-image: url('/tickets/img/小三通/返回金門水頭碼頭.jpg');
-}
-
-/* 放入背景圖片 */
-
-#galleryImage9 {
-  background-image: url('/tickets/img/小三通/金門水頭碼頭\(發船\).jpg');
-}
-
-#galleryImage10 {
-  background-image: url('/tickets/img/小三通/復興嶼.jpg');
-}
-
-#galleryImage11 {
-  background-image: url('/tickets/img/小三通/猛虎嶼.jpg');
-}
-
-#galleryImage12 {
-  background-image: url('/tickets/img/小三通/大膽島.jpg');
-}
-
-#galleryImage13 {
-  background-image: url('/tickets/img/小三通/大膽島.jpg');
-}
-
-#galleryImage14 {
-  background-image: url('/tickets/img/新增資料夾/賞廈門黃金海岸.jpg');
-}
-
-#galleryImage15 {
-  background-image: url('/tickets/img/小三通/金門大橋.jpg');
-}
-
-#galleryImage16 {
-  background-image: url('/tickets/img/小三通/返回金門水頭碼頭.jpg');
-}
-.custom-prev {
-    position: absolute;
-    top: 50%;
-    /* 以父元素上边缘为基准垂直居中 */
-    left: 10px;
-    /* 距离左侧 10px */
-    transform: translateY(-50%);
-    /* 使元素垂直居中 */
-}
-
-
-
-/*=============================================
-=                  Start Now                  =
-=============================================*/
-
-/*=============================================
 =                   Footer                    =
 =============================================*/
 
@@ -1194,12 +772,260 @@ footer ul {
     margin-bottom: 0;
 }
 
+/*=============================================
+=                   輪播modal                =
+=============================================*/
+
+/* 調整小圖片的樣式 */
+.small-image {
+  cursor: pointer; /* 將光標設定為手型，表示可點擊 */
+  max-width: 100%;
+}
+
+/* 調整大圖片的樣式 */
+.large-image {
+  max-width: 100%;
+  height: auto; /* 維持原始寬高比例 */
+}
+
+/* 調整模態框大小 */
+.modal-lg {
+  max-width: 80%; /* 可根據需要調整模態框的大小 */
+}
+
+/*=============================================
+=                   form
+                 =
+=============================================*/
+
+/* @import "compass/css3";
+ *, *:before, *:after {
+	 box-sizing: border-box;
+}
+ html {
+	 overflow-y: scroll;
+}
+ body {
+	 background: #c1bdba;
+	 font-family: 'Titillium Web', sans-serif;
+} */
+
+a {
+  text-decoration: none;
+  color: #1ab188;
+  transition: 0.5s ease;
+}
+a:hover {
+  color: #179b77;
+}
+.form {
+  /* background: rgb(168, 183, 219); */
+  /* background: rgb(255, 255, 255); */
+  /* padding: 40px; */
+  max-width: 1000px;
+  margin: 50px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, .3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+    
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* .tab {
+   flex: 1;
+   text-align: center;
+} */
+
+.tab-group li a {
+  /* display: block; */
+    display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  /* background: rgba(160, 179, 176, .25); */
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 20%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.tab-group li a:hover {
+  background: #179b77;
+  color: #fff;
+}
+.tab-group .active a {
+  
+  background-color: #ff695f;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 23px;
+  letter-spacing: 0.25px;
+  border: none;
+  outline: none;
+  transition: all .3s;
+}
+.tab-content > div:last-child {
+  display: none;
+}
+h1 {
+  text-align: center;
+  color: #feffff;
+  font-weight: 550;
+  font-size: 2rem;
+  margin: 0 0 30px;
+}
+label {
+  position: absolute;
+  transform: translateY(6px);
+  left: 13px;
+  color: rgba(254, 255, 255, 0.909);
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+label.active {
+  transform: translateY(-20px);
+  left: 2px;
+  font-size: 14px;
+  color: rgb(42, 91, 165);
+}
+label.active_R{
+ transform: translateY(-20px)translateX(100px);
+  left: 2px;
+  font-size: 14px;
+  color: rgb(42, 91, 165);
+
+}
+
+input[type="checkbox"]{
+ transform: translateY(0px)translateX(10px);
+  left: 2px;
+  font-size: 14px;
+  color: rgb(5, 12, 22);
+
+}
+
+label.active_gun{
+ transform: translateY(-5px)translateX(130px);
+  left: 2px;
+  font-size: 14px;
+  color: rgb(237, 187, 24);
+
+}
+
+label.active_gun active { 
+ transform: translateY(-20px)translateX(20px);
+  left: 2px;
+  font-size: 14px;
+  color: rgb(98, 237, 24);
+
+}
+
+label.active_gun active highlight { 
+ transform: translateY(-20px)translateX(20px);
+  left: 2px;
+  font-size: 14px;
+  color: rgb(237, 141, 24);
+
+}
+
+label.active .req {
+  opacity: 0;
+}
+label.highlight {
+  color: #0084ff;
+}
+input, textarea ,select {
+  font-size: 22px;
+  /* display: block; */
+  width: 50%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #978b2d;
+  border-radius: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+input:focus, textarea:focus ,select:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 5px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #1ab188;
+  color: #fff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #179b77;
+}
+.button-block {
+  display: block;
+  width: 50%;
+  margin: 0 5rem;
+}
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+
+
+
 /* 
 ---------------------------------------------
 contact(new)
 --------------------------------------------- 
 */
-form#contact {
+form {
   margin-left: 0px;
   position: relative;
   z-index: 2;
@@ -1239,50 +1065,230 @@ form#contact input::placeholder {
 }
 
 form#contact button {
-  display: inline-block;
-  background-color: #ff695f;
-  font-size: 15px;
-  font-weight: 400;
-  color: #fff;
-  text-transform: capitalize;
-  padding: 12px 25px;
-  border-radius: 23px;
-  letter-spacing: 0.25px;
-  border: none;
+  border: 0;
   outline: none;
-  transition: all .3s;
+  border-radius: 0;
+  padding: 5px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #1ab188;
+  color: #fff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
 }
 
 form#contact button:hover {
-  background-color: #03a4ed;
+  color: #1ab188;;
+  background-color: #fdfeff;
+}
+
+---------------------------------------------
+Carousel
+--------------------------------------------- 
+/****************************carousel************************************** */
+h1{
+  color: lightseagreen;
+  text-align: center;
+}
+
+.slideshow {
+    position: relative;
+    overflow: hidden;
+}
+input[name="slideshow"] {
+    display: none;
+}
+
+/* :::::: slideContents :::::: */
+.slideContents {
+    position: relative;
+    background: lightSeaGreen;
+    text-align: center;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: transform .6s;
+}
+.slideContents section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.slideContents section #settings  {
+  background: #fff;
+    max-width: 90%;
+    /* padding: 0 50px; */
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.slideContents section img {
+      max-width: 100%;
+      padding: 0 50px;
+      box-sizing: border-box;
+      vertical-align: middle;
+  }
+
+/* :::::: arrows :::::: */
+.arrow,
+.arrow label,
+.arrow .ico {
+    position: absolute;
+}
+.arrow {
+    top: 0;
+    margin: 0;
+    transition: background .3s;
+}
+.prev {
+    left: 0;
+}
+.next {
+    right: 0;
+}
+.arrow:hover {
+    background: rgba(255,255,255,.2);
+}
+.arrow,
+.arrow label {
+    cursor: pointer;
+    width: 50px;
+    height: 100%;
+}
+.arrow label {
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.arrow .ico {
+    top: calc(50% - 6px);
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #fff;
+    opacity: 0;
+}
+.prev .ico {
+    left: 50%;
+    border-left: 3px solid #fff;
+    transform: rotate(-45deg);
+    transition: left .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+}
+.next .ico {
+    right: 50%;
+    border-right: 3px solid #fff;
+    transform: rotate(45deg);
+    transition: right .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+}
+.arrow:hover .ico {
+    opacity: .6;
+}
+.prev:hover .ico {
+    left: calc(50% - 6px);
+}
+.next:hover .ico {
+    right: calc(50% - 6px);
+}
+
+/* :::::: contents :::::: */
+.slideContents section {
+    opacity: 0;
+}
+.slideContents section .contents {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.slideContents section h1,
+.slideContents section p {
+    margin: 0;
+    color: lightseagreen;
+    opacity: 0;
+}
+.slideContents section h1 {
+    font-size: 16px;
+}
+.slideContents section p {
+    margin-top: .5em;
+    font-size: 12px;
+}
+
+/* :::::: mechanism :::::: */
+#switch1:checked ~ .slideContents #slide1,
+#switch2:checked ~ .slideContents #slide2,
+#switch3:checked ~ .slideContents #slide3 {
+    position: relative;
+    opacity: 1;
+    transform: none;
+}
+#switch1:checked ~ .slideContents #slide3,
+#switch2:checked ~ .slideContents #slide1,
+#switch3:checked ~ .slideContents #slide2 {
+    transform: translateX(-100%);
+}
+#switch1:checked ~ .slideContents #slide1 h1,
+#switch1:checked ~ .slideContents #slide1 p,
+#switch2:checked ~ .slideContents #slide2 h1,
+#switch2:checked ~ .slideContents #slide2 p,
+#switch3:checked ~ .slideContents #slide3 h1,
+#switch3:checked ~ .slideContents #slide3 p {
+    opacity: 1;
 }
 
 
-
-/*=============================================
-=                   icon重疊                 =
-=============================================*/
-
-
-
-/*=============================================
-=                   輪播modal                =
-=============================================*/
-
-/* 調整小圖片的樣式 */
-.small-image {
-  cursor: pointer; /* 將光標設定為手型，表示可點擊 */
-  max-width: 100%;
+/* 要素を立体的に */
+.slideContents {
+    perspective: 1000px;
+}
+.slideContents section,
+.slideContents h1,
+.slideContents p {
+    transition: opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.slideContents section {
+    transform: translateX(500px) rotateY(-90deg);
+    transition-duration: .8s, 1.2s;
+}
+#switch1:checked ~ .slideContents #slide1 h1,
+#switch2:checked ~ .slideContents #slide2 h1,
+#switch3:checked ~ .slideContents #slide3 h1 {
+    transition-delay: .6s, 0s;
+}
+#switch1:checked ~ .slideContents #slide1 p,
+#switch2:checked ~ .slideContents #slide2 p,
+#switch3:checked ~ .slideContents #slide3 p {
+    transition-delay: .4s, 0s;
+}
+#switch1:checked ~ .slideContents #slide1,
+#switch2:checked ~ .slideContents #slide2,
+#switch3:checked ~ .slideContents #slide3 {
+    transform: translateX(0) rotateY(0deg);
+    transition-delay: .2s, 0s;
+}
+#switch1:checked ~ .slideContents #slide3,
+#switch2:checked ~ .slideContents #slide1,
+#switch3:checked ~ .slideContents #slide2 {
+    transform: translateX(-500px) rotateY(90deg);
 }
 
-/* 調整大圖片的樣式 */
-.large-image {
-  max-width: 100%;
-  height: auto; /* 維持原始寬高比例 */
+/* :::::: arrow mechanism :::::: */
+.arrow label {
+    pointer-events: none;
 }
-
-/* 調整模態框大小 */
-.modal-lg {
-  max-width: 80%; /* 可根據需要調整模態框的大小 */
+#switch1:checked ~ .prev label[for="switch3"],
+#switch2:checked ~ .prev label[for="switch1"],
+#switch3:checked ~ .prev label[for="switch2"],
+#switch1:checked ~ .next label[for="switch2"],
+#switch2:checked ~ .next label[for="switch3"],
+#switch3:checked ~ .next label[for="switch1"] {
+    pointer-events: auto;
 }
 

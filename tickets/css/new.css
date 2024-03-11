@@ -1273,7 +1273,11 @@ body {
 .datepicker .ui-datepicker-inline {
   width: 23rem;
   padding: 30px;
-  /* margin-left: 5%; */
+  margin-left: 5%;
+}
+
+.ui-datepicker-month ,.ui-datepicker-year {
+  color: red;
 }
 .datepicker .ui-datepicker-header {
   text-align: center;
@@ -1478,6 +1482,103 @@ body {
   background-position: center center;
   background-size: 100%;
 }
+
+/* 在屏幕寬度小於 700 像素時應用的樣式 */
+@media screen and (max-width: 960px) {
+  .note .note-header {
+    height: 25rem;
+    background-image: url('../img/小三通/初日號-卡通圖.png');
+    background-position: center center;
+    background-size: 100%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .note .note-header {
+    height: 15rem;
+    background-image: url('../img/小三通/初日號-卡通圖.png');
+    background-position: center center;
+    background-size: 100%;
+  }
+  .col-md-12,.col-md-12{
+    padding: 0%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .note .note-header {
+    height: 12rem;
+    background-image: url('../img/小三通/初日號-卡通圖.png');
+    background-position: center center;
+    background-size: 100%;
+  }
+  .col-md-12,.col-md-12{
+    padding: 0%;
+  }
+}
+@media screen and (max-width: 325px) {
+  .note .note-header {
+    height: 10rem;
+    background-image: url('../img/小三通/初日號-卡通圖.png');
+    background-position: center center;
+    background-size: 100%;
+  }
+  .col-md-12,.col-md-12{
+    padding: 0%;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .note .note-header {
+    height: 10rem;
+    background-image: url('../img/小三通/初日號-卡通圖.png');
+    background-position: center center;
+    background-size: 100%;
+  }
+  .col-md-12,.col-md-12{
+    padding: 0%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .note .note-header {
+    display: none;
+  }
+  .col-md-12,.col-md-12{
+    padding: 0%;
+  }
+  h4, .h4 {
+    font-size: 1rem;
+}
+
+  ul {
+    FONT-SIZE: 0.8rem;
+}
+}
+
+
+/* 小於 768px 的螢幕 */
+@media screen and (max-width: 767px) {
+  #articleD_table_s {
+      display: block;
+  }
+  #articleD_table_xl {
+      display: none;
+  }
+}
+
+/* 大於等於 768px 的螢幕 */
+@media screen and (min-width: 768px) {
+  #articleD_table_s {
+      display: none;
+  }
+  #articleD_table_xl {
+      display: block;
+  }
+}
+
+
+
+
+
 
 /*=============================================
 =               tooltip-container           =
