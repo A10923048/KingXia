@@ -80,7 +80,8 @@ Fonts - Google Fonts
                     opacity = 1 - now;
                     current_fs.css({
                 'transform': 'scale('+scale+')',
-                'position': 'absolute'
+                // 破解"previous"按鈕 沒有恢復到原本位置的原因
+                // 'position': 'absolute'
             });
                     next_fs.css({'left': left, 'opacity': opacity});
                 }, 

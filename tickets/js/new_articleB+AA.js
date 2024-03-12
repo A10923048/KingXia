@@ -316,7 +316,7 @@ let send_url="https://tickets.kingxia.com.tw";
         "</svg>" +
 
 
-        "<a class='article-button' href='./order.html?shipid=" + key + "&btime=" + value.btime + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "&'>" +
+        "<a class='article-button' href='./tP_order.html?shipid=" + key + "&btime=" + value.btime + "&ticket=" + $("#ticketQuantity-result").text().split("：")[1] + "&time=" + $("#searchingdate-result").text().split("：")[1] + "&'>" +
 
         " <i class='fa-solid fa-ticket fa-3x' aria-hidden='true'></i>" +
         " <span class='sr-only'>訂票</span>" +

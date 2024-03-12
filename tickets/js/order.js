@@ -38,7 +38,7 @@ let articleBtn = function (tabId) {
 }
 //  ↑↑ ↑↑ 置於$(document).ready(function () 之外的程式碼 ENd    ↑↑ ↑↑       //
 
-
+// 資料處理
 $(document).ready(function () {
 
 
