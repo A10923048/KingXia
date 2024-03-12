@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     max-width: 100%;
     overflow-x: hidden;
@@ -28,14 +30,6 @@ button:focus {
     font-size: 30px;
     /* 設定文字大小為16像素，您可以根據需要進行調整 */
 }
-
-/* #header1:hover:after {
-    opacity: .6;
-} */
-
-
-
-/* NEW NAV */
 
 
   
@@ -279,7 +273,7 @@ button:focus {
 =                 FORM                =
 =============================================*/
 
-form {
+/* form {
     border-radius: 0px;
     /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
     /* background-image: url('/tickets/img/wood-591631_1280.jpg'); */
@@ -289,15 +283,15 @@ form {
     background-position: center center;
     /* filter: brightness(0.5); */
     position: relative;
-}
+} */
 
-form>.container {
+/* form>.container {
     position: relative;
     z-index: 2;
     margin-top: 40%px;
     margin-bottom: 20%px;
     padding: 100; 
-}
+} */
 
 form>.container>.button{
     margin-top: 40%px;
@@ -355,75 +349,6 @@ form>.container>.button{
     text-align: center;
     justify-content: space-between;
 }
-
-
-/*=============================================
-=                  Header2                    =
-=============================================*/
-/* 加入背景圖片 */
-#header2 {
-    border-radius: 0px;
-    margin-bottom: 0px;
-    padding: 100px 0;
-    /* background-image: <link rel=""herf="C:\Users\zaqzaq134\Desktop\第八講 Bootstrap Landing Page 排版\img\首頁.jpg"; */
-    background-image: url('/tickets/img/ocean.jpg');
-    background-size: cover;
-    /* 固定背景 */
-    background-attachment: fixed;
-    background-position: center center;
-    /* filter: brightness(0.5); */
-    position: relative;
-    /* opacity: 1; */
-}
-
-#header2>.container {
-    position: relative;
-    z-index: 2;
-}
-
-/* 裁切邊角設定 */
-#header2::before,
-#header2::after {
-    content: "";
-    position: absolute;
-    transform: rotate(-45deg);
-    width: 200px;
-    height: 70px;
-    background: rgba(242, 241, 245, 0.708);
-    /* opacity: .4; */
-    /* display: block; */
-}
-
-#header2::before {
-
-    top: -20px;
-
-    left: -100px;
-
-    border-bottom: 1px solid #aaa;
-    /**/
-
-}
-
-
-#header2::after {
-
-    bottom: -20px;
-
-    right: -110px;
-
-    border-top: 1px solid #aaa;
-
-
-}
-
-/* 裁切邊角設定 */
-
-
-/* #header:hover:after {
-    opacity: .6;
-} */
-
 
 
 /*=============================================
@@ -659,73 +584,6 @@ intro-box-card:hover {
 .bd-aside .btn[aria-expanded="true"]::before {
   transform: rotate(90deg)/* rtl:ignore */;
 }
-/*=============================================
-=                  articleB                 =
-=============================================*/
-
-
-.close-btn {
-  cursor: pointer;
-  float: right;
-  font-size: 0px;
-  font-weight: bold;
-  margin-right: 10px;
-}
-/*=============================================
-=                  articleAA                 =
-=============================================*/
-
-#closeButton {
-  position: absolute;
-  top: 600px; /* 距離上邊緣的距離，可以根據需要調整 */
-  right: 50px; /* 距離右邊緣的距離，可以根據需要調整 */
-}
-
-
-
-  .calendar {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .calendar-header {
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .month-year {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-
-  .days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-  }
-
-  .day {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    cursor: pointer;
-  }
-
-  .day:hover {
-    background-color: #e0e0e0;
-  }
 
 /*=============================================
 =                   Footer                    =
@@ -742,108 +600,173 @@ footer ul {
     margin: 0;
 }
 
-#goBackBtn {
-    width: 40px;
-    height: 40px;
-    border: none;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 1000;
-    border-radius: 50%;
-}
-
 /*=============================================
-=                   AD-BOX                    =
+=                  Glass cover                =
+=============================================*/
+#featuresSection {
+    
+    background-color: #172659f9;
+    height: 100%;
+  }
+  
+   #featuresSection:before {         
+      background: -moz-linear-gradient(-100deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.1) 40%, rgba(10,14,10,0.09) 40%, rgba(255,255,255,0.2) 90%); /* FF3.6+ */
+      background: -webkit-linear-gradient(-40deg, rgba(255,255,255,0.09) 0%,rgba(255,255,255,0.1) 40%,rgba(10,14,10,0.09) 40%,rgba(255,255,255,0.2) 90%); /* Chrome10+,Safari5.1+ */            
+      background: -o-linear-gradient(-40deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.1) 40%, rgba(10,14,10,0.09) 40%, rgba(255,255,255,0.2) 90%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(-40deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.1) 40%, rgba(10,14,10,0.09) 40%, rgba(255,255,255,0.2) 90%); /* IE10+ */
+      background: linear-gradient(-220deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.1) 40%, rgba(10,14,10,0.09) 40%, rgba(255,255,255,0.2) 90%); /* W3C */
+  
+      border-radius: 6px 6px 6px 6px;
+      border-top: 3px solid rgba(255, 255, 255, 0.2);
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      content: " ";
+      height: 110%;
+      margin: -10% -80% 0% -55%;
+      position: absolute;
+      width: 110%;
+  
+  } 
+  
+   @media screen and (max-width: 800px) {
+  
+    #featuresSection:before {   
+        content: " ";
+        height: 120%;
+        margin: -20% 0% 0% -55%;
+        position: absolute;
+        width: 110%;
+    } 
+    .font-rwd h2 {
+        font-size: 30px;
+    }
+    
+    .font-rwd h3 {
+        font-size: 22px;
+    }
+  
+  
+    .main_button {
+        width: 120px;
+        display: inline-block;
+        background-color: #95e7f6;
+        /* font-size: 15px; */
+        /* font-weight: 400; */
+        color: #f33d3d;
+        text-transform: capitalize;
+        padding: 15px 15px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: none;
+        outline: none;
+        transition: all .3s;
+      }
+  
+    .main_button h3{
+        font-size: 18px;
+        font-weight: 200;
+      }
+  
+      .main_buttons:hover {
+        background-color: #03a4ed;
+      }
+  
+  }               
+  
+  /* 在屏幕寬度小於 700 像素時應用的樣式 */
+  /* @media screen and (max-width: 700px) {
+  
+    #inner  {
+  
+         width: 110%;
+        margin-left: 0px;
+        z-index: 2;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        
+        border-radius: 5px;
+        margin-bottom: 35px;
+        margin-top: 35px;
+    
+      }
+  
+    #featuresSection:before {   
+        content: " ";
+        height: 115%;
+        margin: -18% 0% -0% -55%;
+        position: absolute;
+        width: 110%;
+    } 
+    .font-rwd h2 {
+       
+        font-size: 30px; 
+    }
+    
+    .font-rwd h3 {
+        
+        font-size: 22px; 
+    }
+  
+    .main_button h3{
+        font-size: 18px;
+        font-weight: 100;
+      }
+  
+  }                */
+  
+  
+  /* 在屏幕寬度小於 700 像素時應用的樣式 */
+  @media screen and (max-width: 620px) {
+  
+    #inner  {
+  
+         width: 110%;
+        margin-left: 0px;
+        z-index: 2;
+        /* background-image: url(/tickets/img/contact-form-bg.png); */
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        
+        border-radius: 5px;
+        margin-bottom: 35px;
+        margin-top: 35px;
+    
+      }
+  
+    #featuresSection:before {   
+        content: " ";
+        height: 115%;
+        margin: -18% 0% -0% -55%;
+        position: absolute;
+        width: 110%;
+    } 
+    .font-rwd h2 {
+       
+        font-size: 30px; /* 你的字体大小值 */
+    }
+    
+    .font-rwd h3 {
+        
+        font-size: 22px; /* 你的字体大小值 */
+    }
+  
+    .main_button h3{
+        font-size: 18px;
+        font-weight: 100;
+      }
+  
+  } 
+  
+/*=============================================
+=                   form                   =
 =============================================*/
 
-.ad-box {
-    width: 300px;
-    position: fixed;
-    right: -275px;
-    bottom: 80px;
-    z-index: 100;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    display: flex;
-    box-shadow: 0px 20px 15px rgba(0, 0, 0, 0.2);
-    transition: all .3s ease;
-}
-
-/* 選到同時擁有.ad-box跟.active的元素 */
-.ad-box.active {
-    right: 0px;
-}
-
-.left-part {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-right: 1px solid #ddd;
-}
-
-.ad-toggle-btn {
-    width: 25px;
-    border: none;
-    background-color: transparent;
-    color: #333;
-    cursor: pointer;
-}
-
-.ad-toggle-btn>i {
-    transform: rotateZ(90deg);
-}
-
-.ad-toggle-btn:hover {
-    color: #666;
-}
-
-.right-part {
-    padding: 10px;
-}
-
-.right-part>p {
-    margin-bottom: 0;
-}
-
-/*=============================================
-=                   輪播modal                =
-=============================================*/
-
-/* 調整小圖片的樣式 */
-.small-image {
-  cursor: pointer; /* 將光標設定為手型，表示可點擊 */
-  max-width: 100%;
-}
-
-/* 調整大圖片的樣式 */
-.large-image {
-  max-width: 100%;
-  height: auto; /* 維持原始寬高比例 */
-}
-
-/* 調整模態框大小 */
-.modal-lg {
-  max-width: 80%; /* 可根據需要調整模態框的大小 */
-}
-
-/*=============================================
-=                   form
-                 =
-=============================================*/
-
-/* @import "compass/css3";
- *, *:before, *:after {
-	 box-sizing: border-box;
-}
- html {
-	 overflow-y: scroll;
-}
- body {
-	 background: #c1bdba;
-	 font-family: 'Titillium Web', sans-serif;
-} */
 
 a {
   text-decoration: none;
@@ -1060,7 +983,7 @@ textarea {
 contact(new)
 --------------------------------------------- 
 */
-form {
+/* form {
   margin-left: 0px;
   position: relative;
   z-index: 2;
@@ -1073,7 +996,7 @@ form {
   border-radius: 50px;
   margin-bottom: 35px;
   margin-top: 35px;
-}
+} */
 
 form#contact input {
   width: 100%;
@@ -1215,12 +1138,12 @@ body {
 }
 /*form styles*/
 #msform {
-	width: 400px;
+	/* width: 1200px; */
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
 }
-#msform fieldset {
+.fieldset {
 	background: white;
 	border: 0 none;
 	border-radius: 3px;
@@ -1331,4 +1254,80 @@ body {
 
 
 
+/*=============================================
+=                   contact(new)                   =
+=============================================*/
 
+form#contact {
+    margin-left: 0px;
+    position: relative;
+    z-index: 2;
+    /* background-image: url(/tickets/img/contact-form-bg.png); */
+    background-color: rgb(194, 201, 240);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    margin-top: 35px;
+  
+    border-top:    2px solid #100f0f;
+    border-bottom: 1px solid #999;
+  }
+  
+  
+  form#contact input {
+    width: 100%;
+    height: 46px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid #9bdbf8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: #2a2a2a;
+    padding-top: 50px;
+    padding: 0px 0px;
+    margin-bottom: 35px;
+  }
+  
+  
+  
+  
+  form#contact button {
+      display: inline-block;
+      background-color:#20bb94;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      text-transform: capitalize;
+      padding: 12px 25px;
+      border-radius: 23px;
+      letter-spacing: 0.25px;
+      border: none;
+      outline: none;
+      transition: all .3s;
+    }
+    
+    form#contact button:hover {
+      background-color: rgb(248, 41, 41);
+    }
+    
+  
+    table th, .table td {
+      font-size: 25px;
+  }
+  
+  .table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: none;
+}
+.table thead th {
+    border-bottom: none;
+}

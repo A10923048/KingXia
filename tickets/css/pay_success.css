@@ -705,8 +705,6 @@ footer ul {
 =============================================*/
 
 form#contact {
-  
-
   margin-left: 0px;
   position: relative;
   z-index: 2;
@@ -723,9 +721,6 @@ form#contact {
 
   border-top:    2px solid #100f0f;
   border-bottom: 1px solid #999;
-  
-  
-
 }
 
 
@@ -834,14 +829,8 @@ form#contact button {
   
 
 
-/*=============================================
-=                  #featuresSection                =
-=============================================*/
 
-#featuresSection {
-    
-    background-color: #172659f9;
-}
+
 /*=============================================
 =                  #inner                =
 =============================================*/
@@ -870,7 +859,10 @@ form#contact button {
 /*=============================================
 =                  Glass cover                =
 =============================================*/
-
+#featuresSection {
+    
+  background-color: #172659f9;
+}
 
  /* Glass cover */
  #featuresSection:before {         

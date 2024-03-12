@@ -141,11 +141,12 @@ $(document).ready(function () {
     document.title = "旅客清單";
 
     // 在表格底部創建搜索輸入框
-    $("#example tfoot th").each(function() {
-        var title = $(this).text();
-        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-    });
+    // $("#example tfoot th").each(function() {
+    //     var title = $(this).text();
+    //     $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+    // });
 
+	
     // DataTable 初始化
     var table = $("#example").DataTable({
         dom: '<"dt-buttons"Bf><"clear">lirtp',
@@ -161,6 +162,11 @@ $(document).ready(function () {
         }
     });
 		}
+
+
+
+
+
   
     //                獲取 detail_其他買票人資料 顯示於 "退票"modal           //
     // let get_detail_refund = function (detail) {
