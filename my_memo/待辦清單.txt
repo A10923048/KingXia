@@ -2,3 +2,27 @@
 2.重新訂票時 旅客資料 已存在後台的訂單編號中 因次 填寫 旅客資料 的頁面要改成
 3.無論誰進入 第一個動作都是跟後台 get 如果回傳有資料 在呈現給用戶決定要帶入哪幾筆? 
 回傳沒有資料的話就按一班流程重新訂票
+
+
+ 
+            //傳給後台
+            // $.ajax({
+            //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
+            //   type: "GET", // 使用 POST 请求发送数据
+            //   //contentType:"application/json",//指定格式(這次不用)
+            //   data:send_item,//塞入整理好的資料
+            //   success: function (datas) {    // 後台回傳
+            // if (datas) {
+                
+            //     $('#orderSend').modal('show'); // 显示模态框
+            // }             
+            //           },
+            //   error: function (error) {
+            //   // 请求失败时的处理
+            //   console.error("数据发送失败：", error);    
+            // },
+            //   beforeSend: function (xhr) {
+            //     // 添加CSRF令牌到请求头部
+            //     xhr.setRequestHeader(csrfHeader, csrfToken);
+            //   }
+            // });

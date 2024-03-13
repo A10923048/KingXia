@@ -1336,3 +1336,31 @@ form#contact {
 .table thead th {
     border-bottom: none;
 }
+
+
+
+---------------------------------------------
+               bar 
+--------------------------------------------- 
+.scroll-buttons {
+    position: relative;
+}
+
+.scroll-buttons button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.scroll-left {
+    left: 0;
+}
+
+.scroll-right {
+    right: 0;
+}
+

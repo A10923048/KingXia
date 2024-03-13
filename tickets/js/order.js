@@ -229,6 +229,7 @@ $(document).ready(function () {
 
   //                 產生_旅客標單格式                //
 
+  //定義: 表頭 方法
   let  htmlString_title =
     '<aside class="bd-aside sticky-xl-top  align-self-start mb-3 mb-xl-5 px-2">' +
   '<h3 class="mt-5 pb-3 mb-4 border-bottom">資料填寫</h3>' +
@@ -238,7 +239,7 @@ $(document).ready(function () {
 
   
   
-
+  //定義: 旅客-表單 方法 
   let traveler_list = function (i, ii, ticket_title) {
 
     //let return_list ="";暫存用
@@ -433,22 +434,6 @@ $(document).ready(function () {
       '</li>';
 
 
-
-    // if (ii = 2) {
-
-    //   console.log("進入ii = 2");
-    //   return htmlString_title + htmlString_mid1 + htmlString_mid2 + htmlString_mid3  + htmlString_mid4 +add_ending;
-    // }else if (ii = 4) {
-    //   console.log("進入ii = 4");
-    //   return htmlString_title + add_text + htmlString_mid1 + htmlString_mid2_readonly + htmlString_mid3 +htmlString_mid4_checkbox + htmlString_mid4+  add_ending;
-    // } else {
-
-    //   console.log("進入else");
-    //   return htmlString_title + htmlString_mid1 + htmlString_mid2 + htmlString_mid3 +htmlString_mid4_checkbox + htmlString_mid4+  add_ending; 
-    // }
-
-
-
     if (ii == 2) {
       return htmlString_mid0+ htmlString_mid1 + htmlString_mid2 + htmlString_mid3 + htmlString_mid4 + add_ending;
     } else if (ii == 4) {
@@ -457,11 +442,7 @@ $(document).ready(function () {
       return htmlString_mid0+ htmlString_mid1 + htmlString_mid2 + htmlString_mid3 + htmlString_mid4_checkbox + htmlString_mid4 + add_ending;
     }
 
-
-
   }
-
-
 
   //定義: 聯絡人-表單 方法 
   let buyer_form = function () {
@@ -618,6 +599,7 @@ $(document).ready(function () {
       for (var i = 0; i < print_traveler_Universal_list; i++) {
             show_list.push(traveler_list(i, 3, "博愛"));//暫存用
       }
+      
       show_list.unshift(htmlString_title);     
       $("#buyers_list").append(show_list);
       let buyer_form_show = buyer_form();

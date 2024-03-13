@@ -12,24 +12,24 @@ Fonts - Google Fonts
 
 
 //            Article NAVBAR- 轉換按鈕功能                    //
-let articleBtn = function (tabId) {
-    $("#articleAA").hide();
+// let articleBtn = function (tabId) {
+//     $("#articleAA").hide();
   
-    // 檢查是否需要關閉 #articleAA
-    if ($("#articleAA").hasClass("show")) {
-      // 關閉 #articleAA
-      $("#articleAA").removeClass("show active");
-    }
+//     // 檢查是否需要關閉 #articleAA
+//     if ($("#articleAA").hasClass("show")) {
+//       // 關閉 #articleAA
+//       $("#articleAA").removeClass("show active");
+//     }
   
-    // 關閉當前已打開的頁面
-    $(".tab-pane").removeClass("show active");
+//     // 關閉當前已打開的頁面
+//     $(".tab-pane").removeClass("show active");
   
-    // 打開新的頁面
-    $(`#${tabId}`).addClass("show active");
+//     // 打開新的頁面
+//     $(`#${tabId}`).addClass("show active");
   
-    // 如果需要手動跳轉到新的頁面
-    window.location.href = `#${tabId}`;
-   }
+//     // 如果需要手動跳轉到新的頁面
+//     window.location.href = `#${tabId}`;
+//    }
 
 
 //  ↑↑ ↑↑ 置於$(document).ready(function () 之外的程式碼 ENd    ↑↑ ↑↑       //
@@ -37,7 +37,34 @@ let articleBtn = function (tabId) {
    // 資料處理
 $(document).ready(function () {
 
-    articleBtn("articleA");
+    // articleBtn("articleA");
+
+    //1.先跟後台確認有沒有之前未完成的訂票紀錄
+    
+     //傳給後台
+            // $.ajax({
+            //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
+            //   type: "GET", // 使用 POST 请求发送数据
+            //   //contentType:"application/json",//指定格式(這次不用)
+            //   data:send_item,//塞入整理好的資料
+            //   success: function (datas) {    // 後台回傳
+            // if (datas) {
+                
+            //     $('#orderSend').modal('show'); // 显示模态框
+            // }else{
+
+            //    }             
+            //           },
+            //   error: function (error) {
+            //   // 请求失败时的处理
+            //   console.error("数据发送失败：", error);    
+            // },
+            //   beforeSend: function (xhr) {
+            //     // 添加CSRF令牌到请求头部
+            //     xhr.setRequestHeader(csrfHeader, csrfToken);
+            //   }
+            // });
+
 
     //抓取網址中GET參數//
     var getUrlString = location.href;
@@ -84,7 +111,6 @@ $(document).ready(function () {
   
       let this_select = $(this);
       //讓正在被點擊的select = this_select
-  
   
   
       let y = 0;
@@ -149,46 +175,23 @@ $(document).ready(function () {
     });
   
   
-    //實作icon_color_cange方法:判斷 正在被點擊的select 屬於哪個票種 做顏色變更
-    //參數this_select=$(this)
+    //票種顏色變更
     let icon_color_cange = function (this_select) {
       console.log(this_select);
   
-      //                     $ (".find_title")(同下面這行)
-      //let icon_find = t  h  i  s(  )    .find(".find_title").text();演化成下面這行
       let icon_find = this_select.parent().find(".find_title").text();
   
       //讓正在被點擊的select = this_select
       let this_select_val = this_select.val();
-      //   $($(this)).val()
-      //   $(this_select).val()
-      //   $(this)
   
       if (this_select_val > 0) {
   
         if (icon_find == "全票") {
-  
           this_select.parent().find(".icon_color_cange").css("color", "green");
-        } else if (icon_find == "敬老") {
-          this_select.parent().find(".icon_color_cange").css("color", "blue");
-  
-        } else if (icon_find == "兒童") {
-          this_select.parent().find(".icon_color_cange").css("color", "yellow");
-  
-        } else if (icon_find == "博愛") {
-          this_select.parent().find(".icon_color_cange").css("color", "red");
-  
-        } else if (icon_find.includes("陪同者")) {
-          //錯誤: $(this_select.parent().find(".icon_color_cange")).css("text-color", "pink");
-          //因為:      this_select.parent().find(".icon_color_cange") 
-          //       =   $                        (".icon_color_cange")(同上面這行)
-          //所以:  $(this_select.parent().find(".icon_color_cange")).css("text-color", "pink");
-          //    =  $(                       $ (".icon_color_cange"))
-          //正確:this_select.parent().find(".icon_color_cange").css("text-color", "green");
-  
+
+        } else if (icon_find == "嬰兒票") {
           this_select.parent().find(".icon_color_cange").css("color", "pink");
-  
-  
+
         }
   
       } else {
@@ -196,21 +199,7 @@ $(document).ready(function () {
       }
     }
   
-  
-  
-  
-  
-    //          ArticleA警告框-關閉按鈕               //
-  
-    // $("#alert-result_i").click(function () {
-    //   $(this).parent().find(".custom-alert").hide();
-    // });
-  
-    // 一旦 custom-alert 元素出现，添加点击事件
-  
-  
-    //          票種選擇_警告框-關閉按鈕               //
-  
+
     // 監聽主alert-result_i，如果有變化觸發功能如下:
     $(document).on("click", ".alert-result_i", function () {
   
@@ -220,7 +209,6 @@ $(document).ready(function () {
       // $("#custom-alert_2").hide();
       focus_custom_alert();
     })
-  
   
   
   
@@ -431,20 +419,6 @@ $(document).ready(function () {
   
   
   
-      // if (ii = 2) {
-  
-      //   console.log("進入ii = 2");
-      //   return htmlString_title + htmlString_mid1 + htmlString_mid2 + htmlString_mid3  + htmlString_mid4 +add_ending;
-      // }else if (ii = 4) {
-      //   console.log("進入ii = 4");
-      //   return htmlString_title + add_text + htmlString_mid1 + htmlString_mid2_readonly + htmlString_mid3 +htmlString_mid4_checkbox + htmlString_mid4+  add_ending;
-      // } else {
-  
-      //   console.log("進入else");
-      //   return htmlString_title + htmlString_mid1 + htmlString_mid2 + htmlString_mid3 +htmlString_mid4_checkbox + htmlString_mid4+  add_ending; 
-      // }
-  
-  
   
       if (ii == 2) {
         return htmlString_mid0+ htmlString_mid1 + htmlString_mid2 + htmlString_mid3 + htmlString_mid4 + add_ending;
@@ -538,7 +512,67 @@ $(document).ready(function () {
       return htmlString;
     }
   
+
+
+
+    //$("input[name='nextP1']").click(function () {
+    $("#articleA_send").click(function () {
+
+        console.log($("input[name='nextP1']").val());
+
+        $("#buyers_list").empty();
+        let ii = 0; //票種設定
+        let show_list = [];//暫存用
+        let tickets_unchoosed = $("#tickets_unchoosed").text();
+    
+        // 判斷 能夠送出的條件
+        let T = true;
+        let text_show = "";
+    
+        //判斷 已選擇票種數=預定票數
+        if (parseInt(tickets_unchoosed) != 0) {
+            T = false;
+            text_show = text_show + "票種選擇(未完成)"
+            console.log("已選擇票種數=預定票數");
+        }
+
+        //票種數=/=預定票數:警示
+        //票種數==預定票數 :
+        if (!T) {
+            $("#alert-result").html(text_show);
+            $("#custom-alert").show();
+            
+        } else {
   
+            $('.ticketQuantity').each(function () {
+      
+                let ticket_val = $(this).val();
+                let find_title = $(this).parent().find(".find_title").text();
+        
+                if (ticket_val > 0) {
+                    console.log(find_title + "ticket:" + ticket_val);
+                  
+                    for (var i = 0; i < ticket_val; i++) {
+
+                        show_list.push(traveler_list(i, find_title));//暫存用                    
+                    }
+                }
+
+                //讓不同票種有不同id
+                ii += parseInt(1)
+            })
+        }
+        
+        //將 htmlString_title 添加到 show_list 的開頭。
+        show_list.unshift(htmlString_title);     
+        //$("#buyers_list").append(show_list);
+        let buyer_form_show = buyer_form();
+       // $("#buyers_list").append(buyer_form_show);
+
+
+
+
+    });
   
   
   
@@ -547,16 +581,12 @@ $(document).ready(function () {
     let currentDate = "";
     $("#articleA_send").click(function (e) {
       e.preventDefault();
-      //因為#articleA_send"包在form 裡，
-      //所以這裡要阻止 input  form 會有 的預設的提交行為
-      //預設的提交行為=把前端資料傳給後端，但是我們這裡只要前端的資料處理
-      //所以在function (e)後 呼叫preventDefault方法;
-  
+    
       $("#buyers_list").empty();
       let ii = 0; //票種設定
       let show_list = [];//暫存用
-      let Universal_Ticket = 0;//計算博愛票
-      let UniversalLove_Ticket = 0;//計算愛心陪同票
+    //   let Universal_Ticket = 0;//計算博愛票
+    //   let UniversalLove_Ticket = 0;//計算愛心陪同票
       let tickets_unchoosed = $("#tickets_unchoosed").text();
   
   
@@ -565,21 +595,19 @@ $(document).ready(function () {
       let T = true;
       let text_show = "";
   
-      //判斷 陪同票數>博愛票數
-      if ($("#ticketQuantity_D2").val() > $("#ticketQuantity_D1").val()) {
-        T = false;
-        text_show = text_show + "博愛(陪同者)票數'不能超'過博愛票數"
-        console.log("判斷 陪同票數>博愛票數");
-      }
       //判斷 已選擇票種數=預定票數
       if (parseInt(tickets_unchoosed) != 0) {
         T = false;
         text_show = text_show + "票種選擇(未完成)"
         console.log("已選擇票種數=預定票數");
       }
+
+      //票種數=/=預定票數:警示
+      //票種數==預定票數 :
       if (!T) {
         $("#alert-result").html(text_show);
         $("#custom-alert").show();
+        
       } else {
   
         $('.ticketQuantity').each(function () {
@@ -1734,7 +1762,17 @@ $(document).ready(function () {
 
 })
   
-  
+
+$(document).ready(function() {
+    $(".scroll-left").click(function() {
+        $(".tab-group").animate({scrollLeft: "-=100px"}, "slow");
+    });
+
+    $(".scroll-right").click(function() {
+        $(".tab-group").animate({scrollLeft: "+=100px"}, "slow");
+    });
+});
+
   
   
  

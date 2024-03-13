@@ -85,7 +85,7 @@
 
         <div id="header" class=" text-center bg-dark container">
             <section id="featuresSection" class="py-5" style="border-radius: 15px;">
-                <article id="articleA" class="my-3 tab-pane">
+                
                     <main>
                         <div class=" py-5 text-center text-white">
                             <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
@@ -106,7 +106,8 @@
                                 </ul>
 
                                 <!-- fieldsets -->
-                                    
+                                
+                                <!-- 第一頁:票種選擇 -->
                                 <fieldset class="fieldset">
                                     <h2 class="fs-title">票種選擇</h2>
                                     <h3 class="fs-subtitle">This is step 1</h3>
@@ -191,28 +192,69 @@
                                         </table>
                                     </div>
 
-                                    <input type="button" name="next" class="next action-button" value="Next" />
+                                    <input type="button" name="nextP1" class="next action-button" value="Next" />
                                 </fieldset>
 
+                                <!-- 第二頁:旅客資料輸入 -->
                                 <fieldset>
                                     <div  id="buyers_list">
                                         <!-- form -->
                                         <div class="form">
+
+                                            <div class="scroll-buttons">
+                                                <button class="scroll-left">&lt;</button>
+                                                <button class="scroll-right">&gt;</button>
+                                            </div>
+                                            
+                                            <ul class="tab-group">
+                                                <li class="tab"><a href="#content1">旅客(1)表單</a></li>
+                                                <li class="tab"><a href="#content2">旅客(1)表單</a></li>
+                                                <li class="tab active"><a href="#content3">旅客(1)表單</a></li>
+                                                <li class="tab"><a href="#content4">旅客(1)表單</a></li>
+                                                <li class="tab"><a href="#content5">旅客(1)表單</a></li>
+                                                <li class="tab"><a href="#content1">旅客(1)表單</a></li>
+                                                <li class="tab"><a href="#content2">旅客(1)表單</a></li>
+                                                <li class="tab active"><a href="#content3">旅客(1)表單</a></li>
+                                                <li class="tab"><a href="#content4">旅客(1)表單</a></li>
+                                                <li class="tab"><a href="#content5">旅客(1)表單</a></li>
+                                            </ul>
+                                            
+
+                                            <div class="tab-container">
+                                                <div class="scrollable-tabs">
+                                                    <ul class="tab-group">
+                                                        <li class="tab"><a href="#content1">旅客(1)表單</a></li>
+                                                        <li class="tab"><a href="#content2">旅客(2)表單</a></li>
+                                                        <li class="tab active"><a href="#content3">旅客(3)表單</a></li>
+                                                        <li class="tab"><a href="#content4">旅客(4)表單</a></li>
+                                                        <li class="tab"><a href="#content5">旅客(5)表單</a></li>
+                                                        <li class="tab"><a href="#content1">旅客(1)表單</a></li>
+                                                        <li class="tab"><a href="#content2">旅客(2)表單</a></li>
+                                                        <li class="tab active"><a href="#content3">旅客(3)表單</a></li>
+                                                        <li class="tab"><a href="#content4">旅客(4)表單</a></li>
+                                                        <li class="tab"><a href="#content5">旅客(5)表單</a></li>
+                                                    </ul>
+                                                </div>
+                                                <button class="scroll-btn prev-btn">上一個</button>
+                                                <button class="scroll-btn next-btn">下一個</button>
+                                            </div>
+                                            
                                         
                                         <h1 class="mt-5 pb-3 mb-4 border-bottom">旅客資料</h1>
 
                                         <ul class="tab-group">
-                                            <li class="tab active"><a href="#content1">旅客(1)表單</a></li>
                                             <li class="tab"><a href="#content2">旅客(1)表單</a></li>
                                             <li class="tab"><a href="#content3">旅客(1)表單</a></li>
                                             <li class="tab active"><a href="#content1">旅客(1)表單</a></li>
                                             <li class="tab"><a href="#content2">旅客(1)表單</a></li>
                                             <li class="tab"><a href="#content3">旅客(1)表單</a></li>
-                                            <li class="tab active"><a href="#content1">旅客(1)表單</a></li>
-                                            <li class="tab"><a href="#content2">旅客(1)表單</a></li>
-                                            <li class="tab"><a href="#content3">旅客(1)表單</a></li>
-                                            <!-- <li class="tab"><a href="#content4">步驟三</a></li> -->
-                                            </ul>
+                                            <!-- <p class="arrow prev">
+                                                <i class="ico" ></i>
+                                            </p>
+                                            <p id="next1" class="arrow next">
+                                                <i class="ico"></i>
+                                            </p> -->
+                                        </ul>
                                         
                                         <div class="tab-content">
                                             <div  class="content" id="content1">  
@@ -668,8 +710,7 @@
                         </div>
 
                     </main>
-                                    
-                </article>
+                               
             </section>
         </div>
        
