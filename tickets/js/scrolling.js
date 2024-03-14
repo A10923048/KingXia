@@ -15,11 +15,15 @@ $(document).ready(function () {
         },
 
         376:{
-            items:1,
+            items:2,
+            nav:true,
+        },
+        500:{
+            items:2,
             nav:true,
         },
         700:{
-            items:2,
+            items:3,
             nav:true,
         },
         950:{

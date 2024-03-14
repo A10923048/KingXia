@@ -12,7 +12,7 @@
   --red: #f60a22;
   --orange: #fd7e14;
   --yellow: #ffc107;
-  --green: #28a745;
+  --green: #1ab188;
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
@@ -7162,10 +7162,12 @@ button.bg-secondary:focus {
 }
 
 
-
+.bg-brown {
+  background-color:#c57a00 !important;
+}
 
 .bg-green {
-  background-color: #28a745 !important;
+  background-color: #1ab188 !important;
 }
 
 .bg-pink {
@@ -10664,7 +10666,7 @@ button.bg-dark:focus {
 }
 
 .text-green {
-  color: #28a745 !important;
+  color: #1ab188 !important;
 }
 
 .text-pink {

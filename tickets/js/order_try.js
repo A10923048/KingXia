@@ -89,12 +89,16 @@ $(document).ready(function () {
     $('.ticketQuantity').each(function () {
   
       let this_ticketQuantity = $(this);
+
+      // 清空選擇框
+      this_ticketQuantity.empty();
   
       // 根據票數動態產生選項
       for (var i = 0; i <= ticket; i++) {
         var option = $('<option></option>').attr('value', (i)).text(i);
         this_ticketQuantity.append(option);
       }
+
     })
   
     //預設初始畫面的未選擇票數為紅色
@@ -187,10 +191,10 @@ $(document).ready(function () {
       if (this_select_val > 0) {
   
         if (icon_find == "全票") {
-          this_select.parent().find(".icon_color_cange").css("color", "green");
+          this_select.parent().find(".icon_color_cange").addClass("text-green");;
 
         } else if (icon_find == "嬰兒票") {
-          this_select.parent().find(".icon_color_cange").css("color", "pink");
+          this_select.parent().find(".icon_color_cange").addClass("text-pink");;
 
         }
   
@@ -215,7 +219,7 @@ $(document).ready(function () {
     //                 產生_旅客標單格式                //
   
     let  htmlString_title =
-      '<aside class="bd-aside sticky-xl-top  align-self-start mb-3 mb-xl-5 px-2">' +
+    '<aside class="bd-aside sticky-xl-top  align-self-start mb-3 mb-xl-5 px-2">' +
     '<h3 class="mt-5 pb-3 mb-4 border-bottom">資料填寫</h3>' +
     '<h5 class="pb-3 mb-4">(請下拉選單)</h5>' +
     '<nav class="small" id="toc">' +
@@ -516,7 +520,7 @@ $(document).ready(function () {
 
 
     //$("input[name='nextP1']").click(function () {
-    $("#articleA_send").click(function () {
+    $("#P1_sen").click(function () {
 
         console.log($("input[name='nextP1']").val());
 
@@ -653,59 +657,7 @@ $(document).ready(function () {
   
     })
   
-    //呼叫名為 articleBtn 的函數，並將字串參數 "articleA" 傳遞給該函數
-    articleBtn("articleA");
-  
-    //               NAVBAR +  Article-A NAVBAR 開闔功能                    //
-    // 初始設置展開狀態為 false
-    var isNavbarExpanded = false;
-    var isArticleAExpanded = false;
-  
-    // 綁定 Bootstrap 導覽列摺疊功能
-    $('[data-toggle="collapse"]').on('click', function () {
-      var target = $(this).data('target');
-  
-      // 根據展開狀態執行相應操作
-      if (target === '#collapsibleNavId') {
-        if (isNavbarExpanded) {
-          // 如果已展開，執行關閉操作
-          console.log('Navbar is expanded. Closing...');
-          $(target).hide();
-        } else {
-          // 如果未展開，執行展開操作
-          console.log('Navbar is not expanded. Opening...');
-          $(target).show();
-        }
-        // 切換展開狀態
-        isNavbarExpanded = !isNavbarExpanded;
-      } else if (target === '#collapsibleNavId2') {
-        if (isArticleAExpanded) {
-          // 如果已展開，執行關閉操作
-          console.log('ArticleA Navbar is expanded. Closing...');
-          $(target).hide();
-        } else {
-          // 如果未展開，執行展開操作
-          console.log('ArticleA Navbar is not expanded. Opening...');
-          $(target).show();
-        }
-        // 切換展開狀態
-        isArticleAExpanded = !isArticleAExpanded;
-      }
-  
-      $(target).toggleClass('show');
-    });
-  
-    //           Article A- 立即訂票轉換頁面按鈕               //
-    function openArticleB() {
-      // 關閉當前已打開的頁面
-      $(".tab-pane").removeClass("show active");
-  
-      // 打開新的頁面
-      $("#articleB").addClass("show active");
-  
-      // 如果需要手動跳轉到 #articleB 頁面
-      window.location.href = "#articleB";
-    }
+
   
     //             旅客=聯絡人:checkbox連動                //
     $(document).on("change", ".orderer_check", function () {
@@ -1466,8 +1418,9 @@ $(document).ready(function () {
         var current_fs, next_fs, previous_fs; //fieldsets
         var left, opacity, scale; //fieldset properties which we will animate
         var animating; //flag to prevent quick multi-click glitches
-
-        $(".next").click(function(){
+ 
+        // 
+        $(".page-next").click(function(){
             if(animating) return false;
             animating = true;
             
@@ -1506,7 +1459,7 @@ $(document).ready(function () {
             });
         });
 
-        $(".previous").click(function(){
+        $(".page-previous").click(function(){
             if(animating) return false;
             animating = true;
             
@@ -1550,214 +1503,53 @@ $(document).ready(function () {
 
 
         //註冊步驟按鈕 轉換
-        $('.tab a').on('click', function (e) {
-
+        $('.nav-link').on('click', function(e) {
             e.preventDefault();
-
-            $(this).parent().addClass('active');
-            $(this).parent().siblings().removeClass('active');
-
-            target = $(this).attr('href');
-
-            $('.tab-content > div').not(target).hide();
-
+        
+            // 移除所有活動的鏈接
+            $('.nav-link').removeClass('active');
+        
+            // 將當前鏈接設置為活動狀態
+            $(this).addClass('active');
+        
+            // 獲取目標 ID
+            var target = $(this).attr('href');
+        
+            // 顯示相應的目標內容
+            // $('.tab-group li').removeClass('active');
+            // $('.tab-group li:has(a[href="' + target + '"])').addClass('active');
+            $('.tab-content > div').hide();
             $(target).fadeIn(600);
-
         });
 
-        //form
+        //表單中的下一步
+        $('.next').on('click', function() {
 
-        // 預設 隱藏除了第一個 以外的 tab-content
+           
+            // 獲取當前 content 元素的 ID
+            var currentId = $('.content').attr('id');
+            console.log("獲取當前 content 元素的 ID:"+currentId);
+            
+            // 提取當前 ID 中的數字
+            var currentIndex = parseInt(currentId.replace('content', ''));
+        
+            // 獲取下一個 content 元素的 ID
+            var nextIndex = currentIndex + 1;
+            var nextContentId = '#content' + nextIndex;
+        
+            // 如果找不到下一個 content 元素，則退出函數
+            if ($(nextContentId).length === 0) {
+                return;
+            }
+        
+            // 隱藏當前 content 元素，顯示下一個 content 元素
+            currentContent.hide();
+            $(nextContentId).show();
+        });
+        
+
+        //Page2:隱藏未被選中的表單
         $('.tab-content > div:not(:first-child)').hide();
-
-
-        $('.form').find('input, textarea , select').on('change keyup blur focus', function (e) {
-
-            let $this = $(this),
-                label = $this.prev('label');
-
-            if (e.type === 'keyup') {
-                if ($this.val() === '') {
-                    label.removeClass('active highlight');
-                } else {
-                    label.addClass('active highlight');
-                }
-            } else if (e.type === 'blur') {
-                if ($this.val() === '') {
-                    label.removeClass('active highlight');
-                } else {
-                    label.removeClass('highlight');
-                }
-            } else if (e.type === 'focus') {
-
-                if ($this.val() === '') {
-                    label.removeClass('highlight');
-                }
-                else if ($this.val() !== '') {
-                    label.addClass('highlight');
-                }
-            } else if (e.type === 'change') {
-                if ($this.val() === '' || $this.val()=="NULL") {
-                    console.log("$this.val() === 'NULL'");
-                    label.removeClass('active highlight');
-                    $('input[name="cusAdd"]').val('');
-
-                } else {
-                    label.addClass('active highlight');
-
-                    if ($this.attr('name') === 'city') {
-
-                    // 获取选中的选项的文本值
-                    var selectedOption = $(this).children("option:selected").text();
-                    
-                    // 将选项的文本值设置为输入框的值
-                    $('input[name="cusAdd"]').val(selectedOption);
-                    
-                    $('input[name="cusAdd"]').prev('label').addClass('active');
-
-
-                    }
-                }
-            }
-
-            });
-        $("#next1").click(function (event) {
-
-            // 阻止表单的提交行为
-                event.preventDefault();
-
-            let allFieldsValid = true;
-            let form = $(this).closest("form");
-
-            // 对于每个输入元素
-                form.find("input").each(function () {
-
-                    var inputName = $(this).attr("name");
-                    var inputValue = $(this).val();
-                    console.log("Input Name: " + inputName + ", Input Value: " + inputValue);
-
-                if (this.validity.valid == false) {
-
-                    console.log("this.validity.valid:"+ this.validity.valid);
-                    console.log("this.validity.valid:"+ this.validity.valid);
-
-                    // 标记为不通过验证
-                    allFieldsValid = false;
-                    // 显示警告或其他提示
-                    // 这里可以根据需要进行相应的提示操作，比如添加一个警告样式、显示一个提示信息等
-                    // $(this).addClass("invalid-field").focus();
-                    console.log("input " + inputName + " is not valid");
-
-                    this.reportValidity();
-                    return false;
-
-                } 
-                console.log( allFieldsValid);
-
-            });
-
-            // 如果所有字段都通过了验证
-            if (allFieldsValid) {
-                // 首先你可以在这里执行一些额外的操作，比如保存表单数据等
-
-                // 然后进行页面跳转
-                $('.tab.active').removeClass('active').next('.tab').addClass('active');
-
-                // 获取目标内容的 ID
-                var target = $('.tab.active').children('a').attr('href');
-
-                // 隐藏除目标内容以外的所有内容
-                $('.tab-content > div').not(target).hide();
-
-                // 显示目标内容
-                $(target).fadeIn(600);
-
-            } else {
-                // 如果有字段未通过验证，你可以在这里执行相应的操作，比如显示一条总体提示信息
-                console.log("有字段未通过验证，请填写所有必填字段！");
-            }
-        });
-
-        $("#next2").click(function (event) {
-
-            // 阻止表单的提交行为
-                event.preventDefault();
-
-            // 初始化一个变量来记录是否所有输入字段都通过了验证
-            let allFieldsValid = true;
-            let form = $(this).parent().parent().parent().find("form");
-
-            // 对于每个输入元素
-                form.find("input").each(function () {
-
-                console.log("#next2");
-
-                    var inputName = $(this).attr("name");
-                    var inputValue = $(this).val();
-                    console.log("Input Name: " + inputName + ", Input Value: " + inputValue);
-
-                if (this.validity.valid == false ||  $(this).val().trim() == "") {
-
-                    console.log("valid == false:");
-
-                    // 标记为不通过验证
-                    allFieldsValid = false;
-                    // 显示警告或其他提示
-                    // 这里可以根据需要进行相应的提示操作，比如添加一个警告样式、显示一个提示信息等
-                    // $(this).addClass("invalid-field").focus();
-                    console.log("input " + inputName + " is not valid");
-
-                    this.reportValidity();
-                    return false;
-
-                    //console.log( allFieldsValid);
-                } 
-                console.log( allFieldsValid);
-
-            });
-
-            // 如果所有字段都通过了验证
-            if (allFieldsValid) {
-                // 首先你可以在这里执行一些额外的操作，比如保存表单数据等
-
-                // 然后进行页面跳转
-                $('.tab.active').removeClass('active').next('.tab').addClass('active');
-
-                // 获取目标内容的 ID
-                var target = $('.tab.active').children('a').attr('href');
-
-                // 隐藏除目标内容以外的所有内容
-                $('.tab-content > div').not(target).hide();
-
-                // 显示目标内容
-                $(target).fadeIn(600);
-            } else {
-                // 如果有字段未通过验证，你可以在这里执行相应的操作，比如显示一条总体提示信息
-                console.log("有字段未通过验证，请填写所有必填字段！");
-            }
-        });
-
-        $(".prev").click(function (event) { // 當送出按鈕被點擊時
-
-            // 阻止表單的提交行為
-            event.preventDefault();
-
-            //頁面跳轉
-                    
-            $('.tab.active').removeClass('active').prev('.tab').addClass('active');
-
-            // 获取目标内容的 ID
-            var target = $('.tab.active').children('a').attr('href');
-
-            // 隐藏除目标内容以外的所有内容
-            $('.tab-content > div').not(target).hide();
-
-            // 显示目标内容
-            $(target).fadeIn(600);
-
-        });
-
-
 
 
 })
@@ -1765,50 +1557,6 @@ $(document).ready(function () {
 
 $(document).ready(function() {
    
-
-//   <!-- Carousel -->
-    $('#carousel-thumbs').carousel({
-            interval: false
-    });
-    
-    $('[id^=carousel-selector-]').click(function() {
-        var id_selector = $(this).attr('id');
-        var id = parseInt( id_selector.substr(id_selector.lastIndexOf('-') + 1) );
-        $('#myCarousel').carousel(id);
-    });
-    // Only display 3 items in nav on mobile.
-    if ($(window).width() < 575) {
-        $('#carousel-thumbs .row div:nth-child(4)').each(function() {
-        var rowBoundary = $(this);
-        $('<div class="row mx-0">').insertAfter(rowBoundary.parent()).append(rowBoundary.nextAll().addBack());
-        });
-        $('#carousel-thumbs .carousel-item .row:nth-child(even)').each(function() {
-        var boundary = $(this);
-        $('<div class="carousel-item">').insertAfter(boundary.parent()).append(boundary.nextAll().addBack());
-        });
-    }
-    // Hide slide arrows if too few items.
-    if ($('#carousel-thumbs .carousel-item').length < 2) {
-        $('#carousel-thumbs [class^=carousel-control-]').remove();
-        $('.machine-carousel-container #carousel-thumbs').css('padding','0 5px');
-    }
-    // when the carousel slides, auto update
-    $('#myCarousel').on('slide.bs.carousel', function(e) {
-        var id = parseInt( $(e.relatedTarget).attr('data-slide-number') );
-        $('[id^=carousel-selector-]').removeClass('selected');
-        $('[id=carousel-selector-'+id+']').addClass('selected');
-    });
-    
-    $('#myCarousel .carousel-item img').on('click', function(e) {
-        var src = $(e.target).attr('data-remote');
-        if (src) $(this).ekkoLightbox();
-    });
-
-
-
-
-// Tabs active scroll to current on next previous navigation
-
 
 
 });

@@ -41,25 +41,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
-        <a class="navbar-brand" href="/index">首頁</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#introSection">訂票</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#featuresSection">行程介紹</a>
-                </li>
-
-            </ul>
-        </div>
-    </nav>
-
+  
     <!-- navbar end -->
 
 
@@ -69,13 +51,13 @@
              <div>
                 <h1 class="loader ">
                     <img src="/tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
-                    <span class="m">付</span>
+                    <span class="m">金</span>
                     <span class="m">&nbsp;</span>
-                    <span class="m">款</span>
+                    <span class="m">廈</span>
                     <span class="m">&nbsp;</span>
-                    <span class="m">資</span>
+                    <span class="m">海</span>
                     <span class="m">&nbsp;</span>
-                    <span class="m">訊</span>
+                    <span class="m">運</span>
                     <span class="m"></span>
                 </h1>
 
@@ -88,9 +70,9 @@
                     <main>
                         <div class=" py-5 text-center text-white">
                             <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-                            <h2>付款成功</h2>
-                            <h3 class="quote">"Payment Successful"</h3>
-                            <p class="author"><em>~金廈海運~</em></p>
+                            <h2>訂票資料填寫</h2>
+                            <!-- <h3 class="quote">"Passenger Information"</h3> -->
+                            <p class="author"><em>~Passenger Information~</em></p>
                         </div>
 
                         <div class=" align-self-center" >
@@ -99,18 +81,21 @@
 
                                 <!-- progressbar -->
                                 <ul id="progressbar">
+                                    <input type="button" name="previous" class="page-previous action-button" value="Previous" />
                                     <li class="active">票種選擇</li>
                                     <li>旅客資料輸入</li>
                                     <li>Personal Details</li>
+                                    <input type="button" name="next" class="page-next action-button" value="Next" />
                                 </ul>
 
                                 <!-- fieldsets -->
                                 
                                 <!-- 第一頁:票種選擇 -->
                                 <fieldset class="fieldset">
-                                    <h2 class="fs-title">票種選擇</h2>
-                                    <h3 class="fs-subtitle">This is step 1</h3>
+                                    <h2 class="fs-title">Step1</h2>
+                                    <h3 class="fs-subtitle">票種選擇</h3>
                                     
+                                    <!-- 航班資訊 -->
                                     <ul class="list-group mb-3">
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -134,6 +119,7 @@
                                         
                                     </ul>
 
+                                    <!-- 票種選擇 -->
                                     <div class="col table-responsive">
                                         <table class="table text-center">
                                         <thead>
@@ -175,12 +161,13 @@
                                                 <h6 class="find_title">全票</h6>
                                                 <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
                                                 <h6>票數</h6>
-                                                <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
+                                                <select id="ticketQuantity_A" class="ticketQuantity">
                                             
                                                 </select>
                                             </th>
                                             <th style="width: 30%;">
                                                 <h6 class="find_title">嬰兒票</h6>
+                                                <h6 class="find_title">(<2歲以下)</h6>
                                                 <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
                                                 <h6>票數</h6>
                                                 <select id="ticketQuantity_C" class="ticketQuantity">
@@ -191,18 +178,17 @@
                                         </table>
                                     </div>
 
-                                    <input type="button" name="nextP1" class="next action-button" value="Next" />
+                                    <input type="button" id="P1_next" name="nextP1" class="page-next  next action-button" value="Next" />
                                 </fieldset>
 
                                 <!-- 第二頁:旅客資料輸入 -->
                                 <fieldset>
+                                    
                                     <!-- 新加 -->
                                   
-                                    <!-- scrolling tabs -->
-                                    <div class="scroll-tabs">
-                                        <div class="owl-carousel owl-loaded ">
-                                            
-
+                                    <!-- 新 scrolling tabs -->
+                                    <!-- <div class="scroll-tabs">
+                                        <div class="owl-carousel owl-loaded ">                                 
                                             <div class="nav nav-pills nav-justified">
                                                 <a class="nav-item nav-link active tab" href="#">
                                                     <i class="fa-solid fa-ticket fa-2x" style="color: #ffffff;"></i>
@@ -256,329 +242,464 @@
                                             <div class="nav nav-pills nav-justified">
                                                 <a class="nav-item nav-link active" href="#">Active</a>
                                             </div>
-                                            <div class="nav nav-pills nav-justified">
-                                                <a class="nav-item nav-link active" href="#">Active</a>
-                                            </div>
-                                            <div class="nav nav-pills nav-justified">
-                                                <a class="nav-item nav-link active" href="#">Active</a>
-                                            </div><div class="nav nav-pills nav-justified">
-                                                <a class="nav-item nav-link active" href="#">Active</a>
-                                            </div>
-                                            <div class="nav nav-pills nav-justified">
-                                                <a class="nav-item nav-link active" href="#">Active</a>
-                                            </div>
-                                            <div class="nav nav-pills nav-justified">
-                                                <a class="nav-item nav-link active" href="#">Active</a>
-                                            </div>
-                                            <div class="nav nav-pills nav-justified">
-                                                <a class="nav-item nav-link active" href="#">Active</a>
-                                            </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
-
-                                    <!-- 舊 -->
-                                    <div  id="buyers_list">
-                                        <!-- form -->
-                                        <div class="form">
-
-                                            <!--原版  -->
-                                            <ul class="tab-group">
-                                                <li class="tab"><a href="#content1">旅客(1)表單</a></li>
-                                                <li class="tab"><a href="#content2">旅客(1)表單</a></li>
-                                                <li class="tab active"><a href="#content3">旅客(1)表單</a></li>
-                                                <li class="tab"><a href="#content4">旅客(1)表單</a></li>
-                                                <li class="tab"><a href="#content5">旅客(1)表單</a></li>
-                                                <li class="tab"><a href="#content1">旅客(1)表單</a></li>
-                                                <li class="tab"><a href="#content2">旅客(1)表單</a></li>
-                                                <li class="tab active"><a href="#content3">旅客(1)表單</a></li>
-                                                <li class="tab"><a href="#content4">旅客(1)表單</a></li>
-                                                <li class="tab"><a href="#content5">旅客(1)表單</a></li>
-                                            </ul>
-                                            
-                                        <h1 class="mt-5 pb-3 mb-4 border-bottom">旅客資料</h1>
-
+                                    <!-- 舊 tab-group-->
+                                    <!-- <h1 class="mt-5 pb-3 mb-4 border-bottom">旅客資料</h1>
                                         <ul class="tab-group">
                                             <li class="tab"><a href="#content2">旅客(1)表單</a></li>
                                             <li class="tab"><a href="#content3">旅客(1)表單</a></li>
                                             <li class="tab active"><a href="#content1">旅客(1)表單</a></li>
                                             <li class="tab"><a href="#content2">旅客(1)表單</a></li>
                                             <li class="tab"><a href="#content3">旅客(1)表單</a></li>
-                                            <!-- <p class="arrow prev">
-                                                <i class="ico" ></i>
-                                            </p>
-                                            <p id="next1" class="arrow next">
-                                                <i class="ico"></i>
-                                            </p> -->
-                                        </ul>
-                                        
-                                        <div class="tab-content">
-                                            <div  class="content" id="content1">  
-        
-                                                <div class="table-responsive text-green">
-                                                    <form id="contact" class="get_form" action="" method="get"
-                                                    style="background-image: url(/tickets/img/contact-form-bg-2.png);">
-                                                    <table>
-                                                        <div id="planpickered" class="mt-4 pt-3 pb-1 bg-green" >
-                                                        <h2 id="contact" class=" section-title mb-3 text-center text-white">XX票種</h2>
-                                                    </table>
-                
-                                                    <!-- 警視窗 -->
-                                                    <li id="custom-alert_3" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
-                                                            role="alert" style="position: relative; background-color: rgb(255, 100, 86); display: none;">
-                                                        <p class="alert-text text-white"></p>
-                                                        <i id="alert-result_3"class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
-                                                        style="position: absolute; top: 5%; right: 0%; "></i>
-                                                    </li> 
-                                                    <!--  -->
-                
-                                                    <div class="row mt-5 justify-content-between"
-                                                        style="padding-left: 2%; padding-right: 2%;">
-                                                        <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
-                                                        <div class="row" style="padding-left: 10%;">
-                                                            <input type="text" class="form-control col" id="orderName" placeholder="姓名"
-                                                            value="" required>
-                                                            <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                        </ul> -->
+
+                                    <!-- 旅客資料 -->
+                                    <div  id="buyers_list">
+                                        <!-- form -->
+                                        <div class="form">
+
+                                                <!-- 選擇Bar -->
+                                                <h1 class="mt-5 pb-3 mb-4 ">旅客資料</h1>
+                                                <div class="scroll-tabs">
+                                                    <div class="owl-carousel owl-loaded ">                                 
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link text-green" href="#content1">
+                                                                <i class="fa-solid fa-ticket fa-4x text-green" style="color: #ffffff;"></i>
+                                                                <a class="text-green"href="#content1">全票</a>
+                                                            </a>
                                                         </div>
-                                                        <input type="text" class="form-control" id="orderPhone" placeholder="電話"
-                                                            value="" required>
-                                                        <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
-                                                            required readonly>
-                                                        <input type="text" class="form-control" id="email" placeholder="email" value=""
-                                                            required>
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link " href="#content2">
+                                                                <i class="fa-solid fa-ticket fa-4x text-pink" style="color: #ffffff;"></i>
+                                                                <a class="text-pink" href="#content2">嬰兒票</a>
+                                                            </a>
                                                         </div>
-                
-                                                        <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
-                                                        style="padding-left: 5%; padding-right: 5%;">
-                
-                                                        <div class="row justify-content-start"
-                                                            style="padding-left: 30%; padding-right: 10%;">
-                
-                                                            <div
-                                                            style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
-                                                            <input type="checkbox" id="Orderer_check"
-                                                                style="width: 20px; height: 20px; margin-top: 20%;">
-                
-                                                            <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
-                                                                &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
-                                                            </h4>
-                
-                                                            </div>
-                
+                                                        
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link " href="#content3">
+                                                                <i class="fa-solid fa-ticket fa-4x text-brown" style="color: #ffffff;"></i>
+                                                                <a class="text-brown" href="#content3">訂購人</a>
+                                                            </a>
                                                         </div>
-                
-                                                        <div class="table-responsive justify-content-center">
-                                                            <table class=" text-center text-primary ">
-                                                            <thead>
-                                                                <tr>
-                                                                <th style=" width: 35%;">
-                                                                    <i class="fa-solid fa-earth-americas fa-4x"></i>
-                                                                    <h6>國籍</h6>
-                                                                    <select class="form-select" id="country" required>
-                                                                    <option value="">台灣</option>
-                                                                    <option>香港</option>
-                                                                    <option>大陸</option>
-                                                                    <option>其他</option>
-                                                                    </select>
-                                                                </th>
-                                                                <th style="width: 40%;margin-right: 10%;">
-                                                                    <i class="fa-solid fa-venus-mars fa-4x"></i>
-                                                                    <h6>性別</h6>
-                                                                    <select class="form-select" id="gender" required>
-                                                                    <option value="">女</option>
-                                                                    <option>男</option>
-                                                                    </select>
-                                                                </th>
-                                                                <th style="width: 40%; padding-top: 10%;">
-                                                                    <i class="fa-solid fa-cake-candles fa-4x"></i>
-                                                                    <h6>出生日期</h6>
-                                                                    <div>
-                                                                    <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
-                                                                        value="">
-                                                                    </div>
-                                                                </th>
-                                                                </tr>
-                                                            </thead>
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link " href="#">
+                                                                <i class="fa-solid fa-ticket fa-4x" style="color: #ffffff;"></i>
+                                                                <a href="#content1">全票</a>
+                                                            </a>
+                                                        </div>
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link " href="#">
+                                                                <i class="fa-solid fa-ticket fa-4x" style="color: #ffffff;"></i>
+                                                                <a href="#content1">全票</a>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--原版  -->
+                                                <!-- <ul class="tab-group">
+                                                    <li class="tab"><a href="#content1">旅客(1)表單</a></li>
+                                                    <li class="tab"><a href="#content2">旅客(1)表單</a></li>
+                                                    <li class="tab active"><a href="#content3">旅客(1)表單</a></li>
+                                                </ul> -->
+
+                                                <!-- 對應的表單 -->
+                                                <div class="tab-content">
+
+                                                    <!-- 全票 -->
+                                                    <div  class="content" id="content1">  
+                                                        
+                                                        <!-- 用JS產生 旅客資料 -->
+                                                        <div class="table-responsive text-green">
+
+                                                            <!-- 表頭 -->
+                                                            <form id="contact" class="get_form" action="" method="get"
+                                                            style="background-image: url(/tickets/img/contact-form-bg-2.png);">
+                                                            <table>
+                                                                <div id="planpickered" class="mt-4 pt-3 pb-1 bg-green" >
+                                                                <h2 id="contact" class=" section-title mb-3 text-center text-white">全票票種</h2>
                                                             </table>
-                                                        </div>
+                        
+                                                            <!-- 警視窗 -->
+                                                            <li id="custom-alert_3" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                                    role="alert" style="position: relative; background-color: rgb(255, 100, 86); display: none;">
+                                                                <p class="alert-text text-white"></p>
+                                                                <i id="alert-result_3"class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                                style="position: absolute; top: 5%; right: 0%; "></i>
+                                                            </li> 
+                                                            
+                                                           <!-- 填寫格 -->
+                                                            <div class="row mt-5 justify-content-between"
+                                                                style="padding-left: 2%; padding-right: 2%;">
+
+                                                                 <!-- 左半部 -->
+                                                                <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                                                <div class="row" style="padding-left: 10%;">
+                                                                    <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                                                    value="" required>
+                                                                    <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="orderPhone" placeholder="電話"
+                                                                    value="" required>
+                                                                <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                                                    required readonly>
+                                                                <input type="text" class="form-control" id="email" placeholder="email" value=""
+                                                                    required>
+                                                                </div>
+                                                                
+                                                                <!-- 右半部 -->
+                                                                <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                                                style="padding-left: 5%; padding-right: 5%;">
+                        
+                                                                <div class="row justify-content-start"
+                                                                    style="padding-left: 30%; padding-right: 10%;">
+                        
+                                                                    <div
+                                                                    style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
+                                                                    <input type="checkbox" id="Orderer_check"
+                                                                        style="width: 20px; height: 20px; margin-top: 20%;">
+                        
+                                                                    <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
+                                                                        &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
+                                                                    </h4>
+                        
+                                                                    </div>
+                        
+                                                                </div>
+                        
+                                                                <div class="table-responsive justify-content-center">
+                                                                    <table class=" text-center text-primary ">
+                                                                    <thead>
+                                                                        <tr>
+                                                                        <th style=" width: 35%;">
+                                                                            <i class="fa-solid fa-earth-americas fa-2x"></i>
+                                                                            <h6>國籍</h6>
+                                                                            <select class="form-select" id="country" required>
+                                                                            <option value="">台灣</option>
+                                                                            <option>香港</option>
+                                                                            <option>大陸</option>
+                                                                            <option>其他</option>
+                                                                            </select>
+                                                                        </th>
+                                                                        <th style="width: 40%;margin-right: 10%;">
+                                                                            <i class="fa-solid fa-venus-mars fa-2x"></i>
+                                                                            <h6>性別</h6>
+                                                                            <select class="form-select" id="gender" required>
+                                                                            <option value="">女</option>
+                                                                            <option>男</option>
+                                                                            </select>
+                                                                        </th>
+                                                                        <th style="width: 40%; padding-top: 10%;">
+                                                                            <i class="fa-solid fa-cake-candles fa-2x"></i>
+                                                                            <h6>出生日期</h6>
+                                                                            <div>
+                                                                            <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
+                                                                                value="">
+                                                                            </div>
+                                                                        </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    </table>
+                                                                </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
+                                                            <!-- 用JS產生 上/下一位按鈕 -->
+                                                            <div class="top-row">
+                                                                <div class="field-wrap">
+                                                                    <button type="submit" class="prev button button-block"/>前一步</button>
+                                                                </div>
+                                                            
+                                                                <div class="field-wrap">
+                                                                    <button id="next2" type="submit" class="next button button-block"/>下一步</button>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--  大按鈕 -->
+                                                            <p class="arrow prev">
+                                                                <i class="ico" ></i>
+                                                            </p>
+                                                            <p id="next1" class="arrow next">
+                                                                <i class="ico"></i>
+                                                            </p>
+                        
+                                                            </form>
                                                         </div>
                                                         
                                                     </div>
                                                     
-                                                    <div class="top-row">
-                                                        <div class="field-wrap">
-                                                            <button type="submit" class="prev button button-block"/>前一步</button>
+                                                    <!-- 嬰兒票 -->
+                                                    <div  class="content" id="content2">  
+                                                        
+                                                        <!-- 用JS產生 旅客資料 -->
+                                                        <div class="table-responsive text-green">
+
+                                                            <form id="contact" class="get_form" action="" method="get"
+                                                            style="background-image: url(/tickets/img/contact-form-bg-2.png);">
+                                                            <table>
+                                                                <div id="planpickered" class="mt-4 pt-3 pb-1 bg-pink" >
+                                                                <h2 id="contact" class=" section-title mb-3 text-center text-white">嬰兒票種</h2>
+                                                            </table>
+                        
+                                                            <!-- 警視窗 -->
+                                                            <li id="custom-alert_3" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                                    role="alert" style="position: relative; background-color: rgb(255, 100, 86); display: none;">
+                                                                <p class="alert-text text-white"></p>
+                                                                <i id="alert-result_3"class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                                style="position: absolute; top: 5%; right: 0%; "></i>
+                                                            </li> 
+                                                            <!--  -->
+                        
+                                                            <div class="row mt-5 justify-content-between"
+                                                                style="padding-left: 2%; padding-right: 2%;">
+                                                                <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                                                <div class="row" style="padding-left: 10%;">
+                                                                    <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                                                    value="" required>
+                                                                    <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="orderPhone" placeholder="電話"
+                                                                    value="" required>
+                                                                <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                                                    required readonly>
+                                                                <input type="text" class="form-control" id="email" placeholder="email" value=""
+                                                                    required>
+                                                                </div>
+                        
+                                                                <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                                                style="padding-left: 5%; padding-right: 5%;">
+                        
+                                                                <div class="row justify-content-start"
+                                                                    style="padding-left: 30%; padding-right: 10%;">
+                        
+                                                                    <div
+                                                                    style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
+                                                                    <input type="checkbox" id="Orderer_check"
+                                                                        style="width: 20px; height: 20px; margin-top: 20%;">
+                        
+                                                                    <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
+                                                                        &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
+                                                                    </h4>
+                        
+                                                                    </div>
+                        
+                                                                </div>
+                        
+                                                                <div class="table-responsive justify-content-center">
+                                                                    <table class=" text-center text-primary ">
+                                                                    <thead>
+                                                                        <tr>
+                                                                        <th style=" width: 35%;">
+                                                                            <i class="fa-solid fa-earth-americas fa-2x"></i>
+                                                                            <h6>國籍</h6>
+                                                                            <select class="form-select" id="country" required>
+                                                                            <option value="">台灣</option>
+                                                                            <option>香港</option>
+                                                                            <option>大陸</option>
+                                                                            <option>其他</option>
+                                                                            </select>
+                                                                        </th>
+                                                                        <th style="width: 40%;margin-right: 10%;">
+                                                                            <i class="fa-solid fa-venus-mars fa-2x"></i>
+                                                                            <h6>性別</h6>
+                                                                            <select class="form-select" id="gender" required>
+                                                                            <option value="">女</option>
+                                                                            <option>男</option>
+                                                                            </select>
+                                                                        </th>
+                                                                        <th style="width: 40%; padding-top: 10%;">
+                                                                            <i class="fa-solid fa-cake-candles fa-2x"></i>
+                                                                            <h6>出生日期</h6>
+                                                                            <div>
+                                                                            <input type="date" id="birthdayPicker" placeholder="選擇日期範圍"
+                                                                                value="">
+                                                                            </div>
+                                                                        </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    </table>
+                                                                </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
+                                                            <!--  上/下一位按鈕 -->
+                                                            <div class="top-row">
+                                                                <div class="field-wrap">
+                                                                    <button type="submit" class="prev button button-block"/>前一步</button>
+                                                                </div>
+                                                            
+                                                                <div class="field-wrap">
+                                                                    <button id="next2" type="submit" class="next button button-block"/>下一步</button>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            
+                                                            <!--  大按鈕 -->
+                                                            <p class="arrow prev">
+                                                                <i class="ico" ></i>
+                                                            </p>
+                                                            <p id="next1" class="arrow next">
+                                                                <i class="ico"></i>
+                                                            </p>
+                
+                                                            </form>
                                                         </div>
-                                                    
-                                                        <div class="field-wrap">
-                                                            <button id="next2" type="submit" class="next button button-block"/>下一步</button>
+                                                        
+                                                    </div>
+
+                                                     <!-- 訂購人 -->
+                                                    <div class="content" id="content3">   
+                                                        
+                                                        <!-- 用JS產生 主要訂購人 資料 -->
+                                                        <div class="table-responsive">
+                                                            <form id="contact" class="get_form" action="" method="get"
+                                                            style="background-image: url(/tickets/img/contact-form-bg-2.png);">
+                                                            <table>
+                                                                <div id="planpickered" class="mt-4 pt-3 pb-1 bg-brown ">
+                                                                    <h2 id="contact" class=" section-title mb-3 text-center text-white">主要訂購人資料</h2>
+                                                                </div>
+                                                            </table>
+                                                            <div class="row mt-5">
+                                                                <div class="col-lg-6">
+                                                                <div class="row" style="padding-left: 10%;">
+                                                                    <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                                                    value="" required>
+                                                                    <h4 id="contact" class="col section-title  text-center text-primary"
+                                                                    style="font-size: 150%;">主要訂購人資料</h4>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="orderPhone" placeholder="電話"
+                                                                    value="" required>
+                                                                <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                                                    required>
+                                                                </div> 
+                        
+                                                                <!-- 訂單開立方式 -->
+                                                            <div class="col-lg-6 col-md-12  col-sm-12 text-primary mt-3   mb-5">
+                                                                <div class="list-group-item d-flex justify-content-between lh-sm" colspan="2">
+                                                                    <div class="table-responsive">
+                                                                    <table class="table text-center">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <h4>訂單開立方式</h4>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <th style="width: 50%;">
+                                                                            <div class="col">
+                                                                                <input type="radio" name="orderMethods" value="統一開立購票證名"
+                                                                                required>統一開立購票證名
+                                                                            </div>
+                                                                            </th>
+                                                                            <th style="width: 50%;">
+                                                                            <div class="col">
+                                                                                <input type="radio" name="orderMethods" value="分別開立購票證名"
+                                                                                required>分別開立購票證名
+                                                                            </div>
+                                                                            </th>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            
+                                                            </div>
+                                                            </form>
                                                         </div>
-                                                    </div>
-        
-                                                    <p class="arrow prev">
-                                                        <i class="ico" ></i>
-                                                    </p>
-                                                    <p id="next1" class="arrow next">
-                                                        <i class="ico"></i>
-                                                    </p>
-        
-                                                    </form>
-                                                </div>
-                                                
-                                            </div>
-                                            
-                                            <div class="content" id="content2">   
-                                                <h1>匯款資料</h1>
-                                                
-                                                <form action="/" method="post">
-                                                
-                                                <div class="field-wrap">
-                                                    <label>
-                                                        銀行帳號<span class="req">*</span>
-                                                    </label>
-                                                    <input type="text" name="bankCount" autocomplete="off"/>
-                                                </div>
-            
-                                                <div class="top-row">
-                                                    <div class="field-wrap">
-                                                        <label>
-                                                            銀行名稱<span class="req">*</span>
-                                                        </label>
-                                                        <input type="text" name="bankName1" required autocomplete="off"/>
-                                                    </div>
-                                                
-                                                    <div class="field-wrap">
-                                                        <label>
-                                                            分公司<span class="req">*</span>
-                                                        </label>
-                                                        <input type="text" name="branchName2" required autocomplete="off"/>
-                                                    </div>
-                                                </div>
-                                    
-                                                <div class="field-wrap">
-                                                <label>
-                                                    戶名<span class="req">*</span>
-                                                </label>
-                                                <input type="text" name="bankCName3" required autocomplete="off"/>
-                                                </div>
-                                                </form>
-            
-                                                <div class="top-row">
-                                                    <div class="field-wrap">
-                                                        <button type="submit" class="prev button button-block"/>前一步</button>
-                                                    </div>
-                                                
-                                                    <div class="field-wrap">
-                                                        <button id="next2" type="submit" class="next button button-block"/>下一步</button>
-                                                    </div>
-                                                </div>
-            
-                                            </div>
-            
-                                            <div class="content" id="content3">   
-                                                <h1>聯絡人資料</h1>
-                                                
-                                                <form action="/" method="post">
-                                                    <div class="top-row">
-                                                        <div class="field-wrap">
-                                                            <label>
-                                                                聯絡人姓名<span class="req">*</span>
-                                                            </label>
-                                                            <input type="text" id="name" name="Cname" required minlength="2" maxlength="6" size="10" autocomplete="off"/>
+                                                            
+                                                        <!-- 用JS產生 上/下一位按鈕 -->
+                                                        <div class="top-row">
+                                                            <div class="field-wrap">
+                                                                <button type="submit" class="prev button button-block"/>前一步</button>
+                                                            </div>
+                                                        
+                                                            <div class="field-wrap">
+                                                                <button id="next2" type="submit" class="next button button-block"/>下一步</button>
+                                                            </div>
                                                         </div>
-                                                    
-                                                        <div class="field-wrap">
-                                                            <label>
-                                                                職稱<span class="req">*</span>
-                                                            </label>
-                                                            <input type="title" id="title" name="post" required minlength="2" maxlength="6" size="10" autocomplete="off"/>
-                                                        </div>
+                    
                                                     </div>
-            
-                                                    
-                                                <div class="top-row">
-                                                    <div class="field-wrap">
-                                                        <label>
-                                                            電話<span class="req">:02-1234-1234</span>
-                                                        </label>
-                                                        <input type="tel" id="tel" name="tel"  required autocomplete="off" />
-                                                    
+                    
+                                                    <div class="content" id="content4">   
+                                                        <h1>聯絡人資料</h1>
+                                                        <form action="/" method="post">
+                                                            <div class="button button-block"> 
+                                                                您的註冊資料已送出，<br>
+                                                                待金廈海運核准過後，<br>
+                                                                會寄發Email通知您。<br>
+                                                                (內含會員帳號密碼)<br>
+                                                                <br>連絡電話:
+                                                            </div>
+                                                        </form>
                                                     </div>
-                                                
-                                                    <div class="field-wrap">
-                                                        <label>
-                                                            分機<span class="req">(非必填)</span>
-                                                        </label>
-                                                        <input type="tel" id="ext" name="ext" required autocomplete="off" />
-                                                    
-                                                    </div>
+                    
                                                 </div>
-                                                
-                                                <div class="field-wrap">
-                                                    <label>
-                                                        行動電話<span class="req">:0912-345-678</span>
-                                                    </label>
-                                                    <input type="tel" id="phone" name="mobile" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required autocomplete="off" />
-                                                    
-                                                </div>
-            
-                                    
-                                                <div class="field-wrap">
-                                                <label>
-                                                    Email<span class="req">*</span>
-                                                </label>
-                                                <input type="email" name="email" required autocomplete="off"/>
-                                                </div>
-            
-                                                <div class="top-row">
-                                                    <div class="field-wrap">
-                                                        <button  type="submit" class="prev button button-block"/>前一步</button>
-                                                    </div>
-                                                
-                                                    <div class="field-wrap">
-                                                        <button id="sendRegistered3" type="submit" class="button button-block"/>送出</button>
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                                </form>
-                                            </div>
-            
-                                            <div class="content" id="content4">   
-                                                <h1>聯絡人資料</h1>
-                                                <form action="/" method="post">
-                                                    <div class="button button-block"> 
-                                                        您的註冊資料已送出，<br>
-                                                        待金廈海運核准過後，<br>
-                                                        會寄發Email通知您。<br>
-                                                        (內含會員帳號密碼)<br>
-                                                        <br>連絡電話:
-                                                    </div>
-                                                </form>
-                                            </div>
-            
-                                        </div>
                                         
                                         </div> 
                                         
                                         <button class="main-button pt-3" id="form_send">
-                                        <h3>送出</h3>
+                                            <h3>送出</h3>
                                         </button>
                                     </div>
-
-                                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                    <input type="button" name="next" class="next action-button" value="Next" />
+                                   
+                                    <input type="button" id="P2_next" name="nextP1" class="page-previous  next action-button" value="previous" />
+                                    <input type="button" id="P2_next" name="nextP1" class="page-next  next action-button" value="Next" />
                                 </fieldset>
 
+
+                                <!-- 第三頁:資料 -->
                                 <fieldset class="fieldset">
-                                <h2 class="fs-title">Personal Details</h2>
-                                <h3 class="fs-subtitle">We will never sell it</h3>
-                                <input type="text" name="fname" placeholder="First Name" />
-                                <input type="text" name="lname" placeholder="Last Name" />
-                                <input type="text" name="phone" placeholder="Phone" />
-                                <textarea name="address" placeholder="Address"></textarea>
-                                <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                <a href="https://twitter.com/GoktepeAtakan" class="submit action-button" target="_top">Submit</a>
+                                
+                                    <div class="table-responsive">
+                                        
+                                        
+                                        <table id="example" class="table table-striped table-bordered mt-5"
+                                            cellspacing="0" width="100%">
+                                            
+                                            
+                                            <thead style="background: rgb(194, 234, 255)">
+                                                <tr>
+                                                    <th class="article-p"  colspan="2">訂單編號</th>
+                                                    <th class="article-p"  colspan="2">航班代碼</th>
+                                                    <th class="article-p"  colspan="2">出發日期</th>
+                                                    <th class="article-p"  colspan="2">出發時間</th>
+                                                    <th class="article-p"  colspan="2">票數</th>
+                                                </tr>
+                                                <tr>
+                                                    <td id="Modal-orderNum" colspan="2">Alphabet puzzle</td>
+                                                    <td id="Modal-pno" colspan="2">2016/01/15</td>
+                                                    <td id="Modal-tdate" colspan="2">Alphabet puzzle</td>
+                                                    <td id="Modal-btime" colspan="2">2016/01/15</td>
+                                                    <td id="Modal-ticCount" colspan="2">Alphabet puzzle</td>
+                                                </tr>
+
+                                                <tr class="" style="background: rgb(102, 140, 235)">
+                                                    <th id="hx_oreder">序</th>
+                                                    <th id="hx_tnum">票號</th>
+                                                    <th id="hx_ttype">票種</th>
+                                                    <th id="hx_tname">姓名</th>
+                                                    <th id="hx_gender">性別</th>
+                                                    <th id="hx_birthday">生日</th>
+                                                    <th id="hx_id">身分證</th>
+                                                    <th id="hx_mobile">連絡電話</th>
+                                                    <th id="hx_E-mail">E-mail</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="hxtbody">
+                                                
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+
+                                <input type="button" name="previous" class="page-previous action-button" value="Previous" />
+                                <input type="button" name="submit" class="submit action-button" value="提交"></input>
                                 </fieldset>
                                 
                             </div> 
@@ -843,11 +964,11 @@
     <!-- <script src="/tickets/js/progressBar.js"></script> -->
 
     <!-- scrolling-tabs特效 -->
-    <!-- <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script> -->
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
 
    
     <!-- 連結網頁主程式 -->
-    <script src="/tickets/js/owl_carousel.js"></script>
+    <!-- <script src="/tickets/js/owl_carousel.js"></script> -->
     <script src="/tickets/js/order_try.js"></script>
     <script src="/tickets/js/scrolling.js"></script>
 
