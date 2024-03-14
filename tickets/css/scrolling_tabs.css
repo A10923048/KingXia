@@ -1,0 +1,37 @@
+.owl-dots{
+    display:none;
+  }
+  .scroll-tabs{
+    position:relative;  
+  }
+  .owl-nav{
+  
+    width:100%;
+  }
+  .owl-prev{
+    position:absolute;
+    top:0;
+    left:-30px;
+    height:100%;
+    padding:15px!important;
+    width:30px;
+    font-size:20px!important;
+    color:white!important;
+    background:gray!important;
+    display:inline-block!important;
+  }
+  .owl-next{
+    position:absolute;
+    top:0;
+    right:-30px;
+    height:100%;
+    padding:15px!important;
+    width:30px;
+    font-size:20px!important;
+    color:white!important;
+    background:gray!important;
+    display:inline-block!important;
+  }
+  .scroll-tabs{
+    padding:0 30px;
+  }
