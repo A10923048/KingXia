@@ -574,8 +574,6 @@ $(document).ready(function () {
        // $("#buyers_list").append(buyer_form_show);
 
 
-
-
     });
   
   
@@ -1505,8 +1503,8 @@ $(document).ready(function () {
         //註冊步驟按鈕 轉換
         $('.nav-link').on('click', function(e) {
             e.preventDefault();
-        
-            // 移除所有活動的鏈接
+
+            // // 移除所有活動的鏈接
             $('.nav-link').removeClass('active');
         
             // 將當前鏈接設置為活動狀態
@@ -1515,38 +1513,170 @@ $(document).ready(function () {
             // 獲取目標 ID
             var target = $(this).attr('href');
         
-            // 顯示相應的目標內容
-            // $('.tab-group li').removeClass('active');
-            // $('.tab-group li:has(a[href="' + target + '"])').addClass('active');
             $('.tab-content > div').hide();
             $(target).fadeIn(600);
         });
 
-        //表單中的下一步
-        $('.next').on('click', function() {
 
-           
-            // 獲取當前 content 元素的 ID
-            var currentId = $('.content').attr('id');
-            console.log("獲取當前 content 元素的 ID:"+currentId);
+
+
+        //下一位的功能
+        $('.next').on('click', function(event) {
+            // 阻止默认提交行为
+            event.preventDefault();
             
-            // 提取當前 ID 中的數字
-            var currentIndex = parseInt(currentId.replace('content', ''));
+            console.log("点击了下一位按钮");
+            
+            var activeContentId = $(this).closest('.content').attr('id');
+
+            console.log("activeContentId:"+activeContentId);
+
+
+            // 提取数字部分并加上 1，构建下一个内容区域的 ID
+            var nextIndex = parseInt(activeContentId.replace('content', '')) + 1;
+
+            console.log("Id+1:"+nextIndex);
+
+
+            var nextContentId = 'content' + nextIndex;
+
+            // 构建下一个内容区域的 href 值
+            var nextHref = '#' + nextContentId;
+            
+
+            // 检查是否存在下一个内容
+            console.log("length:"+$('#' + nextContentId).length);
+            if ($('#' + nextContentId).length !== 0) {
+
+                    // 移除 nav-link 类具有 active 的类
+                    $('.nav-link').removeClass('active');
+
+                    // 查找具有相同 href 值的链接，并为其添加 active 类
+                    $('a[href="' + nextHref + '"]').addClass('active');
+                    
+                    $('.tab-content > div').hide();
+                    
+                    // 显示下一个内容
+                    $(nextHref).fadeIn(600);
+                    
+                console.log("当前内容不是最后一个。");
+                
+            } 
+
+        });
+
+
+        //上一位的功能
+        $('.prev').on('click', function(event) {
+            // 阻止默认提交行为
+            event.preventDefault();
+            
+            console.log("点击了上一个按钮");
+            
+            // 获取当前活动的内容的 ID
+            var activeContentId = $(this).closest('.content').attr('id');
+            console.log("activeContentId"+activeContentId);
+
+
+
+            // 提取数字部分并减去 1，构建上一个内容区域的 ID
+            var prevIndex = parseInt(activeContentId.replace('content', '')) - 1;
+            var prevContentId = 'content' + prevIndex;
         
-            // 獲取下一個 content 元素的 ID
-            var nextIndex = currentIndex + 1;
-            var nextContentId = '#content' + nextIndex;
+            // 构建上一个内容区域的 href 值
+            var prevHref = '#' + prevContentId;
         
-            // 如果找不到下一個 content 元素，則退出函數
-            if ($(nextContentId).length === 0) {
-                return;
+           
+            // 检查是否存在上一个内容
+            if ($('#' + prevContentId).length !== 0) {
+
+                 // 移除 nav-link 类具有 active 的类
+                    $('.nav-link').removeClass('active');
+                
+                    // 查找具有相同 href 值的链接，并为其添加 active 类
+                    $('a[href="' + prevHref + '"]').addClass('active');
+                
+                    $('.tab-content > div').hide();
+                    
+                    // 显示上一个内容
+                    $(prevHref).fadeIn(600);
+                
+            } else {
+                console.log("当前内容是第一个。");
+                // 在这里执行您的第一个内容的特殊处理
             }
-        
-            // 隱藏當前 content 元素，顯示下一個 content 元素
-            currentContent.hide();
-            $(nextContentId).show();
         });
         
+
+
+
+        // $('.next').on('click', function(event) {
+        //     // 阻止默认提交行为
+        //     event.preventDefault();
+            
+        //     console.log("点击了下一位按钮");
+            
+        //     var nav_link_active = $(this).closest('.form').find('.nav-link.active').attr('href');
+        //     console.log("获取当前活动的 nav-link_active：" + nav_link_active);    
+            
+        //     // 提取数字部分并加上 1
+        //     var nextIndex = parseInt(nav_link_active.replace('#content', '')) + 1;
+            
+        //     // 构建下一个链接的 href
+        //     var nextHref = '#content' + nextIndex;
+        //     console.log("nextHref ：" + nextHref);
+            
+        //     // 移除当前活动的 nav-link 的 active 类
+        //     $(nav_link_active).removeClass('active');
+            
+        //     // 获取下一个 nav-link，并添加 active 类
+        //     var next_nav_link = $(nextHref + '.nav-link');
+        //     next_nav_link.addClass('active');
+            
+        //     $('.tab-content > div').hide();
+            
+        //     // 显示下一个内容
+        //     $(nextHref).fadeIn(600);
+        // });
+        
+        
+
+
+
+        //表單中的下一步
+
+
+
+
+
+        //下一位按鈕提交
+        // $('#next2').on('click', function(event) {
+
+        //     // 阻止默认提交行为
+        //     event.preventDefault(); 
+
+        //      // 檢查所有表單的有效性
+        //     var allFormsValid = true;
+        //     $('.form-control').each(function() {
+        //         if (!this.checkValidity()) {
+
+        //             // 显示警告或其他提示
+        //             this.reportValidity();
+        //             allFormsValid = false;
+        //             return false; // 中斷 each() 迴圈
+        //         }
+        //     });
+
+        //     // 如果所有表單都有效，執行相應的操作
+        //     if (allFormsValid) {
+
+        //         //觸發
+        //         $('.next').click();
+
+        //     }
+
+            
+        // });
 
         //Page2:隱藏未被選中的表單
         $('.tab-content > div:not(:first-child)').hide();

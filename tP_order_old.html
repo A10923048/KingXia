@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 光瑞給的 -->
+    <!-- <meta name="_csrf" th:content="${_csrf.token}">
+    <meta name="_csrf_header" th:content="${_csrf.headerName}">  -->
+
+    <title>金廈海運-訂票</title>
+    <link rel="icon shortcut" href="/tickets/img/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Bootstrap CSS -->
+    
+
+    <!-- 使用font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- TODO: 客製化Bootstrap CSS -->
+    <link rel="stylesheet" href="/tickets/css/bootstrap.css">
+
+
+
+    <!-- 使用style.css -->
+    <!-- <link rel="stylesheet" href="/tickets/css/pay_success.css"> -->
+
+    <!-- Progress Bar -->
+    <!-- <link rel="stylesheet" href="/tickets/css/Progress Bar.css"> -->
+
+    <link rel="stylesheet" href="/tickets/css/order_try.css">
+    
+   
+
+</head>
+
+<body>
+  
+    <!-- navbar end -->
+
+
+    <!-- header -->
+    <header id="header">
+        <div class="header">
+             <div>
+                <h1 class="loader ">
+                    <img src="/tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
+                    <span class="m">金</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">廈</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">海</span>
+                    <span class="m">&nbsp;</span>
+                    <span class="m">運</span>
+                    <span class="m"></span>
+                </h1>
+
+            </div>
+        </div>
+
+        <div id="header" class=" text-center bg-dark container">
+            <section id="featuresSection" class="py-5" style="border-radius: 15px;">
+                
+                    <main>
+                        <div class=" py-5 text-center text-white">
+                            <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                            <h2>訂票資料填寫</h2>
+                            <!-- <h3 class="quote">"Passenger Information"</h3> -->
+                            <p class="author"><em>~Passenger Information~</em></p>
+                        </div>
+
+                        <div class=" align-self-center" >
+
+                            <div id="msform"> 
+
+                                <!-- progressbar -->
+                                <ul id="progressbar">
+                                    <input type="button" name="previous" class="page-previous action-button" value="Previous" />
+                                    <li class="active">票種選擇</li>
+                                    <li>旅客資料輸入</li>
+                                    <li>Personal Details</li>
+                                    <input type="button" name="next" class="page-next action-button" value="Next" />
+                                </ul>
+
+                                <!-- fieldsets -->
+                                
+                                <!-- 第一頁:票種選擇 -->
+                                <fieldset class="fieldset">
+                                    <h2 class="fs-title">Step1</h2>
+                                    <h3 class="fs-subtitle">票種選擇</h3>
+                                    
+                                    <!-- 航班資訊 -->
+                                    <ul class="list-group mb-3">
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">出發日期:</h5>
+                                        <span class="my-0" id="time-show">(日期顯示)</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">出發時間:</h5>
+                                        <span class="my-0" id="clock-show">(時間顯示)</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">船班:</h5>
+                                        <span class="my-0" id="shipID-show">(船班顯示)</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <h5 class="my-0">票數:</h5>
+                                        <h4 class="d-flex justify-content-between align-items-center">
+                                            <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
+                                        </h4>
+                                        </li>
+                                        
+                                    </ul>
+
+                                    <!-- 票種選擇 -->
+                                    <div class="col table-responsive">
+                                        <table class="table text-center">
+                                        <thead>
+                                            <tr>
+                                            <h3>票種選擇</h3>
+                                            <h5 class="my-0"></h5>
+                                            <ul class="list-group mb-3">
+                                                <li id="custom-alert" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                role="alert"
+                                                style="position: relative; background-color: rgb(255, 196, 191); display: none;">
+                                                <h5 id="alert-result" class="text-red"></h5>
+                                                <i  class=" alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                    style="position: absolute; top: 5%; right: 0%;"></i>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between lh-sm">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center bg-primary">
+                                                    <h2 class=" bg-primary  text-white">(未選擇)</h2>
+                                                </div>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <h2 class=" rounded-pill main-button text-white "
+                                                    id="tickets_unchoosed"></h2>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h2 class=" bg-primary  text-white" id="tickets_choosed">張票</h2>
+                                                </div>
+                                                </li>
+                                                <li id="custom-alert_2" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                role="alert"
+                                                style="position: relative; background-color: rgb(255, 100, 86); display:none ;">
+                                                <p class="text-white">票種選擇已超過預定票數!</p>
+                                                <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                    style="position: absolute; top: 5%; right: 0%; "></i>
+                                                </li>
+                                            </ul>
+                                            </tr>
+                                            <tr>
+                                            <th style=" width: 30%;">
+                                                <h6 class="find_title">全票</h6>
+                                                <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                                <h6>票數</h6>
+                                                <select id="ticketQuantity_A" class="ticketQuantity">
+                                            
+                                                </select>
+                                            </th>
+                                            <th style="width: 30%;">
+                                                <h6 class="find_title">嬰兒票</h6>
+                                                <h6 >(<2歲以下)</h6>
+                                                <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                                <h6>票數</h6>
+                                                <select id="ticketQuantity_C" class="ticketQuantity">
+                                                </select>
+                                            </th>
+                                            </tr>
+                                        </thead>
+                                        </table>
+                                    </div>
+
+                                    <input type="button" id="P1_next" name="nextP1" class="page-next  action-button" value="Next" />
+                                </fieldset>
+
+                                <!-- 第二頁:旅客資料輸入 -->
+                                <fieldset>
+                                    
+                                    <!-- 新加 -->
+                                  
+                                    <!-- 新 scrolling tabs -->
+                                    <!-- <div class="scroll-tabs">
+                                        <div class="owl-carousel owl-loaded ">                                 
+                                            <div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active tab" href="#">
+                                                    <i class="fa-solid fa-ticket fa-2x" style="color: #ffffff;"></i>
+                                                    <a href="#content1">全票</a>
+                                                </a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified ">
+                                                <a class="nav-item nav-link " href="#">
+                                                    <i class="fa-solid fa-ticket fa-4x" style="color: #ffffff;"></i>
+                                                    <a href="#content1">全票</a>
+                                                </a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified ">
+                                                <a class="nav-item nav-link " href="#">
+                                                    <i class="fa-solid fa-ticket fa-4x" style="color: #ffffff;"></i>
+                                                    <a href="#content1">全票</a>
+                                                </a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified ">
+                                                <a class="nav-item nav-link " href="#">
+                                                    <i class="fa-solid fa-ticket fa-4x" style="color: #ffffff;"></i>
+                                                    <a href="#content1">全票</a>
+                                                </a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified ">
+                                                <a class="nav-item nav-link " href="#">
+                                                    <i class="fa-solid fa-ticket fa-4x" style="color: #ffffff;"></i>
+                                                    <a href="#content1">全票</a>
+                                                </a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active" href="#">全票</a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active" href="#">Active</a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active" href="#">Active</a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active" href="#">Active</a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active" href="#">Active</a>
+                                            </div><div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active" href="#">Active</a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active" href="#">Active</a>
+                                            </div>
+                                            <div class="nav nav-pills nav-justified">
+                                                <a class="nav-item nav-link active" href="#">Active</a>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- 舊 tab-group-->
+                                    <!-- <h1 class="mt-5 pb-3 mb-4 border-bottom">旅客資料</h1>
+                                        <ul class="tab-group">
+                                            <li class="tab"><a href="#content2">旅客(1)表單</a></li>
+                                            <li class="tab"><a href="#content3">旅客(1)表單</a></li>
+                                            <li class="tab active"><a href="#content1">旅客(1)表單</a></li>
+                                            <li class="tab"><a href="#content2">旅客(1)表單</a></li>
+                                            <li class="tab"><a href="#content3">旅客(1)表單</a></li>
+                                        </ul> -->
+
+                                    <!-- 旅客資料 -->
+                                    <div  id="buyers_list">
+                                        <!-- form -->
+                                        <div class="form">
+
+                                                <!-- 選擇Bar -->
+                                                <h1 class="mt-5 pb-3 mb-4 ">旅客資料</h1>
+                                                <div class="scroll-tabs">
+                                                    <div class="owl-carousel owl-loaded ">                                 
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link text-green" href="#content1">
+                                                                <i class="fa-solid fa-ticket fa-4x text-green" style="color: #ffffff;"></i>
+                                                                <a class="text-green"href="#content1">全票</a>
+                                                            </a>
+                                                        </div>
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link " href="#content2">
+                                                                <i class="fa-solid fa-ticket fa-4x text-pink" style="color: #ffffff;"></i>
+                                                                <a class="text-pink" href="#content2">嬰兒票</a>
+                                                            </a>
+                                                        </div>
+                                                        
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link " href="#content3">
+                                                                <i class="fa-solid fa-ticket fa-4x text-brown" style="color: #ffffff;"></i>
+                                                                <a class="text-brown" href="#content3">訂購人</a>
+                                                            </a>
+                                                        </div>
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link " href="#">
+                                                                <i class="fa-solid fa-ticket fa-4x" style="color: #ffffff;"></i>
+                                                                <a href="#content1">全票</a>
+                                                            </a>
+                                                        </div>
+                                                        <div class="nav nav-pills nav-justified ">
+                                                            <a class="nav-item nav-link " href="#">
+                                                                <i class="fa-solid fa-ticket fa-4x" style="color: #ffffff;"></i>
+                                                                <a href="#content1">全票</a>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--原版  -->
+                                                <!-- <ul class="tab-group">
+                                                    <li class="tab"><a href="#content1">旅客(1)表單</a></li>
+                                                    <li class="tab"><a href="#content2">旅客(1)表單</a></li>
+                                                    <li class="tab active"><a href="#content3">旅客(1)表單</a></li>
+                                                </ul> -->
+
+                                                <!-- 對應的表單 -->
+                                                <div class="tab-content">
+
+                                                    <!-- 全票 -->
+                                                    <div  class="content" id="content1">  
+                                                        
+                                                        <!-- 用JS產生 旅客資料 -->
+                                                        <div class="table-responsive text-green">
+
+                                                            <!-- 表頭 -->
+                                                            <form id="contact" class="get_form" action="" method="get"
+                                                            style="background-image: url(/tickets/img/contact-form-bg-2.png);">
+                                                            <table>
+                                                                <div id="planpickered" class="mt-4 pt-3 pb-1 bg-green" >
+                                                                <h2 id="contact" class=" section-title mb-3 text-center text-white">全票票種</h2>
+                                                            </table>
+                        
+                                                            <!-- 警視窗 -->
+                                                            <li id="custom-alert_3" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                                    role="alert" style="position: relative; background-color: rgb(255, 100, 86); display: none;">
+                                                                <p class="alert-text text-white"></p>
+                                                                <i id="alert-result_3"class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                                style="position: absolute; top: 5%; right: 0%; "></i>
+                                                            </li> 
+                                                            
+                                                           <!-- 填寫格 -->
+                                                            <div class="row mt-5 justify-content-between"
+                                                                style="padding-left: 2%; padding-right: 2%;">
+
+                                                                 <!-- 左半部 -->
+                                                                <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                                                <div class="row" style="padding-left: 10%;">
+                                                                    <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                                                    value="" required>
+                                                                    <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                                                </div>
+                                                                <input type="tel" class="form-control" id="orderPhone" placeholder="電話"
+                                                                    value="" required>
+                                                                <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                                                    required>
+                                                                <input type="email" class="form-control" id="email" placeholder="email" value=""
+                                                                    required>
+                                                                </div>
+                                                                
+                                                                <!-- 右半部 -->
+                                                                <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                                                style="padding-left: 5%; padding-right: 5%;">
+                        
+                                                                <div class="row justify-content-start"
+                                                                    style="padding-left: 30%; padding-right: 10%;">
+                        
+                                                                    <div
+                                                                    style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
+                                                                    <input type="checkbox" id="Orderer_check"
+                                                                        style="width: 20px; height: 20px; margin-top: 20%;">
+                        
+                                                                    <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
+                                                                        &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
+                                                                    </h4>
+                        
+                                                                    </div>
+                        
+                                                                </div>
+                        
+                                                                <div class="table-responsive justify-content-center">
+                                                                    <table class=" text-center text-primary ">
+                                                                    <thead>
+                                                                        <tr>
+                                                                        <th style=" width: 35%;">
+                                                                            <i class="fa-solid fa-earth-americas fa-2x"></i>
+                                                                            <h6>國籍</h6>
+                                                                            <select class="form-select form-control" id="country" required>
+                                                                                <option value=""></option> 
+                                                                                <option value="TWN">台灣</option> 
+                                                                                <option value="CHN">大陸</option> 
+                                                                                <option value="HKG">香港</option> 
+                                                                                <option value="MAC">澳門</option> 
+                                                                                <option value="NN">其他</option> 
+                                                                            </select>
+                                                                        </th>
+                                                                        <th style="width: 40%;margin-right: 10%;">
+                                                                            <i class="fa-solid fa-venus-mars fa-2x"></i>
+                                                                            <h6>性別</h6>
+                                                                            <select class="form-select form-control" id="gender" required>
+                                                                                <option value=""></option> 
+                                                                                <option value="女">女</option> 
+                                                                                <option value="男">男</option> 
+                                                                            </select>
+                                                                        </th>
+                                                                        <th style="width: 40%; padding-top: 10%;">
+                                                                            <i class="fa-solid fa-cake-candles fa-2x"></i>
+                                                                            <h6>出生日期</h6>
+                                                                            <div>
+                                                                            <input type="date"class="form-select form-control" id="birthdayPicker" placeholder="選擇日期範圍" value="" required>
+                                                                            </div>
+                                                                        </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    </table>
+                                                                </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
+                                                            <!-- 用JS產生 上/下一位按鈕 -->
+                                                            <div class="top-row">
+                                                                <div class="field-wrap">
+                                                                    <button type="submit" class="prev button button-block"/>前一位</button>
+                                                                </div>
+                                                            
+                                                                <div class="field-wrap">
+                                                                    <button id="next2" class="next button button-block"/>下一位</button>
+                                                                    
+                                                                </div>
+                                                            </div>
+
+                                                            <!--  大按鈕 -->
+                                                            <p class="arrow prev">
+                                                                <button type="submit" class="ico prev button button-block"/>前一位</button>
+                                                                <!-- <i class="ico" ></i> -->
+                                                            </p>
+                                                            <p id="next1" class="arrow next">
+                                                                <i class="ico"></i>
+                                                            </p>
+                        
+                                                            </form>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <!-- 嬰兒票 -->
+                                                    <div  class="content" id="content2">  
+                                                        
+                                                        <!-- 用JS產生 旅客資料 -->
+                                                        <div class="table-responsive text-green">
+
+                                                            <form id="contact" class="get_form" action="" method="get"
+                                                            style="background-image: url(/tickets/img/contact-form-bg-2.png);">
+                                                            <table>
+                                                                <div id="planpickered" class="mt-4 pt-3 pb-1 bg-pink" >
+                                                                <h2 id="contact" class=" section-title mb-3 text-center text-white">嬰兒票種</h2>
+                                                            </table>
+                        
+                                                            <!-- 警視窗 -->
+                                                            <li id="custom-alert_3" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                                    role="alert" style="position: relative; background-color: rgb(255, 100, 86); display: none;">
+                                                                <p class="alert-text text-white"></p>
+                                                                <i id="alert-result_3"class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                                style="position: absolute; top: 5%; right: 0%; "></i>
+                                                            </li> 
+                                                            
+                        
+                                                            <!-- 填寫格 -->
+                                                            <div class="row mt-5 justify-content-between"
+                                                                style="padding-left: 2%; padding-right: 2%;">
+
+                                                                 <!-- 左半部 -->
+                                                                <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                                                <div class="row" style="padding-left: 10%;">
+                                                                    <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                                                    value="" required>
+                                                                    <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                                                </div>
+                                                                <input type="tel" class="form-control" id="orderPhone" placeholder="電話"
+                                                                    value="" required>
+                                                                <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                                                    required>
+                                                                <input type="email" class="form-control" id="email" placeholder="email" value=""
+                                                                    required>
+                                                                </div>
+                                                                
+                                                                <!-- 右半部 -->
+                                                                <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                                                style="padding-left: 5%; padding-right: 5%;">
+                        
+                                                                <div class="row justify-content-start"
+                                                                    style="padding-left: 30%; padding-right: 10%;">
+                        
+                                                                    <div
+                                                                    style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
+                                                                    <input type="checkbox" id="Orderer_check"
+                                                                        style="width: 20px; height: 20px; margin-top: 20%;">
+                        
+                                                                    <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
+                                                                        &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
+                                                                    </h4>
+                        
+                                                                    </div>
+                        
+                                                                </div>
+                        
+                                                                <div class="table-responsive justify-content-center">
+                                                                    <table class=" text-center text-primary ">
+                                                                    <thead>
+                                                                        <tr>
+                                                                        <th style=" width: 35%;">
+                                                                            <i class="fa-solid fa-earth-americas fa-2x"></i>
+                                                                            <h6>國籍</h6>
+                                                                            <select class="form-select" id="country" required>
+                                                                                <option value=""></option> 
+                                                                                <option value="TWN">台灣</option> 
+                                                                                <option value="CHN">大陸</option> 
+                                                                                <option value="HKG">香港</option> 
+                                                                                <option value="MAC">澳門</option> 
+                                                                                <option value="NN">其他</option> 
+                                                                            </select>
+                                                                        </th>
+                                                                        <th style="width: 40%;margin-right: 10%;">
+                                                                            <i class="fa-solid fa-venus-mars fa-2x"></i>
+                                                                            <h6>性別</h6>
+                                                                            <select class="form-select" id="gender" required>
+                                                                                <option value=""></option> 
+                                                                                <option value="女">女</option> 
+                                                                                <option value="男">男</option> 
+                                                                            </select>
+                                                                        </th>
+                                                                        <th style="width: 40%; padding-top: 10%;">
+                                                                            <i class="fa-solid fa-cake-candles fa-2x"></i>
+                                                                            <h6>出生日期</h6>
+                                                                            <div>
+                                                                            <input type="date" id="birthdayPicker" placeholder="選擇日期範圍" value="" required>
+                                                                            </div>
+                                                                        </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    </table>
+                                                                </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
+                                                            <!--  上/下一位按鈕 -->
+                                                            <div class="top-row">
+                                                                <div class="field-wrap">
+                                                                    <button type="submit" class="prev button button-block"/>前一步</button>
+                                                                </div>
+                                                            
+                                                                <div class="field-wrap">
+                                                                    <button id="next2" type="submit" class="next button button-block"/>下一步</button>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            
+                                                            <!--  大按鈕 -->
+                                                            <p class="arrow prev">
+                                                                <i class="ico" ></i>
+                                                            </p>
+                                                            <p id="next1" class="arrow next">
+                                                                <i class="ico"></i>
+                                                            </p>
+                
+                                                            </form>
+                                                        </div>
+                                                        
+                                                    </div>
+
+                                                     <!-- 訂購人 -->
+                                                    <div class="content" id="content3">   
+                                                        
+                                                        <!-- 用JS產生 主要訂購人 資料 -->
+                                                        <div class="table-responsive">
+
+                                                            <!-- 表頭 -->
+                                                            <form id="contact" class="get_form" action="" method="get"
+                                                            style="background-image: url(/tickets/img/contact-form-bg-2.png);">
+                                                                    <table>
+                                                                        <div id="planpickered" class="mt-4 pt-3 pb-1 bg-brown ">
+                                                                            <h2 id="contact" class=" section-title mb-3 text-center text-white">主要訂購人資料</h2>
+                                                                        </div>
+                                                                    </table>
+
+                                                                    <!-- 填寫格 -->
+                                                                    <div class="row mt-5">
+                                                                        <!-- 左半部 -->
+                                                                        <div class="col-lg-6">
+                                                                        <div class="row" style="padding-left: 10%;">
+                                                                            <input type="text" class="form-control col" id="orderName" placeholder="姓名"
+                                                                            value="" required>
+                                                                            <h4 id="contact" class="col section-title  text-center text-primary"
+                                                                            style="font-size: 150%;">主要訂購人資料</h4>
+                                                                        </div>
+                                                                        <input type="tel" class="form-control" id="orderPhone" placeholder="電話"
+                                                                            value="" required>
+                                                                        <input type="text" class="form-control" id="orderId" placeholder="身分證" value=""
+                                                                            required>
+                                                                        </div> 
+                                
+                                                                        <!-- 右半部 --><!-- 訂單開立方式 -->
+                                                                        <div class="col-lg-6 col-md-12  col-sm-12 text-primary mt-3   mb-5">
+                                                                            <div class="list-group-item d-flex justify-content-between lh-sm" colspan="2">
+                                                                                <div class="table-responsive">
+                                                                                <table class="table text-center">
+                                                                                    <thead>
+                                                                                    <tr>
+                                                                                        <h4>訂單開立方式</h4>
+                                                                                    </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                    <tr>
+                                                                                        <th style="width: 50%;">
+                                                                                        <div class="col">
+                                                                                            <input type="radio" name="orderMethods" value="統一開立購票證名"
+                                                                                            required>統一開立購票證名
+                                                                                        </div>
+                                                                                        </th>
+                                                                                        <th style="width: 50%;">
+                                                                                        <div class="col">
+                                                                                            <input type="radio" name="orderMethods" value="分別開立購票證名"
+                                                                                            required>分別開立購票證名
+                                                                                        </div>
+                                                                                        </th>
+                                                                                    </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    
+                                                                    </div>
+
+                                                                    <!-- 用JS產生 上/下一位按鈕 -->
+                                                                    <div class="top-row">
+                                                                        <div class="field-wrap">
+                                                                            <button type="submit" class="prev button button-block"/>前一步</button>
+                                                                        </div>
+                                                                    
+                                                                        <div class="field-wrap">
+                                                                            <button id="next2" type="submit" class="next button button-block"/>下一步</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!--  大按鈕 -->
+                                                                    <p class="arrow prev">
+                                                                        <i class="ico" ></i>
+                                                                    </p>
+                                                                    <p id="next1" class="arrow next">
+                                                                        <i class="ico"></i>
+                                                                    </p>
+                                                            </form>
+                                                        </div>
+
+                                                        
+                                                            
+                    
+                                                    </div>
+                    
+                                                    <div class="content" id="content4">   
+                                                        <h1>聯絡人資料</h1>
+                                                        <form action="/" method="post">
+                                                            <div class="button button-block"> 
+                                                                您的註冊資料已送出，<br>
+                                                                待金廈海運核准過後，<br>
+                                                                會寄發Email通知您。<br>
+                                                                (內含會員帳號密碼)<br>
+                                                                <br>連絡電話:
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                    
+                                                </div>
+                                        
+                                        </div> 
+                                        
+                                        <button class="main-button pt-3" id="form_send">
+                                            <h3>送出</h3>
+                                        </button>
+                                    </div>
+                                   
+                                    <input type="button" id="P2_next" name="nextP1" class="page-previous  next action-button" value="previous" />
+                                    <input type="button" id="P2_next" name="nextP1" class="page-next  next action-button" value="Next" />
+                                </fieldset>
+
+
+                                <!-- 第三頁:資料 -->
+                                <fieldset class="fieldset">
+                                
+                                    <div class="table-responsive">
+                                        
+                                        
+                                        <table id="example" class="table table-striped table-bordered mt-5"
+                                            cellspacing="0" width="100%">
+                                            
+                                            
+                                            <thead style="background: rgb(194, 234, 255)">
+                                                <tr>
+                                                    <th class="article-p"  colspan="2">訂單編號</th>
+                                                    <th class="article-p"  colspan="2">航班代碼</th>
+                                                    <th class="article-p"  colspan="2">出發日期</th>
+                                                    <th class="article-p"  colspan="2">出發時間</th>
+                                                    <th class="article-p"  colspan="2">票數</th>
+                                                </tr>
+                                                <tr>
+                                                    <td id="Modal-orderNum" colspan="2">Alphabet puzzle</td>
+                                                    <td id="Modal-pno" colspan="2">2016/01/15</td>
+                                                    <td id="Modal-tdate" colspan="2">Alphabet puzzle</td>
+                                                    <td id="Modal-btime" colspan="2">2016/01/15</td>
+                                                    <td id="Modal-ticCount" colspan="2">Alphabet puzzle</td>
+                                                </tr>
+
+                                                <tr class="" style="background: rgb(102, 140, 235)">
+                                                    <th id="hx_oreder">序</th>
+                                                    <th id="hx_tnum">票號</th>
+                                                    <th id="hx_ttype">票種</th>
+                                                    <th id="hx_tname">姓名</th>
+                                                    <th id="hx_gender">性別</th>
+                                                    <th id="hx_birthday">生日</th>
+                                                    <th id="hx_id">身分證</th>
+                                                    <th id="hx_mobile">連絡電話</th>
+                                                    <th id="hx_E-mail">E-mail</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="hxtbody">
+                                                
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+
+                                <input type="button" name="previous" class="page-previous action-button" value="Previous" />
+                                <input type="button" name="submit" class="submit action-button" value="提交"></input>
+                                </fieldset>
+                                
+                            </div> 
+
+                                <!-- <form id="contact" >
+                                <ul id="progressbar">
+                                    <li class="active">Step1</li>
+                                    <li>Step2</li>
+                                    <li>Step3</li>
+                                </ul>
+                                <fieldset>
+
+                                    <div class="col-lg-12" >
+                                        <div class="py-5 text-center text-primary">
+                                            <h2>訂票資訊</h2>
+                                        </div>
+                                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+
+                                        </h4>
+                                        <ul class="list-group mb-3">
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h5 class="my-0">出發日期:</h5>
+                                            <span class="my-0" id="time-show">(日期顯示)</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h5 class="my-0">出發時間:</h5>
+                                            <span class="my-0" id="clock-show">(時間顯示)</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h5 class="my-0">船班:</h5>
+                                            <span class="my-0" id="shipID-show">(船班顯示)</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h5 class="my-0">票數:</h5>
+                                            <h4 class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
+                                            </h4>
+                                            </li>
+                                        </ul>
+                                    
+                                        <button class="next main-button pt-3">
+                                            <h3>送出</h3>
+                                        </button>
+                                    </div>
+    
+                                </fieldset>
+
+                                <fieldset>
+                                
+                                    <div class="col-lg-12">
+                                        <div class="col table-responsive">
+                                            <table class="table text-center">
+                                            <thead>
+                                                <tr>
+                                                <h3>票種選擇</h3>
+                                                <h5 class="my-0"></h5>
+                                                <ul class="list-group mb-3">
+                                                    <li id="custom-alert" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                    role="alert"
+                                                    style="position: relative; background-color: rgb(255, 196, 191); display: none;">
+                                                    <h5 id="alert-result" class="text-red"></h5>
+                                                    <i  class=" alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                        style="position: absolute; top: 5%; right: 0%;"></i>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center bg-primary">
+                                                        <h2 class=" bg-primary  text-white">(未選擇)</h2>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center align-items-center">
+                                                        <h2 class=" rounded-pill main-button text-white "
+                                                        id="tickets_unchoosed"></h2>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h2 class=" bg-primary  text-white" id="tickets_choosed">張票</h2>
+                                                    </div>
+                                                    </li>
+                                                    <li id="custom-alert_2" class="custom-alert justify-content-between lh-sm mb-2 mt-2"
+                                                    role="alert"
+                                                    style="position: relative; background-color: rgb(255, 100, 86); display:none ;">
+                                                    <p class="text-white">票種選擇已超過預定票數!</p>
+                                                    <i class="alert-result_i fa-solid fa-circle-xmark fa-2x text-white"
+                                                        style="position: absolute; top: 5%; right: 0%; "></i>
+                                                    </li>
+                                                </ul>
+                                                </tr>
+                                                <tr>
+                                                <th style=" width: 30%;">
+                                                    <h6 class="find_title">全票</h6>
+                                                    <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                                    <h6>票數</h6>
+                                                    <select class="ticketQuantity" data-group="A" id="ticketQuantity_A">
+                                                
+                                                    </select>
+                                                </th>
+                                                <th style="width: 30%;">
+                                                    <h6 class="find_title">敬老</h6>
+                                                    <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                                    <h6>票數</h6>
+                                                    <select id="ticketQuantity_B" class="ticketQuantity">
+                                                    </select>
+                                                </th>
+                                                <th style="width: 30%;">
+                                                    <h6 class="find_title">兒童</h6>
+                                                    <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                                    <h6>票數</h6>
+                                                    <select id="ticketQuantity_C" class="ticketQuantity">
+                                                    </select>
+                                                </th>
+                                                </tr>
+                                                <tr>
+                                                <th style="width: 30%;">
+                                                    <h6 class="find_title">博愛</h6>
+                                                    <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                                    <h6>票數</h6>
+                                                    <select id="ticketQuantity_D1" class="ticketQuantity">
+                                                    </select>
+                                                </th>
+                                                <th style="width: 30%;">
+                                                    <h6 class="find_title">博愛<br>(陪同者)</h6>
+                                                    <i class="icon_color_cange fa-solid fa-ticket fa-4x"></i>
+                                                    <h6>票數</h6>
+                                                    <select id="ticketQuantity_D2" class="ticketQuantity">
+                                                    </select>
+                                                </th>
+                                                </tr>
+                                            </thead>
+                                            </table>
+                                        </div>
+                                        <button class="main-button pt-3">
+                                            <input type="button" name="previous" class="previous action-button" value="Previous" />
+                                        </button>
+
+                                        <button class="main-button pt-3">
+                                            <input type="button" name="next" class="next action-button" value="Next" />
+                                        </button>
+                                    </div>
+                                </fieldset>
+                                
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-lg-6" >
+                                        <div class="py-5 text-center text-primary">
+                                            <h2>3</h2>
+                                        </div>
+                                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+    
+                                            
+                                        </h4>
+                                        <ul class="list-group mb-3">
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h5 class="my-0">出發日期:</h5>
+                                            <span class="my-0" id="time-show">(日期顯示)</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h5 class="my-0">出發時間:</h5>
+                                            <span class="my-0" id="clock-show">(時間顯示)</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h5 class="my-0">船班:</h5>
+                                            <span class="my-0" id="shipID-show">(船班顯示)</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <h5 class="my-0">票數:</h5>
+                                            <h4 class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-primary  text-white" id="showtickets">(票數顯示)</span>
+                                            </h4>
+                                            </li>
+                                        </ul>
+                                        </div>
+    
+    
+                                        <div class="col-lg-12 ">
+                                            <button class="main-button pt-3" id="articleA_send">
+                                                <h3>送出</h3>
+                                            </button>
+                                        </div>
+    
+                                    </div>
+                                </fieldset>                                                            
+                            </form>  -->
+                            
+                        </div>
+
+                    </main>
+                               
+            </section>
+        </div>
+       
+    </header>
+
+    <!-- footer -->
+    <footer id="footer" class="pt-5 bg-secondary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5>團體票聯絡資訊</h5>
+                    <a href="mailto:service@brand.com">service@brand.com</a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5 class="text-uppercase">公司聯絡資訊</h5>
+
+                    <ul>
+                        <li>
+                            <a href="#">電話</a>
+                        </li>
+                        <li>
+                            <a href="#">傳真</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-list">
+                    <h5 class="text-uppercase">其他資訊</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Help Center</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-end bg-dark mt-5 py-2 justify-content-center">
+            <p class="text-center">&copy; Copy right 2020</p>
+        </div>
+
+    </footer>
+    <!-- footer end -->
+
+
+
+    <!-- 引用 https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js-->
+    <script> src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"</script>
+    <!-- <script> src = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"</script> -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- jquery.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- popper.min.js -->
+
+    <!-- bootstrap.min.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- 連結網頁主程式 -->
+    <script src="/tickets/js/order_try.js"></script>
+    <!-- <script src="/tickets/js/T_Login.js"></script> -->
+
+    <!-- 轉頁特效 -->
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- <script src="/tickets/js/progressBar.js"></script> -->
+
+    <!-- scrolling-tabs特效 -->
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+
+   
+    <!-- 連結網頁主程式 -->
+    <!-- <script src="/tickets/js/owl_carousel.js"></script> -->
+    <script src="/tickets/js/order_try.js"></script>
+    <script src="/tickets/js/scrolling.js"></script>
+
+
+</body>
+
+
+</html>

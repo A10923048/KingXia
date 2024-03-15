@@ -1035,25 +1035,8 @@ form#contact input::placeholder {
   color: #afafaf;
 }
 
-form#contact button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 5px 0;
-  font-size: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: #1ab188;
-  color: #fff;
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-}
 
-form#contact button:hover {
-  color: #1ab188;;
-  background-color: #fdfeff;
-}
+
 
 ---------------------------------------------
 Carousel
@@ -1330,7 +1313,7 @@ form#contact {
   
   
   
-  form#contact button {
+  .top-row button {
       display: inline-block;
       background-color:#20bb94;
       font-size: 15px;
@@ -1345,7 +1328,7 @@ form#contact {
       transition: all .3s;
     }
     
-    form#contact button:hover {
+   .top-row button:hover {
       background-color: rgb(248, 41, 41);
     }
     
