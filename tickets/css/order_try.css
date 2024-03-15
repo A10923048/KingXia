@@ -416,6 +416,17 @@ form>.container>.button{
   /* 使用 'enterAndExit' 和 'bounce' 动画效果 */
 }
 
+img.headerPng {
+    max-width: 100%; /* 图片最大宽度为其容器的100% */
+    max-height: 20%; 
+}
+
+/* 当屏幕宽度小于500px时 */
+@media (max-width: 500px) {
+    img.headerPng{
+        max-height: 100px; 
+    }
+}
 
 
 
@@ -851,6 +862,7 @@ a:hover {
 .tab-content > div:last-child {
   display: none;
 }
+
 h1 {
   text-align: center;
   color: #feffff;
@@ -858,6 +870,8 @@ h1 {
   font-size: 2rem;
   margin: 0 0 30px;
 }
+
+
 label {
   position: absolute;
   transform: translateY(6px);
@@ -996,20 +1010,39 @@ textarea {
 contact(new)
 --------------------------------------------- 
 */
-/* form {
-  margin-left: 0px;
-  position: relative;
-  z-index: 2;
-  background-image: url(/tickets/img/contact-form-bg.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
-  padding: 20px 20px;
-  border-radius: 50px;
-  margin-bottom: 35px;
-  margin-top: 35px;
-} */
+
+.checkbox_div {
+    padding: 10% 0;
+    margin: 0 20% 0%;
+    background-color: rgba(218, 218, 218, 0.616);
+    border-radius: 5%;  
+}
+
+
+#contact #Orderer_check{
+    margin-bottom: 0;
+    width: 20px; 
+    height: 20px; 
+
+}
+
+h5.check_text {
+    font-size: 1.2vw; /* 使用视窗宽度的 3% 作为字体大小 */
+}
+
+/* 在较小的屏幕上设置较小的字体大小 */
+@media screen and (max-width: 768px) {
+    h5.check_text {
+        font-size: 2.5vw; /* 使用视窗宽度的 2.5% 作为字体大小 */
+    }
+}
+
+/* 在更小的屏幕上设置更小的字体大小 */
+@media screen and (max-width: 576px) {
+    h5.check_text {
+        font-size: 2vw; /* 使用视窗宽度的 2% 作为字体大小 */
+    }
+}
 
 form#contact input {
   width: 100%;
@@ -1034,6 +1067,83 @@ form#contact input {
 form#contact input::placeholder {
   color: #afafaf;
 }
+
+
+form#contact {
+    margin-left: 0px;
+    position: relative;
+    z-index: 2;
+    /* background-image: url(/tickets/img/contact-form-bg.png); */
+    background-color: rgb(194, 201, 240);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    margin-top: 35px;
+  
+    border-top:    2px solid #100f0f;
+    border-bottom: 1px solid #999;
+  }
+  
+  
+  /* form#contact input {
+    width: 100%;
+    height: 46px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid #9bdbf8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: #2a2a2a;
+    padding-top: 50px;
+    padding: 0px 0px;
+    margin-bottom: 35px;
+  } */
+  
+  
+  
+  
+  .top-row button {
+      display: inline-block;
+      background-color:#20bb94;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      text-transform: capitalize;
+      padding: 12px 25px;
+      border-radius: 23px;
+      letter-spacing: 0.25px;
+      border: none;
+      outline: none;
+      transition: all .3s;
+    }
+    
+   .top-row button:hover {
+      background-color: rgb(248, 41, 41);
+    }
+    
+  
+    table th, .table td {
+      font-size: 2vw;
+  }
+  
+  .table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: none;
+}
+.table thead th {
+    border-bottom: none;
+}
+
+
 
 
 
@@ -1271,82 +1381,6 @@ body {
 /*=============================================
 =                   contact(new)                   =
 =============================================*/
-
-form#contact {
-    margin-left: 0px;
-    position: relative;
-    z-index: 2;
-    /* background-image: url(/tickets/img/contact-form-bg.png); */
-    background-color: rgb(194, 201, 240);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
-    padding: 20px 20px;
-    border-radius: 10px;
-    margin-bottom: 35px;
-    margin-top: 35px;
-  
-    border-top:    2px solid #100f0f;
-    border-bottom: 1px solid #999;
-  }
-  
-  
-  form#contact input {
-    width: 100%;
-    height: 46px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom: 1px solid #9bdbf8;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    font-size: 15px;
-    font-weight: 300;
-    color: #2a2a2a;
-    padding-top: 50px;
-    padding: 0px 0px;
-    margin-bottom: 35px;
-  }
-  
-  
-  
-  
-  .top-row button {
-      display: inline-block;
-      background-color:#20bb94;
-      font-size: 15px;
-      font-weight: 400;
-      color: #fff;
-      text-transform: capitalize;
-      padding: 12px 25px;
-      border-radius: 23px;
-      letter-spacing: 0.25px;
-      border: none;
-      outline: none;
-      transition: all .3s;
-    }
-    
-   .top-row button:hover {
-      background-color: rgb(248, 41, 41);
-    }
-    
-  
-    table th, .table td {
-      font-size: 25px;
-  }
-  
-  .table th, .table td {
-    padding: 0.75rem;
-    vertical-align: top;
-    border-top: none;
-}
-.table thead th {
-    border-bottom: none;
-}
-
-
 
 ---------------------------------------------
             /* carousel  */
@@ -1748,8 +1782,8 @@ form#contact {
   }
   .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     /* border: 1rem solid white; */
-    color: #fff;
-    background-color: #20bb94;
+    
+    background-color: #fbfbfb;
     margin: 1rem;
     padding: 1rem;
 }

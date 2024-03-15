@@ -50,7 +50,7 @@
         <div class="header">
              <div>
                 <h1 class="loader ">
-                    <img src="/tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="w-10">
+                    <img src="/tickets/img/金廈海運logo-removebg.png" alt="金廈海運logo" class="headerPng">
                     <span class="m">金</span>
                     <span class="m">&nbsp;</span>
                     <span class="m">廈</span>
@@ -85,7 +85,7 @@
                                     <li class="active">票種選擇</li>
                                     <li>旅客資料輸入</li>
                                     <li>Personal Details</li>
-                                    <input type="button" name="next" class="page-next action-button" value="Next" />
+                                    <input type="button" id="P1_next" name="nextP1" class="page-next  action-button" value="Next" />
                                 </ul>
 
                                 <!-- fieldsets -->
@@ -253,11 +253,11 @@
                                                         </li> 
                                                         
                                                         <!-- 填寫格 -->
-                                                        <div class="row mt-5 justify-content-between"
+                                                        <div class="row mt-5 justify-content-between "
                                                             style="padding-left: 2%; padding-right: 2%;">
 
                                                                 <!-- 左半部 -->
-                                                            <div class="col-lg-6" style="padding-right: 5%; padding-left: 3%;">
+                                                            <div class="col-lg-6 mt-3" style="padding-right: 5%; padding-left: 3%;">
                                                             <div class="row" style="padding-left: 10%;">
                                                                 <input type="text" class="form-control col" id="orderName" placeholder="姓名"
                                                                 value="" required>
@@ -272,23 +272,16 @@
                                                             </div>
                                                             
                                                             <!-- 右半部 -->
-                                                            <div class="col-lg-6 col-md-12  col-sm-12  mt-3"
+                                                            <div class="col-lg-6 col-md-12  col-sm-12  "
                                                             style="padding-left: 5%; padding-right: 5%;">
                     
-                                                            <div class="row justify-content-start"
-                                                                style="padding-left: 30%; padding-right: 10%;">
-                    
-                                                                <div
-                                                                style="display:flexbox; border-radius: 5%;  background-color: rgba(218, 218, 218, 0.616);">
-                                                                <input type="checkbox" id="Orderer_check"
-                                                                    style="width: 20px; height: 20px; margin-top: 20%;">
-                    
-                                                                <h4 id="contact" class=" section-title mb-3 pt-3 text-center">
-                                                                    &nbsp;&nbsp;&nbsp;旅客=訂票負責人<br>(請打勾)
-                                                                </h4>
-                    
-                                                                </div>
-                    
+                                                            <div class="checkbox_div ">
+                                                                
+                                                                    <input class="col" type="checkbox" id="Orderer_check">
+                                  
+                                                                    <h5  class=" check_text col section-title mb-3 pt-3 text-center">
+                                                                        旅客=訂票負責人<br>(請打勾)
+                                                                    </h5>
                                                             </div>
                     
                                                             <div class="table-responsive justify-content-center">
@@ -334,24 +327,15 @@
                                                         <!-- 用JS產生 上/下一位按鈕 -->
                                                         <div class="top-row">
                                                             <div class="field-wrap">
-                                                                <button type="submit" class="prev button button-block"/>前一位</button>
+                                                                <button type="submit" class="col-lg-6 col-md-12  col-sm-12  mt-3 prev button "/>前一位</button>
                                                             </div>
                                                         
                                                             <div class="field-wrap">
-                                                                <button id="next2" class="next button button-block"/>下一位</button>
+                                                                <button id="next2" class="col-lg-6 col-md-12  col-sm-12  mt-3 next button "/>下一位</button>
                                                                 
                                                             </div>
                                                         </div>
 
-                                                        <!--  大按鈕 -->
-                                                        <p class="arrow prev">
-                                                            <button type="submit" class="ico prev button button-block"/>前一位</button>
-                                                            <!-- <i class="ico" ></i> -->
-                                                        </p>
-                                                        <p id="next1" class="arrow next">
-                                                            <i class="ico"></i>
-                                                        </p>
-                    
                                                         </form>
                                                     </div>
                                                     
@@ -469,14 +453,6 @@
                                                             </div>
                                                         </div>
                                                         
-                                                        
-                                                        <!--  大按鈕 -->
-                                                        <p class="arrow prev">
-                                                            <i class="ico" ></i>
-                                                        </p>
-                                                        <p id="next1" class="arrow next">
-                                                            <i class="ico"></i>
-                                                        </p>
             
                                                         </form>
                                                     </div>
@@ -558,13 +534,6 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <!--  大按鈕 -->
-                                                                <p class="arrow prev">
-                                                                    <i class="ico" ></i>
-                                                                </p>
-                                                                <p id="next1" class="arrow next">
-                                                                    <i class="ico"></i>
-                                                                </p>
                                                         </form>
                                                     </div>
 
@@ -900,9 +869,10 @@
     <!-- popper.min.js -->
 
     <!-- bootstrap.min.js -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+
     <!-- 連結網頁主程式 -->
     <script src="/tickets/js/order_try.js"></script>
     <!-- <script src="/tickets/js/T_Login.js"></script> -->
