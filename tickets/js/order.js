@@ -66,6 +66,9 @@ $(document).ready(function () {
 
     let this_ticketQuantity = $(this);
 
+     // 清空選擇框
+     this_ticketQuantity.empty();
+
     // 根據票數動態產生選項
     for (var i = 0; i <= ticket; i++) {
       var option = $('<option></option>').attr('value', (i)).text(i);
@@ -1055,8 +1058,6 @@ $(document).ready(function () {
     })
     console.log("結束");
   }
-
-
 
   //            資料填寫完送出-格式檢查                       //
 

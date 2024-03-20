@@ -178,7 +178,7 @@
                                         </table>
                                     </div>
 
-                                    <input type="button" id="P1_send" name="nextP1" class="page-next  action-button" value="Next" />
+                                    <input type="button" id="P_send" name="nextP1" class="page-next  action-button" value="Next" />
                                 </fieldset>
 
                                 <!-- 第二頁:旅客資料輸入 -->
@@ -192,8 +192,8 @@
                                             <!-- 選擇Bar -->
                                             <h1 class="mt-5 pb-3 mb-4 ">旅客資料</h1>
                                             <div class="scroll-tabs" id="carousel_container">
-
-                                                <div class="owl-carousel owl-loaded ">  
+                                                <div id="carousel_container" class="owl-carousel owl-loaded ">  
+                                                                                   
                                                     <div class="nav nav-pills nav-justified ">
                                                         <a class="nav-item nav-link text-green" href="#content1">
                                                             <i class="fa-solid fa-ticket fa-4x text-green" style="color: #ffffff;"></i>
@@ -254,7 +254,7 @@
                                                                         </label>
                                                                         <input type="text" class="form-control col" id="orderName" required>
 
-                                                                        <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                                                        <h2  class="col section-title mb-3 text-center ">旅客資料</h2>
                                                                     </div>
 
                                                                     <label>
@@ -335,7 +335,7 @@
                                                             </div>
                                                             
                                                             <!-- 用JS產生 上/下一位按鈕 -->
-                                                            <div class="top-row">
+                                                            <div class="top-row col-lg-12 col-md-12 col-sm-12">
                                                                 <div class="field-wrap">
                                                                     <button type="submit" class="col-lg-6 col-md-12  col-sm-12  mt-3 prev button "/>前一位</button>
                                                                 </div>
@@ -372,7 +372,7 @@
                                                                         </label>
                                                                         <input type="text" class="form-control col" id="orderName" required>
 
-                                                                        <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                                                        <h2  class="col section-title mb-3 text-center ">旅客資料</h2>
                                                                     </div>
 
                                                                     <label>
@@ -440,7 +440,7 @@
                                                             </div>
                                                             
                                                             <!-- 用JS產生 上/下一位按鈕 -->
-                                                            <div class="top-row">
+                                                            <div class="top-row col-lg-12 col-md-12 col-sm-12">
                                                                 <div class="field-wrap">
                                                                     <button type="submit" class="col-lg-6 col-md-12  col-sm-12  mt-3 prev button "/>前一位</button>
                                                                 </div>
@@ -469,7 +469,7 @@
                                                         style="background-image: url(/tickets/img/contact-form-bg-2.png);">
                                                         <table>
                                                             <div id="planpickered" class="mt-4 pt-3 pb-1 bg-pink" >
-                                                            <h2 id="contact" class=" section-title mb-3 text-center text-white">嬰兒票種</h2>
+                                                            <h2  class=" section-title mb-3 text-center text-white">嬰兒票種</h2>
                                                         </table>
                     
                                                         <!-- 警視窗 -->
@@ -490,7 +490,7 @@
                                                             <div class="row" style="padding-left: 10%;">
                                                                 <input type="text" class="form-control col" id="orderName" placeholder="姓名"
                                                                 value="" required>
-                                                                <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                                                <h2  class="col section-title mb-3 text-center ">旅客資料</h2>
                                                             </div>
                                                             <input type="tel" class="form-control" id="orderPhone" placeholder="電話"
                                                                 value="" required>
@@ -598,7 +598,7 @@
                                                                         </label>
                                                                         <input type="text" class="form-control col" id="orderName" required>
 
-                                                                        <h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>
+                                                                        <h2  class="col section-title mb-3 text-center ">旅客資料</h2>
                                                                     </div>
 
                                                                     <label>
@@ -695,7 +695,7 @@
                                                         style="background-image: url(/tickets/img/contact-form-bg-2.png);">
                                                                 <table>
                                                                     <div id="planpickered" class="mt-4 pt-3 pb-1 bg-brown ">
-                                                                        <h2 id="contact" class=" section-title mb-3 text-center text-white">主要訂購人資料</h2>
+                                                                        <h2  class=" section-title mb-3 text-center text-white">主要訂購人資料</h2>
                                                                     </div>
                                                                 </table>
 
@@ -785,7 +785,7 @@
                                                                         </label>
                                                                         <input type="text" class="form-control col" id="orderName" required>
 
-                                                                        <h2 id="contact" class="col section-title mb-3 text-center ">訂購人</h2>
+                                                                        <h2  class="col section-title mb-3 text-center ">訂購人</h2>
                                                                     </div>
 
                                                                     <label>
@@ -919,7 +919,6 @@
                                 
                             </div> 
 
-                           
                         </div>
 
                     </main>
@@ -999,15 +998,15 @@
     <!-- 轉頁特效 -->
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <!-- <script src="/tickets/js/progressBar.js"></script> -->
-    
-    
-     <!-- scrolling-tabs特效 -->
-     <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+
+    <!-- scrolling-tabs特效 -->
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
 
    
-   
     <!-- 連結網頁主程式 -->
+    <!-- <script src="/tickets/js/owl_carousel.js"></script> -->
     <script src="/tickets/js/order_try.js"></script>
+    <script src="/tickets/js/scrolling.js"></script>
    
 
 

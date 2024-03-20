@@ -868,15 +868,23 @@ h1 {
   color: #feffff;
   font-weight: 550;
   font-size: 2rem;
-  margin: 0 0 30px;
+  margin: 15vw 0 20vw;
 }
-
+.list-group {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding: 0px 5vw;
+    margin-bottom: 0px;
+    border-radius: 0.25rem;
+}
 
 label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
-  color: rgba(254, 255, 255, 0.909);
+  color: rgba(6, 7, 7, 0.909);
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
@@ -907,6 +915,8 @@ input[type="checkbox"]{
   color: rgb(5, 12, 22);
 
 }
+
+
 
 label.active_gun{
  transform: translateY(-5px)translateX(130px);
@@ -993,15 +1003,6 @@ textarea {
 .button:hover, .button:focus {
   background: #179b77;
 }
-.button-block {
-  display: block;
-  width: 50%;
-  margin: 0 5rem;
-}
-.forgot {
-  margin-top: -20px;
-  text-align: right;
-}
 
 
 
@@ -1012,7 +1013,7 @@ contact(new)
 */
 
 .checkbox_div {
-    padding: 10% 0;
+    padding: 2rem 0;
     margin: 0 20% 0%;
     background-color: rgba(218, 218, 218, 0.616);
     border-radius: 5%;  
@@ -1020,14 +1021,47 @@ contact(new)
 
 
 #contact #Orderer_check{
+    left:-8rem;
+    top: -1rem ;
     margin-bottom: 0;
-    width: 20px; 
+    /* width: 20px;  */
     height: 20px; 
 
 }
 
+label[for="Orderer_check"] {
+  position: absolute;
+  transform: translateY(0rem) translateX(2rem);
+  left: 13px;
+  color: rgba(6, 7, 7, 0.909);
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+
+label[for="orderMethods"] {
+  position: absolute;
+  transform: translateY(-3rem) translateX(-1rem);
+  left: 13px;
+  color: rgba(6, 7, 7, 0.909);
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+.radio_div{
+  
+  position: relative;
+  margin: 0.1rem;
+  padding: 4rem 1.25rem 1rem;
+  background-color: #fff;
+  border: 1px solid #9bdbf8;
+}
+
 h5.check_text {
-    font-size: 1.2vw; /* 使用视窗宽度的 3% 作为字体大小 */
+    margin: 1rem;
+    font-size: 1.2rem; /* 使用视窗宽度的 3% 作为字体大小 */
 }
 
 /* 在较小的屏幕上设置较小的字体大小 */
@@ -1046,7 +1080,7 @@ h5.check_text {
 
 form#contact input {
   width: 100%;
-  height: 46px;
+  height: 3rem;
   border-radius: 0px;
   background-color: transparent;
   border-bottom: 1px solid #9bdbf8;
@@ -1057,17 +1091,27 @@ form#contact input {
   font-size: 15px;
   font-weight: 300;
   color: #2a2a2a;
-  padding-top: 50px;
-  padding: 0px 0px;
-  margin-bottom: 35px;
+  /* padding-top: 50px; */
+  
+  margin-bottom: 10px;
+}
+.form-control{
+  padding: 0px;
 }
 
+input:focus, textarea:focus ,select:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
 
 
 form#contact input::placeholder {
   color: #afafaf;
 }
-
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
 
 form#contact {
     margin-left: 0px;
@@ -1088,31 +1132,11 @@ form#contact {
     border-bottom: 1px solid #999;
   }
   
-  
-  /* form#contact input {
-    width: 100%;
-    height: 46px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom: 1px solid #9bdbf8;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    font-size: 15px;
-    font-weight: 300;
-    color: #2a2a2a;
-    padding-top: 50px;
-    padding: 0px 0px;
-    margin-bottom: 35px;
-  } */
-  
-  
-  
+ 
   
   .top-row button {
       display: inline-block;
-      background-color:#20bb94;
+      /* background-color:#20bb94; */
       font-size: 15px;
       font-weight: 400;
       color: #fff;
@@ -1131,7 +1155,7 @@ form#contact {
     
   
     table th, .table td {
-      font-size: 2vw;
+      font-size: 1vw;
   }
   
   .table th, .table td {
@@ -1143,7 +1167,9 @@ form#contact {
     border-bottom: none;
 }
 
-
+h2, .h2 {
+    font-size: 1.5rem;
+}
 
 
 
@@ -1254,7 +1280,7 @@ body {
 	border: 0 none;
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
+	padding: 2rem 3rem;
 	box-sizing: border-box;
 	width: 80%;
 	margin: 0 10%;
@@ -1300,11 +1326,11 @@ body {
 	font-size: 2rem;
 	text-transform: uppercase;
 	color: #2C3E50;
-	margin-bottom: 10px;
+	margin: 1rem;
 }
 .fs-subtitle {
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 2vw;
 	color: #666;
 	margin-bottom: 20px;
 }
@@ -1379,49 +1405,8 @@ body {
     float: right; /* 將 Next 按鈕置於右側 */
 }
 /*=============================================
-=                   contact(new)                   =
+=                   carousel                  =
 =============================================*/
-
----------------------------------------------
-            /* carousel  */
---------------------------------------------- 
-#carousel-thumbs {
-    background: rgba(255,255,255,.3);
-    bottom: 0;
-    left: 0;
-    padding: 0 50px;
-    right: 0;
-  }
-  #carousel-thumbs img {
-    border: 5px solid transparent;
-    cursor: pointer;
-  }
-  #carousel-thumbs img:hover {
-    border-color: rgba(255,255,255,.3);
-  }
-  #carousel-thumbs .selected img {
-    border-color: #fff;
-  }
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 50px;
-  }
-  @media all and (max-width: 767px) {
-    .carousel-container #carousel-thumbs img {
-      border-width: 3px;
-    }
-  }
-  @media all and (min-width: 576px) {
-    .carousel-container #carousel-thumbs {
-      position: absolute;
-    }
-  }
-  @media all and (max-width: 576px) {
-    .carousel-container #carousel-thumbs {
-      background: #ccccce;
-    }
-  }
-
 
 ---------------------------------------------
             /* scrolling tabs  */
@@ -1786,4 +1771,360 @@ body {
     background-color: #fbfbfb;
     margin: 1rem;
     padding: 1rem;
+}
+
+---------------------------------------------
+            /* input  */
+---------------------------------------------
+
+label {
+  position: absolute;
+  transform: translateY(6px);
+  left: 3rem;
+  color: rgba(7, 7, 7, 0.909);
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+label.active {
+  transform: translateY(20px) translateX(3rem);
+  left: 2px;
+  font-size: 14px;
+  color: rgb(42, 91, 165);
+}
+
+form#contact input[type="checkbox"]{
+  transform: translateY(0px)translateX(10px);
+   left: 2px;
+   font-size: 14px;
+   color: rgb(5, 12, 22);
+ 
+ }
+
+ form#contact input[type="radio"][name="orderMethods"] {
+  width: 100%;
+  height: 3rem;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid #9bdbf8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 300;
+  color: #2a2a2a;
+  /* padding-top: 50px; */
+  margin-bottom: 10px;
+}
+ 
+ 
+ label.active_gun active highlight { 
+  transform: translateY(-20px)translateX(20px);
+   left: 2px;
+   font-size: 14px;
+   color: rgb(237, 141, 24);
+ 
+ }
+ 
+ label.active .req {
+   opacity: 0;
+ }
+ label.highlight {
+   color: #0084ff;
+ }
+ input, textarea ,select {
+   text-align: center;
+   font-size: 22px;
+   display: block;
+   width: 100%;
+   height: 100%;
+   padding: 5px 10px;
+   background: none;
+   background-image: none;
+   border: 1px solid #a0b3b0;
+   color: #978b2d;
+   border-radius: 0;
+   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+ }
+ 
+ 
+ input:focus, textarea:focus ,select:focus {
+   outline: 0;
+   border-color: #1ab188;
+ }
+ textarea {
+   border: 2px solid #a0b3b0;
+   resize: vertical;
+ }
+ 
+ 
+ 
+ .form_title{
+   margin: 1.5rem 0 0.5rem ;
+   padding:1.2rem 0 1rem;
+ }
+ 
+ .ticketQuantity{
+   font-size: 22px;
+   display: block;
+   /* width: 2rem; */
+   /* height: 2rem; */
+   padding: 5px 10px;
+   background: none;
+   background-image: none;
+   border: 1px solid #a0b3b0;
+   color: #978b2d;
+   border-radius: 0;
+   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+ }
+ 
+ .ticketQuantityTable{
+   padding: 0px 3rem;
+ }
+ 
+ .contact_row{
+   padding: 0 2rem;
+   margin: 2rem 0;
+ }
+ 
+ .input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+    height: 3rem;
+   
+    /* background-color:rgba(218, 218, 218, 0.616); */
+    /* border: 2px solid #9bdbf8; */
+    border-radius: 10%;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #2a2a2a;
+    padding: 50px 0;
+    margin: 1.5rem 3rem;
+ }
+
+ .input input {
+  margin-right: 10px; /* 可以根据需要调整 input 和 label 之间的间距 */
+}
+
+
+
+/****** checkbox message ******/
+
+#contact input[id="tooltip-toggle"]  {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid #9bdbf8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 300;
+  color: #2a2a2a;
+  /* padding-top: 50px; */
+  margin-bottom: 10px;
+}
+
+label.checkbox_label.active {
+  transform: translateY(0px) translateX(3rem);
+  left: 2px;
+  font-size: 14px;
+  color: rgb(255, 7, 7);
+}
+
+
+.tooltip-container {
+  margin: 3rem auto;
+  padding-top: 0px;
+  position: relative;
+  width: 160px;
+}
+
+
+@media (max-width: 400px) {
+  .tooltip-container .tooltip-btn.tooltip-toggle:hover ~ .tooltip-content {
+    left: 0;
+ }
+}
+.tooltip-container .tooltip-btn.tooltip-toggle:hover ~ .tooltip-content:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  top: -10px;
+  left: 30px;
+}
+.tooltip-container .tooltip-content, .tooltip-container .tooltip-backdrop {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: opacity 0.05s ease-in-out;
+}
+
+
+
+
+/* .tooltip-container #tooltip-toggle {
+  display: none;
+} */
+.tooltip-container #tooltip-toggle:checked ~ .tooltip-backdrop {
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+.tooltip-container #tooltip-toggle:checked ~ .tooltip-content {
+  opacity: 1;
+  background-color: #fff;
+  max-width: 400px;
+  width: 200px;
+  min-height: 70px;
+  padding: 0px 20px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 50%;
+  border-radius: 4px;
+  z-index: 999;
+  pointer-events: auto;
+  visibility: visible;
+  overflow: visible;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 400px) {
+ .tooltip-container #tooltip-toggle:checked ~ .tooltip-content {
+    left: 0;
+ }
+}
+.tooltip-container #tooltip-toggle:checked ~ .tooltip-content:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  top: -10px;
+  left: 30px;
+}
+
+
+
+/*********************************     RWD     *******************************************************/
+
+
+@media screen and (max-width:750px ){
+   /************** fieldset 第二頁 **************/
+   form#contact input {
+    text-align: right;
+    padding: 0 0 0 3rem;
+    height: 2.5rem;
+
+  }
+  #contact input[id="birthdayPicker"] {
+    text-align: left;
+    padding: 0;
+  }
+
+}
+
+
+
+
+
+@media screen and (max-width:500px ){
+
+  /************** 總體 **************/
+  /* #header {
+    padding: 0rem;
+  } */
+  #buyers_list {
+    padding: 0rem;
+  }
+
+
+  /************** fieldset 第一頁 **************/
+  h2{
+    font-size: 1rem;
+  }
+
+
+  /************** fieldset 第二頁 **************/
+  label.active {
+    transform: translateY(20px) translateX(1rem);
+    left: 2px;
+    font-size: 14px;
+    color: rgb(42, 91, 165);
+  }
+  .contact_row {
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+
+  
+  form#contact input {
+    text-align: right;
+    padding: 0 0 0 3rem;
+    height: 2.5rem;
+
+  }
+
+  #contact input[id="birthdayPicker"] {
+    text-align: left;
+    padding: 0;
+  }
+#contact input.form-select {
+  font-size: 0.7rem;
+}
+
+
+  .contact_row {
+    padding: 0 0rem;
+  }
+  label {
+    font-size: 1rem;
+  }
+  .input {
+    padding: 2rem 0;
+    margin: 1.5rem 1rem;
+  }
+  label[for="Orderer_check"] {
+    font-size: 1rem;
+  }
+ 
+
+  
+}
+
+@media screen and (max-width:350px ){
+
+  .input {
+    padding: 2rem 0;
+    margin: 0;
+  }
+  #contact #Orderer_check {
+    left: -5rem;
+    top: 0rem;
+  }
+
 }

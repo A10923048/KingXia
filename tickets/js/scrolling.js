@@ -6,7 +6,7 @@ $(document).ready(function () {
         clone:false,
         margin:0,
         autoplayTimeout:4000,
-        autoplayHoverPause:true,
+        autoplayHoverPause:false,
         responsiveClass:true,
         responsive:{
         0:{
