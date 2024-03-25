@@ -1098,6 +1098,9 @@ form.get_form input {
 .form-control{
   padding: 0px;
 }
+/* .form-control:focus {
+  margin: 0 2rem;
+  } */
 
 input:focus, textarea:focus ,select:focus {
   outline: 0;

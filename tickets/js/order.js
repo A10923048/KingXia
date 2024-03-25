@@ -811,7 +811,6 @@ $(document).ready(function () {
     }
 
 
-
   });
 
 
@@ -834,10 +833,7 @@ $(document).ready(function () {
     //console.log("傳入ticket_title:" + ticket_title);
     let ticketcode = {
       "全票": "01",
-      "敬老": "03",
-      "兒童": "04",
-      "博愛": "05",
-      "博愛(陪同者)": "05"
+      "嬰兒票": "02",
     }
     let code = ticketcode[ticket_title]
     // console.log("傳出code:" + code);
@@ -865,7 +861,6 @@ $(document).ready(function () {
     console.log("計算出age:" + age);
     return age;
   }
-
 
 
   //驗證台灣身分證                                   //
@@ -921,6 +916,7 @@ $(document).ready(function () {
 
     return verification
   }
+
   //console.log(             verifyId(    "A123456789"       )     );
 
 

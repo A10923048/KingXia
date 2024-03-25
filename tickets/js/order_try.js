@@ -361,7 +361,7 @@ $(document).ready(function () {
           '<label>電話<span class="req">*</span></label>' +
           '<input type="tel" class="form-control" id="orderPhone" required>' +
           '<label>身分證<span class="req">*</span></label>' +
-          '<input type="text" class="form-control" id="orderId" required>' +
+          '<input type="text" class="form-control" id="orderId" pattern="[a-zA-Z0-9]{9}" required>' +
           '<label>Email<span class="req">*</span></label>' +
           '<input type="email" class="form-control" id="email" required>' +
           '</div>' +
@@ -402,7 +402,7 @@ $(document).ready(function () {
           '<i class="fa-solid fa-cake-candles fa-2x"></i>' +
           '<h6>出生日期</h6>' +
           '<div>' +
-          '<input type="date" class="form-select form-control" id="birthdayPicker" placeholder="選擇日期範圍" value="" required>' +
+          '<input type="date" class="form-select form-control birth_' + color[ii] + '" id="birthdayPicker" placeholder="選擇日期範圍" value="" required>' +
           '</div>' +
           '</div>' +
           '</div>' +
@@ -450,7 +450,7 @@ $(document).ready(function () {
           '<label>電話<span class="req">*</span></label>' +
           '<input type="tel" class="form-control" id="orderPhone" required>' +
           '<label>身分證<span class="req">*</span></label>' +
-          '<input type="text" class="form-control" id="orderId" required>' +
+          '<input type="text" class="form-control" id="orderId" pattern="[a-zA-Z0-9]{9}" required>' +
           '</div>' +
 
           '<!-- 右半部 -->' +
@@ -659,6 +659,27 @@ $(document).ready(function () {
         // $('.owl-stage > div:(:first-child)>a:()').addClass("active");
         $('.owl-stage > div:first-child a:first-child').addClass("active");
 
+        //限制日期选择范围为小于2岁
+        $('.birth_pink').on('focus', function () {
+
+            // 计算最小日期
+            var today = new Date();
+            var minDate = new Date(today);
+            minDate.setFullYear(today.getFullYear() - 2);
+
+            
+            var maxDate = new Date(today);
+            maxDate.setFullYear(today.getMonth() + 2);
+
+
+            // 设置最小日期
+            $(this).attr('min', minDate.toISOString().split('T')[0]);
+
+            // 设置最大日期
+            $(this).attr('max', maxDate.toISOString().split('T')[0]);
+            
+        });
+        
 
 
         //檢查输入元素
@@ -666,8 +687,8 @@ $(document).ready(function () {
 
           console.log( "傳入href:"+href);
 
-
           let form = $(href).find('.get_form');
+          
           console.log( "formlength:"+ form.length);
 
             // let form =$('.get_form').attr('data-target', href);
@@ -683,6 +704,7 @@ $(document).ready(function () {
 
                 var inputName = $(this).attr("id");
                 var inputValue = $(this).val();
+                var form_title = $(this).find('.form_title');
 
                   console.log("Input Name: " + inputName + ", Input Value: " + inputValue);
 
@@ -701,11 +723,11 @@ $(document).ready(function () {
                     this.reportValidity();
                     return false;
 
+                }else if(form_title=="嬰兒票"){
+
                 }
 
                 console.log( "最後:"+allFieldsValid);
-                 // 返回 true 或 false，表示所有输入是否有效
-                  // return allFieldsValid; 
 
             });
 
@@ -718,57 +740,54 @@ $(document).ready(function () {
 
 
         //(舊)選擇Bar tab轉換功能 
-        // $('.nav-link').on('click', function (e) {
-        //   e.preventDefault();
+        $('.nav-link').on('click', function (e) {
+          e.preventDefault();
 
-        //   // // 移除所有活動的鏈接
-        //   $('.nav-link').removeClass('active');
+          // // 移除所有活動的鏈接
+          $('.nav-link').removeClass('active');
 
-        //   // 將當前鏈接設置為活動狀態
-        //   $(this).addClass('active');
+          // 將當前鏈接設置為活動狀態
+          $(this).addClass('active');
 
-        //   // 獲取目標 ID
-        //   var target = $(this).attr('href');
+          // 獲取目標 ID
+          var target = $(this).attr('href');
 
-        //   $('.tab-content > div').hide();
-        //   $(target).fadeIn(600);
-        // });
+          $('.tab-content > div').hide();
+          $(target).fadeIn(600);
+        });
 
 
         //(新)選擇Bar tab轉換功能 
-        $('.nav-link').on('click', function (e) {
+        // $('.nav-link').on('click', function (e) {
 
-          e.preventDefault();
+        //   e.preventDefault();
 
-          console.log("点击了下一位按钮");
+        //   console.log("点击了下一位按钮");
 
-          let href = $('a.nav-link.active').attr('href');
+        //   let href = $('a.nav-link.active').attr('href');
 
-          let pass=inputValid(href);
-
-          console.log("回傳值:"+pass);
-
+         
           
-          // 如果所有字段都通过了验证
-          if (inputValid(href)) {
+        //   // 如果所有字段都通过了验证
+        //   if (inputValid(href)) {
 
-              console.log("true");
+        //       console.log("true");
 
-              // // 移除所有活動的鏈接
-              $('.nav-link').removeClass('active');
+        //       // // 移除所有活動的鏈接
+        //       $('.nav-link').removeClass('active');
 
-              // 將當前鏈接設置為活動狀態
-              $(this).addClass('active');
+        //       // 將當前鏈接設置為活動狀態
+        //       $(this).addClass('active');
 
-              // 獲取目標 ID
-              var target = $(this).attr('href');
+        //       // 獲取目標 ID
+        //       var target = $(this).attr('href');
 
-              $('.tab-content > div').hide();
-              $(target).fadeIn(600);
+        //       $('.tab-content > div').hide();
+        //       $(target).fadeIn(600);
 
-          } 
+        //   } 
 
-        });
+        // });
 
 
         // 表格 特效
@@ -859,39 +878,46 @@ $(document).ready(function () {
 
           console.log("点击了下一位按钮");
 
-          let allFieldsValid = true;
-          let form = $(this).closest("form");
+          // let allFieldsValid = true;
+          // let form = $(this).closest("form");
+
+
+          let href = $(".content").attr('id');
+          console.log("href:"+href); // 输出 "content0"
 
           // 对于每个输入元素
-          form.find("input,select").each(function () {
+          // form.find("input,select").each(function () {
 
-                var inputName = $(this).attr("id");
-                  var inputValue = $(this).val();
-                  console.log("Input Name: " + inputName + ", Input Value: " + inputValue);
+          //       var inputName = $(this).attr("id");
+          //         var inputValue = $(this).val();
+          //         console.log("Input Name: " + inputName + ", Input Value: " + inputValue);
 
-              if (this.validity.valid == false) {
+          //     if (this.validity.valid == false) {
 
-                  console.log("this.validity.valid:"+ this.validity.valid);
-                  console.log("this.validity.valid:"+ this.validity.valid);
+          //         console.log("this.validity.valid:"+ this.validity.valid);
+          //         console.log("this.validity.valid:"+ this.validity.valid);
 
-                  // 标记为不通过验证
-                  allFieldsValid = false;
-                  // 显示警告或其他提示
-                  // 这里可以根据需要进行相应的提示操作，比如添加一个警告样式、显示一个提示信息等
-                  // $(this).addClass("invalid-field").focus();
-                  console.log("input " + inputName + " is not valid");
+          //         // 标记为不通过验证
+          //         allFieldsValid = false;
+          //         // 显示警告或其他提示
+          //         // 这里可以根据需要进行相应的提示操作，比如添加一个警告样式、显示一个提示信息等
+          //         // $(this).addClass("invalid-field").focus();
+          //         console.log("input " + inputName + " is not valid");
 
-                  this.reportValidity();
-                  return false;
+          //         this.reportValidity();
+          //         return false;
 
-              } 
-              console.log( allFieldsValid);
+          //     } 
+          //     console.log( allFieldsValid);
 
-          });
+          // });
+          
 
           // 如果所有字段都通过了验证
-          if (allFieldsValid) {
-             
+          if (inputValid("#" + href)) {
+
+            console.log("回傳:"+inputValid(href)); // 输出 "content0"
+                
                 var activeContentId = $(this).closest('.content').attr('id');
 
                 console.log("activeContentId:" + activeContentId);
@@ -901,7 +927,6 @@ $(document).ready(function () {
                 var nextIndex = parseInt(activeContentId.replace('content', '')) + 1;
 
                 console.log("Id+1:" + nextIndex);
-
 
                 var nextContentId = 'content' + nextIndex;
 
@@ -978,6 +1003,11 @@ $(document).ready(function () {
         });
 
       
+
+
+
+
+
       })
 
       //             旅客=聯絡人:checkbox連動                //
@@ -1019,122 +1049,6 @@ $(document).ready(function () {
 //////////////<!-------------------------- 第三頁:資料核對 ------------------------->////////////// 
       
 
-      //             票種轉換                                      //
-      let turn_ticketcode = function (ticket_title) {
-        //console.log("傳入ticket_title:" + ticket_title);
-        let ticketcode = {
-          "全票": "01",
-          "敬老": "03",
-          "兒童": "04",
-          "博愛": "05",
-          "博愛(陪同者)": "05"
-        }
-        let code = ticketcode[ticket_title]
-        // console.log("傳出code:" + code);
-        return code;
-      }
-
-      //               計算現在的年齡                              //
-      let calculate_Age = function (date) {
-        // 將生日日期字串傳換為日期物件
-        let birthDate = new Date(date);
-        console.log("birthDate物件:" + birthDate);
-
-        // 獲取當前日期
-        let currentDate = new Date();
-        console.log("currentDate物件:" + currentDate);
-
-        // 計算年齡
-        let age = currentDate.getFullYear() - birthDate.getFullYear();
-
-        // 检查是否已过生日
-        if (currentDate.getMonth() < birthDate.getMonth() ||
-          (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
-          age--;
-        }
-        console.log("計算出age:" + age);
-        return age;
-      }
-
-
-      //驗證台灣身分證                                   //
-      let verifyId = function (id) {
-        id = id.trim();
-
-        if (id.length != 10) {
-          console.log("Fail，長度不正確");
-          return false
-        }
-
-
-        let countyCode = id.charCodeAt(0);
-        if (countyCode < 65 | countyCode > 90) {
-          console.log("Fail，字首英文代號，縣市不正確");
-          return false
-        }
-
-        let genderCode = id.charCodeAt(1);
-        if (genderCode != 49 && genderCode != 50) {
-          console.log("Fail，性別代碼不正確");
-          return false
-        }
-
-        let serialCode = id.slice(2)
-        for (let i in serialCode) {
-          let c = serialCode.charCodeAt(i);
-          if (c < 48 | c > 57) {
-            console.log("Fail，數字區出現非數字字元");
-            return false
-          }
-        }
-
-        let conver = "ABCDEFGHJKLMNPQRSTUVXYWZIO"
-        let weights = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1]
-
-        id = String(conver.indexOf(id[0]) + 10) + id.slice(1);
-
-        checkSum = 0
-        for (let i = 0; i < id.length; i++) {
-          c = parseInt(id[i])
-          w = weights[i]
-          checkSum += c * w
-        }
-
-        verification = checkSum % 10 == 0
-
-        if (verification) {
-          console.log("Pass");
-        } else {
-          console.log("Fail，檢核碼錯誤");
-        }
-
-        return verification
-      }
-      //console.log(             verifyId(    "A123456789"       )     );
-
-
-      // 驗證台灣手機/行動電話
-      let verifyPhone = function (orderPhone) {
-
-        // 手機/行動電話號碼格式
-        let phoneRegex = /^[0-9]{10}$/;
-
-        // 检查
-        return phoneRegex.test(orderPhone);
-      }
-
-      // 游標移動至的第一個警示div的位置
-      let focus_custom_alert = function () {
-
-        // 获取第一个显示的 .custom-alert 元素
-        let visibleCustomAlert = $(".custom-alert:visible").first();
-
-        // 如果有可见的 .custom-alert 元素，则将焦点设置到它
-        if (visibleCustomAlert.length > 0) {
-          $("html,body").animate({ scrollTop: visibleCustomAlert.offset().top - 200 }, 500);
-          //在可见的 .custom-alert 元素上创建自定义动画(页面滚动)，将页面滚动到该元素的顶部，持续时间为 500 毫秒
-        }
-      }
 
       //將檢查過後的資料顯示於 modal
 

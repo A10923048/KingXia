@@ -51,12 +51,17 @@ let articleBtn = function (tabId) {
     //url.searchParams.get("shipid")
   
     // 获取 URL 中的参数值
+    // var shipid = url.searchParams.get("shipid");
+    // var btime = url.searchParams.get("btime");
+    // var ticket = url.searchParams.get("ticket");
+    // var timeid = url.searchParams.get("time");
+
+    // 获取 URL 中的参数值
     var shipid = url.searchParams.get("shipid");
     var btime = url.searchParams.get("btime");
     var ticket = url.searchParams.get("ticket");
     var timeid = url.searchParams.get("time");
-  
-  
+
     // 将参数值插入到相应的元素中
     $("#shipID-show").text(shipid);
     $("#clock-show").text(btime);
