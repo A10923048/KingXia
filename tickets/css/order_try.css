@@ -1020,7 +1020,7 @@ contact(new)
 }
 
 
-#contact #Orderer_check{
+.get_form #Orderer_check{
     left:-8rem;
     top: -1rem ;
     margin-bottom: 0;
@@ -1078,7 +1078,7 @@ h5.check_text {
     }
 }
 
-form#contact input {
+form.get_form input {
   width: 100%;
   height: 3rem;
   border-radius: 0px;
@@ -1105,7 +1105,7 @@ input:focus, textarea:focus ,select:focus {
 }
 
 
-form#contact input::placeholder {
+form.get_form input::placeholder {
   color: #afafaf;
 }
 textarea {
@@ -1113,7 +1113,7 @@ textarea {
   resize: vertical;
 }
 
-form#contact {
+form.get_form {
     margin-left: 0px;
     position: relative;
     z-index: 2;
@@ -1289,23 +1289,14 @@ body {
 	position: relative;
 }
 /*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
+fieldset:not(:first-of-type) {
 	display: none;
 }
-/*inputs*/
-#msform input, #msform textarea {
-	padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	margin-bottom: 10px;
-	width: 100%;
-	box-sizing: border-box;
-	font-family: montserrat;
-	color: #2C3E50;
-	font-size: 13px;
-}
+
+
+
 /*buttons*/
-#msform .action-button {
+ .action-button {
 	width: 100px;
 	background: #27AE60;
 	font-weight: bold;
@@ -1318,9 +1309,11 @@ body {
   text-decoration: none;
   font-size: 14px;
 }
-#msform .action-button:hover, #msform .action-button:focus {
+ .action-button:hover,  .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
+
+
 /*headings*/
 .fs-title {
 	font-size: 2rem;
@@ -1334,6 +1327,8 @@ body {
 	color: #666;
 	margin-bottom: 20px;
 }
+
+
 /*progressbar*/
 #progressbar {
     padding: 2rem;
@@ -1798,7 +1793,7 @@ label.active {
   color: rgb(42, 91, 165);
 }
 
-form#contact input[type="checkbox"]{
+form.get_form input[type="checkbox"]{
   transform: translateY(0px)translateX(10px);
    left: 2px;
    font-size: 14px;
@@ -1806,7 +1801,7 @@ form#contact input[type="checkbox"]{
  
  }
 
- form#contact input[type="radio"][name="orderMethods"] {
+ form.get_form input[type="radio"][name="orderMethods"] {
   width: 100%;
   height: 3rem;
   border-radius: 0px;
@@ -1918,7 +1913,7 @@ form#contact input[type="checkbox"]{
 
 /****** checkbox message ******/
 
-#contact input[id="tooltip-toggle"]  {
+.get_form input[id="tooltip-toggle"]  {
   width: 3rem;
   height: 3rem;
   border-radius: 0px;
@@ -2035,13 +2030,13 @@ label.checkbox_label.active {
 
 @media screen and (max-width:750px ){
    /************** fieldset 第二頁 **************/
-   form#contact input {
+   form.get_form input {
     text-align: right;
     padding: 0 0 0 3rem;
     height: 2.5rem;
 
   }
-  #contact input[id="birthdayPicker"] {
+  .get_form input[id="birthdayPicker"] {
     text-align: left;
     padding: 0;
   }
@@ -2082,18 +2077,18 @@ label.checkbox_label.active {
   }
 
   
-  form#contact input {
+  form.get_form input {
     text-align: right;
     padding: 0 0 0 3rem;
     height: 2.5rem;
 
   }
 
-  #contact input[id="birthdayPicker"] {
+  .get_form input[id="birthdayPicker"] {
     text-align: left;
     padding: 0;
   }
-#contact input.form-select {
+.get_form input.form-select {
   font-size: 0.7rem;
 }
 
@@ -2122,7 +2117,7 @@ label.checkbox_label.active {
     padding: 2rem 0;
     margin: 0;
   }
-  #contact #Orderer_check {
+  .get_form #Orderer_check {
     left: -5rem;
     top: 0rem;
   }

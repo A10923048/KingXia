@@ -38,1103 +38,1221 @@ Fonts - Google Fonts
 $(document).ready(function () {
 
 
-  //1.先跟後台確認有沒有之前未完成的訂票紀錄
+      //1.先跟後台確認有沒有之前未完成的訂票紀錄
+
+      //傳給後台
+      // $.ajax({
+      //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
+      //   type: "GET", // 使用 POST 请求发送数据
+      //   //contentType:"application/json",//指定格式(這次不用)
+      //   data:send_item,//塞入整理好的資料
+      //   success: function (datas) {    // 後台回傳
+      // if (datas) {
+
+      //     $('#orderSend').modal('show'); // 显示模态框
+      // }else{
+
+      //    }             
+      //           },
+      //   error: function (error) {
+      //   // 请求失败时的处理
+      //   console.error("数据发送失败：", error);    
+      // },
+      //   beforeSend: function (xhr) {
+      //     // 添加CSRF令牌到请求头部
+      //     xhr.setRequestHeader(csrfHeader, csrfToken);
+      //   }
+      // });
+
+
+      //抓取網址中GET參數//
+      var getUrlString = location.href;
+      var url = new URL(getUrlString);
+      //url.searchParams.get("shipid")
+
+      // 获取 URL 中的参数值
+      var shipid = url.searchParams.get("shipid");
+      var btime = url.searchParams.get("btime");
+      var ticket = url.searchParams.get("ticket");
+      var timeid = url.searchParams.get("time");
+
+
+      //           步驟條                           //
+      var current_fs, next_fs, previous_fs; //fieldsets
+      var left, opacity, scale; //fieldset properties which we will animate
+      var animating; //flag to prevent quick multi-click glitches
 
-  //傳給後台
-  // $.ajax({
-  //   url: "/kingxia/sea/searchorm", // 后台处理数据的 URL
-  //   type: "GET", // 使用 POST 请求发送数据
-  //   //contentType:"application/json",//指定格式(這次不用)
-  //   data:send_item,//塞入整理好的資料
-  //   success: function (datas) {    // 後台回傳
-  // if (datas) {
-
-  //     $('#orderSend').modal('show'); // 显示模态框
-  // }else{
-
-  //    }             
-  //           },
-  //   error: function (error) {
-  //   // 请求失败时的处理
-  //   console.error("数据发送失败：", error);    
-  // },
-  //   beforeSend: function (xhr) {
-  //     // 添加CSRF令牌到请求头部
-  //     xhr.setRequestHeader(csrfHeader, csrfToken);
-  //   }
-  // });
-
-
-  //抓取網址中GET參數//
-  var getUrlString = location.href;
-  var url = new URL(getUrlString);
-  //url.searchParams.get("shipid")
-
-  // 获取 URL 中的参数值
-  var shipid = url.searchParams.get("shipid");
-  var btime = url.searchParams.get("btime");
-  var ticket = url.searchParams.get("ticket");
-  var timeid = url.searchParams.get("time");
-
-
-
-
-
-
-
-
-  // <!-------------------------- 第一頁:票種選擇 ------------------------->  //
-
-  // 将参数值插入到相应的元素中
-  $("#shipID-show").text(shipid);
-  $("#clock-show").text(btime);
-  $("#showtickets").text("訂票數:" + ticket);
-  $("#time-show").text(timeid);
-
-
-  // 製作票種 下拉票數
-  $('.ticketQuantity').each(function () {
-
-    let this_ticketQuantity = $(this);
-
-    // 清空選擇框
-    this_ticketQuantity.empty();
-
-    // 根據票數動態產生選項
-    for (var i = 0; i <= ticket; i++) {
-      var option = $('<option></option>').attr('value', (i)).text(i);
-      this_ticketQuantity.append(option);
-    }
-
-  })
-
-  //預設初始畫面的未選擇票數為紅色
-  $("#tickets_unchoosed").text(ticket);
-  $("#tickets_unchoosed").css("background-color", "red");
-
-  // 綁定所有擁有 class="ticketQuantity" 的 select 元素的 change 事件
-  $('.ticketQuantity').on('change', function () {
-
-    $("#custom-alert_2").hide();
-    // 獲取被改變的 select 元素
-
-    //用 console.log("yes"); 測試有沒有進入這個功能
-
-    let this_select = $(this);
-    //讓正在被點擊的select = this_select
-
-
-
-    let y = 0;
-    $('.ticketQuantity').each(function () {
-      if ($(this) != this_select) {
-        //排除正在被點擊的select，
-        y += parseInt($(this).val());
-        //累加其他select的票數，用來計算餘票
-        //這裡用 parseInt 才不會被當字串累加
-        // y=y+
-        // y+=
-      }
-    })
-
-    // 計算還剩多少餘票用
-    console.log(y);
-    let other_tickets = ticket - y;
-
-    // 除非餘票=0不然都用紅色顯示
-
-    if (other_tickets < 0) {
-      //$("#alert-result").html(text_show);
-      $("#custom-alert_2").show();
-
-      this_select.empty();
-      // 根據票數動態產生選項
-      for (var i = 0; i <= ticket; i++) {
-        var option = $('<option></option>').attr('value', (i)).text(i);
-        this_select.append(option);
-
-      }
-      y = 0;
-      $('.ticketQuantity').each(function () {
-        if ($(this) != this_select) {
-          //排除正在被點擊的select，
-          y += parseInt($(this).val());
-
-        }
-      })
-      other_tickets = ticket - y
-      $("#tickets_unchoosed").text(other_tickets);
-
-
-    } else {
-
-      // $("#tickets_choosed").text( other_tickets+"張票");
-      $("#tickets_unchoosed").text(other_tickets);
-
-    }
-    if (other_tickets == 0) {
-      $("#tickets_unchoosed").css("background-color", "green");
-
-
-    } else {
-      $("#tickets_unchoosed").css("background-color", "red");
-    }
-    //有餘票才改變顏色(所以放在判斷餘票的下面)
-    icon_color_cange(this_select);
-    //呼叫 icon_color_cange的方法，
-    //將正在被點擊的select當參數帶入
-
-  });
-
-  //票種顏色變更
-  let icon_color_cange = function (this_select) {
-    console.log(this_select);
-
-    let icon_find = this_select.parent().find(".find_title").text();
-
-    //讓正在被點擊的select = this_select
-    let this_select_val = this_select.val();
-
-    if (this_select_val > 0) {
-
-      if (icon_find == "全票") {
-        this_select.parent().find(".icon_color_cange").addClass("text-green");;
-
-      } else if (icon_find == "嬰兒票") {
-        this_select.parent().find(".icon_color_cange").addClass("text-pink");;
-
-      }
-
-    } else {
-      this_select.parent().find(".icon_color_cange").css("color", "black");
-    }
-  }
-
-  // 監聽主alert-result_i，如果有變化觸發功能如下:
-  $(document).on("click", ".alert-result_i", function () {
-
-    console.log("点击事件");
-    $(this).parent().hide();
-    // 隐藏当前的 custom-alert 元素
-    // $("#custom-alert_2").hide();
-    focus_custom_alert();
-  })
-
-
-
-
-  // <!-------------------------- 第二頁:旅客資料輸入 ------------------------->  //
-
-
-  //              產生_旅客+聯絡人tab格式               //   
-  let traveler_tab = function (i, ii, ticket_title) {
-
-    let color = [
-      "green",
-      "pink",
-      "brown"
-    ]
-
-    let add_tab_content =
-        '<div class="nav nav-pills nav-justified">' +
-        '<a class="nav-item nav-link" href="#content' + i + '">' +
-        '<i class="fa-solid fa-ticket fa-4x text-' + color[ii] + '" style="color: #ffffff;"></i>' +
-        '<a class="text-' + color[ii] + '" href="#content' + i + '">' + ticket_title + '</a>' +
-        '</a>' +
-        '</div>';
-
-    return add_tab_content;
-
-  }
-
-  //                 產生_旅客form格式                //   
-  let traveler_list = function (i, ii, ticket_title) {
-    
-    let traveler_form_content = '';
-
-    let color = [
-      "green",
-      "pink"
-    ];
-
-    traveler_form_content +=
-      '<div class="content" id="content' + i + '">' +
-      '<!-- 用JS產生 旅客資料 -->' +
-      '<div class=" text-' + color[ii] + '">' +
-      '<!-- 表頭 -->' +
-      '<form id="contact" class="get_form" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg-2.png);">' +
-      '<h2 class="form_title text-white bg-' + color[ii] + '">' + ticket_title + '</h2>' +
-      '<!-- 填寫格 -->' +
-      '<div class="row mt-5 contact_row">' +
-      '<!-- 左半部 -->' +
-      '<div class="col-lg-6 mt-3" style="padding-right: 5%; padding-left: 3%;">' +
-      '<div class="row" style="padding-left: 10%;">' +
-      '<label>姓名<span class="req">*</span></label>' +
-      '<input type="text" class="form-control col" id="orderName" required>' +
-      '<h2 id="contact" class="col section-title mb-3 text-center ">旅客資料</h2>' +
-      '</div>' +
-      '<label>電話<span class="req">*</span></label>' +
-      '<input type="tel" class="form-control" id="orderPhone" required>' +
-      '<label>身分證<span class="req">*</span></label>' +
-      '<input type="text" class="form-control" id="orderId" required>' +
-      '<label>Email<span class="req">*</span></label>' +
-      '<input type="email" class="form-control" id="email" required>' +
-      '</div>' +
-      '<!-- 右半部 -->' +
-      '<div class="col-lg-6 col-md-12 col-sm-12" style="padding-left: 5%; padding-right: 5%;">' +
-      '<!-- checkbox -->' +
-      '<div class="input tooltip-container check">' +
-      '<label for="Orderer_check" class="col checkbox_label text-' + color[ii] + '">主要訂購人<br>(請打勾)</label>' +
-      '<input id="tooltip-toggle" class"orderer_check" type="checkbox">' +
-      '<div class="tooltip-content">' +
-      '<p>訂票負責人只能有1位! 勾選後會將資料自動帶入"訂購人"表單</p>' +
-      '</div>' +
-      '</div>' +
-      '<!-- select們 -->' +
-      '<div class="mt-4 row">' +
-      '<div class="col">' +
-      '<i class="fa-solid fa-earth-americas fa-2x"></i>' +
-      '<h6>國籍</h6>' +
-      '<select class="form-select form-control" id="country" required>' +
-      '<option value=""></option>' +
-      '<option value="TWN">台灣</option>' +
-      '<option value="CHN">大陸</option>' +
-      '<option value="HKG">香港</option>' +
-      '<option value="MAC">澳門</option>' +
-      '<option value="NN">其他</option>' +
-      '</select>' +
-      '</div>' +
-      '<div class="">' +
-      '<i class="fa-solid fa-venus-mars fa-2x"></i>' +
-      '<h6>性別</h6>' +
-      '<select class="form-select form-control" id="gender" required>' +
-      '<option value=""></option>' +
-      '<option value="女">女</option>' +
-      '<option value="男">男</option>' +
-      '</select>' +
-      '</div>' +
-      '<div class="col">' +
-      '<i class="fa-solid fa-cake-candles fa-2x"></i>' +
-      '<h6>出生日期</h6>' +
-      '<div>' +
-      '<input type="date" class="form-select form-control" id="birthdayPicker" placeholder="選擇日期範圍" value="" required>' +
-      '</div>' +
-      '</div>' +
-      '</div>' +
-      '</div>' +
-      '<!-- 用JS產生 上/下一位按鈕 -->' +
-      '<div class="top-row col-lg-12 col-md-12 col-sm-12">' +
-      '<div class="field-wrap">' +
-      '<button type="submit" class=" bg-' + color[ii] + ' col-lg-6 col-md-12 col-sm-12 mt-3 prev button "/>前一位</button>' +
-      '</div>' +
-      '<div class="field-wrap">' +
-      '<button id="next2" class=" bg-' + color[ii] + ' col-lg-6 col-md-12 col-sm-12 mt-3 next button "/>下一位</button>' +
-      '</div>' +
-      '</div>' +
-      '</form>' +
-      '</div>' +
-      '</div>';
-
-    return traveler_form_content;
-  }
-
-  //                 產生_聯絡人form格式                //   
-  let buyer_form = function (BuyerId) {
-
-     let htmlString =
-
-      '<div class="content"  id="content' + BuyerId + '">' +
-
-      '<!-- 用JS產生 旅客資料 -->' +
-      '<div class=" text-brown">' +
-
-      '<!-- 表頭 -->' +
-      '<form id="contact" class="get_form" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg-2.png);">' +
-      '<h2 class="form_title text-white bg-brown">訂購人資料</h2>' +
-
-      '<!-- 填寫格 -->' +
-      '<div class="row mt-5 contact_row">' +
-
-      '<!-- 左半部 -->' +
-      '<div class="col-lg-6 mt-3" style="padding-right: 5%; padding-left: 3%;">' +
-      '<div class="row" style="padding-left: 10%;">' +
-      '<label>姓名<span class="req">*</span></label>' +
-      '<input type="text" class="form-control col" id="orderName" required>' +
-      '<h2 id="contact" class="col section-title mb-3 text-center ">訂購人</h2>' +
-      '</div>' +
-      '<label>電話<span class="req">*</span></label>' +
-      '<input type="tel" class="form-control" id="orderPhone" required>' +
-      '<label>身分證<span class="req">*</span></label>' +
-      '<input type="text" class="form-control" id="orderId" required>' +
-      '</div>' +
-
-      '<!-- 右半部 -->' +
-      '<div class="col-lg-6 col-md-12 col-sm-12" style="padding-left: 5%; padding-right: 5%;">' +
-      '<!-- select們 -->' +
-      '<div class="radio_div mt-4 row">' +
-      '<label for="orderMethods" class="col checkbox_label text-brown">訂單開立方式</label>' +
-      '<div class="col">' +
-      '<input type="radio" name="orderMethods" value="統一開立購票證名" required>統一開立購票證名' +
-      '</div>' +
-      '<div class="col">' +
-      '<input type="radio" name="orderMethods" value="分別開立購票證名" required>分別開立購票證名' +
-      '</div>' +
-      '</div>' +
-      '</div>' +
-      '</div>' +
-
-      '<!-- 用JS產生 上/下一位按鈕 -->' +
-      '<div class="top-row col-lg-12 col-md-12 col-sm-12">' +
-      '<div class="field-wrap">' +
-      '<button type="submit" class="bg-brown col-lg-6 col-md-12 col-sm-12 mt-3 prev button "/>前一位</button>' +
-      '</div>' +
-      '<div class="field-wrap">' +
-      '<button id="next2" class="bg-brown col-lg-6 col-md-12 col-sm-12 mt-3 next button "/>下一位</button>' +
-      '</div>' +
-      '</div>' +
-
-      '</form>' +
-      '</div>' +
-      '</div>';
-
-    return htmlString;
-  }
-
-  
-  //                 第一頁"送出"按鈕功能                //  
-  $("#P1_send").click(function () {
-
-    console.log($("input[name='nextP1']").val());
-
-    $("#carousel_container, #tab-content").empty();
-    let ii = 0; //區別票種用
-    let traveler_list_show = [];//暫存form用
-    let traveler_tab_show = [];//暫存tab用
-
-    let tickets_unchoosed = $("#tickets_unchoosed").text();
-
-    // 判斷 能夠送出的條件
-    let T = true;
-    let text_show = "";
-    let total = 0;
-    let BuyerId = 0;
-
-    //判斷 已選擇票種數=預定票數
-    if (parseInt(tickets_unchoosed) != 0) {
-      T = false;
-      text_show = text_show + "票種選擇(未完成)"
-      console.log("已選擇票種數=預定票數");
-    }
-
-    //票種數=/=預定票數:警示
-    //票種數==預定票數 :
-    if (!T) {
-      $("#alert-result").html(text_show);
-
-      $("#custom-alert").show();
-
-      return;
       
-    } else {
+      //下一步驟:轉頁功能
+      let pagenext= function (TF,element) {
 
-      //隱藏警示窗
-      $(this).parent().find(".custom-alert").hide();
+      console.log(element);
+      
 
-      //根據獲取的票種數量產生該種類表單
-      $('.ticketQuantity').each(function () {
+      if(TF){
+        if (animating) return false;
+        animating = true;
 
-        let ticket_val = parseInt($(this).val());
+        current_fs = $(element).parent();
+        next_fs = $(element).parent().next();
 
-        //加總所有值
-        if (!isNaN(ticket_val)) {
+        //activate next step on progressbar using the index of next_fs
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-            total += ticket_val;
-        }
-
-        console.log('Total: ', total);
-
-        //嬰兒Id
-        let ticket_m = total - ticket_val;
-        console.log('ticket_m: ', ticket_m);
-
-        //購票人Id
-        BuyerId = total;
-
-        let find_title = $(this).parent().find(".find_title").text();
-        
-
-        if (ticket_val > 0) {
-
-          //票種=全票
-          if (ii == 0) {
-
-            console.log("全票:" + ii);
-
-            console.log(find_title + "ticket:" + ticket_val);
-
-            for (var i = 0; i < ticket_val; i++) {
-
-              //製作:全票form放入list
-              traveler_list_show.push(traveler_list(i, ii, find_title));//暫存用
-
-              //製作:全票tab放入list
-              traveler_tab_show.push(traveler_tab(i, ii, find_title));//暫存用                    
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({ opacity: 0 }, {
+          step: function (now, mx) {
+            //as the opacity of current_fs reduces to 0 - stored in "now"
+            //1. scale current_fs down to 80%
+            scale = 1 - (1 - now) * 0.2;
+            //2. bring next_fs from the right(50%)
+            left = (now * 50) + "%";
+            //3. increase opacity of next_fs to 1 as it moves in
+            opacity = 1 - now;
+            current_fs.css({
+              'transform': 'scale(' + scale + ')',
+              // 破解"previous"按鈕 沒有恢復到原本位置的原因
+              // 'position': 'absolute'
+            });
+            next_fs.css({ 'left': left, 'opacity': opacity });
+          },
+          duration: 800,
+          complete: function () {
+            current_fs.hide();
+            animating = false;
+          },
+          //element comes from the custom easing plugin
+          easing: 'easeInOutBack'
+        });
             }
 
-            //票種=嬰兒票票
-          } else {
+      }; 
 
-            console.log("find_title+ii:" + find_title + ii);
-            console.log(find_title + "ticket:" + ticket_val);
+      //上一步驟:轉頁功能
+      $(".page-previous").click(function () {
+        if (animating) return false;
+        animating = true;
 
-            for (var i = 0; i < ticket_val; i++) {
+        current_fs = $(this).parent();
+        previous_fs = $(this).parent().prev();
 
-              //製作:嬰兒form放入list
-              traveler_list_show.push(traveler_list(parseInt(ticket_m + i), ii, find_title));
+        //de-activate current step on progressbar
+        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 
-              //製作:嬰兒票tab放入list
-              traveler_tab_show.push(traveler_tab(parseInt(ticket_m + i), ii, find_title));
-
-            }
-          }
-
-        }
-
-        //讓不同票種有不同id
-        ii += parseInt(1)
-      })
-
-      //製作:購票人form放入list
-      traveler_list_show.push(buyer_form(BuyerId));
-
-      //製作:購票人tab放入list
-      traveler_tab_show.push(traveler_tab(BuyerId, "2", "訂購人"));
-
-      //包裹:已放入list的tab
-      var wrapped_traveler_tab_show = $('<div class="owl-carousel owl-loaded"></div>').append(traveler_tab_show);
-
-      //畫面顯示:tab
-      $("#carousel_container").append(wrapped_traveler_tab_show);
-
-      //畫面顯示:form
-      $("#tab-content").append(traveler_list_show);
-
-      //.owl-carousel 初始化 設定播放樣式
-      $('.owl-carousel').owlCarousel({
-        loop: false,
-        autoplay: false,
-        clone: false,
-        margin: 0,
-        autoplayTimeout: 4000,
-        autoplayHoverPause: false,
-        responsiveClass: true,
-        responsive: {
-          0: {
-            items: 1,
-            nav: true,
+        //show the previous fieldset
+        previous_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({ opacity: 0 }, {
+          step: function (now, mx) {
+            //as the opacity of current_fs reduces to 0 - stored in "now"
+            //1. scale previous_fs from 80% to 100%
+            scale = 0.8 + (1 - now) * 0.2;
+            //2. take current_fs to the right(50%) - from 0%
+            left = ((1 - now) * 50) + "%";
+            //3. increase opacity of previous_fs to 1 as it moves in
+            opacity = 1 - now;
+            current_fs.css({ 'left': left });
+            previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
           },
-
-          376: {
-            items: 2,
-            nav: true,
+          duration: 800,
+          complete: function () {
+            current_fs.hide();
+            animating = false;
           },
-          500: {
-            items: 2,
-            nav: true,
-          },
-          700: {
-            items: 3,
-            nav: true,
-          },
-          950: {
-            items: 3,
-            nav: true,
-          },
-          1200: {
-            items: 5,
-            nav: true
-          },
-        }
-      })
-
-
-    }
-  });
-
-  ///           owl-carousel 初始化"之後"的操作          //  
-  $(document).on("initialized.owl.carousel", ".owl-carousel", function () {
-
-    //隱藏未被選中的表單
-    $('.tab-content > div:not(:first-child)').hide();
-
-    //選擇Bar tab轉換功能 
-    $('.nav-link').on('click', function (e) {
-      e.preventDefault();
-
-      // // 移除所有活動的鏈接
-      $('.nav-link').removeClass('active');
-
-      // 將當前鏈接設置為活動狀態
-      $(this).addClass('active');
-
-      // 獲取目標 ID
-      var target = $(this).attr('href');
-
-      $('.tab-content > div').hide();
-      $(target).fadeIn(600);
-    });
-
-     // 表格 特效
-      $('.form').find('input, textarea , select').on('change keyup blur focus', function (e) {
-
-        let $this = $(this),
-          label = $this.prev('label');
-
-        if (e.type === 'keyup') {
-          if ($this.val() === '') {
-            label.removeClass('active highlight');
-          } else {
-            label.addClass('active highlight');
-          }
-        } else if (e.type === 'blur') {
-          if ($this.val() === '') {
-            label.removeClass('active highlight');
-          } else {
-            label.removeClass('highlight');
-          }
-        } else if (e.type === 'focus') {
-
-          if ($this.val() === '') {
-            label.removeClass('highlight');
-          }
-          else if ($this.val() !== '') {
-            label.addClass('highlight');
-          }
-        } else if (e.type === 'change') {
-          if ($this.val() === '' || $this.val() == "NULL") {
-            console.log("$this.val() === 'NULL'");
-            label.removeClass('active highlight');
-            $('input[name="cusAdd"]').val('');
-
-          } else {
-            label.addClass('active highlight');
-
-            if ($this.attr('name') === 'city') {
-
-              // 获取选中的选项的文本值
-              var selectedOption = $(this).children("option:selected").text();
-
-              // 将选项的文本值设置为输入框的值
-              $('input[name="cusAdd"]').val(selectedOption);
-
-              $('input[name="cusAdd"]').prev('label').addClass('active');
-
-
-            }
-          }
-        }
-
-      });
-
-      //             旅客=聯絡人:checkbox連動                //
-      $('.orderer_check').on('change', function () {
-
-        console.log("进入 checkbox 连动");
-        let this_check = this;
-
-        let this_form = this.closest('.get_form');
-
-        // 在每个 .get_form 元素内查找 .orderer_check
-        $('.get_form').each(function () {
-            $(this).find(".orderer_check").not(this_check).prop("checked", false);
+          //this comes from the custom easing plugin
+          easing: 'easeInOutBack'
         });
 
 
-          let orderName = $(this).parent().parent().parent().parent().find(".orderName").val();
-          let orderPhone = $(this).parent().parent().parent().parent().find(".orderPhone").val();
-          let orderId = $(this).parent().parent().parent().parent().find(".orderId").val();
-          //input 要用 val 接收值 不能用 .text
-
-          console.log($(this).find(".orderName"));
-          console.log("orderPhone: " + orderPhone);
-          console.log("orderId: " + orderId);
+      });
 
 
-          let T = true;
-          let text_show = "";
 
-          // 表格內的值是否為空 //
-          if (!orderName) {
-            console.log("有進入orderName ");
-            T = false;
-            text_show = text_show + "姓名:未填寫<br>"
-            //   //"姓名:未填寫"=""+"姓名:未填寫"
+ //////////////<!-------------------------- 第一頁:票種選擇 ------------------------->////////////// 
+
+      // 将参数值插入到相应的元素中
+      $("#shipID-show").text(shipid);
+      $("#clock-show").text(btime);
+      $("#showtickets").text("訂票數:" + ticket);
+      $("#time-show").text(timeid);
+
+
+      // 製作票種 下拉票數
+      $('.ticketQuantity').each(function () {
+
+        let this_ticketQuantity = $(this);
+
+        // 清空選擇框
+        this_ticketQuantity.empty();
+
+        // 根據票數動態產生選項
+        for (var i = 0; i <= ticket; i++) {
+          var option = $('<option></option>').attr('value', (i)).text(i);
+          this_ticketQuantity.append(option);
+        }
+
+      })
+
+      //預設初始畫面的未選擇票數為紅色
+      $("#tickets_unchoosed").text(ticket);
+      $("#tickets_unchoosed").css("background-color", "red");
+
+      // 綁定所有擁有 class="ticketQuantity" 的 select 元素的 change 事件
+      $('.ticketQuantity').on('change', function () {
+
+        $("#custom-alert_2").hide();
+        // 獲取被改變的 select 元素
+
+        //用 console.log("yes"); 測試有沒有進入這個功能
+
+        let this_select = $(this);
+        //讓正在被點擊的select = this_select
+
+
+
+        let y = 0;
+        $('.ticketQuantity').each(function () {
+          if ($(this) != this_select) {
+            //排除正在被點擊的select，
+            y += parseInt($(this).val());
+            //累加其他select的票數，用來計算餘票
+            //這裡用 parseInt 才不會被當字串累加
+            // y=y+
+            // y+=
           }
+        })
 
-          if (!orderPhone) {
-            console.log("有進入orderPhone");
-            T = false;
-            text_show = text_show + "手機/行動電話:未填寫<br>"
-            // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"手機/行動電話:未填寫"
+        // 計算還剩多少餘票用
+        console.log(y);
+        let other_tickets = ticket - y;
+
+        // 除非餘票=0不然都用紅色顯示
+
+        if (other_tickets < 0) {
+          //$("#alert-result").html(text_show);
+          $("#custom-alert_2").show();
+
+          this_select.empty();
+          // 根據票數動態產生選項
+          for (var i = 0; i <= ticket; i++) {
+            var option = $('<option></option>').attr('value', (i)).text(i);
+            this_select.append(option);
+
           }
+          y = 0;
+          $('.ticketQuantity').each(function () {
+            if ($(this) != this_select) {
+              //排除正在被點擊的select，
+              y += parseInt($(this).val());
 
-          if (!orderId) {
-            console.log("有進入orderId ");
-            T = false;
-            text_show = text_show + "身分證/護照號碼:未填寫<br> "
-          }
-
-          if (!T) {
-            console.log("有進入!T ");
-            // console.log($(this).parent().parent().parent().parent().parent());
-
-            $(this).parent().parent().parent().parent().parent().find(".alert-text").html(text_show);
-            $(this).parent().parent().parent().parent().parent().find(".custom-alert").show();
-
-            // $(".checked").prop("checked", false);
-            // $(this).prop("checked") == false;//判斷左邊有沒有等於右邊
-            // $(this).prop("checked") = false;//把右邊的值帶入左邊
-
-            $(this).prop("checked", false);
-          }
-          else {
-            console.log("有進入!T else ");
-            // 将值设置到对应的输入框
-            $("#orderName").val(orderName);
-            $("#orderPhone").val(orderPhone);
-            $("#orderId").val(orderId);
-          }
-
-          if ($(this).prop("checked") == false) {
-
-            console.log("empty");
-            $("#orderName").val("");
-            $("#orderPhone").val("");
-            $("#orderId").val("");
-          }
-          console.log($("#orderName"));
-          console.log("orderPhone: " + orderPhone);
-          console.log("orderId: " + orderId);
-
-        
+            }
+          })
+          other_tickets = ticket - y
+          $("#tickets_unchoosed").text(other_tickets);
 
 
+        } else {
+
+          // $("#tickets_choosed").text( other_tickets+"張票");
+          $("#tickets_unchoosed").text(other_tickets);
+
+        }
+        if (other_tickets == 0) {
+          $("#tickets_unchoosed").css("background-color", "green");
+
+
+        } else {
+          $("#tickets_unchoosed").css("background-color", "red");
+        }
+        //有餘票才改變顏色(所以放在判斷餘票的下面)
+        icon_color_cange(this_select);
+        //呼叫 icon_color_cange的方法，
+        //將正在被點擊的select當參數帶入
 
       });
 
-  });
+      //票種顏色變更
+      let icon_color_cange = function (this_select) {
+        
+       
+        let icon_find = this_select.parent().find(".find_title").text();
 
+        //讓正在被點擊的select = this_select
+        let this_select_val = this_select.val();
 
+        if (this_select_val > 0) {
 
-  $('.orderer_check').on('change', function () {
+          if (icon_find == "全票") {
+            this_select.parent().find(".icon_color_cange").addClass("text-green");;
 
-    console.log("进入 checkbox 连动");
-    let this_check = this;
+          } else if (icon_find == "嬰兒票") {
+            this_select.parent().find(".icon_color_cange").addClass("text-pink");;
 
-    let this_form = this.closest('.get_form');
+          }
 
-    // 在每个 .get_form 元素内查找 .orderer_check
-    $('.get_form').each(function () {
-        $(this).find(".orderer_check").not(this_check).prop("checked", false);
-    });
-
-
-      let orderName = $(this).parent().parent().parent().parent().find(".orderName").val();
-      let orderPhone = $(this).parent().parent().parent().parent().find(".orderPhone").val();
-      let orderId = $(this).parent().parent().parent().parent().find(".orderId").val();
-      //input 要用 val 接收值 不能用 .text
-
-      console.log($(this).find(".orderName"));
-      console.log("orderPhone: " + orderPhone);
-      console.log("orderId: " + orderId);
-
-
-      let T = true;
-      let text_show = "";
-
-      // 表格內的值是否為空 //
-      if (!orderName) {
-        console.log("有進入orderName ");
-        T = false;
-        text_show = text_show + "姓名:未填寫<br>"
-        //   //"姓名:未填寫"=""+"姓名:未填寫"
+        } else {
+          this_select.parent().find(".icon_color_cange").css("color", "black");
+        }
       }
 
-      if (!orderPhone) {
-        console.log("有進入orderPhone");
-        T = false;
-        text_show = text_show + "手機/行動電話:未填寫<br>"
-        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"手機/行動電話:未填寫"
+      // 監聽主alert-result_i，如果有變化觸發功能如下:
+      $(document).on("click", ".alert-result_i", function () {
+
+        console.log("点击事件");
+        $(this).parent().hide();
+        // 隐藏当前的 custom-alert 元素
+        // $("#custom-alert_2").hide();
+        focus_custom_alert();
+      })
+
+
+ ////////////// <!-------------------------- 第二頁:旅客資料輸入 ------------------------->////////////// 
+
+
+      //              產生_旅客+聯絡人tab格式               //   
+      let traveler_tab = function (i, ii, ticket_title) {
+
+        let color = [
+          "green",
+          "pink",
+          "brown"
+        ]
+
+        let add_tab_content =
+            '<div class="nav nav-pills nav-justified">' +
+            '<a class="nav-item nav-link" href="#content' + i + '">' +
+            '<i class="fa-solid fa-ticket fa-4x text-' + color[ii] + '" style="color: #ffffff;"></i>' +
+            '<a class="text-' + color[ii] + '" href="#content' + i + '">' + ticket_title + '</a>' +
+            '</a>' +
+            '</div>';
+
+        return add_tab_content;
+
       }
 
-      if (!orderId) {
-        console.log("有進入orderId ");
-        T = false;
-        text_show = text_show + "身分證/護照號碼:未填寫<br> "
+      //                 產生_旅客form格式                //   
+      let traveler_list = function (i, ii, ticket_title) {
+        
+        let traveler_form_content = '';
+
+        let color = [
+          "green",
+          "pink"
+        ];
+
+        traveler_form_content +=
+          '<div class="content" id="content' + i + '">' +
+          '<!-- 用JS產生 旅客資料 -->' +
+          '<div class=" text-' + color[ii] + '">' +
+          '<!-- 表頭 -->' +
+          '<form  class="get_form" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg-2.png);">' +
+          '<h2 class="form_title text-white bg-' + color[ii] + '">' + ticket_title + '</h2>' +
+          '<!-- 填寫格 -->' +
+          '<div class="row mt-5 contact_row">' +
+          '<!-- 左半部 -->' +
+          '<div class="col-lg-6 mt-3" style="padding-right: 5%; padding-left: 3%;">' +
+          '<div class="row" style="padding-left: 10%;">' +
+          '<label>姓名<span class="req">*</span></label>' +
+          '<input type="text" class="form-control col" id="orderName" minlength="2" required>' +
+          '<h2  class="col section-title mb-3 text-center ">旅客資料</h2>' +
+          '</div>' +
+          '<label>電話<span class="req">*</span></label>' +
+          '<input type="tel" class="form-control" id="orderPhone" required>' +
+          '<label>身分證<span class="req">*</span></label>' +
+          '<input type="text" class="form-control" id="orderId" required>' +
+          '<label>Email<span class="req">*</span></label>' +
+          '<input type="email" class="form-control" id="email" required>' +
+          '</div>' +
+          '<!-- 右半部 -->' +
+          '<div class="col-lg-6 col-md-12 col-sm-12" style="padding-left: 5%; padding-right: 5%;">' +
+          '<!-- checkbox -->' +
+          '<div class="input tooltip-container check">' +
+          '<label for="Orderer_check" class="col checkbox_label text-' + color[ii] + '">主要訂購人<br>(請打勾)</label>' +
+          '<input id="tooltip-toggle" class"orderer_check" type="checkbox">' +
+          '<div class="tooltip-content">' +
+          '<p>訂票負責人只能有1位! 勾選後會將資料自動帶入"訂購人"表單</p>' +
+          '</div>' +
+          '</div>' +
+          '<!-- select們 -->' +
+          '<div class="mt-4 row">' +
+          '<div class="col">' +
+          '<i class="fa-solid fa-earth-americas fa-2x"></i>' +
+          '<h6>國籍</h6>' +
+          '<select class="form-select form-control" id="country" required>' +
+          '<option value=""></option>' +
+          '<option value="TWN">台灣</option>' +
+          '<option value="CHN">大陸</option>' +
+          '<option value="HKG">香港</option>' +
+          '<option value="MAC">澳門</option>' +
+          '<option value="NN">其他</option>' +
+          '</select>' +
+          '</div>' +
+          '<div class="">' +
+          '<i class="fa-solid fa-venus-mars fa-2x"></i>' +
+          '<h6>性別</h6>' +
+          '<select class="form-select form-control" id="gender" required>' +
+          '<option value=""></option>' +
+          '<option value="女">女</option>' +
+          '<option value="男">男</option>' +
+          '</select>' +
+          '</div>' +
+          '<div class="col">' +
+          '<i class="fa-solid fa-cake-candles fa-2x"></i>' +
+          '<h6>出生日期</h6>' +
+          '<div>' +
+          '<input type="date" class="form-select form-control" id="birthdayPicker" placeholder="選擇日期範圍" value="" required>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '<!-- 用JS產生 上/下一位按鈕 -->' +
+          '<div class="top-row col-lg-12 col-md-12 col-sm-12">' +
+          '<div class="field-wrap">' +
+          '<button type="submit" class=" bg-' + color[ii] + ' col-lg-6 col-md-12 col-sm-12 mt-3 prev button "/>前一位</button>' +
+          '</div>' +
+          '<div class="field-wrap">' +
+          '<button id="next2" class=" bg-' + color[ii] + ' col-lg-6 col-md-12 col-sm-12 mt-3 next button "/>下一位</button>' +
+          '</div>' +
+          '</div>' +
+          '</form>' +
+          '</div>' +
+          '</div>';
+
+        return traveler_form_content;
       }
 
-      if (!T) {
-        console.log("有進入!T ");
-        // console.log($(this).parent().parent().parent().parent().parent());
+      //                 產生_聯絡人form格式                //   
+      let buyer_form = function (BuyerId) {
 
-        $(this).parent().parent().parent().parent().parent().find(".alert-text").html(text_show);
-        $(this).parent().parent().parent().parent().parent().find(".custom-alert").show();
+        let htmlString =
 
-        // $(".checked").prop("checked", false);
-        // $(this).prop("checked") == false;//判斷左邊有沒有等於右邊
-        // $(this).prop("checked") = false;//把右邊的值帶入左邊
+          '<div class="content"  id="content' + BuyerId + '">' +
 
-        $(this).prop("checked", false);
+          '<!-- 用JS產生 旅客資料 -->' +
+          '<div class=" text-brown">' +
+
+          '<!-- 表頭 -->' +
+          '<form id="contact" class="get_form" action="" method="get" style="background-image: url(/tickets/img/contact-form-bg-2.png);">' +
+          '<h2 class="form_title text-white bg-brown">訂購人資料</h2>' +
+
+          '<!-- 填寫格 -->' +
+          '<div class="row mt-5 contact_row">' +
+
+          '<!-- 左半部 -->' +
+          '<div class="col-lg-6 mt-3" style="padding-right: 5%; padding-left: 3%;">' +
+          '<div class="row" style="padding-left: 10%;">' +
+          '<label>姓名<span class="req">*</span></label>' +
+          '<input type="text" class="form-control col" id="orderName" minlength="2" required>' +
+          '<h2  class="col section-title mb-3 text-center ">訂購人</h2>' +
+          '</div>' +
+          '<label>電話<span class="req">*</span></label>' +
+          '<input type="tel" class="form-control" id="orderPhone" required>' +
+          '<label>身分證<span class="req">*</span></label>' +
+          '<input type="text" class="form-control" id="orderId" required>' +
+          '</div>' +
+
+          '<!-- 右半部 -->' +
+          '<div class="col-lg-6 col-md-12 col-sm-12" style="padding-left: 5%; padding-right: 5%;">' +
+          '<!-- select們 -->' +
+          '<div class="radio_div mt-4 row">' +
+          '<label for="orderMethods" class="col checkbox_label text-brown">訂單開立方式</label>' +
+          '<div class="col">' +
+          '<input type="radio" name="orderMethods" value="統一開立購票證名" required>統一開立購票證名' +
+          '</div>' +
+          '<div class="col">' +
+          '<input type="radio" name="orderMethods" value="分別開立購票證名" required>分別開立購票證名' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+
+          '<!-- 用JS產生 上/下一位按鈕 -->' +
+          '<div class="top-row col-lg-12 col-md-12 col-sm-12">' +
+          '<div class="field-wrap">' +
+          '<button type="submit" class="bg-brown col-lg-6 col-md-12 col-sm-12 mt-3 prev button "/>前一位</button>' +
+          '</div>' +
+          '<div class="field-wrap">' +
+          '<button id="next2" class="bg-brown col-lg-6 col-md-12 col-sm-12 mt-3 next button "/>下一位</button>' +
+          '</div>' +
+          '</div>' +
+
+          '</form>' +
+          '</div>' +
+          '</div>';
+
+        return htmlString;
       }
-      else {
-        console.log("有進入!T else ");
-        // 将值设置到对应的输入框
-        $("#orderName").val(orderName);
-        $("#orderPhone").val(orderPhone);
-        $("#orderId").val(orderId);
-      }
 
-      if ($(this).prop("checked") == false) {
+      
+      //                 第一頁"送出"按鈕功能                //  
+      $("#P1_send").click(function (event) {
 
-        console.log("empty");
-        $("#orderName").val("");
-        $("#orderPhone").val("");
-        $("#orderId").val("");
-      }
-      console.log($("#orderName"));
-      console.log("orderPhone: " + orderPhone);
-      console.log("orderId: " + orderId);
 
+        $("#carousel_container, #tab-content").empty();
+        let ii = 0; //區別票種用
+        let traveler_list_show = [];//暫存form用
+        let traveler_tab_show = [];//暫存tab用
+
+        let tickets_unchoosed = $("#tickets_unchoosed").text();
+
+        // 判斷 能夠送出的條件
+        let T = true;
+        let text_show = "";
+        let total = 0;
+        let BuyerId = 0;
+
+        //判斷 已選擇票種數=預定票數
+        if (parseInt(tickets_unchoosed) != 0) {
+          T = false;
+          text_show = text_show + "票種選擇(未完成)"
+
+          console.log("已選擇票種數:"+parseInt(tickets_unchoosed));
+        }
+
+        //票種數=/=預定票數:警示
+        //票種數==預定票數 :
+        if (!T) {
+          
+          $("#alert-result").html(text_show);
+
+          $("#custom-alert").show();
+
+        } else {
+
+          //隱藏警示窗
+          $(this).parent().find(".custom-alert").hide();
+
+          // //觸發下一步換頁功能
+
+          pagenext(true, $(this));
+
+          //根據獲取的票種數量產生該種類表單
+          $('.ticketQuantity').each(function () {
+
+            let ticket_val = parseInt($(this).val());
+
+            //加總所有值
+            if (!isNaN(ticket_val)) {
+
+                total += ticket_val;
+            }
+
+            console.log('Total: ', total);
+
+            //嬰兒Id
+            let ticket_m = total - ticket_val;
+            console.log('ticket_m: ', ticket_m);
+
+            //購票人Id
+            BuyerId = total;
+
+            let find_title = $(this).parent().find(".find_title").text();
+            
+
+            if (ticket_val > 0) {
+
+              //票種=全票
+              if (ii == 0) {
+
+                console.log("全票:" + ii);
+
+                console.log(find_title + "ticket:" + ticket_val);
+
+                for (var i = 0; i < ticket_val; i++) {
+
+                  //製作:全票form放入list
+                  traveler_list_show.push(traveler_list(i, ii, find_title));//暫存用
+
+                  //製作:全票tab放入list
+                  traveler_tab_show.push(traveler_tab(i, ii, find_title));//暫存用                    
+                }
+
+                //票種=嬰兒票票
+              } else {
+
+                console.log("find_title+ii:" + find_title + ii);
+                console.log(find_title + "ticket:" + ticket_val);
+
+                for (var i = 0; i < ticket_val; i++) {
+
+                  //製作:嬰兒form放入list
+                  traveler_list_show.push(traveler_list(parseInt(ticket_m + i), ii, find_title));
+
+                  //製作:嬰兒票tab放入list
+                  traveler_tab_show.push(traveler_tab(parseInt(ticket_m + i), ii, find_title));
+
+                }
+              }
+
+            }
+
+            //讓不同票種有不同id
+            ii += parseInt(1)
+          })
+
+          //製作:購票人form放入list
+          traveler_list_show.push(buyer_form(BuyerId));
+
+          //製作:購票人tab放入list
+          traveler_tab_show.push(traveler_tab(BuyerId, "2", "訂購人"));
+
+          //包裹:已放入list的tab
+          var wrapped_traveler_tab_show = $('<div class="owl-carousel owl-loaded"></div>').append(traveler_tab_show);
+
+          //畫面顯示:tab
+          $("#carousel_container").append(wrapped_traveler_tab_show);
+
+          //畫面顯示:form
+          $("#tab-content").append(traveler_list_show);
+
+          //.owl-carousel 初始化 設定播放樣式
+          $('.owl-carousel').owlCarousel({
+            loop: false,
+            autoplay: false,
+            clone: false,
+            margin: 0,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: false,
+            responsiveClass: true,
+            responsive: {
+              0: {
+                items: 1,
+                nav: true,
+              },
+
+              376: {
+                items: 2,
+                nav: true,
+              },
+              500: {
+                items: 2,
+                nav: true,
+              },
+              700: {
+                items: 3,
+                nav: true,
+              },
+              950: {
+                items: 3,
+                nav: true,
+              },
+              1200: {
+                items: 5,
+                nav: true
+              },
+            }
+          })
+
+        }
+      });
+
+
+      ///           owl-carousel 初始化"之後"的操作          //  
+      $(document).on("initialized.owl.carousel", ".owl-carousel", function () {
+
+        //隱藏未被選中的表單
+        $('.tab-content > div:not(:first-child)').hide();
+
+        //隱藏未被選中的表單 a class="nav-item nav-link
+        // $('.owl-stage > div:(:first-child)>a:()').addClass("active");
+        $('.owl-stage > div:first-child a:first-child').addClass("active");
+
+
+
+        //檢查输入元素
+         let inputValid =function(href){
+
+          console.log( "傳入href:"+href);
+
+
+          let form = $(href).find('.get_form');
+          console.log( "formlength:"+ form.length);
+
+            // let form =$('.get_form').attr('data-target', href);
+
+            console.log( "傳入href:"+form);
+
+            let allFieldsValid = true;
+
+            console.log( "length:"+ form.find("input,select").length);
+
+            // 对于每个输入元素
+            form.find("input,select").each(function () {
+
+                var inputName = $(this).attr("id");
+                var inputValue = $(this).val();
+
+                  console.log("Input Name: " + inputName + ", Input Value: " + inputValue);
+
+                //使用 checkValidity() 方法检查输入的有效性
+                if (!this.checkValidity()) {
+
+                    console.log("this.validity.valid:"+ this.validity.valid);
+
+                    // 标记为不通过验证
+                    allFieldsValid = false;
+                    // 显示警告或其他提示
+                    // 这里可以根据需要进行相应的提示操作，比如添加一个警告样式、显示一个提示信息等
+                    // $(this).addClass("invalid-field").focus();
+                    console.log("input " + inputName + " is not valid");
+
+                    this.reportValidity();
+                    return false;
+
+                }
+
+                console.log( "最後:"+allFieldsValid);
+                 // 返回 true 或 false，表示所有输入是否有效
+                  // return allFieldsValid; 
+
+            });
+
+            console.log( "回傳:"+allFieldsValid);
+            // 返回 true 或 false，表示所有输入是否有效
+            return allFieldsValid; 
+
+
+         }
+
+
+        //(舊)選擇Bar tab轉換功能 
+        // $('.nav-link').on('click', function (e) {
+        //   e.preventDefault();
+
+        //   // // 移除所有活動的鏈接
+        //   $('.nav-link').removeClass('active');
+
+        //   // 將當前鏈接設置為活動狀態
+        //   $(this).addClass('active');
+
+        //   // 獲取目標 ID
+        //   var target = $(this).attr('href');
+
+        //   $('.tab-content > div').hide();
+        //   $(target).fadeIn(600);
+        // });
+
+
+        //(新)選擇Bar tab轉換功能 
+        $('.nav-link').on('click', function (e) {
+
+          e.preventDefault();
+
+          console.log("点击了下一位按钮");
+
+          let href = $('a.nav-link.active').attr('href');
+
+          let pass=inputValid(href);
+
+          console.log("回傳值:"+pass);
+
+          
+          // 如果所有字段都通过了验证
+          if (inputValid(href)) {
+
+              console.log("true");
+
+              // // 移除所有活動的鏈接
+              $('.nav-link').removeClass('active');
+
+              // 將當前鏈接設置為活動狀態
+              $(this).addClass('active');
+
+              // 獲取目標 ID
+              var target = $(this).attr('href');
+
+              $('.tab-content > div').hide();
+              $(target).fadeIn(600);
+
+          } 
+
+        });
+
+
+        // 表格 特效
+        $('.form').find('input, textarea , select').on('change keyup blur focus', function (e) {
+
+          let $this = $(this),
+            label = $this.prev('label');
+
+          if (e.type === 'keyup') {
+            if ($this.val() === '') {
+              label.removeClass('active highlight');
+            } else {
+              label.addClass('active highlight');
+            }
+          } else if (e.type === 'blur') {
+            if ($this.val() === '') {
+              label.removeClass('active highlight');
+            } else {
+              label.removeClass('highlight');
+            }
+          } else if (e.type === 'focus') {
+
+            if ($this.val() === '') {
+              label.removeClass('highlight');
+            }
+            else if ($this.val() !== '') {
+              label.addClass('highlight');
+            }
+          } else if (e.type === 'change') {
+            if ($this.val() === '' || $this.val() == "NULL") {
+              console.log("$this.val() === 'NULL'");
+              label.removeClass('active highlight');
+              $('input[name="cusAdd"]').val('');
+
+            } else {
+              label.addClass('active highlight');
+
+              if ($this.attr('name') === 'city') {
+
+                // 获取选中的选项的文本值
+                var selectedOption = $(this).children("option:selected").text();
+
+                // 将选项的文本值设置为输入框的值
+                $('input[name="cusAdd"]').val(selectedOption);
+
+                $('input[name="cusAdd"]').prev('label').addClass('active');
+
+
+              }
+            }
+          }
+
+        });
+
+
+        //             旅客=聯絡人:checkbox連動                //
+        $("#tab-content :checkbox").on('change', function () {
+
+          console.log("进入 checkbox 连动");
+
+          let this_check = this;
+
+          //這個checkbox 打勾
+          if($(this_check).prop("checked")){
+
+            // 其他checkbox 取消打勾
+            $(".get_form").each(function () {
+
+              console.log( $(".get_form").length)
+                $(':checkbox', this).not(this_check).prop("checked", false);
+
+            });
+            
+          //這個checkbox 取消打勾 
+          }else{
+          
+            $("#contact").find('#orderName,#orderPhone,#orderId').val("");
+
+          }
+          })
+
+
+         //下一位的功能
+        $('.next').on('click', function (event) {
+
+          // 阻止默认提交行为
+          event.preventDefault();
+
+          console.log("点击了下一位按钮");
+
+          let allFieldsValid = true;
+          let form = $(this).closest("form");
+
+          // 对于每个输入元素
+          form.find("input,select").each(function () {
+
+                var inputName = $(this).attr("id");
+                  var inputValue = $(this).val();
+                  console.log("Input Name: " + inputName + ", Input Value: " + inputValue);
+
+              if (this.validity.valid == false) {
+
+                  console.log("this.validity.valid:"+ this.validity.valid);
+                  console.log("this.validity.valid:"+ this.validity.valid);
+
+                  // 标记为不通过验证
+                  allFieldsValid = false;
+                  // 显示警告或其他提示
+                  // 这里可以根据需要进行相应的提示操作，比如添加一个警告样式、显示一个提示信息等
+                  // $(this).addClass("invalid-field").focus();
+                  console.log("input " + inputName + " is not valid");
+
+                  this.reportValidity();
+                  return false;
+
+              } 
+              console.log( allFieldsValid);
+
+          });
+
+          // 如果所有字段都通过了验证
+          if (allFieldsValid) {
+             
+                var activeContentId = $(this).closest('.content').attr('id');
+
+                console.log("activeContentId:" + activeContentId);
+
+
+                // 提取数字部分并加上 1，构建下一个内容区域的 ID
+                var nextIndex = parseInt(activeContentId.replace('content', '')) + 1;
+
+                console.log("Id+1:" + nextIndex);
+
+
+                var nextContentId = 'content' + nextIndex;
+
+                // 构建下一个内容区域的 href 值
+                var nextHref = '#' + nextContentId;
+
+
+                // 检查是否存在下一个内容
+                console.log("length:" + $('#' + nextContentId).length);
+                if ($('#' + nextContentId).length !== 0) {
+
+                  // 移除 nav-link 类具有 active 的类
+                  $('.nav-link').removeClass('active');
+
+                  // 查找具有相同 href 值的链接，并为其添加 active 类
+                  $('a[href="' + nextHref + '"]').addClass('active');
+
+                  $('.tab-content > div').hide();
+
+                  // 显示下一个内容
+                  $(nextHref).fadeIn(600);
+
+                  console.log("当前内容不是最后一个。");
+
+                }
+
+          } else {
+              // 如果有字段未通过验证，你可以在这里执行相应的操作，比如显示一条总体提示信息
+              console.log("有字段未通过验证，请填写所有必填字段！");
+          }
+
+
+        });
+
+        //上一位的功能
+        $('.prev').on('click', function (event) {
+          // 阻止默认提交行为
+          event.preventDefault();
+
+          console.log("点击了上一个按钮");
+
+          // 获取当前活动的内容的 ID
+          var activeContentId = $(this).closest('.content').attr('id');
+          console.log("activeContentId" + activeContentId);
+
+
+
+          // 提取数字部分并减去 1，构建上一个内容区域的 ID
+          var prevIndex = parseInt(activeContentId.replace('content', '')) - 1;
+          var prevContentId = 'content' + prevIndex;
+
+          // 构建上一个内容区域的 href 值
+          var prevHref = '#' + prevContentId;
+
+
+          // 检查是否存在上一个内容
+          if ($('#' + prevContentId).length !== 0) {
+
+            // 移除 nav-link 类具有 active 的类
+            $('.nav-link').removeClass('active');
+
+            // 查找具有相同 href 值的链接，并为其添加 active 类
+            $('a[href="' + prevHref + '"]').addClass('active');
+
+            $('.tab-content > div').hide();
+
+            // 显示上一个内容
+            $(prevHref).fadeIn(600);
+
+          } else {
+            console.log("当前内容是第一个。");
+            // 在这里执行您的第一个内容的特殊处理
+          }
+        });
+
+      
+      })
+
+      //             旅客=聯絡人:checkbox連動                //
+      // $(document).on("change", "#tab-content :checkbox", function () {
+
+      //   console.log("进入 checkbox 连动");
+
+      //   let this_check = this;
+
+      //   //這個checkbox 打勾
+      //   if($(this_check).prop("checked")){
+
+      //     // 其他checkbox 取消打勾
+      //     $(document).find('.get_form')(function () {
+
+      //         $(':checkbox', this).not(this_check).prop("checked", false);
+
+      //     });
+          
+      //   //這個checkbox 取消打勾 
+      //   }else{
+          
+      //     //清除聯絡人input的帶入值
+      //     $(document).find('#contact').each(function () {
+
+      //         $('#orderName,#orderPhone,#orderId', this).val("");
+
+      //     });
+          
+      //   }
+        
+      // });
     
-
-
-
-  });
-   //             旅客=聯絡人:checkbox連動                //
-   $(document).on("change", ".orderer_check", function () {
-
-    console.log("进入 checkbox 连动");
-    let this_check = this;
-
-    let this_form = this.closest('.get_form');
-
-    // 在每个 .get_form 元素内查找 .orderer_check
-    $('.get_form').each(function () {
-        $(this).find(".orderer_check").not(this_check).prop("checked", false);
-    });
+      
 
 
 
 
-    
+//////////////<!-------------------------- 第三頁:資料核對 ------------------------->////////////// 
+      
 
-      let orderName = $(this).parent().parent().parent().parent().find(".orderName").val();
-      let orderPhone = $(this).parent().parent().parent().parent().find(".orderPhone").val();
-      let orderId = $(this).parent().parent().parent().parent().find(".orderId").val();
-      //input 要用 val 接收值 不能用 .text
-
-      console.log($(this).find(".orderName"));
-      console.log("orderPhone: " + orderPhone);
-      console.log("orderId: " + orderId);
-
-
-      let T = true;
-      let text_show = "";
-
-      // 表格內的值是否為空 //
-      if (!orderName) {
-        console.log("有進入orderName ");
-        T = false;
-        text_show = text_show + "姓名:未填寫<br>"
-        //   //"姓名:未填寫"=""+"姓名:未填寫"
+      //             票種轉換                                      //
+      let turn_ticketcode = function (ticket_title) {
+        //console.log("傳入ticket_title:" + ticket_title);
+        let ticketcode = {
+          "全票": "01",
+          "敬老": "03",
+          "兒童": "04",
+          "博愛": "05",
+          "博愛(陪同者)": "05"
+        }
+        let code = ticketcode[ticket_title]
+        // console.log("傳出code:" + code);
+        return code;
       }
 
-      if (!orderPhone) {
-        console.log("有進入orderPhone");
-        T = false;
-        text_show = text_show + "手機/行動電話:未填寫<br>"
-        // "姓名:未填寫電話:未填寫" ="姓名:未填寫"+"手機/行動電話:未填寫"
+      //               計算現在的年齡                              //
+      let calculate_Age = function (date) {
+        // 將生日日期字串傳換為日期物件
+        let birthDate = new Date(date);
+        console.log("birthDate物件:" + birthDate);
+
+        // 獲取當前日期
+        let currentDate = new Date();
+        console.log("currentDate物件:" + currentDate);
+
+        // 計算年齡
+        let age = currentDate.getFullYear() - birthDate.getFullYear();
+
+        // 检查是否已过生日
+        if (currentDate.getMonth() < birthDate.getMonth() ||
+          (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
+          age--;
+        }
+        console.log("計算出age:" + age);
+        return age;
       }
 
-      if (!orderId) {
-        console.log("有進入orderId ");
-        T = false;
-        text_show = text_show + "身分證/護照號碼:未填寫<br> "
+
+      //驗證台灣身分證                                   //
+      let verifyId = function (id) {
+        id = id.trim();
+
+        if (id.length != 10) {
+          console.log("Fail，長度不正確");
+          return false
+        }
+
+
+        let countyCode = id.charCodeAt(0);
+        if (countyCode < 65 | countyCode > 90) {
+          console.log("Fail，字首英文代號，縣市不正確");
+          return false
+        }
+
+        let genderCode = id.charCodeAt(1);
+        if (genderCode != 49 && genderCode != 50) {
+          console.log("Fail，性別代碼不正確");
+          return false
+        }
+
+        let serialCode = id.slice(2)
+        for (let i in serialCode) {
+          let c = serialCode.charCodeAt(i);
+          if (c < 48 | c > 57) {
+            console.log("Fail，數字區出現非數字字元");
+            return false
+          }
+        }
+
+        let conver = "ABCDEFGHJKLMNPQRSTUVXYWZIO"
+        let weights = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1]
+
+        id = String(conver.indexOf(id[0]) + 10) + id.slice(1);
+
+        checkSum = 0
+        for (let i = 0; i < id.length; i++) {
+          c = parseInt(id[i])
+          w = weights[i]
+          checkSum += c * w
+        }
+
+        verification = checkSum % 10 == 0
+
+        if (verification) {
+          console.log("Pass");
+        } else {
+          console.log("Fail，檢核碼錯誤");
+        }
+
+        return verification
+      }
+      //console.log(             verifyId(    "A123456789"       )     );
+
+
+      // 驗證台灣手機/行動電話
+      let verifyPhone = function (orderPhone) {
+
+        // 手機/行動電話號碼格式
+        let phoneRegex = /^[0-9]{10}$/;
+
+        // 检查
+        return phoneRegex.test(orderPhone);
       }
 
-      if (!T) {
-        console.log("有進入!T ");
-        // console.log($(this).parent().parent().parent().parent().parent());
+      // 游標移動至的第一個警示div的位置
+      let focus_custom_alert = function () {
 
-        $(this).parent().parent().parent().parent().parent().find(".alert-text").html(text_show);
-        $(this).parent().parent().parent().parent().parent().find(".custom-alert").show();
+        // 获取第一个显示的 .custom-alert 元素
+        let visibleCustomAlert = $(".custom-alert:visible").first();
 
-        // $(".checked").prop("checked", false);
-        // $(this).prop("checked") == false;//判斷左邊有沒有等於右邊
-        // $(this).prop("checked") = false;//把右邊的值帶入左邊
-
-        $(this).prop("checked", false);
-      }
-      else {
-        console.log("有進入!T else ");
-        // 将值设置到对应的输入框
-        $("#orderName").val(orderName);
-        $("#orderPhone").val(orderPhone);
-        $("#orderId").val(orderId);
+        // 如果有可见的 .custom-alert 元素，则将焦点设置到它
+        if (visibleCustomAlert.length > 0) {
+          $("html,body").animate({ scrollTop: visibleCustomAlert.offset().top - 200 }, 500);
+          //在可见的 .custom-alert 元素上创建自定义动画(页面滚动)，将页面滚动到该元素的顶部，持续时间为 500 毫秒
+        }
       }
 
-      if ($(this).prop("checked") == false) {
+      //將檢查過後的資料顯示於 modal
 
-        console.log("empty");
-        $("#orderName").val("");
-        $("#orderPhone").val("");
-        $("#orderId").val("");
-      }
-      console.log($("#orderName"));
-      console.log("orderPhone: " + orderPhone);
-      console.log("orderId: " + orderId);
+      let send_all = function (package) {
 
-    
+        console.log("又進入");
+
+        $("#carousel-inner").empty();//不累加清空
 
 
-
-  });
-  
-
-  //             票種轉換                                      //
-  let turn_ticketcode = function (ticket_title) {
-    //console.log("傳入ticket_title:" + ticket_title);
-    let ticketcode = {
-      "全票": "01",
-      "敬老": "03",
-      "兒童": "04",
-      "博愛": "05",
-      "博愛(陪同者)": "05"
-    }
-    let code = ticketcode[ticket_title]
-    // console.log("傳出code:" + code);
-    return code;
-  }
-
-  //               計算現在的年齡                              //
-  let calculate_Age = function (date) {
-    // 將生日日期字串傳換為日期物件
-    let birthDate = new Date(date);
-    console.log("birthDate物件:" + birthDate);
-
-    // 獲取當前日期
-    let currentDate = new Date();
-    console.log("currentDate物件:" + currentDate);
-
-    // 計算年齡
-    let age = currentDate.getFullYear() - birthDate.getFullYear();
-
-    // 检查是否已过生日
-    if (currentDate.getMonth() < birthDate.getMonth() ||
-      (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    console.log("計算出age:" + age);
-    return age;
-  }
+        // // 顯示於 Modal 訂票資訊欄位 //
+        $("#m_shipid").text(package.shipId0);
+        $("#m_date").text(timeid);
+        $("#m_time").text(btime);
+        $("#m_tCount").text(package.qty);
 
 
 
-  //驗證台灣身分證                                   //
-  let verifyId = function (id) {
-    id = id.trim();
-
-    if (id.length != 10) {
-      console.log("Fail，長度不正確");
-      return false
-    }
-
-
-    let countyCode = id.charCodeAt(0);
-    if (countyCode < 65 | countyCode > 90) {
-      console.log("Fail，字首英文代號，縣市不正確");
-      return false
-    }
-
-    let genderCode = id.charCodeAt(1);
-    if (genderCode != 49 && genderCode != 50) {
-      console.log("Fail，性別代碼不正確");
-      return false
-    }
-
-    let serialCode = id.slice(2)
-    for (let i in serialCode) {
-      let c = serialCode.charCodeAt(i);
-      if (c < 48 | c > 57) {
-        console.log("Fail，數字區出現非數字字元");
-        return false
-      }
-    }
-
-    let conver = "ABCDEFGHJKLMNPQRSTUVXYWZIO"
-    let weights = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1]
-
-    id = String(conver.indexOf(id[0]) + 10) + id.slice(1);
-
-    checkSum = 0
-    for (let i = 0; i < id.length; i++) {
-      c = parseInt(id[i])
-      w = weights[i]
-      checkSum += c * w
-    }
-
-    verification = checkSum % 10 == 0
-
-    if (verification) {
-      console.log("Pass");
-    } else {
-      console.log("Fail，檢核碼錯誤");
-    }
-
-    return verification
-  }
-  //console.log(             verifyId(    "A123456789"       )     );
-
-
-  // 驗證台灣手機/行動電話
-  let verifyPhone = function (orderPhone) {
-
-    // 手機/行動電話號碼格式
-    let phoneRegex = /^[0-9]{10}$/;
-
-    // 检查
-    return phoneRegex.test(orderPhone);
-  }
-
-  // 游標移動至的第一個警示div的位置
-  let focus_custom_alert = function () {
-
-    // 获取第一个显示的 .custom-alert 元素
-    let visibleCustomAlert = $(".custom-alert:visible").first();
-
-    // 如果有可见的 .custom-alert 元素，则将焦点设置到它
-    if (visibleCustomAlert.length > 0) {
-      $("html,body").animate({ scrollTop: visibleCustomAlert.offset().top - 200 }, 500);
-      //在可见的 .custom-alert 元素上创建自定义动画(页面滚动)，将页面滚动到该元素的顶部，持续时间为 500 毫秒
-    }
-  }
-
-  //將檢查過後的資料顯示於 modal
-
-  let send_all = function (package) {
-
-    console.log("又進入");
-
-    $("#carousel-inner").empty();//不累加清空
-
-
-    // // 顯示於 Modal 訂票資訊欄位 //
-    $("#m_shipid").text(package.shipId0);
-    $("#m_date").text(timeid);
-    $("#m_time").text(btime);
-    $("#m_tCount").text(package.qty);
-
-
-
-    // // 顯示於 Modal 訂票人欄位 //
-    $("#order_name").text(package.orderName);
-    $("#order_id").text(package.orderUid);
-    $("#order_pno").text(package.orderPhone);
+        // // 顯示於 Modal 訂票人欄位 //
+        $("#order_name").text(package.orderName);
+        $("#order_id").text(package.orderUid);
+        $("#order_pno").text(package.orderPhone);
 
 
 
 
-    $.each(package.tickets, function (index, value) {
+        $.each(package.tickets, function (index, value) {
 
-      let active = "";
-      if (index == 0) {
-        active = " active";
+          let active = "";
+          if (index == 0) {
+            active = " active";
+          }
+
+          let Tcode = value.ticketCode;
+          // "01" = value.ticketCode
+          console.log("Tcode=" + Tcode);
+
+          let ticket = {
+            "01": "全票",
+            "03": "敬老",
+            "04": "兒童",
+            "05": "博愛"
+          }
+
+          let tT = ticket[Tcode];
+          console.log("tT=" + tT);
+          // 
+          // value.ticketCode=01;
+          // ticket.01= "全票"
+
+          // 01=value.ticketCode
+
+          //+ticket.Tcode+
+          //ticket.01 = 全票
+
+          $("#carousel-inner").append(
+
+            '<div class="carousel-item' + active + '" data-slide-number="' + index + '">' +
+            '<h2>' + tT + '</h2>' +
+
+            '<div class="col">' +
+            '<div class="gallery-text">' +
+            '<h4>' +
+            '<strong><br>' +
+            value.name +
+            '</strong>' +
+            '</h4>' +
+            '</div>' +
+            '<div class="table-responsive">' +
+            '<form id="contact" class="get_form bg-light ">' +
+            '<h2 id="contact" class="section-title mb-3 text-center text-primary "></h2>' +
+            '<div class="table-responsive ">' +
+            '<table class="table text-center text-black">' +
+            '<thead>' +
+            '<tr>' +
+            '<th style="width: 10%;" id="shipID0">電話</th>' +
+            '<td>' + value.phone + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<th style="width: 20%;" id="btime">身分證</th>' +
+            '<td>' + value.uid + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<th style="width: 10%;" id="etime">Email</th>' +
+            '<td>' + value.email + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<th style="width: 20%;" id="qty">國籍</th>' +
+            '<td>' + value.country + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<th style="width: 10%;" id="etime">性別</th>' +
+            '<td>' + value.gender + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<th style="width: 10%;" id="etime">生日</th>' +
+            '<td>' + value.birthday + '</td>' +
+            '</tr>' +
+            '</thead>' +
+            '</table>' +
+            '</div>' +
+            '</form>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
+
+          )
+
+
+        })
+        console.log("結束");
       }
 
-      let Tcode = value.ticketCode;
-      // "01" = value.ticketCode
-      console.log("Tcode=" + Tcode);
-
-      let ticket = {
-        "01": "全票",
-        "03": "敬老",
-        "04": "兒童",
-        "05": "博愛"
-      }
-
-      let tT = ticket[Tcode];
-      console.log("tT=" + tT);
-      // 
-      // value.ticketCode=01;
-      // ticket.01= "全票"
-
-      // 01=value.ticketCode
-
-      //+ticket.Tcode+
-      //ticket.01 = 全票
-
-      $("#carousel-inner").append(
-
-        '<div class="carousel-item' + active + '" data-slide-number="' + index + '">' +
-        '<h2>' + tT + '</h2>' +
-
-        '<div class="col">' +
-        '<div class="gallery-text">' +
-        '<h4>' +
-        '<strong><br>' +
-        value.name +
-        '</strong>' +
-        '</h4>' +
-        '</div>' +
-        '<div class="table-responsive">' +
-        '<form id="contact" class="get_form bg-light ">' +
-        '<h2 id="contact" class="section-title mb-3 text-center text-primary "></h2>' +
-        '<div class="table-responsive ">' +
-        '<table class="table text-center text-black">' +
-        '<thead>' +
-        '<tr>' +
-        '<th style="width: 10%;" id="shipID0">電話</th>' +
-        '<td>' + value.phone + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<th style="width: 20%;" id="btime">身分證</th>' +
-        '<td>' + value.uid + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<th style="width: 10%;" id="etime">Email</th>' +
-        '<td>' + value.email + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<th style="width: 20%;" id="qty">國籍</th>' +
-        '<td>' + value.country + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<th style="width: 10%;" id="etime">性別</th>' +
-        '<td>' + value.gender + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<th style="width: 10%;" id="etime">生日</th>' +
-        '<td>' + value.birthday + '</td>' +
-        '</tr>' +
-        '</thead>' +
-        '</table>' +
-        '</div>' +
-        '</form>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
-
-      )
-
-
-    })
-    console.log("結束");
-  }
+  })
 
 
 
   //            資料填寫完送出-格式檢查                       //
-
   $(document).on("click", "#form_send", function () {
 
 
@@ -1488,360 +1606,360 @@ $(document).ready(function () {
     focus_custom_alert();
     console.log("尾");
 
+  
   })
-})
-
-// 按鈕控制
-$(document).ready(function () {
-
-  //           步驟條 按鈕                          //
-  var current_fs, next_fs, previous_fs; //fieldsets
-  var left, opacity, scale; //fieldset properties which we will animate
-  var animating; //flag to prevent quick multi-click glitches
-
-  // 
-  $(".page-next").click(function (TF) {
-
-    if (TF) {
-      if (animating) return false;
-      animating = true;
-
-      current_fs = $(this).parent();
-      next_fs = $(this).parent().next();
-
-      //activate next step on progressbar using the index of next_fs
-      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-      //show the next fieldset
-      next_fs.show();
-      //hide the current fieldset with style
-      current_fs.animate({ opacity: 0 }, {
-        step: function (now, mx) {
-          //as the opacity of current_fs reduces to 0 - stored in "now"
-          //1. scale current_fs down to 80%
-          scale = 1 - (1 - now) * 0.2;
-          //2. bring next_fs from the right(50%)
-          left = (now * 50) + "%";
-          //3. increase opacity of next_fs to 1 as it moves in
-          opacity = 1 - now;
-          current_fs.css({
-            'transform': 'scale(' + scale + ')',
-            // 破解"previous"按鈕 沒有恢復到原本位置的原因
-            // 'position': 'absolute'
-          });
-          next_fs.css({ 'left': left, 'opacity': opacity });
-        },
-        duration: 800,
-        complete: function () {
-          current_fs.hide();
-          animating = false;
-        },
-        //this comes from the custom easing plugin
-        easing: 'easeInOutBack'
-      });
 
-    }else{
-      return;
-    }
+  // 按鈕控制
+  $(document).ready(function () {
+
+    // //           步驟條 按鈕                          //
+    // var current_fs, next_fs, previous_fs; //fieldsets
+    // var left, opacity, scale; //fieldset properties which we will animate
+    // var animating; //flag to prevent quick multi-click glitches
+
+    // // 
+    // $(".page-next").click(function (TF) {
+
+    //   if (TF) {
+    //     if (animating) return false;
+    //     animating = true;
+
+    //     current_fs = $(this).parent();
+    //     next_fs = $(this).parent().next();
+
+    //     //activate next step on progressbar using the index of next_fs
+    //     $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+    //     //show the next fieldset
+    //     next_fs.show();
+    //     //hide the current fieldset with style
+    //     current_fs.animate({ opacity: 0 }, {
+    //       step: function (now, mx) {
+    //         //as the opacity of current_fs reduces to 0 - stored in "now"
+    //         //1. scale current_fs down to 80%
+    //         scale = 1 - (1 - now) * 0.2;
+    //         //2. bring next_fs from the right(50%)
+    //         left = (now * 50) + "%";
+    //         //3. increase opacity of next_fs to 1 as it moves in
+    //         opacity = 1 - now;
+    //         current_fs.css({
+    //           'transform': 'scale(' + scale + ')',
+    //           // 破解"previous"按鈕 沒有恢復到原本位置的原因
+    //           // 'position': 'absolute'
+    //         });
+    //         next_fs.css({ 'left': left, 'opacity': opacity });
+    //       },
+    //       duration: 800,
+    //       complete: function () {
+    //         current_fs.hide();
+    //         animating = false;
+    //       },
+    //       //this comes from the custom easing plugin
+    //       easing: 'easeInOutBack'
+    //     });
 
-  });
+    //   }else{
+    //     return;
+    //   }
 
-  $(".page-previous").click(function () {
-    if (animating) return false;
-    animating = true;
+    // });
 
-    current_fs = $(this).parent();
-    previous_fs = $(this).parent().prev();
+    // $(".page-previous").click(function () {
+    //   if (animating) return false;
+    //   animating = true;
 
-    //de-activate current step on progressbar
-    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+    //   current_fs = $(this).parent();
+    //   previous_fs = $(this).parent().prev();
 
-    //show the previous fieldset
-    previous_fs.show();
-    //hide the current fieldset with style
-    current_fs.animate({ opacity: 0 }, {
-      step: function (now, mx) {
-        //as the opacity of current_fs reduces to 0 - stored in "now"
-        //1. scale previous_fs from 80% to 100%
-        scale = 0.8 + (1 - now) * 0.2;
-        //2. take current_fs to the right(50%) - from 0%
-        left = ((1 - now) * 50) + "%";
-        //3. increase opacity of previous_fs to 1 as it moves in
-        opacity = 1 - now;
-        current_fs.css({ 'left': left });
-        previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
-      },
-      duration: 800,
-      complete: function () {
-        current_fs.hide();
-        animating = false;
-      },
-      //this comes from the custom easing plugin
-      easing: 'easeInOutBack'
-    });
+    //   //de-activate current step on progressbar
+    //   $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 
+    //   //show the previous fieldset
+    //   previous_fs.show();
+    //   //hide the current fieldset with style
+    //   current_fs.animate({ opacity: 0 }, {
+    //     step: function (now, mx) {
+    //       //as the opacity of current_fs reduces to 0 - stored in "now"
+    //       //1. scale previous_fs from 80% to 100%
+    //       scale = 0.8 + (1 - now) * 0.2;
+    //       //2. take current_fs to the right(50%) - from 0%
+    //       left = ((1 - now) * 50) + "%";
+    //       //3. increase opacity of previous_fs to 1 as it moves in
+    //       opacity = 1 - now;
+    //       current_fs.css({ 'left': left });
+    //       previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
+    //     },
+    //     duration: 800,
+    //     complete: function () {
+    //       current_fs.hide();
+    //       animating = false;
+    //     },
+    //     //this comes from the custom easing plugin
+    //     easing: 'easeInOutBack'
+    //   });
 
-  });
 
+    // });
 
 
-  //<旅客資料>按鈕
-  //$(document).on("click", ".next", function(event) {
 
+    //<旅客資料>按鈕
+    //$(document).on("click", ".next", function(event) {
 
-  //tab 轉換
-  $('.nav-link').on('click', function (e) {
-    e.preventDefault();
 
-    // // 移除所有活動的鏈接
-    $('.nav-link').removeClass('active');
+    //tab 轉換
+    // $('.nav-link').on('click', function (e) {
+    //   e.preventDefault();
 
-    // 將當前鏈接設置為活動狀態
-    $(this).addClass('active');
+    //   // // 移除所有活動的鏈接
+    //   $('.nav-link').removeClass('active');
 
-    // 獲取目標 ID
-    var target = $(this).attr('href');
+    //   // 將當前鏈接設置為活動狀態
+    //   $(this).addClass('active');
 
-    $('.tab-content > div').hide();
-    $(target).fadeIn(600);
-  });
+    //   // 獲取目標 ID
+    //   var target = $(this).attr('href');
 
+    //   $('.tab-content > div').hide();
+    //   $(target).fadeIn(600);
+    // });
 
-  //下一位的功能
-  $('.next').on('click', function (event) {
-    // 阻止默认提交行为
-    event.preventDefault();
 
-    console.log("点击了下一位按钮");
+    // //下一位的功能
+    // $('.next').on('click', function (event) {
+    //   // 阻止默认提交行为
+    //   event.preventDefault();
 
-    var activeContentId = $(this).closest('.content').attr('id');
+    //   console.log("点击了下一位按钮");
 
-    console.log("activeContentId:" + activeContentId);
+    //   var activeContentId = $(this).closest('.content').attr('id');
 
+    //   console.log("activeContentId:" + activeContentId);
 
-    // 提取数字部分并加上 1，构建下一个内容区域的 ID
-    var nextIndex = parseInt(activeContentId.replace('content', '')) + 1;
 
-    console.log("Id+1:" + nextIndex);
+    //   // 提取数字部分并加上 1，构建下一个内容区域的 ID
+    //   var nextIndex = parseInt(activeContentId.replace('content', '')) + 1;
 
+    //   console.log("Id+1:" + nextIndex);
 
-    var nextContentId = 'content' + nextIndex;
 
-    // 构建下一个内容区域的 href 值
-    var nextHref = '#' + nextContentId;
+    //   var nextContentId = 'content' + nextIndex;
 
+    //   // 构建下一个内容区域的 href 值
+    //   var nextHref = '#' + nextContentId;
 
-    // 检查是否存在下一个内容
-    console.log("length:" + $('#' + nextContentId).length);
-    if ($('#' + nextContentId).length !== 0) {
 
-      // 移除 nav-link 类具有 active 的类
-      $('.nav-link').removeClass('active');
+    //   // 检查是否存在下一个内容
+    //   console.log("length:" + $('#' + nextContentId).length);
+    //   if ($('#' + nextContentId).length !== 0) {
 
-      // 查找具有相同 href 值的链接，并为其添加 active 类
-      $('a[href="' + nextHref + '"]').addClass('active');
+    //     // 移除 nav-link 类具有 active 的类
+    //     $('.nav-link').removeClass('active');
 
-      $('.tab-content > div').hide();
+    //     // 查找具有相同 href 值的链接，并为其添加 active 类
+    //     $('a[href="' + nextHref + '"]').addClass('active');
 
-      // 显示下一个内容
-      $(nextHref).fadeIn(600);
+    //     $('.tab-content > div').hide();
 
-      console.log("当前内容不是最后一个。");
+    //     // 显示下一个内容
+    //     $(nextHref).fadeIn(600);
 
-    }
+    //     console.log("当前内容不是最后一个。");
 
-  });
+    //   }
 
+    // });
 
-  //上一位的功能
-  $('.prev').on('click', function (event) {
-    // 阻止默认提交行为
-    event.preventDefault();
 
-    console.log("点击了上一个按钮");
+    // //上一位的功能
+    // $('.prev').on('click', function (event) {
+    //   // 阻止默认提交行为
+    //   event.preventDefault();
 
-    // 获取当前活动的内容的 ID
-    var activeContentId = $(this).closest('.content').attr('id');
-    console.log("activeContentId" + activeContentId);
+    //   console.log("点击了上一个按钮");
 
+    //   // 获取当前活动的内容的 ID
+    //   var activeContentId = $(this).closest('.content').attr('id');
+    //   console.log("activeContentId" + activeContentId);
 
 
-    // 提取数字部分并减去 1，构建上一个内容区域的 ID
-    var prevIndex = parseInt(activeContentId.replace('content', '')) - 1;
-    var prevContentId = 'content' + prevIndex;
 
-    // 构建上一个内容区域的 href 值
-    var prevHref = '#' + prevContentId;
+    //   // 提取数字部分并减去 1，构建上一个内容区域的 ID
+    //   var prevIndex = parseInt(activeContentId.replace('content', '')) - 1;
+    //   var prevContentId = 'content' + prevIndex;
 
+    //   // 构建上一个内容区域的 href 值
+    //   var prevHref = '#' + prevContentId;
 
-    // 检查是否存在上一个内容
-    if ($('#' + prevContentId).length !== 0) {
 
-      // 移除 nav-link 类具有 active 的类
-      $('.nav-link').removeClass('active');
+    //   // 检查是否存在上一个内容
+    //   if ($('#' + prevContentId).length !== 0) {
 
-      // 查找具有相同 href 值的链接，并为其添加 active 类
-      $('a[href="' + prevHref + '"]').addClass('active');
+    //     // 移除 nav-link 类具有 active 的类
+    //     $('.nav-link').removeClass('active');
 
-      $('.tab-content > div').hide();
+    //     // 查找具有相同 href 值的链接，并为其添加 active 类
+    //     $('a[href="' + prevHref + '"]').addClass('active');
 
-      // 显示上一个内容
-      $(prevHref).fadeIn(600);
+    //     $('.tab-content > div').hide();
 
-    } else {
-      console.log("当前内容是第一个。");
-      // 在这里执行您的第一个内容的特殊处理
-    }
-  });
+    //     // 显示上一个内容
+    //     $(prevHref).fadeIn(600);
 
+    //   } else {
+    //     console.log("当前内容是第一个。");
+    //     // 在这里执行您的第一个内容的特殊处理
+    //   }
+    // });
 
-  // $('.next').on('click', function(event) {s
-  //     // 阻止默认提交行为
-  //     event.preventDefault();
 
-  //     console.log("点击了下一位按钮");
+    // $('.next').on('click', function(event) {s
+    //     // 阻止默认提交行为
+    //     event.preventDefault();
 
-  //     var nav_link_active = $(this).closest('.form').find('.nav-link.active').attr('href');
-  //     console.log("获取当前活动的 nav-link_active：" + nav_link_active);    
+    //     console.log("点击了下一位按钮");
 
-  //     // 提取数字部分并加上 1
-  //     var nextIndex = parseInt(nav_link_active.replace('#content', '')) + 1;
+    //     var nav_link_active = $(this).closest('.form').find('.nav-link.active').attr('href');
+    //     console.log("获取当前活动的 nav-link_active：" + nav_link_active);    
 
-  //     // 构建下一个链接的 href
-  //     var nextHref = '#content' + nextIndex;
-  //     console.log("nextHref ：" + nextHref);
+    //     // 提取数字部分并加上 1
+    //     var nextIndex = parseInt(nav_link_active.replace('#content', '')) + 1;
 
-  //     // 移除当前活动的 nav-link 的 active 类
-  //     $(nav_link_active).removeClass('active');
+    //     // 构建下一个链接的 href
+    //     var nextHref = '#content' + nextIndex;
+    //     console.log("nextHref ：" + nextHref);
 
-  //     // 获取下一个 nav-link，并添加 active 类
-  //     var next_nav_link = $(nextHref + '.nav-link');
-  //     next_nav_link.addClass('active');
+    //     // 移除当前活动的 nav-link 的 active 类
+    //     $(nav_link_active).removeClass('active');
 
-  //     $('.tab-content > div').hide();
+    //     // 获取下一个 nav-link，并添加 active 类
+    //     var next_nav_link = $(nextHref + '.nav-link');
+    //     next_nav_link.addClass('active');
 
-  //     // 显示下一个内容
-  //     $(nextHref).fadeIn(600);
-  // });
+    //     $('.tab-content > div').hide();
 
+    //     // 显示下一个内容
+    //     $(nextHref).fadeIn(600);
+    // });
 
 
 
 
-  //表單中的下一步
 
+    //表單中的下一步
 
 
 
 
-  //下一位按鈕提交
-  // $('#next2').on('click', function(event) {
 
-  //     // 阻止默认提交行为
-  //     event.preventDefault(); 
+    //下一位按鈕提交
+    // $('#next2').on('click', function(event) {
 
-  //      // 檢查所有表單的有效性
-  //     var allFormsValid = true;
-  //     $('.form-control').each(function() {
-  //         if (!this.checkValidity()) {
+    //     // 阻止默认提交行为
+    //     event.preventDefault(); 
 
-  //             // 显示警告或其他提示
-  //             this.reportValidity();
-  //             allFormsValid = false;
-  //             return false; // 中斷 each() 迴圈
+    //      // 檢查所有表單的有效性
+    //     var allFormsValid = true;
+    //     $('.form-control').each(function() {
+    //         if (!this.checkValidity()) {
+
+    //             // 显示警告或其他提示
+    //             this.reportValidity();
+    //             allFormsValid = false;
+    //             return false; // 中斷 each() 迴圈
+    //         }
+    //     });
+
+    //     // 如果所有表單都有效，執行相應的操作
+    //     if (allFormsValid) {
+
+    //         //觸發
+    //         $('.next').click();
+
+    //     }
+
+
+    // });
+
+
+
+    //Page2:隱藏未被選中的表單
+    // $('.tab-content > div:not(:first-child)').hide();
+
+
+  })
+
+
+  // $(document).ready(function () {
+
+  //   // 表格 特效
+  //   $('.form').find('input, textarea , select').on('change keyup blur focus', function (e) {
+
+  //     let $this = $(this),
+  //       label = $this.prev('label');
+
+  //     if (e.type === 'keyup') {
+  //       if ($this.val() === '') {
+  //         label.removeClass('active highlight');
+  //       } else {
+  //         label.addClass('active highlight');
+  //       }
+  //     } else if (e.type === 'blur') {
+  //       if ($this.val() === '') {
+  //         label.removeClass('active highlight');
+  //       } else {
+  //         label.removeClass('highlight');
+  //       }
+  //     } else if (e.type === 'focus') {
+
+  //       if ($this.val() === '') {
+  //         label.removeClass('highlight');
+  //       }
+  //       else if ($this.val() !== '') {
+  //         label.addClass('highlight');
+  //       }
+  //     } else if (e.type === 'change') {
+  //       if ($this.val() === '' || $this.val() == "NULL") {
+  //         console.log("$this.val() === 'NULL'");
+  //         label.removeClass('active highlight');
+  //         $('input[name="cusAdd"]').val('');
+
+  //       } else {
+  //         label.addClass('active highlight');
+
+  //         if ($this.attr('name') === 'city') {
+
+  //           // 获取选中的选项的文本值
+  //           var selectedOption = $(this).children("option:selected").text();
+
+  //           // 将选项的文本值设置为输入框的值
+  //           $('input[name="cusAdd"]').val(selectedOption);
+
+  //           $('input[name="cusAdd"]').prev('label').addClass('active');
+
+
   //         }
-  //     });
-
-  //     // 如果所有表單都有效，執行相應的操作
-  //     if (allFormsValid) {
-
-  //         //觸發
-  //         $('.next').click();
-
+  //       }
   //     }
+
+  //   });
+
+  //   //     // checkbox message 特效
+  //   //    $('#tooltip-toggle').on('change', function () {
+  //   //     console.log("$('#tooltip-toggle'):" + $('#tooltip-toggle').prop('checked'));
+  //   //     if ($(this).prop('checked')) {
+  //   //         console.log("this:.is(':checked')");
+  //   //         $('.tooltip-content').removeClass('hidden').delay(1000).queue(function (next) {
+  //   //             $(this).addClass('hidden');
+  //   //             next();
+  //   //         });
+  //   //     } else {
+  //   //         $('.tooltip-content').addClass('hidden');
+  //   //     }
+  //   // });
 
 
   // });
-
-
-
-  //Page2:隱藏未被選中的表單
-  $('.tab-content > div:not(:first-child)').hide();
-
-
-})
-
-
-$(document).ready(function () {
-
-  // 表格 特效
-  $('.form').find('input, textarea , select').on('change keyup blur focus', function (e) {
-
-    let $this = $(this),
-      label = $this.prev('label');
-
-    if (e.type === 'keyup') {
-      if ($this.val() === '') {
-        label.removeClass('active highlight');
-      } else {
-        label.addClass('active highlight');
-      }
-    } else if (e.type === 'blur') {
-      if ($this.val() === '') {
-        label.removeClass('active highlight');
-      } else {
-        label.removeClass('highlight');
-      }
-    } else if (e.type === 'focus') {
-
-      if ($this.val() === '') {
-        label.removeClass('highlight');
-      }
-      else if ($this.val() !== '') {
-        label.addClass('highlight');
-      }
-    } else if (e.type === 'change') {
-      if ($this.val() === '' || $this.val() == "NULL") {
-        console.log("$this.val() === 'NULL'");
-        label.removeClass('active highlight');
-        $('input[name="cusAdd"]').val('');
-
-      } else {
-        label.addClass('active highlight');
-
-        if ($this.attr('name') === 'city') {
-
-          // 获取选中的选项的文本值
-          var selectedOption = $(this).children("option:selected").text();
-
-          // 将选项的文本值设置为输入框的值
-          $('input[name="cusAdd"]').val(selectedOption);
-
-          $('input[name="cusAdd"]').prev('label').addClass('active');
-
-
-        }
-      }
-    }
-
-  });
-
-  //     // checkbox message 特效
-  //    $('#tooltip-toggle').on('change', function () {
-  //     console.log("$('#tooltip-toggle'):" + $('#tooltip-toggle').prop('checked'));
-  //     if ($(this).prop('checked')) {
-  //         console.log("this:.is(':checked')");
-  //         $('.tooltip-content').removeClass('hidden').delay(1000).queue(function (next) {
-  //             $(this).addClass('hidden');
-  //             next();
-  //         });
-  //     } else {
-  //         $('.tooltip-content').addClass('hidden');
-  //     }
-  // });
-
-
-});
 
 
 
